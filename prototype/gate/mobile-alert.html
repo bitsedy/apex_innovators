@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#b5c4ff", "primary": "#011549", "outline": "#757680", "background": "#f7f9ff", "secondary-container": "#df2d23", "on-secondary-container": "#fffbff", "on-secondary": "#ffffff", "surface-tint": "#4c5c92", "surface": "#f7f9ff", "error": "#ba1a1a", "primary-fixed-dim": "#b5c4ff", "on-tertiary-container": "#46a95a", "surface-container": "#e9eef8", "on-primary-fixed": "#03174b", "on-primary": "#ffffff", "inverse-surface": "#2b3138", "on-surface": "#161c23", "surface-variant": "#dde3ec", "surface-bright": "#f7f9ff", "on-primary-container": "#8494cd", "error-container": "#ffdad6", "tertiary": "#001f07", "surface-dim": "#d5dae4", "on-secondary-fixed": "#410001", "primary-container": "#1a2b5e", "surface-container-low": "#eef4fe", "secondary": "#ba0a0c", "on-tertiary": "#ffffff", "surface-container-high": "#e3e8f2", "on-tertiary-fixed-variant": "#00531f", "on-error-container": "#93000a", "on-error": "#ffffff", "tertiary-fixed-dim": "#78dc86", "on-tertiary-fixed": "#002108", "tertiary-fixed": "#94f9a0", "on-surface-variant": "#45464f", "on-background": "#161c23", "on-primary-fixed-variant": "#344478", "outline-variant": "#c5c6d1", "secondary-fixed": "#ffdad5", "secondary-fixed-dim": "#ffb4a9", "inverse-on-surface": "#ecf1fb", "primary-fixed": "#dce1ff", "surface-container-lowest": "#ffffff", "surface-container-highest": "#dde3ec", "on-secondary-fixed-variant": "#930004", "tertiary-container": "#003712" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "margin-sm": "1rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "gutter": "1.5rem" }, "fontFamily": { "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"] }, "fontSize": { "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }] } } } };</script><style>html,body{width:100vw;margin:0;padding:0;body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<title>Carepoint - Mobile Safeguarding Mismatch Alert</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "gate",
+            label: "Mobile Safeguarding Mismatch Alert",
+            isMobile: true,
+            relRoot: "../",
+            counterpart: "alert.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-4 flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">shield_person</span></div><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Live Sync</span></div><span class="font-label-lg text-label-lg text-primary truncate max-w-[190px]">Gate 04 - Main Gate Area</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Emergency Alert Action" class="h-11 px-3 rounded-lg bg-secondary text-on-secondary flex items-center gap-1.5 active:scale-95 transition-transform"><span class="material-symbols-outlined text-[20px]">campaign</span><span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Alert</span></button><img alt="Officer Emmanuel Tetteh" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWyCxim_7skt8k31G0IotbuvMRM2YBPGoHvoZYsa25Oh7YjCKOaPB9NbEJlz7absl89QYzqeKxYnR448A6GuD58V-wOmg0TgMyyhDKQx0RuvqJw6XlU06RFl_YO6p1OAhJ8yWUqb6Xir1rbx9sdVdTXXX34sj3lncm3yNoCumK2AKJSnHf-teZ8hmWgZoInrNO2R9DoQfxqZAsqD5baLXIUfUmMaFmvVU0wSaAabCoCC1PDgEeMPJThA"/></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-8 space-y-4 px-4 pt-1">
+<!-- High Visibility Safeguarding Priority Banner -->
+<div class="w-full bg-secondary-container rounded-xl shadow-lg p-4 text-on-secondary-container relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-start gap-3 relative z-10">
+<div class="w-11 h-11 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/20 backdrop-blur-sm mb-1">
+<span class="w-2 h-2 rounded-full bg-surface-container-lowest animate-ping"></span>
+<span class="font-label-sm text-label-sm tracking-wide uppercase text-on-secondary-container">Level 1 Safeguard Lockout</span>
+</div>
+<h1 class="font-headline-sm text-headline-sm leading-tight text-on-secondary-container">
+          Unauthorized Pickup Attempt &amp; Custody Flag
+        </h1>
+<p class="font-body-sm text-body-sm mt-1 text-on-secondary-container/90">
+          Turnstiles electronically locked. Retain student in reception area discreetly.
+        </p>
+</div>
+</div>
+</div>
+<!-- Student & Incident Target Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-4 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">school</span>
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Child Profile</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-bold">
+        Custody Warning Active
+      </span>
+</div>
+<div class="flex items-center gap-3.5 bg-surface-container-low p-3 rounded-lg">
+<img class="w-16 h-16 rounded-xl object-cover shadow-sm shrink-0" data-alt="Close up warm academic portrait of an 9-year-old Ghanaian schoolboy named Kwadwo wearing a pristine navy blue school uniform blazer and sky blue polo shirt, looking safely and attentively at the camera inside an upscale modern academy hallway with sunlit cream walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrIp9CDvt1ToHVu7y77GRb8jkJufv63tmVp1kV9GqAiHbHeJhCCKJRqhKvk2k1FoV_jLyzTkZlgZEHxxzDrFh5b_5aBKOOsdDsY_r6oSUAv5ZGY5Pl88J_wpSY6Dyo0MjET2tTfyqLJYFeL8Qh-Wr-gUw91RV0wcXNQ53oVKREhnBhAxRi443sLjou0t6s6cJBg2Te47ItNswAOZaZOqI6qVi5qwww4D6Uj6qG8FYGf3yYh6GYrlljRw"/>
+<div class="flex-1 min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Kofi Mensah</h2>
+<div class="flex flex-wrap items-center gap-2 mt-1">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-semibold">
+            ID: CP-2023-0482
+          </span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-semibold">
+            Basic 2 Sunflower
+          </span>
+</div>
+</div>
+</div>
+<!-- Mismatch Intelligence Box -->
+<div class="bg-surface-container-high/60 rounded-lg p-3 space-y-2.5">
+<div class="flex items-start gap-2.5">
+<div class="w-8 h-8 rounded-full bg-secondary/10 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">person_alert</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Individual at Gate</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold truncate">Mr. Kwame Antwi</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Asserts identity as third-party collector (Unregistered)</p>
+</div>
+</div>
+<div class="w-full bg-surface-container-lowest p-2.5 rounded-md flex items-start gap-2 shadow-xs">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary">Statutory Custody Restraint</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+            Not listed in authorized release roster. High Court Injunction <span class="font-semibold text-primary">#SAF-ACC-2026-08</span> strictly restrains third-party handover without mother's direct clearance.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Automated Interlocks Active Status (Bento Grid) -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-4 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Automatic Interlock Matrix</span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+        3 Nodes Engaged
+      </span>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<!-- Turnstile -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Turnstile Flap Node 04</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gate physical egress blocked</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-bold">
+          LOCKED
+        </span>
+</div>
+<!-- PTZ CCTV -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">videocam</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">CCTV Auto-Tracking</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">PTZ Cam 03 tracking Gate 04 vestibule</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold">
+          RECORDING
+        </span>
+</div>
+<!-- Dispatch & Ack -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-tertiary-container text-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Leadership Escalation</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Acknowledged by Dr. Appiah (Headmistress)</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-tertiary-container font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span> ACKED
+        </span>
+</div>
+</div>
+</div>
+<!-- Rapid Response Action Panel -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-4 space-y-3">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Emergency Marshal Actions</span>
+<!-- Big Discreet Security Callout Button -->
+<button class="w-full py-3.5 px-4 rounded-xl bg-secondary text-on-secondary shadow-md active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 font-label-lg text-label-lg" id="escortBtn">
+<span class="material-symbols-outlined text-[22px] animate-pulse">security</span>
+<span>Request Discreet Security Escort</span>
+</button>
+<p class="hidden text-center font-label-sm text-label-sm text-secondary font-semibold" id="escortNotice">
+      Discreet escort dispatch beacon sent. Units en route (ETA ~60s). Keep calm.
+    </p>
+<!-- Speed Call Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<a class="flex flex-col items-center justify-center p-3 rounded-lg bg-surface-container-low hover:bg-surface-container active:scale-95 transition-all text-center gap-1.5" href="tel:101">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">Headmistress</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ext 101</span>
+</a>
+<a class="flex flex-col items-center justify-center p-3 rounded-lg bg-surface-container-low hover:bg-surface-container active:scale-95 transition-all text-center gap-1.5" href="tel:109">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">local_police</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Security Chief</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Radio Ch 2 / Call</span>
+</a>
+</div>
+</div>
+<!-- Incident Log & Vehicle Capture Note -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-4 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Marshal Field Note</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Gate 04 Incident Log</span>
+</div>
+<div class="space-y-2">
+<label class="block font-label-sm text-label-sm font-bold text-on-surface uppercase" for="plateInput">
+        Vehicle Registration (if observed)
+      </label>
+<div class="relative">
+<span class="material-symbols-outlined text-outline absolute left-3 top-3 text-[18px]">directions_car</span>
+<input class="w-full pl-9 pr-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline outline-none focus:bg-surface-container-lowest transition-colors" id="plateInput" placeholder="e.g. GR 4920-24 (Black Sedan)" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-sm text-label-sm font-bold text-on-surface uppercase" for="statementInput">
+        Verbal Statement / Demeanor Observations
+      </label>
+<textarea class="w-full p-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline outline-none focus:bg-surface-container-lowest transition-colors resize-none" id="statementInput" placeholder="Enter individual's claims, emotional posture, or accompanying individuals..." rows="2"></textarea>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-98 transition-all" id="saveLogBtn">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Log Marshal Observation</span>
+</button>
+<div class="hidden text-center py-1 font-label-sm text-label-sm text-on-tertiary-container font-bold flex items-center justify-center gap-1" id="saveToast">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Appended to Safeguard Registry File
+    </div>
+</div>
+</div>
+<script>
+  (function initSafeguardScreen() {
+    const escortBtn = document.getElementById('escortBtn');
+    const escortNotice = document.getElementById('escortNotice');
+    const saveLogBtn = document.getElementById('saveLogBtn');
+    const saveToast = document.getElementById('saveToast');
+    const plateInput = document.getElementById('plateInput');
+    const statementInput = document.getElementById('statementInput');
+
+    if (escortBtn && escortNotice) {
+      escortBtn.addEventListener('click', () => {
+        escortBtn.classList.replace('bg-secondary', 'bg-surface-container-highest');
+        escortBtn.classList.replace('text-on-secondary', 'text-on-surface-variant');
+        escortBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[20px] text-on-tertiary-container">radio_button_checked</span>
+          <span>Escort Unit Dispatched • Awaiting Arrival</span>
+        `;
+        escortNotice.classList.remove('hidden');
+      });
+    }
+
+    if (saveLogBtn && saveToast) {
+      saveLogBtn.addEventListener('click', () => {
+        if (!plateInput.value && !statementInput.value) {
+          statementInput.focus();
+          return;
+        }
+        saveToast.classList.remove('hidden');
+        saveLogBtn.disabled = true;
+        saveLogBtn.classList.add('opacity-80');
+        setTimeout(() => {
+          saveToast.classList.add('hidden');
+          saveLogBtn.disabled = false;
+          saveLogBtn.classList.remove('opacity-80');
+        }, 3500);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-2"><a class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="scanner" href="mobile-scan.html"><span class="material-symbols-outlined text-[22px]">qr_code_scanner</span><span class="font-label-sm text-label-sm">Scanner</span></a><a class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="active-verification" href="mobile-verify.html"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-sm text-label-sm">Verify</span></a><a class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="pickup-log" href="mobile-log.html"><span class="material-symbols-outlined text-[22px]">assignment_turned_in</span><span class="font-label-sm text-label-sm">Pickup Log</span></a><a aria-current="page" class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 transition-colors text-primary font-bold" data-path="safeguard-alert" href="mobile-alert.html"><span class="material-symbols-outlined text-[22px]">notification_important</span><span class="font-label-sm text-label-sm">Safeguard</span></a></div></nav></body></html>

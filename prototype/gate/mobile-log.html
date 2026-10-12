@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#b5c4ff", "primary": "#011549", "outline": "#757680", "background": "#f7f9ff", "secondary-container": "#df2d23", "on-secondary-container": "#fffbff", "on-secondary": "#ffffff", "surface-tint": "#4c5c92", "surface": "#f7f9ff", "error": "#ba1a1a", "primary-fixed-dim": "#b5c4ff", "on-tertiary-container": "#46a95a", "surface-container": "#e9eef8", "on-primary-fixed": "#03174b", "on-primary": "#ffffff", "inverse-surface": "#2b3138", "on-surface": "#161c23", "surface-variant": "#dde3ec", "surface-bright": "#f7f9ff", "on-primary-container": "#8494cd", "error-container": "#ffdad6", "tertiary": "#001f07", "surface-dim": "#d5dae4", "on-secondary-fixed": "#410001", "primary-container": "#1a2b5e", "surface-container-low": "#eef4fe", "secondary": "#ba0a0c", "on-tertiary": "#ffffff", "surface-container-high": "#e3e8f2", "on-tertiary-fixed-variant": "#00531f", "on-error-container": "#93000a", "on-error": "#ffffff", "tertiary-fixed-dim": "#78dc86", "on-tertiary-fixed": "#002108", "tertiary-fixed": "#94f9a0", "on-surface-variant": "#45464f", "on-background": "#161c23", "on-primary-fixed-variant": "#344478", "outline-variant": "#c5c6d1", "secondary-fixed": "#ffdad5", "secondary-fixed-dim": "#ffb4a9", "inverse-on-surface": "#ecf1fb", "primary-fixed": "#dce1ff", "surface-container-lowest": "#ffffff", "surface-container-highest": "#dde3ec", "on-secondary-fixed-variant": "#930004", "tertiary-container": "#003712" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "margin-sm": "1rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "gutter": "1.5rem" }, "fontFamily": { "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"] }, "fontSize": { "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }] } } } };</script><style>html,body{width:100vw;margin:0;padding:0;body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<title>Carepoint - Mobile Today's Gate Pickup Log</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "gate",
+            label: "Mobile Today's Gate Pickup Log",
+            isMobile: true,
+            relRoot: "../",
+            counterpart: "log.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-4 flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">shield_person</span></div><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Live Sync</span></div><span class="font-label-lg text-label-lg text-primary truncate max-w-[190px]">Gate 04 - Main Gate Area</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Emergency Alert Action" class="h-11 px-3 rounded-lg bg-secondary text-on-secondary flex items-center gap-1.5 active:scale-95 transition-transform"><span class="material-symbols-outlined text-[20px]">campaign</span><span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Alert</span></button><img alt="Officer Emmanuel Tetteh" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWyCxim_7skt8k31G0IotbuvMRM2YBPGoHvoZYsa25Oh7YjCKOaPB9NbEJlz7absl89QYzqeKxYnR448A6GuD58V-wOmg0TgMyyhDKQx0RuvqJw6XlU06RFl_YO6p1OAhJ8yWUqb6Xir1rbx9sdVdTXXX34sj3lncm3yNoCumK2AKJSnHf-teZ8hmWgZoInrNO2R9DoQfxqZAsqD5baLXIUfUmMaFmvVU0wSaAabCoCC1PDgEeMPJThA"/></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-4 pt-2 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Daily Security Roster</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Gate Dismissals Log</h2>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-primary shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">event_available</span>
+<span class="font-label-sm text-label-sm font-bold">Today, 24 Oct</span>
+</div>
+</div>
+<section class="grid grid-cols-4 gap-2 p-3 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low text-center">
+<span class="font-display-lg-mobile text-headline-sm font-bold text-primary">184</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container text-center">
+<span class="font-display-lg-mobile text-headline-sm font-bold text-on-tertiary-container">142</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Released</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-low text-center">
+<span class="font-display-lg-mobile text-headline-sm font-bold text-surface-tint">38</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pavilion</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-error-container text-center">
+<span class="font-display-lg-mobile text-headline-sm font-bold text-secondary">04</span>
+<span class="font-label-sm text-label-sm text-on-error-container font-semibold">Holds</span>
+</div>
+</section>
+<div class="flex flex-col space-y-2.5">
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">search</span>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline outline-none" id="logSearch" placeholder="Search student, guardian or ID..." type="text"/>
+<button aria-label="Scan lookup" class="w-8 h-8 rounded-md bg-surface-container flex items-center justify-center text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 -mx-4 px-4 no-scrollbar" id="divisionChips">
+<button class="filter-chip px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all shadow-sm" data-filter="all">All Levels</button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all" data-filter="Nursery">Nursery</button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all" data-filter="Kindergarten">Kindergarten</button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all" data-filter="Basic">Basic Primary</button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all" data-filter="JHS">JHS</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">schedule</span>
+<span>Live Event Stream (Descending)</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Refreshed 10s ago</span>
+</div>
+<div class="flex flex-col space-y-3 relative" id="timelineList">
+<div class="timeline-card p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col space-y-2.5 transition-all hover:shadow-md" data-division="Basic" data-keywords="kofi nana mensah basic 2 dr. father qr gate 04">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm font-bold text-primary">14:48 GMT</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Verified Exit
+          </span>
+</div>
+<div class="flex items-center gap-1 text-outline font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">door_front</span>
+<span>Node 04-A</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative w-11 h-11 shrink-0">
+<img class="w-full h-full rounded-xl object-cover shadow-sm" data-alt="Warm studio portrait of an 8-year-old Ghanaian boy student with neatly trimmed hair wearing a crisp navy and white private school collared uniform looking confident and smiling brightly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8-H-Z1UH6yvtpXsHtdDdxnlpEZiaRMhZGnGHkaPW3J-KCY-LJj1KuFrouHGW6qu7-btYXkE8F-bvYE-VlkBllfNZU_f7d942Jy6bTQR4QKlWTBxNUCrbq-9JGf9zZTKdRfvZSjc9aUEgX93AbTRXTosWF8HStc5aSfUehziHYQI-ryidL2owUEd3X3IeCGkJY5REgrhOOfeTnqgREfV9d4i8kXasrZ1pqiXI_u1JJ2xeycWA6sIxMYQ"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-on-tertiary-container flex items-center justify-center text-on-primary text-[10px]">
+<span class="material-symbols-outlined text-[10px]">school</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-label-lg text-label-lg text-primary truncate font-bold">Kofi Nana Mensah</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Basic 2 • Class B (Blue)</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0 pl-2">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-primary font-bold">Dr. N. Mensah</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Father</span>
+</div>
+<img class="w-10 h-10 rounded-xl object-cover shadow-sm" data-alt="Close-up professional portrait of a distinguished Ghanaian gentleman in his early 40s wearing gold framed spectacles and a formal dark navy blazer with a warm paternal smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkWrO8iwxbLzbryO-gp-sY53mVssZY2S9-I9Gn_KEWl6-MtnH2do4hY943HHVyMtaXczwfVsa5X-9gJxcqAMYhouk4mrYMu8eByAfY_BGxvkht7AletlTMsbZcAzWBVyrKg3LLB1N7y6_oyBFvL73vBAEBcnbihlhWkHdtN2ylQXjBJN3WiBQImdYwr3pjMirfi_BolyDS1XVlrgs385QWerSQjzL3EP9ZNwlt9sJvLrn9ynuP06BbyQ"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-surface-container-low text-primary-container font-semibold">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">qr_code_2</span>
+<span>Encrypted Parent QR Verified</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">Officer:</span>
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-[10px]">KO</span>
+</div>
+</div>
+</div>
+<div class="timeline-card p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col space-y-2.5 transition-all hover:shadow-md" data-division="Basic" data-keywords="akua boateng basic 4 mrs grace mother biometric gate 02">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm font-bold text-primary">14:45 GMT</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">fingerprint</span> Biometric Pass
+          </span>
+</div>
+<div class="flex items-center gap-1 text-outline font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">door_front</span>
+<span>Node 02-B</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative w-11 h-11 shrink-0">
+<img class="w-full h-full rounded-xl object-cover shadow-sm" data-alt="Portrait of a cheerful 10-year-old West African schoolgirl wearing neat braided hair tied with yellow ribbons and a dark navy school blazer with academy insignia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiYbR1qdlAiqEPoQ5RXyb3QGFT9wXZnfjFmM-1-N3IygwQd9bfaYCJ1jRjbwS63OgVKXClaOjZaZnxxTqtl8hMjm9uRh2ZbO_LUJP1OxVSdqawcwMfLbaXNX9xErDtm8XXyOclBk1PgE1UsAR5YyUf0ED_Wt4jPc5h7mwKnfCJBX21aXCZVsVMYf0Pd8Cbr0Hn5dgtRpuhFys96M3s8FJIv4wRUlkp2Wva0CyDJiSWideF80-k2ilqqQ"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-on-tertiary-container flex items-center justify-center text-on-primary text-[10px]">
+<span class="material-symbols-outlined text-[10px]">school</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-label-lg text-label-lg text-primary truncate font-bold">Akua Boateng</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Basic 4 • Red House</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0 pl-2">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-primary font-bold">Mrs. G. Boateng</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mother</span>
+</div>
+<img class="w-10 h-10 rounded-xl object-cover shadow-sm" data-alt="Graceful African woman in a tailored emerald green dress with a warm kind smile and tasteful pearl earrings standing outdoors in daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlAv9vz8N7ZzHNdw3LasK_efaP6ikOU-MfTpWnUSC-2F1uh9Vl0N-bLaHvosP6fGj-esxa-c2r_zqTz28OZiyfCXqLoDk141Ud_hQxFPfGEDBpvzGuomY_hdRGLWEvTYgft9BEci1VZzGAQ3zMWMhyyvhe8WnZlkYVPp1L87i3ys--mZTv6IJHWoqeAEZbUhLinKGFY3SDLtW_tAcxjY9nPFstvu3lh9DfU_YcrBZOb8QtWXmNaUd1VQ"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-surface-container-low text-primary-container font-semibold">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">fingerprint</span>
+<span>BioMatch 99.8% Confidence</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">Officer:</span>
+<span class="w-6 h-6 rounded-full bg-surface-tint text-on-primary flex items-center justify-center font-bold text-[10px]">AM</span>
+</div>
+</div>
+</div>
+<div class="timeline-card p-3 rounded-xl bg-error-container/40 shadow-sm flex flex-col space-y-2.5 transition-all" data-division="Basic" data-keywords="kwadwo osei basic 4 pending hold unregistered driver headmistress clearance gate 01">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold animate-pulse">14:41 GMT</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">gpp_bad</span> PENDING HOLD
+          </span>
+</div>
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">sensor_door</span>
+<span>Holding Bay 1</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative w-11 h-11 shrink-0">
+<img class="w-full h-full rounded-xl object-cover shadow-sm" data-alt="Front facing portrait of an expressive 9-year-old African schoolboy in primary school uniform sitting in a brightly lit reception area holding a blue notebook." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANuIGDkDViycrvZYMw4EHTo1b9dyk_b4w4StTBhehddAnf2UHL1ItW6X9y91wV6yrb8wkXqp7jSf46ry1SiFEoOMNrUKSMOXzcOXDUvOcItJHRNt9H1BRhmABZXMLmyYCYdlV6yNO_2NpSQvx-ZIRHkaRlhvpUvk7bjEX_RZRvyT4ACyzshg7bMAEHh-Mctu2NZyvmoH-g9dxWQ1PLOZqK7_b1ryXz8aY4Ki225vvZ8G7q5hD2fABY7w"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[10px]">shield</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-label-lg text-label-lg text-primary truncate font-bold">Kwadwo Osei</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Basic 4 • Pavilion Desk</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0 pl-2">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Unregistered Driver</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Silver Corolla (GT-441-21)</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-error text-on-error flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">no_accounts</span>
+</div>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-lowest flex flex-col space-y-1">
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm font-bold">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">priority_high</span> Awaiting Headmistress Call
+          </span>
+<span class="text-on-surface-variant font-normal">Escort Officer: DT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Guardian claims emergency change. Protocol requires direct verbal clearance and signed logbook.</p>
+</div>
+</div>
+<div class="timeline-card p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col space-y-2.5 transition-all hover:shadow-md" data-division="Basic" data-keywords="abena serwaa class 1 basic primary auntie joyce delegated otp gate 03">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm font-bold text-primary">14:38 GMT</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> One-Time OTP Pass
+          </span>
+</div>
+<div class="flex items-center gap-1 text-outline font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">door_front</span>
+<span>Node 03-C</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative w-11 h-11 shrink-0">
+<img class="w-full h-full rounded-xl object-cover shadow-sm" data-alt="Portrait of a petite 6-year-old African schoolgirl smiling warmly in her yellow and navy school smock uniform with neatly parted hair." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUSJUVRSTQUdEMdId7bm3vmeeoRh7h-M-m_aafKAaUCRSvOcr2GpACPk3jax5VPFtToUFYXCezII5lV8wRJER0O6-FnskvMaAxUBUju5J5e4tkh9Dc8HbbctPL1W6vhdRTLRHe5O0wF3N1VGMOZFLwxZHHscFZUqFs_-xCKpvkT7iRZQbKEQScJ896LwV_j3ysEtpE3V-5KNgAYVj_lHmtlPBFeOpsQMuR6B3Ev4KfcOkWUhrorizCYw"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-on-tertiary-container flex items-center justify-center text-on-primary text-[10px]">
+<span class="material-symbols-outlined text-[10px]">school</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-label-lg text-label-lg text-primary truncate font-bold">Abena Serwaa</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Class 1 • Green House</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0 pl-2">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-primary font-bold">Auntie Joyce</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Delegated Kin</span>
+</div>
+<img class="w-10 h-10 rounded-xl object-cover shadow-sm" data-alt="Portrait of an African aunt in vibrant yellow and blue kente scarf smiling warmly, outdoors in bright sun near school campus entrance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3w8tI3UP-Q_XSpL64B-YBLI1pf7BLWP8YKtHEWiEV6mFNcb0XU1m94COkrt_q5vuaQVGYuKrB5XcNlkszYgn5EIXDyAcNpRiepU9wmhh6aYNQ0IcGt5BSIn5Hqye6VmkaK_B_Ccf9sP7qY9-elGTqcaVVQtVflR8rltif7ELGQvy0Hl0NEPx2gCKdt2G9a15HbB1w0xS6fMNkOD1BkqUiGDd9sGVIuDL7NP_vtuHtChPKDMoU6WM5Cg"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-surface-container-low text-primary-container font-semibold">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">pin</span>
+<span>SMS OTP Authorized by Mother</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">Officer:</span>
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-[10px]">EK</span>
+</div>
+</div>
+</div>
+<div class="timeline-card p-3 rounded-xl bg-surface-container-low flex items-center gap-3" data-division="all" data-keywords="gate area open security marshals broadcast gate operational">
+<div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">meeting_room</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary font-bold">Gate Area &amp; Gates Opened</span>
+<span class="font-label-sm text-label-sm font-bold text-outline">14:30 GMT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Full dismissal protocol active across 4 security checkpoint turnstiles.</p>
+</div>
+</div>
+</div>
+<section class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary font-bold">Gate Supervisor Actions</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-semibold">Shift #2</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-primary-container text-on-primary active:scale-95 transition-all shadow-sm" id="exportManifestBtn">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span class="font-label-sm text-label-sm font-bold">Export Manifest</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-surface-container-high text-primary hover:bg-surface-variant active:scale-95 transition-all" id="manualCheckOutBtn">
+<span class="material-symbols-outlined text-[18px]">person_search</span>
+<span class="font-label-sm text-label-sm font-bold">Manual Search</span>
+</button>
+</div>
+</section>
+<div class="fixed bottom-20 left-4 right-4 bg-primary text-on-primary py-3 px-4 rounded-xl shadow-xl flex items-center gap-3 opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4 z-50" id="toastNotification">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container" id="toastIcon">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium flex-1" id="toastMessage">Gate manifest generated successfully.</span>
+</div>
+</div>
+<script>
+  (function () {
+    const searchInput = document.getElementById('logSearch');
+    const cards = document.querySelectorAll('.timeline-card');
+    const chips = document.querySelectorAll('.filter-chip');
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+    const exportBtn = document.getElementById('exportManifestBtn');
+    const manualBtn = document.getElementById('manualCheckOutBtn');
+
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    function showToast(message, iconName = 'check_circle') {
+      if (!toast) return;
+      toastMsg.textContent = message;
+      toastIcon.textContent = iconName;
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2600);
+    }
+
+    function applyFilters() {
+      cards.forEach(card => {
+        const division = card.getAttribute('data-division') || '';
+        const keywords = card.getAttribute('data-keywords') || '';
+        const matchesFilter = currentFilter === 'all' || division === currentFilter;
+        const matchesSearch = searchQuery === '' || keywords.toLowerCase().includes(searchQuery.toLowerCase());
+
+        if (matchesFilter && matchesSearch) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+          c.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        chip.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+        chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+        currentFilter = chip.getAttribute('data-filter') || 'all';
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        applyFilters();
+      });
+    }
+
+    if (exportBtn) {
+      exportBtn.addEventListener('click', () => {
+        showToast('Exporting encrypted gate log (PDF/CSV)...', 'file_download_done');
+      });
+    }
+
+    if (manualBtn) {
+      manualBtn.addEventListener('click', () => {
+        showToast('Opening national biometric & roster lookup...', 'fingerprint');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-2"><a class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="scanner" href="mobile-scan.html"><span class="material-symbols-outlined text-[22px]">qr_code_scanner</span><span class="font-label-sm text-label-sm">Scanner</span></a><a class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="active-verification" href="mobile-verify.html"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-sm text-label-sm">Verify</span></a><a aria-current="page" class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 transition-colors text-primary font-bold" data-path="pickup-log" href="mobile-log.html"><span class="material-symbols-outlined text-[22px]">assignment_turned_in</span><span class="font-label-sm text-label-sm">Pickup Log</span></a><a class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="safeguard-alert" href="mobile-alert.html"><span class="material-symbols-outlined text-[22px]">notification_important</span><span class="font-label-sm text-label-sm">Safeguard</span></a></div></nav></body></html>

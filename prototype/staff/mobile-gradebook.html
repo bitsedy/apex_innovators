@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>html,body{width:100vw;margin:0;padding:0;background-color:#f7f9ff;body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#011549", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#930004", "on-error": "#ffffff", "secondary-fixed": "#ffdad5", "on-primary-fixed-variant": "#344478", "on-surface-variant": "#45464f", "on-surface": "#161c23", "outline-variant": "#c5c6d1", "inverse-surface": "#2b3138", "surface-dim": "#d5dae4", "on-tertiary-fixed": "#002108", "primary-fixed": "#dce1ff", "inverse-primary": "#b5c4ff", "surface-variant": "#dde3ec", "primary-container": "#1a2b5e", "on-error-container": "#93000a", "on-secondary-container": "#fffbff", "background": "#f7f9ff", "secondary": "#ba0a0c", "on-primary-fixed": "#03174b", "tertiary-container": "#003712", "on-tertiary-container": "#46a95a", "surface-container-high": "#e3e8f2", "on-secondary": "#ffffff", "surface-container": "#e9eef8", "secondary-container": "#df2d23", "surface-container-lowest": "#ffffff", "surface": "#f7f9ff", "on-tertiary-fixed-variant": "#00531f", "surface-tint": "#4c5c92", "surface-container-highest": "#dde3ec", "error": "#ba1a1a", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b5c4ff", "secondary-fixed-dim": "#ffb4a9", "on-primary-container": "#8494cd", "tertiary-fixed-dim": "#78dc86", "error-container": "#ffdad6", "inverse-on-surface": "#ecf1fb", "on-secondary-fixed": "#410001", "surface-bright": "#f7f9ff", "on-background": "#161c23", "tertiary": "#001f07", "tertiary-fixed": "#94f9a0", "outline": "#757680", "surface-container-low": "#eef4fe" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "2rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-sm": "1rem", "space-sm": "0.5rem", "margin-sm": "1rem" }, fontFamily: { "headline-xl": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"] }, fontSize: { "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["11px", { "lineHeight": "15px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-lg": ["12.5px", { "lineHeight": "17px", "letterSpacing": "0.03em", "fontWeight": "700" }], "body-sm": ["12.5px", { "lineHeight": "17px", "fontWeight": "400" }], "headline-lg": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-xl-mobile": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["17px", { "lineHeight": "22px", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "13px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "700" }], "body-lg": ["15.5px", { "lineHeight": "23px", "fontWeight": "400" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<title>Carepoint - Mobile Staff Gradebook</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "staff",
+            label: "Mobile Staff Gradebook",
+            isMobile: true,
+            relRoot: "../",
+            counterpart: "gradebook.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-gutter-sm flex flex-col justify-center"><div class="flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-sm min-w-0 flex-1"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shrink-0"><span class="material-symbols-outlined text-[20px]">school</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Carepoint</span><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase shrink-0">Term 1</span></div><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Mind • Heart • Hands</span></div></div><div class="flex items-center gap-space-xs shrink-0"><div id="mobile-staff-duty-badge" onclick="openStaffDutyModal()" class="cursor-pointer flex items-center gap-1 px-space-xs py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0" title="Shift Status - Tap to Clock-Out"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="hidden xs:inline">Clocked In 07:15</span><span class="xs:hidden">07:15</span></div><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA"/></div></div><div class="hidden"><span class="font-headline-sm text-headline-sm">Staff Gradebook</span></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-20 bg-surface"><div class="flex flex-col w-full px-gutter-sm space-y-space-md">
+<!-- Interactive Context Header & Selectors -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<!-- Class & Term Quick Badge Strip -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wide">
+          Basic 2 Sunflower
+        </span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+          28 Enrolled
+        </span>
+</div>
+<div class="flex items-center gap-1 text-tertiary-container">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">NaSIA SBA Aligned</span>
+</div>
+</div>
+<!-- Subject Selector -->
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1" for="subjectSelect">Subject</label>
+<div class="relative flex items-center">
+<div class="absolute left-3 flex items-center pointer-events-none text-primary">
+<span class="material-symbols-outlined text-[20px]">science</span>
+</div>
+<select class="w-full bg-surface-container-low text-on-surface font-headline-sm text-headline-sm rounded-lg pl-10 pr-10 py-2.5 appearance-none focus:outline-none focus:bg-surface-container-high transition-colors" id="subjectSelect">
+<option selected="" value="science">Integrated Science</option>
+<option value="math">Mathematics</option>
+<option value="computing">Computing</option>
+<option value="english">English Language</option>
+<option value="twi">Twi (Asante)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 pointer-events-none text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Assessment Component Banner with SBA Weighting Tag -->
+<div class="bg-primary text-on-primary rounded-lg p-space-md flex items-start justify-between gap-space-sm shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary-container rounded-full opacity-40 pointer-events-none"></div>
+<div class="space-y-0.5 z-10">
+<div class="flex items-center gap-1.5 text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">assignment</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Assessment Component</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-primary leading-tight">
+          Continuous Assessment 2 (Class Practical)
+        </p>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim pt-0.5">
+          Botany Specimen Dissection &amp; Plant Morphology
+        </p>
+</div>
+<div class="z-10 shrink-0 text-right">
+<span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold shadow-sm">
+          30% SBA Weight
+        </span>
+<span class="block text-on-primary-container font-label-sm text-label-sm mt-1">Max: 30 pts</span>
+</div>
+</div>
+</section>
+<!-- Grading Progress & Real-time Class Insights -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">donut_large</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Grading Progress</h2>
+</div>
+<span class="font-label-lg text-label-lg text-primary bg-primary-fixed/60 px-space-sm py-0.5 rounded-full" id="completionRatio">
+        26 / 28 Graded
+      </span>
+</div>
+<!-- Tactile Visual Progress Bar -->
+<div class="w-full bg-surface-container h-3 rounded-full overflow-hidden flex">
+<div class="bg-tertiary-container h-full transition-all duration-500 rounded-full" style="width: 87.5%"></div>
+</div>
+<!-- Summary Metrics Bento Grid -->
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs text-center">
+<div class="bg-surface-container-low rounded-lg p-2 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Class Avg</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">82.4%</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Highest</span>
+<span class="font-headline-sm text-headline-sm text-on-tertiary-fixed-variant font-bold">96%</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lowest</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">64%</span>
+</div>
+</div>
+</section>
+<!-- Quick Filter / Sort Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1">
+<button class="px-space-md py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shrink-0 shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+<span>All Students (28)</span>
+</button>
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">pending</span>
+<span>Pending (2)</span>
+</button>
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span>Grade 1 (18)</span>
+</button>
+</div>
+<!-- Students Scoring List -->
+<section class="space-y-space-md">
+<!-- Student Card 1: Kofi Nana Mensah (Exemplary) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm transition-all" id="student-kofi">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Close-up headshot of a smiling 9-year-old Ghanaian schoolboy named Kofi in crisp navy and gold school uniform, warm soft natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRtZRB18gItMFigdysgX082TsNwBkPrXmTPnKxA2TyENiWEqJwdg1nunJNoAwtqbSXs5o9Xxd26kWWhFls49tjohwvPyNs97-fLTv6lN0DTqwkzd83Mqq7yo2jV-ywOPHAgZGSfnDlNMJs80QD6nXG9O30idEN88EfpnPy_1emG5StgwL0_yRgG21VOUAxUfpfRbjoAUs7FI4FVcdMJturv5agOnfzDXMf9thDUB4nWBHxnobZYLGxuQ"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-tertiary-fixed border-2 border-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-on-tertiary-fixed font-bold">check</span>
+</span>
+</div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Kofi Nana Mensah</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: CP-2023-0482 • Roll #01</span>
+</div>
+</div>
+<!-- Status Indicator Pill -->
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider shrink-0">
+          Grade 1
+        </span>
+</div>
+<!-- Stepper / Input Control Bar -->
+<div class="flex items-center justify-between bg-surface-container-low rounded-lg p-2 gap-space-sm">
+<div class="flex items-center gap-1.5">
+<button aria-label="Decrease score" class="w-9 h-9 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center active:scale-95 transition-transform" onclick="adjustScore('kofi-score', -0.5)" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="flex items-baseline px-2">
+<input aria-label="Score out of 30" class="w-14 bg-transparent text-center font-headline-sm text-headline-sm text-primary font-bold focus:outline-none" id="kofi-score" max="30" min="0" step="0.5" type="number" value="27.5"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ 30</span>
+</div>
+<button aria-label="Increase score" class="w-9 h-9 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center active:scale-95 transition-transform" onclick="adjustScore('kofi-score', 0.5)" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="text-right">
+<div class="font-label-md text-label-md text-primary font-bold">91.6%</div>
+<div class="font-label-sm text-label-sm text-on-tertiary-fixed-variant font-medium">Exceeding Expectation</div>
+</div>
+</div>
+<!-- Quick Feedback / Remark Tags -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Assessment Observation:</span>
+<span class="text-tertiary-container text-label-sm flex items-center gap-0.5 font-semibold">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> Verified
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface bg-surface-container-low p-2 rounded-lg italic">
+          “Outstanding practical botany dissection. Accurate leaf vein classification and sharp microscope handling.”
+        </p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<button class="px-2.5 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span>✓</span> Exemplary Work
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-dim">
+            Lab Safety Star
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-dim">
+            Peer Helper
+          </button>
+</div>
+</div>
+</article>
+<!-- Student Card 2: Akua Boateng (High Achiever) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm transition-all" id="student-akua">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of an attentive Ghanaian elementary school girl with neatly braided hair, wearing a navy and white school uniform with a soft focused classroom background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxtX3EFI0psz4sQfhcV5Tt03jpIlN-dkahmscW6bZLtLtJFvkmYSM_Z7mNlyPQ-7vNlln6fRfu8XzYHrnhWVJBtplpENL_48X6kzBY_oKayS92W8TopEhzvqOkPaEb57G_Pc_j_x3G-ylSZMxm6OAPqKma4vFSOj5bWQ_CTSttiIeOS_P2DuLD_E-7uz-vsZeaq34sPJPAmFy2Gs9JipW7tkq7BaajolfUgZidwO2Z2wNS_7U92nefsA"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-tertiary-fixed border-2 border-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-on-tertiary-fixed font-bold">check</span>
+</span>
+</div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Akua Boateng</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: CPS-2021-019 • Index #07</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-primary-fixed-variant font-label-sm text-label-sm font-bold uppercase tracking-wider shrink-0">
+          Grade 2
+        </span>
+</div>
+<!-- Stepper / Input Control Bar -->
+<div class="flex items-center justify-between bg-surface-container-low rounded-lg p-2 gap-space-sm">
+<div class="flex items-center gap-1.5">
+<button aria-label="Decrease score" class="w-9 h-9 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center active:scale-95 transition-transform" onclick="adjustScore('akua-score', -0.5)" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="flex items-baseline px-2">
+<input aria-label="Score out of 30" class="w-14 bg-transparent text-center font-headline-sm text-headline-sm text-primary font-bold focus:outline-none" id="akua-score" max="30" min="0" step="0.5" type="number" value="24.0"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ 30</span>
+</div>
+<button aria-label="Increase score" class="w-9 h-9 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center active:scale-95 transition-transform" onclick="adjustScore('akua-score', 0.5)" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="text-right">
+<div class="font-label-md text-label-md text-primary font-bold">80.0%</div>
+<div class="font-label-sm text-label-sm text-primary-container font-medium">Meeting Expectation</div>
+</div>
+</div>
+<!-- Quick Feedback / Remark Tags -->
+<div class="space-y-1.5">
+<div class="flex flex-wrap gap-1.5">
+<button class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm flex items-center gap-1">
+<span>✓</span> Detailed Lab Notes
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-dim">
+            Accurate Diagrams
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-dim">
+            Needs Reinforcement
+          </button>
+</div>
+</div>
+</article>
+<!-- Student Card 3: Kwadwo Osei (Pending / Medical Absence) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm" id="student-kwadwo">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of an 8-year-old Ghanaian schoolboy with a thoughtful expression in a blue school sweater in a clean brightly lit school hallway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmqKcAHhFoXNhFKmu26nXqAj_mGDn-QpETgUpgORcnafpxM_m_Gfa1kbQsnm6WO0pBNFeTd_qkv1ASCK_oOQLPFzeeRRyzG23M7vwbuLw484-gGAyjtg7VN9_2Lh1GBSwiQQFAN6hU3SZF5jcV3L3KdviEqNdislls66Udt-2vawTvqltp8qujhpW3A1T3xL9p9VFDDjGz_iLWar3SvXxl6jOFSfGd_WIVmcEwFxovTvGDmS-RegBSQg"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] font-bold">schedule</span>
+</span>
+</div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Kwadwo Osei</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: CPS-2021-062 • Index #12</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold uppercase tracking-wider shrink-0">
+          Pending
+        </span>
+</div>
+<!-- Medical Excuse Info Box -->
+<div class="bg-secondary-fixed/40 rounded-lg p-space-sm flex items-start gap-space-xs text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[20px] shrink-0 text-secondary">medical_services</span>
+<div class="min-w-0 text-left">
+<p class="font-label-sm text-label-sm font-bold">Absent with Medical Excuse</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Validated by School School Clinic. Makeup practical assigned for Friday 2:00 PM.</p>
+</div>
+</div>
+<!-- Pending Action Controls -->
+<div class="flex items-center justify-between pt-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md flex items-center gap-1 hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Reschedule Test</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1 active:scale-95 transition-transform" onclick="recordMakeupScore()">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>Enter Score</span>
+</button>
+</div>
+</article>
+<!-- Student Card 4: Efua Darko (Attention / Needs Reinforcement) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Headshot of a bright Ghanaian primary school student girl looking curious in a warm classroom setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0IE5f9fPMebpg1pkh_KTSOBlHy9-VgPXOkyNZHLK8wKS_G2DJeBYgebg9kBrcAfgHPPaESIoDpnaWNWcctif_Q_5bvOkmezor6eBmQLZO9X_NLT9iTziLjdQFj7f2oUzO9zBWQ_dcHvIG3H5vVkFljjX8g-mx0ODTZoJUqPk1bKw8a5PnMQQMug9IuDfkz0Lq4lnIU8-1se7b4wW35TPFXJ5DcbJZ6x7X4BLZgkvopskXzGRwpHhVSA"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-tertiary-fixed border-2 border-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-on-tertiary-fixed font-bold">check</span>
+</span>
+</div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Efua Darko</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: CPS-2021-084 • Index #15</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold uppercase tracking-wider shrink-0">
+          Grade 3
+        </span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low rounded-lg p-2 gap-space-sm">
+<div class="flex items-center gap-1.5">
+<button aria-label="Decrease score" class="w-9 h-9 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center active:scale-95 transition-transform" onclick="adjustScore('efua-score', -0.5)" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="flex items-baseline px-2">
+<input aria-label="Score out of 30" class="w-14 bg-transparent text-center font-headline-sm text-headline-sm text-primary font-bold focus:outline-none" id="efua-score" max="30" min="0" step="0.5" type="number" value="19.5"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ 30</span>
+</div>
+<button aria-label="Increase score" class="w-9 h-9 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center active:scale-95 transition-transform" onclick="adjustScore('efua-score', 0.5)" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="text-right">
+<div class="font-label-md text-label-md text-primary font-bold">65.0%</div>
+<div class="font-label-sm text-label-sm text-secondary font-medium">Needs Reinforcement</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<button class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm flex items-center gap-1">
+<span>✓</span> Incomplete Submission
+        </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-dim">
+          Follow-up Remedial
+        </button>
+</div>
+</article>
+</section>
+<!-- Sticky Bottom Quick Actions & Verification -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">cloud_done</span>
+<span>Auto-saved to Carepoint Cloud (10:42 AM)</span>
+</div>
+<button class="text-primary font-label-sm text-label-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[16px]">history</span> History
+      </button>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-2 pt-1">
+<button class="w-full py-3 px-space-md rounded-lg bg-secondary text-on-secondary font-headline-sm text-headline-sm flex items-center justify-center gap-space-xs shadow-md active:scale-[0.99] transition-transform" onclick="publishMarks()" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Publish to Parents &amp; Academic Head</span>
+</button>
+<button class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs active:bg-surface-dim transition-colors" onclick="saveDraftNotification()" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+<span>Save Offline Draft</span>
+</button>
+</div>
+</section>
+<!-- Notification Toast Modal Slot (Client-side interactive) -->
+<div class="hidden fixed bottom-24 left-4 right-4 bg-primary text-on-primary p-3 rounded-lg shadow-xl flex items-center justify-between z-50 transition-all" id="toastMessage">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]" id="toastIcon">check_circle</span>
+<span class="font-body-sm text-body-sm" id="toastText">Marks draft saved successfully!</span>
+</div>
+<button class="text-on-primary opacity-80 hover:opacity-100" onclick="dismissToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  function adjustScore(inputId, delta) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    let val = parseFloat(input.value) || 0;
+    val = Math.max(0, Math.min(30, val + delta));
+    input.value = val.toFixed(1);
+    showToast('Updated ' + inputId.split('-')[0] + ' score to ' + val.toFixed(1) + ' / 30');
+  }
+
+  function recordMakeupScore() {
+    showToast('Scheduled makeup lab practical for Kwadwo Osei');
+  }
+
+  function saveDraftNotification() {
+    showToast('All 32 student scores saved to local draft!');
+  }
+
+  function publishMarks() {
+    showToast('Publishing requested! Submitted for Academic Head approval.');
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toastMessage');
+    const toastText = document.getElementById('toastText');
+    if (!toast || !toastText) return;
+    toastText.innerText = msg;
+    toast.classList.remove('hidden');
+    clearTimeout(window.toastTimer);
+    window.toastTimer = setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 3200);
+  }
+
+  function dismissToast() {
+    const toast = document.getElementById('toastMessage');
+    if (toast) toast.classList.add('hidden');
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(1,21,73,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-home" href="mobile-dashboard.html"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-sm text-label-sm">Home</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-attendance" href="mobile-attendance.html"><span class="material-symbols-outlined text-[24px]">how_to_reg</span><span class="font-label-sm text-label-sm">Attendance</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 transition-colors text-primary font-bold" data-path="staff-gradebook" href="mobile-gradebook.html"><span class="material-symbols-outlined text-[24px]">assignment_turned_in</span><span class="font-label-sm text-label-sm">Gradebook</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-health" href="mobile-health.html"><span class="material-symbols-outlined text-[24px]">health_and_safety</span><span class="font-label-sm text-label-sm">Welfare</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-more" href="mobile-timetable.html"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-sm text-label-sm">More</span></a></div></nav></body></html>

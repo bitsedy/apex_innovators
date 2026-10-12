@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>html,body{width:100vw;margin:0;padding:0;body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline":"#757680","surface-container-high":"#e3e8f2","secondary-container":"#df2d23","on-tertiary":"#ffffff","surface-container-low":"#eef4fe","on-primary":"#ffffff","on-primary-container":"#8494cd","on-secondary-fixed-variant":"#930004","on-tertiary-fixed-variant":"#00531f","surface-bright":"#f7f9ff","error-container":"#ffdad6","on-primary-fixed":"#03174b","tertiary-container":"#003712","on-surface":"#161c23","on-secondary-container":"#fffbff","primary-fixed":"#dce1ff","on-primary-fixed-variant":"#344478","secondary-fixed-dim":"#ffb4a9","surface-container-highest":"#dde3ec","secondary-fixed":"#ffdad5","inverse-primary":"#b5c4ff","inverse-on-surface":"#ecf1fb","on-background":"#161c23","outline-variant":"#c5c6d1","on-error-container":"#93000a","error":"#ba1a1a","on-error":"#ffffff","primary-container":"#1a2b5e","surface-variant":"#dde3ec","surface-container":"#e9eef8","on-surface-variant":"#45464f","primary-fixed-dim":"#b5c4ff","on-secondary":"#ffffff","surface-dim":"#d5dae4","surface-tint":"#4c5c92","background":"#eef2f6","on-secondary-fixed":"#410001","surface-container-lowest":"#ffffff","on-tertiary-fixed":"#002108","tertiary-fixed":"#94f9a0","secondary":"#ba0a0c","tertiary":"#001f07","inverse-surface":"#2b3138","tertiary-fixed-dim":"#78dc86","primary":"#011549","on-tertiary-container":"#46a95a","surface":"#eef2f6"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"gutter-sm":"1rem","margin-sm":"1rem","space-lg":"1.5rem","gutter":"1.5rem","space-xl":"2.5rem","space-sm":"0.5rem","space-xs":"0.25rem","space-md":"1rem","margin":"2rem"},fontFamily:{"body-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"]},fontSize:{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"display-lg":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.04em","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"800"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}]}}}}</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<title>Carepoint - Mobile User Provisioning</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "sysadmin",
+            label: "Mobile User Provisioning",
+            isMobile: true,
+            relRoot: "../",
+            counterpart: "provisioning.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(1,21,73,0.06)] pt-safe"><div class="h-20 px-gutter-sm flex flex-col justify-center gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm tracking-widest uppercase">SUPER ADMIN</span><span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-mono">ROOT</span></div><div class="flex items-center gap-space-xs"><button aria-label="Emergency Incident Ping" class="w-11 h-11 flex items-center justify-center rounded-full bg-error-container text-on-error-container transition-transform active:scale-95"><span class="material-symbols-outlined text-[20px]">warning</span></button><img alt="Ing. Kwabena Boateng" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDficibdtzh0xCg-RYeNu3YjQOB2wMrnGhDiTxfeEkMCvfdTGILXcQePEO7gWXcB0Go5WFlo_hEWJ02SQiIcocAII6hOv3v1Vsp7KFfSldX32a6rzPOlL4ReSyMBYgRP4crioNrulufNiTAaSTQ4t8TQjfTn2QMKIucNdX2AAUv4Tqdihfy2Ta3gZpSWIFxOD5ap0xX9esm5pfkFeCaRACUrCY2TlfFs2xIlboc8vEYjBoZW3eIjBokfQ"/></div></div><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Accra Node 01 • Active</span></div><span class="font-label-md text-label-md uppercase text-primary font-bold tracking-wider">Users Provisioning</span></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-10">
+<!-- Top Ambient Institutional Banner (Subtle Branding Bar) -->
+<div class="w-full flex h-1.5 overflow-hidden">
+<div class="flex-1 bg-primary"></div>
+<div class="w-24 bg-secondary"></div>
+<div class="w-16 bg-on-tertiary-container"></div>
+</div>
+<div class="px-gutter-sm pt-space-md flex flex-col gap-space-lg">
+<!-- Header Metrics Mosaic -->
+<section class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">shield_person</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Directory Topology</span>
+</div>
+<span class="font-label-sm text-label-sm font-mono text-tertiary-fixed-dim bg-tertiary-container px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim animate-ping"></span>
+          RBAC SYNCHRONIZED
+        </span>
+</div>
+<!-- Compact 2x2 Bento Metric Surface -->
+<div class="grid grid-cols-2 gap-2 mt-1">
+<div class="p-space-md rounded-xl bg-surface-container shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wide">Principals</span>
+<span class="material-symbols-outlined text-[18px] text-primary">groups</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md font-bold text-primary">1,248</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">total</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> 4 Root Super Admins
+          </span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wide">MFA Health</span>
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">verified_user</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md font-bold text-on-tertiary-container">100%</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container">bound</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span> Hardware + Passkey
+          </span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wide">Revocation State</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">token</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md font-bold text-primary">0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">threats</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">
+            0 Compromised Tokens
+          </span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-high shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wide">Sync Latency</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">bolt</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">14<span class="text-xs">ms</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">node-mesh</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">
+            Cross-cluster parity
+          </span>
+</div>
+</div>
+</section>
+<!-- Provisioning Action Button -->
+<button class="w-full flex items-center justify-center gap-space-xs py-3.5 px-4 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-md active:scale-[0.99] transition-transform" id="open-provision-modal">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>+ Provision New Principal / IAM Role</span>
+</button>
+<!-- Search & Role Chip Toolbar -->
+<section class="flex flex-col gap-space-sm">
+<!-- Search Input -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[20px] text-on-surface-variant pointer-events-none">search</span>
+<input class="w-full pl-11 pr-10 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm placeholder:text-outline shadow-sm focus:outline-none focus:bg-surface-container-low transition-colors" id="iam-search" placeholder="Filter Name, Email, or UUID..." type="text"/>
+<button class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface" id="clear-search">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- Horizontal Scrollable Role Filters -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="role-chip shrink-0 px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary shadow-sm flex items-center gap-1.5 transition-all" data-filter="all">
+<span>All Roles</span>
+<span class="bg-surface-container-lowest/20 px-1.5 py-0.5 rounded-full text-[10px]">124</span>
+</button>
+<button class="role-chip shrink-0 px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="superadmin">
+<span>Super Admin</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded-full text-[10px]">4</span>
+</button>
+<button class="role-chip shrink-0 px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="schooladmin">
+<span>School Admin</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded-full text-[10px]">6</span>
+</button>
+<button class="role-chip shrink-0 px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="faculty">
+<span>Faculty</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded-full text-[10px]">48</span>
+</button>
+<button class="role-chip shrink-0 px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="sentry">
+<span>Gate Marshals</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded-full text-[10px]">8</span>
+</button>
+<button class="role-chip shrink-0 px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all flex items-center gap-1.5" data-filter="parents">
+<span>Parents</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded-full text-[10px]">58</span>
+</button>
+</div>
+</section>
+<!-- Principals Directory (Card List) -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-bold">Assigned Principals</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 3 of 124</span>
+</div>
+<!-- CARD 1: Dr. Elizabeth Appiah -->
+<article class="principal-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-md relative overflow-hidden transition-all" data-role="superadmin">
+<!-- Structural Accent Trim Strip -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
+<div class="flex items-start justify-between gap-space-sm pt-1">
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up photographic portrait of Dr Elizabeth Appiah, Ghanaian female academic executive in navy blazer with warm confident expression, gentle studio daylight, authentic university leadership style, muted neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSHdkQzkqUCa6DkY2eqg1sJQl9LBLk2AvAKjnXBbsaRYhgHpq53kbSzxLCtcFOQS9wuQ-sSyToDnvFwTzaUUm96dwiTyiI_i7Xp9eyQ0OW-0pCHphiqW3usSFqgPz2zyP35uzhf84PVsb_2kEhZoaWQ5iFfbwqehAlraIWw37792s2YVc2c6qbZjeSiukkAqHgWKHa7snGcFGPPB2CsHflnmiicfzfGZV5ltnyt-hQu0b8tiQz_ffZeQ"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-on-tertiary-container ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="min-w-0 flex flex-col">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Dr. Elizabeth Appiah</h3>
+<span class="material-symbols-outlined text-[16px] text-primary" title="Root Verified">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono truncate">e.appiah@carepoint.edu.gh</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wide shrink-0">
+            Apex Exec
+          </span>
+</div>
+<!-- Metadata Grid -->
+<div class="rounded-lg bg-surface-container-low p-space-sm flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">security</span> Clearance:
+            </span>
+<span class="font-semibold text-primary">Tier 1 Administrative</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span> 2FA Protocol:
+            </span>
+<span class="text-on-surface font-mono text-xs">FIDO2 Hardware Key + Bio</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Session Status:
+            </span>
+<span class="text-on-tertiary-container font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Active 12m ago (Console)
+            </span>
+</div>
+</div>
+<!-- Quick Action Trigger Ribbon -->
+<div class="flex items-center gap-2 pt-1 overflow-x-auto no-scrollbar">
+<button class="action-btn flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm hover:bg-surface-container-high transition-colors whitespace-nowrap active:scale-95">
+<span class="material-symbols-outlined text-[16px]">policy</span>
+<span>Audit Token</span>
+</button>
+<button class="action-btn flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm hover:bg-surface-container-high transition-colors whitespace-nowrap active:scale-95">
+<span class="material-symbols-outlined text-[16px]">key</span>
+<span>Rotate Key</span>
+</button>
+<button class="action-btn flex items-center gap-1 px-3 py-1.5 rounded-lg bg-error-container text-on-error-container font-label-sm text-label-sm hover:opacity-90 transition-opacity whitespace-nowrap active:scale-95">
+<span class="material-symbols-outlined text-[16px]">block</span>
+<span>Revoke Clearance</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: Emmanuel Tetteh -->
+<article class="principal-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-md relative overflow-hidden transition-all" data-role="sentry">
+<!-- Structural Accent Trim Strip (Field Security Gold/Amber) -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary"></div>
+<div class="flex items-start justify-between gap-space-sm pt-1">
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait photograph of Emmanuel Tetteh, middle aged Ghanaian campus security officer in crisp black uniform collar, friendly and authoritative demeanor, outdoor gate environment softly blurred in background, natural overcast lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvpyXQanKFhxPENx_J-ucp9sUm0eu1z0Z2Dtzp1g_MT4GfKCteCt2vmr7kiVFSOEuvq3YrRL67CgB1eWXDAmetZ1DDylMB1XzRLDMOS1eoa4mECLDdJ9F6lTjVSxegg8jV_NH7mewFq3OUojgXCcspZhLerxR4lOHBhN5ktPZmIYrC-EPmt0N9Iebi7wzin411ReaA94Ve3jEzSKpfHncB8_oIAR6NhjwBCjh3jGWjk_XfRPoyq2VkWg"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-on-tertiary-container ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="min-w-0 flex flex-col">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Emmanuel Tetteh</h3>
+<span class="material-symbols-outlined text-[16px] text-secondary">badge</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono truncate">sentry.04@carepoint.sec</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wide shrink-0">
+            Sentry / Marshal
+          </span>
+</div>
+<!-- Metadata Grid -->
+<div class="rounded-lg bg-surface-container-low p-space-sm flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">terminal</span> Field Boundary:
+            </span>
+<span class="font-semibold text-primary">Tier 3 Terminal • Node 04</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">tablet_android</span> Bound Hardware:
+            </span>
+<span class="text-on-surface font-mono text-xs">Rugged Tablet SN-04-ACC</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sensors</span> Gate Telemetry:
+            </span>
+<span class="text-on-tertiary-container font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span> Active Shift • Main Arch
+            </span>
+</div>
+</div>
+<!-- Quick Action Trigger Ribbon -->
+<div class="flex items-center gap-2 pt-1 overflow-x-auto no-scrollbar">
+<button class="action-btn flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm hover:bg-surface-container-high transition-colors whitespace-nowrap active:scale-95">
+<span class="material-symbols-outlined text-[16px]">phonelink_lock</span>
+<span>Lock Station</span>
+</button>
+<button class="action-btn flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm hover:bg-surface-container-high transition-colors whitespace-nowrap active:scale-95">
+<span class="material-symbols-outlined text-[16px]">sync_saved_locally</span>
+<span>Re-bind Device</span>
+</button>
+<button class="action-btn flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high transition-colors whitespace-nowrap active:scale-95">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Ping Terminal</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: Kwame Donkor -->
+<article class="principal-card rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-md relative overflow-hidden transition-all" data-role="faculty">
+<!-- Structural Accent Trim Strip (Faculty Forest Green) -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-on-tertiary-container"></div>
+<div class="flex items-start justify-between gap-space-sm pt-1">
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait photography of Kwame Donkor, young male Ghanaian educator wearing glasses and a neat patterned collared shirt, smiling warmly, classroom chalkboard and children books subtly visible in blurred depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDficibdtzh0xCg-RYeNu3YjQOB2wMrnGhDiTxfeEkMCvfdTGILXcQePEO7gWXcB0Go5WFlo_hEWJ02SQiIcocAII6hOv3v1Vsp7KFfSldX32a6rzPOlL4ReSyMBYgRP4crioNrulufNiTAaSTQ4t8TQjfTn2QMKIucNdX2AAUv4Tqdihfy2Ta3gZpSWIFxOD5ap0xX9esm5pfkFeCaRACUrCY2TlfFs2xIlboc8vEYjBoZW3eIjBokfQ"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-on-tertiary-container ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="min-w-0 flex flex-col">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Kwame Donkor</h3>
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">school</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono truncate">k.donkor@carepoint.edu.gh</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm uppercase tracking-wide shrink-0">
+            Basic 5 Lead
+          </span>
+</div>
+<!-- Metadata Grid -->
+<div class="rounded-lg bg-surface-container-low p-space-sm flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">menu_book</span> Portal Scope:
+            </span>
+<span class="font-semibold text-primary">Tier 4 Faculty Portal</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">password</span> Auth Factor:
+            </span>
+<span class="text-on-surface font-mono text-xs">TOTP Authenticator + PIN</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">grade</span> Academic Class:
+            </span>
+<span class="text-on-surface font-semibold">
+              Primary Section • Grade 5A
+            </span>
+</div>
+</div>
+<!-- Quick Action Trigger Ribbon -->
+<div class="flex items-center gap-2 pt-1 overflow-x-auto no-scrollbar">
+<button class="action-btn flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm hover:bg-surface-container-high transition-colors whitespace-nowrap active:scale-95">
+<span class="material-symbols-outlined text-[16px]">lock_reset</span>
+<span>Reset PIN</span>
+</button>
+<button class="action-btn flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm hover:bg-surface-container-high transition-colors whitespace-nowrap active:scale-95">
+<span class="material-symbols-outlined text-[16px]">hub</span>
+<span>Permissions Matrix</span>
+</button>
+<button class="action-btn flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high transition-colors whitespace-nowrap active:scale-95">
+<span class="material-symbols-outlined text-[16px]">history</span>
+<span>Log History</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Role Privilege Capability Matrix (Accordion) -->
+<section class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm">
+<button class="w-full flex items-center justify-between text-left group" id="toggle-matrix">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">table_chart</span>
+</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Role Privilege Matrix</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Global Access Verification (CRUDSO)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px] transition-transform duration-200" id="matrix-icon">expand_more</span>
+</button>
+<!-- Collapsible Body -->
+<div class="hidden flex flex-col gap-space-md pt-space-sm" id="matrix-content">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Super Admin granular permission scope mapping. Overrides require Root Dual-Key quorum authorization.
+        </p>
+<!-- Matrix Items -->
+<div class="flex flex-col gap-2">
+<!-- 1. School Rooms & Houses -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">meeting_room</span>
+<span>School Rooms &amp; Dorms</span>
+</span>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant">Tier 1 - Tier 4</span>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono text-label-sm">READ</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono text-label-sm">WRITE</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono text-label-sm">EXECUTE</span>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-mono text-label-sm">SEAL</span>
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-mono text-label-sm">OVERRIDE</span>
+</div>
+</div>
+<!-- 2. Bursary & Tuition -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span>Bursary &amp; Student Ledger</span>
+</span>
+<span class="font-label-sm text-label-sm font-mono text-secondary font-bold">Tier 1 ONLY</span>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono text-label-sm">READ</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono text-label-sm">WRITE</span>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-mono text-label-sm">SEAL</span>
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-mono text-label-sm">OVERRIDE</span>
+</div>
+</div>
+<!-- 3. Turnstiles & Field Sentries -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">fence</span>
+<span>Perimeter Turnstiles</span>
+</span>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant">Tier 1 &amp; Tier 3</span>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono text-label-sm">READ</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono text-label-sm">EXECUTE</span>
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-mono text-label-sm">OVERRIDE</span>
+</div>
+</div>
+<!-- 4. Statutory & Board Reports -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span>Statutory Compliance Archival</span>
+</span>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant">Tier 1 &amp; Tier 2</span>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono text-label-sm">READ</span>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-mono text-label-sm">SEAL (WORM)</span>
+<span class="px-2 py-0.5 rounded bg-surface-variant text-outline font-mono text-label-sm line-through">OVERRIDE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Micro Toast Notification for Action Feedback -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-40 bg-inverse-surface text-inverse-on-surface px-4 py-2 rounded-full font-label-sm text-label-sm shadow-xl flex items-center gap-2 pointer-events-none opacity-0 translate-y-3 transition-all duration-200" id="action-toast">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">check_circle</span>
+<span id="toast-message">IAM Security Policy Broadcasted</span>
+</div>
+</div>
+<script>
+  (function () {
+    // Accordion Toggle for Privilege Matrix
+    var toggleBtn = document.getElementById('toggle-matrix');
+    var matrixContent = document.getElementById('matrix-content');
+    var matrixIcon = document.getElementById('matrix-icon');
+
+    if (toggleBtn && matrixContent && matrixIcon) {
+      toggleBtn.addEventListener('click', function () {
+        var isHidden = matrixContent.classList.contains('hidden');
+        if (isHidden) {
+          matrixContent.classList.remove('hidden');
+          matrixIcon.style.transform = 'rotate(180deg)';
+        } else {
+          matrixContent.classList.add('hidden');
+          matrixIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Role Filter Chips
+    var filterChips = document.querySelectorAll('.role-chip');
+    var cards = document.querySelectorAll('.principal-card');
+
+    filterChips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        filterChips.forEach(function (c) {
+          c.classList.remove('bg-primary', 'text-on-primary');
+          c.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        chip.classList.add('bg-primary', 'text-on-primary');
+        chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+        var filter = chip.getAttribute('data-filter');
+        cards.forEach(function (card) {
+          var role = card.getAttribute('data-role');
+          if (filter === 'all' || role === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Search Input Filtering
+    var searchInput = document.getElementById('iam-search');
+    var clearBtn = document.getElementById('clear-search');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function (e) {
+        var query = e.target.value.toLowerCase().trim();
+        if (clearBtn) {
+          if (query.length > 0) {
+            clearBtn.classList.remove('hidden');
+          } else {
+            clearBtn.classList.add('hidden');
+          }
+        }
+
+        cards.forEach(function (card) {
+          var text = card.textContent.toLowerCase();
+          if (text.indexOf(query) !== -1) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    if (clearBtn && searchInput) {
+      clearBtn.addEventListener('click', function () {
+        searchInput.value = '';
+        clearBtn.classList.add('hidden');
+        cards.forEach(function (card) {
+          card.style.display = 'flex';
+        });
+      });
+    }
+
+    // Action Toast Trigger
+    var toast = document.getElementById('action-toast');
+    var toastMsg = document.getElementById('toast-message');
+    var actionButtons = document.querySelectorAll('.action-btn');
+
+    function showToast(msg) {
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = msg;
+      toast.classList.remove('opacity-0', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(function () {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-3');
+      }, 2200);
+    }
+
+    actionButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var actionLabel = btn.innerText.trim();
+        showToast('Executed: ' + actionLabel);
+      });
+    });
+
+    var provBtn = document.getElementById('open-provision-modal');
+    if (provBtn) {
+      provBtn.addEventListener('click', function () {
+        showToast('Initiating IAM Principal Keygen Wizard...');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_8px_rgba(1,21,73,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-1 text-on-surface-variant transition-colors" data-path="telemetry-health" href="mobile-dashboard.html"><span class="material-symbols-outlined text-[22px]">monitor_heart</span><span class="font-label-sm text-label-sm">Telemetry</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-1 transition-colors text-primary font-bold" data-path="users-provisioning" href="mobile-provisioning.html"><span class="material-symbols-outlined text-[22px]">admin_panel_settings</span><span class="font-label-sm text-label-sm">Users</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-1 text-on-surface-variant transition-colors" data-path="feature-config-flags" href="mobile-features.html"><span class="material-symbols-outlined text-[22px]">tune</span><span class="font-label-sm text-label-sm">Flags</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-1 text-on-surface-variant transition-colors" data-path="changes-rfcs" href="mobile-changes.html"><span class="material-symbols-outlined text-[22px]">alt_route</span><span class="font-label-sm text-label-sm">Changes</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-1 text-on-surface-variant transition-colors" data-path="audit-log" href="mobile-audit.html"><span class="material-symbols-outlined text-[22px]">policy</span><span class="font-label-sm text-label-sm">Audit</span></a></div></nav></body></html>

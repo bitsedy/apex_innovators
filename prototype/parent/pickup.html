@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Carepoint - Pickup Pass &amp; Guardian Management</title><style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary": "#ffffff", "surface-container": "#e9eef8", "error": "#ba1a1a", "error-container": "#ffdad6", "surface": "#f7f9ff", "on-tertiary-fixed-variant": "#00531f", "on-tertiary-container": "#46a95a", "outline-variant": "#c5c6d1", "primary": "#011549", "secondary-fixed": "#ffdad5", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#930004", "secondary-fixed-dim": "#ffb4a9", "on-secondary-container": "#fffbff", "inverse-on-surface": "#ecf1fb", "primary-fixed-dim": "#b5c4ff", "secondary-container": "#df2d23", "inverse-primary": "#b5c4ff", "tertiary-fixed": "#94f9a0", "on-secondary-fixed": "#410001", "on-background": "#161c23", "surface-container-low": "#eef4fe", "tertiary": "#001f07", "on-tertiary-fixed": "#002108", "outline": "#757680", "background": "#f7f9ff", "on-error-container": "#93000a", "on-primary": "#ffffff", "on-error": "#ffffff", "on-primary-container": "#8494cd", "on-surface": "#161c23", "inverse-surface": "#2b3138", "surface-bright": "#f7f9ff", "tertiary-container": "#003712", "primary-fixed": "#dce1ff", "tertiary-fixed-dim": "#78dc86", "surface-container-high": "#e3e8f2", "on-surface-variant": "#45464f", "surface-tint": "#4c5c92", "primary-container": "#1a2b5e", "on-primary-fixed": "#03174b", "secondary": "#ba0a0c", "surface-variant": "#dde3ec", "surface-container-highest": "#dde3ec", "surface-dim": "#d5dae4", "on-primary-fixed-variant": "#344478" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-sm": "1rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin": "2rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem" }, "fontFamily": { "body-lg": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "display-lg-mobile": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "headline-xl": [ "Plus Jakarta Sans" ], "headline-xl-mobile": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "display-lg-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" } ], "headline-md": [ "24px", { "lineHeight": "32px", "fontWeight": "700" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "headline-xl": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "headline-xl-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" } ] } } } };</script><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "parent",
+            label: "Pickup Pass & Guardian Management",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-pickup.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="carepoint-drawer fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col justify-between overflow-y-auto border-r border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="flex flex-col min-h-0 flex-1">
+    <!-- Top Header with Crest, Title, Motto, Badge, and Close Button -->
+    <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+      <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+            <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+          </div>
+          <div class="min-w-0">
+            <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+            <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+          </div>
+        </div>
+        <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Navigation Drawer">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <div class="flex items-center justify-between pt-0.5">
+        <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+      </div>
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider uppercase">PARENT &amp; GUARDIAN PORTAL</span>
+      </div>
+    </div>
+
+    <!-- Academic Session Status Strip -->
+    <div class="px-space-md py-space-sm">
+      <div class="px-space-md py-space-xs bg-surface-container-low rounded-lg flex items-center justify-between">
+        <div class="flex items-center gap-space-xs">
+          <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+          <span class="font-label-sm text-label-sm text-on-surface font-medium">Session 2026/27 Term 1</span>
+        </div>
+        <span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">Wk 8</span>
+      </div>
+    </div>
+
+    <!-- Category Label -->
+    <div class="px-space-md pt-2 pb-1">
+      <span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Parent Navigation</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col gap-1 px-space-md overflow-y-auto flex-1 min-h-0">
+      <a href="dashboard.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">dashboard</span>
+          <span class="text-sm">Dashboard</span>
+        </div>
+      </a>
+      <a href="dashboard.html#ward" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">badge</span>
+          <span class="text-sm">Child Profile</span>
+        </div>
+      </a>
+      <a href="academics.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">insights</span>
+          <span class="text-sm">Performance &amp; Reports</span>
+        </div>
+      </a>
+      <a href="messages.html#welfare" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">health_and_safety</span>
+          <span class="text-sm">Attendance &amp; Welfare</span>
+        </div>
+      </a>
+      <a href="pickup.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all bg-primary-container text-on-primary font-bold shadow-sm">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+          <span class="text-sm">Pickup Security Pass</span>
+        </div>
+      </a>
+      <a href="messages.html#messages" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">forum</span>
+          <span class="text-sm">Teacher Messages</span>
+        </div>
+        <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-secondary-container text-on-secondary">2</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Pinned Bottom Active Ward Card -->
+  <div class="shrink-0 p-3 mx-3 mb-3 rounded-xl bg-surface-container-low flex flex-col gap-1.5 border border-surface-container-high/80 shadow-2xs">
+    <div class="flex items-center justify-between">
+      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Active Ward</span>
+      <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Enrolled
+      </span>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs shrink-0" id="parent-drawer-ward-avatar">
+        KM
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="font-headline-sm text-sm text-primary font-bold leading-tight truncate" id="parent-drawer-ward-name">Kofi Mensah</div>
+        <div class="font-body-sm text-[11px] text-on-surface-variant truncate" id="parent-drawer-ward-class">Basic 2 • Sunflower Class</div>
+      </div>
+    </div>
+    <div class="pt-1 border-t border-outline-variant/20 flex items-center justify-between text-[11px] text-on-surface-variant">
+      <span>Term 1 Week 8</span>
+      <span class="text-secondary font-bold">Good Standing</span>
+    </div>
+  </div>
+</aside>
+<div class="pl-72 flex flex-col min-h-screen">
+<header class="fixed top-0 left-72 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-primary-container text-on-primary border-b border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-12 h-10 flex items-center justify-between text-xs font-label-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-medium"><span class="material-symbols-outlined text-sm text-tertiary-fixed">school</span><span>Term 1, 2026/2027 Academic Session • Active Week 8</span></div><div class="hidden md:flex items-center gap-space-xs text-primary-fixed"><span class="material-symbols-outlined text-sm text-secondary-fixed">phone_in_talk</span><span>Emergency: +233 (0) 30 123 4567</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs bg-primary px-space-sm py-1 rounded text-on-primary"><span class="material-symbols-outlined text-sm text-primary-fixed">face</span><span class="font-label-sm uppercase tracking-wider text-surface-variant">Ward:</span><span class="font-label-sm font-bold text-surface-container-lowest">Kofi Mensah (Basic 2 - Sunflower)</span><span class="material-symbols-outlined text-sm text-outline-variant">arrow_drop_down</span></div></div></div></div><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary transition-colors cursor-pointer mr-1 shrink-0 shadow-2xs" title="Toggle Navigation Tabs Drawer" aria-label="Toggle Navigation Tabs Drawer"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-container text-on-primary"><span class="material-symbols-outlined text-2xl">shield_person</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary leading-none">CAREPOINT</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Mind • Heart • Hands</span></div></div><nav class="hidden xl:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-bold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="dashboard" href="dashboard.html">Dashboard</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="ward-profile" href="dashboard.html#ward">Child Profile</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="performance-and-reports" href="academics.html">Performance &amp; Reports</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="attendance-and-welfare" href="messages.html">Attendance &amp; Welfare</a><a aria-current="page" class="transition-colors py-2 text-primary font-bold border-b-2 border-primary" data-path="pickup-security" href="pickup.html">Pickup Security</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="messages" href="messages.html">Messages</a></nav><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="relative p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-full transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 bg-secondary text-on-secondary rounded-full font-label-sm text-[10px] leading-tight flex items-center justify-center font-bold">3</span></button><div class="h-8 w-px bg-outline-variant/40 hidden sm:block"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden sm:flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-bold">Dr. Nana Mensah</span><span class="font-label-sm text-[11px] text-on-surface-variant">Guardian • Father</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk7nHm7egIuiTau40KQEFHBKNDX3EptaSdTu9TBK2iwADoApEdjY9Kkt9Tjm_DoF2KYNTvFIWgNO5GlABZPWPHY658qTxcggA0vvpzxYpMpol0tKKMsBvv14t1fD96WIU0vH77Tjlup7Pbm-TJ2cyzQEIlGRhdG85eoLM-GTjxqblK4wxMDpCIWDtDAyb_zVdq8MuHW3anaXkB6adGWp9xlHqAM3FbRNIoqmH3e2xOnAIl_mjOPskfLg"/><div class="flex items-center text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-base">expand_more</span></div></div></div></div></header><main class="w-full pt-[120px] bg-surface min-h-[calc(100vh-280px)]"><div class="flex flex-col w-full">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-space-xl space-y-space-xl w-full">
+<!-- Top Context & Headline Group -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="space-y-space-xs max-w-3xl">
+<div class="inline-flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-full text-primary font-label-md">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Child Safeguarding Protocol • Ges &amp; NaSIA Standards</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight font-extrabold">Pickup Authorization &amp; Gate Desk</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Carepoint institutional policy mandates certified handler verification prior to campus exit. Changes initiate multi-tier administrative biometric and national ID cross-examination.</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-space-sm rounded-lg font-label-lg shadow-sm hover:bg-primary-container transition-all" id="openHandlerModal" type="button">
+<span class="material-symbols-outlined text-lg">person_add</span>
+<span>Request Handler Addition</span>
+</button>
+</div>
+</div>
+<!-- Live QR Security Token Bento Hero -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Active Pass Card -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col md:flex-row gap-space-lg relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Left: Child & Dynamic QR Badge -->
+<div class="flex flex-col items-center justify-center p-space-md bg-surface-container-low rounded-lg shrink-0 w-full md:w-64 text-center">
+<div class="relative mb-space-sm">
+<!-- QR Graphic Simulated with Precise SVG Grid Pattern -->
+<div class="w-40 h-40 bg-surface-container-lowest p-2.5 rounded-lg shadow-sm flex flex-col items-center justify-center relative">
+<svg class="w-full h-full text-primary" fill="currentColor" viewbox="0 0 100 100">
+<!-- Top-Left Corner Locator -->
+<rect height="30" rx="3" width="30" x="0" y="0"></rect>
+<rect fill="#ffffff" height="20" width="20" x="5" y="5"></rect>
+<rect height="12" rx="1.5" width="12" x="9" y="9"></rect>
+<!-- Top-Right Corner Locator -->
+<rect height="30" rx="3" width="30" x="70" y="0"></rect>
+<rect fill="#ffffff" height="20" width="20" x="75" y="5"></rect>
+<rect height="12" rx="1.5" width="12" x="79" y="79"></rect>
+<!-- Bottom-Left Corner Locator -->
+<rect height="30" rx="3" width="30" x="0" y="70"></rect>
+<rect fill="#ffffff" height="20" width="20" x="5" y="75"></rect>
+<rect height="12" rx="1.5" width="12" x="9" y="79"></rect>
+<!-- Data Blocks Random Matrix -->
+<rect height="8" width="8" x="36" y="4"></rect>
+<rect height="6" width="6" x="48" y="10"></rect>
+<rect height="12" width="6" x="36" y="16"></rect>
+<rect height="6" width="8" x="58" y="4"></rect>
+<rect height="8" width="8" x="4" y="36"></rect>
+<rect height="14" width="6" x="16" y="38"></rect>
+<rect height="6" width="8" x="4" y="48"></rect>
+<rect height="8" width="10" x="72" y="36"></rect>
+<rect height="8" width="8" x="86" y="38"></rect>
+<rect fill="#1a2b5e" height="28" rx="4" width="28" x="36" y="36"></rect>
+<rect fill="#ffffff" height="18" width="18" x="41" y="41"></rect>
+<rect fill="#df2d23" height="10" rx="2" width="10" x="45" y="45"></rect>
+<rect height="14" width="6" x="38" y="72"></rect>
+<rect height="6" width="12" x="48" y="70"></rect>
+<rect height="14" width="8" x="46" y="80"></rect>
+<rect height="8" width="6" x="58" y="84"></rect>
+<rect height="8" width="8" x="72" y="72"></rect>
+<rect height="6" width="10" x="84" y="70"></rect>
+<rect height="10" width="6" x="72" y="84"></rect>
+<rect height="12" width="12" x="82" y="82"></rect>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-secondary text-base">shield</span>
+</div>
+</div>
+<span class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[10px] uppercase font-bold px-2 py-0.5 rounded-full shadow-sm">
+              Live Token
+            </span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-mono mt-1">TOKEN: CP-SEC-99214</p>
+<span class="font-body-sm text-[12px] text-outline mt-0.5 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+            Refreshes in 14h 22m
+          </span>
+</div>
+<!-- Right: Authorization Summary -->
+<div class="flex-1 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center justify-between gap-space-sm mb-space-xs">
+<span class="font-label-sm uppercase tracking-wider text-secondary font-bold">Active Today's Campus Pass</span>
+<span class="inline-flex items-center gap-1 text-on-tertiary-fixed-variant bg-tertiary-fixed/30 font-label-sm text-[11px] px-2 py-0.5 rounded-full font-bold">
+<span class="material-symbols-outlined text-xs">lock_open</span> Gate Authorized
+              </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Kofi Mensah • Basic 2 (Sunflower)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Official verification code valid for today's dismissal window. All authorized adults must present this token alongside photo identification at Main Gate 1 or Junior Bay Gate 2.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm bg-surface-container p-space-sm rounded-lg">
+<div class="space-y-0.5">
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-outline block">Permitted Dismissal Window</span>
+<span class="font-label-lg text-label-lg text-primary font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">schedule</span>
+                14:30 – 16:30 GMT
+              </span>
+</div>
+<div class="space-y-0.5">
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-outline block">Approved Checkpoints</span>
+<span class="font-label-lg text-label-lg text-primary font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">door_front</span>
+                Gate 1 (Main) &amp; Gate 2 (Bay)
+              </span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-secondary-fixed-variant bg-secondary-fixed/40 p-space-xs rounded font-body-sm text-[12px]">
+<span class="material-symbols-outlined text-base text-secondary shrink-0">warning</span>
+<span>Security officers reserve the right to keep child in the Administrative Waiting Bay if ID does not mirror official biometric clearance.</span>
+</div>
+</div>
+</div>
+<!-- Protocol Flow Explainer Card -->
+<div class="lg:col-span-4 bg-primary text-on-primary rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm uppercase tracking-widest text-primary-fixed font-bold">Safety Pipeline</span>
+<span class="material-symbols-outlined text-primary-fixed">admin_panel_settings</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-surface-container-lowest">How Carepoint Authorizations Work</h3>
+<div class="space-y-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-primary-container text-primary-fixed flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</div>
+<div class="space-y-0.5">
+<span class="font-label-md text-surface-container-lowest font-bold block">Submit National ID &amp; Bio</span>
+<span class="font-body-sm text-[13px] text-surface-container leading-tight block">Upload Ghana Card + facial photograph of requested handler.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-primary-container text-primary-fixed flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</div>
+<div class="space-y-0.5">
+<span class="font-label-md text-surface-container-lowest font-bold block">Physical Front Desk Vetting</span>
+<span class="font-body-sm text-[13px] text-surface-container leading-tight block">Security Administrator verifies original physical card and registers phone.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-primary-container text-primary-fixed flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</div>
+<div class="space-y-0.5">
+<span class="font-label-md text-surface-container-lowest font-bold block">Gate Dispatch OTP Activation</span>
+<span class="font-body-sm text-[13px] text-surface-container leading-tight block">Dynamic daily tokens issued automatically for safe child pickup.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md">
+<a onclick="alert('Child Safeguarding Charter: Handover protocols require verified biometric match, digital photo ID, and cryptographic OTP token before any student leaves school custody.');" class="font-label-sm text-label-sm text-primary-fixed hover:text-surface-container-lowest flex items-center gap-1 transition-colors cursor-pointer" href="javascript:void(0)">
+<span>Read Complete Child Safeguarding Charter</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Handlers Directory Section -->
+<div class="space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold">Authorized Pickup Handlers</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Individuals explicitly authorized to pick up Kofi Mensah from campus premises.</p>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-3 py-1 rounded-full text-on-surface-variant font-bold self-start sm:self-auto">
+          3 Handlers Registered • 1 Pending Admin Review
+        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Handler Card 1: Dr. Nana Mensah -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative">
+<div class="space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="relative">
+<img alt="Dr. Nana Mensah" class="w-16 h-16 rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk7nHm7egIuiTau40KQEFHBKNDX3EptaSdTu9TBK2iwADoApEdjY9Kkt9Tjm_DoF2KYNTvFIWgNO5GlABZPWPHY658qTxcggA0vvpzxYpMpol0tKKMsBvv14t1fD96WIU0vH77Tjlup7Pbm-TJ2cyzQEIlGRhdG85eoLM-GTjxqblK4wxMDpCIWDtDAyb_zVdq8MuHW3anaXkB6adGWp9xlHqAM3FbRNIoqmH3e2xOnAIl_mjOPskfLg"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 bg-on-tertiary-container text-surface-container-lowest rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">verified</span>
+</span>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="bg-primary text-on-primary font-label-sm text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Primary</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Active</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">Dr. Nana Mensah</h3>
+<p class="font-body-sm text-[13px] text-on-surface-variant">Father • Primary Guardian</p>
+</div>
+<div class="space-y-space-xs font-body-sm text-[13px] bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center justify-between text-on-surface">
+<span class="text-outline">Contact:</span>
+<span class="font-semibold font-mono">+233 24 123 4567</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="text-outline">Gov ID:</span>
+<span class="font-semibold">Ghana Card Verified</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="text-outline">Access:</span>
+<span class="font-semibold text-primary">All Days, Any Time</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm">
+<span class="flex items-center gap-1 text-[11px] text-on-tertiary-container">
+<span class="material-symbols-outlined text-xs">fingerprint</span> Biometrics Enrolled
+            </span>
+<button class="text-primary hover:text-secondary font-bold text-[12px]" type="button">View Log</button>
+</div>
+</div>
+<!-- Handler Card 2: Mrs. Grace Owusu -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative">
+<div class="space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="relative">
+<img class="w-16 h-16 rounded-xl object-cover" data-alt="Portrait of an African woman in her late 30s with a warm professional smile wearing a patterned Ghanaian print blouse in navy and emerald green tones, soft natural campus background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhuV-qYeKo1K4kxywczMYwLaUOPhp10OSbsSuz5hsFGAttTytL47jKz5hQzLh5hFPgJUP9VsRw1mDb36gwdQ8Chz39uZpPtEPWooZfYtkFGjsyvM_nobb5N2MH5oKbNy3rKafFjAEBrSHYCzRD25r1Zs6Mc_auAeOFZOPlxk6AqoxANGnSIQKjFvWahxK5iB6K0K3AVNM74bElG_4_f6OIILRWkqp6AE481Ya0-Ut3EH04M9dxHtdH5Q"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 bg-on-tertiary-container text-surface-container-lowest rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">verified</span>
+</span>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Secondary</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Active</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">Mrs. Grace Owusu</h3>
+<p class="font-body-sm text-[13px] text-on-surface-variant">Maternal Aunt • Emergency Contact</p>
+</div>
+<div class="space-y-space-xs font-body-sm text-[13px] bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center justify-between text-on-surface">
+<span class="text-outline">Contact:</span>
+<span class="font-semibold font-mono">+233 20 765 4321</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="text-outline">Gov ID:</span>
+<span class="font-semibold">Passport Verified</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="text-outline">Access:</span>
+<span class="font-semibold text-primary">Tuesdays &amp; Thursdays</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm">
+<span class="flex items-center gap-1 text-[11px] text-outline">
+<span class="material-symbols-outlined text-xs">sms</span> OTP Authentication
+            </span>
+<button class="text-primary hover:text-secondary font-bold text-[12px]" type="button">Adjust Window</button>
+</div>
+</div>
+<!-- Handler Card 3: Mr. Emmanuel Tetteh (PENDING) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative">
+<div class="space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="relative">
+<img class="w-16 h-16 rounded-xl object-cover filter grayscale contrast-125" data-alt="Clear profile photo of an adult African man wearing a crisp collared driver uniform shirt against a clean neutral studio background, friendly and professional expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDijIiwMjCkkzGNfKdGJ2L9w9ocjARni53S-vveK6TtITAVfNr68sLxwX3XEGY94WivpW2gebapFyAh161zsr4mE6yUZJP65z5N7Hsi5n7RplmEo14gEZhAMV-ltYDZpAOyfsh2lhL3D8_peM-Ot3yL3bw0FKMA-bDYKY1RS30Xy5iYdGNdiPKaRNl8S3b3UJlGOAbmG_qy3WDjxdr2JZJEEJ-neONWv9Um-87XA06EkmXHVepvaUrHkg"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 bg-secondary-fixed text-secondary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">hourglass_top</span>
+</span>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">
+                  Pending Vetting
+                </span>
+<span class="font-label-sm text-[10px] text-outline">Submitted 2d ago</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">Mr. Emmanuel Tetteh</h3>
+<p class="font-body-sm text-[13px] text-on-surface-variant">Family Driver • Contracted</p>
+</div>
+<div class="space-y-space-xs font-body-sm text-[13px] bg-secondary-fixed/20 p-space-sm rounded-lg text-on-surface">
+<div class="flex items-center justify-between">
+<span class="text-outline">Contact:</span>
+<span class="font-semibold font-mono">+233 55 987 6543</span>
+</div>
+<div class="flex items-start justify-between gap-2 pt-1 text-[11px] text-on-secondary-fixed-variant leading-tight">
+<span class="material-symbols-outlined text-sm shrink-0">pending_actions</span>
+<span>Awaiting physical Ghana Card presentation &amp; background check at Security Post.</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm">
+<span class="text-[11px] text-error font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">cancel</span> Not Authorized Yet
+            </span>
+<button class="text-secondary hover:underline font-bold text-[12px]" type="button">Resubmit Documents</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-Time Gate Pickup Audit Trail Log -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="space-y-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">history_toggle_off</span>
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Campus Gate Checkout History</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Immutable digital log recorded by duty gate officers during dismissal scans.</p>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-lg">
+<button class="bg-surface-container-lowest shadow-sm text-primary font-label-sm text-xs px-3 py-1.5 rounded font-bold" type="button">This Week</button>
+<button class="text-on-surface-variant hover:text-on-surface font-label-sm text-xs px-3 py-1.5 rounded transition-colors" type="button">Term 1 (All)</button>
+<button class="text-on-surface-variant hover:text-on-surface font-label-sm text-xs px-2 py-1.5 rounded transition-colors flex items-center" type="button">
+<span class="material-symbols-outlined text-base">tune</span>
+</button>
+</div>
+</div>
+<!-- Audit Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-md rounded-l-lg">Timestamp &amp; Date</th>
+<th class="py-space-sm px-space-md">Child Released To</th>
+<th class="py-space-sm px-space-md">Campus Checkpoint</th>
+<th class="py-space-sm px-space-md">Security Officer</th>
+<th class="py-space-sm px-space-md rounded-r-lg text-right">Verification Protocol</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="font-bold text-primary">Oct 16, 2026</div>
+<div class="text-[12px] text-outline font-mono">15:10 GMT</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xs">NM</div>
+<div>
+<span class="font-bold block">Dr. Nana Mensah</span>
+<span class="text-[11px] text-on-surface-variant block">Primary Guardian • Father</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-base text-outline">meeting_room</span>
+                  Gate 1 • Main Entrance
+                </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-medium">Sgt. Kofi Boateng</span>
+<span class="text-[11px] text-outline block">Badge #CP-082</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-right">
+<span class="inline-flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[11px] px-2.5 py-1 rounded-full font-bold">
+<span class="material-symbols-outlined text-xs">fingerprint</span>
+                  Biometric Pass #PK-8841 Confirmed
+                </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="font-bold text-primary">Oct 15, 2026</div>
+<div class="text-[12px] text-outline font-mono">15:05 GMT</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-surface-variant text-primary flex items-center justify-center font-bold text-xs">GO</div>
+<div>
+<span class="font-bold block">Mrs. Grace Owusu</span>
+<span class="text-[11px] text-on-surface-variant block">Aunt • Authorized Handler</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-base text-outline">meeting_room</span>
+                  Gate 1 • Main Entrance
+                </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-medium">Sgt. Kofi Boateng</span>
+<span class="text-[11px] text-outline block">Badge #CP-082</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-right">
+<span class="inline-flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[11px] px-2.5 py-1 rounded-full font-bold">
+<span class="material-symbols-outlined text-xs">pin</span>
+                  SMS OTP #4928 Verified
+                </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="font-bold text-primary">Oct 14, 2026</div>
+<div class="text-[12px] text-outline font-mono">15:12 GMT</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xs">NM</div>
+<div>
+<span class="font-bold block">Dr. Nana Mensah</span>
+<span class="text-[11px] text-on-surface-variant block">Primary Guardian • Father</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-base text-outline">meeting_room</span>
+                  Gate 2 • Junior Bay
+                </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-medium">Off. John Asare</span>
+<span class="text-[11px] text-outline block">Badge #CP-104</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-right">
+<span class="inline-flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[11px] px-2.5 py-1 rounded-full font-bold">
+<span class="material-symbols-outlined text-xs">qr_code_scanner</span>
+                  Digital QR Pass Confirmed
+                </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="font-bold text-primary">Oct 13, 2026</div>
+<div class="text-[12px] text-outline font-mono">15:08 GMT</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xs">NM</div>
+<div>
+<span class="font-bold block">Dr. Nana Mensah</span>
+<span class="text-[11px] text-on-surface-variant block">Primary Guardian • Father</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-base text-outline">meeting_room</span>
+                  Gate 1 • Main Entrance
+                </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-medium">Sgt. Kofi Boateng</span>
+<span class="text-[11px] text-outline block">Badge #CP-082</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-right">
+<span class="inline-flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[11px] px-2.5 py-1 rounded-full font-bold">
+<span class="material-symbols-outlined text-xs">qr_code_scanner</span>
+                  Digital QR Pass Confirmed
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Emergency Temporary Clearance Callout -->
+<div class="bg-secondary text-on-secondary rounded-xl p-space-lg shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-lg relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-40 h-40 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">emergency</span>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm uppercase tracking-widest text-secondary-fixed-dim font-bold">Unforeseen Delay or Sudden Pickup Change?</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-surface-container-lowest">Emergency Temporary Pickup Protocol</h3>
+<p class="font-body-sm text-body-sm text-secondary-fixed leading-relaxed max-w-2xl">If an unlisted individual must collect Kofi due to a family emergency, call the Campus Security Command Post immediately. Have your <strong class="text-surface-container-lowest font-bold">Guardian Master PIN (#9042)</strong> ready for verbal voice verification.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-sm shrink-0 w-full md:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs bg-surface-container-lowest text-secondary px-space-md py-space-sm rounded-lg font-label-lg font-bold shadow-sm hover:bg-secondary-fixed transition-all" href="tel:+233240009999">
+<span class="material-symbols-outlined text-lg">phone_in_talk</span>
+<span>+233 (0) 24 000 9999</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Handler Addition Modal Backdrop & Dialog -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm hidden items-center justify-center p-4" id="handlerModal">
+<div class="bg-surface-container-lowest rounded-xl shadow-2xl max-w-xl w-full p-space-lg relative space-y-space-md max-h-[921px] overflow-y-auto">
+<div class="flex items-center justify-between">
+<div class="space-y-0.5">
+<span class="font-label-sm text-secondary uppercase tracking-wider font-bold">Administrative Safeguard</span>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Request New Authorized Handler</h3>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-container" id="closeHandlerModal" type="button">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Please provide verifiable government identity details for this individual. Carepoint Administration processes checks within 24–48 business hours.</p>
+<form class="space-y-space-md pt-space-xs" id="handlerForm">
+<div class="space-y-1">
+<label class="font-label-lg text-label-lg text-on-surface block">Full Legal Name <span class="text-secondary">*</span></label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="e.g. Samuel Kwame Asante" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-lg text-label-lg text-on-surface block">Relationship to Child <span class="text-secondary">*</span></label>
+<select class="w-full px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+<option>Parent / Step-Parent</option>
+<option>Grandparent</option>
+<option>Uncle / Aunt</option>
+<option>Family Driver</option>
+<option>Nanny / Housekeeper</option>
+<option>Other Legal Guardian</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-lg text-label-lg text-on-surface block">Phone Number (For OTP) <span class="text-secondary">*</span></label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="+233 XX XXX XXXX" required="" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-lg text-label-lg text-on-surface block">Ghana Card PIN <span class="text-secondary">*</span></label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-mono text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="GHA-000000000-0" required="" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-lg text-label-lg text-on-surface block">Pickup Authorization Schedule</label>
+<select class="w-full px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+<option>Full Access (Any School Day)</option>
+<option>Mondays, Wednesdays, Fridays Only</option>
+<option>Tuesdays &amp; Thursdays Only</option>
+<option>Friday Dismissal Only</option>
+<option>Emergency Standby Only</option>
+</select>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container rounded-lg space-y-1">
+<span class="font-label-sm uppercase tracking-wide text-primary font-bold block">Document Verification Requirement</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant">The designated individual must report physically to the Gate 1 Administration Desk with their original Ghana Card and submit to optical biometric facial enrollment before this status turns active.</p>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-space-sm rounded-lg font-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" id="cancelModalBtn" type="button">Cancel</button>
+<button class="bg-secondary text-on-secondary px-space-md py-space-sm rounded-lg font-label-lg shadow-sm hover:bg-secondary-container transition-all" type="submit">Submit for Security Vetting</button>
+</div>
+</form>
+</div>
+</div>
+<script>
+    (function() {
+      const modal = document.getElementById('handlerModal');
+      const openBtn = document.getElementById('openHandlerModal');
+      const closeBtn = document.getElementById('closeHandlerModal');
+      const cancelBtn = document.getElementById('cancelModalBtn');
+      const form = document.getElementById('handlerForm');
+
+      function open() {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+
+      function close() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+
+      if (openBtn) openBtn.addEventListener('click', open);
+      if (closeBtn) closeBtn.addEventListener('click', close);
+      if (cancelBtn) cancelBtn.addEventListener('click', close);
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) close();
+      });
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Handler addition request submitted securely. Status: PENDING ADMIN VETTING.');
+          close();
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl border-t border-outline-variant/30"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-space-xl"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg mb-space-lg"><div class="md:col-span-1"><div class="flex items-center gap-space-xs mb-space-xs"><span class="material-symbols-outlined text-primary text-xl">verified_user</span><span class="font-headline-sm text-headline-sm text-primary font-bold">Carepoint</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Excellence in early, primary, and secondary education. Mind, Heart, and Hands nurtured for leadership.</p><div class="flex items-center gap-space-xs text-on-tertiary-container font-label-sm text-label-sm font-bold"><span class="material-symbols-outlined text-sm">lock</span><span>256-Bit SSL Encrypted Session</span></div></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Portal Assistance</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" href="messages.html">IT &amp; Parent Helpdesk</a></li><li><a class="hover:text-primary transition-colors" href="academics.html">Fee Payment Verification</a></li><li><a class="hover:text-primary transition-colors" href="pickup.html">Busing &amp; Route Logistics</a></li><li><a class="hover:text-primary transition-colors" href="academics.html#health">School Clinic &amp; Medical</a></li></ul></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Security &amp; Gate Desk</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li>Main Gate Post: Ext 104</li><li>Security Coordinator: 020 000 1122</li><li>Dispatch &amp; Pickup Desk: Ext 108</li><li>Emergency Response: 030 123 4567</li></ul></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Institutional Compliance</h4><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">Accredited by National Schools Inspectorate Authority (NaSIA) • Ghana Education Service (GES).</p><div class="p-space-sm rounded-lg bg-surface-container border border-outline-variant/40"><span class="font-label-sm text-label-sm font-bold text-primary block">Strict Parent Verification</span><span class="font-body-sm text-[12px] text-on-surface-variant block">Always present digital authorization code at afternoon gate checkout.</span></div></div></div><div class="pt-space-md border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><div>© 2026 Carepoint Community School. All Rights Reserved. National Schools Inspectorate Authority Compliant.</div><div class="flex items-center gap-space-md font-label-sm text-label-sm"><a class="hover:text-primary transition-colors cursor-pointer" onclick="alert('Child Safeguarding Policy: Carepoint Community School enforces strict zero-tolerance child protection protocols supervised by the Ghana Education Service (GES) and NaSIA.');" href="javascript:void(0)">Child Safeguarding</a><a class="hover:text-primary transition-colors cursor-pointer" onclick="alert('Carepoint Data Privacy: Compliant with Ghana Data Protection Act (Act 843). Student biometric & academic records are end-to-end encrypted.');" href="javascript:void(0)">Privacy Policy</a><a class="hover:text-primary transition-colors cursor-pointer" onclick="alert('Terms of Portal Use: Authorized for registered Carepoint parents and legal guardians only.');" href="javascript:void(0)">Terms of Portal Use</a></div></div></div></footer>
+</div></body></html>

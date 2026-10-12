@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>html,body{width:100vw;margin:0;padding:0;body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-fixed": "#94f9a0", "tertiary": "#001f07", "primary-fixed-dim": "#b5c4ff", "surface-container-highest": "#dde3ec", "on-primary-fixed": "#03174b", "surface-variant": "#dde3ec", "on-tertiary-fixed-variant": "#00531f", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "secondary-container": "#df2d23", "outline": "#757680", "inverse-surface": "#2b3138", "secondary-fixed": "#ffdad5", "secondary-fixed-dim": "#ffb4a9", "surface-bright": "#f7f9ff", "on-surface-variant": "#45464f", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#930004", "surface-dim": "#d5dae4", "surface-container-low": "#eef4fe", "outline-variant": "#c5c6d1", "on-primary-container": "#8494cd", "surface": "#f7f9ff", "on-surface": "#161c23", "on-tertiary-fixed": "#002108", "primary-container": "#1a2b5e", "on-background": "#161c23", "inverse-on-surface": "#ecf1fb", "on-tertiary": "#ffffff", "on-secondary-container": "#fffbff", "inverse-primary": "#b5c4ff", "error": "#ba1a1a", "on-secondary-fixed": "#410001", "on-primary-fixed-variant": "#344478", "on-primary": "#ffffff", "surface-tint": "#4c5c92", "primary": "#011549", "surface-container": "#e9eef8", "background": "#f7f9ff", "surface-container-high": "#e3e8f2", "tertiary-container": "#003712", "primary-fixed": "#dce1ff", "error-container": "#ffdad6", "tertiary-fixed-dim": "#78dc86", "on-tertiary-container": "#46a95a", "on-error": "#ffffff", "secondary": "#ba0a0c" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-sm": "1rem", "space-xl": "2.5rem", "margin": "2rem", "margin-sm": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem" }, fontFamily: { "label-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" }], "display-lg-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.01em", fontWeight: "800" }], "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }], "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }], "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.015em", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.04em", fontWeight: "700" }], "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }], "headline-xl-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }], "display-lg": ["56px", { lineHeight: "64px", letterSpacing: "-0.02em", fontWeight: "800" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "700" }], "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<title>Carepoint - Mobile Admissions Review</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "admin",
+            label: "Mobile Admissions Review",
+            isMobile: true,
+            relRoot: "../",
+            counterpart: "admissions.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-primary-fixed shadow-sm"><span class="material-symbols-outlined text-[22px]">shield</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase">Carepoint Executive</span><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Admissions Overview</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface"></span></button><img alt="Dr. Elizabeth Appiah" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWfNsavZrE2q7ehrA64sihUwtmROAw4xXN-C6BlUTPhqxnN--2RN5DRycS1Zzkyt6oCEfdTUfjODz6QYZEv08Q-JAkUc3Av7yS8ahvu_IycCMkJCxx5Dx9PYnuyuHQLKp_OkepCnkvleE-hqHca1ZtXA-REaPgIftK5gPRsomXA64FFaJZFdKmQGy-GEt_k2m5zV-0ASaXXLnRB3Au6F5xwS03ye8IFEGRzgETPCCJ1eKP6QrBZk3BQ"/></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-gutter-sm space-y-space-md">
+<!-- Cycle Info & Capacity Banner -->
+<section class="w-full bg-surface-container-lowest rounded-2xl border border-surface-container-high/60 shadow-xs p-4 flex flex-col gap-3 relative overflow-hidden mt-2">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Intake Cycle</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">2026/2027</span>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock_clock</span>
+<span>Stage 2 Clinic Check</span>
+</div>
+</div>
+<!-- Gauge Section -->
+<div class="w-full bg-surface-container-low rounded-xl p-3 flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">128</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ 150 Enrolled</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary font-bold">85% Full</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="h-full bg-primary rounded-full" style="width: 85%;"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>22 Seats Left</span>
+<span class="text-secondary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">trending_up</span> Near Capacity
+</span>
+</div>
+</div>
+</section>
+<!-- Search & Filter Controls -->
+<section class="w-full flex flex-col gap-2">
+<!-- Search Bar -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm border border-surface-container-high/60 shadow-xs focus:outline-none" id="applicant-search" placeholder="Search applicant, ID, phone..." type="text"/>
+</div>
+<!-- Filter Pills -->
+<div class="w-full overflow-x-auto flex items-center gap-1.5 pb-0.5 no-scrollbar">
+<button class="whitespace-nowrap px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary shadow-xs flex items-center gap-1">
+<span>Pending</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-container text-white text-[10px]">8</span>
+</button>
+<button class="whitespace-nowrap px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant flex items-center gap-1">
+<span>Testing</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px]">12</span>
+</button>
+<button class="whitespace-nowrap px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant flex items-center gap-1">
+<span>All (34)</span>
+</button>
+<button class="whitespace-nowrap px-space-md py-2 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-all flex items-center gap-1 shadow-sm">
+<span>Offered</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px]">14</span>
+</button>
+</div>
+</section>
+<!-- Candidate Applications List -->
+<section class="w-full flex flex-col space-y-space-md" id="candidate-list">
+<!-- Candidate Card 1 (Rich & High Priority) -->
+<article class="w-full bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col relative transition-transform active:scale-[0.99]">
+<!-- Academic Hierarchy Bar Trim -->
+<div class="w-full h-1.5 bg-gradient-to-r from-primary via-secondary to-tertiary-fixed"></div>
+<div class="p-space-md flex flex-col space-y-space-sm">
+<!-- Top Row Profile & Status -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="relative w-14 h-14 rounded-xl overflow-hidden bg-surface-container flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Warm studio passport photograph of a charming 4-year-old Ghanaian boy Kofi Asante wearing an Oxford blue collared shirt smiling gently against an educational campus backdrop with bright soft natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnpZJzScutwSZ_NkgXvcvKjC1p6_SXUuO41YK4zJ3Vd5mHg71vDEorIVgv_3nqzCy3_q8clR-I2lZUZp_oWIHhlpiSeMn2N_Tqq2XGM6KcBcMzWnCdqU0-qWuP9RrYcZdtxpEUMA2Bm6jrEkXQCjK0aT6enzZm_EJaz7arKh6B5BnRZ3qJHYbVzJxir5v4ePViLLhAcqC0nMYxr4GYN2AwuYB39aUte4-SXEkmzk88TPS0MAxhl74HcQ"/>
+<div class="absolute bottom-0 inset-x-0 bg-primary/80 backdrop-blur-xs flex items-center justify-center py-0.5">
+<span class="text-[9px] font-label-sm text-on-primary">KG 1</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-tight">Kofi Kwabena Asante</h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kindergarten 1 • Age 4 yrs</span>
+<div class="flex items-center gap-1 mt-1 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant">Ghana Card NIA Verified</span>
+</div>
+</div>
+</div>
+<!-- Status Pill -->
+<div class="flex flex-col items-end">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wide flex items-center gap-1 shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Priority
+            </span>
+<span class="font-label-sm text-label-sm text-outline mt-1">#APP-2026-089</span>
+</div>
+</div>
+<!-- Metrics & Medical Insights (Bento Tile Sub-grid) -->
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<!-- Assessment Score Metric -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shadow-xs">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Assessment</span>
+<span class="font-label-lg text-label-lg text-on-surface font-extrabold flex items-center gap-1">
+                94% <span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant font-semibold">Exemplary</span>
+</span>
+</div>
+</div>
+<!-- Medical Note Pill -->
+<div class="bg-error-container/40 rounded-xl p-space-sm flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-lg bg-error-container flex items-center justify-center text-error shadow-xs">
+<span class="material-symbols-outlined text-[20px]">medical_services</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Medical Flag</span>
+<span class="font-label-md text-label-md text-error truncate font-bold">Mild Asthma</span>
+</div>
+</div>
+</div>
+<!-- Guardian & Contact Metadata -->
+<div class="w-full bg-surface-container rounded-xl p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-md text-label-md">
+              EA
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Dr. E. Asante</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Father • +233 24 492 8104</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-colors" title="Contact Guardian">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+<!-- Admissions Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-space-xs pt-1">
+<button class="w-full py-3 px-space-md rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm hover:bg-primary-container active:scale-[0.98] transition-all" id="offer-btn-1">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Accept &amp; Offer Admission</span>
+</button>
+<button class="w-full py-2.5 px-space-md rounded-xl bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-surface-container-highest active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+<span>Schedule Interview</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Candidate Card 2 (Assessment Pending Stage) -->
+<article class="w-full bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col relative transition-transform active:scale-[0.99]">
+<!-- Division Accent Color Line (Primary Cyan/Navy) -->
+<div class="w-full h-1.5 bg-outline-variant"></div>
+<div class="p-space-md flex flex-col space-y-space-sm">
+<!-- Top Row Profile & Status -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="relative w-14 h-14 rounded-xl overflow-hidden bg-surface-container flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="High quality portrait of a bright 6-year-old African schoolgirl Abena Mansa Osei wearing bright yellow hair ribbons and an organized light blue polo top, cheerful attentive expression, clean educational lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMChpFClL2CSRG_NhZx6fLX0Yj7k5vaSToMWV7NKlWdYL5Bk3ziHGLJEJShasXF10ReOx6rplDA-4sgVO5DRHwCMtKli_jeKlbmJXNFigCkFeZwd-tgorO6FvZakA15exsSdnlrfNZUnBtTL281h4NH2rVWPxbHEWiFEVGlBGQxKAlMRqZ-N64xuBRAbvq4nMPpg6cJnXZ-s8GIbTWaxO5HUJvl3Vo6os23lGjXZY0uU-u24NRAOo2dw"/>
+<div class="absolute bottom-0 inset-x-0 bg-primary/80 backdrop-blur-xs flex items-center justify-center py-0.5">
+<span class="text-[9px] font-label-sm text-on-primary">BASIC 1</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-tight">Abena Mansa Osei</h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Basic 1 • Age 6 yrs</span>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">badge</span>
+<span class="font-label-sm text-label-sm text-outline">ID Verification Pending</span>
+</div>
+</div>
+</div>
+<!-- Status Pill -->
+<div class="flex flex-col items-end">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wide flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+              Awaiting Test
+            </span>
+<span class="font-label-sm text-label-sm text-outline mt-1">#APP-2026-112</span>
+</div>
+</div>
+<!-- Testing Pending Status Banner -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">pending_actions</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Entrance Assessment</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Testing Session Scheduled for Tomorrow, 9:00 AM</span>
+</div>
+</div>
+</div>
+<!-- Guardian Info -->
+<div class="w-full bg-surface-container rounded-xl p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-label-md text-label-md">
+              MO
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Mrs. Grace Osei</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mother • +233 55 120 7741</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-colors" title="Contact Guardian">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+<!-- Clinic Check Quick Action -->
+<div class="flex items-center gap-space-xs pt-1">
+<button class="w-full py-2.5 px-space-md rounded-xl bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-surface-container-highest active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>Input Test Scores</span>
+</button>
+<button class="px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center" title="More Options">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Interactive Decision Toast Overlay (Micro-interaction) -->
+<div class="fixed bottom-20 left-4 right-4 z-40 bg-primary text-on-primary rounded-xl shadow-xl p-space-md flex items-center justify-between transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none" id="offer-toast">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-primary">Admission Offered</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">Kofi Kwabena Asante (KG 1) • SMS dispatched</span>
+</div>
+</div>
+<button class="text-on-primary-container hover:text-on-primary text-[13px] font-label-sm uppercase tracking-wide" id="dismiss-toast">
+      Undo
+    </button>
+</div>
+<!-- Floating Batch Action Button -->
+<div class="sticky bottom-20 w-full flex justify-center pb-2 z-30 pointer-events-none">
+<button class="pointer-events-auto bg-primary text-on-primary px-5 py-3 rounded-full shadow-xl flex items-center gap-2.5 hover:bg-primary-container active:scale-95 transition-all" id="batch-action-trigger">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-[11px] font-bold">
+        8
+      </div>
+<span class="font-label-lg text-label-lg text-on-primary tracking-wide">Batch Clinic Check Selected</span>
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</button>
+</div>
+</div>
+<script>
+  // Simple client-side micro-interaction for Offer action
+  const offerBtn = document.getElementById('offer-btn-1');
+  const toast = document.getElementById('offer-toast');
+  const dismissBtn = document.getElementById('dismiss-toast');
+
+  if (offerBtn && toast) {
+    offerBtn.addEventListener('click', () => {
+      toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      offerBtn.disabled = true;
+      offerBtn.classList.add('opacity-50');
+      offerBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done_all</span><span>Offer Issued</span>';
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 4500);
+    });
+  }
+
+  if (dismissBtn && toast) {
+    dismissBtn.addEventListener('click', () => {
+      toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)] border-t border-outline-variant/20" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="dashboard" href="mobile-dashboard.html">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+
+</div>
+<span class="font-label-sm text-label-sm mt-0.5">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="inbox" href="mobile-inbox.html">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">move_to_inbox</span>
+<span class="absolute -top-1 -right-2 px-1 min-w-[16px] h-4 bg-primary-fixed text-on-primary-fixed rounded-full font-label-sm text-[10px] flex items-center justify-center leading-none font-bold">5</span>
+</div>
+<span class="font-label-sm text-label-sm mt-0.5">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="decision" href="mobile-decision.html">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+<span class="absolute -top-1 -right-2 px-1 min-w-[16px] h-4 bg-secondary text-on-secondary rounded-full font-label-sm text-[10px] flex items-center justify-center leading-none font-bold">2</span>
+</div>
+<span class="font-label-sm text-label-sm mt-0.5">Decisions</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="approvals" href="mobile-approvals.html">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+<span class="absolute -top-1 -right-2 px-1 min-w-[16px] h-4 bg-secondary-container text-on-secondary rounded-full font-label-sm text-[10px] flex items-center justify-center leading-none font-bold">12</span>
+</div>
+<span class="font-label-sm text-label-sm mt-0.5">Approvals</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-all duration-200 text-primary font-bold" data-path="admissions" href="mobile-admissions.html">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">how_to_reg</span>
+<span class="absolute -top-1 -right-2 px-1 min-w-[16px] h-4 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm text-[10px] flex items-center justify-center leading-none font-bold">28</span>
+</div>
+<span class="font-label-sm text-label-sm mt-0.5">Admissions</span>
+</a></div></nav></body></html>

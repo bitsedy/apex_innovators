@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style> html { scroll-behavior: smooth; } html, body { margin: 0; padding: 0; width: 100%; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } </style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#161c23", "on-primary": "#ffffff", "secondary": "#ba0a0c", "on-primary-fixed-variant": "#344478", "tertiary-fixed-dim": "#78dc86", "primary": "#011549", "on-tertiary": "#ffffff", "inverse-surface": "#2b3138", "surface-bright": "#f7f9ff", "on-primary-container": "#8494cd", "secondary-fixed-dim": "#ffb4a9", "surface-container": "#e9eef8", "on-primary-fixed": "#03174b", "surface-container-low": "#eef4fe", "primary-fixed-dim": "#b5c4ff", "surface-tint": "#4c5c92", "surface-dim": "#d5dae4", "surface": "#f7f9ff", "surface-container-highest": "#dde3ec", "on-secondary": "#ffffff", "outline-variant": "#c5c6d1", "on-error": "#ffffff", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "on-secondary-container": "#fffbff", "error-container": "#ffdad6", "primary-container": "#1a2b5e", "primary-fixed": "#dce1ff", "on-tertiary-fixed": "#002108", "secondary-container": "#df2d23", "outline": "#757680", "on-tertiary-container": "#46a95a", "background": "#f7f9ff", "tertiary-fixed": "#94f9a0", "on-surface-variant": "#45464f", "tertiary": "#001f07", "inverse-primary": "#b5c4ff", "on-background": "#161c23", "surface-variant": "#dde3ec", "inverse-on-surface": "#ecf1fb", "on-secondary-fixed": "#410001", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#00531f", "tertiary-container": "#003712", "secondary-fixed": "#ffdad5", "surface-container-high": "#e3e8f2", "on-secondary-fixed-variant": "#930004" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-sm": "1rem", "space-xl": "2.5rem", "margin": "2rem", "space-xs": "0.25rem", "gutter-sm": "1rem", "space-md": "1rem", "gutter": "1.5rem", "space-sm": "0.5rem", "space-lg": "1.5rem" }, "fontFamily": { "body-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, "fontSize": { "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } };</script><title>Carepoint - Public Home (Primary)</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "public",
+            label: "Public Home (Primary)",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-home.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 bg-surface/90 backdrop-blur-xl"><div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between gap-4"><a class="flex items-center gap-3 group" data-path="home" href="home.html"><div class="w-11 h-11 rounded-xl bg-white flex items-center justify-center shadow-sm border border-outline-variant/30 p-0.5 transition-transform group-hover:scale-105 shrink-0 overflow-hidden">
+<img src="../assets/carepoint-crest.png" alt="Carepoint Community School Crest" class="w-full h-full object-contain rounded-lg"/>
+</div><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">Carepoint</span><span class="font-label-sm text-label-sm bg-tertiary text-tertiary-fixed px-2 py-0.5 rounded-full uppercase tracking-wider font-bold text-[10px]">Community School</span></div><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest text-[10px] font-bold">MIND • HEART • HANDS</span></div></a><nav id="desktop-nav" class="hidden lg:flex items-center gap-6 h-full relative" data-active-classes="text-primary font-bold">
+<a class="nav-link h-full flex items-center transition-colors text-primary font-bold font-label-lg text-label-lg" data-section="home" href="#home" aria-current="page">Home</a>
+<a class="nav-link h-full flex items-center transition-colors text-on-surface-variant hover:text-primary font-label-lg text-label-lg" data-section="academics" href="#academics">Academics</a>
+<a class="nav-link h-full flex items-center transition-colors text-on-surface-variant hover:text-primary font-label-lg text-label-lg" data-section="admissions" href="#admissions">Admissions</a>
+<div class="relative h-full flex items-center group" id="about-dropdown-container">
+<a class="nav-link h-full flex items-center gap-1 transition-colors text-on-surface-variant hover:text-primary font-label-lg text-label-lg cursor-pointer" data-section="about" href="#about">
+<span>About Us</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180 text-on-surface-variant group-hover:text-primary">expand_more</span>
+</a>
+<div class="dropdown-menu absolute top-[72px] right-0 sm:left-1/2 sm:-translate-x-1/2 w-80 bg-surface-container-lowest/98 backdrop-blur-xl border border-outline-variant/30 rounded-2xl shadow-2xl p-2.5 flex flex-col gap-1 transition-all duration-200 z-50 opacity-0 invisible -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
+<div class="px-3 py-1.5 text-[10px] font-bold text-on-surface-variant uppercase tracking-wider border-b border-surface-container-high mb-1">Carepoint Community &amp; Life</div>
+<a href="#about" class="dropdown-item flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group/item" data-section="about">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-primary group-hover/item:bg-primary group-hover/item:text-on-primary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[20px]">info</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-primary group-hover/item:text-secondary transition-colors">About Us</span>
+<span class="text-[11px] text-on-surface-variant font-normal leading-tight">Vision, Mission &amp; Leadership</span>
+</div>
+</a>
+<a href="#news" class="dropdown-item flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group/item" data-section="news">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-primary group-hover/item:bg-primary group-hover/item:text-on-primary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-primary group-hover/item:text-secondary transition-colors">News &amp; Events</span>
+<span class="text-[11px] text-on-surface-variant font-normal leading-tight">Announcements &amp; Term Calendar</span>
+</div>
+</a>
+<a href="#gallery" class="dropdown-item flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group/item" data-section="gallery">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-primary group-hover/item:bg-primary group-hover/item:text-on-primary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[20px]">photo_library</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-primary group-hover/item:text-secondary transition-colors">Campus Gallery</span>
+<span class="text-[11px] text-on-surface-variant font-normal leading-tight">Photos &amp; Student Life</span>
+</div>
+</a>
+<a href="#contact" class="dropdown-item flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group/item" data-section="contact">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary group-hover/item:bg-secondary group-hover/item:text-on-secondary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[20px]">contact_phone</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-primary group-hover/item:text-secondary transition-colors">Contact Us</span>
+<span class="text-[11px] text-on-surface-variant font-normal leading-tight">Location, Phone &amp; Inquiries</span>
+</div>
+</a>
+</div>
+</div>
+<div id="nav-active-bar" class="absolute bottom-0 h-[3px] bg-primary rounded-t-sm transition-all duration-300 ease-out pointer-events-none"></div>
+</nav><div class="flex items-center gap-3"><a class="hidden sm:inline-flex items-center px-4 py-2 rounded-lg font-label-lg text-label-lg text-primary bg-surface-container-low hover:bg-surface-container hover:text-primary transition-colors cursor-pointer" data-path="application-status-tracker" href="apply.html#status" onclick="openStatusModal(event)"><span class="material-symbols-outlined text-[18px] mr-1.5 text-secondary">fact_check</span>Check Status</a><a class="inline-flex items-center px-5 py-2.5 rounded-lg font-label-lg text-label-lg bg-secondary text-on-secondary hover:bg-secondary-container transition-colors shadow-sm font-bold" data-path="admissions-application-form" href="apply.html">Apply Now</a><button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-low text-primary hover:bg-surface-container transition-colors" onclick="closeMobileMenu()" aria-label="Toggle navigation menu"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="relative" id="portal-menu-container"><button id="portal-menu-button" onclick="togglePortalMenu(event)" aria-expanded="false" class="relative flex items-center focus:outline-none ring-2 ring-transparent hover:ring-secondary focus:ring-secondary rounded-full transition-all ml-1" title="Carepoint Portals &amp; Profile"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-container-highest cursor-pointer hover:scale-105 transition-transform" src="../assets/carepoint-crest.png"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 border-2 border-surface rounded-full"></span></button><div id="portal-dropdown" class="hidden absolute right-0 mt-2 w-72 bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container-high py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150"><div class="px-4 py-2 border-b border-surface-container-high flex items-center gap-3"><img alt="User" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk7nHm7egIuiTau40KQEFHBKNDX3EptaSdTu9TBK2iwADoApEdjY9Kkt9Tjm_DoF2KYNTvFIWgNO5GlABZPWPHY658qTxcggA0vvpzxYpMpol0tKKMsBvv14t1fD96WIU0vH77Tjlup7Pbm-TJ2cyzQEIlGRhdG85eoLM-GTjxqblK4wxMDpCIWDtDAyb_zVdq8MuHW3anaXkB6adGWp9xlHqAM3FbRNIoqmH3e2xOnAIl_mjOPskfLg"/><div class="flex flex-col min-w-0"><span class="text-body-sm font-bold text-primary truncate">Mrs. Mercy Mensah</span><span class="text-[11px] text-on-surface-variant">Parent / Guardian • ID: CP-4402</span></div></div><div class="px-4 pt-2.5 pb-1 text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Access Carepoint Portals</div><a href="../parent/dashboard.html" class="flex items-center gap-3 px-4 py-2 text-body-sm text-on-surface hover:bg-surface-container-low hover:text-primary transition-colors"><span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">family_restroom</span></span><div class="flex flex-col"><span class="font-semibold text-xs text-primary">Parent Portal</span><span class="text-[10px] text-on-surface-variant">Attendance, Fees, Terminal Reports</span></div></a><a href="../staff/dashboard.html" class="flex items-center gap-3 px-4 py-2 text-body-sm text-on-surface hover:bg-surface-container-low hover:text-primary transition-colors"><span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">school</span></span><div class="flex flex-col"><span class="font-semibold text-xs text-primary">Staff &amp; Teacher Portal</span><span class="text-[10px] text-on-surface-variant">Class registers &amp; Lesson plans</span></div></a><a href="../admin/dashboard.html" class="flex items-center gap-3 px-4 py-2 text-body-sm text-on-surface hover:bg-surface-container-low hover:text-primary transition-colors"><span class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary"><span class="material-symbols-outlined text-[18px]">admin_panel_settings</span></span><div class="flex flex-col"><span class="font-semibold text-xs text-primary">Admin &amp; Principal Console</span><span class="text-[10px] text-on-surface-variant">School operations &amp; Approvals</span></div></a><a href="../gate/scan.html" class="flex items-center gap-3 px-4 py-2 text-body-sm text-on-surface hover:bg-surface-container-low hover:text-primary transition-colors"><span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">qr_code_scanner</span></span><div class="flex flex-col"><span class="font-semibold text-xs text-primary">Gate &amp; Security Kiosk</span><span class="text-[10px] text-on-surface-variant">Pick-up verification &amp; Scan</span></div></a><div class="border-t border-surface-container-high my-1.5"></div><a href="../index.html" class="flex items-center gap-2 px-4 py-2 text-body-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[18px]">hub</span><span class="font-medium text-xs">All System Screens &amp; Mockups</span></a></div></div></div></div></div><div id="mobile-nav-drawer" class="hidden lg:hidden bg-surface/98 backdrop-blur-2xl border-b border-surface-container-high px-6 py-4 shadow-xl max-h-[calc(100vh-120px)] overflow-y-auto">
+<div class="flex flex-col gap-2">
+<a class="py-2.5 px-3 rounded-lg text-primary font-bold bg-surface-container-low flex items-center justify-between" data-section="home" href="#home" onclick="closeMobileMenu()">
+<span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[20px] text-primary">home</span>Home</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+<a class="py-2.5 px-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low font-semibold transition-colors flex items-center justify-between" data-section="academics" href="#academics" onclick="closeMobileMenu()">
+<span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[20px] text-secondary">school</span>Academics</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+<a class="py-2.5 px-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low font-semibold transition-colors flex items-center justify-between" data-section="admissions" href="apply.html" onclick="closeMobileMenu()">
+<span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[20px] text-primary">assignment_turned_in</span>Admissions (Apply)</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+
+<div class="border border-surface-container-high rounded-xl p-2 bg-surface-container-lowest/50">
+<button type="button" onclick="document.getElementById('mobile-about-submenu')?.classList.toggle('hidden'); document.getElementById('mobile-about-chevron')?.classList.toggle('rotate-180');" class="w-full py-1.5 px-2 rounded-lg text-primary font-bold flex items-center justify-between">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px] text-primary">info</span>About &amp; Community</span>
+<span id="mobile-about-chevron" class="material-symbols-outlined text-[18px] transition-transform duration-200">expand_more</span>
+</button>
+<div id="mobile-about-submenu" class="flex flex-col gap-1 mt-2 pt-2 border-t border-surface-container-high pl-2">
+<a class="py-2 px-2.5 rounded-lg text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low flex items-center gap-2.5 transition-colors" data-section="about" href="#about" onclick="closeMobileMenu()">
+<span class="material-symbols-outlined text-[18px] text-secondary">info</span><span>About Us</span>
+</a>
+<a class="py-2 px-2.5 rounded-lg text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low flex items-center gap-2.5 transition-colors" data-section="news" href="#news" onclick="closeMobileMenu()">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_month</span><span>News &amp; Events</span>
+</a>
+<a class="py-2 px-2.5 rounded-lg text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low flex items-center gap-2.5 transition-colors" data-section="gallery" href="#gallery" onclick="closeMobileMenu()">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-variant">photo_library</span><span>Campus Gallery</span>
+</a>
+<a class="py-2 px-2.5 rounded-lg text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low flex items-center gap-2.5 transition-colors" data-section="contact" href="#contact" onclick="closeMobileMenu()">
+<span class="material-symbols-outlined text-[18px] text-secondary">contact_phone</span><span>Contact Us</span>
+</a>
+</div>
+</div>
+
+<div class="border-t border-surface-container-high my-1 pt-2 flex flex-col gap-2">
+<button onclick="openStatusModal(event); toggleMobileMenu();" class="w-full py-2.5 px-3 rounded-lg bg-surface-container-low text-primary font-bold text-left flex items-center justify-between">
+<span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[20px] text-secondary">fact_check</span>Check Application Status</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<a href="apply.html" class="w-full py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-bold text-center flex items-center justify-center gap-2 shadow-sm">
+<span>Apply for 2026/2027</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a href="../parent/dashboard.html" class="py-2 px-3 rounded-lg text-xs text-on-surface-variant hover:text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">login</span><span>Enter Carepoint Portal Hub</span>
+</a>
+</div>
+</div>
+</div><script>
+function openMobileMenu() {
+  const d = document.getElementById('mobile-nav-drawer');
+  const btn = document.getElementById('mobile-menu-btn');
+  if (d) d.classList.remove('hidden');
+  if (btn) {
+    btn.setAttribute('aria-expanded', 'true');
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (icon) icon.textContent = 'close';
+  }
+}
+function closeMobileMenu() {
+  const d = document.getElementById('mobile-nav-drawer');
+  const btn = document.getElementById('mobile-menu-btn');
+  if (d) d.classList.add('hidden');
+  if (btn) {
+    btn.setAttribute('aria-expanded', 'false');
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (icon) icon.textContent = 'menu';
+  }
+}
+function toggleMobileMenu() {
+  const d = document.getElementById('mobile-nav-drawer');
+  if (d && !d.classList.contains('hidden')) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+}
+window.openMobileMenu = openMobileMenu;
+window.closeMobileMenu = closeMobileMenu;
+window.toggleMobileMenu = toggleMobileMenu;
+</script></header><main class="w-full pt-[80px] bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Subtle Tri-Color School Accent Bar inspired by physical emblem sign -->
+<div class="w-full flex h-2">
+<div class="w-1/3 bg-sky-400"></div>
+<div class="w-1/3 bg-secondary"></div>
+<div class="w-1/3 bg-tertiary-fixed-dim"></div>
+</div>
+<!-- SECTION 1: HERO STORYTELLING SECTION -->
+<section id="home" class="relative w-full overflow-hidden bg-surface py-12 md:py-20 px-6 lg:px-12 scroll-mt-28">
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 bottom-0 w-80 h-80 rounded-full bg-secondary/5 blur-2xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Content -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">
+          Nurturing the <span class="text-primary-container relative inline-block">Mind<svg class="absolute left-0 -bottom-2 w-full text-sky-400" height="8" preserveaspectratio="none" viewbox="0 0 100 8"><path d="M0,5 Q50,0 100,5" fill="none" stroke="currentColor" stroke-width="4"></path></svg></span>,<br/>
+          Inspiring the <span class="text-secondary">Heart</span>,<br/>
+          Empowering the <span class="text-tertiary-container">Hands</span>.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          A caring Christian community school for children from Creche to Junior High School. We help every child learn well, build good character, and develop real-life skills.
+        </p>
+<!-- CTA row -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center gap-3 px-7 py-3.5 rounded-xl bg-secondary text-on-secondary font-label-lg text-label-lg shadow-md hover:bg-secondary-container hover:shadow-lg transition-all duration-200 group" data-path="admissions-application-form" href="apply.html">
+<span>Apply for 2026/2027 Admissions</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg hover:bg-surface-container-highest hover:shadow-sm active:scale-[0.98] transition-all cursor-pointer" data-path="academics" href="#academics" onclick="document.getElementById('academics')?.scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined text-[20px] text-secondary">explore</span>
+<span>Explore Academics</span>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors cursor-pointer" data-path="contact-school" href="#contact" onclick="document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined text-[20px] text-secondary">calendar_month</span>
+<span>Book Campus Tour</span>
+</a>
+</div>
+<!-- Trust Badges Under Hero -->
+<div class="flex items-center gap-6 pt-4 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">NaSIA &amp; GES Certified</span>
+</div>
+<div class="w-1.5 h-1.5 rounded-full bg-surface-dim"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-variant text-[22px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">100% BECE Distinction</span>
+</div>
+</div>
+</div>
+<!-- Right Visual Feature Bento Mosaic -->
+<div class="lg:col-span-5 relative">
+<div class="relative bg-surface-container-lowest p-5 rounded-3xl shadow-xl flex flex-col gap-4">
+<!-- Main Hero Image Frame -->
+<div class="relative overflow-hidden rounded-2xl h-72 w-full">
+<img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" data-alt="Joyful diverse African students in crisp school uniforms studying together in a modern, naturally lit classroom at Carepoint Community School, smiling with open books, bright cheerful atmosphere, vibrant navy and crimson uniform accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbzrSgAU-V8H_mNm-6wnhpqCcPofLBZjYK9utwfEqBL40nRoydyTm7SjELl6-DUoLH5sla4OlYRfq96aJCKmPl2XpSQOHUM7WiZPTAcMVjdGWWDBTN5zyOUTUyvOqJcoF34S-vM84LcZV6HAQnE84S99EiguufTudhO284zH83J50gEh1YdM-_QhjFiz-ErnpN7ahqlRCQLJGA9rH2e_BOYA-ja7KiVJCM7s8K1iJZn-QcS2SW9ljZtQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<!-- School Motto Ribbon Floating In Image -->
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+<div class="bg-surface-container-lowest/95 backdrop-blur-md px-3.5 py-1.5 rounded-lg shadow-sm">
+<span class="font-label-sm text-label-sm text-primary tracking-widest font-bold">MIND • HEART • HANDS</span>
+</div>
+<div class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-sm font-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span>Top Ranked</span>
+</div>
+</div>
+</div>
+<!-- Mini sub-grid for stats and early years -->
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">child_care</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Creche - JHS</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Continuous Growth</span>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-4 rounded-xl flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold">STEM + Arts</span>
+<span class="font-label-sm text-label-sm text-on-primary/70">Well-Rounded Learning</span>
+</div>
+</div>
+</div>
+<!-- Secondary Inset Photo -->
+<div class="relative overflow-hidden rounded-xl h-36 w-full">
+<img class="w-full h-full object-cover" data-alt="Young kindergarten children proudly marching with miniature flags on the lush green Carepoint school lawn, sunlit morning with supportive teachers smiling in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhAp11_HP8hJxnBFb71X_yNqZov141Ptt2J3WfIyLHBy8U_KaMVsJjNWqS6tGIldo5JAmzSgie-BVQ6VZKca3JSlEsg2hXQaYrQOp7pFY2TxST-Au_bwYszqxT05-dFcv3WpxD-BKFDGdZi3KkLKXiPLoBfcuscWJmTsznqqdGyzsr6cNq2u5jCvsWUyrG8001mvYMFG8ReCT5dg901vOO6GghhHBUu9MfHbp2F_-s9yT_mHh4C0hv_Q"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px]"></div>
+<div class="absolute inset-0 flex items-center justify-between px-5">
+<span class="text-on-primary font-headline-sm text-headline-sm font-bold drop-shadow">Christian Character &amp; Civic Pride</span>
+<span class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: QUICK FACTS RIBBON -->
+<section class="w-full bg-primary text-on-primary py-8 px-6 lg:px-12 shadow-inner">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<!-- Fact 1 -->
+<div class="flex flex-col gap-1 p-4 rounded-2xl bg-white/5 border border-white/10">
+<span class="font-display-lg text-display-lg font-bold text-secondary-fixed leading-none">5</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-primary">Educational Tiers</span>
+<span class="font-body-sm text-body-sm text-on-primary/70">Creche through JHS 3</span>
+</div>
+<!-- Fact 2 -->
+<div class="flex flex-col gap-1 p-4 rounded-2xl bg-white/5 border border-white/10">
+<span class="font-display-lg text-display-lg font-bold text-tertiary-fixed leading-none">15+</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-primary">Years of Service</span>
+<span class="font-body-sm text-body-sm text-on-primary/70">Forming community leaders</span>
+</div>
+<!-- Fact 3 -->
+<div class="flex flex-col gap-1 p-4 rounded-2xl bg-white/5 border border-white/10">
+<span class="font-display-lg text-display-lg font-bold text-sky-300 leading-none">100%</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-primary">BECE Pass Record</span>
+<span class="font-body-sm text-body-sm text-on-primary/70">Grade 1 national placements</span>
+</div>
+<!-- Fact 4 -->
+<div class="flex flex-col gap-1 p-4 rounded-2xl bg-white/5 border border-white/10">
+<span class="font-display-lg text-display-lg font-bold text-secondary-fixed leading-none">1:15</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-primary">Teacher Ratio</span>
+<span class="font-body-sm text-body-sm text-on-primary/70">Individualized focus</span>
+</div>
+<!-- Fact 5 -->
+<div class="col-span-2 md:col-span-1 flex flex-col gap-1 p-4 rounded-2xl bg-white/5 border border-white/10 justify-center">
+<div class="flex items-center gap-2 text-tertiary-fixed">
+<span class="material-symbols-outlined text-[24px]">policy</span>
+<span class="font-headline-sm text-headline-sm font-bold">Accredited</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-primary/70">NaSIA &amp; GES Certified</span>
+</div>
+</div>
+</section>
+<!-- SECTION 3: ACADEMIC TIERS (DIRECTLY REFLECTING THE INSPIRATION SIGNBOARD) -->
+<section id="academics" class="w-full bg-surface-bright py-20 px-6 lg:px-12 scroll-mt-28">
+<div class="max-w-7xl mx-auto flex flex-col gap-12">
+<!-- Section Header with Signboard Theme Colors -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="flex flex-col gap-3 max-w-2xl">
+<div class="flex items-center gap-2 text-secondary font-label-md text-label-md uppercase tracking-widest font-bold">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+            Structured Educational Pathways
+          </div>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">
+            Academic Divisions Tailored to Every Developmental Milestone
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Structured developmental stages from early motor exploration to Junior High examination mastery, guided by dedicated educators.
+        </p>
+</div>
+<!-- 4-Card Program Grid directly matching image layout: Nursery, Kindergarten, Basic, Junior High -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- CARD 1: NURSERY & CRECHE -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high/60 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col overflow-hidden group">
+<!-- Top Color Keyline Bar -->
+<div class="h-2 w-full bg-sky-400"></div>
+<div class="p-6 flex flex-col flex-1">
+<!-- Pictorial Silhouette Frame replicating inspiration icon -->
+<div class="w-full h-44 bg-surface-container-low rounded-xl p-4 flex flex-col items-center justify-center text-primary relative overflow-hidden group-hover:bg-primary/5 transition-colors">
+<svg class="w-24 h-24 text-primary" fill="currentColor" viewbox="0 0 100 100">
+<!-- Silhouette: Toddler with building blocks and caretaker kneeling -->
+<circle cx="35" cy="25" r="10"></circle>
+<path d="M25 40 Q35 35 45 40 L45 65 L25 65 Z"></path>
+<rect class="text-sky-500 fill-current opacity-70" height="18" rx="2" width="18" x="58" y="45"></rect>
+<rect class="text-secondary fill-current opacity-70" height="16" rx="2" width="16" x="64" y="27"></rect>
+<circle cx="70" cy="72" r="6"></circle>
+<path class="opacity-40" d="M15 85 L85 85 L85 92 L15 92 Z"></path>
+</svg>
+<span class="absolute top-3 left-3 bg-surface-container-highest px-2 py-0.5 rounded text-[10px] font-label-sm text-primary font-bold">AGES 6M - 3Y</span>
+</div>
+<div class="flex flex-col gap-2 mt-5 flex-1">
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Nursery &amp; Creche</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Sensory exploration, gentle routine guidance, early phonemic awareness, and warm emotional care.
+              </p>
+<ul class="flex flex-col gap-1.5 mt-3 pt-3 bg-surface-container-low/50 p-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-variant">check_circle</span>
+<span>Montessori sensory stations</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-variant">check_circle</span>
+<span>Certified children's caregivers</span>
+</li>
+</ul>
+</div>
+<!-- Signature Pill Banner as in physical school board -->
+<div class="mt-6 w-full py-2.5 rounded-lg bg-primary text-on-primary text-center font-label-lg text-label-lg tracking-widest uppercase font-bold group-hover:bg-primary-container transition-colors">
+              NURSERY
+            </div>
+</div>
+</div>
+<!-- CARD 2: KINDERGARTEN -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high/60 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col overflow-hidden group">
+<!-- Top Color Keyline Bar -->
+<div class="h-2 w-full bg-secondary"></div>
+<div class="p-6 flex flex-col flex-1">
+<!-- Pictorial Silhouette Frame replicating inspiration icon (Child hoisting flag) -->
+<div class="w-full h-44 bg-surface-container-low rounded-xl p-4 flex flex-col items-center justify-center text-primary relative overflow-hidden group-hover:bg-primary/5 transition-colors">
+<svg class="w-24 h-24 text-primary" fill="currentColor" viewbox="0 0 100 100">
+<!-- Silhouette: Proud child raising flag and marching -->
+<circle cx="58" cy="48" r="8"></circle>
+<path d="M52 58 L64 58 L60 88 L52 88 Z"></path>
+<line stroke="currentColor" stroke-width="4" x1="42" x2="42" y1="20" y2="88"></line>
+<path class="text-secondary fill-current" d="M42 22 L18 28 L42 42 Z"></path>
+<circle class="fill-white" cx="28" cy="34" r="2.5"></circle>
+<path d="M50 62 L42 38" stroke="currentColor" stroke-width="3"></path>
+</svg>
+<span class="absolute top-3 left-3 bg-surface-container-highest px-2 py-0.5 rounded text-[10px] font-label-sm text-primary font-bold">KG 1 - KG 2 • AGES 4 - 5</span>
+</div>
+<div class="flex flex-col gap-2 mt-5 flex-1">
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Kindergarten</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Foundational reading, numeracy games, civic appreciation, and creative discovery through play.
+              </p>
+<ul class="flex flex-col gap-1.5 mt-3 pt-3 bg-surface-container-low/50 p-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-variant">check_circle</span>
+<span>Structured Jolly Phonics</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-variant">check_circle</span>
+<span>Moral &amp; civic etiquette</span>
+</li>
+</ul>
+</div>
+<!-- Signature Pill Banner as in physical school board -->
+<div class="mt-6 w-full py-2.5 rounded-lg bg-primary text-on-primary text-center font-label-lg text-label-lg tracking-widest uppercase font-bold group-hover:bg-primary-container transition-colors">
+              KINDERGARTEN
+            </div>
+</div>
+</div>
+<!-- CARD 3: BASIC SCHOOL -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high/60 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col overflow-hidden group">
+<!-- Top Color Keyline Bar -->
+<div class="h-2 w-full bg-tertiary-fixed-dim"></div>
+<div class="p-6 flex flex-col flex-1">
+<!-- Pictorial Silhouette Frame replicating inspiration icon (Group cheering with cross/book) -->
+<div class="w-full h-44 bg-surface-container-low rounded-xl p-4 flex flex-col items-center justify-center text-primary relative overflow-hidden group-hover:bg-primary/5 transition-colors">
+<svg class="w-24 h-24 text-primary" fill="currentColor" viewbox="0 0 100 100">
+<!-- Silhouettes: 3 children celebrating with high cross and books -->
+<circle cx="28" cy="46" r="6"></circle>
+<path d="M22 54 L34 54 L32 85 L24 85 Z"></path>
+<circle cx="50" cy="40" r="7"></circle>
+<path d="M42 50 L58 50 L56 85 L44 85 Z"></path>
+<circle cx="72" cy="46" r="6"></circle>
+<path d="M66 54 L78 54 L76 85 L68 85 Z"></path>
+<!-- Arms up and cross -->
+<line stroke="currentColor" stroke-width="3" x1="50" x2="50" y1="20" y2="35"></line>
+<line stroke="currentColor" stroke-width="3" x1="45" x2="55" y1="25" y2="25"></line>
+</svg>
+<span class="absolute top-3 left-3 bg-surface-container-highest px-2 py-0.5 rounded text-[10px] font-label-sm text-primary font-bold">GRADE 1 - 6 • AGES 6 - 11</span>
+</div>
+<div class="flex flex-col gap-2 mt-5 flex-1">
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Basic Primary</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Core STEM fluency, language arts, computing laboratory literacy, and Christian discipleship.
+              </p>
+<ul class="flex flex-col gap-1.5 mt-3 pt-3 bg-surface-container-low/50 p-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-variant">check_circle</span>
+<span>Robotics &amp; coding clubs</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-variant">check_circle</span>
+<span>Choral music &amp; creative arts</span>
+</li>
+</ul>
+</div>
+<!-- Signature Pill Banner as in physical school board -->
+<div class="mt-6 w-full py-2.5 rounded-lg bg-primary text-on-primary text-center font-label-lg text-label-lg tracking-widest uppercase font-bold group-hover:bg-primary-container transition-colors">
+              BASIC
+            </div>
+</div>
+</div>
+<!-- CARD 4: JUNIOR HIGH -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high/60 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col overflow-hidden group">
+<!-- Top Color Keyline Bar -->
+<div class="h-2 w-full bg-primary-container"></div>
+<div class="p-6 flex flex-col flex-1">
+<!-- Pictorial Silhouette Frame replicating inspiration icon (Older students reading) -->
+<div class="w-full h-44 bg-surface-container-low rounded-xl p-4 flex flex-col items-center justify-center text-primary relative overflow-hidden group-hover:bg-primary/5 transition-colors">
+<svg class="w-24 h-24 text-primary" fill="currentColor" viewbox="0 0 100 100">
+<!-- Silhouette: Two mature students in uniform holding open textbook -->
+<circle cx="35" cy="30" r="7"></circle>
+<path d="M26 40 L44 40 L40 85 L28 85 Z"></path>
+<circle cx="68" cy="34" r="7"></circle>
+<path d="M60 44 L76 44 L74 85 L62 85 Z"></path>
+<path class="text-secondary fill-current" d="M46 50 L56 50 L54 62 L44 62 Z"></path>
+</svg>
+<span class="absolute top-3 left-3 bg-surface-container-highest px-2 py-0.5 rounded text-[10px] font-label-sm text-primary font-bold">JHS 1 - 3 • AGES 12 - 15</span>
+</div>
+<div class="flex flex-col gap-2 mt-5 flex-1">
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Junior High (JHS)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                BECE examination preparation, science laboratories, French proficiency, and leadership development.
+              </p>
+<ul class="flex flex-col gap-1.5 mt-3 pt-3 bg-surface-container-low/50 p-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-variant">check_circle</span>
+<span>Pre-exam mock testing series</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-variant">check_circle</span>
+<span>Category-A Senior High prep</span>
+</li>
+</ul>
+</div>
+<!-- Signature Pill Banner as in physical school board -->
+<div class="mt-6 w-full py-2.5 rounded-lg bg-primary text-on-primary text-center font-label-lg text-label-lg tracking-widest uppercase font-bold group-hover:bg-primary-container transition-colors">
+              JUNIOR HIGH
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: ADMISSIONS PROCESS SPOTLIGHT -->
+<section id="admissions" class="w-full bg-surface py-20 px-6 lg:px-12 scroll-mt-28">
+<div class="max-w-7xl mx-auto flex flex-col gap-12">
+<!-- Top banner card -->
+<div class="bg-primary text-on-primary rounded-3xl p-8 lg:p-12 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
+<div class="flex flex-col gap-3 max-w-xl">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-sm font-label-sm self-start uppercase tracking-wider font-bold">Registration in Progress</span>
+<h2 class="font-headline-xl text-headline-xl font-bold">Ready to Join the Carepoint Family?</h2>
+<p class="font-body-md text-body-md text-on-primary/80">
+            Admissions for the 2026/2027 academic calendar are ongoing. We keep class sizes small so teachers can give each child personal attention.
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+<a class="w-full sm:w-auto text-center px-8 py-4 bg-secondary text-on-secondary rounded-xl font-label-lg text-label-lg hover:bg-secondary-container transition-colors shadow-md" data-path="admissions-application-form" href="apply.html">
+            Start Online Application
+          </a>
+<a class="w-full sm:w-auto text-center px-6 py-4 bg-primary-container text-on-primary rounded-xl font-label-lg text-label-lg hover:bg-primary-container/80 transition-colors cursor-pointer" data-path="application-status-tracker" href="apply.html#status" onclick="openStatusModal(event)">
+            Check Status
+          </a>
+</div>
+</div>
+<!-- 4 Simple Steps Timeline -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
+<!-- Step 1 -->
+<div class="bg-surface-container-low p-6 rounded-2xl border border-surface-container-high/60 hover:bg-surface-container-lowest hover:shadow-md transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-primary flex items-center justify-center font-headline-sm font-bold text-headline-sm">
+            01
+          </div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">Submit Form</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Complete student biodata and parental guardian details online.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-low p-6 rounded-2xl border border-surface-container-high/60 hover:bg-surface-container-lowest hover:shadow-md transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-primary flex items-center justify-center font-headline-sm font-bold text-headline-sm">
+            02
+          </div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">Upload Documents</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Attach birth certificates, medical records, and past academic reports.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-low p-6 rounded-2xl border border-surface-container-high/60 hover:bg-surface-container-lowest hover:shadow-md transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-primary flex items-center justify-center font-headline-sm font-bold text-headline-sm">
+            03
+          </div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">Assessment Visit</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gentle developmental screening and informal parent conversation.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-low p-6 rounded-2xl border border-surface-container-high/60 hover:bg-surface-container-lowest hover:shadow-md transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-secondary flex items-center justify-center font-headline-sm font-bold text-headline-sm">
+            04
+          </div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">Enrollment Offer</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Receive acceptance letter, booklist, and official Carepoint uniform kit.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: PARENT VOICES & TESTIMONIALS -->
+<section class="w-full bg-surface-container-low py-20 px-6 lg:px-12">
+<div class="max-w-7xl mx-auto flex flex-col gap-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest font-bold">Parent Community</span>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">What Our Families Experience</h2>
+</div>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface font-bold ml-2">4.9 / 5.0 PTA Satisfaction</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-surface-container-high/60 shadow-sm flex flex-col justify-between gap-6">
+<p class="font-body-md text-body-md text-on-surface italic">
+            “When my daughter transitioned from nursery to Basic 1, her reading fluency simply took off. The teachers combine loving care with disciplined habits, and she prays with genuine conviction.”
+          </p>
+<div class="flex items-center gap-3 pt-2">
+<div class="w-11 h-11 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">
+              MA
+            </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-bold">Mrs. Mercy Mensah</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Parent of Basic 2 &amp; KG1 students</span>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-surface-container-high/60 shadow-sm flex flex-col justify-between gap-6">
+<p class="font-body-md text-body-md text-on-surface italic">
+            “Carepoint's dedicated teachers went above and beyond for my son's BECE preparation. He scored straight grade ones and gained placement into his first-choice Senior High School.”
+          </p>
+<div class="flex items-center gap-3 pt-2">
+<div class="w-11 h-11 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold">
+              EA
+            </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-bold">Mr. Emmanuel Adams</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Father of 2026 JHS Graduate</span>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-surface-container-high/60 shadow-sm flex flex-col justify-between gap-6">
+<p class="font-body-md text-body-md text-on-surface italic">
+            “The Creche gives working mothers complete peace of mind. Immaculate hygiene, constant updates, and gentle attendants who care for every child as their own.”
+          </p>
+<div class="flex items-center gap-3 pt-2">
+<div class="w-11 h-11 rounded-full bg-tertiary text-tertiary-fixed flex items-center justify-center font-bold">
+              FA
+            </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-bold">Dr. Faustina Asante</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Early Years Nursery Parent</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: UPCOMING SCHOOL EVENTS STRIP -->
+<section id="news" class="w-full bg-surface py-16 px-6 lg:px-12 scroll-mt-28">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[28px]">event_note</span>
+<h3 class="font-headline-lg text-headline-lg text-primary font-bold">Key Term Dates &amp; Events</h3>
+</div>
+<a class="font-label-lg text-label-lg text-primary hover:text-secondary transition-colors" data-path="news-and-events" href="#news">
+          View Full Calendar →
+        </a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Event Card 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex items-start gap-4">
+<div class="bg-primary text-on-primary rounded-xl p-3 text-center min-w-[70px] shrink-0">
+<span class="font-label-sm text-label-sm block uppercase tracking-wider text-secondary-fixed">AUG</span>
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold leading-none">20</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Campus Event</span>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">Parent Open House &amp; Tour</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Meet teachers, inspect learning suites, and explore curriculum materials.</p>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex items-start gap-4">
+<div class="bg-primary text-on-primary rounded-xl p-3 text-center min-w-[70px] shrink-0">
+<span class="font-label-sm text-label-sm block uppercase tracking-wider text-secondary-fixed">SEP</span>
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold leading-none">12</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-tertiary-fixed-variant font-bold uppercase tracking-wider">Exhibition</span>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">STEM &amp; Young Inventors Fair</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Basic and JHS students showcase coding prototypes and robotic models.</p>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex items-start gap-4">
+<div class="bg-primary text-on-primary rounded-xl p-3 text-center min-w-[70px] shrink-0">
+<span class="font-label-sm text-label-sm block uppercase tracking-wider text-secondary-fixed">SEP</span>
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold leading-none">25</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Academic Term</span>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">Term 1 Re-Opening Bell</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">All returning and newly admitted students report in full school uniform at 7:30 AM.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7B: CAMPUS LIFE & GALLERY -->
+<section id="gallery" class="w-full bg-surface-container-low py-20 px-6 lg:px-12 scroll-mt-28">
+<div class="max-w-7xl mx-auto flex flex-col gap-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest font-bold">Vibrant Campus Experience</span>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">Life at Carepoint</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+          From hands-on STEM robotics laboratories to athletic championships and chapel devotionals, see how our learners thrive every single day.
+        </p>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+          5 Educational Divisions
+        </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-secondary">photo_camera</span>
+          Campus Gallery
+        </span>
+</div>
+</div>
+<!-- Gallery Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<!-- Photo 1: STEM Robotics Studio -->
+<div class="md:col-span-2 relative rounded-2xl overflow-hidden shadow-md group h-72">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="STEM Innovation & Robotics Lab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9Nqp6kO18SZ4JW1UJRGWM_8_EUcqHicEG3xtxxTiLRJCXQ880OKXGLJZL0KC3ZRrswk76PNlgzZVscT2iTScDRrJFc1SkeBlMMRqRCAVYl28QBAYbBvgWf-Zd6htYZXO3uum0dccJvc5C3PJkAK5eVzhB2MV-6YrZuBBy9_8qq-GiEdQeS7bbjq2JXTz8-yPU-odwTlRakZSZegQfo1lyQRomvTV8z92-DAtYZ8t6hgAnsndxuSLQeQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 text-white">
+<span class="px-2.5 py-0.5 bg-emerald-600 rounded text-label-sm font-label-sm font-bold uppercase tracking-wider">STEM Innovation</span>
+<h4 class="font-headline-sm text-headline-sm font-bold mt-1">Coding &amp; Robotics Studio</h4>
+<p class="font-body-sm text-body-sm text-white/80 line-clamp-1">Hands-on micro-controllers and practical engineering from Basic 3</p>
+</div>
+</div>
+<!-- Photo 2: Athletics & Sports Day -->
+<div class="relative rounded-2xl overflow-hidden shadow-md group h-72">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Athletics & Sports Day" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIKr42vpSEZZLwf1fHD7vtPU6TdGfRlm9hfOHqDR6asMwEz9I4EE6EueXQEjRy7ItOFjFxLq43YUix1CVBU5FV9cbDpQUZlLI98-q-1S1nB4vPjMg9vvc4_uLXSsC-bfC5fgJsvzoW15pbdIHoTKdszieI4828rHBO5hMS_V82c-zSedlMNnQ6KksxKZF8aPneVc8m6n76gsyCiCxZ1lb6iI7r0GulK-mmRWFfF5Sp_slJDNA5Y7Eyiw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 text-white">
+<span class="px-2.5 py-0.5 bg-secondary rounded text-label-sm font-label-sm font-bold uppercase tracking-wider">Sports</span>
+<h4 class="font-headline-sm text-body-md font-bold mt-1">Athletics &amp; Team Spirit</h4>
+<p class="font-body-sm text-body-sm text-white/80 line-clamp-1">Track &amp; field championships, football, and physical fitness</p>
+</div>
+</div>
+<!-- Photo 3: Chapel & Devotional Life -->
+<div class="relative rounded-2xl overflow-hidden shadow-md group h-72">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Chapel & Moral Formation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuvxHz4pfwrVt_lAo_sH7XbxvsUwnzaBDeaeqoxYD2p8eWEKeZYmLC3PcuhIjCSpGV0OUqwd8rCfNK7G3pKebY1QtrSy3NS0UTM_e5oyPnsDMR_eouWRLZ1flffRWSloAvC6q7PqJPgg7cq6ldah01jvm3mfFYqA4LHHH4239yLQHq-6z_drh8nKWkDekRyi2CBV_dCX0q3W-klpWeKS3wzShFsNipVG3RGsFFi5U6366MGAQOmzViaA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 text-white">
+<span class="px-2.5 py-0.5 bg-primary rounded text-label-sm font-label-sm font-bold uppercase tracking-wider">Spiritual</span>
+<h4 class="font-headline-sm text-body-md font-bold mt-1">Faith &amp; Devotion</h4>
+<p class="font-body-sm text-body-sm text-white/80 line-clamp-1">Weekly chapel, choir singing, and Christian values</p>
+</div>
+</div>
+<!-- Photo 4: Early Years Outdoor Play -->
+<div class="relative rounded-2xl overflow-hidden shadow-md group h-64">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Kindergarten Play" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhAp11_HP8hJxnBFb71X_yNqZov141Ptt2J3WfIyLHBy8U_KaMVsJjNWqS6tGIldo5JAmzSgie-BVQ6VZKca3JSlEsg2hXQaYrQOp7pFY2TxST-Au_bwYszqxT05-dFcv3WpxD-BKFDGdZi3KkLKXiPLoBfcuscWJmTsznqqdGyzsr6cNq2u5jCvsWUyrG8001mvYMFG8ReCT5dg901vOO6GghhHBUu9MfHbp2F_-s9yT_mHh4C0hv_Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 text-white">
+<span class="px-2 py-0.5 bg-sky-600 rounded text-label-sm font-label-sm font-bold uppercase tracking-wider">Early Childhood</span>
+<h4 class="font-headline-sm text-body-md font-bold mt-1">Play-Based Learning</h4>
+</div>
+</div>
+<!-- Photo 5: Modern Classrooms -->
+<div class="md:col-span-2 relative rounded-2xl overflow-hidden shadow-md group h-64">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Classroom Learning" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbzrSgAU-V8H_mNm-6wnhpqCcPofLBZjYK9utwfEqBL40nRoydyTm7SjELl6-DUoLH5sla4OlYRfq96aJCKmPl2XpSQOHUM7WiZPTAcMVjdGWWDBTN5zyOUTUyvOqJcoF34S-vM84LcZV6HAQnE84S99EiguufTudhO284zH83J50gEh1YdM-_QhjFiz-ErnpN7ahqlRCQLJGA9rH2e_BOYA-ja7KiVJCM7s8K1iJZn-QcS2SW9ljZtQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 text-white">
+<span class="px-2 py-0.5 bg-primary-container rounded text-label-sm font-label-sm font-bold uppercase tracking-wider">Academics</span>
+<h4 class="font-headline-sm text-headline-sm font-bold mt-1">Interactive Classroom Study</h4>
+<p class="font-body-sm text-body-sm text-white/80 line-clamp-1">Bright, ventilated learning suites fostering peer collaboration</p>
+</div>
+</div>
+<!-- Photo 6: Campus Grounds & Security -->
+<div class="relative rounded-2xl overflow-hidden shadow-md group h-64">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Campus Grounds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_Ur-UBS0igT71jIh_Q8nMQ6vqIrjV9CXHBiRH6luwo5UgrNbjCzN48WThTiwl_XJ5Ff4peWzONmslBIEvuXm6-AUEbywnXwXw9nTzA5A6mLSuIzRgjZfvmwzsp-x-X5yg9ArbUHeTxUfG2GpiL2swmEedESOxFsP3xoLc_sWHXjXZM0VfJkF8FYuZKT_8aga91uXhQxpFp4mg3y8Zq95QQmn0lWEbkEsL3p_qvYDrTWuUiW-1lDZkTg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 text-white">
+<span class="px-2 py-0.5 bg-secondary-container rounded text-label-sm font-label-sm font-bold uppercase tracking-wider">Campus</span>
+<h4 class="font-headline-sm text-body-md font-bold mt-1">Safe, Walled Compound</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: THE THREE PILLARS (MIND • HEART • HANDS) - ABOUT US -->
+<section id="about" class="w-full bg-surface-container-low py-20 px-6 lg:px-12 scroll-mt-28">
+<div class="max-w-7xl mx-auto flex flex-col gap-16">
+<div class="w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 bg-white mb-6">
+        <div class="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden bg-surface-container-low">
+          <img src="../assets/carepoint-school-profile.jpg" alt="Carepoint Community School Official Signboard & Profile" class="w-full h-full object-cover object-center shadow-inner hover:scale-[1.02] transition-transform duration-700"/>
+          <div class="absolute bottom-3 right-4 px-3 py-1 rounded-full bg-primary/90 text-white font-label-sm text-xs font-semibold backdrop-blur-md shadow-md flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+            <span>Official Campus Insignia</span>
+          </div>
+        </div>
+      </div>
+      <div class="text-center max-w-3xl mx-auto flex flex-col gap-3">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest font-bold">The Carepoint Philosophy</span>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">
+          The Three Pillars of Carepoint
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Nurturing well-rounded scholars through the balanced harmony of intellect, character, and practical skill.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pillar 1: MIND -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-container-high/60 shadow-sm flex flex-col gap-4 relative overflow-hidden">
+<div class="w-14 h-14 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">psychology</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-bold">PILLAR 01</span>
+<div class="h-0.5 w-6 bg-secondary"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">The Mind</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Critical thinking, science inquiry, and computational logic that move beyond rote memorization.
+          </p>
+<ul class="flex flex-col gap-2 pt-4 text-on-surface-variant font-body-sm text-body-sm">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Diagnostic reading mastery trackers</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Experiential STEM lab projects</span>
+</li>
+</ul>
+</div>
+<!-- Pillar 2: HEART -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-container-high/60 shadow-sm flex flex-col gap-4 relative overflow-hidden">
+<div class="w-14 h-14 rounded-xl bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-bold">PILLAR 02</span>
+<div class="h-0.5 w-6 bg-secondary"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">The Heart</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Christian virtues, empathy, and integrity that inspire students to lead with humility and uplift others.
+          </p>
+<ul class="flex flex-col gap-2 pt-4 text-on-surface-variant font-body-sm text-body-sm">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Weekly values &amp; scripture assembly</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Peer mentorship &amp; restorative guidance</span>
+</li>
+</ul>
+</div>
+<!-- Pillar 3: HANDS -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-container-high/60 shadow-sm flex flex-col gap-4 relative overflow-hidden">
+<div class="w-14 h-14 rounded-xl bg-tertiary text-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">pan_tool</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-bold">PILLAR 03</span>
+<div class="h-0.5 w-6 bg-secondary"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">The Hands</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Applied arts, agriculture, athletics, and practical skills that turn concepts into tangible results.
+          </p>
+<ul class="flex flex-col gap-2 pt-4 text-on-surface-variant font-body-sm text-body-sm">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-variant"></span>
+<span>Campus ecology &amp; school gardening</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-variant"></span>
+<span>Coding, music &amp; creative electives</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="flex justify-center">
+<a class="inline-flex items-center gap-2 font-label-lg text-label-lg text-primary hover:text-secondary transition-colors group cursor-pointer" data-path="about-us" href="#about" onclick="document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})">
+<span>Learn more about Carepoint Heritage &amp; Leadership</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">east</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION 8: BOTTOM CONVERSION CTA BANNER -->
+<section class="w-full bg-surface-container py-16 px-6 lg:px-12">
+<div class="max-w-7xl mx-auto rounded-3xl bg-gradient-to-r from-primary via-primary-container to-primary text-on-primary p-10 lg:p-16 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+<!-- Decorative background icon -->
+<div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[240px]">school</span>
+</div>
+<div class="flex flex-col gap-4 max-w-2xl relative z-10">
+<div class="flex items-center gap-2 text-secondary-fixed font-label-md text-label-md font-bold tracking-widest uppercase">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+          Give Your Child The Carepoint Advantage
+        </div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile font-bold tracking-tight">
+          Enrollment is Simple, Transparent &amp; Swift.
+        </h2>
+<p class="font-body-md text-body-md text-on-primary/80">
+          Join a community dedicated to your child's moral uprightness and academic prowess. Apply online in under 10 minutes.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 relative z-10 shrink-0 w-full md:w-auto">
+<a class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary text-on-secondary font-label-lg text-label-lg shadow-lg hover:bg-secondary-container transition-all" data-path="admissions-application-form" href="apply.html">
+<span>Apply Online Now</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-surface-container-lowest text-primary font-label-lg text-label-lg hover:bg-surface-container-low transition-colors cursor-pointer" data-path="contact-school" href="#contact" onclick="document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})">
+<span>Speak with Admissions</span>
+</a>
+</div>
+</div>
+</section>
+</div></main><footer id="contact" class="w-full bg-surface-container-low text-on-surface pt-space-xl pb-space-lg scroll-mt-28"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-lg pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center font-headline-sm font-bold"><span class="material-symbols-outlined text-secondary-fixed">school</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary font-bold">Carepoint Community School</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest font-bold text-[10px]">MIND • HEART • HANDS</span></div></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Nurturing confident, principled learners from early childhood through junior secondary education with well-rounded academic rigor and character formation.</p><div class="flex flex-col gap-1 text-on-surface-variant font-body-sm text-body-sm"><span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">location_on</span> Carepoint Boulevard, Community Edu District</span><span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">phone_in_talk</span> +233 (0) 24 123 4567 / +233 (0) 20 765 4321</span><span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">mail</span> admissions@carepoint.edu.gh</span></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-primary uppercase tracking-wider">Academic Tiers</span><ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="academics" href="#academics">Creche &amp; Daycare (6m - 2y)</a></li><li><a class="hover:text-primary transition-colors" data-path="academics" href="#academics">Nursery Division (N1 - N2)</a></li><li><a class="hover:text-primary transition-colors" data-path="academics" href="#academics">Kindergarten (KG1 - KG2)</a></li><li><a class="hover:text-primary transition-colors" data-path="academics" href="#academics">Primary / Basic (B1 - B6)</a></li><li><a class="hover:text-primary transition-colors" data-path="academics" href="#academics">Junior High School (JHS1 - JHS3)</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-primary uppercase tracking-wider">Admissions</span><ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="admissions-overview" href="apply.html">Admission Guidelines</a></li><li><a class="hover:text-primary transition-colors" data-path="admissions-application-form" href="apply.html">Online Application Portal</a></li><li><a class="hover:text-primary transition-colors" data-path="application-status-tracker" href="apply.html#status">Track Application Status</a></li><li><a class="hover:text-primary transition-colors cursor-pointer" data-path="tuition-and-fees" href="#tuition-modal" onclick="openTuitionModal(event)">Tuition &amp; Financial Policy</a></li><li><a class="hover:text-primary transition-colors" data-path="contact-school" href="#contact">Book Campus Visit</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-primary uppercase tracking-wider">Stay Connected</span><p class="font-body-sm text-body-sm text-on-surface-variant">Receive term schedules, open day alerts, and student enrichment newsletters.</p><form class="flex flex-col gap-2" onsubmit="event.preventDefault(); showSubscribeSuccess(this);"><div class="relative"><input id="newsletter-email" name="email" required autocomplete="email" aria-label="Parent email address for updates" class="w-full px-3 py-2 text-body-sm bg-surface-container-lowest text-on-surface rounded-lg outline outline-1 outline-outline-variant focus:outline-2 focus:outline-primary placeholder:text-outline" placeholder="Enter parent email" type="email"/><button class="mt-2 w-full py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors" type="submit">Subscribe</button></div><p class="hidden text-xs text-emerald-600 font-semibold mt-1">✓ Subscribed! You will receive Carepoint term updates.</p></form></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span><span>Certified by National Schools Inspectorate Authority (NaSIA) &amp; Ministry of Education</span></div><span>© 2026 Carepoint Community School. All rights reserved.</span></div></div></footer>
+<!-- ADMISSION APPLICATION STATUS TRACKER MODAL -->
+<div id="status-checker-modal" role="dialog" aria-modal="true" aria-labelledby="status-modal-title" onclick="if(event.target===this)closeStatusModal()" class="hidden fixed inset-0 z-50 overflow-y-auto bg-primary/60 backdrop-blur-sm items-center justify-center p-4">
+  <div class="relative w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container-high overflow-hidden animate-in fade-in zoom-in-95 duration-200 my-8">
+    <div class="bg-primary text-on-primary px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-secondary-fixed text-[24px]">fact_check</span>
+        <div>
+          <h3 id="status-modal-title" class="font-headline-sm text-headline-sm font-bold leading-tight">Track Admission Status</h3>
+          <p class="text-[11px] text-on-primary/70">Carepoint Community School • Academic Year 2026/2027</p>
+        </div>
+      </div>
+      <button onclick="closeStatusModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center transition-colors" aria-label="Close modal">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div class="p-6 flex flex-col gap-4">
+      <div>
+        <label for="status-ref-input" class="block text-body-sm font-bold text-primary mb-1.5">Application Reference Code</label>
+        <div class="flex gap-2">
+          <div class="relative flex-1">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+              <span class="material-symbols-outlined text-[20px]">tag</span>
+            </span>
+            <input id="status-ref-input" type="text" placeholder="e.g. CP-2026-9921" value="CP-2026-9921" onkeydown="if(event.key==='Enter'){event.preventDefault();lookupStatus();}" class="w-full pl-10 pr-3 py-2.5 bg-surface-container-low border border-outline-variant/60 rounded-xl text-primary font-mono text-sm focus:outline-primary focus:bg-surface-container-lowest transition-all" />
+          </div>
+          <button onclick="lookupStatus()" class="px-5 py-2.5 rounded-xl bg-secondary text-on-secondary font-bold text-sm hover:bg-secondary-container transition-colors shadow-sm flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px]">search</span>
+            <span>Track</span>
+          </button>
+        </div>
+        <p class="text-[12px] text-on-surface-variant mt-1.5">Enter the reference code sent to your email or SMS upon registration.</p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-[11px] text-on-surface-variant font-medium">Quick demo codes:</span>
+        <button type="button" onclick="setSampleRef('CP-2026-9921')" class="text-[11px] font-mono px-2 py-0.5 rounded bg-surface-container-high text-primary hover:bg-surface-container hover:underline cursor-pointer">CP-2026-9921 (Assessment)</button>
+        <button type="button" onclick="setSampleRef('CP-2026-8104')" class="text-[11px] font-mono px-2 py-0.5 rounded bg-surface-container-high text-primary hover:bg-surface-container hover:underline cursor-pointer">CP-2026-8104 (Offer Ready)</button>
+      </div>
+
+      <div id="status-result-box" class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-3">
+        <div class="flex items-center justify-between border-b border-surface-container-high pb-2.5">
+          <div>
+            <div class="font-bold text-primary text-body-md" id="status-student-name">Kofi Mensah (Student)</div>
+            <div class="text-[12px] text-on-surface-variant" id="status-tier-label">Applying for: Basic 4 Intake • Academic Year 2026/2027</div>
+          </div>
+          <span id="status-badge" class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300">
+            Assessment Stage
+          </span>
+        </div>
+
+        <div class="space-y-3 pt-1">
+          <div class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-[16px]">check</span>
+            </span>
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-primary">1. Online Application Submitted</div>
+              <div class="text-[11px] text-on-surface-variant">Completed on Sept 12, 2026 • Reference CP-2026-9921 confirmed</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span id="step2-icon" class="w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-[16px]">event_available</span>
+            </span>
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-primary" id="step2-title">2. Diagnostic Assessment &amp; Parent Interview</div>
+              <div class="text-[11px] text-on-surface-variant" id="step2-desc">Scheduled for <strong class="text-secondary">Saturday, Oct 04, 2026 at 9:00 AM</strong> (Campus Block B)</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 opacity-60">
+            <span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-[16px]">hourglass_empty</span>
+            </span>
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-on-surface-variant">3. Academic Review &amp; Placement</div>
+              <div class="text-[11px] text-on-surface-variant">Diagnostic grading reviewed within 3 working days</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 opacity-60">
+            <span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-[16px]">verified</span>
+            </span>
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-on-surface-variant">4. Official Admission Letter &amp; Welcome Kit</div>
+              <div class="text-[11px] text-on-surface-variant">Downloadable via parent portal upon acceptance</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-surface-container-high flex items-center justify-between">
+          <a href="tel:+233241234567" class="text-xs text-primary font-semibold hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px] text-secondary">support_agent</span>
+            <span>Admissions Desk: +233 24 123 4567</span>
+          </a>
+          <button onclick="closeStatusModal()" class="px-4 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container text-primary font-semibold text-xs transition-colors">
+            Dismiss
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TUITION & FINANCIAL POLICY MODAL -->
+<div id="tuition-modal" role="dialog" aria-modal="true" aria-labelledby="tuition-modal-title" onclick="if(event.target===this)closeTuitionModal()" class="hidden fixed inset-0 z-50 overflow-y-auto bg-primary/60 backdrop-blur-sm items-center justify-center p-4">
+  <div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container-high overflow-hidden animate-in fade-in zoom-in-95 duration-200 my-8">
+    <div class="bg-primary text-on-primary px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-secondary-fixed text-[26px]">payments</span>
+        <div>
+          <h3 id="tuition-modal-title" class="font-headline-sm text-headline-sm font-bold leading-tight">Tuition &amp; Financial Policy</h3>
+          <p class="text-[11px] text-on-primary/70">Carepoint Community School • Academic Year 2026/2027 Schedule</p>
+        </div>
+      </div>
+      <button onclick="closeTuitionModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center transition-colors" aria-label="Close modal">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div class="p-6 flex flex-col gap-5 max-h-[75vh] overflow-y-auto">
+      <div class="bg-surface-container-low p-4 rounded-xl border border-surface-container-high flex items-start gap-3">
+        <span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">verified_user</span>
+        <div class="text-xs text-on-surface-variant leading-relaxed">
+          <p class="font-bold text-primary mb-0.5">NaSIA &amp; GES Approved Transparent Fee Structure</p>
+          Carepoint Community School maintains an all-inclusive tuition standard covering core academics, digital learning portals, French &amp; STEM labs, and co-curriculars. No hidden mandatory development levies.
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-label-lg text-label-lg font-bold text-primary uppercase tracking-wider mb-2">Termly Tuition &amp; Academic Services (2026/2027)</h4>
+        <div class="border border-outline-variant/60 rounded-xl overflow-hidden">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead class="bg-surface-container text-primary font-bold">
+              <tr>
+                <th class="p-3">Academic Tier</th>
+                <th class="p-3">Tuition / Term</th>
+                <th class="p-3">Lab &amp; Enrichment</th>
+                <th class="p-3 text-right">Total / Term</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant/40 text-on-surface">
+              <tr class="hover:bg-surface-container-low">
+                <td class="p-3 font-semibold text-primary">Creche &amp; Daycare (6m - 2y)</td>
+                <td class="p-3">GH₵ 1,450</td>
+                <td class="p-3">GH₵ 600 (Care &amp; Diet)</td>
+                <td class="p-3 font-bold text-right text-primary">GH₵ 2,050</td>
+              </tr>
+              <tr class="hover:bg-surface-container-low">
+                <td class="p-3 font-semibold text-primary">Nursery (N1 - N2)</td>
+                <td class="p-3">GH₵ 1,650</td>
+                <td class="p-3">GH₵ 400 (Phonics &amp; Play)</td>
+                <td class="p-3 font-bold text-right text-primary">GH₵ 2,050</td>
+              </tr>
+              <tr class="hover:bg-surface-container-low">
+                <td class="p-3 font-semibold text-primary">Kindergarten (KG1 - KG2)</td>
+                <td class="p-3">GH₵ 1,750</td>
+                <td class="p-3">GH₵ 450 (Activity Pack)</td>
+                <td class="p-3 font-bold text-right text-primary">GH₵ 2,200</td>
+              </tr>
+              <tr class="hover:bg-surface-container-low">
+                <td class="p-3 font-semibold text-primary">Primary (Basic 1 - 6)</td>
+                <td class="p-3">GH₵ 2,200</td>
+                <td class="p-3">GH₵ 350 (ICT &amp; STEM)</td>
+                <td class="p-3 font-bold text-right text-primary">GH₵ 2,550</td>
+              </tr>
+              <tr class="hover:bg-surface-container-low">
+                <td class="p-3 font-semibold text-primary">Junior High (JHS 1 - 3)</td>
+                <td class="p-3">GH₵ 2,700</td>
+                <td class="p-3">GH₵ 500 (BECE &amp; Computing)</td>
+                <td class="p-3 font-bold text-right text-primary">GH₵ 3,200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/60">
+          <span class="flex items-center gap-1.5 font-label-md text-label-md font-bold text-primary mb-1">
+            <span class="material-symbols-outlined text-[18px] text-secondary">family_restroom</span>
+            Sibling Concessions
+          </span>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Parents enrolling 2 or more biological children receive a <strong>10% tuition rebate</strong> on the 2nd child and <strong>15% rebate</strong> on 3rd and subsequent children.
+          </p>
+        </div>
+        <div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/60">
+          <span class="flex items-center gap-1.5 font-label-md text-label-md font-bold text-primary mb-1">
+            <span class="material-symbols-outlined text-[18px] text-secondary">credit_card</span>
+            Flexible Payment Terms
+          </span>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Fees can be settled fully before term starts or split in 3 tranches (60% at registration, 20% mid-term, 20% by week 9). Instant MoMo &amp; Bank verification supported.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="p-4 bg-surface-container-low border-t border-surface-container-high flex flex-wrap items-center justify-between gap-3">
+      <button onclick="alert('Carepoint 2026/2027 Fee Schedule & Policy PDF downloaded successfully.')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-highest text-primary font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[18px]">download</span>
+        Download PDF Schedule
+      </button>
+      <div class="flex items-center gap-2">
+        <button onclick="closeTuitionModal()" class="px-4 py-2 rounded-xl bg-transparent text-on-surface-variant hover:bg-surface-container text-xs font-semibold transition-colors">
+          Close
+        </button>
+        <a href="apply.html" class="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-secondary text-on-secondary font-label-md text-label-md shadow hover:bg-secondary-container transition-all">
+          <span>Apply Now</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openTuitionModal(e) {
+  if (e) e.preventDefault();
+  const m = document.getElementById('tuition-modal');
+  if (m) {
+    m.classList.remove('hidden');
+    m.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeTuitionModal() {
+  const m = document.getElementById('tuition-modal');
+  if (m) {
+    m.classList.add('hidden');
+    m.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+}
+
+function showSubscribeSuccess(form) {
+  const p = form.querySelector('p');
+  if (p) {
+    p.classList.remove('hidden');
+    const input = form.querySelector('input');
+    if (input) input.value = '';
+    setTimeout(() => {
+      p.classList.add('hidden');
+    }, 5000);
+  }
+}
+
+function openStatusModal(e) {
+  if (e) e.preventDefault();
+  const m = document.getElementById('status-checker-modal');
+  if (m) {
+    m.classList.remove('hidden');
+    m.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    const input = document.getElementById('status-ref-input');
+    if (input) setTimeout(() => input.focus(), 100);
+  }
+}
+
+function closeStatusModal() {
+  const m = document.getElementById('status-checker-modal');
+  if (m) {
+    m.classList.add('hidden');
+    m.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+}
+
+function setSampleRef(code) {
+  const input = document.getElementById('status-ref-input');
+  if (input) {
+    input.value = code;
+    lookupStatus();
+  }
+}
+
+function lookupStatus() {
+  const input = document.getElementById('status-ref-input');
+  const code = (input ? input.value : '').trim().toUpperCase();
+  const resultBox = document.getElementById('status-result-box');
+  const student = document.getElementById('status-student-name');
+  const tier = document.getElementById('status-tier-label');
+  const badge = document.getElementById('status-badge');
+  const step2Desc = document.getElementById('step2-desc');
+  
+  if (!code) {
+    if (student) student.textContent = "Please Enter Reference Code";
+    if (tier) tier.textContent = "Enter your reference code (e.g. CP-2026-9921) to track your status";
+    if (badge) {
+      badge.textContent = "Code Required";
+      badge.className = "px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-rose-100 text-rose-900 border border-rose-300";
+    }
+    if (step2Desc) step2Desc.innerHTML = "Awaiting valid reference code.";
+    return;
+  }
+
+  if (code.includes('8104')) {
+    if (student) student.textContent = "Ama Konadu (Student)";
+    if (tier) tier.textContent = "Applying for: Nursery 2 Intake • Academic Year 2026/2027";
+    if (badge) {
+      badge.textContent = "Offer Granted";
+      badge.className = "px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 border border-emerald-300";
+    }
+    if (step2Desc) step2Desc.innerHTML = "Assessment Completed & Passed (Score: 94%). <strong class='text-emerald-700'>Placement confirmed!</strong>";
+  } else if (code.includes('9921')) {
+    if (student) student.textContent = "Kofi Mensah (Student)";
+    if (tier) tier.textContent = "Applying for: Basic 4 Intake • Academic Year 2026/2027";
+    if (badge) {
+      badge.textContent = "Assessment Stage";
+      badge.className = "px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300";
+    }
+    if (step2Desc) step2Desc.innerHTML = 'Scheduled for <strong class="text-secondary">Saturday, Oct 04, 2026 at 9:00 AM</strong> (Campus Block B)';
+  } else {
+    if (student) student.textContent = "Reference Code Not Found";
+    if (tier) tier.textContent = `No application matching "${code}". Check SMS or email confirmation.`;
+    if (badge) {
+      badge.textContent = "Not Found";
+      badge.className = "px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant border border-outline-variant";
+    }
+    if (step2Desc) step2Desc.innerHTML = 'Please re-verify your reference code or call Admissions at <strong class="text-secondary">+233 24 123 4567</strong>.';
+  }
+}
+
+function togglePortalMenu(e) {
+  if (e) e.stopPropagation();
+  const d = document.getElementById('portal-dropdown');
+  const b = document.getElementById('portal-menu-button');
+  if (d) {
+    const isHidden = d.classList.toggle('hidden');
+    if (b) b.setAttribute('aria-expanded', !isHidden ? 'true' : 'false');
+  }
+}
+
+// Global dismissals: Escape key and click outside
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeStatusModal();
+    closeTuitionModal();
+    closeMobileMenu();
+    const d = document.getElementById('portal-dropdown');
+    const b = document.getElementById('portal-menu-button');
+    if (d) d.classList.add('hidden');
+    if (b) b.setAttribute('aria-expanded', 'false');
+  }
+});
+
+document.addEventListener('click', function(e) {
+  const d = document.getElementById('portal-dropdown');
+  const b = document.getElementById('portal-menu-button');
+  if (d && !d.classList.contains('hidden') && b && !b.contains(e.target) && !d.contains(e.target)) {
+    d.classList.add('hidden');
+    if (b) b.setAttribute('aria-expanded', 'false');
+  }
+
+  // Dismiss mobile drawer if clicked outside
+  const drawer = document.getElementById('mobile-nav-drawer');
+  const mBtn = document.getElementById('mobile-menu-btn');
+  if (drawer && !drawer.classList.contains('hidden') && mBtn && !mBtn.contains(e.target) && !drawer.contains(e.target)) {
+    closeMobileMenu();
+  }
+});
+
+// Auto open status modal if URL hash is #status
+if (window.location.hash === '#status') {
+  openStatusModal();
+}
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#status') {
+    openStatusModal();
+  }
+});
+</script>
+</body></html>

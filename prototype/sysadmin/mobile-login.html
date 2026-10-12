@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <meta content="mobile_blank" name="shell-type"/>
+  <title>Carepoint Community School — Mobile Portal Sign In</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#011549",
+            "primary-container": "#1a2b5e",
+            "secondary": "#ba0a0c",
+            "secondary-container": "#df2d23",
+            "surface": "#f7f9ff",
+            "surface-container": "#e9eef8",
+            "surface-container-low": "#eef4fe",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e3e8f2",
+            "surface-container-highest": "#dde3ec",
+            "on-surface": "#161c23",
+            "on-surface-variant": "#45464f",
+            "outline": "#757680",
+            "outline-variant": "#c5c6d1",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "tertiary": "#001f07",
+            "tertiary-fixed": "#94f9a0",
+            "tertiary-fixed-dim": "#78dc86",
+            "on-tertiary-container": "#46a95a"
+          },
+          fontFamily: {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html, body { width: 100vw; margin: 0; padding: 0; }
+    body { overscroll-behavior: none; min-height: max(884px, 100dvh); }
+    .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+    .pt-safe { padding-top: env(safe-area-inset-top, 16px); }
+    main > :first-child { margin-top: 0 !important; }
+    main > :last-child { margin-bottom: 0 !important; }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+  <link href="../carepoint-hud.css" rel="stylesheet"/>
+  <script>
+    window.__CAREPOINT_HUD__ = {
+      role: "sysadmin",
+      label: "Mobile Portal Sign In",
+      isMobile: true,
+      relRoot: "../",
+      counterpart: "login.html"
+    };
+  </script>
+  <script type="module" src="/carepoint-app.js"></script>
+  <script type="module" src="../carepoint-hud.js"></script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased pt-safe pb-safe flex flex-col min-h-screen">
+  <main class="flex flex-col relative w-full flex-1 px-4 py-4 justify-center">
+    <!-- Top Tricolor Ribbon -->
+    <div class="flex h-1.5 w-full rounded-full overflow-hidden mb-4">
+      <div class="flex-1 bg-[#38bdf8]"></div>
+      <div class="flex-1 bg-secondary"></div>
+      <div class="flex-1 bg-on-tertiary-container"></div>
+    </div>
+
+    <!-- Header & Seal -->
+    <div class="flex flex-col items-center text-center mb-4">
+      <div class="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-md relative mb-2 p-1 border border-outline-variant/30">
+        <img src="../assets/carepoint-crest.png" alt="Carepoint Community School Crest" class="w-full h-full object-contain rounded-xl"/>
+        <span class="absolute -bottom-1 -right-1 w-5 h-5 bg-tertiary-fixed-dim rounded-full flex items-center justify-center text-tertiary shadow-sm">
+          <span class="material-symbols-outlined text-[11px] font-bold">verified</span>
+        </span>
+      </div>
+
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-[10px] font-bold uppercase tracking-wider mb-0.5">
+        <span>Carepoint Community School</span>
+      </div>
+      <div class="flex items-center gap-1.5 text-secondary font-label-sm text-[10px] uppercase tracking-widest font-semibold mb-1">
+        <span>Mind</span>
+        <span class="text-outline-variant">•</span>
+        <span>Heart</span>
+        <span class="text-outline-variant">•</span>
+        <span>Hands</span>
+      </div>
+
+      <h1 class="text-xl font-bold text-primary tracking-tight">
+        Institutional Portal Sign In
+      </h1>
+      <p class="text-xs text-on-surface-variant mt-1 max-w-xs">
+        Enter your credentials. The system automatically detects your account and opens your workstation.
+      </p>
+    </div>
+
+    <!-- Main Sign-In Card -->
+    <div class="w-full bg-surface-container-lowest rounded-2xl shadow-lg p-5 flex flex-col gap-3.5 border border-surface-container-high/60">
+      <form class="flex flex-col gap-3.5" id="universal-login-form-mobile" onsubmit="event.preventDefault(); handleMobileAuthSubmit();">
+        <!-- Identity Field -->
+        <div class="flex flex-col gap-1">
+          <label class="font-bold text-xs text-on-surface flex items-center justify-between" for="mobile-user-identity">
+            <span>Email, Phone or Staff ID</span>
+            <span class="text-[10px] text-secondary font-semibold">Auto-Detects Role</span>
+          </label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3 text-outline text-lg pointer-events-none">account_circle</span>
+            <input
+              autocomplete="username"
+              class="w-full pl-9 pr-3 py-2.5 bg-surface-container-low text-on-surface text-sm rounded-xl focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all"
+              id="mobile-user-identity"
+              placeholder="e.g. 0244 123 456 or name@carepoint.edu.gh"
+              required=""
+              type="text"
+              oninput="handleMobileIdentityInput(this.value)"
+            />
+          </div>
+        </div>
+
+        <!-- Role Detector Dynamic Badge -->
+        <div id="mobile-role-detector-pill" class="p-2.5 rounded-xl bg-surface-container-low border border-surface-container-high transition-all flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[18px]" id="mobile-role-pill-icon">manage_search</span>
+            <div class="flex flex-col min-w-0">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant" id="mobile-role-pill-title">Role Detection Engine</span>
+              <span class="text-[11px] font-semibold text-primary truncate" id="mobile-role-pill-desc">Enter details to identify portal</span>
+            </div>
+          </div>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant shrink-0" id="mobile-role-pill-tag">
+            Ready
+          </span>
+        </div>
+
+        <!-- Password Field -->
+        <div class="flex flex-col gap-1">
+          <div class="flex items-center justify-between">
+            <label class="font-bold text-xs text-on-surface" for="mobile-user-password">Password / Passcode</label>
+            <button type="button" onclick="handleMobileForgotPassword()" class="text-[11px] text-primary hover:text-secondary font-semibold">Forgot?</button>
+          </div>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-3 text-outline text-lg pointer-events-none">lock</span>
+            <input
+              autocomplete="current-password"
+              class="w-full pl-9 pr-10 py-2.5 bg-surface-container-low text-on-surface text-sm rounded-xl focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all font-mono"
+              id="mobile-user-password"
+              placeholder="••••••••••••"
+              required=""
+              type="password"
+            />
+            <button aria-label="Toggle password visibility" class="absolute right-2.5 p-1 text-outline hover:text-on-surface" id="mobile-toggle-pwd" onclick="toggleMobilePasswordVisibility()" type="button">
+              <span class="material-symbols-outlined text-lg" id="mobile-pwd-icon">visibility</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Remember Option -->
+        <label class="flex items-center gap-2 cursor-pointer select-none text-xs text-on-surface">
+          <input checked="" class="w-4 h-4 rounded text-primary accent-primary" id="mobile-remember-device" type="checkbox"/>
+          <span>Remember on this mobile device</span>
+        </label>
+
+        <!-- Status Feedback Alert -->
+        <div class="hidden p-2.5 rounded-xl text-xs items-center gap-2 transition-all" id="mobile-auth-status-alert">
+          <span class="material-symbols-outlined text-[18px]" id="mobile-auth-status-icon">info</span>
+          <span id="mobile-auth-status-text">Processing credentials...</span>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="w-full py-3.5 px-4 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-bold text-sm flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-all" id="mobile-auth-submit-btn" type="submit">
+          <span class="material-symbols-outlined text-lg">login</span>
+          <span id="mobile-btn-text">Sign In to Portal</span>
+        </button>
+      </form>
+
+      <!-- Quick Demo Profiles Strip -->
+      <div class="pt-3 border-t border-surface-container-high flex flex-col gap-2">
+        <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider text-center">Test Auto-Detection Personas:</span>
+        <div class="grid grid-cols-5 gap-1 text-center">
+          <button type="button" onclick="fillMobileDemo('mercy.mensah@gmail.com', 'parent')" class="py-1.5 px-1 rounded-lg bg-surface-container-low text-primary text-[10px] font-bold border border-outline-variant/30 hover:bg-surface-container">
+            Parent
+          </button>
+          <button type="button" onclick="fillMobileDemo('b.abbey@carepoint.edu.gh', 'staff')" class="py-1.5 px-1 rounded-lg bg-surface-container-low text-primary text-[10px] font-bold border border-outline-variant/30 hover:bg-surface-container">
+            Teacher
+          </button>
+          <button type="button" onclick="fillMobileDemo('e.appiah@carepoint.edu.gh', 'admin')" class="py-1.5 px-1 rounded-lg bg-surface-container-low text-primary text-[10px] font-bold border border-outline-variant/30 hover:bg-surface-container">
+            Admin
+          </button>
+          <button type="button" onclick="fillMobileDemo('sec-08@carepoint.edu.gh', 'gate')" class="py-1.5 px-1 rounded-lg bg-surface-container-low text-primary text-[10px] font-bold border border-outline-variant/30 hover:bg-surface-container">
+            Gate
+          </button>
+          <button type="button" onclick="fillMobileDemo('k.boateng@ops.carepoint.edu.gh', 'sysadmin')" class="py-1.5 px-1 rounded-lg bg-surface-container-low text-primary text-[10px] font-bold border border-outline-variant/30 hover:bg-surface-container">
+            SysOps
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Security Footnote -->
+    <div class="mt-4 flex flex-col items-center text-center gap-1">
+      <div class="flex items-center gap-2 text-[11px] text-on-surface-variant">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        <span>Secure 256-Bit SSL • NaSIA / GES Verified</span>
+      </div>
+      <p class="text-[10px] text-outline">
+        © 2026 Carepoint Community School, Accra, Ghana
+      </p>
+    </div>
+  </main>
+
+  <script>
+    const MOBILE_ROLE_MAP = {
+      parent: {
+        roleTitle: 'Parent Portal',
+        userName: 'Mrs. Mercy Mensah',
+        destMobile: '../parent/mobile-dashboard.html',
+        icon: 'family_restroom',
+        badge: 'Parent'
+      },
+      staff: {
+        roleTitle: 'Teacher Portal',
+        userName: 'Mrs. Beatrice Abbey',
+        destMobile: '../staff/mobile-dashboard.html',
+        icon: 'school',
+        badge: 'Teacher'
+      },
+      admin: {
+        roleTitle: 'Principal Console',
+        userName: 'Dr. Emmanuel Appiah',
+        destMobile: '../admin/mobile-dashboard.html',
+        icon: 'admin_panel_settings',
+        badge: 'Admin'
+      },
+      gate: {
+        roleTitle: 'Gate Kiosk',
+        userName: 'Officer Emmanuel Tetteh',
+        destMobile: '../gate/mobile-scan.html',
+        icon: 'shield_person',
+        badge: 'Gate'
+      },
+      sysadmin: {
+        roleTitle: 'SysAdmin Console',
+        userName: 'Mr. Kwesi Boateng',
+        destMobile: '../sysadmin/mobile-dashboard.html',
+        icon: 'terminal',
+        badge: 'SysAdmin'
+      }
+    };
+
+    function detectMobileUserRole(identifier) {
+      const id = (identifier || '').trim().toLowerCase();
+      if (!id) return null;
+
+      if (id.includes('sysadmin') || id.includes('ops') || id.includes('boateng') || id.includes('root') || id.includes('tech')) {
+        return MOBILE_ROLE_MAP.sysadmin;
+      }
+      if (id.includes('admin') || id.includes('principal') || id.includes('appiah') || id.includes('head') || id.includes('director')) {
+        return MOBILE_ROLE_MAP.admin;
+      }
+      if (id.includes('gate') || id.includes('security') || id.includes('kiosk') || id.includes('tetteh') || id.includes('guard') || id.includes('sec-')) {
+        return MOBILE_ROLE_MAP.gate;
+      }
+      if (id.includes('teacher') || id.includes('staff') || id.includes('abbey') || id.includes('faculty') || id.includes('educator') || id.includes('stf-')) {
+        return MOBILE_ROLE_MAP.staff;
+      }
+      return MOBILE_ROLE_MAP.parent;
+    }
+
+    function handleMobileIdentityInput(val) {
+      const detected = detectMobileUserRole(val);
+      const pill = document.getElementById('mobile-role-detector-pill');
+      const icon = document.getElementById('mobile-role-pill-icon');
+      const title = document.getElementById('mobile-role-pill-title');
+      const desc = document.getElementById('mobile-role-pill-desc');
+      const tag = document.getElementById('mobile-role-pill-tag');
+
+      if (!detected) {
+        if (pill) pill.className = 'p-2.5 rounded-xl bg-surface-container-low border border-surface-container-high transition-all flex items-center justify-between';
+        if (icon) icon.textContent = 'manage_search';
+        if (title) title.textContent = 'Role Detection Engine';
+        if (desc) desc.textContent = 'Enter details to identify portal';
+        if (tag) {
+          tag.textContent = 'Ready';
+          tag.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant';
+        }
+      } else {
+        if (pill) pill.className = 'p-2.5 rounded-xl bg-primary/5 border border-primary/20 transition-all flex items-center justify-between';
+        if (icon) icon.textContent = detected.icon;
+        if (title) title.textContent = 'Detected Role';
+        if (desc) desc.innerHTML = `<strong class="text-primary">${detected.roleTitle}</strong> &bull; ${detected.userName}`;
+        if (tag) {
+          tag.textContent = detected.badge;
+          tag.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary text-on-primary';
+        }
+      }
+    }
+
+    function fillMobileDemo(identity, roleKey) {
+      const input = document.getElementById('mobile-user-identity');
+      const pwd = document.getElementById('mobile-user-password');
+      if (input) {
+        input.value = identity;
+        handleMobileIdentityInput(identity);
+      }
+      if (pwd) pwd.value = 'Carepoint@2026!';
+    }
+
+    function toggleMobilePasswordVisibility() {
+      const pwd = document.getElementById('mobile-user-password');
+      const icon = document.getElementById('mobile-pwd-icon');
+      if (pwd && icon) {
+        const isPwd = pwd.getAttribute('type') === 'password';
+        pwd.setAttribute('type', isPwd ? 'text' : 'password');
+        icon.textContent = isPwd ? 'visibility_off' : 'visibility';
+      }
+    }
+
+    function handleMobileForgotPassword() {
+      const input = document.getElementById('mobile-user-identity');
+      const val = (input ? input.value : '').trim() || 'your phone number';
+      alert(`Password Recovery: An SMS security code has been sent to ${val}.`);
+    }
+
+    function handleMobileAuthSubmit() {
+      const input = document.getElementById('mobile-user-identity');
+      const pwd = document.getElementById('mobile-user-password');
+      const btn = document.getElementById('mobile-auth-submit-btn');
+      const btnText = document.getElementById('mobile-btn-text');
+      const alertBox = document.getElementById('mobile-auth-status-alert');
+      const alertText = document.getElementById('mobile-auth-status-text');
+      const alertIcon = document.getElementById('mobile-auth-status-icon');
+
+      const identityVal = (input ? input.value : '').trim();
+      const detected = detectMobileUserRole(identityVal) || MOBILE_ROLE_MAP.sysadmin;
+
+      if (!identityVal || !pwd.value) {
+        alert('Please enter your credentials.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.classList.add('opacity-80');
+      btnText.textContent = 'Authenticating...';
+
+      if (alertBox) {
+        alertBox.className = 'p-2.5 rounded-xl text-xs flex items-center gap-2 bg-surface-container-high text-primary';
+        if (alertIcon) alertIcon.textContent = 'progress_activity';
+        if (alertText) alertText.textContent = `Verifying account...`;
+        alertBox.classList.remove('hidden');
+      }
+
+      setTimeout(() => {
+        if (alertBox) {
+          alertBox.className = 'p-2.5 rounded-xl text-xs flex items-center gap-2 bg-emerald-100 text-emerald-900 border border-emerald-300';
+          if (alertIcon) alertIcon.textContent = 'check_circle';
+          if (alertText) alertText.innerHTML = `Identified: <strong>${detected.roleTitle}</strong>. Connecting...`;
+        }
+        btnText.textContent = 'Launching...';
+
+        setTimeout(() => {
+          window.location.href = detected.destMobile;
+        }, 600);
+      }, 500);
+    }
+  </script>
+</body>
+</html>

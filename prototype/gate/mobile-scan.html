@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#b5c4ff", "primary": "#011549", "outline": "#757680", "background": "#f7f9ff", "secondary-container": "#df2d23", "on-secondary-container": "#fffbff", "on-secondary": "#ffffff", "surface-tint": "#4c5c92", "surface": "#f7f9ff", "error": "#ba1a1a", "primary-fixed-dim": "#b5c4ff", "on-tertiary-container": "#46a95a", "surface-container": "#e9eef8", "on-primary-fixed": "#03174b", "on-primary": "#ffffff", "inverse-surface": "#2b3138", "on-surface": "#161c23", "surface-variant": "#dde3ec", "surface-bright": "#f7f9ff", "on-primary-container": "#8494cd", "error-container": "#ffdad6", "tertiary": "#001f07", "surface-dim": "#d5dae4", "on-secondary-fixed": "#410001", "primary-container": "#1a2b5e", "surface-container-low": "#eef4fe", "secondary": "#ba0a0c", "on-tertiary": "#ffffff", "surface-container-high": "#e3e8f2", "on-tertiary-fixed-variant": "#00531f", "on-error-container": "#93000a", "on-error": "#ffffff", "tertiary-fixed-dim": "#78dc86", "on-tertiary-fixed": "#002108", "tertiary-fixed": "#94f9a0", "on-surface-variant": "#45464f", "on-background": "#161c23", "on-primary-fixed-variant": "#344478", "outline-variant": "#c5c6d1", "secondary-fixed": "#ffdad5", "secondary-fixed-dim": "#ffb4a9", "inverse-on-surface": "#ecf1fb", "primary-fixed": "#dce1ff", "surface-container-lowest": "#ffffff", "surface-container-highest": "#dde3ec", "on-secondary-fixed-variant": "#930004", "tertiary-container": "#003712" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "margin-sm": "1rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "gutter": "1.5rem" }, "fontFamily": { "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"] }, "fontSize": { "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }] } } } };</script><style>html,body{width:100vw;margin:0;padding:0;body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<title>Carepoint - Mobile Gate Scanner Viewport</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "gate",
+            label: "Mobile Gate Scanner Viewport",
+            isMobile: true,
+            relRoot: "../",
+            counterpart: "scan.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-4 flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">shield_person</span></div><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Live Sync</span></div><span class="font-label-lg text-label-lg text-primary truncate max-w-[190px]">Gate 04 - Main Gate Area</span></div></div><div class="flex items-center gap-space-xs"><button id="mobile-amber-alert-btn" data-safe-action="amber" data-safe-title="Broadcast Gate Emergency Alert" data-safe-warning="This will sound perimeter alarms and notify the Principal and Campus Security Coordinator." data-safe-destructive="true" data-safe-label="Confirm Emergency Alert" aria-label="Emergency Alert Action" class="h-11 px-3 rounded-lg bg-secondary text-on-secondary flex items-center gap-1.5 active:scale-95 transition-transform cursor-pointer" type="button"><span class="material-symbols-outlined text-[20px]">campaign</span><span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Alert</span></button><img alt="Officer Emmanuel Tetteh" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWyCxim_7skt8k31G0IotbuvMRM2YBPGoHvoZYsa25Oh7YjCKOaPB9NbEJlz7absl89QYzqeKxYnR448A6GuD58V-wOmg0TgMyyhDKQx0RuvqJw6XlU06RFl_YO6p1OAhJ8yWUqb6Xir1rbx9sdVdTXXX34sj3lncm3yNoCumK2AKJSnHf-teZ8hmWgZoInrNO2R9DoQfxqZAsqD5baLXIUfUmMaFmvVU0wSaAabCoCC1PDgEeMPJThA"/></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-4 pb-6 space-y-4">
+<!-- Mobile Capability Discovery Chip -->
+<div class="flex items-center justify-between px-3.5 py-2 rounded-xl bg-surface-container-low border border-primary/20 text-xs text-on-surface shadow-2xs">
+  <div class="flex items-center gap-2">
+    <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+      <span class="material-symbols-outlined text-[14px]">touch_app</span>
+    </span>
+    <span class="text-[11px] leading-tight"><strong>Gate Kiosk:</strong> Tap <strong>Manual PIN</strong> below to enter parent SMS tokens.</span>
+  </div>
+  <button onclick="window.CarepointCapabilities && window.CarepointCapabilities.openModal()" type="button" class="text-primary font-bold text-[11px] hover:underline shrink-0">
+    Search
+  </button>
+</div>
+<!-- Dismissal Window HUD Strip -->
+<div class="w-full bg-surface-container rounded-xl p-3.5 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-ping"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Dismissal Phase 2</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px] text-primary">schedule</span>
+<span>14:30 – 15:30 GMT</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-1">
+<div class="bg-surface-container-lowest rounded-lg p-2 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">142</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">In Gate Area</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-2 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm text-on-tertiary-container font-bold">89</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cleared Out</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-2 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Requires Flag</span>
+</div>
+</div>
+</div>
+<!-- Camera Viewfinder Area -->
+<div class="relative w-full aspect-[4/5] bg-inverse-surface rounded-2xl overflow-hidden shadow-xl flex flex-col items-center justify-between p-4">
+<!-- Camera Feed Background Simulation -->
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity scale-105 transition-transform" data-alt="First person camera perspective of a sunlit school courtyard breezeway with students in crisp navy and gold uniforms sitting under covered walkways, viewed through optical camera lens glass with subtle digital bokeh and soft ambient afternoon lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAb10BxowD7pNAwQsixaV44Cpsi9w6jZzmGzR7cIU96VQ9ukFpj5hImHW8GUEysZO5qCzK9zAyuDnC4usG0evaP1ekyx-XUBzB3TvFN9OMhQzxIxrSrUNJvNewR9hOg407cgD_GiLS71l5breDvCA28ASijdn2PkeBrweW9fstvGyzN3EPaeDRp14mOB-exMTKdwyzPdAkdqF8uuQo2huw_ExcDwBD2UbSMCTy1EECIljMyD9oNd7psmg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-primary/60 pointer-events-none"></div>
+<!-- Top Viewfinder Toolbar -->
+<div class="relative z-10 w-full flex items-center justify-between">
+<!-- Mode Badge -->
+<div class="px-3 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">center_focus_strong</span>
+<span class="font-label-sm text-label-sm text-on-primary font-bold tracking-wide">AUTO DETECT</span>
+</div>
+<!-- Quick Toggles -->
+<div class="flex items-center gap-2">
+<button aria-label="Toggle Torch" class="w-10 h-10 rounded-full bg-inverse-surface/70 backdrop-blur-md text-on-primary flex items-center justify-center active:scale-95 transition-all" id="torchBtn">
+<span class="material-symbols-outlined text-[20px]" id="torchIcon">flash_off</span>
+</button>
+<button aria-label="Flip Camera" class="w-10 h-10 rounded-full bg-inverse-surface/70 backdrop-blur-md text-on-primary flex items-center justify-center active:scale-95 transition-all" id="cameraFlipBtn">
+<span class="material-symbols-outlined text-[20px]">flip_camera_ios</span>
+</button>
+<button aria-label="Haptic and Sound Toggle" class="w-10 h-10 rounded-full bg-inverse-surface/70 backdrop-blur-md text-tertiary-fixed flex items-center justify-center active:scale-95 transition-all" id="feedbackToggleBtn">
+<span class="material-symbols-outlined text-[20px]" id="feedbackIcon">volume_up</span>
+</button>
+</div>
+</div>
+<!-- Animated Reticle Target Box -->
+<div class="relative z-10 w-64 h-64 my-auto flex items-center justify-center">
+<!-- Outer Decorative Markers -->
+<div class="absolute -top-1 -left-1 w-6 h-6 border-t-4 border-l-4 border-primary-fixed rounded-tl-lg"></div>
+<div class="absolute -top-1 -right-1 w-6 h-6 border-t-4 border-r-4 border-primary-fixed rounded-tr-lg"></div>
+<div class="absolute -bottom-1 -left-1 w-6 h-6 border-b-4 border-l-4 border-primary-fixed rounded-bl-lg"></div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 border-b-4 border-r-4 border-primary-fixed rounded-br-lg"></div>
+<!-- Reticle Ambient Pulse Ring -->
+<div class="absolute inset-4 rounded-xl border border-dashed border-primary-fixed/40 animate-pulse"></div>
+<!-- Moving Scanning Laser -->
+<div class="absolute left-2 right-2 h-1 bg-gradient-to-r from-transparent via-secondary-container to-transparent shadow-[0_0_12px_#df2d23] transition-all" id="scanLaser"></div>
+<!-- Center Alignment Crosshair -->
+<div class="w-8 h-8 rounded-full border border-primary-fixed/30 flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></div>
+</div>
+<!-- Reticle Tip Label -->
+<div class="absolute -bottom-8 px-3 py-1 rounded-full bg-inverse-surface/90 text-on-primary font-label-sm text-label-sm tracking-wide">
+        Align CareID Card or QR Token
+      </div>
+</div>
+<!-- Bottom Action Ribbon inside Viewfinder -->
+<div class="relative z-10 w-full flex items-center justify-between pt-2">
+<div class="flex items-center gap-1.5 text-on-primary/80 font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span>Sensor 60 FPS HD</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold flex items-center gap-1.5 active:scale-95 transition-transform shadow-md" id="openManualKeypadBtn">
+<span class="material-symbols-outlined text-[18px]">keyboard</span>
+<span>Manual PIN</span>
+</button>
+</div>
+</div>
+<!-- Detected Verification Modal Sheet (Slide Up Preview) -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-lg flex flex-col gap-3 transition-all duration-300" id="verifiedCard">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold tracking-wider uppercase">
+          Match Verified
+        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Gate Token: #8841-B</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" id="dismissScanBtn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Student & Guardian Split Info -->
+<div class="flex items-center gap-3 bg-surface-container-low rounded-xl p-3">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden shadow-sm flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Friendly portrait photo of an 8-year-old West African primary school boy smiling warmly in an authoritative neat navy blue collared uniform against a brightly lit modern library backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdKYYsYog5_RPeyOE1UZFGhLg-xyrKfUtFm2j-nvlbT4avVmGCBGJpn7QC-GTAf1tA3D5iImbls9enq6Rpe7CumA7_DAs1HflpeyK2fDSuCxU4xrQoyvYzEZ49WR7zWAnyM54TkjlpXyFlYcl5OVQIPT2wTyef13467qXfpOvlzOTDwR9Tyz6ZusF49ucknNGKvwiI9qaaW02KW3BTm7ZLJCVF65ENvz_7KJS8BusVmcpUIGnBi-J3Hg"/>
+<span class="absolute bottom-0 inset-x-0 bg-primary/80 text-on-primary font-label-sm text-label-sm text-center py-0.5 font-bold">STUDENT</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold truncate">Kofi Nana Mensah</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Basic 2 Sunflower • Roll #048</span>
+<div class="flex items-center gap-1 mt-1 text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Caregiver Authorization Active</span>
+</div>
+</div>
+</div>
+<!-- Caregiver details row -->
+<div class="flex items-center justify-between bg-surface-container-high rounded-xl p-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden shadow-sm flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of a distinguished West African adult male guardian wearing gold wire-rimmed glasses and a tailored charcoal shirt, smiling with a reassuring demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5WJCeJCtZeAIUV_uGJDQ-lUs-8bdOQ5epp1Hr8iJgOdpZyc2JcWpPj4lHbNFD8fM0-BCo3sgJKec-mBk34idTLRmMu72WRrLyqzlp8V3rrM3nSs8GdMgbuGx1NAOnavv_9b51fqlWFWGVAQ534s4x1GT0zt8dRbRI2v2pn3-jXZOOeSMD-6HLlG7vQk8Lgdy9X7P7IqEp7lUGhncU1Z29IzyGTD1pUZw-WglXgwloVibtXC4gqA-aRA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-primary font-bold truncate">Dr. Nana Mensah</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Primary Guardian • Father</span>
+</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+</div>
+<!-- Confirmation & Handshake Action -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="h-12 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-1.5 active:scale-95 transition-transform" id="flagReviewBtn">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+<span>Hold &amp; Query</span>
+</button>
+<button class="h-12 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-md" id="confirmPassBtn">
+<span class="material-symbols-outlined text-[20px]">door_open</span>
+<span>Release Gate</span>
+</button>
+</div>
+</div>
+<!-- Manual 6-Character Token Keypad Drawer (Collapsible) -->
+<div class="hidden w-full bg-surface-container-lowest rounded-2xl p-4 shadow-lg flex flex-col gap-3" id="manualKeypadSection">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">pin</span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-bold">Manual Backup Code</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Enter 6-character dismiss token</span>
+</div>
+</div>
+<button class="text-on-surface-variant p-1" id="closeKeypadBtn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Code Display Slots -->
+<div class="flex justify-center items-center gap-2 py-2">
+<div class="w-11 h-13 py-2.5 rounded-lg bg-surface-container-low text-primary text-center font-headline-md text-headline-md font-bold tracking-widest" id="slot0">8</div>
+<div class="w-11 h-13 py-2.5 rounded-lg bg-surface-container-low text-primary text-center font-headline-md text-headline-md font-bold tracking-widest" id="slot1">8</div>
+<div class="w-11 h-13 py-2.5 rounded-lg bg-surface-container-low text-primary text-center font-headline-md text-headline-md font-bold tracking-widest" id="slot2">4</div>
+<div class="w-11 h-13 py-2.5 rounded-lg bg-surface-container-low text-primary text-center font-headline-md text-headline-md font-bold tracking-widest" id="slot3">1</div>
+<span class="text-on-surface-variant font-bold text-headline-sm">-</span>
+<div class="w-11 h-13 py-2.5 rounded-lg bg-primary-fixed text-primary text-center font-headline-md text-headline-md font-bold tracking-widest animate-pulse" id="slot4">B</div>
+</div>
+<!-- Numeric/Character Mini Pad -->
+<div class="grid grid-cols-3 gap-2 pt-1 font-headline-sm text-headline-sm font-bold text-primary">
+<button class="keypad-btn h-12 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center active:scale-95">1</button>
+<button class="keypad-btn h-12 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center active:scale-95">2</button>
+<button class="keypad-btn h-12 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center active:scale-95">3</button>
+<button class="keypad-btn h-12 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center active:scale-95">4</button>
+<button class="keypad-btn h-12 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center active:scale-95">5</button>
+<button class="keypad-btn h-12 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center active:scale-95">6</button>
+<button class="keypad-btn h-12 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center active:scale-95">7</button>
+<button class="keypad-btn h-12 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center active:scale-95">8</button>
+<button class="keypad-btn h-12 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center active:scale-95">9</button>
+<button class="keypad-btn h-12 rounded-xl bg-surface-container-high text-primary flex items-center justify-center text-label-md uppercase font-bold active:scale-95">A-B</button>
+<button class="keypad-btn h-12 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center active:scale-95">0</button>
+<button class="keypad-btn h-12 rounded-xl bg-surface-container-high text-secondary flex items-center justify-center active:scale-95">
+<span class="material-symbols-outlined text-[22px]">backspace</span>
+</button>
+</div>
+<button class="w-full h-12 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:scale-95 shadow-md" id="submitManualTokenBtn">
+<span class="material-symbols-outlined text-[20px]">search_check</span>
+<span>Verify Token</span>
+</button>
+</div>
+<!-- Emergency Hold Trigger -->
+<div class="w-full pt-1">
+<button class="w-full h-14 rounded-2xl bg-secondary text-on-secondary font-label-lg text-label-lg font-bold tracking-wider flex items-center justify-center gap-2.5 shadow-lg active:scale-95 transition-transform" id="emergencyHaltBtn">
+<span class="material-symbols-outlined text-[24px]">gpp_maybe</span>
+<span>IMMEDIATE TURNSTILE HOLD / HALT GATE</span>
+</button>
+</div>
+<!-- Operational Status Sub-note -->
+<div class="flex items-center justify-center gap-2 text-on-surface-variant font-label-sm text-label-sm py-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">wifi_protected_setup</span>
+<span>Local Mesh Active • Turnstiles 1A, 1B, 1C Armed</span>
+</div>
+</div>
+<script>
+  (function () {
+    // Dynamic Laser Scan Line Animation
+    const laser = document.getElementById('scanLaser');
+    let laserPos = 16;
+    let laserDir = 1.8;
+    function animateLaser() {
+      if (laser) {
+        laserPos += laserDir;
+        if (laserPos > 240 || laserPos < 12) {
+          laserDir = -laserDir;
+        }
+        laser.style.top = laserPos + 'px';
+      }
+      requestAnimationFrame(animateLaser);
+    }
+    animateLaser();
+
+    // Toggle Flashlight / Torch
+    const torchBtn = document.getElementById('torchBtn');
+    const torchIcon = document.getElementById('torchIcon');
+    let torchActive = false;
+    if (torchBtn && torchIcon) {
+      torchBtn.addEventListener('click', () => {
+        torchActive = !torchActive;
+        if (torchActive) {
+          torchIcon.textContent = 'flash_on';
+          torchBtn.classList.remove('text-on-primary');
+          torchBtn.classList.add('text-secondary-fixed', 'bg-inverse-surface');
+        } else {
+          torchIcon.textContent = 'flash_off';
+          torchBtn.classList.add('text-on-primary');
+          torchBtn.classList.remove('text-secondary-fixed');
+        }
+      });
+    }
+
+    // Toggle Feedback Audio/Haptic
+    const feedbackToggleBtn = document.getElementById('feedbackToggleBtn');
+    const feedbackIcon = document.getElementById('feedbackIcon');
+    let feedbackEnabled = true;
+    if (feedbackToggleBtn && feedbackIcon) {
+      feedbackToggleBtn.addEventListener('click', () => {
+        feedbackEnabled = !feedbackEnabled;
+        if (feedbackEnabled) {
+          feedbackIcon.textContent = 'volume_up';
+          feedbackToggleBtn.classList.add('text-tertiary-fixed');
+          feedbackToggleBtn.classList.remove('text-outline');
+        } else {
+          feedbackIcon.textContent = 'volume_off';
+          feedbackToggleBtn.classList.remove('text-tertiary-fixed');
+          feedbackToggleBtn.classList.add('text-outline');
+        }
+      });
+    }
+
+    // Toggle Manual Keypad Drawer
+    const openManualKeypadBtn = document.getElementById('openManualKeypadBtn');
+    const closeKeypadBtn = document.getElementById('closeKeypadBtn');
+    const keypadSection = document.getElementById('manualKeypadSection');
+    const verifiedCard = document.getElementById('verifiedCard');
+
+    if (openManualKeypadBtn && keypadSection) {
+      openManualKeypadBtn.addEventListener('click', () => {
+        keypadSection.classList.remove('hidden');
+        if (verifiedCard) verifiedCard.classList.add('hidden');
+      });
+    }
+
+    if (closeKeypadBtn && keypadSection) {
+      closeKeypadBtn.addEventListener('click', () => {
+        keypadSection.classList.add('hidden');
+      });
+    }
+
+    // Dismiss Scan Card
+    const dismissScanBtn = document.getElementById('dismissScanBtn');
+    const confirmPassBtn = document.getElementById('confirmPassBtn');
+    if (dismissScanBtn && verifiedCard) {
+      dismissScanBtn.addEventListener('click', () => {
+        verifiedCard.classList.add('opacity-40');
+        setTimeout(() => {
+          verifiedCard.classList.add('hidden');
+          verifiedCard.classList.remove('opacity-40');
+        }, 150);
+      });
+    }
+
+    if (confirmPassBtn && verifiedCard) {
+      confirmPassBtn.addEventListener('click', () => {
+        confirmPassBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>Gate Released</span>';
+        confirmPassBtn.classList.remove('bg-primary');
+        confirmPassBtn.classList.add('bg-tertiary-container', 'text-on-tertiary');
+        setTimeout(() => {
+          verifiedCard.classList.add('hidden');
+          confirmPassBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">door_open</span><span>Release Gate</span>';
+          confirmPassBtn.classList.add('bg-primary');
+          confirmPassBtn.classList.remove('bg-tertiary-container', 'text-on-tertiary');
+        }, 1400);
+      });
+    }
+
+    // Submit manual token demo
+    const submitManualTokenBtn = document.getElementById('submitManualTokenBtn');
+    if (submitManualTokenBtn && keypadSection && verifiedCard) {
+      submitManualTokenBtn.addEventListener('click', () => {
+        keypadSection.classList.add('hidden');
+        verifiedCard.classList.remove('hidden');
+      });
+    }
+
+    // Emergency Hold Trigger Toggle
+    const emergencyBtn = document.getElementById('emergencyHaltBtn');
+    let gateHalted = false;
+    if (emergencyBtn) {
+      emergencyBtn.addEventListener('click', () => {
+        gateHalted = !gateHalted;
+        if (gateHalted) {
+          emergencyBtn.classList.remove('bg-secondary');
+          emergencyBtn.classList.add('bg-inverse-surface');
+          emergencyBtn.innerHTML = '<span class="material-symbols-outlined text-[24px] text-secondary">lock</span><span class="text-secondary font-bold">GATE SYSTEM LOCKED &bull; TAP TO RESUME</span>';
+        } else {
+          emergencyBtn.classList.add('bg-secondary');
+          emergencyBtn.classList.remove('bg-inverse-surface');
+          emergencyBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">gpp_maybe</span><span>IMMEDIATE TURNSTILE HOLD / HALT GATE</span>';
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-2"><a aria-current="page" class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 transition-colors text-primary font-bold" data-path="scanner" href="mobile-scan.html"><span class="material-symbols-outlined text-[22px]">qr_code_scanner</span><span class="font-label-sm text-label-sm">Scanner</span></a><a class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="active-verification" href="mobile-verify.html"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-sm text-label-sm">Verify</span></a><a class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="pickup-log" href="mobile-log.html"><span class="material-symbols-outlined text-[22px]">assignment_turned_in</span><span class="font-label-sm text-label-sm">Pickup Log</span></a><a class="min-w-[44px] min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="safeguard-alert" href="mobile-alert.html"><span class="material-symbols-outlined text-[22px]">notification_important</span><span class="font-label-sm text-label-sm">Safeguard</span></a></div></nav></body></html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>html,body{width:100vw;margin:0;padding:0;body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-fixed": "#94f9a0", "tertiary": "#001f07", "primary-fixed-dim": "#b5c4ff", "surface-container-highest": "#dde3ec", "on-primary-fixed": "#03174b", "surface-variant": "#dde3ec", "on-tertiary-fixed-variant": "#00531f", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "secondary-container": "#df2d23", "outline": "#757680", "inverse-surface": "#2b3138", "secondary-fixed": "#ffdad5", "secondary-fixed-dim": "#ffb4a9", "surface-bright": "#f7f9ff", "on-surface-variant": "#45464f", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#930004", "surface-dim": "#d5dae4", "surface-container-low": "#eef4fe", "outline-variant": "#c5c6d1", "on-primary-container": "#8494cd", "surface": "#f7f9ff", "on-surface": "#161c23", "on-tertiary-fixed": "#002108", "primary-container": "#1a2b5e", "on-background": "#161c23", "inverse-on-surface": "#ecf1fb", "on-tertiary": "#ffffff", "on-secondary-container": "#fffbff", "inverse-primary": "#b5c4ff", "error": "#ba1a1a", "on-secondary-fixed": "#410001", "on-primary-fixed-variant": "#344478", "on-primary": "#ffffff", "surface-tint": "#4c5c92", "primary": "#011549", "surface-container": "#e9eef8", "background": "#f7f9ff", "surface-container-high": "#e3e8f2", "tertiary-container": "#003712", "primary-fixed": "#dce1ff", "error-container": "#ffdad6", "tertiary-fixed-dim": "#78dc86", "on-tertiary-container": "#46a95a", "on-error": "#ffffff", "secondary": "#ba0a0c" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-sm": "1rem", "space-xl": "2.5rem", "margin": "2rem", "margin-sm": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem" }, fontFamily: { "label-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" }], "display-lg-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.01em", fontWeight: "800" }], "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }], "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }], "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.015em", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.04em", fontWeight: "700" }], "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }], "headline-xl-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }], "display-lg": ["56px", { lineHeight: "64px", letterSpacing: "-0.02em", fontWeight: "800" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "700" }], "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<title>Carepoint - Mobile Approvals Queue</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "admin",
+            label: "Mobile Approvals Queue",
+            isMobile: true,
+            relRoot: "../",
+            counterpart: "approvals.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-primary-fixed shadow-sm"><span class="material-symbols-outlined text-[22px]">shield</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase">Carepoint Executive</span><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Pending Approvals</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface"></span></button><img alt="Dr. Elizabeth Appiah" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWfNsavZrE2q7ehrA64sihUwtmROAw4xXN-C6BlUTPhqxnN--2RN5DRycS1Zzkyt6oCEfdTUfjODz6QYZEv08Q-JAkUc3Av7yS8ahvu_IycCMkJCxx5Dx9PYnuyuHQLKp_OkepCnkvleE-hqHca1ZtXA-REaPgIftK5gPRsomXA64FFaJZFdKmQGy-GEt_k2m5zV-0ASaXXLnRB3Au6F5xwS03ye8IFEGRzgETPCCJ1eKP6QrBZk3BQ"/></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-gutter-sm space-y-space-md">
+<!-- Executive Seal Ready Card -->
+<div class="relative overflow-hidden bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-2xl p-4 shadow-sm mt-2 border border-white/10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-on-secondary shadow-xs">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-white font-bold">Authority Seal Ready</h2>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">Dr. Elizabeth Appiah &bull; 2026/2027</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">Pending</span>
+<span class="font-display-lg-mobile text-display-lg-mobile leading-none font-bold text-white">4</span>
+</div>
+</div>
+</div>
+<!-- Segmented Status Tabs -->
+<div class="flex bg-surface-container rounded-2xl p-1 gap-1">
+<button class="flex-1 py-2 rounded-xl font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 bg-primary text-on-primary shadow-xs font-semibold" id="tab-pending">
+<span>Pending</span>
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] flex items-center justify-center">4</span>
+</button>
+<button class="flex-1 py-2 rounded-xl font-label-md text-label-md transition-all flex items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface font-medium" id="tab-approved">
+<span>Approved</span>
+<span class="font-label-sm text-label-sm opacity-60">18</span>
+</button>
+<button class="flex-1 py-2 rounded-xl font-label-md text-label-md transition-all flex items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface font-medium" id="tab-rejected">
+<span>Rejected</span>
+<span class="font-label-sm text-label-sm opacity-60">2</span>
+</button>
+</div>
+<!-- Search & Filters -->
+<div class="flex flex-col gap-2">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-lowest rounded-xl pl-10 pr-4 py-2 font-body-sm text-body-sm text-on-surface border border-surface-container-high/60 shadow-xs focus:outline-none" placeholder="Search approvals, students, requisitions..." type="text"/>
+</div>
+<!-- Category Pill Scroller -->
+<div class="flex overflow-x-auto py-0.5 gap-1.5 no-scrollbar">
+<button class="px-3 py-1 rounded-full font-label-sm text-label-sm shrink-0 bg-primary text-on-primary shadow-xs">All (4)</button>
+<button class="px-3 py-1 rounded-full font-label-sm text-label-sm shrink-0 bg-surface-container-high text-on-surface-variant">Excursions</button>
+<button class="px-3 py-1 rounded-full font-label-sm text-label-sm shrink-0 bg-surface-container-high text-on-surface-variant">Finance</button>
+<button class="px-3 py-1 rounded-full font-label-sm text-label-sm shrink-0 bg-surface-container-high text-on-surface-variant">Staff Leave</button>
+<button class="px-3 py-1 rounded-full font-label-sm text-label-sm shrink-0 bg-surface-container-high text-on-surface-variant">Academics</button>
+</div>
+</div>
+<!-- Queue Items Header -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Priority Actions (4)</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+Sign-off Required
+</span>
+</div>
+<!-- Priority Approval Card 1: Botanical Gardens Excursion -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden relative" id="card-1">
+<div class="h-1.5 w-full bg-secondary"></div>
+<div class="p-space-md flex flex-col space-y-space-sm">
+<!-- Tag row -->
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold">URGENT</span>
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-primary font-bold">Field Trip</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Req #ED-8924</span>
+</div>
+<!-- Main Title -->
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Legon Botanical Gardens Excursion</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Class 4 Gold • 34 Students + 4 Teachers</p>
+</div>
+<!-- Compact Submitter & Cost Grid -->
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low rounded-lg p-2.5">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="Headshot of Ghanaian female primary teacher smiling in classroom uniform with soft indoor academic lighting and warm tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCauS_G6PBhLFLx01TuZ1rDR-AboTSxfU9-vkrf0ESQbF04c8y70aJARzsWvNp4mjOOAIAsLJV-vdqUn820BPkOFPxd7qDIQ5cWiZlLGjfTnFs9qtrDi_xp20sbC1UF2Kr3GL0BEsl8egG52x0eimnsr5A8aObXlUMg9SOhNo1pMMfjq-Sp8BSK72B-WiRPpvnE6mNpk-DGx3MlqcmdAb4U3nmyWsvdUxD6EdMhIrM-9d_CBI-COgRqhw"/>
+<div class="min-w-0 flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface truncate">Mrs. Grace Abbey</span>
+<span class="font-body-sm text-[11px] text-outline truncate">Form Tutor</span>
+</div>
+</div>
+<div class="flex flex-col items-end justify-center">
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-outline">Budget Allocated</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">GH₵ 1,200.00</span>
+</div>
+</div>
+<!-- Compliance Checks Pills -->
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container font-label-sm text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-secondary">check_circle</span> Risk Assessment Vetted
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container font-label-sm text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-secondary">directions_bus</span> State Bus Insured
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container font-label-sm text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-secondary">medical_services</span> First Aid Kit #04
+        </span>
+</div>
+<!-- Expandable Audit & Document Drawer -->
+<details class="group cursor-pointer">
+<summary class="list-none flex items-center justify-between pt-1 text-primary hover:text-secondary font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+            View 4-Tier Audit &amp; Signatures
+          </span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-space-sm pt-space-xs space-y-space-xs text-on-surface">
+<div class="flex items-start gap-2 bg-surface-container-lowest p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">done_all</span>
+<div>
+<p class="font-label-sm text-label-sm">Head of Primary Cleared</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Mr. K. Boateng signed digitally • 08:14 AM</p>
+</div>
+</div>
+<div class="flex items-start gap-2 bg-surface-container-lowest p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">account_balance_wallet</span>
+<div>
+<p class="font-label-sm text-label-sm">Bursar Account #401 Confirmed</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Funds locked for Ayalolo Bus charter</p>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">picture_as_pdf</span>
+<div>
+<p class="font-label-sm text-label-sm">Field_Trip_Parental_Consents.pdf</p>
+<p class="font-body-sm text-[11px] text-outline">34 Signed Slips (100% Complete)</p>
+</div>
+</div>
+<button class="p-1 rounded text-primary hover:bg-surface-container">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+</details>
+<!-- Action Buttons with Seal Trigger -->
+<div class="flex items-center gap-2 pt-1" id="actions-card-1">
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-surface-container font-label-md text-label-md text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-1.5" onclick="requestModification(1)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>Request Mod</span>
+</button>
+<button class="flex-[1.5] py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-all flex items-center justify-center gap-1.5 shadow-sm active:scale-95" onclick="sealApproval(1, 'Legon Excursion')">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span>Seal with Authority</span>
+</button>
+</div>
+<!-- Stamped Feedback State (Hidden by default) -->
+<div class="hidden p-3 rounded-lg bg-surface-container-low text-primary flex items-center justify-between" id="stamped-card-1">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm font-bold">Executive Seal Affixed</p>
+<p class="font-body-sm text-[10px] text-on-surface-variant">Signature ID: CP-EXE-2024-09941</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase">Archived</span>
+</div>
+</div>
+</div>
+<!-- Priority Approval Card 2: Science Lab Requisition -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden relative" id="card-2">
+<div class="h-1.5 w-full bg-primary-container"></div>
+<div class="p-space-md flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-primary font-bold">Science &amp; Labs</span>
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-bold">Junior High</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Req #SC-4402</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">JHS Science Lab Beakers &amp; Reagents</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">B.E.C.E Practical Mock Chemistry Preparation</p>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low rounded-lg p-2.5">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="Ghanaian male laboratory educator with glasses and lab coat in modern high school setting, clean lighting and educational backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD64xdGwDPV_GyufDFYbap3NU6skJbm-2Yj-bin4eEFNkE7ZNF0sua18FAT-_fCdsWqf0fHuP1hlLWXr_671jgeWgXL1ByQ3W2G2SOLY7RLckmHm9A6EADyRg0Q9hWcIU7SD5fM1Hnhq2xdIseo02HukIvVOWHblu2qYmeOMZKiDgmD7g8aaeg5tYeSLXardTysswjvcODP-pDCjQlfQXOT5fXjga2RjhgmLZuWUZtRdljdsxMRsccvmw"/>
+<div class="min-w-0 flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface truncate">Mr. Samuel Quaye</span>
+<span class="font-body-sm text-[11px] text-outline truncate">Lead Chemist</span>
+</div>
+</div>
+<div class="flex flex-col items-end justify-center">
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-outline">Total Invoice</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">GH₵ 420.00</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-body-sm text-body-sm text-on-surface">Vetted by Bursar: Approved vendor match</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Quotations 2/2</span>
+</div>
+<div class="flex items-center gap-2 pt-1" id="actions-card-2">
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-surface-container font-label-md text-label-md text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-1.5" onclick="requestModification(2)">
+<span class="material-symbols-outlined text-[18px]">block</span>
+<span>Reject</span>
+</button>
+<button class="flex-[1.5] py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-all flex items-center justify-center gap-1.5 shadow-sm active:scale-95" onclick="sealApproval(2, 'Lab Reagents')">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span>Sign &amp; Release GH₵ 420</span>
+</button>
+</div>
+<div class="hidden p-3 rounded-lg bg-surface-container-low text-primary flex items-center justify-between" id="stamped-card-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm font-bold">Funds Dispatched</p>
+<p class="font-body-sm text-[10px] text-on-surface-variant">Signature ID: CP-EXE-2024-09942</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase">Archived</span>
+</div>
+</div>
+</div>
+<!-- Priority Approval Card 3: Casual Medical Leave -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden relative" id="card-3">
+<div class="h-1.5 w-full bg-outline-variant"></div>
+<div class="p-space-md flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-primary font-bold">Staff Welfare</span>
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-bold">3 Working Days</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Leave #LV-112</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Casual Medical Leave - Mr. Donkor</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Basic 5 Mathematics &amp; ICT Instructor</p>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="Ghanaian teacher in early 40s wearing patterned collared shirt in school library with books and sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLDR853Blp2TUnwrjs_uLCPoX8VyPVJ5YdybWOMem9YZvKwKimdQoUgt6Hh4_LW14vZNXWhlKBWw5xM0EQv5gBuStRU48qprmbpLdsFq9kiteKl0sOjKWixdRfj3KHIii_rFM_ko_puoZ8IIKERGxLsgoRd_Aag-036DocwNBSRrGANqk4lwXuTghA9fmWX8NVKn3dEtMUIlWYZam9B2cjTU6usz7y1h8oLUrjK2zt8OZ_AVDjCMwlJg"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Kwame Donkor</span>
+<span class="font-body-sm text-[11px] text-outline">Oct 16 – Oct 18, 2024</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-[11px] text-outline">Cover Assigned</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Ms. Angela Mills</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1" id="actions-card-3">
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-surface-container font-label-md text-label-md text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-1.5" onclick="requestModification(3)">
+<span class="material-symbols-outlined text-[18px]">calendar_clock</span>
+<span>Reschedule</span>
+</button>
+<button class="flex-[1.5] py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-all flex items-center justify-center gap-1.5 shadow-sm active:scale-95" onclick="sealApproval(3, 'Staff Leave - Mr. Donkor')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Approve Leave Request</span>
+</button>
+</div>
+<div class="hidden p-3 rounded-lg bg-surface-container-low text-primary flex items-center justify-between" id="stamped-card-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm font-bold">HR Notification Sent</p>
+<p class="font-body-sm text-[10px] text-on-surface-variant">Signature ID: CP-EXE-2024-09943</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase">Archived</span>
+</div>
+</div>
+</div>
+<!-- End of Queue Friendly Card -->
+<div class="rounded-xl p-space-md bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">Queue Sync Verified</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Next automatic review batch at 14:00 GMT</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">sync</span>
+</div>
+<!-- Seal Feedback Modal / Toast overlay -->
+<div class="fixed inset-x-4 top-20 z-50 transform -translate-y-32 opacity-0 pointer-events-none transition-all duration-300" id="seal-modal">
+<div class="bg-primary text-on-primary p-space-md rounded-xl shadow-xl flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-on-secondary shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col flex-1">
+<span class="font-headline-sm text-[16px] leading-tight" id="modal-title">Seal Applied</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim" id="modal-desc">Authorised digitally under Headmistress Registry</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function sealApproval(id, itemName) {
+    const actionBlock = document.getElementById('actions-card-' + id);
+    const stampBlock = document.getElementById('stamped-card-' + id);
+    const modal = document.getElementById('seal-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+
+    if (actionBlock && stampBlock) {
+      actionBlock.classList.add('hidden');
+      stampBlock.classList.remove('hidden');
+    }
+
+    if (modal) {
+      modalTitle.innerText = 'Affixed: ' + itemName;
+      modalDesc.innerText = 'Digital seal verified & recorded on chain ledger.';
+      modal.classList.remove('-translate-y-32', 'opacity-0', 'pointer-events-none');
+      modal.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        modal.classList.remove('translate-y-0', 'opacity-100');
+        modal.classList.add('-translate-y-32', 'opacity-0', 'pointer-events-none');
+      }, 2500);
+    }
+  }
+
+  function requestModification(id) {
+    const reason = prompt("Enter modifications required before Executive sign-off:", "Kindly adjust quotes / attach missing consent documents.");
+    if (reason) {
+      alert("Modification request dispatched to submitter.");
+      const card = document.getElementById('card-' + id);
+      if (card) {
+        card.style.opacity = '0.5';
+      }
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)] border-t border-outline-variant/20" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="dashboard" href="mobile-dashboard.html">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+
+</div>
+<span class="font-label-sm text-label-sm mt-0.5">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="inbox" href="mobile-inbox.html">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">move_to_inbox</span>
+<span class="absolute -top-1 -right-2 px-1 min-w-[16px] h-4 bg-primary-fixed text-on-primary-fixed rounded-full font-label-sm text-[10px] flex items-center justify-center leading-none font-bold">5</span>
+</div>
+<span class="font-label-sm text-label-sm mt-0.5">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="decision" href="mobile-decision.html">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+<span class="absolute -top-1 -right-2 px-1 min-w-[16px] h-4 bg-secondary text-on-secondary rounded-full font-label-sm text-[10px] flex items-center justify-center leading-none font-bold">2</span>
+</div>
+<span class="font-label-sm text-label-sm mt-0.5">Decisions</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-all duration-200 text-primary font-bold" data-path="approvals" href="mobile-approvals.html">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+<span class="absolute -top-1 -right-2 px-1 min-w-[16px] h-4 bg-secondary-container text-on-secondary rounded-full font-label-sm text-[10px] flex items-center justify-center leading-none font-bold">12</span>
+</div>
+<span class="font-label-sm text-label-sm mt-0.5">Approvals</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-all duration-200" data-path="admissions" href="mobile-admissions.html">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">how_to_reg</span>
+<span class="absolute -top-1 -right-2 px-1 min-w-[16px] h-4 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm text-[10px] flex items-center justify-center leading-none font-bold">28</span>
+</div>
+<span class="font-label-sm text-label-sm mt-0.5">Admissions</span>
+</a></div></nav></body></html>

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Carepoint - Child Summary Dashboard</title><style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary": "#ffffff", "surface-container": "#e9eef8", "error": "#ba1a1a", "error-container": "#ffdad6", "surface": "#f7f9ff", "on-tertiary-fixed-variant": "#00531f", "on-tertiary-container": "#46a95a", "outline-variant": "#c5c6d1", "primary": "#011549", "secondary-fixed": "#ffdad5", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#930004", "secondary-fixed-dim": "#ffb4a9", "on-secondary-container": "#fffbff", "inverse-on-surface": "#ecf1fb", "primary-fixed-dim": "#b5c4ff", "secondary-container": "#df2d23", "inverse-primary": "#b5c4ff", "tertiary-fixed": "#94f9a0", "on-secondary-fixed": "#410001", "on-background": "#161c23", "surface-container-low": "#eef4fe", "tertiary": "#001f07", "on-tertiary-fixed": "#002108", "outline": "#757680", "background": "#f7f9ff", "on-error-container": "#93000a", "on-primary": "#ffffff", "on-error": "#ffffff", "on-primary-container": "#8494cd", "on-surface": "#161c23", "inverse-surface": "#2b3138", "surface-bright": "#f7f9ff", "tertiary-container": "#003712", "primary-fixed": "#dce1ff", "tertiary-fixed-dim": "#78dc86", "surface-container-high": "#e3e8f2", "on-surface-variant": "#45464f", "surface-tint": "#4c5c92", "primary-container": "#1a2b5e", "on-primary-fixed": "#03174b", "secondary": "#ba0a0c", "surface-variant": "#dde3ec", "surface-container-highest": "#dde3ec", "surface-dim": "#d5dae4", "on-primary-fixed-variant": "#344478" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-sm": "1rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin": "2rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem" }, "fontFamily": { "body-lg": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "display-lg-mobile": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "headline-xl": [ "Plus Jakarta Sans" ], "headline-xl-mobile": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "display-lg-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" } ], "headline-md": [ "24px", { "lineHeight": "32px", "fontWeight": "700" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "headline-xl": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "headline-xl-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" } ] } } } };</script><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "parent",
+            label: "Child Summary Dashboard",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-dashboard.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="carepoint-drawer fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col justify-between overflow-y-auto border-r border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="flex flex-col min-h-0 flex-1">
+    <!-- Top Header with Crest, Title, Motto, Badge, and Close Button -->
+    <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+      <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+            <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+          </div>
+          <div class="min-w-0">
+            <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+            <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+          </div>
+        </div>
+        <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Navigation Drawer">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <div class="flex items-center justify-between pt-0.5">
+        <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+      </div>
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider uppercase">PARENT &amp; GUARDIAN PORTAL</span>
+      </div>
+    </div>
+
+    <!-- Academic Session Status Strip -->
+    <div class="px-space-md py-space-sm">
+      <div class="px-space-md py-space-xs bg-surface-container-low rounded-lg flex items-center justify-between">
+        <div class="flex items-center gap-space-xs">
+          <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+          <span class="font-label-sm text-label-sm text-on-surface font-medium">Session 2026/27 Term 1</span>
+        </div>
+        <span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">Wk 8</span>
+      </div>
+    </div>
+
+    <!-- Category Label -->
+    <div class="px-space-md pt-2 pb-1">
+      <span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Parent Navigation</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col gap-1 px-space-md overflow-y-auto flex-1 min-h-0">
+      <a href="dashboard.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all bg-primary-container text-on-primary font-bold shadow-sm">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">dashboard</span>
+          <span class="text-sm">Dashboard</span>
+        </div>
+      </a>
+      <a href="dashboard.html#ward" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">badge</span>
+          <span class="text-sm">Child Profile</span>
+        </div>
+      </a>
+      <a href="academics.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">insights</span>
+          <span class="text-sm">Performance &amp; Reports</span>
+        </div>
+      </a>
+      <a href="messages.html#welfare" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">health_and_safety</span>
+          <span class="text-sm">Attendance &amp; Welfare</span>
+        </div>
+      </a>
+      <a href="pickup.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+          <span class="text-sm">Pickup Security Pass</span>
+        </div>
+      </a>
+      <a href="messages.html#messages" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">forum</span>
+          <span class="text-sm">Teacher Messages</span>
+        </div>
+        <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-secondary-container text-on-secondary">2</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Pinned Bottom Active Ward Card -->
+  <div class="shrink-0 p-3 mx-3 mb-3 rounded-xl bg-surface-container-low flex flex-col gap-1.5 border border-surface-container-high/80 shadow-2xs">
+    <div class="flex items-center justify-between">
+      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Active Ward</span>
+      <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Enrolled
+      </span>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs shrink-0" id="parent-drawer-ward-avatar">
+        KM
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="font-headline-sm text-sm text-primary font-bold leading-tight truncate" id="parent-drawer-ward-name">Kofi Mensah</div>
+        <div class="font-body-sm text-[11px] text-on-surface-variant truncate" id="parent-drawer-ward-class">Basic 2 • Sunflower Class</div>
+      </div>
+    </div>
+    <div class="pt-1 border-t border-outline-variant/20 flex items-center justify-between text-[11px] text-on-surface-variant">
+      <span>Term 1 Week 8</span>
+      <span class="text-secondary font-bold">Good Standing</span>
+    </div>
+  </div>
+</aside>
+<div class="pl-72 flex flex-col min-h-screen">
+<header class="fixed top-0 left-72 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-primary-container text-on-primary border-b border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-12 h-10 flex items-center justify-between text-xs font-label-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-medium"><span class="material-symbols-outlined text-sm text-tertiary-fixed">school</span><span>Term 1, 2026/2027 Academic Session • Active Week 8</span></div><div class="hidden md:flex items-center gap-space-xs text-primary-fixed"><span class="material-symbols-outlined text-sm text-secondary-fixed">phone_in_talk</span><span>Emergency: +233 (0) 30 123 4567</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs bg-primary px-space-sm py-1 rounded text-on-primary"><span class="material-symbols-outlined text-sm text-primary-fixed">face</span><span class="font-label-sm uppercase tracking-wider text-surface-variant">Ward:</span><span class="font-label-sm font-bold text-surface-container-lowest">Kofi Mensah (Basic 2 - Sunflower)</span><span class="material-symbols-outlined text-sm text-outline-variant">arrow_drop_down</span></div></div></div></div><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary transition-colors cursor-pointer mr-1 shrink-0 shadow-2xs" title="Toggle Navigation Tabs Drawer" aria-label="Toggle Navigation Tabs Drawer"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-container text-on-primary"><span class="material-symbols-outlined text-2xl">shield_person</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary leading-none">CAREPOINT</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Mind • Heart • Hands</span></div></div><nav class="hidden xl:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-bold border-b-2 border-primary"><a aria-current="page" class="transition-colors py-2 text-primary font-bold border-b-2 border-primary" data-path="dashboard" href="dashboard.html">Dashboard</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="ward-profile" href="dashboard.html#ward">Child Profile</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="performance-and-reports" href="academics.html">Performance &amp; Reports</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="attendance-and-welfare" href="messages.html">Attendance &amp; Welfare</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="pickup-security" href="pickup.html">Pickup Security</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="messages" href="messages.html">Messages</a></nav><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="relative p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-full transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 bg-secondary text-on-secondary rounded-full font-label-sm text-[10px] leading-tight flex items-center justify-center font-bold">3</span></button><div class="h-8 w-px bg-outline-variant/40 hidden sm:block"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden sm:flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-bold">Dr. Nana Mensah</span><span class="font-label-sm text-[11px] text-on-surface-variant">Guardian • Father</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk7nHm7egIuiTau40KQEFHBKNDX3EptaSdTu9TBK2iwADoApEdjY9Kkt9Tjm_DoF2KYNTvFIWgNO5GlABZPWPHY658qTxcggA0vvpzxYpMpol0tKKMsBvv14t1fD96WIU0vH77Tjlup7Pbm-TJ2cyzQEIlGRhdG85eoLM-GTjxqblK4wxMDpCIWDtDAyb_zVdq8MuHW3anaXkB6adGWp9xlHqAM3FbRNIoqmH3e2xOnAIl_mjOPskfLg"/><div class="flex items-center text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-base">expand_more</span></div></div></div></div></header><main class="w-full pt-[120px] bg-surface min-h-[calc(100vh-280px)]"><div class="flex flex-col w-full">
+<div class="max-w-7xl mx-auto w-full px-6 lg:px-12 py-space-lg space-y-space-lg">
+<!-- Child Overview Banner -->
+<section id="ward" class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary via-primary-container to-primary text-on-primary p-space-lg shadow-md">
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/3 -bottom-20 w-64 h-64 rounded-full bg-tertiary-fixed/10 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
+<div class="relative">
+<img class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover shadow-lg ring-4 ring-white/10" data-alt="A portrait of a cheerful 7-year-old West African schoolboy wearing a navy blue educational polo uniform with red embroidery badge smiling warmly in a bright classroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9CVg3qyDqTRBaf1Za5eZEtjf9HqJTmRYZQD8m1VTazCzAa4pKzciGjlYNGmQBTjYc6lOuRaw__e6Soaurz5AzjIYfwr5xi5pYWLovWtHlNpBmm7CPqca9flU1vU9c8qZvPaEt7MVIPIGLYt_mw8av9q3PHHAHX6fbiCawXEJ9fk6neaC3Jg67CKLAbM8Y3hhSFiwu-hgyfZ_Pa-2mYYMs36B37RI26i5ifSmGyUTFvT-AwumnHXuhvQ"/>
+<span class="absolute bottom-1 right-1 w-5 h-5 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center text-[10px] font-bold shadow" title="Active on Campus">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold">Enrolled • Basic 2</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-white/10 text-primary-fixed">ID: CP-2023-0482</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold tracking-tight text-surface-container-lowest">Kofi Mensah</h1>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-space-md font-body-sm text-body-sm text-primary-fixed">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary-fixed">wb_sunny</span>
+                Sunflower Class
+              </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">person_outline</span>
+                Class Teacher: <strong class="text-surface-container-lowest">Mrs. Beatrice Abbey</strong>
+</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-between gap-space-sm pt-space-xs lg:pt-0">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest/15 backdrop-blur-sm text-primary-fixed-dim font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+<span>Term 1: Week 8 of 14 • Good Standing</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative inline-block text-left" id="wardDropdownContainer">
+<button class="inline-flex items-center gap-space-xs px-4 py-2 rounded-full bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 text-surface-container-lowest font-label-md text-label-md transition" onclick="document.getElementById('wardMenu').classList.toggle('hidden')" type="button">
+<span class="material-symbols-outlined text-base">swap_horiz</span>
+<span>Switch Child (2 Registered)</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="hidden absolute right-0 mt-2 w-64 rounded-xl bg-surface-container-lowest text-on-surface shadow-xl py-2 z-30" id="wardMenu">
+<div class="px-4 py-2 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Select Child</div>
+<a id="ward-opt-kofi" onclick="switchWard('kofi')" class="flex items-center gap-space-sm px-4 py-2 bg-surface-container text-primary font-bold cursor-pointer" href="javascript:void(0)">
+<span id="check-kofi" class="material-symbols-outlined text-base text-tertiary-container">done</span>
+<div>
+<p class="font-label-md text-label-md">Kofi Mensah</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-normal">Basic 2 - Sunflower</p>
+</div>
+</a>
+<a id="ward-opt-ama" onclick="switchWard('ama')" class="flex items-center gap-space-sm px-4 py-2 hover:bg-surface-container-low text-on-surface cursor-pointer" href="javascript:void(0)">
+<span id="check-ama" class="material-symbols-outlined text-base opacity-0">done</span>
+<div>
+<p class="font-label-md text-label-md">Ama Mensah</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-normal">Nursery 1 - Buttercup</p>
+</div>
+</a>
+</div>
+</div>
+<a class="p-2 rounded-full bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 text-surface-container-lowest transition" href="academics.html" title="Child Full Profile">
+<span class="material-symbols-outlined text-base">contact_page</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Tricolor Trim bar -->
+<div class="absolute bottom-0 left-0 right-0 h-1 flex">
+<div class="w-1/3 bg-primary-fixed-dim"></div>
+<div class="w-1/3 bg-secondary"></div>
+<div class="w-1/3 bg-tertiary-fixed"></div>
+</div>
+</section>
+<!-- Quick Metrics Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Attendance Card -->
+<div class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Term Attendance</span>
+<div class="font-headline-lg text-headline-lg font-bold text-primary mt-1">98.2%</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed/30 text-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>38 of 39 Days Present</span>
+<span class="font-semibold text-on-tertiary-container">1 Excused</span>
+</div>
+</div>
+<!-- Term Average Card -->
+<div class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Term Average</span>
+<div class="font-headline-lg text-headline-lg font-bold text-primary mt-1">89.4%</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between font-label-sm text-label-sm">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">Grade A</span>
+<span class="text-on-tertiary-container font-semibold flex items-center">
+<span class="material-symbols-outlined text-xs">arrow_upward</span>+3.2%
+</span>
+</div>
+</div>
+<!-- Pickup Pass Card -->
+<div class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Today's Pickup Pass</span>
+<div class="font-headline-sm text-headline-sm font-bold text-on-tertiary-fixed-variant mt-1">Active &bull; Secured</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Dr. Nana Mensah</span>
+<span class="font-bold text-primary">#PK-8841</span>
+</div>
+</div>
+<!-- Messages & Notices Card -->
+<div class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Updates</span>
+<div class="font-headline-lg text-headline-lg font-bold text-secondary mt-1">2 Unread</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed/50 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-secondary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+1 Teacher Note
+</span>
+<a href="messages.html" class="text-primary font-semibold hover:underline">View &rarr;</a>
+</div>
+</div>
+</section>
+
+
+  <div class="flex items-center gap-2 shrink-0">
+    <a href="academics.html" class="px-3.5 py-1.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary text-xs font-bold transition-all shadow-2xs">
+      View Report Card
+    </a>
+    <button onclick="document.getElementById('parent-feature-spotlight').remove()" class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer" title="Dismiss tip">
+      <span class="material-symbols-outlined text-[18px]">close</span>
+    </button>
+  </div>
+</div>
+
+<!-- Navigation Tabs -->
+<div class="flex items-center gap-2 p-1.5 bg-[#f4f1ee] rounded-full w-fit mb-6">
+  <button id="parentTabBtn_routine" onclick="switchParentView('routine')" class="parent-view-tab px-5 py-2 rounded-full text-xs font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5 cursor-pointer" type="button">
+    <span class="material-symbols-outlined text-[16px]">schedule</span>
+    <span>Today's Routine</span>
+  </button>
+  <button id="parentTabBtn_academics" onclick="switchParentView('academics')" class="parent-view-tab px-5 py-2 rounded-full text-xs font-semibold transition-all text-on-surface-variant hover:text-on-surface hover:bg-black/5 flex items-center gap-1.5 cursor-pointer" type="button">
+    <span class="material-symbols-outlined text-[16px]">school</span>
+    <span>Academics</span>
+  </button>
+  <button id="parentTabBtn_welfare" onclick="switchParentView('welfare')" class="parent-view-tab px-5 py-2 rounded-full text-xs font-semibold transition-all text-on-surface-variant hover:text-on-surface hover:bg-black/5 flex items-center gap-1.5 cursor-pointer" type="button">
+    <span class="material-symbols-outlined text-[16px]">favorite</span>
+    <span>Health &amp; Welfare</span>
+  </button>
+</div>
+
+<!-- ========================================================================= -->
+<!-- TAB 1: TODAY'S ROUTINE & PASS (PRIMARY DAILY FOCUS)                      -->
+<!-- ========================================================================= -->
+<div id="parentTabSection_routine" class="space-y-space-lg">
+  <!-- Today's Timetable Horizontal Flow -->
+  <section class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm">
+  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-space-sm mb-space-sm gap-2">
+  <div class="flex items-center gap-space-xs">
+  <span class="material-symbols-outlined text-primary text-xl">schedule</span>
+  <h2 class="font-headline-sm text-headline-sm font-bold text-primary">Today's Class Schedule • Sunflower Class</h2>
+  </div>
+  <span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">Thursday, Active Block Session</span>
+  </div>
+  <div class="overflow-x-auto pb-2 -mx-space-md px-space-md scrollbar-none">
+  <div class="flex items-stretch gap-space-sm min-w-[840px]">
+  <!-- Period 1 -->
+  <div class="flex-1 rounded-lg p-3 bg-surface-container-low flex flex-col justify-between">
+  <div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+  <span>08:00 - 08:30</span>
+  <span class="material-symbols-outlined text-sm text-primary">done_all</span>
+  </div>
+  <div class="my-2">
+  <span class="font-label-md text-label-md font-bold text-primary block">Assembly &amp; Devotion</span>
+  <span class="font-body-sm text-[12px] text-on-surface-variant">Main Courtyard</span>
+  </div>
+  <span class="font-label-sm text-[10px] uppercase font-bold text-on-tertiary-container">Completed</span>
+  </div>
+  <!-- Period 2 -->
+  <div class="flex-1 rounded-lg p-3 bg-surface-container-low flex flex-col justify-between">
+  <div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+  <span>08:30 - 10:00</span>
+  <span class="material-symbols-outlined text-sm text-primary">done_all</span>
+  </div>
+  <div class="my-2">
+  <span class="font-label-md text-label-md font-bold text-primary block">Mathematics</span>
+  <span class="font-body-sm text-[12px] text-on-surface-variant">Fractions &amp; Shapes</span>
+  </div>
+  <span class="font-label-sm text-[10px] uppercase font-bold text-on-tertiary-container">Completed</span>
+  </div>
+  <!-- Break -->
+  <div class="w-32 rounded-lg p-3 bg-surface-container flex flex-col justify-between">
+  <div class="font-label-sm text-label-sm text-on-surface-variant">10:00 - 10:30</div>
+  <div class="my-1">
+  <span class="font-label-md text-label-md font-bold text-primary block">Snack &amp; Play</span>
+  <span class="font-body-sm text-[12px] text-on-surface-variant">Outdoor Pod</span>
+  </div>
+  <span class="font-label-sm text-[10px] uppercase font-bold text-on-surface-variant">Break Time</span>
+  </div>
+  <!-- Period 3 (Current/Active) -->
+  <div class="flex-1 rounded-lg p-3 bg-primary-container text-on-primary shadow-sm flex flex-col justify-between">
+  <div class="flex items-center justify-between font-label-sm text-label-sm text-primary-fixed">
+  <span>10:30 - 12:00</span>
+  <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+  </div>
+  <div class="my-2">
+  <span class="font-label-md text-label-md font-bold text-surface-container-lowest block">Science</span>
+  <span class="font-body-sm text-[12px] text-primary-fixed">Plant Life &amp; Soil</span>
+  </div>
+  <span class="font-label-sm text-[10px] uppercase font-bold text-tertiary-fixed">Happening Now</span>
+  </div>
+  <!-- Lunch -->
+  <div class="w-36 rounded-lg p-3 bg-surface-container-low flex flex-col justify-between">
+  <div class="font-label-sm text-label-sm text-on-surface-variant">12:00 - 13:00</div>
+  <div class="my-1">
+  <span class="font-label-md text-label-md font-bold text-primary block">Nutritious Lunch</span>
+  <span class="font-body-sm text-[12px] text-on-surface-variant">Jollof &amp; Steamed Veg</span>
+  </div>
+  <span class="font-label-sm text-[10px] uppercase font-bold text-on-surface-variant">Dining Hall</span>
+  </div>
+  <!-- Period 4 -->
+  <div class="flex-1 rounded-lg p-3 bg-surface-container-low flex flex-col justify-between opacity-80">
+  <div class="font-label-sm text-label-sm text-on-surface-variant">13:00 - 14:30</div>
+  <div class="my-2">
+  <span class="font-label-md text-label-md font-bold text-primary block">ICT Basics</span>
+  <span class="font-body-sm text-[12px] text-on-surface-variant">ScratchJr Animation</span>
+  </div>
+  <span class="font-label-sm text-[10px] uppercase font-bold text-on-surface-variant">Lab 1</span>
+  </div>
+  <!-- Dismissal -->
+  <div class="flex-1 rounded-lg p-3 bg-surface-container-high flex flex-col justify-between">
+  <div class="font-label-sm text-label-sm text-on-surface-variant">14:30 - 15:30</div>
+  <div class="my-2">
+  <span class="font-label-md text-label-md font-bold text-secondary block">Closing Gate</span>
+  <span class="font-body-sm text-[12px] text-on-surface-variant">Secure Gate 2 Checkout</span>
+  </div>
+  <span class="font-label-sm text-[10px] uppercase font-bold text-secondary">Pickup</span>
+  </div>
+  </div>
+  </div>
+  </section>
+
+  <!-- Two-Column Routine Flow -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+    <!-- Left: Gate Security & Pass (7 cols) -->
+    <div class="lg:col-span-7 space-y-space-lg">
+      <div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+        <div class="flex items-center justify-between mb-space-md">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-tertiary-container">verified</span>
+            <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Gate &amp; Pickup Security</h3>
+          </div>
+          <a class="font-label-md text-label-md text-primary hover:underline font-bold" href="pickup.html">Manage Pass</a>
+        </div>
+        <!-- Dynamic QR Code Card -->
+        <div class="p-space-md rounded-lg bg-surface-container flex items-center justify-between mb-space-md">
+          <div>
+            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Authorized Collector</span>
+            <span class="font-label-lg text-label-lg font-bold text-primary block mt-0.5">Dr. Nana Mensah</span>
+            <span class="font-body-sm text-[12px] text-on-surface-variant block">Verification: Primary Biometric / QR</span>
+          </div>
+          <div class="p-2 bg-surface-container-lowest rounded-lg shadow-sm text-center">
+            <span class="material-symbols-outlined text-4xl text-primary block">qr_code_scanner</span>
+            <span class="font-label-sm text-[10px] text-on-surface-variant font-bold">#PK-8841</span>
+          </div>
+        </div>
+        <!-- Recent Gate Passes -->
+        <span class="font-label-sm text-label-sm font-bold text-on-surface-variant uppercase tracking-wider block mb-space-xs">Recent Gate Activity</span>
+        <div class="space-y-space-sm">
+          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+            <div class="flex items-center gap-space-sm">
+              <span class="material-symbols-outlined text-on-tertiary-container">check_circle</span>
+              <div>
+                <span class="font-label-md text-label-md font-bold text-on-surface block">Dr. Nana Mensah</span>
+                <span class="font-body-sm text-[12px] text-on-surface-variant">Yesterday 15:10 • Gate 2 Main</span>
+              </div>
+            </div>
+            <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-bold">Verified</span>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+            <div class="flex items-center gap-space-sm">
+              <span class="material-symbols-outlined text-on-tertiary-container">check_circle</span>
+              <div>
+                <span class="font-label-md text-label-md font-bold text-on-surface block">Auntie Grace Owusu</span>
+                <span class="font-body-sm text-[12px] text-on-surface-variant">Mon 15:05 • OTP Authorization</span>
+              </div>
+            </div>
+            <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-bold">OTP Pass</span>
+          </div>
+        </div>
+        <button onclick="window.location.href='pickup.html'" class="w-full mt-space-md py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition flex items-center justify-center gap-2 cursor-pointer shadow-2xs" type="button">
+          <span class="material-symbols-outlined text-lg">person_add</span>
+          <span>Authorize One-Time Guest Handler</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right: Teacher Remarks (5 cols) -->
+    <div class="lg:col-span-5 space-y-space-lg">
+      <div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+        <div class="flex items-center justify-between mb-space-md">
+          <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Class Teacher Observation</h3>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Today • 11:20 AM</span>
+        </div>
+        <div class="flex items-start gap-space-md">
+          <img class="w-12 h-12 rounded-full object-cover shrink-0" data-alt="A portrait of Mrs. Beatrice Abbey, an experienced Ghanaian primary school educator wearing modern professional attire with a warm and encouraging expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA"/>
+          <div class="space-y-space-xs">
+            <div class="flex items-center gap-2">
+              <span class="font-label-lg text-label-lg font-bold text-primary">Mrs. Beatrice Abbey</span>
+              <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Sunflower Class Lead</span>
+            </div>
+            <div class="p-space-md rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface relative">
+              <span class="material-symbols-outlined text-secondary text-2xl absolute -top-3 -left-2 opacity-30">format_quote</span>
+              <p class="relative z-10 leading-relaxed text-xs">
+                "Kofi showed exceptional problem-solving skills in today's group math exercise. He assisted his team with the fraction puzzles and remained very proactive and attentive. Keep encouraging his home reading."
+              </p>
+            </div>
+            <div class="flex items-center gap-space-md pt-space-xs font-label-md text-label-md">
+              <a href="messages.html" class="text-primary hover:text-primary-container font-semibold flex items-center gap-1">
+                <span class="material-symbols-outlined text-base">reply</span> Reply to Mrs. Abbey
+              </a>
+              <span class="text-on-surface-variant">•</span>
+              <button onclick="alert('Acknowledgement sent to Mrs. Beatrice Abbey. Thank you!')" class="text-on-surface-variant hover:text-on-surface flex items-center gap-1 cursor-pointer" type="button">
+                <span class="material-symbols-outlined text-base">thumb_up</span> Acknowledge
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- TAB 2: ACADEMIC PROGRESS & OFFICIAL REPORTS                              -->
+<!-- ========================================================================= -->
+<div id="parentTabSection_academics" class="hidden space-y-space-lg">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+    <!-- Academic Snapshot Section (7 cols) -->
+    <div class="lg:col-span-7 space-y-space-lg">
+      <div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+        <div class="flex items-center justify-between mb-space-md">
+          <div>
+            <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Academic Performance</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Mid-Term assessment roll for Sunflower stream (Basic 2)</p>
+          </div>
+          <a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary hover:text-primary-container font-bold" href="academics.html">
+            <span>Full Report</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+        <!-- Visual Progress List -->
+        <div class="space-y-space-md">
+          <div>
+            <div class="flex justify-between font-label-md text-label-md mb-1">
+              <span class="text-on-surface font-semibold">Mathematics</span>
+              <span class="font-bold text-primary">94% • <span class="text-on-tertiary-container">Distinction</span></span>
+            </div>
+            <div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden">
+              <div class="h-full rounded-full bg-primary" style="width: 94%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between font-label-md text-label-md mb-1">
+              <span class="text-on-surface font-semibold">Integrated Science</span>
+              <span class="font-bold text-primary">92% • <span class="text-on-tertiary-container">Distinction</span></span>
+            </div>
+            <div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden">
+              <div class="h-full rounded-full bg-tertiary-container" style="width: 92%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between font-label-md text-label-md mb-1">
+              <span class="text-on-surface font-semibold">Computing &amp; Coding</span>
+              <span class="font-bold text-primary">90% • <span class="text-on-tertiary-container">Distinction</span></span>
+            </div>
+            <div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden">
+              <div class="h-full rounded-full bg-primary-container" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between font-label-md text-label-md mb-1">
+              <span class="text-on-surface font-semibold">English Language &amp; Phonics</span>
+              <span class="font-bold text-primary">88% • <span class="text-on-tertiary-container">Excellent</span></span>
+            </div>
+            <div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden">
+              <div class="h-full rounded-full bg-primary" style="width: 88%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between font-label-md text-label-md mb-1">
+              <span class="text-on-surface font-semibold">Creative Arts &amp; Design</span>
+              <span class="font-bold text-primary">85% • <span class="text-on-tertiary-container">Very Good</span></span>
+            </div>
+            <div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden">
+              <div class="h-full rounded-full bg-secondary-container" style="width: 85%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-space-lg p-space-md rounded-lg bg-surface-container-low flex items-center justify-between">
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-primary text-xl">analytics</span>
+            <div>
+              <span class="font-label-md text-label-md font-bold text-primary block">Term 1 Cognitive Benchmark</span>
+              <span class="font-body-sm text-[12px] text-on-surface-variant">Performing in the 94th percentile across primary 2 class.</span>
+            </div>
+          </div>
+          <span class="font-label-sm text-label-sm font-bold text-on-tertiary-container bg-surface-container px-2 py-1 rounded">Top 5%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Official Report Card CTA (5 cols) -->
+    <div class="lg:col-span-5 space-y-space-lg">
+      <div class="rounded-2xl bg-gradient-to-br from-primary to-primary-container text-on-primary p-space-lg shadow-md flex flex-col justify-between">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/15 text-tertiary-fixed text-label-sm font-bold mb-3">
+            <span class="material-symbols-outlined text-[15px]">verified</span>
+            <span>GES &amp; NaSIA ACCREDITED</span>
+          </div>
+          <h3 class="font-headline-sm text-lg font-bold text-surface-container-lowest leading-tight">
+            Official Terminal Report Card Ready
+          </h3>
+          <p class="font-body-sm text-xs text-primary-fixed mt-2 leading-relaxed">
+            Mrs. Beatrice Abbey and Principal Dr. Elizabeth Appiah have signed off on Kofi's Continuous Assessment scores. The certified PDF includes full SBA marks, class rank, attendance verification, and behavioral remarks.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex flex-col gap-2">
+          <a href="academics.html" class="w-full py-3 px-4 rounded-xl bg-surface-container-lowest text-primary hover:bg-surface-container font-label-md text-xs font-bold text-center transition-all shadow-xs flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            <span>Open &amp; Print Official PDF</span>
+          </a>
+          <span class="text-[11px] text-primary-fixed-dim text-center">
+            Secured with Carepoint 256-Bit Cryptographic Stamp
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- TAB 3: HEALTH, WELFARE, PHOTOS & EVENTS                                   -->
+<!-- ========================================================================= -->
+<div id="parentTabSection_welfare" class="hidden space-y-space-lg">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+    <!-- Left Column (7 cols): Clinic and Photos -->
+    <div class="lg:col-span-7 space-y-space-lg">
+      <!-- Welfare & Clinic Alert -->
+      <div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+        <div class="flex items-center justify-between mb-space-sm">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-secondary">health_and_safety</span>
+            <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Health &amp; Wellness</h3>
+          </div>
+          <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">School Bay</span>
+        </div>
+        <div class="p-space-md rounded-lg bg-surface-container-low space-y-space-xs">
+          <div class="flex items-center justify-between">
+            <span class="font-label-md text-label-md font-bold text-on-surface">Routine Screening: Dental &amp; Vision</span>
+            <span class="font-label-sm text-[11px] text-on-surface-variant">Oct 14, 2026</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Conducted by School Nurse Faustina Asante. Eyesight 20/20 bilateral, teeth clean with zero cavity indicators noted.
+          </p>
+          <div class="flex items-center gap-space-md pt-1">
+            <span class="font-label-sm text-label-sm text-on-tertiary-container font-bold flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">check_circle</span>
+              All vitals normal
+            </span>
+            <a class="font-label-sm text-label-sm text-primary hover:underline" href="academics.html#health">Clinic Log</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity & Class Highlights Carousel/Photos -->
+      <div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+        <div class="flex items-center justify-between mb-space-md">
+          <div>
+            <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Sunflower Pod Activities</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Classroom moments captured by teaching assistants</p>
+          </div>
+          <a class="font-label-md text-label-md text-primary font-bold hover:underline" href="../public/home.html#gallery">Class Album</a>
+        </div>
+        <div class="grid grid-cols-2 gap-space-md">
+          <div class="relative rounded-lg overflow-hidden group">
+            <img class="w-full h-40 object-cover group-hover:scale-105 transition duration-300" data-alt="West African elementary school children working on a colorful botanical science project with seedlings and soil in an airy modern classroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkk3ATYzUC8TGjb5IrJudIwAupVJi0Luajl8g-fjgEPL5L2ZQus9K_p-qtg2HgQSMN9NPZr4WHzhPWCMD3LeRED0GpUUbFtMGMUVZ93kV-Cn4OCPg4f53g2G-Wl3RyeSRv_BvABEyD-16AU0T9lgE4JaRqe5QdodrfsTv5vbdFVQ-NrR_WgfTZ69IhRQQnFdYm6BIj5REho0PmMKwe4ZOukcM_HVkFIvlDZ_efVcnWZngDbQ1UtFdDmA"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3">
+              <span class="font-label-sm text-label-sm text-white font-medium">Science Pod: Sprouting Beans</span>
+            </div>
+          </div>
+          <div class="relative rounded-lg overflow-hidden group">
+            <img class="w-full h-40 object-cover group-hover:scale-105 transition duration-300" data-alt="Primary school children in colorful uniforms collaborating enthusiastically with tablets in a well-equipped modern school library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZjtdOIkg-YS3DDq0B7aw6mafrZ_AverBonRlEzwj8-6jKl3YUSCccp8hK2fAcWRK2sVfZ-xsZ9bAzfu_YME2KVsXg1OdEkCkc8QeUHxDTzmkvwW6bUbD8pA6WfpFKUtnBbfkf4Pr_RvqISq1n4dEyxn9R74rFQY7_F9ZGpiq8orcdd3QeLJSfqJnqmxdZxXNIySz7gYZ8qQxVFW5HJNSeGb1Z9P03iSXnNctl1z0uEVDayY6EpfaZCw"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3">
+              <span class="font-label-sm text-label-sm text-white font-medium">ICT: Coding with Blocks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column (5 cols): Calendar and Help -->
+    <div class="lg:col-span-5 space-y-space-lg">
+      <!-- Upcoming School Calendar -->
+      <div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+        <div class="flex items-center justify-between mb-space-md">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-primary">event</span>
+            <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Upcoming Dates</h3>
+          </div>
+          <a class="font-label-md text-label-md text-primary font-bold hover:underline" href="../public/home.html#news">View Term</a>
+        </div>
+        <div class="space-y-space-sm">
+          <div class="flex items-center gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition">
+            <div class="w-12 h-12 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex flex-col items-center justify-center shrink-0">
+              <span class="font-label-sm text-[10px] uppercase font-bold leading-none">OCT</span>
+              <span class="font-headline-sm text-headline-sm font-bold leading-tight">20</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="font-label-lg text-label-lg font-bold text-primary truncate">Mid-Term PTA Meeting</h4>
+              <p class="font-body-sm text-[12px] text-on-surface-variant">16:30 • School Multipurpose Auditorium</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition">
+            <div class="w-12 h-12 rounded-lg bg-surface-container text-primary flex flex-col items-center justify-center shrink-0">
+              <span class="font-label-sm text-[10px] uppercase font-bold leading-none">OCT</span>
+              <span class="font-headline-sm text-headline-sm font-bold leading-tight">25</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="font-label-lg text-label-lg font-bold text-primary truncate">Science &amp; Innovation Expo</h4>
+              <p class="font-body-sm text-[12px] text-on-surface-variant">09:00 - 14:00 • Sunflower Class showcase</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition">
+            <div class="w-12 h-12 rounded-lg bg-surface-container text-primary flex flex-col items-center justify-center shrink-0">
+              <span class="font-label-sm text-[10px] uppercase font-bold leading-none">NOV</span>
+              <span class="font-headline-sm text-headline-sm font-bold leading-tight">02</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="font-label-lg text-label-lg font-bold text-primary truncate">Founder's Thanksgiving Day</h4>
+              <p class="font-body-sm text-[12px] text-on-surface-variant">Public Holiday • Campus Closed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Help Card -->
+      <div class="rounded-xl bg-primary text-on-primary p-space-md flex items-center justify-between">
+        <div class="space-y-1">
+          <span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider block">Need Assistance?</span>
+          <span class="font-label-lg text-label-lg font-bold text-white block">Sunflower Class Representative</span>
+          <span class="font-body-sm text-[12px] text-primary-fixed block">Direct parent liaison for Basic 2</span>
+        </div>
+        <button onclick="window.location.href='messages.html'" class="px-3 py-2 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm font-bold hover:bg-secondary-container transition flex items-center gap-1 shrink-0 cursor-pointer" type="button">
+          <span class="material-symbols-outlined text-sm">chat</span>
+          <span>Contact</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl border-t border-outline-variant/30"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-space-xl"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg mb-space-lg"><div class="md:col-span-1"><div class="flex items-center gap-space-xs mb-space-xs"><span class="material-symbols-outlined text-primary text-xl">verified_user</span><span class="font-headline-sm text-headline-sm text-primary font-bold">Carepoint</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Excellence in early, primary, and secondary education. Mind, Heart, and Hands nurtured for leadership.</p><div class="flex items-center gap-space-xs text-on-tertiary-container font-label-sm text-label-sm font-bold"><span class="material-symbols-outlined text-sm">lock</span><span>256-Bit SSL Encrypted Session</span></div></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Portal Assistance</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" href="messages.html">IT &amp; Parent Helpdesk</a></li><li><a class="hover:text-primary transition-colors" href="academics.html">Fee Payment Verification</a></li><li><a class="hover:text-primary transition-colors" href="pickup.html">Busing &amp; Route Logistics</a></li><li><a class="hover:text-primary transition-colors" href="academics.html">School Clinic &amp; Medical</a></li></ul></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Security &amp; Gate Desk</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li>Main Gate Post: Ext 104</li><li>Security Coordinator: 020 000 1122</li><li>Dispatch &amp; Pickup Desk: Ext 108</li><li>Emergency Response: 030 123 4567</li></ul></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Institutional Compliance</h4><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">Accredited by National Schools Inspectorate Authority (NaSIA) • Ghana Education Service (GES).</p><div class="p-space-sm rounded-lg bg-surface-container border border-outline-variant/40"><span class="font-label-sm text-label-sm font-bold text-primary block">Strict Parent Verification</span><span class="font-body-sm text-[12px] text-on-surface-variant block">Always present digital authorization code at afternoon gate checkout.</span></div></div></div><div class="pt-space-md border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><div>© 2026 Carepoint Community School. All Rights Reserved. National Schools Inspectorate Authority Compliant.</div><div class="flex items-center gap-space-md font-label-sm text-label-sm"><a class="hover:text-primary transition-colors cursor-pointer" onclick="alert('Child Safeguarding Policy: Carepoint Community School enforces strict zero-tolerance child protection protocols supervised by the Ghana Education Service (GES) and NaSIA.');" href="javascript:void(0)">Child Safeguarding</a><a class="hover:text-primary transition-colors cursor-pointer" onclick="alert('Carepoint Data Privacy: Compliant with Ghana Data Protection Act (Act 843). Student biometric & academic records are end-to-end encrypted.');" href="javascript:void(0)">Privacy Policy</a><a class="hover:text-primary transition-colors cursor-pointer" onclick="alert('Terms of Portal Use: Authorized for registered Carepoint parents and legal guardians only.');" href="javascript:void(0)">Terms of Portal Use</a></div></div></div></footer>
+</div>
+<script>
+function switchParentView(tab) {
+  const tabs = ['routine', 'academics', 'welfare'];
+  tabs.forEach(t => {
+    const btn = document.getElementById('parentTabBtn_' + t);
+    const sec = document.getElementById('parentTabSection_' + t);
+    if (t === tab) {
+      if (btn) {
+        btn.className = "parent-view-tab px-5 py-2 rounded-full text-xs font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5 cursor-pointer";
+      }
+      if (sec) sec.classList.remove('hidden');
+    } else {
+      if (btn) {
+        btn.className = "parent-view-tab px-5 py-2 rounded-full text-xs font-semibold transition-all text-on-surface-variant hover:text-on-surface hover:bg-black/5 flex items-center gap-1.5 cursor-pointer";
+      }
+      if (sec) sec.classList.add('hidden');
+    }
+  });
+}
+
+// Auto-switch tab if hash present
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'academics' || hash === 'grades') {
+    switchParentView('academics');
+  } else if (hash === 'health' || hash === 'welfare' || hash === 'calendar') {
+    switchParentView('welfare');
+  }
+});
+
+// Auto-switch tab if hash present or scroll to ward
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'academics' || hash === 'grades') {
+    switchParentView('academics');
+  } else if (hash === 'health' || hash === 'welfare' || hash === 'calendar') {
+    switchParentView('welfare');
+  } else if (hash === 'ward') {
+    const wardSection = document.getElementById('ward');
+    if (wardSection) {
+      setTimeout(() => wardSection.scrollIntoView({ behavior: 'smooth' }), 100);
+    }
+  }
+
+  const savedWard = (typeof localStorage !== 'undefined' && localStorage.getItem('carepoint_active_ward')) || 'kofi';
+  if (savedWard === 'ama') {
+    switchWard('ama', false);
+  }
+});
+
+function switchWard(child, showNotice = true) {
+  const isKofi = child === 'kofi';
+  const kofiOpt = document.getElementById('ward-opt-kofi');
+  const amaOpt = document.getElementById('ward-opt-ama');
+  const checkKofi = document.getElementById('check-kofi');
+  const checkAma = document.getElementById('check-ama');
+
+  if (typeof localStorage !== 'undefined') {
+    localStorage.setItem('carepoint_active_ward', child);
+  }
+
+  if (window.CarepointDrawer && typeof window.CarepointDrawer.syncWard === 'function') {
+    window.CarepointDrawer.syncWard(child);
+  }
+  
+  if (isKofi) {
+    if (kofiOpt) { kofiOpt.className = "flex items-center gap-space-sm px-4 py-2 bg-surface-container text-primary font-bold cursor-pointer"; }
+    if (amaOpt) { amaOpt.className = "flex items-center gap-space-sm px-4 py-2 hover:bg-surface-container-low text-on-surface cursor-pointer"; }
+    if (checkKofi) checkKofi.classList.remove('opacity-0');
+    if (checkAma) checkAma.classList.add('opacity-0');
+    if (showNotice) {
+      if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+        window.CarepointDemo.showToast("Active profile switched: Kofi Mensah (Basic 2 - Sunflower).", true);
+      } else {
+        alert("Active profile switched: Kofi Mensah (Basic 2 - Sunflower).");
+      }
+    }
+  } else {
+    if (kofiOpt) { kofiOpt.className = "flex items-center gap-space-sm px-4 py-2 hover:bg-surface-container-low text-on-surface cursor-pointer"; }
+    if (amaOpt) { amaOpt.className = "flex items-center gap-space-sm px-4 py-2 bg-surface-container text-primary font-bold cursor-pointer"; }
+    if (checkKofi) checkKofi.classList.add('opacity-0');
+    if (checkAma) checkAma.classList.remove('opacity-0');
+    if (showNotice) {
+      if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+        window.CarepointDemo.showToast("Active profile switched: Ama Mensah (Nursery 1 - Buttercup).", true);
+      } else {
+        alert("Active profile switched: Ama Mensah (Nursery 1 - Buttercup).");
+      }
+    }
+  }
+}
+</script>
+</body></html>

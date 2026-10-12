@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"error-container":"#ffdad6","on-surface":"#161c23","on-secondary-fixed":"#410001","primary-fixed-dim":"#b5c4ff","secondary-fixed-dim":"#ffb4a9","on-error":"#ffffff","error":"#ba1a1a","surface-variant":"#dde3ec","secondary":"#ba0a0c","on-error-container":"#93000a","on-secondary-container":"#fffbff","surface-container-highest":"#dde3ec","surface-container-low":"#eef4fe","tertiary-fixed":"#94f9a0","background":"#eef2f6","outline":"#757680","surface-dim":"#d5dae4","on-primary":"#ffffff","on-surface-variant":"#45464f","primary":"#011549","inverse-surface":"#2b3138","surface-bright":"#f7f9ff","tertiary":"#001f07","surface":"#eef2f6","on-primary-fixed-variant":"#344478","surface-container-high":"#e3e8f2","on-tertiary-container":"#46a95a","on-tertiary-fixed-variant":"#00531f","surface-tint":"#4c5c92","on-tertiary-fixed":"#002108","on-primary-container":"#8494cd","on-secondary-fixed-variant":"#930004","surface-container-lowest":"#ffffff","inverse-primary":"#b5c4ff","on-tertiary":"#ffffff","inverse-on-surface":"#ecf1fb","outline-variant":"#c5c6d1","secondary-container":"#df2d23","surface-container":"#e9eef8","on-background":"#161c23","tertiary-container":"#003712","on-primary-fixed":"#03174b","tertiary-fixed-dim":"#78dc86","on-secondary":"#ffffff","primary-fixed":"#dce1ff","secondary-fixed":"#ffdad5","primary-container":"#1a2b5e"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-sm":"1rem","space-xs":"0.25rem","space-lg":"1.5rem","space-md":"1rem","space-xl":"2.5rem","margin":"2rem","gutter-sm":"1rem","gutter":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"label-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"]},"fontSize":{"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.04em","fontWeight":"700"}],"display-lg":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"800"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"800"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}]}}}}</script><title>Carepoint - Multi-Role Approvals Queue</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "admin",
+            label: "Multi-Role Approvals Queue",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-approvals.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-outline-variant/30">
+<div class="flex flex-col">
+<!-- Top Header with Crest, Title, Motto, Badge, and Close Button -->
+  <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider uppercase">Executive Admin &amp; Principal</span>
+    </div>
+  </div>
+<div class="px-space-md py-space-sm">
+<div class="px-space-md py-space-xs bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Session 2026/27 Term 1</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">Wk 8</span>
+</div>
+</div>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Executive Suite</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="dashboard.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="inbox" href="inbox.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">move_to_inbox</span>
+<span>Executive Inbox</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-primary-fixed text-on-primary-fixed">5</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="decision" href="decision.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+<span>Statutory Decisions</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-secondary-container text-on-secondary">2</span>
+</a>
+</nav>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Operations & Approvals</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 transition-all bg-primary-container text-on-primary font-label-lg rounded-xl shadow-sm" data-path="approvals" href="approvals.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>Approvals Queue</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-white/20 text-white">12</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="admissions" href="admissions.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+<span>Admissions Review</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-surface-container-high text-on-surface-variant">28</span>
+</a>
+</nav>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Registries & Governance</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="wards" href="wards.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+<span>Student Records</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="users" href="users.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+<span>User Directory</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="reports" href="reports.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span>Reports & Analytics</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings" href="settings.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span>School Settings</span>
+</div>
+
+</a>
+</nav>
+</div>
+<div class="p-space-md bg-surface-container-lowest flex flex-col gap-space-xs mt-auto">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Campus Protocol</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold">Normal</span>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm hover:bg-secondary-container transition-colors shadow-sm" onclick="window.location.href = '../gate/alert.html';" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+<span>Emergency Lockdown</span>
+</button>
+</div>
+</div>
+</aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-2 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="flex items-center gap-2 px-space-sm py-1.5 rounded-full bg-surface-container-high"><span class="material-symbols-outlined text-primary text-[18px]">verified</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">NaSIA / GES Accredited • Level 4</span></div><div class="hidden xl:flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm"><span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span><span>Executive Oversight System</span></div></div><div class="flex items-center gap-space-md"><button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors relative shadow-sm" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary-container"></span></button><div class="flex items-center gap-3 pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-lg text-label-lg text-on-surface">Dr. Elizabeth Appiah</span><span class="font-label-sm text-label-sm text-on-surface-variant">Headmistress / Principal</span></div><img alt="Dr. Elizabeth Appiah" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWfNsavZrE2q7ehrA64sihUwtmROAw4xXN-C6BlUTPhqxnN--2RN5DRycS1Zzkyt6oCEfdTUfjODz6QYZEv08Q-JAkUc3Av7yS8ahvu_IycCMkJCxx5Dx9PYnuyuHQLKp_OkepCnkvleE-hqHca1ZtXA-REaPgIftK5gPRsomXA64FFaJZFdKmQGy-GEt_k2m5zV-0ASaXXLnRB3Au6F5xwS03ye8IFEGRzgETPCCJ1eKP6QrBZk3BQ"/></div></div></header><main class="relative pt-20 w-full px-space-lg pb-space-xl bg-surface"><div class="flex flex-col w-full">
+<!-- Top Visual Status Strip & Tricolor Institutional Trim -->
+<div class="w-full flex h-1.5 rounded-full overflow-hidden shadow-sm mb-space-lg">
+<div class="w-1/3 bg-primary"></div>
+<div class="w-1/3 bg-secondary-container"></div>
+<div class="w-1/3 bg-tertiary-fixed-dim"></div>
+</div>
+<!-- Header & Quick Actions -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+<div class="flex flex-col max-w-xl">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wider">Statutory Audit</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container">verified</span>
+Accredited • 2026/2027
+</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Executive Approvals Queue</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Sign-off registry for academic overrides, safeguarding, and admissions clearance.</p>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-surface-container-high hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+<span>Audit Logs</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-on-primary font-label-sm text-label-sm shadow-xs hover:bg-primary-container transition-all" onclick="batchApproveModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">rule_folder</span>
+<span>Batch Sign-Off</span>
+</button>
+</div>
+</section>
+
+<!-- Metric Quick-Glance Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+<!-- Stat 1: Total Pending -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Pending Review</span>
+<span class="w-8 h-8 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">inbox</span>
+</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">dossiers</span>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary-container" style="width: 25%"></div>
+<div class="h-full bg-primary" style="width: 45%"></div>
+<div class="h-full bg-tertiary-container" style="width: 30%"></div>
+</div>
+</div>
+</div>
+<!-- Stat 2: Urgent Safeguarding -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+Urgent Safeguarding
+</span>
+<span class="w-8 h-8 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">medical_services</span>
+</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-secondary font-bold">2</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-semibold">&lt; 4h SLA</span>
+</div>
+<p class="mt-2 font-body-sm text-body-sm text-on-surface-variant truncate">Medical &amp; custody alerts</p>
+</div>
+<!-- Stat 3: Admissions Ready -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Admissions Intake</span>
+<span class="w-8 h-8 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">school</span>
+</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">3</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">Stage 5 Final</span>
+</div>
+<p class="mt-2 font-body-sm text-body-sm text-on-surface-variant truncate">NUR to Basic 1 clearances</p>
+</div>
+<!-- Stat 4: Academic Overrides -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Academic Overrides</span>
+<span class="w-8 h-8 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Exam Board</span>
+</div>
+<p class="mt-2 font-body-sm text-body-sm text-on-surface-variant truncate">Midterm lab score adjustments</p>
+</div>
+</div>
+<!-- Search & Filter Toolbar -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 border border-surface-container-high/60 shadow-xs mb-6 flex flex-col gap-4">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-xl">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-11 pr-4 py-2 rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" id="approvalsSearch" placeholder="Search by student, staff, or ID (#APP-9021)..." type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">⌘K</span>
+</div>
+</div>
+<!-- Controls: Urgency & Refresh -->
+<div class="flex items-center gap-space-sm self-end lg:self-auto">
+<div class="flex items-center gap-2 px-space-sm py-1.5 rounded-xl bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant pl-1">Urgency:</span>
+<select class="bg-transparent font-label-sm text-label-sm text-on-surface font-semibold focus:outline-none pr-2" id="urgencyFilter">
+<option value="all">All Urgencies</option>
+<option value="critical">Critical / Safeguarding</option>
+<option value="medium">Medium Priority</option>
+<option value="standard">Standard Execution</option>
+</select>
+</div>
+<button class="w-10 h-10 rounded-xl bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors" title="Reload queue" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Category Tabs Filter (Pill Selection System) -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="categoryTabGroup">
+<button class="category-pill active flex items-center gap-2 px-space-md py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm whitespace-nowrap shadow-sm transition-all" data-category="all" type="button">
+<span>All Submissions</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary text-[10px]">9</span>
+</button>
+<button class="category-pill flex items-center gap-2 px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap transition-all" data-category="health" type="button">
+<span>Teacher Reports &amp; Health</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-lowest text-on-surface font-semibold text-[10px]">3</span>
+</button>
+<button class="category-pill flex items-center gap-2 px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap transition-all" data-category="admissions" type="button">
+<span>Admissions Intake</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-lowest text-on-surface font-semibold text-[10px]">3</span>
+</button>
+<button class="category-pill flex items-center gap-2 px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap transition-all" data-category="custody" type="button">
+<span>Pickup &amp; Custody Changes</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-lowest text-on-surface font-semibold text-[10px]">2</span>
+</button>
+<button class="category-pill flex items-center gap-2 px-space-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap transition-all" data-category="academic" type="button">
+<span>Staff Timetable/Grade Overrides</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-lowest text-on-surface font-semibold text-[10px]">1</span>
+</button>
+</div>
+</div>
+<!-- Interactive Core Split: Master Table & Inspection Dossier Drawer (Desktop Layout) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Table Main Stream: 7 Cols Desktop (or full width if drawer closed) -->
+<div class="xl:col-span-7 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden">
+<!-- Table Control Header -->
+<div class="px-space-lg py-4 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-primary">Pending Case Ledger</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">Active Session</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 9 verifications</span>
+</div>
+<!-- Ledger Rows -->
+<div class="divide-y-0 flex flex-col">
+<!-- ITEM 1: SELECTED DOSSIER (#APP-9021) -->
+<article class="approval-row selected-row p-space-md hover:bg-surface-container-low/70 transition-all cursor-pointer bg-surface-container-low/40 relative flex flex-col gap-space-sm" id="row-APP-9021" onclick="selectDossier('APP-9021')">
+<!-- Highlight bar on left -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-container rounded-r"></div>
+<div class="flex items-start justify-between gap-space-sm pl-2">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm font-bold text-primary tracking-tight">#APP-9021</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• 14:15 GMT (Today)</span>
+<!-- Category Badge -->
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Health Incident / Allergy
+                </span>
+</div>
+<!-- Urgency Flag -->
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">emergency_home</span>
+                Critical Safeguard
+              </span>
+</div>
+<!-- Subject & Ward info -->
+<div class="pl-2 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-label-sm shrink-0">
+                KM
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Kofi Mensah</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(Basic 4 - Sunbirds)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                  Submitted by: <strong class="text-on-surface">Mrs. Beatrice Abbey</strong> (Form Tutor) on behalf of School Clinic
+                </p>
+</div>
+</div>
+<!-- Current Stage & Recommendation Snippet -->
+<div class="pl-2 ml-12 p-space-sm rounded-xl bg-surface-container-lowest/80 flex items-start gap-2 shadow-xs">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">stethoscope</span>
+<p class="font-body-sm text-body-sm text-on-surface line-clamp-1">
+<span class="font-semibold text-primary">Nurse Asante clinic check completed:</span> Severe allergen reaction recorded; recommends Headmistress endorsement for 14-day specialized gym exemption &amp; dietary bypass.
+              </p>
+</div>
+<!-- Quick Table Action Strip -->
+<div class="pl-2 flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">verified</span>
+<span>NaSIA Form G-87 Prepared</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm transition-all flex items-center gap-1.5" onclick="event.stopPropagation(); triggerSign('APP-9021')" type="button">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+<span>Sign &amp; Approve</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all" onclick="event.stopPropagation(); requestInfoPrompt('APP-9021')" type="button">
+                  Request Info
+                </button>
+</div>
+</div>
+</article>
+<!-- ITEM 2: ADMISSIONS CONVERSION (#APP-9022) -->
+<article class="approval-row p-space-md hover:bg-surface-container-low/70 transition-all cursor-pointer bg-surface-container-lowest relative flex flex-col gap-space-sm" id="row-APP-9022" onclick="selectDossier('APP-9022')">
+<div class="flex items-start justify-between gap-space-sm pl-2">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm font-bold text-primary tracking-tight">#APP-9022</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• 12:40 GMT (Today)</span>
+<!-- Category Badge -->
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Admissions Conversion
+                </span>
+</div>
+<!-- Urgency Flag -->
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-medium">
+                Standard
+              </span>
+</div>
+<div class="pl-2 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-label-sm shrink-0">
+                AO
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Ama Osei-Bonsu</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(Creche to Nursery 1)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                  Submitted by: <strong class="text-on-surface">Registrar Team (Akosua Mensah)</strong>
+</p>
+</div>
+</div>
+<div class="pl-2 ml-12 p-space-sm rounded-xl bg-surface-container-low/60 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">how_to_reg</span>
+<p class="font-body-sm text-body-sm text-on-surface line-clamp-1">
+<span class="font-semibold text-primary">Entrance interview cleared (Grade A):</span> Tuition deposit verified via Ecobank Ghana receipt #EC-8831. Ready for Headmistress matriculation roll addition.
+              </p>
+</div>
+<div class="pl-2 flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fee clearance verified 100%</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-sm text-label-sm transition-all" onclick="event.stopPropagation(); triggerSign('APP-9022')" type="button">
+                  Approve
+                </button>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm" onclick="event.stopPropagation(); openCaseDossier('APP-9022')" type="button">
+                  View Docs
+                </button>
+</div>
+</div>
+</article>
+<!-- ITEM 3: PICKUP & CUSTODY CHANGE (#APP-9023) -->
+<article class="approval-row p-space-md hover:bg-surface-container-low/70 transition-all cursor-pointer bg-surface-container-lowest relative flex flex-col gap-space-sm" id="row-APP-9023" onclick="selectDossier('APP-9023')">
+<div class="flex items-start justify-between gap-space-sm pl-2">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm font-bold text-primary tracking-tight">#APP-9023</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• 11:05 GMT (Today)</span>
+<!-- Category Badge -->
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Custody &amp; Gate Override
+                </span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-secondary font-bold tracking-wider">
+                Critical/Urgent
+              </span>
+</div>
+<div class="pl-2 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center font-bold text-label-sm shrink-0">
+                EB
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Emmanuel Boateng</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(Kindergarten 2)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                  Submitted by: <strong class="text-on-surface">Officer Tetteh</strong> (Chief Gate Marshal)
+                </p>
+</div>
+</div>
+<div class="pl-2 ml-12 p-space-sm rounded-xl bg-surface-container-low/60 flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">no_accounts</span>
+<p class="font-body-sm text-body-sm text-on-surface line-clamp-1">
+<span class="font-semibold text-secondary">Interim Court Injunction update:</span> Maternal Uncle pickup request denied at main gate; legal custody protocol requires Principal override code for designated escort.
+              </p>
+</div>
+<div class="pl-2 flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Gate Security Holding Area A</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm shadow-sm transition-all" onclick="event.stopPropagation(); triggerSign('APP-9023')" type="button">
+                  Sign Override
+                </button>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-sm text-label-sm" onclick="event.stopPropagation(); rejectCase('APP-9023')" type="button">
+                  Enforce Block
+                </button>
+</div>
+</div>
+</article>
+<!-- ITEM 4: GRADE OVERRIDE (#APP-9024) -->
+<article class="approval-row p-space-md hover:bg-surface-container-low/70 transition-all cursor-pointer bg-surface-container-lowest relative flex flex-col gap-space-sm" id="row-APP-9024" onclick="selectDossier('APP-9024')">
+<div class="flex items-start justify-between gap-space-sm pl-2">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm font-bold text-primary tracking-tight">#APP-9024</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Yesterday</span>
+<!-- Category Badge -->
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Grade Override (Term 2)
+                </span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-medium">
+                Medium
+              </span>
+</div>
+<div class="pl-2 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-label-sm shrink-0">
+                SD
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Selorm Darko</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(JHS 2 - Gold)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                  Submitted by: <strong class="text-on-surface">Mr. Eric Sowah</strong> (Head of Science Faculty)
+                </p>
+</div>
+</div>
+<div class="pl-2 ml-12 p-space-sm rounded-xl bg-surface-container-low/60 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">calculate</span>
+<p class="font-body-sm text-body-sm text-on-surface line-clamp-1">
+<span class="font-semibold text-primary">Integrated Science Lab re-assessment:</span> Missing experimental practical component verified due to regional debate attendance; score updated from 42% to 78%.
+              </p>
+</div>
+<div class="pl-2 flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Continuous Assessment Board reviewed</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-sm text-label-sm transition-all" onclick="event.stopPropagation(); triggerSign('APP-9024')" type="button">
+                  Approve
+                </button>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm" onclick="event.stopPropagation(); requestInfoPrompt('APP-9024')" type="button">
+                  Examine Script
+                </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination / Ledger Footer -->
+<div class="px-space-lg py-3.5 bg-surface-container-low/60 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 1 to 4 of 9 statutory requests</span>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<span class="font-label-sm text-label-sm px-2 text-primary font-bold">1</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side Inspection Dossier Drawer (Sticky Inspector Desktop Panel) -->
+<div class="xl:col-span-5 flex flex-col gap-space-md sticky top-24">
+<div class="bg-surface-container-lowest rounded-2xl shadow-lg p-space-lg flex flex-col gap-space-md relative overflow-hidden">
+<!-- Header Strip within Dossier Card -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">CASE DOSSIER</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="dossierRef">#APP-9021</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold mt-1" id="dossierTitle">Kofi Mensah — Clinical Gym Exemption</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant" title="Print statutory dossier" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant" title="Full screen view" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Student Master Snapshot -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center gap-space-md">
+<div class="w-16 h-16 rounded-xl overflow-hidden shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a nine-year-old Ghanaian school boy in crisp navy Carepoint uniform smiling calmly against a warm sunlit classroom interior with gold academic insignias" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBijX5Xey-R3_IielkG1txohA1gHLJA3B8kj-R2E7tQP8OuCZZAXKVSr0HpbJt_dZxD0FOxhXZKLksmbY9DFwuVJ5VgvVfog9yIAKQ-vyNBRwuC4X3MflT1Bs7egWMFlJqsgpmx5qooIFxdB24BoOPp2U_0xBLOC6b0p97p4XVIIOje73x7ud8MMMaRX2W7POILeUrdBWasWrB5NFzf1vmdFoh-gq1w4sk2Mvn8lCfu1nu8eSEN8E5hrQ"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-primary truncate">Kofi Nana Mensah</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">B4-SB</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Student ID: <strong class="text-on-surface">CP-2018-0941</strong></span>
+<div class="flex items-center gap-3 mt-1 font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Blood: <strong class="text-secondary font-bold">O+</strong></span>
+<span class="text-on-surface-variant">House: <strong class="text-primary font-semibold">Aggrey Red</strong></span>
+<span class="text-on-surface-variant">Attendance: <strong class="text-on-tertiary-container font-bold">98.2%</strong></span>
+</div>
+</div>
+</div>
+<!-- Audit Trail Timeline -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider font-semibold">Case Chain of Custody &amp; Verification</span>
+<div class="flex flex-col pl-2 border-l-0">
+<!-- Step 1 -->
+<div class="flex items-start gap-3 relative pb-3">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center text-[12px] font-bold shrink-0 mt-0.5 shadow-xs">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Classroom Incident Logged</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">13:30 GMT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Mrs. Beatrice Abbey identified acute bronchospasm during PE warmup. Child escorted safely to Sick Bay 2.
+                </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-3 relative pb-3">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center text-[12px] font-bold shrink-0 mt-0.5 shadow-xs">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Clinical Assessment Complete</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">13:52 GMT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Nurse Asante, SRN administered Salbutamol 2 puffs. O2 Saturation normalized to 99%. Parent Mrs. Grace Mensah contacted &amp; acknowledged via SMS token.
+                </p>
+</div>
+</div>
+<!-- Step 3: Current -->
+<div class="flex items-start gap-3 relative">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary flex items-center justify-center text-[12px] font-bold shrink-0 mt-0.5 animate-pulse">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Statutory Sign-Off Required</span>
+<span class="font-label-sm text-label-sm text-secondary-container font-semibold">Immediate</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                  Requires Headmistress Dr. Elizabeth Appiah digital signature to seal institutional exemption register for GES Inspectorate compliance.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Attached Clinical Dossier Preview -->
+<div class="p-space-md rounded-xl bg-surface-container-high/50 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Clinical Evidence &amp; Physician Note</span>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest shadow-xs">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-secondary text-[22px]">picture_as_pdf</span>
+<div class="flex flex-col truncate">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Korle-Bu_Pediatric_Exemption_Form_KM.pdf</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1.4 MB • Dr. K. Quaye, FWACP</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high" type="button">
+              View
+            </button>
+</div>
+</div>
+<!-- Signature Authorization Box -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase">Executive Sign-Off &amp; NaSIA Seal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auth Token #CP-EX-4019</span>
+</div>
+<!-- Digital Signing Canvas Pad Simulation -->
+<div class="h-24 w-full bg-surface-container-lowest rounded-lg p-3 flex flex-col justify-between relative cursor-crosshair shadow-inner" id="signatureBox">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant italic">Sign with stylus or execute verified key</span>
+<span class="font-label-sm text-label-sm text-tertiary-container font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span> 256-bit HSM Encrypted
+              </span>
+</div>
+<!-- Simulated Signature graphic -->
+<div class="flex items-center justify-center h-10 select-none">
+<svg class="w-56 h-8 text-primary opacity-80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 200 40">
+<path d="M10 28 C 30 10, 45 35, 60 15 C 75 -5, 80 30, 105 20 C 120 12, 130 32, 150 22 C 170 12, 185 28, 195 24"></path>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant text-[10px]">
+<span>Dr. Elizabeth Appiah, PhD, FGA</span>
+<span>Headmistress • Level 4 Signatory</span>
+</div>
+</div>
+<!-- NaSIA Dynamic Code Preview -->
+<div class="px-3 py-2 rounded-lg bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Target NaSIA Ref:</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary" id="nasiaRefCode">GH-GES-ACC-2026-APP9021</span>
+</div>
+<!-- Primary Confirmation Button Actions -->
+<div class="flex items-center gap-space-sm mt-1">
+<button class="flex-1 py-3 px-space-md rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-md transition-all flex items-center justify-center gap-2" onclick="executeApproval('APP-9021')" type="button">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Authorize &amp; Endorse (Seal Dossier)</span>
+</button>
+<button class="p-3 rounded-xl bg-error-container hover:bg-error text-on-error-container hover:text-on-error transition-all flex items-center justify-center shadow-xs" onclick="rejectCase('APP-9021')" title="Decline / Reject Case" type="button">
+<span class="material-symbols-outlined text-[20px]">block</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Toast Notification System (Interactive feedback) -->
+<div class="fixed bottom-8 right-8 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-space-lg py-3 rounded-2xl bg-primary text-on-primary shadow-xl" id="statusToast">
+<span class="material-symbols-outlined text-[22px] text-tertiary-fixed" id="toastIcon">task_alt</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold" id="toastTitle">Approval Executed</span>
+<span class="font-body-sm text-body-sm text-primary-fixed" id="toastMsg">NaSIA Code #GH-GES-ACC-2026-APP9021 dispatched.</span>
+</div>
+</div>
+<!-- Micro-interactions & Mock Logic Script -->
+<script>
+    // Tab switching interaction
+    const categoryTabs = document.querySelectorAll('#categoryTabGroup button');
+    categoryTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        categoryTabs.forEach(t => {
+          t.classList.remove('bg-primary', 'text-on-primary');
+          t.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        tab.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        tab.classList.add('bg-primary', 'text-on-primary');
+        showToast('Filter Applied', 'Viewing category: ' + tab.innerText.trim());
+      });
+    });
+
+    // Dossier selection logic
+    const dossierData = {
+      'APP-9021': {
+        title: 'Kofi Mensah — Clinical Gym Exemption',
+        ref: '#APP-9021',
+        nasia: 'GH-GES-ACC-2026-APP9021',
+        student: 'Kofi Nana Mensah',
+        class: 'B4-SB'
+      },
+      'APP-9022': {
+        title: 'Ama Osei-Bonsu — Admissions Enrollment',
+        ref: '#APP-9022',
+        nasia: 'GH-GES-ACC-2026-APP9022',
+        student: 'Ama Osei-Bonsu',
+        class: 'Nursery 1'
+      },
+      'APP-9023': {
+        title: 'Emmanuel Boateng — Gate Custody Emergency',
+        ref: '#APP-9023',
+        nasia: 'GH-GES-ACC-2026-APP9023',
+        student: 'Emmanuel Boateng',
+        class: 'KG-2'
+      },
+      'APP-9024': {
+        title: 'Selorm Darko — Term 2 Science Override',
+        ref: '#APP-9024',
+        nasia: 'GH-GES-ACC-2026-APP9024',
+        student: 'Selorm Darko',
+        class: 'JHS-2 Gold'
+      }
+    };
+
+    function selectDossier(id) {
+      document.querySelectorAll('.approval-row').forEach(row => {
+        row.classList.remove('bg-surface-container-low/40');
+        row.classList.add('bg-surface-container-lowest');
+      });
+      const activeRow = document.getElementById('row-' + id);
+      if (activeRow) {
+        activeRow.classList.remove('bg-surface-container-lowest');
+        activeRow.classList.add('bg-surface-container-low/40');
+      }
+
+      const item = dossierData[id];
+      if (item) {
+        document.getElementById('dossierRef').innerText = item.ref;
+        document.getElementById('dossierTitle').innerText = item.title;
+        document.getElementById('nasiaRefCode').innerText = item.nasia;
+      }
+    }
+
+    function triggerSign(id) {
+      executeApproval(id);
+    }
+
+    function executeApproval(id) {
+      const item = dossierData[id] || { ref: '#' + id, nasia: 'GH-GES-ACC-2026-' + id };
+      showToast('Sign-Off Sealed', `Case ${item.ref} endorsed under Dr. Appiah's statutory seal.`);
+      const row = document.getElementById('row-' + id);
+      if (row) {
+        row.style.opacity = '0.4';
+        row.style.pointerEvents = 'none';
+      }
+    }
+
+    function rejectCase(id) {
+      showToast('Case Denied & Returned', `Case #${id} has been blocked and referred back to the originator.`);
+      const row = document.getElementById('row-' + id);
+      if (row) {
+        row.style.opacity = '0.3';
+        row.style.pointerEvents = 'none';
+      }
+    }
+
+    function requestInfoPrompt(id) {
+      showToast('Info Request Sent', `Clarification query dispatched to case originator for #${id}.`);
+    }
+
+    function openCaseDossier(id) {
+      selectDossier(id);
+      showToast('Dossier Synchronized', `Loaded full verified records for #${id}.`);
+    }
+
+    function batchApproveModal() {
+      showToast('Batch Protocol Prepared', 'NaSIA Board packet queued for 4 verified academic submissions.');
+    }
+
+    function showToast(title, msg) {
+      const toast = document.getElementById('statusToast');
+      document.getElementById('toastTitle').innerText = title;
+      document.getElementById('toastMsg').innerText = msg;
+      toast.classList.remove('translate-y-32', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-32', 'opacity-0');
+      }, 3500);
+    }
+
+    // Search filter interaction
+    const searchInput = document.getElementById('approvalsSearch');
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      document.querySelectorAll('.approval-row').forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(query) ? 'flex' : 'none';
+      });
+    });
+  </script>
+</div></main></div></body></html>

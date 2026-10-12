@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet"/>
+<style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "#f7f9ff", "on-background": "#161c23", "secondary-fixed-dim": "#ffb4a9", "inverse-surface": "#2b3138", "surface-tint": "#4c5c92", "on-primary-fixed-variant": "#344478", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#00531f", "inverse-primary": "#b5c4ff", "on-tertiary-fixed": "#002108", "error": "#ba1a1a", "surface-container-low": "#eef4fe", "outline": "#757680", "on-primary-fixed": "#03174b", "on-secondary-fixed-variant": "#930004", "background": "#f7f9ff", "on-tertiary-container": "#46a95a", "surface-container": "#e9eef8", "on-primary": "#ffffff", "secondary": "#ba0a0c", "tertiary-fixed": "#94f9a0", "primary": "#011549", "surface-bright": "#f7f9ff", "tertiary": "#001f07", "outline-variant": "#c5c6d1", "on-surface-variant": "#45464f", "primary-fixed": "#dce1ff", "secondary-container": "#df2d23", "on-surface": "#161c23", "on-tertiary": "#ffffff", "surface-container-highest": "#dde3ec", "on-secondary": "#ffffff", "on-error-container": "#93000a", "inverse-on-surface": "#ecf1fb", "on-error": "#ffffff", "surface-container-high": "#e3e8f2", "surface-dim": "#d5dae4", "primary-fixed-dim": "#b5c4ff", "surface-container-lowest": "#ffffff", "on-secondary-container": "#fffbff", "on-secondary-fixed": "#410001", "tertiary-container": "#003712", "tertiary-fixed-dim": "#78dc86", "surface-variant": "#dde3ec", "on-primary-container": "#8494cd", "secondary-fixed": "#ffdad5", "primary-container": "#1a2b5e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1.5rem", "margin-sm": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xl": "2.5rem", "gutter-sm": "1rem", "margin": "2rem", "space-lg": "1.5rem" }, fontFamily: { "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"] }, fontSize: { "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }] } } } };</script><title>Carepoint - Immutable System Audit Log</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "sysadmin",
+            label: "Immutable System Audit Log",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-audit.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-primary text-on-primary z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-white/10"><div class="flex flex-col"><!-- Top Header with Crest, Title, Motto, Badge, and Close Button -->
+  <div class="shrink-0 p-4 border-b border-white/10 flex flex-col gap-2 relative bg-primary-container">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-on-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-primary-fixed-dim uppercase tracking-wider font-semibold truncate">SysOps Core</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn text-on-primary hover:bg-white/10 p-1 rounded-lg" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary-fixed font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/10 rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-primary-fixed font-bold tracking-wider uppercase">Systems &amp; IT Operations</span>
+    </div>
+  </div><div class="px-gutter pt-space-lg pb-space-sm"><span class="font-label-sm text-label-sm uppercase text-primary-fixed-dim tracking-wider">Infrastructure &amp; Operations</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="dashboard" href="dashboard.html">Dashboard</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="user-provisioning" href="provisioning.html">User Provisioning</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="feature-flags" href="features.html">Feature Flags</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="change-requests" href="changes.html">Change Requests</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="change-request-composer" href="tracker.html">Change Request Composer</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="integrations" href="integrations.html">Integrations</a><a aria-current="page" class="flex items-center px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-bold rounded-lg" data-path="audit-logs" href="audit.html">Audit Logs</a></nav></div><div class="p-space-md m-space-md rounded-xl bg-primary-container text-on-primary"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary text-body-md">shield_lock</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary uppercase tracking-wide">Access Notice</span><span class="font-body-sm text-body-sm text-primary-fixed-dim text-[11px] leading-tight mt-space-xs">Configuration Authority Only • Approval Authority Held by Principal</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-2 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-none">Carepoint Community School</span><span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Super Admin Console - SysOps Tier 0</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface">US-EAST-ACC-POD01 • Production Healthy</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-space-md py-space-xs rounded-lg"><span class="material-symbols-outlined text-body-sm text-on-surface-variant">schedule</span><span class="tabular-nums">14:28:40 GMT</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden lg:flex flex-col"><span class="font-label-lg text-label-lg text-on-surface leading-tight">Ing. Kwabena Boateng</span><span class="font-label-sm text-label-sm text-on-surface-variant">SysOps Lead</span></div><img alt="Ing. Kwabena Boateng" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDficibdtzh0xCg-RYeNu3YjQOB2wMrnGhDiTxfeEkMCvfdTGILXcQePEO7gWXcB0Go5WFlo_hEWJ02SQiIcocAII6hOv3v1Vsp7KFfSldX32a6rzPOlL4ReSyMBYgRP4crioNrulufNiTAaSTQ4t8TQjfTn2QMKIucNdX2AAUv4Tqdihfy2Ta3gZpSWIFxOD5ap0xX9esm5pfkFeCaRACUrCY2TlfFs2xIlboc8vEYjBoZW3eIjBokfQ"/></div></div></header><main class="w-full px-gutter pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Tricolor Architectural Accent Bar (Carepoint Emblem Identity: Cyan, Red, Green) -->
+<div class="h-1.5 w-full flex">
+<div class="w-1/3 bg-sky-400"></div>
+<div class="w-1/3 bg-secondary"></div>
+<div class="w-1/3 bg-on-tertiary-container"></div>
+</div>
+<div class="py-space-lg flex flex-col gap-space-lg">
+<!-- Header Section -->
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm tracking-wide">
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container font-bold">verified_user</span>
+            TAMPER-EVIDENT FORENSIC LEDGER • SHA-256 CHAINED
+          </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-ping"></span>
+            GES / NaSIA COMPLIANT
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Immutable System-Wide Audit Log Viewer</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Verifiable institutional audit stream recording all administrative sign-offs, gate turnstile events, feature flag flips, and credential mutations across Carepoint nodes.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs self-start lg:self-auto">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container text-primary font-label-lg text-label-lg hover:bg-surface-container-high transition-all" id="verify-ledger-btn" onclick="verifyLedger()">
+<span class="material-symbols-outlined text-on-tertiary-container text-body-md" id="verify-icon">shield_with_heart</span>
+<span id="verify-text">Verify Ledger Integrity (Chain OK)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-body-md">file_download</span>
+          Export NaSIA Pack
+        </button>
+<div class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span>Live Tail: Active (100)</span>
+</div>
+</div>
+</div>
+<!-- Forensic Filter Ribbon -->
+<div class="flex flex-col gap-space-sm bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-surface-container-high/60">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm items-center">
+<!-- Search -->
+<div class="md:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-body-md pointer-events-none">search</span>
+<input id="auditSearchInput" oninput="applyAuditFilters()" class="w-full pl-9 pr-space-md py-2.5 bg-surface-container-low rounded-lg text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all" placeholder="Search by Actor, IP address, Event code, or Ward ID..." type="text"/>
+<button id="clearSearchBtn" onclick="clearSearchInput()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface text-xs font-bold" type="button">✕</button>
+</div>
+<!-- Module Selection -->
+<div class="md:col-span-3">
+<div class="relative">
+<select id="moduleFilterSelect" onchange="applyAuditFilters()" class="w-full appearance-none bg-surface-container-low pl-space-md pr-8 py-2.5 rounded-lg text-on-surface font-label-lg text-label-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest cursor-pointer">
+<option value="ALL">All Modules (Cross-Campus)</option>
+<option value="SUPER_ADMIN_SYSOPS">Super Admin SysOps</option>
+<option value="PRINCIPAL_DECISION_STUDIO">Principal Decision Studio</option>
+<option value="GATE_KIOSK_SECURITY">Gate Kiosk Security</option>
+<option value="ADMIN_APPROVALS">Admin Approvals</option>
+<option value="STAFF_PORTAL">Staff Gradebook</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-body-md">expand_more</span>
+</div>
+</div>
+<!-- Severity Filter -->
+<div class="md:col-span-2">
+<div class="relative">
+<select id="severityFilterSelect" onchange="applyAuditFilters()" class="w-full appearance-none bg-surface-container-low pl-space-md pr-8 py-2.5 rounded-lg text-on-surface font-label-lg text-label-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest cursor-pointer">
+<option value="ALL">All Severities</option>
+<option value="CRITICAL">CRITICAL / SAFEGUARDING</option>
+<option value="HIGH_GOVERNANCE">HIGH GOVERNANCE</option>
+<option value="STANDARD">STANDARD</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-body-md">filter_list</span>
+</div>
+</div>
+<!-- Date Range Token -->
+<div class="md:col-span-2">
+<div class="flex items-center justify-between bg-surface-container-low px-space-sm py-2.5 rounded-lg text-on-surface font-label-sm text-label-sm">
+<span class="truncate">AY 2026/2027 • Active</span>
+<span class="material-symbols-outlined text-outline text-[16px]">calendar_today</span>
+</div>
+</div>
+</div>
+<!-- Quick Filter Chips -->
+<div class="flex flex-wrap items-center gap-space-xs pt-space-xs border-t border-surface-container/60 mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mr-1">Clinic Check Quick Filters:</span>
+<button id="chip-all" onclick="setQuickFilter('all')" class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-2xs transition-all">
+<span class="material-symbols-outlined text-[14px]">select_all</span>
+All Events (5)
+</button>
+<button id="chip-turnstile" onclick="setQuickFilter('turnstile')" class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container text-on-surface hover:bg-secondary-fixed hover:text-on-secondary-fixed font-label-sm text-label-sm transition-all">
+<span class="material-symbols-outlined text-[14px] text-secondary">fence</span>
+Gate Turnstile Holds (2)
+</button>
+<button id="chip-principal" onclick="setQuickFilter('principal')" class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-[14px] text-amber-700">gavel</span>
+Principal Actions (1)
+</button>
+<button id="chip-flag" onclick="setQuickFilter('flag')" class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container text-on-surface hover:bg-primary-fixed hover:text-on-primary-fixed font-label-sm text-label-sm transition-all">
+<span class="material-symbols-outlined text-[14px] text-primary">toggle_on</span>
+Feature Flag Mutations (1)
+</button>
+<button id="chip-academic" onclick="setQuickFilter('academic')" class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-[14px] text-blue-700">school</span>
+Academic &amp; Gradebook (2)
+</button>
+</div>
+</div>
+<!-- Main Content Split Pane -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start">
+<!-- Left Pane: Forensic Chained Event Ledger Stream (8 cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-xs">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Bar -->
+<!-- Table Bar & View Switcher -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-3 border-b border-surface-container-high/80">
+  <div class="flex items-center gap-space-sm">
+    <div class="flex items-center gap-2">
+      <span class="font-label-lg text-label-lg text-primary flex items-center gap-1.5 font-bold">
+        <span class="material-symbols-outlined text-body-md text-on-tertiary-container">verified_user</span>
+        Immutable Audit Stream
+      </span>
+      <span id="audit-log-counter" class="text-xs px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-bold border border-surface-container-high">
+        Showing 5 of 5 events
+      </span>
+    </div>
+  </div>
+  
+  <div class="flex items-center gap-2.5">
+    <!-- View Switcher -->
+    <div class="inline-flex p-0.5 bg-surface-container-high/80 rounded-lg text-xs font-semibold shadow-2xs">
+      <button id="viewBtnCards" onclick="switchAuditView('cards')" class="px-2.5 py-1 rounded-md bg-surface-container-lowest text-primary shadow-xs flex items-center gap-1 font-bold transition-all cursor-pointer" type="button" title="Structured detailed card view">
+        <span class="material-symbols-outlined text-[15px]">view_agenda</span>
+        <span>Cards</span>
+      </button>
+      <button id="viewBtnTable" onclick="switchAuditView('table')" class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface flex items-center gap-1 font-medium transition-all cursor-pointer" type="button" title="Compact scannable ledger table">
+        <span class="material-symbols-outlined text-[15px]">table_rows</span>
+        <span>Compact Table</span>
+      </button>
+    </div>
+    
+    <!-- Quick Reset Filter Button -->
+    <button id="resetFilterBtn" onclick="resetAuditFilters()" class="hidden px-2.5 py-1 text-xs text-secondary hover:bg-secondary-fixed/30 rounded-md flex items-center gap-1 font-semibold transition-colors cursor-pointer" type="button">
+      <span class="material-symbols-outlined text-[14px]">filter_alt_off</span>
+      <span>Reset Filter</span>
+    </button>
+  </div>
+</div>
+
+<!-- 1. Detailed Cards View Container -->
+<div class="divide-y divide-surface-container-high/60 flex flex-col" id="ledger-cards-view">
+
+  <!-- Row 1: Feature Flag Mutation (High Governance) -->
+  <article class="audit-card group relative p-space-md bg-surface-container-low cursor-pointer transition-all hover:bg-surface-container-low/80 flex flex-col gap-space-xs" id="card-1" data-id="1" data-module="SUPER_ADMIN_SYSOPS" data-severity="HIGH_GOVERNANCE" data-category="flag" onclick="selectRow(1)">
+    <!-- Active selection accent indicator -->
+    <div class="active-indicator absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+    
+    <!-- Top Metadata Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300 shadow-2xs">
+          <span class="material-symbols-outlined text-[14px] text-amber-700">tune</span>
+          HIGH GOVERNANCE
+        </span>
+        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-semibold bg-primary-container text-on-primary shadow-2xs">
+          <span class="material-symbols-outlined text-[13px] text-primary-fixed-dim">terminal</span>
+          SUPER_ADMIN_SYSOPS
+        </span>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-on-surface-variant font-medium">
+        <span class="tabular-nums font-mono font-semibold">14:28:12 GMT</span>
+        <span class="text-outline-variant">•</span>
+        <span class="text-on-surface-variant">2m ago</span>
+        <span class="text-outline-variant">•</span>
+        <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-surface-container-highest font-mono text-[11px] font-bold text-primary">
+          <span class="material-symbols-outlined text-[12px] text-on-tertiary-container">tag</span>
+          Block #1,492,044
+        </span>
+      </div>
+    </div>
+
+    <!-- Event Action Header -->
+    <div class="flex items-center gap-2 pt-0.5">
+      <div class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[18px]">toggle_on</span>
+      </div>
+      <span class="font-mono text-[15px] font-bold text-primary tracking-tight">feature_flag.canary_updated</span>
+    </div>
+
+    <!-- Structured Key-Value Metadata Chips (No Dangling Text!) -->
+    <div class="flex flex-wrap items-center gap-1.5 py-1">
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-lowest border border-surface-container-high/80 text-xs shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-primary">person</span>
+        <span class="text-on-surface-variant">Actor:</span>
+        <strong class="font-semibold text-on-surface">Ing. Kwabena Boateng</strong>
+        <span class="text-on-surface-variant/80 text-[11px]">(SysOps Lead)</span>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-lowest border border-surface-container-high/80 text-xs shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-outline">dns</span>
+        <span class="text-on-surface-variant">Origin:</span>
+        <code class="font-mono font-semibold text-on-surface">10.142.12.44</code>
+        <span class="text-on-surface-variant/80 text-[11px]">(Accra DC Pod)</span>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary-fixed/40 border border-primary-fixed text-xs text-primary font-medium shadow-2xs">
+        <span class="material-symbols-outlined text-[14px]">flag</span>
+        <span class="text-on-surface-variant">Flag:</span>
+        <code class="font-mono font-bold">portal.parent.live_dismissal_radar</code>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-emerald-700">trending_up</span>
+        <span class="text-emerald-800">Rollout:</span>
+        <span class="line-through text-outline">15%</span>
+        <span class="font-bold text-emerald-700">➔ 25%</span>
+      </span>
+    </div>
+
+    <!-- Action Summary Box -->
+    <div class="font-body-sm text-body-sm text-on-surface bg-surface-container-lowest p-space-sm rounded-lg border-l-2 border-primary shadow-2xs">
+      Shifted canary rollout for <code class="font-mono text-primary font-bold">portal.parent.live_dismissal_radar</code> from <span class="line-through text-outline">15%</span> to <span class="text-on-tertiary-container font-bold">25%</span> for Nursery &amp; KG classes. Dual-key security validation confirmed.
+    </div>
+
+    <!-- Cryptographic Footer -->
+    <div class="flex flex-wrap items-center justify-between gap-space-xs font-label-sm text-label-sm text-on-surface-variant pt-1 border-t border-surface-container/60">
+      <div class="flex items-center gap-1.5 font-mono text-xs">
+        <span class="text-outline uppercase text-[10px] font-bold">Hash:</span>
+        <span class="text-on-surface truncate max-w-[220px]">sha256:7f3a9e10c59e88fae32c0f28b1...</span>
+        <button onclick="copyHashText('sha256:7f3a9e10c59e88fae32c0f28b144e590', event)" class="p-1 hover:bg-surface-container rounded text-primary transition-colors cursor-pointer" title="Copy Full Hash">
+          <span class="material-symbols-outlined text-[14px]">content_copy</span>
+        </button>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-on-tertiary-container flex items-center gap-1 font-semibold text-xs">
+          <span class="material-symbols-outlined text-[15px]">verified</span>
+          Verified in Local Consensus
+        </span>
+        <span class="text-xs text-primary font-bold hover:underline flex items-center gap-0.5">
+          Inspect <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+        </span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Row 2: Principal Decision Studio Injunction (Critical Safeguarding) -->
+  <article class="audit-card group relative p-space-md bg-surface-container-lowest cursor-pointer transition-all hover:bg-surface-container-low/60 flex flex-col gap-space-xs" id="card-2" data-id="2" data-module="PRINCIPAL_DECISION_STUDIO" data-severity="CRITICAL" data-category="principal turnstile" onclick="selectRow(2)">
+    <div class="active-indicator hidden absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+    
+    <!-- Top Metadata Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300 shadow-2xs">
+          <span class="material-symbols-outlined text-[14px] text-rose-700">warning</span>
+          CRITICAL / SAFEGUARDING
+        </span>
+        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-semibold bg-surface-container-high text-on-surface-variant shadow-2xs">
+          <span class="material-symbols-outlined text-[13px] text-secondary">account_balance</span>
+          PRINCIPAL_DECISION_STUDIO
+        </span>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-on-surface-variant font-medium">
+        <span class="tabular-nums font-mono font-semibold">14:26:15 GMT</span>
+        <span class="text-outline-variant">•</span>
+        <span class="text-on-surface-variant">4m ago</span>
+        <span class="text-outline-variant">•</span>
+        <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-surface-container-highest font-mono text-[11px] font-bold text-primary">
+          <span class="material-symbols-outlined text-[12px] text-on-tertiary-container">tag</span>
+          Block #1,492,043
+        </span>
+      </div>
+    </div>
+
+    <!-- Event Action Header -->
+    <div class="flex items-center gap-2 pt-0.5">
+      <div class="w-7 h-7 rounded-lg bg-rose-100 text-secondary flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[18px]">gavel</span>
+      </div>
+      <span class="font-mono text-[15px] font-bold text-secondary tracking-tight">custody.injunction.enforced</span>
+    </div>
+
+    <!-- Structured Key-Value Metadata Chips (Cleanly segregated) -->
+    <div class="flex flex-wrap items-center gap-1.5 py-1">
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-low border border-surface-container-high/80 text-xs shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-secondary">person</span>
+        <span class="text-on-surface-variant">Actor:</span>
+        <strong class="font-semibold text-on-surface">Dr. Elizabeth Appiah</strong>
+        <span class="text-on-surface-variant/80 text-[11px]">(Headmistress)</span>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-low border border-surface-container-high/80 text-xs shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-outline">dns</span>
+        <span class="text-on-surface-variant">Origin:</span>
+        <code class="font-mono font-semibold text-on-surface">10.142.4.10</code>
+        <span class="text-on-surface-variant/80 text-[11px]">(Executive Office)</span>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 border border-amber-200 text-xs text-amber-900 shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-amber-700">shield_person</span>
+        <span class="text-amber-800">Target Student:</span>
+        <strong class="font-semibold">Kofi Mensah</strong>
+        <code class="font-mono text-[11px] font-bold text-amber-950">(#24-089)</code>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-rose-50 border border-rose-200 text-xs text-rose-900 shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-secondary">policy</span>
+        <span class="text-rose-800">Executive Order:</span>
+        <code class="font-mono font-bold text-secondary">#SAF-ACC-2026-08</code>
+      </span>
+    </div>
+
+    <!-- Action Summary Box -->
+    <div class="font-body-sm text-body-sm text-on-surface bg-surface-container-lowest p-space-sm rounded-lg border-l-2 border-secondary shadow-2xs">
+      Executed binding Executive Order <code class="font-bold text-secondary">#SAF-ACC-2026-08</code> for Student Kofi Mensah (#24-089). High Court Custody Decree active. Turnstile interlock commanded school-wide across all perimeter nodes.
+    </div>
+
+    <!-- Cryptographic Footer -->
+    <div class="flex flex-wrap items-center justify-between gap-space-xs font-label-sm text-label-sm text-on-surface-variant pt-1 border-t border-surface-container/60">
+      <div class="flex items-center gap-1.5 font-mono text-xs">
+        <span class="text-outline uppercase text-[10px] font-bold">Hash:</span>
+        <span class="text-on-surface truncate max-w-[220px]">sha256:9b2d8e41f71a093cc54194f1...</span>
+        <button onclick="copyHashText('sha256:9b2d8e41f71a093cc54194f1082aa374', event)" class="p-1 hover:bg-surface-container rounded text-primary transition-colors cursor-pointer" title="Copy Full Hash">
+          <span class="material-symbols-outlined text-[14px]">content_copy</span>
+        </button>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-on-tertiary-container flex items-center gap-1 font-semibold text-xs">
+          <span class="material-symbols-outlined text-[15px]">verified</span>
+          Verified in Local Consensus
+        </span>
+        <span class="text-xs text-primary font-bold hover:underline flex items-center gap-0.5">
+          Inspect <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+        </span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Row 3: Gate Kiosk Interlock Triggered (Critical Safeguarding) -->
+  <article class="audit-card group relative p-space-md bg-surface-container-lowest cursor-pointer transition-all hover:bg-surface-container-low/60 flex flex-col gap-space-xs" id="card-3" data-id="3" data-module="GATE_KIOSK_SECURITY" data-severity="CRITICAL" data-category="turnstile" onclick="selectRow(3)">
+    <div class="active-indicator hidden absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+    
+    <!-- Top Metadata Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300 shadow-2xs">
+          <span class="material-symbols-outlined text-[14px] text-rose-700">warning</span>
+          CRITICAL / SAFEGUARDING
+        </span>
+        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-semibold bg-surface-container-high text-on-surface-variant shadow-2xs">
+          <span class="material-symbols-outlined text-[13px] text-outline">fence</span>
+          GATE_KIOSK_SECURITY
+        </span>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-on-surface-variant font-medium">
+        <span class="tabular-nums font-mono font-semibold">14:18:22 GMT</span>
+        <span class="text-outline-variant">•</span>
+        <span class="text-on-surface-variant">12m ago</span>
+        <span class="text-outline-variant">•</span>
+        <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-surface-container-highest font-mono text-[11px] font-bold text-primary">
+          <span class="material-symbols-outlined text-[12px] text-on-tertiary-container">tag</span>
+          Block #1,492,042
+        </span>
+      </div>
+    </div>
+
+    <!-- Event Action Header -->
+    <div class="flex items-center gap-2 pt-0.5">
+      <div class="w-7 h-7 rounded-lg bg-rose-100 text-secondary flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[18px]">lock</span>
+      </div>
+      <span class="font-mono text-[15px] font-bold text-secondary tracking-tight">turnstile.interlock.triggered</span>
+    </div>
+
+    <!-- Structured Key-Value Metadata Chips -->
+    <div class="flex flex-wrap items-center gap-1.5 py-1">
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-low border border-surface-container-high/80 text-xs shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-secondary">security</span>
+        <span class="text-on-surface-variant">Actor:</span>
+        <strong class="font-semibold text-on-surface">Officer Emmanuel Tetteh</strong>
+        <span class="text-on-surface-variant/80 text-[11px]">(Gate Node 04)</span>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-low border border-surface-container-high/80 text-xs shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-outline">router</span>
+        <span class="text-on-surface-variant">Hardware MAC:</span>
+        <code class="font-mono font-semibold text-on-surface">00:1A:2B:6F:43:8C</code>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 border border-amber-200 text-xs text-amber-900 shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-amber-700">person_alert</span>
+        <span class="text-amber-800">Target Student:</span>
+        <strong class="font-semibold">Kofi Mensah</strong>
+        <code class="font-mono text-[11px] font-bold text-amber-950">(#24-089)</code>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-lowest border border-surface-container-high text-xs text-on-surface shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-tertiary-container">timer</span>
+        <span class="text-on-surface-variant">Latency:</span>
+        <strong class="font-mono font-bold text-tertiary-container">40ms Lock Deploy</strong>
+      </span>
+    </div>
+
+    <!-- Action Summary Box -->
+    <div class="font-body-sm text-body-sm text-on-surface bg-surface-container-lowest p-space-sm rounded-lg border-l-2 border-secondary shadow-2xs">
+      Unauthorized guardian NFC tap flagged for Student Kofi Mensah. Physical turnstile flap lock deployed in 40ms. Audio alert chime triggered at Gate Node 4.
+    </div>
+
+    <!-- Cryptographic Footer -->
+    <div class="flex flex-wrap items-center justify-between gap-space-xs font-label-sm text-label-sm text-on-surface-variant pt-1 border-t border-surface-container/60">
+      <div class="flex items-center gap-1.5 font-mono text-xs">
+        <span class="text-outline uppercase text-[10px] font-bold">Hash:</span>
+        <span class="text-on-surface truncate max-w-[220px]">sha256:3c88a183d291afb410e2003c...</span>
+        <button onclick="copyHashText('sha256:3c88a183d291afb410e2003c990218ef', event)" class="p-1 hover:bg-surface-container rounded text-primary transition-colors cursor-pointer" title="Copy Full Hash">
+          <span class="material-symbols-outlined text-[14px]">content_copy</span>
+        </button>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-on-tertiary-container flex items-center gap-1 font-semibold text-xs">
+          <span class="material-symbols-outlined text-[15px]">verified</span>
+          Verified in Local Consensus
+        </span>
+        <span class="text-xs text-primary font-bold hover:underline flex items-center gap-0.5">
+          Inspect <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+        </span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Row 4: Admin Admissions Approval (Standard) -->
+  <article class="audit-card group relative p-space-md bg-surface-container-lowest cursor-pointer transition-all hover:bg-surface-container-low/60 flex flex-col gap-space-xs" id="card-4" data-id="4" data-module="ADMIN_APPROVALS" data-severity="STANDARD" data-category="academic" onclick="selectRow(4)">
+    <div class="active-indicator hidden absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+    
+    <!-- Top Metadata Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-sky-100 text-sky-800 border border-sky-200 shadow-2xs">
+          <span class="material-symbols-outlined text-[14px] text-sky-700">verified</span>
+          STANDARD
+        </span>
+        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-semibold bg-surface-container-high text-on-surface-variant shadow-2xs">
+          <span class="material-symbols-outlined text-[13px] text-outline">assignment_turned_in</span>
+          ADMIN_APPROVALS
+        </span>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-on-surface-variant font-medium">
+        <span class="tabular-nums font-mono font-semibold">13:40:11 GMT</span>
+        <span class="text-outline-variant">•</span>
+        <span class="text-on-surface-variant">50m ago</span>
+        <span class="text-outline-variant">•</span>
+        <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-surface-container-highest font-mono text-[11px] font-bold text-primary">
+          <span class="material-symbols-outlined text-[12px] text-on-tertiary-container">tag</span>
+          Block #1,492,041
+        </span>
+      </div>
+    </div>
+
+    <!-- Event Action Header -->
+    <div class="flex items-center gap-2 pt-0.5">
+      <div class="w-7 h-7 rounded-lg bg-sky-100 text-primary flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+      </div>
+      <span class="font-mono text-[15px] font-bold text-primary tracking-tight">admission.candidate.approved</span>
+    </div>
+
+    <!-- Structured Key-Value Metadata Chips -->
+    <div class="flex flex-wrap items-center gap-1.5 py-1">
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-low border border-surface-container-high/80 text-xs shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-primary">person</span>
+        <span class="text-on-surface-variant">Approver:</span>
+        <strong class="font-semibold text-on-surface">Dr. Elizabeth Appiah</strong>
+        <span class="text-on-surface-variant/80 text-[11px]">(Admissions Board)</span>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-low border border-surface-container-high/80 text-xs shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-outline">dns</span>
+        <span class="text-on-surface-variant">Origin:</span>
+        <code class="font-mono font-semibold text-on-surface">10.142.4.10</code>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-emerald-700">school</span>
+        <span class="text-emerald-800">Enrolled Candidate:</span>
+        <strong class="font-semibold">Kwadwo Asare</strong>
+        <code class="font-mono text-[11px] font-bold text-emerald-950">(#2026-084)</code>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-lowest border border-surface-container-high text-xs text-on-surface shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-primary">child_care</span>
+        <span class="text-on-surface-variant">Class:</span>
+        <strong class="font-semibold">Kindergarten 1</strong>
+      </span>
+    </div>
+
+    <!-- Action Summary Box -->
+    <div class="font-body-sm text-body-sm text-on-surface bg-surface-container-lowest p-space-sm rounded-lg border-l-2 border-primary shadow-2xs">
+      Approved candidate enrollment into Kindergarten 1. Automatic issuance of student ledger key, student ID card barcode, and automated onboarding email.
+    </div>
+
+    <!-- Cryptographic Footer -->
+    <div class="flex flex-wrap items-center justify-between gap-space-xs font-label-sm text-label-sm text-on-surface-variant pt-1 border-t border-surface-container/60">
+      <div class="flex items-center gap-1.5 font-mono text-xs">
+        <span class="text-outline uppercase text-[10px] font-bold">Hash:</span>
+        <span class="text-on-surface truncate max-w-[220px]">sha256:1a84f33190dfca011400ee12...</span>
+        <button onclick="copyHashText('sha256:1a84f33190dfca011400ee12f84b6631', event)" class="p-1 hover:bg-surface-container rounded text-primary transition-colors cursor-pointer" title="Copy Full Hash">
+          <span class="material-symbols-outlined text-[14px]">content_copy</span>
+        </button>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-on-tertiary-container flex items-center gap-1 font-semibold text-xs">
+          <span class="material-symbols-outlined text-[15px]">verified</span>
+          Verified in Local Consensus
+        </span>
+        <span class="text-xs text-primary font-bold hover:underline flex items-center gap-0.5">
+          Inspect <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+        </span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Row 5: Staff Gradebook Weighting Modification (Standard) -->
+  <article class="audit-card group relative p-space-md bg-surface-container-lowest cursor-pointer transition-all hover:bg-surface-container-low/60 flex flex-col gap-space-xs" id="card-5" data-id="5" data-module="STAFF_PORTAL" data-severity="STANDARD" data-category="academic" onclick="selectRow(5)">
+    <div class="active-indicator hidden absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+    
+    <!-- Top Metadata Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-sky-100 text-sky-800 border border-sky-200 shadow-2xs">
+          <span class="material-symbols-outlined text-[14px] text-sky-700">verified</span>
+          STANDARD
+        </span>
+        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-semibold bg-surface-container-high text-on-surface-variant shadow-2xs">
+          <span class="material-symbols-outlined text-[13px] text-outline">menu_book</span>
+          STAFF_PORTAL
+        </span>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-on-surface-variant font-medium">
+        <span class="tabular-nums font-mono font-semibold">10:14:02 GMT</span>
+        <span class="text-outline-variant">•</span>
+        <span class="text-on-surface-variant">4h ago</span>
+        <span class="text-outline-variant">•</span>
+        <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-surface-container-highest font-mono text-[11px] font-bold text-primary">
+          <span class="material-symbols-outlined text-[12px] text-on-tertiary-container">tag</span>
+          Block #1,492,040
+        </span>
+      </div>
+    </div>
+
+    <!-- Event Action Header -->
+    <div class="flex items-center gap-2 pt-0.5">
+      <div class="w-7 h-7 rounded-lg bg-purple-100 text-purple-900 flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+      </div>
+      <span class="font-mono text-[15px] font-bold text-primary tracking-tight">gradebook.weighting.modified</span>
+    </div>
+
+    <!-- Structured Key-Value Metadata Chips -->
+    <div class="flex flex-wrap items-center gap-1.5 py-1">
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-low border border-surface-container-high/80 text-xs shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-primary">person</span>
+        <span class="text-on-surface-variant">Actor:</span>
+        <strong class="font-semibold text-on-surface">Madam Joy Mensah</strong>
+        <span class="text-on-surface-variant/80 text-[11px]">(Biology Lead)</span>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-low border border-surface-container-high/80 text-xs shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-outline">laptop_chromebook</span>
+        <span class="text-on-surface-variant">Device:</span>
+        <code class="font-mono font-semibold text-on-surface">10.142.30.91</code>
+        <span class="text-on-surface-variant/80 text-[11px]">(Staff Common Room)</span>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-purple-50 border border-purple-200 text-xs text-purple-900 shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-purple-700">science</span>
+        <span class="text-purple-800">Target Class:</span>
+        <strong class="font-semibold">JHS 1 Biology Assessment</strong>
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 shadow-2xs">
+        <span class="material-symbols-outlined text-[14px] text-emerald-700">percent</span>
+        <span class="text-emerald-800">Weight:</span>
+        <span class="line-through text-outline">15%</span>
+        <span class="font-bold text-emerald-700">➔ 20%</span>
+      </span>
+    </div>
+
+    <!-- Action Summary Box -->
+    <div class="font-body-sm text-body-sm text-on-surface bg-surface-container-lowest p-space-sm rounded-lg border-l-2 border-primary shadow-2xs">
+      Re-weighted Term 1 Practical Biology Laboratory Assessment from 15% to 20% following department council sign-off.
+    </div>
+
+    <!-- Cryptographic Footer -->
+    <div class="flex flex-wrap items-center justify-between gap-space-xs font-label-sm text-label-sm text-on-surface-variant pt-1 border-t border-surface-container/60">
+      <div class="flex items-center gap-1.5 font-mono text-xs">
+        <span class="text-outline uppercase text-[10px] font-bold">Hash:</span>
+        <span class="text-on-surface truncate max-w-[220px]">sha256:d89190cbb17208ff94401a05...</span>
+        <button onclick="copyHashText('sha256:d89190cbb17208ff94401a0522c01994', event)" class="p-1 hover:bg-surface-container rounded text-primary transition-colors cursor-pointer" title="Copy Full Hash">
+          <span class="material-symbols-outlined text-[14px]">content_copy</span>
+        </button>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-on-tertiary-container flex items-center gap-1 font-semibold text-xs">
+          <span class="material-symbols-outlined text-[15px]">verified</span>
+          Verified in Local Consensus
+        </span>
+        <span class="text-xs text-primary font-bold hover:underline flex items-center gap-0.5">
+          Inspect <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+        </span>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<!-- 2. Compact Scannable Table View Container (Hidden by default, toggled via View Switcher) -->
+<div class="hidden overflow-x-auto w-full" id="ledger-table-view">
+  <table class="w-full text-left text-xs border-collapse">
+    <thead class="bg-surface-container text-on-surface-variant font-label-sm uppercase tracking-wider border-b border-surface-container-high">
+      <tr>
+        <th class="py-2.5 px-3">Time (GMT)</th>
+        <th class="py-2.5 px-3">Severity</th>
+        <th class="py-2.5 px-3">Action Verb</th>
+        <th class="py-2.5 px-3">Actor &amp; Origin</th>
+        <th class="py-2.5 px-3">Target Subject</th>
+        <th class="py-2.5 px-3">Block #</th>
+        <th class="py-2.5 px-3 text-right">Inspect</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-surface-container-high/60 bg-surface-container-lowest font-body-sm" id="ledger-table-body">
+      <!-- Table Row 1 -->
+      <tr class="table-row-item hover:bg-surface-container-low transition-colors cursor-pointer" id="table-row-1" data-id="1" data-module="SUPER_ADMIN_SYSOPS" data-severity="HIGH_GOVERNANCE" data-category="flag" onclick="selectRow(1)">
+        <td class="py-2.5 px-3 font-mono font-semibold text-on-surface whitespace-nowrap">14:28:12</td>
+        <td class="py-2.5 px-3 whitespace-nowrap">
+          <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300">HIGH GOVERNANCE</span>
+        </td>
+        <td class="py-2.5 px-3 font-mono font-bold text-primary whitespace-nowrap">feature_flag.canary_updated</td>
+        <td class="py-2.5 px-3 text-on-surface">Ing. Kwabena Boateng <span class="text-on-surface-variant text-[11px] font-mono">(10.142.12.44)</span></td>
+        <td class="py-2.5 px-3 text-on-surface-variant truncate max-w-xs font-mono">portal.parent.live_dismissal_radar (15% ➔ 25%)</td>
+        <td class="py-2.5 px-3 font-mono font-bold text-primary whitespace-nowrap">#1,492,044</td>
+        <td class="py-2.5 px-3 text-right">
+          <button class="px-2 py-1 rounded bg-surface-container hover:bg-primary hover:text-on-primary text-xs font-bold transition-colors">View</button>
+        </td>
+      </tr>
+      <!-- Table Row 2 -->
+      <tr class="table-row-item hover:bg-surface-container-low transition-colors cursor-pointer" id="table-row-2" data-id="2" data-module="PRINCIPAL_DECISION_STUDIO" data-severity="CRITICAL" data-category="principal turnstile" onclick="selectRow(2)">
+        <td class="py-2.5 px-3 font-mono font-semibold text-on-surface whitespace-nowrap">14:26:15</td>
+        <td class="py-2.5 px-3 whitespace-nowrap">
+          <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-rose-100 text-rose-800 border border-rose-300">CRITICAL</span>
+        </td>
+        <td class="py-2.5 px-3 font-mono font-bold text-secondary whitespace-nowrap">custody.injunction.enforced</td>
+        <td class="py-2.5 px-3 text-on-surface">Dr. Elizabeth Appiah <span class="text-on-surface-variant text-[11px] font-mono">(10.142.4.10)</span></td>
+        <td class="py-2.5 px-3 text-on-surface-variant truncate max-w-xs font-medium">Student Kofi Mensah (#24-089) • Injunction</td>
+        <td class="py-2.5 px-3 font-mono font-bold text-primary whitespace-nowrap">#1,492,043</td>
+        <td class="py-2.5 px-3 text-right">
+          <button class="px-2 py-1 rounded bg-surface-container hover:bg-primary hover:text-on-primary text-xs font-bold transition-colors">View</button>
+        </td>
+      </tr>
+      <!-- Table Row 3 -->
+      <tr class="table-row-item hover:bg-surface-container-low transition-colors cursor-pointer" id="table-row-3" data-id="3" data-module="GATE_KIOSK_SECURITY" data-severity="CRITICAL" data-category="turnstile" onclick="selectRow(3)">
+        <td class="py-2.5 px-3 font-mono font-semibold text-on-surface whitespace-nowrap">14:18:22</td>
+        <td class="py-2.5 px-3 whitespace-nowrap">
+          <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-rose-100 text-rose-800 border border-rose-300">CRITICAL</span>
+        </td>
+        <td class="py-2.5 px-3 font-mono font-bold text-secondary whitespace-nowrap">turnstile.interlock.triggered</td>
+        <td class="py-2.5 px-3 text-on-surface">Officer Emmanuel Tetteh <span class="text-on-surface-variant text-[11px] font-mono">(Gate Node 04)</span></td>
+        <td class="py-2.5 px-3 text-on-surface-variant truncate max-w-xs font-medium">Unauthorized NFC • Student Kofi Mensah</td>
+        <td class="py-2.5 px-3 font-mono font-bold text-primary whitespace-nowrap">#1,492,042</td>
+        <td class="py-2.5 px-3 text-right">
+          <button class="px-2 py-1 rounded bg-surface-container hover:bg-primary hover:text-on-primary text-xs font-bold transition-colors">View</button>
+        </td>
+      </tr>
+      <!-- Table Row 4 -->
+      <tr class="table-row-item hover:bg-surface-container-low transition-colors cursor-pointer" id="table-row-4" data-id="4" data-module="ADMIN_APPROVALS" data-severity="STANDARD" data-category="academic" onclick="selectRow(4)">
+        <td class="py-2.5 px-3 font-mono font-semibold text-on-surface whitespace-nowrap">13:40:11</td>
+        <td class="py-2.5 px-3 whitespace-nowrap">
+          <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-sky-100 text-sky-800 border border-sky-200">STANDARD</span>
+        </td>
+        <td class="py-2.5 px-3 font-mono font-bold text-primary whitespace-nowrap">admission.candidate.approved</td>
+        <td class="py-2.5 px-3 text-on-surface">Dr. Elizabeth Appiah <span class="text-on-surface-variant text-[11px] font-mono">(10.142.4.10)</span></td>
+        <td class="py-2.5 px-3 text-on-surface-variant truncate max-w-xs font-medium">Kwadwo Asare (#2026-084) • KG 1</td>
+        <td class="py-2.5 px-3 font-mono font-bold text-primary whitespace-nowrap">#1,492,041</td>
+        <td class="py-2.5 px-3 text-right">
+          <button class="px-2 py-1 rounded bg-surface-container hover:bg-primary hover:text-on-primary text-xs font-bold transition-colors">View</button>
+        </td>
+      </tr>
+      <!-- Table Row 5 -->
+      <tr class="table-row-item hover:bg-surface-container-low transition-colors cursor-pointer" id="table-row-5" data-id="5" data-module="STAFF_PORTAL" data-severity="STANDARD" data-category="academic" onclick="selectRow(5)">
+        <td class="py-2.5 px-3 font-mono font-semibold text-on-surface whitespace-nowrap">10:14:02</td>
+        <td class="py-2.5 px-3 whitespace-nowrap">
+          <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-sky-100 text-sky-800 border border-sky-200">STANDARD</span>
+        </td>
+        <td class="py-2.5 px-3 font-mono font-bold text-primary whitespace-nowrap">gradebook.weighting.modified</td>
+        <td class="py-2.5 px-3 text-on-surface">Madam Joy Mensah <span class="text-on-surface-variant text-[11px] font-mono">(10.142.30.91)</span></td>
+        <td class="py-2.5 px-3 text-on-surface-variant truncate max-w-xs font-medium">JHS 1 Practical Biology (15% ➔ 20%)</td>
+        <td class="py-2.5 px-3 font-mono font-bold text-primary whitespace-nowrap">#1,492,040</td>
+        <td class="py-2.5 px-3 text-right">
+          <button class="px-2 py-1 rounded bg-surface-container hover:bg-primary hover:text-on-primary text-xs font-bold transition-colors">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 3. Empty Filter State Message -->
+<div id="emptyFilterState" class="hidden py-12 px-space-md flex flex-col items-center justify-center text-center gap-space-sm bg-surface-container-lowest">
+  <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
+    <span class="material-symbols-outlined text-[28px]">search_off</span>
+  </div>
+  <div class="font-headline-sm text-headline-sm text-primary font-bold">No Matching Audit Events</div>
+  <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">No forensic logs matched your current search query or active filter tags.</p>
+  <button onclick="resetAuditFilters()" type="button" class="mt-1 px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm font-bold shadow-sm transition-all cursor-pointer">
+    Reset All Filters
+  </button>
+</div>
+
+<!-- Bottom Pagination Controls -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm border-t border-surface-container-high/80">
+  <span class="font-body-sm text-body-sm text-on-surface-variant" id="paginationStatusText">
+    Showing <span class="font-semibold text-on-surface" id="paginationVisibleCount">1 - 5</span> of <span class="font-semibold text-on-surface">14,892</span> forensic events • NaSIA Mirror Sync: <span class="text-on-tertiary-container font-semibold">Healthy (14s ago)</span>
+  </span>
+  <div class="flex items-center gap-space-xs">
+    <button class="px-space-sm py-1 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant disabled:opacity-50 cursor-pointer" disabled="">Previous</button>
+    <button class="px-space-sm py-1 bg-primary text-on-primary rounded font-label-sm text-label-sm font-bold cursor-pointer">1</button>
+    <button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded font-label-sm text-label-sm text-on-surface cursor-pointer">2</button>
+    <button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded font-label-sm text-label-sm text-on-surface cursor-pointer">3</button>
+    <span class="px-1 text-on-surface-variant">...</span>
+    <button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded font-label-sm text-label-sm text-on-surface cursor-pointer">596</button>
+    <button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded font-label-sm text-label-sm text-on-surface cursor-pointer">Next</button>
+  </div>
+</div>
+</div>
+</div>
+<!-- Right Pane: Forensic Event Inspector (4 cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md sticky top-20">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-md">
+<!-- Inspector Header -->
+<div class="flex flex-col gap-1 pb-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">FORENSIC EVENT INSPECTOR</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+                ANCHORED
+              </span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm text-primary" id="inspector-uuid">evt_93af-e78c-acc-2026</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Tier 0 Root</span>
+</div>
+</div>
+<!-- Actor & Machine Fingerprint -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm">badge</span>
+              Actor &amp; Machine Fingerprint
+            </span>
+<div class="flex flex-col gap-1 text-[13px] font-body-sm">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Identity:</span>
+<span class="font-mono text-on-surface font-semibold" id="inspector-identity">k.boateng@ops.carepoint.edu.gh</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">System Role:</span>
+<span class="text-primary font-semibold" id="inspector-role">SysOps Tier 0 (Full Infra Ops)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Session Hardware:</span>
+<span class="font-mono text-on-surface" id="inspector-enclave">TPM 2.0 Enclave #0x93FA-E78C</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Workstation Subnet:</span>
+<span class="font-mono text-on-surface" id="inspector-ip">10.142.12.44 (Accra DC Pod)</span>
+</div>
+</div>
+</div>
+<!-- JSON Payload Delta Diff (Before & After) -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm">data_object</span>
+                Payload Mutation Delta
+              </span>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-1" onclick="copyPayload()">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+                Copy JSON
+              </button>
+</div>
+<pre class="bg-primary text-primary-fixed p-space-sm rounded-lg font-mono text-[12px] leading-relaxed overflow-x-auto max-h-60" id="json-viewer">{
+  "flag_key": "portal.parent.live_dismissal_radar",
+  "mutation": {
+    "canary_percentage": {
+      "from": 15,
+      "to": 25
+    },
+    "target_cohort": "NURSERY_KG_ONLY",
+    "reason": "Dismissal surge peak performance validation"
+  },
+  "approved_by_dual_key": true,
+  "telemetry_stream": "radar.dismissal.realtime.v2"
+}</pre>
+</div>
+<!-- Cryptographic Proof Chain -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm">enhanced_encryption</span>
+              Cryptographic Proof Chain
+            </span>
+<div class="flex flex-col gap-2 p-space-sm bg-surface-container-low rounded-lg font-mono text-[11px]">
+<div>
+<span class="text-outline uppercase text-[10px] block">Previous Block Hash (Parent):</span>
+<span class="text-on-surface-variant break-all" id="parent-hash">sha256:9b2d8e41f71a093cc54194f1082aa374</span>
+</div>
+<div>
+<span class="text-outline uppercase text-[10px] block">Current Event Hash:</span>
+<span class="text-primary font-bold break-all" id="current-hash">sha256:7f3a9e10c59e88fae32c0f28b144e590</span>
+</div>
+<div class="pt-1 flex items-center justify-between text-on-surface text-[11px] font-sans">
+<span class="text-on-surface-variant">Stratum 1 Clock GPS Sync:</span>
+<span class="text-on-tertiary-container font-semibold">±0.002ms Locked</span>
+</div>
+</div>
+</div>
+<!-- Forensic Action Tools -->
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 flex items-center justify-center gap-1.5 py-2 px-space-sm bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+              Verify Merkle Proof
+            </button>
+<button class="p-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg transition-colors" title="Download Raw Block Certificate">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+</button>
+<button class="p-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg transition-colors" title="View in NaSIA Ledger Explorer">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Academic Division Trust Seals Anchor -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Monitored Division Portals</span>
+<div class="grid grid-cols-4 gap-space-xs text-center">
+<div class="flex flex-col items-center p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[20px] text-sky-500">child_care</span>
+<span class="font-label-sm text-[10px] text-primary font-bold mt-1">NURSERY</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container mt-1"></span>
+</div>
+<div class="flex flex-col items-center p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[20px] text-primary">toys</span>
+<span class="font-label-sm text-[10px] text-primary font-bold mt-1">K-GARDEN</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container mt-1"></span>
+</div>
+<div class="flex flex-col items-center p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[20px] text-secondary">school</span>
+<span class="font-label-sm text-[10px] text-primary font-bold mt-1">BASIC</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container mt-1"></span>
+</div>
+<div class="flex flex-col items-center p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[20px] text-primary-container">menu_book</span>
+<span class="font-label-sm text-[10px] text-primary font-bold mt-1">JHS</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container mt-1"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  const eventsDatabase = {
+    1: {
+      uuid: "evt_93af-e78c-acc-2026",
+      identity: "k.boateng@ops.carepoint.edu.gh",
+      role: "SysOps Tier 0 (Full Infra Ops)",
+      enclave: "TPM 2.0 Enclave #0x93FA-E78C",
+      ip: "10.142.12.44 (Accra DC Pod)",
+      parentHash: "sha256:9b2d8e41f71a093cc54194f1082aa374",
+      currentHash: "sha256:7f3a9e10c59e88fae32c0f28b144e590",
+      payload: {
+        "flag_key": "portal.parent.live_dismissal_radar",
+        "mutation": {
+          "canary_percentage": {
+            "from": 15,
+            "to": 25
+          },
+          "target_cohort": "NURSERY_KG_ONLY",
+          "reason": "Dismissal surge peak performance validation"
+        },
+        "approved_by_dual_key": true,
+        "telemetry_stream": "radar.dismissal.realtime.v2"
+      }
+    },
+    2: {
+      uuid: "evt_71ce-42aa-saf-2026",
+      identity: "e.appiah@leadership.carepoint.edu.gh",
+      role: "Principal & Headmistress",
+      enclave: "YubiKey 5Ci Bio #YK-8472-GH",
+      ip: "10.142.4.10 (Executive Office)",
+      parentHash: "sha256:3c88a183d291afb410e2003c990218ef",
+      currentHash: "sha256:9b2d8e41f71a093cc54194f1082aa374",
+      payload: {
+        "sanction_type": "HIGH_COURT_INJUNCTION",
+        "ward_id": "WARD-2024-089",
+        "ward_name": "Kofi Mensah",
+        "order_number": "SAF-ACC-2026-08",
+        "turnstile_lock": true,
+        "gate_nodes_notified": ["NODE_01", "NODE_02", "NODE_03", "NODE_04"],
+        "principal_signature": "SIG_APP_RSA_4096_VALID"
+      }
+    },
+    3: {
+      uuid: "evt_380b-99f2-gt-2026",
+      identity: "e.tetteh@security.carepoint.edu.gh",
+      role: "Campus Security Officer Node 4",
+      enclave: "Gate Kiosk Hardware Terminal",
+      ip: "10.142.88.14 (East Gate Kiosk)",
+      parentHash: "sha256:1a84f33190dfca011400ee12f84b6631",
+      currentHash: "sha256:3c88a183d291afb410e2003c990218ef",
+      payload: {
+        "action": "GATE_TURNSTILE_INTERLOCK_HOLD",
+        "station_id": "GATE_NODE_04",
+        "nfc_serial": "NFC-TAG-7718-DENIED",
+        "target_ward_id": "WARD-2024-089",
+        "flap_response_time_ms": 42,
+        "interlock_state": "LOCKED",
+        "dispatch_callout": "SECURITY_LEAD_DESK"
+      }
+    },
+    4: {
+      uuid: "evt_12e9-4411-adm-2026",
+      identity: "e.appiah@leadership.carepoint.edu.gh",
+      role: "Headmistress (Admissions Board)",
+      enclave: "Executive Office Workstation",
+      ip: "10.142.4.10 (Executive Office)",
+      parentHash: "sha256:d89190cbb17208ff94401a0522c01994",
+      currentHash: "sha256:1a84f33190dfca011400ee12f84b6631",
+      payload: {
+        "candidate_id": "2026-084",
+        "candidate_name": "Kwadwo Asare",
+        "admitted_level": "KINDERGARTEN_1",
+        "academic_session": "2026/2027_TERM_1",
+        "portal_provisioning": "AUTO_COMPLETED"
+      }
+    },
+    5: {
+      uuid: "evt_082c-8822-stf-2026",
+      identity: "j.mensah@faculty.carepoint.edu.gh",
+      role: "Lead Educator (Junior High Sciences)",
+      enclave: "ChromeOS Staff Device 284",
+      ip: "10.142.30.91 (Staff Common Room)",
+      parentHash: "sha256:00481cf991823bb1904726488319f041",
+      currentHash: "sha256:d89190cbb17208ff94401a0522c01994",
+      payload: {
+        "module": "GRADEBOOK_WEIGHTING",
+        "class": "JHS_1_BIOLOGY",
+        "assessment_item": "LAB_PRACTICAL_CONTINUOUS",
+        "weight_adjustment": {
+          "previous": 15,
+          "new": 20
+        },
+        "council_approval_ref": "ACAD_DEPT_MINS_OCT12"
+      }
+    }
+  };
+
+  let activeViewMode = 'cards';
+  let activeQuickFilter = 'all';
+
+  function selectRow(id) {
+    // Reset all cards and table rows
+    for (let i = 1; i <= 5; i++) {
+      const card = document.getElementById('card-' + i);
+      if (card) {
+        card.classList.remove('bg-surface-container-low', 'ring-2', 'ring-primary/20');
+        card.classList.add('bg-surface-container-lowest');
+        const indicator = card.querySelector('.active-indicator');
+        if (indicator) indicator.classList.add('hidden');
+      }
+
+      const tableRow = document.getElementById('table-row-' + i);
+      if (tableRow) {
+        tableRow.classList.remove('bg-surface-container-low', 'font-bold');
+      }
+    }
+
+    // Highlight selected card
+    const selectedCard = document.getElementById('card-' + id);
+    if (selectedCard) {
+      selectedCard.classList.remove('bg-surface-container-lowest');
+      selectedCard.classList.add('bg-surface-container-low', 'ring-2', 'ring-primary/20');
+      const indicator = selectedCard.querySelector('.active-indicator');
+      if (indicator) indicator.classList.remove('hidden');
+    }
+
+    // Highlight selected table row
+    const selectedTableRow = document.getElementById('table-row-' + id);
+    if (selectedTableRow) {
+      selectedTableRow.classList.add('bg-surface-container-low', 'font-bold');
+    }
+
+    // Update Inspector Pane
+    const data = eventsDatabase[id];
+    if (data) {
+      document.getElementById('inspector-uuid').textContent = data.uuid;
+      document.getElementById('inspector-identity').textContent = data.identity;
+      document.getElementById('inspector-role').textContent = data.role;
+      document.getElementById('inspector-enclave').textContent = data.enclave;
+      document.getElementById('inspector-ip').textContent = data.ip;
+      document.getElementById('parent-hash').textContent = data.parentHash;
+      document.getElementById('current-hash').textContent = data.currentHash;
+      document.getElementById('json-viewer').textContent = JSON.stringify(data.payload, null, 2);
+    }
+  }
+
+  function switchAuditView(mode) {
+    activeViewMode = mode;
+    const cardsView = document.getElementById('ledger-cards-view');
+    const tableView = document.getElementById('ledger-table-view');
+    const viewBtnCards = document.getElementById('viewBtnCards');
+    const viewBtnTable = document.getElementById('viewBtnTable');
+
+    if (mode === 'cards') {
+      cardsView.classList.remove('hidden');
+      tableView.classList.add('hidden');
+
+      viewBtnCards.className = 'px-2.5 py-1 rounded-md bg-surface-container-lowest text-primary shadow-xs flex items-center gap-1 font-bold transition-all cursor-pointer';
+      viewBtnTable.className = 'px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface flex items-center gap-1 font-medium transition-all cursor-pointer';
+    } else {
+      cardsView.classList.add('hidden');
+      tableView.classList.remove('hidden');
+
+      viewBtnTable.className = 'px-2.5 py-1 rounded-md bg-surface-container-lowest text-primary shadow-xs flex items-center gap-1 font-bold transition-all cursor-pointer';
+      viewBtnCards.className = 'px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface flex items-center gap-1 font-medium transition-all cursor-pointer';
+    }
+    applyAuditFilters();
+  }
+
+  function setQuickFilter(category) {
+    activeQuickFilter = category;
+
+    // Reset chips styling
+    const chips = ['all', 'turnstile', 'principal', 'flag', 'academic'];
+    chips.forEach(chipId => {
+      const el = document.getElementById('chip-' + chipId);
+      if (el) {
+        if (chipId === category) {
+          el.className = 'inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-2xs transition-all';
+        } else {
+          el.className = 'inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm transition-colors cursor-pointer';
+        }
+      }
+    });
+
+    applyAuditFilters();
+  }
+
+  function applyAuditFilters() {
+    const searchInput = document.getElementById('auditSearchInput');
+    const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+    const clearBtn = document.getElementById('clearSearchBtn');
+    if (clearBtn) {
+      if (query.length > 0) clearBtn.classList.remove('hidden');
+      else clearBtn.classList.add('hidden');
+    }
+
+    const moduleSelect = document.getElementById('moduleFilterSelect');
+    const selectedModule = moduleSelect ? moduleSelect.value : 'ALL';
+
+    const severitySelect = document.getElementById('severityFilterSelect');
+    const selectedSeverity = severitySelect ? severitySelect.value : 'ALL';
+
+    let visibleCount = 0;
+    const isFiltered = query.length > 0 || selectedModule !== 'ALL' || selectedSeverity !== 'ALL' || activeQuickFilter !== 'all';
+
+    // Toggle reset filter button
+    const resetBtn = document.getElementById('resetFilterBtn');
+    if (resetBtn) {
+      if (isFiltered) resetBtn.classList.remove('hidden');
+      else resetBtn.classList.add('hidden');
+    }
+
+    for (let i = 1; i <= 5; i++) {
+      const card = document.getElementById('card-' + i);
+      const tableRow = document.getElementById('table-row-' + i);
+      if (!card) continue;
+
+      const mod = card.getAttribute('data-module') || '';
+      const sev = card.getAttribute('data-severity') || '';
+      const cat = card.getAttribute('data-category') || '';
+      const cardText = card.textContent.toLowerCase();
+
+      let matches = true;
+
+      // Module match
+      if (selectedModule !== 'ALL' && mod !== selectedModule) {
+        matches = false;
+      }
+
+      // Severity match
+      if (selectedSeverity !== 'ALL' && sev !== selectedSeverity) {
+        matches = false;
+      }
+
+      // Quick filter match
+      if (activeQuickFilter !== 'all' && !cat.includes(activeQuickFilter)) {
+        matches = false;
+      }
+
+      // Search query match
+      if (query.length > 0 && !cardText.includes(query)) {
+        matches = false;
+      }
+
+      if (matches) {
+        card.classList.remove('hidden');
+        if (tableRow) tableRow.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        card.classList.add('hidden');
+        if (tableRow) tableRow.classList.add('hidden');
+      }
+    }
+
+    // Update Counter & Pagination text
+    const counterEl = document.getElementById('audit-log-counter');
+    if (counterEl) {
+      counterEl.textContent = `Showing ${visibleCount} of 5 events`;
+      if (isFiltered) {
+        counterEl.className = 'text-xs px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-bold shadow-2xs';
+      } else {
+        counterEl.className = 'text-xs px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-bold border border-surface-container-high';
+      }
+    }
+
+    const paginationVisibleCount = document.getElementById('paginationVisibleCount');
+    if (paginationVisibleCount) {
+      paginationVisibleCount.textContent = visibleCount > 0 ? `1 - ${visibleCount}` : '0';
+    }
+
+    // Handle Empty State
+    const emptyState = document.getElementById('emptyFilterState');
+    const cardsView = document.getElementById('ledger-cards-view');
+    const tableView = document.getElementById('ledger-table-view');
+
+    if (visibleCount === 0) {
+      if (emptyState) emptyState.classList.remove('hidden');
+      if (cardsView) cardsView.classList.add('hidden');
+      if (tableView) tableView.classList.add('hidden');
+    } else {
+      if (emptyState) emptyState.classList.add('hidden');
+      if (activeViewMode === 'cards') {
+        if (cardsView) cardsView.classList.remove('hidden');
+        if (tableView) tableView.classList.add('hidden');
+      } else {
+        if (cardsView) cardsView.classList.add('hidden');
+        if (tableView) tableView.classList.remove('hidden');
+      }
+    }
+  }
+
+  function clearSearchInput() {
+    const input = document.getElementById('auditSearchInput');
+    if (input) input.value = '';
+    applyAuditFilters();
+  }
+
+  function resetAuditFilters() {
+    const searchInput = document.getElementById('auditSearchInput');
+    if (searchInput) searchInput.value = '';
+
+    const moduleSelect = document.getElementById('moduleFilterSelect');
+    if (moduleSelect) moduleSelect.value = 'ALL';
+
+    const severitySelect = document.getElementById('severityFilterSelect');
+    if (severitySelect) severitySelect.value = 'ALL';
+
+    setQuickFilter('all');
+  }
+
+  function copyHashText(hash, event) {
+    if (event) event.stopPropagation();
+    navigator.clipboard.writeText(hash).then(() => {
+      if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+        window.CarepointDemo.showToast(`SHA-256 Hash copied to clipboard: ${hash.substring(0, 18)}...`, true);
+      } else {
+        alert('SHA-256 Hash copied to clipboard:\n' + hash);
+      }
+    });
+  }
+
+  function verifyLedger() {
+    const icon = document.getElementById('verify-icon');
+    const text = document.getElementById('verify-text');
+    const btn = document.getElementById('verify-ledger-btn');
+    
+    icon.textContent = 'sync';
+    icon.classList.add('animate-spin');
+    text.textContent = 'Verifying Merkle Roots...';
+    
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+      icon.textContent = 'verified';
+      icon.className = 'material-symbols-outlined text-on-tertiary-container text-body-md';
+      text.textContent = 'All 14,892 Blocks Cryptographically Valid';
+      btn.classList.add('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+    }, 900);
+  }
+
+  function copyPayload() {
+    const text = document.getElementById('json-viewer').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+        window.CarepointDemo.showToast('Forensic JSON payload copied to clipboard', true);
+      }
+    });
+  }
+</script></main></div></body></html>

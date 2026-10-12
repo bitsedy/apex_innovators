@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"error-container":"#ffdad6","on-surface":"#161c23","on-secondary-fixed":"#410001","primary-fixed-dim":"#b5c4ff","secondary-fixed-dim":"#ffb4a9","on-error":"#ffffff","error":"#ba1a1a","surface-variant":"#dde3ec","secondary":"#ba0a0c","on-error-container":"#93000a","on-secondary-container":"#fffbff","surface-container-highest":"#dde3ec","surface-container-low":"#eef4fe","tertiary-fixed":"#94f9a0","background":"#eef2f6","outline":"#757680","surface-dim":"#d5dae4","on-primary":"#ffffff","on-surface-variant":"#45464f","primary":"#011549","inverse-surface":"#2b3138","surface-bright":"#f7f9ff","tertiary":"#001f07","surface":"#eef2f6","on-primary-fixed-variant":"#344478","surface-container-high":"#e3e8f2","on-tertiary-container":"#46a95a","on-tertiary-fixed-variant":"#00531f","surface-tint":"#4c5c92","on-tertiary-fixed":"#002108","on-primary-container":"#8494cd","on-secondary-fixed-variant":"#930004","surface-container-lowest":"#ffffff","inverse-primary":"#b5c4ff","on-tertiary":"#ffffff","inverse-on-surface":"#ecf1fb","outline-variant":"#c5c6d1","secondary-container":"#df2d23","surface-container":"#e9eef8","on-background":"#161c23","tertiary-container":"#003712","on-primary-fixed":"#03174b","tertiary-fixed-dim":"#78dc86","on-secondary":"#ffffff","primary-fixed":"#dce1ff","secondary-fixed":"#ffdad5","primary-container":"#1a2b5e"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-sm":"1rem","space-xs":"0.25rem","space-lg":"1.5rem","space-md":"1rem","space-xl":"2.5rem","margin":"2rem","gutter-sm":"1rem","gutter":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"label-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"]},"fontSize":{"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.04em","fontWeight":"700"}],"display-lg":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"800"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"800"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}]}}}}</script><title>Carepoint - Academic Calendar &amp; School Rules</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "admin",
+            label: "Academic Calendar & School Rules",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-settings.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-outline-variant/30">
+<div class="flex flex-col">
+<!-- Top Header with Crest, Title, Motto, Badge, and Close Button -->
+  <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider uppercase">Executive Admin &amp; Principal</span>
+    </div>
+  </div>
+<div class="px-space-md py-space-sm">
+<div class="px-space-md py-space-xs bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Session 2026/27 Term 1</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">Wk 8</span>
+</div>
+</div>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Executive Suite</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="dashboard.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="inbox" href="inbox.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">move_to_inbox</span>
+<span>Executive Inbox</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-primary-fixed text-on-primary-fixed">5</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="decision" href="decision.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+<span>Statutory Decisions</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-secondary-container text-on-secondary">2</span>
+</a>
+</nav>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Operations & Approvals</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="approvals" href="approvals.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>Approvals Queue</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-secondary-container text-on-secondary">12</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="admissions" href="admissions.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+<span>Admissions Review</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-surface-container-high text-on-surface-variant">28</span>
+</a>
+</nav>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Registries & Governance</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="wards" href="wards.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+<span>Student Records</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="users" href="users.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+<span>User Directory</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="reports" href="reports.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span>Reports & Analytics</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 transition-all bg-primary-container text-on-primary font-label-lg rounded-xl shadow-sm" data-path="settings" href="settings.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span>School Settings</span>
+</div>
+
+</a>
+</nav>
+</div>
+<div class="p-space-md bg-surface-container-lowest flex flex-col gap-space-xs mt-auto">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Campus Protocol</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold">Normal</span>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm hover:bg-secondary-container transition-colors shadow-sm" onclick="window.location.href = '../gate/alert.html';" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+<span>Emergency Lockdown</span>
+</button>
+</div>
+</div>
+</aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-2 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="flex items-center gap-2 px-space-sm py-1.5 rounded-full bg-surface-container-high"><span class="material-symbols-outlined text-primary text-[18px]">verified</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">NaSIA / GES Accredited • Level 4</span></div><div class="hidden xl:flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm"><span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span><span>Executive Oversight System</span></div></div><div class="flex items-center gap-space-md"><button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors relative shadow-sm" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary-container"></span></button><div class="flex items-center gap-3 pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-lg text-label-lg text-on-surface">Dr. Elizabeth Appiah</span><span class="font-label-sm text-label-sm text-on-surface-variant">Headmistress / Principal</span></div><img alt="Dr. Elizabeth Appiah" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWfNsavZrE2q7ehrA64sihUwtmROAw4xXN-C6BlUTPhqxnN--2RN5DRycS1Zzkyt6oCEfdTUfjODz6QYZEv08Q-JAkUc3Av7yS8ahvu_IycCMkJCxx5Dx9PYnuyuHQLKp_OkepCnkvleE-hqHca1ZtXA-REaPgIftK5gPRsomXA64FFaJZFdKmQGy-GEt_k2m5zV-0ASaXXLnRB3Au6F5xwS03ye8IFEGRzgETPCCJ1eKP6QrBZk3BQ"/></div></div></header><main class="relative pt-20 w-full px-space-lg pb-space-xl bg-surface"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-y-space-lg w-full">
+<!-- Top Action Header & Metadata Ribbon -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-2">
+<div class="flex flex-col gap-1 max-w-2xl">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold">GOVERNANCE</span>
+<span>•</span>
+<span class="text-on-surface-variant">NaSIA-GES Pack v4.3</span>
+<span>•</span>
+<span class="flex items-center gap-1 text-tertiary-container font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>Synced</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Operational Settings</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Policies, academic milestones, approval matrices, and campus security controls.</p>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">history</span>
+<span>Audit Log</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-on-primary font-label-sm text-label-sm hover:bg-primary-container transition-all shadow-xs font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Save Changes</span>
+</button>
+</div>
+</div>
+<!-- Multi-Section Navigation Tabs -->
+<div class="flex items-center gap-space-xs p-1.5 rounded-2xl bg-surface-container-low shadow-sm overflow-x-auto">
+<button class="tab-button flex items-center gap-2 px-space-md py-2.5 rounded-xl font-label-md text-label-md bg-primary text-on-primary shadow-sm whitespace-nowrap transition-all" data-tab="tab-calendar" type="button">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Academic Calendar &amp; Terms</span>
+</button>
+<button class="tab-button flex items-center gap-2 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container whitespace-nowrap transition-all" data-tab="tab-approvals" type="button">
+<span class="material-symbols-outlined text-[18px]">approval_delegation</span>
+<span>Approval Routing &amp; SLA Matrix</span>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-sm text-[10px]">Strict SLA</span>
+</button>
+<button class="tab-button flex items-center gap-2 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container whitespace-nowrap transition-all" data-tab="tab-gate" type="button">
+<span class="material-symbols-outlined text-[18px]">sensor_door</span>
+<span>Campus Security &amp; Gate Rules</span>
+</button>
+<button class="tab-button flex items-center gap-2 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container whitespace-nowrap transition-all" data-tab="tab-curriculum" type="button">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+<span>Curriculum &amp; Grading Weights</span>
+</button>
+<button class="tab-button flex items-center gap-2 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container whitespace-nowrap transition-all" data-tab="tab-notifications" type="button">
+<span class="material-symbols-outlined text-[18px]">cell_tower</span>
+<span>Notifications &amp; SMS Gateways</span>
+</button>
+</div>
+<!-- Core Configuration Bento Grid Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Left Column: Primary Working Frameworks (8 Cols) -->
+<div class="xl:col-span-8 flex flex-col gap-y-space-lg">
+<!-- Panel A: Academic Calendar & Term Configuration -->
+<section id="panel-calendar" class="flex flex-col bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm transition-all duration-300">
+<div class="flex items-start justify-between pb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-lg text-label-lg text-primary uppercase tracking-wider">PANEL A • ACADEMIC TIMELINE &amp; ENROLLMENT LIMITS</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1">Calendar Milestones &amp; GES Statutory Rhythms</h2>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Active Session: 2026/2027</span>
+</div>
+<!-- Highlight Banner: Current Term Details -->
+<div class="rounded-xl bg-gradient-to-r from-primary-container to-primary text-on-primary p-space-md mb-space-md shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest/10 backdrop-blur-md flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[28px]">event_available</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-primary-container uppercase">Current Active Term Execution</span>
+<span class="font-headline-sm text-headline-sm font-bold">Term 1 • Academic Session 2026/2027</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim">Start: 09 September 2026 — Closure: 19 December 2026 (72 Teaching Days)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest/10 px-space-md py-2 rounded-lg backdrop-blur-md">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">notifications_active</span>
+<span class="font-label-sm text-label-sm text-surface font-medium">Week 8 Progress (54%)</span>
+</div>
+</div>
+</div>
+<!-- Milestones & Statutory Devotion Scheduling -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mb-space-md">
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-low gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">MID-TERM ASSESSMENT WINDOW</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">tune</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-1">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Window Open</label>
+<input class="w-full px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm outline-none shadow-sm focus:ring-2 focus:ring-primary" type="text" value="20 Oct 2026"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Window Lock</label>
+<input class="w-full px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm outline-none shadow-sm focus:ring-2 focus:ring-primary" type="text" value="28 Oct 2026"/>
+</div>
+</div>
+<span class="font-body-sm text-label-sm text-on-surface-variant">Marks entry strictly locks at 23:59 GMT on lock date.</span>
+</div>
+<div class="flex flex-col p-space-md rounded-xl bg-surface-container-low gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">STATUTORY GES MORNING DEVOTION</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-[11px]">Daily Required</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-1">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Bell Rings</label>
+<input class="w-full px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm outline-none shadow-sm focus:ring-2 focus:ring-primary" type="text" value="07:45 GMT"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Dismissal to Class</label>
+<input class="w-full px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm outline-none shadow-sm focus:ring-2 focus:ring-primary" type="text" value="08:15 GMT"/>
+</div>
+</div>
+<span class="font-body-sm text-label-sm text-on-surface-variant">Includes National Anthem &amp; Flag Assembly protocols.</span>
+</div>
+</div>
+<!-- Division Enrollment Caps Hierarchy -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wide">Division Maximum Enrollment Capacity</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Statutory limit: 355 students max</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm">
+<!-- Creche & Nursery -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col items-center text-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Creche &amp; Nursery</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">48</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ 50</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 96%"></div>
+</div>
+<span class="font-label-sm text-[10px] text-secondary font-semibold">2 Seats Left</span>
+</div>
+<!-- Kindergarten -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col items-center text-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Kindergarten (KG)</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">88</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ 95</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-tertiary-fixed-dim h-full rounded-full" style="width: 92%"></div>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant font-semibold">7 Seats Left</span>
+</div>
+<!-- Basic / Primary -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col items-center text-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Basic 1 - 6</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">119</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ 125</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 95%"></div>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant font-semibold">6 Seats Left</span>
+</div>
+<!-- JHS -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col items-center text-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Junior High (JHS)</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">78</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ 85</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 91%"></div>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant font-semibold">7 Seats Left</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Panel B: Statutory Approval Routing & Escalation Matrix -->
+<section id="panel-approvals" class="flex flex-col bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm transition-all duration-300">
+<div class="flex items-start justify-between pb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-lg text-label-lg text-secondary-container uppercase tracking-wider">PANEL B • STATUTORY APPROVAL ROUTING &amp; SLA MATRIX</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1">Multi-Tier Administrative Sign-off Thresholds</h2>
+</div>
+<button class="flex items-center gap-1.5 text-primary hover:text-primary-container font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<span>Reorder Chain</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Tier 1 Escalation -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface">Tier 1 • Sensitive Academic Operations</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Standard</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Grade modification &gt; 5%, recorded student medical incident report, terminal fee waiver.</p>
+<div class="flex items-center gap-space-md mt-2 text-on-surface font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">account_box</span>Target: Academic Head / Dean</span>
+<span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[16px]">schedule</span>Max SLA: 24 Hours</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center">
+<span class="px-3 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold shadow-sm">Auto-escalates at 20h</span>
+</div>
+</div>
+<!-- Tier 2 Escalation -->
+<div class="p-space-md rounded-xl bg-primary-fixed/20 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">shield_person</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-primary font-bold">Tier 2 • Executive Governance Sign-Off</span>
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm">Executive Only</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Legal custody record modifications, GES interschool student transfer, staff absence &gt; 2 consecutive days.</p>
+<div class="flex items-center gap-space-md mt-2 text-on-surface font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-primary font-semibold"><span class="material-symbols-outlined text-[16px]">how_to_reg</span>Directly to Dr. Elizabeth Appiah (Principal)</span>
+<span class="flex items-center gap-1 text-secondary font-bold"><span class="material-symbols-outlined text-[16px]">timer</span>Strict SLA: 4 Hours</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center">
+<span class="px-3 py-1 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-medium shadow-sm">Dual Auth Active</span>
+</div>
+</div>
+<!-- Tier 3: Emergency Safeguarding Priority Escalation -->
+<div class="p-space-md rounded-xl bg-error-container text-on-error-container flex flex-col md:flex-row md:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-error text-on-error flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold">Emergency Safeguarding &amp; Restraining Injunction Protocol</span>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-[10px] uppercase font-bold tracking-wider">Level-Zero Alert</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-error-container/90 mt-0.5">Instant biometric gate turnstile freeze, high-court custody dispute notification, unauthorized pickup attempts.</p>
+<div class="flex items-center gap-space-md mt-2 font-label-sm text-label-sm font-semibold">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">notifications_paused</span>Automated Immediate Dispatch: Push + SMS to Principal &amp; Chief Security Officer</span>
+<span class="flex items-center gap-1 text-error underline"><span class="material-symbols-outlined text-[16px]">bolt</span>SLA: Under 15 Minutes</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center">
+<span class="px-3 py-1.5 rounded-lg bg-error text-on-error font-label-sm text-label-sm font-bold uppercase tracking-wider shadow-sm animate-pulse">Critical SLA</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Panel D: Continuous Assessment (SBA) Weighting Formulation -->
+<section id="panel-curriculum" class="flex flex-col bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm transition-all duration-300">
+<div class="flex items-start justify-between pb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-lg text-label-lg text-primary uppercase tracking-wider">PANEL D • CURRICULUM ASSESSMENT WEIGHTING (SBA)</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1">National GES Standard Formula (Grade 1 through JHS 3)</h2>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">Sum: 100% Mandatory</span>
+</div>
+<!-- Formula Bar Visualization -->
+<div class="flex flex-col gap-3">
+<div class="w-full h-8 rounded-xl bg-surface-container-highest overflow-hidden flex shadow-inner">
+<div class="bg-primary flex items-center justify-center text-on-primary font-label-sm text-label-sm font-bold" style="width: 30%">30% Classwork</div>
+<div class="bg-tertiary-fixed-dim flex items-center justify-center text-on-tertiary-fixed font-label-sm text-label-sm font-bold" style="width: 30%">30% Mid-Term</div>
+<div class="bg-secondary-container flex items-center justify-center text-on-secondary font-label-sm text-label-sm font-bold" style="width: 40%">40% Terminal Exam</div>
+</div>
+<!-- Slider / Config Controls -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Continuous Classwork &amp; Projects</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">30%</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-container rounded-lg cursor-pointer" max="100" min="0" type="range" value="30"/>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Homework, portfolio reviews, weekly quizzes.</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Mid-Term Assessment Tests</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">30%</span>
+</div>
+<input class="w-full accent-tertiary-container h-2 bg-surface-container rounded-lg cursor-pointer" max="100" min="0" type="range" value="30"/>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Uniform school-wide supervised midterm sitting.</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Terminal Examination Sitting</span>
+<span class="font-headline-sm text-headline-sm text-secondary-container font-bold">40%</span>
+</div>
+<input class="w-full accent-secondary-container h-2 bg-surface-container rounded-lg cursor-pointer" max="100" min="0" type="range" value="40"/>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Formal end-of-term comprehensive papers.</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Security Rules, Biometrics, Gate Engine & Signature (4 Cols) -->
+<div class="xl:col-span-4 flex flex-col gap-y-space-lg">
+<!-- Panel C: Gate Kiosk & 2FA Pickup Protocol Rules -->
+<section id="panel-gate" class="flex flex-col bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm transition-all duration-300">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-lg text-label-lg text-secondary uppercase tracking-wider">PANEL C • CAMPUS ACCESS CONTROL</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Gate Kiosks &amp; Pickup Security</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Enforce child protection mandates at perimeter checkpoints.</p>
+<!-- Campus Gate Status Card -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-md mb-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface uppercase font-bold">Main Gate Turnstiles</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">Online &amp; Synced</span>
+</div>
+<div class="flex items-center gap-3 mt-space-sm">
+<span class="material-symbols-outlined text-[32px] text-primary">security_update_good</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Accra Terminal Alpha &amp; Beta</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Firmware: v2.9.1 • Offline Cache OK</span>
+</div>
+</div>
+</div>
+<!-- Staggered Dismissal Rules -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase">Staggered Dismissal Slots</span>
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">child_care</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Early Years (Creche &amp; KG)</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">Escorted to Parent Pavilion</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg text-primary font-bold">14:30 GMT</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">school</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Basic 1 to JHS 3</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">Main Turnstiles Auto-unlock</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg text-primary font-bold">15:00 GMT</span>
+</div>
+</div>
+<!-- Multi-Factor Verification Checklist -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase">Mandatory Verification Stack</span>
+<label class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-1 w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Daily Rolling SMS Token PIN</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">6-digit cryptotoken sent to registered guardian phone at 13:30 daily.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-1 w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Officer Photo-Match Attestation</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">Security guard visual confirm via Gate Tablet Camera feed before buzz-in.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-1 w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Biological Parent Biometric Override</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">Enables physical thumbprint scanning if phone battery is exhausted.</span>
+</div>
+</label>
+</div>
+<!-- Kiosk Auto-Lock Parameter -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Kiosk Screen Timeout</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">Purges active student records</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="font-label-md text-label-md text-primary font-bold">90</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">sec</span>
+</div>
+</div>
+</section>
+<!-- Administrative Signature, Versioning & Audit Card -->
+<section class="flex flex-col bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Cryptographic Attestation</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">fingerprint</span>
+</div>
+<div class="flex flex-col gap-2 p-space-md rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Dr. Elizabeth Appiah</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">Headmistress / Campus Governance</span>
+</div>
+</div>
+<div class="mt-2 pt-2 flex flex-col gap-1">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase font-semibold">Active Policy Checksum</span>
+<div class="p-2 rounded-lg bg-surface-container-lowest font-mono text-[11px] text-on-surface break-all select-all shadow-inner">
+                SHA256: 9b2d8e41f71a093c8d1b32f990a421b44ec94f1c
+              </div>
+<div class="flex items-center justify-between mt-1 text-on-surface-variant font-label-sm text-[11px]">
+<span>Policy Version 4.3</span>
+<span>Today, 09:15 GMT</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Campus: Accra Central</span>
+<button class="flex items-center gap-1 text-primary hover:text-primary-container font-label-sm text-label-sm font-bold" type="button">
+<span>View Full Ledger</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Functional tab-switching & panel focusing interaction
+  const tabMap = {
+    'tab-calendar': 'panel-calendar',
+    'tab-approvals': 'panel-approvals',
+    'tab-gate': 'panel-gate',
+    'tab-curriculum': 'panel-curriculum',
+    'tab-notifications': 'panel-gate'
+  };
+
+  document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.tab-button').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary');
+        b.classList.add('text-on-surface-variant');
+      });
+      button.classList.add('bg-primary', 'text-on-primary');
+      button.classList.remove('text-on-surface-variant');
+
+      const targetId = tabMap[button.getAttribute('data-tab')];
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        targetEl.classList.add('ring-4', 'ring-primary/20');
+        setTimeout(() => targetEl.classList.remove('ring-4', 'ring-primary/20'), 1500);
+      }
+    });
+  });
+</script></main></div></body></html>

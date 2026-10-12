@@ -1,0 +1,1628 @@
+{
+  "total_screens": 75,
+  "screens": {
+    "carepoint_admin_portal_admissions_review": {
+      "folder": "carepoint_admin_portal_admissions_review",
+      "portal": "admin",
+      "is_mobile": false,
+      "h1": "Admissions &amp; Enrollment Processing Studio",
+      "data_paths": [
+        "dashboard",
+        "approvals-queue",
+        "principal-inbox",
+        "admissions-review",
+        "ward-records",
+        "user-management",
+        "reports-and-analytics",
+        "school-settings"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_admin_portal_approvals_queue": {
+      "folder": "carepoint_admin_portal_approvals_queue",
+      "portal": "admin",
+      "is_mobile": false,
+      "h1": "Executive Approvals &amp; Audit Queue",
+      "data_paths": [
+        "dashboard",
+        "approvals-queue",
+        "principal-inbox",
+        "admissions-review",
+        "ward-records",
+        "user-management",
+        "reports-and-analytics",
+        "school-settings"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_admin_portal_command_dashboard": {
+      "folder": "carepoint_admin_portal_command_dashboard",
+      "portal": "admin",
+      "is_mobile": false,
+      "h1": "Welcome back, Headmistress Dr. Elizabeth Appiah",
+      "data_paths": [
+        "dashboard",
+        "approvals-queue",
+        "principal-inbox",
+        "admissions-review",
+        "ward-records",
+        "user-management",
+        "reports-and-analytics",
+        "school-settings"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_admin_portal_login_security_authentication": {
+      "folder": "carepoint_admin_portal_login_security_authentication",
+      "portal": "admin",
+      "is_mobile": false,
+      "h1": "Executive Administration &amp; Principal Portal",
+      "data_paths": [],
+      "has_tailwind_config": true
+    },
+    "carepoint_admin_portal_reports_analytics": {
+      "folder": "carepoint_admin_portal_reports_analytics",
+      "portal": "admin",
+      "is_mobile": false,
+      "h1": "Institutional Analytics &amp; Statutory Reporting Engine",
+      "data_paths": [
+        "dashboard",
+        "approvals-queue",
+        "principal-inbox",
+        "admissions-review",
+        "ward-records",
+        "user-management",
+        "reports-and-analytics",
+        "school-settings"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_admin_portal_school_settings_rules": {
+      "folder": "carepoint_admin_portal_school_settings_rules",
+      "portal": "admin",
+      "is_mobile": false,
+      "h1": "School Operational Settings &amp; Governance Configuration",
+      "data_paths": [
+        "dashboard",
+        "approvals-queue",
+        "principal-inbox",
+        "admissions-review",
+        "ward-records",
+        "user-management",
+        "reports-and-analytics",
+        "school-settings"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_admin_portal_user_management_directory": {
+      "folder": "carepoint_admin_portal_user_management_directory",
+      "portal": "admin",
+      "is_mobile": false,
+      "h1": "Identity &amp; Access Management Directory",
+      "data_paths": [
+        "dashboard",
+        "approvals-queue",
+        "principal-inbox",
+        "admissions-review",
+        "ward-records",
+        "user-management",
+        "reports-and-analytics",
+        "school-settings"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_admin_portal_ward_directory_dossier": {
+      "folder": "carepoint_admin_portal_ward_directory_dossier",
+      "portal": "admin",
+      "is_mobile": false,
+      "h1": "Pupil Master Directory &amp; Cross-Role Dossier",
+      "data_paths": [
+        "dashboard",
+        "approvals-queue",
+        "principal-inbox",
+        "admissions-review",
+        "ward-records",
+        "user-management",
+        "reports-and-analytics",
+        "school-settings"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_community_school_admission_application_form": {
+      "folder": "carepoint_community_school_admission_application_form",
+      "portal": "public",
+      "is_mobile": false,
+      "h1": "Student Admission Intake Form",
+      "data_paths": [
+        "home",
+        "about-us",
+        "academics",
+        "admissions-overview",
+        "news-and-events",
+        "campus-gallery",
+        "contact-school",
+        "application-status-tracker",
+        "admissions-application-form",
+        "tuition-and-fees"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_community_school_home_1": {
+      "folder": "carepoint_community_school_home_1",
+      "portal": "public",
+      "is_mobile": false,
+      "h1": "Nurturing the Mind,\n          Inspiring the Heart,\n          Empowering the Hand",
+      "data_paths": [
+        "home",
+        "about-us",
+        "academics",
+        "admissions-overview",
+        "news-and-events",
+        "campus-gallery",
+        "contact-school",
+        "application-status-tracker",
+        "admissions-application-form",
+        "tuition-and-fees"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_community_school_home_2": {
+      "folder": "carepoint_community_school_home_2",
+      "portal": "public",
+      "is_mobile": false,
+      "h1": "Nurturing the Mind,\n          Inspiring the Heart,\n          Empowering the Hand",
+      "data_paths": [
+        "home",
+        "about-us",
+        "academics",
+        "admissions-overview",
+        "news-and-events",
+        "campus-gallery",
+        "contact-school",
+        "application-status-tracker",
+        "admissions-application-form",
+        "tuition-and-fees"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_gate_kiosk_device_login_security_sign_in": {
+      "folder": "carepoint_gate_kiosk_device_login_security_sign_in",
+      "portal": "gate",
+      "is_mobile": false,
+      "h1": "",
+      "data_paths": [],
+      "has_tailwind_config": true
+    },
+    "carepoint_gate_kiosk_live_qr_scanner_viewport": {
+      "folder": "carepoint_gate_kiosk_live_qr_scanner_viewport",
+      "portal": "gate",
+      "is_mobile": false,
+      "h1": "Carepoint Community School",
+      "data_paths": [
+        "scanner",
+        "verification",
+        "pickup-log",
+        "security-alerts",
+        "kiosk-lock"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_gate_kiosk_mismatch_escalation_alert": {
+      "folder": "carepoint_gate_kiosk_mismatch_escalation_alert",
+      "portal": "gate",
+      "is_mobile": false,
+      "h1": "Carepoint Community School",
+      "data_paths": [
+        "scanner",
+        "verification",
+        "pickup-log",
+        "security-alerts",
+        "kiosk-lock"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_gate_kiosk_today_s_chronological_pickup_log": {
+      "folder": "carepoint_gate_kiosk_today_s_chronological_pickup_log",
+      "portal": "gate",
+      "is_mobile": false,
+      "h1": "Carepoint Community School",
+      "data_paths": [
+        "scanner",
+        "verification",
+        "pickup-log",
+        "security-alerts",
+        "kiosk-lock"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_gate_kiosk_two_factor_guardian_verification": {
+      "folder": "carepoint_gate_kiosk_two_factor_guardian_verification",
+      "portal": "gate",
+      "is_mobile": false,
+      "h1": "Carepoint Community School",
+      "data_paths": [
+        "scanner",
+        "verification",
+        "pickup-log",
+        "security-alerts",
+        "kiosk-lock"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_admin_approvals_queue": {
+      "folder": "carepoint_mobile_admin_approvals_queue",
+      "portal": "admin",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "executive-dashboard",
+        "pending-approvals",
+        "admissions-overview",
+        "executive-cabinet",
+        "more-menu"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_admin_command_dashboard": {
+      "folder": "carepoint_mobile_admin_command_dashboard",
+      "portal": "admin",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "executive-dashboard",
+        "pending-approvals",
+        "admissions-overview",
+        "executive-cabinet",
+        "more-menu"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_admin_principal_login": {
+      "folder": "carepoint_mobile_admin_principal_login",
+      "portal": "admin",
+      "is_mobile": true,
+      "h1": "Carepoint Community School",
+      "data_paths": [],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_admissions_form": {
+      "folder": "carepoint_mobile_admissions_form",
+      "portal": "public",
+      "is_mobile": true,
+      "h1": "School Admissions &amp; Levels",
+      "data_paths": [],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_admissions_review": {
+      "folder": "carepoint_mobile_admissions_review",
+      "portal": "other",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "executive-dashboard",
+        "pending-approvals",
+        "admissions-overview",
+        "executive-cabinet",
+        "more-menu"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_executive_decision_studio": {
+      "folder": "carepoint_mobile_executive_decision_studio",
+      "portal": "principal",
+      "is_mobile": true,
+      "h1": "Executive Decision Studio",
+      "data_paths": [
+        "executive-dashboard",
+        "pending-approvals",
+        "admissions-overview",
+        "executive-cabinet",
+        "more-menu"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_gate_qr_scanner_viewport": {
+      "folder": "carepoint_mobile_gate_qr_scanner_viewport",
+      "portal": "gate",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "scanner",
+        "active-verification",
+        "pickup-log",
+        "safeguard-alert"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_gate_security_sign_in": {
+      "folder": "carepoint_mobile_gate_security_sign_in",
+      "portal": "gate",
+      "is_mobile": true,
+      "h1": "Accra Campus North Gate",
+      "data_paths": [],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_health_welfare_escalation": {
+      "folder": "carepoint_mobile_health_welfare_escalation",
+      "portal": "other",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "staff-home",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health",
+        "staff-more"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_parent_academics": {
+      "folder": "carepoint_mobile_parent_academics",
+      "portal": "parent",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "parent-home",
+        "academics",
+        "student-welfare",
+        "pickup-security",
+        "parent-profile"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_parent_login": {
+      "folder": "carepoint_mobile_parent_login",
+      "portal": "parent",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_parent_pickup_security": {
+      "folder": "carepoint_mobile_parent_pickup_security",
+      "portal": "parent",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "parent-home",
+        "academics",
+        "student-welfare",
+        "pickup-security",
+        "parent-profile"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_parent_ward_dashboard": {
+      "folder": "carepoint_mobile_parent_ward_dashboard",
+      "portal": "parent",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "parent-home",
+        "academics",
+        "student-welfare",
+        "pickup-security",
+        "parent-profile"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_parent_welfare_messages": {
+      "folder": "carepoint_mobile_parent_welfare_messages",
+      "portal": "parent",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "parent-home",
+        "academics",
+        "student-welfare",
+        "pickup-security",
+        "parent-profile"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_principal_executive_inbox": {
+      "folder": "carepoint_mobile_principal_executive_inbox",
+      "portal": "principal",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "executive-dashboard",
+        "pending-approvals",
+        "admissions-overview",
+        "executive-cabinet",
+        "more-menu"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_public_home": {
+      "folder": "carepoint_mobile_public_home",
+      "portal": "public",
+      "is_mobile": true,
+      "h1": "School Admissions &amp; Levels",
+      "data_paths": [],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_reports_analytics": {
+      "folder": "carepoint_mobile_reports_analytics",
+      "portal": "other",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "executive-dashboard",
+        "pending-approvals",
+        "admissions-overview",
+        "executive-cabinet",
+        "more-menu"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_safeguarding_mismatch_alert": {
+      "folder": "carepoint_mobile_safeguarding_mismatch_alert",
+      "portal": "other",
+      "is_mobile": true,
+      "h1": "Unauthorized Pickup Attempt &amp; Custody Flag",
+      "data_paths": [
+        "scanner",
+        "active-verification",
+        "pickup-log",
+        "safeguard-alert"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_school_settings_rules": {
+      "folder": "carepoint_mobile_school_settings_rules",
+      "portal": "other",
+      "is_mobile": true,
+      "h1": "Campus Rules &amp; Institutional Settings",
+      "data_paths": [
+        "executive-dashboard",
+        "pending-approvals",
+        "admissions-overview",
+        "executive-cabinet",
+        "more-menu"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_staff_approvals_engine": {
+      "folder": "carepoint_mobile_staff_approvals_engine",
+      "portal": "staff",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "staff-home",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health",
+        "staff-more"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_staff_attendance_entry": {
+      "folder": "carepoint_mobile_staff_attendance_entry",
+      "portal": "staff",
+      "is_mobile": true,
+      "h1": "Morning Roll-Call",
+      "data_paths": [
+        "staff-home",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health",
+        "staff-more"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_staff_gradebook": {
+      "folder": "carepoint_mobile_staff_gradebook",
+      "portal": "staff",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "staff-home",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health",
+        "staff-more"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_staff_login_clock_in": {
+      "folder": "carepoint_mobile_staff_login_clock_in",
+      "portal": "staff",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_staff_timetable_builder": {
+      "folder": "carepoint_mobile_staff_timetable_builder",
+      "portal": "staff",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "staff-home",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health",
+        "staff-more"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_super_admin_change_request_composer": {
+      "folder": "carepoint_mobile_super_admin_change_request_composer",
+      "portal": "super_admin",
+      "is_mobile": true,
+      "h1": "Change Composer",
+      "data_paths": [],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_super_admin_change_request_tracker": {
+      "folder": "carepoint_mobile_super_admin_change_request_tracker",
+      "portal": "super_admin",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "telemetry",
+        "users",
+        "flags",
+        "changes",
+        "audit"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_super_admin_feature_configuration": {
+      "folder": "carepoint_mobile_super_admin_feature_configuration",
+      "portal": "super_admin",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "telemetry-health",
+        "users-provisioning",
+        "feature-config-flags",
+        "changes-rfcs",
+        "audit-log"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_super_admin_immutable_system_audit_log": {
+      "folder": "carepoint_mobile_super_admin_immutable_system_audit_log",
+      "portal": "super_admin",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "telemetry",
+        "users",
+        "flags",
+        "changes",
+        "audit"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_super_admin_integrations_api_hub": {
+      "folder": "carepoint_mobile_super_admin_integrations_api_hub",
+      "portal": "super_admin",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "telemetry",
+        "users",
+        "flags",
+        "changes",
+        "audit"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_super_admin_root_login": {
+      "folder": "carepoint_mobile_super_admin_root_login",
+      "portal": "super_admin",
+      "is_mobile": true,
+      "h1": "Root Infrastructure Console",
+      "data_paths": [],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_super_admin_system_telemetry": {
+      "folder": "carepoint_mobile_super_admin_system_telemetry",
+      "portal": "super_admin",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "telemetry-health",
+        "users-provisioning",
+        "feature-config-flags",
+        "changes-rfcs",
+        "audit-log"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_super_admin_user_provisioning": {
+      "folder": "carepoint_mobile_super_admin_user_provisioning",
+      "portal": "super_admin",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "telemetry-health",
+        "users-provisioning",
+        "feature-config-flags",
+        "changes-rfcs",
+        "audit-log"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_teacher_dashboard": {
+      "folder": "carepoint_mobile_teacher_dashboard",
+      "portal": "staff",
+      "is_mobile": true,
+      "h1": "Good Morning, Mrs. Abbey!",
+      "data_paths": [
+        "staff-home",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health",
+        "staff-more"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_mobile_today_s_gate_pickup_log": {
+      "folder": "carepoint_mobile_today_s_gate_pickup_log",
+      "portal": "gate",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "scanner",
+        "active-verification",
+        "pickup-log",
+        "safeguard-alert"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_two_factor_guardian_verification": {
+      "folder": "carepoint_mobile_two_factor_guardian_verification",
+      "portal": "other",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "scanner",
+        "active-verification",
+        "pickup-log",
+        "safeguard-alert"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_user_management_directory": {
+      "folder": "carepoint_mobile_user_management_directory",
+      "portal": "other",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "executive-dashboard",
+        "pending-approvals",
+        "admissions-overview",
+        "executive-cabinet",
+        "more-menu"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_mobile_ward_directory_dossier": {
+      "folder": "carepoint_mobile_ward_directory_dossier",
+      "portal": "other",
+      "is_mobile": true,
+      "h1": "",
+      "data_paths": [
+        "executive-dashboard",
+        "pending-approvals",
+        "admissions-overview",
+        "executive-cabinet",
+        "more-menu"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_parent_portal_academic_performance": {
+      "folder": "carepoint_parent_portal_academic_performance",
+      "portal": "parent",
+      "is_mobile": false,
+      "h1": "Academic Performance &amp; Gradebook",
+      "data_paths": [
+        "dashboard",
+        "ward-profile",
+        "performance-and-reports",
+        "attendance-and-welfare",
+        "pickup-security",
+        "messages"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_parent_portal_login_security": {
+      "folder": "carepoint_parent_portal_login_security",
+      "portal": "parent",
+      "is_mobile": false,
+      "h1": "Parent &amp; Guardian Secure Portal",
+      "data_paths": [],
+      "has_tailwind_config": false
+    },
+    "carepoint_parent_portal_messages_welfare": {
+      "folder": "carepoint_parent_portal_messages_welfare",
+      "portal": "parent",
+      "is_mobile": false,
+      "h1": "Communications &amp; Student Welfare Center",
+      "data_paths": [
+        "dashboard",
+        "ward-profile",
+        "performance-and-reports",
+        "attendance-and-welfare",
+        "pickup-security",
+        "messages"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_parent_portal_pickup_security": {
+      "folder": "carepoint_parent_portal_pickup_security",
+      "portal": "parent",
+      "is_mobile": false,
+      "h1": "Pickup Authorization &amp; Gate Desk",
+      "data_paths": [
+        "dashboard",
+        "ward-profile",
+        "performance-and-reports",
+        "attendance-and-welfare",
+        "pickup-security",
+        "messages"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_parent_portal_ward_dashboard": {
+      "folder": "carepoint_parent_portal_ward_dashboard",
+      "portal": "parent",
+      "is_mobile": false,
+      "h1": "Kofi Mensah",
+      "data_paths": [
+        "dashboard",
+        "ward-profile",
+        "performance-and-reports",
+        "attendance-and-welfare",
+        "pickup-security",
+        "messages"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_principal_portal_executive_decision_studio": {
+      "folder": "carepoint_principal_portal_executive_decision_studio",
+      "portal": "principal",
+      "is_mobile": false,
+      "h1": "Perimeter Gate Hold: Ward Kofi Mensah (#24-089)",
+      "data_paths": [
+        "dashboard",
+        "approvals-queue",
+        "principal-inbox",
+        "admissions-review",
+        "ward-records",
+        "user-management",
+        "reports-and-analytics",
+        "school-settings"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_principal_portal_executive_inbox": {
+      "folder": "carepoint_principal_portal_executive_inbox",
+      "portal": "principal",
+      "is_mobile": false,
+      "h1": "Principal Executive Inbox &amp; Priority Dispatch",
+      "data_paths": [
+        "dashboard",
+        "approvals-queue",
+        "principal-inbox",
+        "admissions-review",
+        "ward-records",
+        "user-management",
+        "reports-and-analytics",
+        "school-settings",
+        "principal-decision-studio"
+      ],
+      "has_tailwind_config": true
+    },
+    "carepoint_staff_portal_approvals_engine": {
+      "folder": "carepoint_staff_portal_approvals_engine",
+      "portal": "staff",
+      "is_mobile": false,
+      "h1": "Staff Approvals Engine &amp; Audit Center",
+      "data_paths": [
+        "staff-dashboard",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health-and-welfare",
+        "staff-approvals-engine",
+        "staff-messages"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_staff_portal_attendance_entry": {
+      "folder": "carepoint_staff_portal_attendance_entry",
+      "portal": "staff",
+      "is_mobile": false,
+      "h1": "Sunflower Class Roll Call\n        | Term 1 Academic Register",
+      "data_paths": [
+        "staff-dashboard",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health-and-welfare",
+        "staff-approvals-engine",
+        "staff-messages"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_staff_portal_gradebook": {
+      "folder": "carepoint_staff_portal_gradebook",
+      "portal": "staff",
+      "is_mobile": false,
+      "h1": "Academic Gradebook &amp; Terminal Assessment",
+      "data_paths": [
+        "staff-dashboard",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health-and-welfare",
+        "staff-approvals-engine",
+        "staff-messages"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_staff_portal_health_welfare_escalation": {
+      "folder": "carepoint_staff_portal_health_welfare_escalation",
+      "portal": "staff",
+      "is_mobile": false,
+      "h1": "Health Bay &amp; Welfare Incident Escalation",
+      "data_paths": [
+        "staff-dashboard",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health-and-welfare",
+        "staff-approvals-engine",
+        "staff-messages"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_staff_portal_login_clock_in": {
+      "folder": "carepoint_staff_portal_login_clock_in",
+      "portal": "staff",
+      "is_mobile": false,
+      "h1": "",
+      "data_paths": [],
+      "has_tailwind_config": false
+    },
+    "carepoint_staff_portal_teacher_dashboard": {
+      "folder": "carepoint_staff_portal_teacher_dashboard",
+      "portal": "staff",
+      "is_mobile": false,
+      "h1": "Good morning, Mrs. Beatrice Abbey!",
+      "data_paths": [
+        "staff-dashboard",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health-and-welfare",
+        "staff-approvals-engine",
+        "staff-messages"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_staff_portal_timetable_builder": {
+      "folder": "carepoint_staff_portal_timetable_builder",
+      "portal": "staff",
+      "is_mobile": false,
+      "h1": "Master Timetable Builder &amp; Scheduling Studio",
+      "data_paths": [
+        "staff-dashboard",
+        "staff-attendance",
+        "staff-gradebook",
+        "staff-health-and-welfare",
+        "staff-approvals-engine",
+        "staff-messages"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_super_admin_change_request_composer": {
+      "folder": "carepoint_super_admin_change_request_composer",
+      "portal": "super_admin",
+      "is_mobile": false,
+      "h1": "Change Request Composer (RFC Studio)",
+      "data_paths": [
+        "dashboard",
+        "user-provisioning",
+        "feature-flags",
+        "change-requests",
+        "change-request-composer",
+        "integrations",
+        "audit-logs"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_super_admin_change_request_tracker": {
+      "folder": "carepoint_super_admin_change_request_tracker",
+      "portal": "super_admin",
+      "is_mobile": false,
+      "h1": "Change Request Ledger &amp; Deployment Pipeline",
+      "data_paths": [
+        "dashboard",
+        "user-provisioning",
+        "feature-flags",
+        "change-requests",
+        "change-request-composer",
+        "integrations",
+        "audit-logs"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_super_admin_feature_configuration": {
+      "folder": "carepoint_super_admin_feature_configuration",
+      "portal": "super_admin",
+      "is_mobile": false,
+      "h1": "Runtime Feature Flags & Capability Matrix",
+      "data_paths": [
+        "dashboard",
+        "user-provisioning",
+        "feature-flags",
+        "change-requests",
+        "integrations",
+        "audit-logs"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_super_admin_immutable_system_audit_log": {
+      "folder": "carepoint_super_admin_immutable_system_audit_log",
+      "portal": "super_admin",
+      "is_mobile": false,
+      "h1": "Immutable System-Wide Audit Log Viewer",
+      "data_paths": [
+        "dashboard",
+        "user-provisioning",
+        "feature-flags",
+        "change-requests",
+        "change-request-composer",
+        "integrations",
+        "audit-logs"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_super_admin_integrations_api_hub": {
+      "folder": "carepoint_super_admin_integrations_api_hub",
+      "portal": "super_admin",
+      "is_mobile": false,
+      "h1": "Integrations &amp; API Gateway Hub",
+      "data_paths": [
+        "dashboard",
+        "user-provisioning",
+        "feature-flags",
+        "change-requests",
+        "change-request-composer",
+        "integrations",
+        "audit-logs"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_super_admin_root_technical_login": {
+      "folder": "carepoint_super_admin_root_technical_login",
+      "portal": "super_admin",
+      "is_mobile": false,
+      "h1": "Root Technical Operations Gateway",
+      "data_paths": [],
+      "has_tailwind_config": false
+    },
+    "carepoint_super_admin_system_telemetry_dashboard": {
+      "folder": "carepoint_super_admin_system_telemetry_dashboard",
+      "portal": "super_admin",
+      "is_mobile": false,
+      "h1": "",
+      "data_paths": [
+        "dashboard",
+        "user-provisioning",
+        "feature-flags",
+        "change-requests",
+        "integrations",
+        "audit-logs"
+      ],
+      "has_tailwind_config": false
+    },
+    "carepoint_super_admin_user_provisioning_engine": {
+      "folder": "carepoint_super_admin_user_provisioning_engine",
+      "portal": "super_admin",
+      "is_mobile": false,
+      "h1": "Identity Infrastructure & User Provisioning Engine",
+      "data_paths": [
+        "dashboard",
+        "user-provisioning",
+        "feature-flags",
+        "change-requests",
+        "integrations",
+        "audit-logs"
+      ],
+      "has_tailwind_config": false
+    }
+  },
+  "data_path_map": {
+    "dashboard": [
+      "carepoint_admin_portal_admissions_review",
+      "carepoint_admin_portal_approvals_queue",
+      "carepoint_admin_portal_command_dashboard",
+      "carepoint_admin_portal_reports_analytics",
+      "carepoint_admin_portal_school_settings_rules",
+      "carepoint_admin_portal_user_management_directory",
+      "carepoint_admin_portal_ward_directory_dossier",
+      "carepoint_parent_portal_academic_performance",
+      "carepoint_parent_portal_messages_welfare",
+      "carepoint_parent_portal_pickup_security",
+      "carepoint_parent_portal_ward_dashboard",
+      "carepoint_principal_portal_executive_decision_studio",
+      "carepoint_principal_portal_executive_inbox",
+      "carepoint_super_admin_change_request_composer",
+      "carepoint_super_admin_change_request_tracker",
+      "carepoint_super_admin_feature_configuration",
+      "carepoint_super_admin_immutable_system_audit_log",
+      "carepoint_super_admin_integrations_api_hub",
+      "carepoint_super_admin_system_telemetry_dashboard",
+      "carepoint_super_admin_user_provisioning_engine"
+    ],
+    "approvals-queue": [
+      "carepoint_admin_portal_admissions_review",
+      "carepoint_admin_portal_approvals_queue",
+      "carepoint_admin_portal_command_dashboard",
+      "carepoint_admin_portal_reports_analytics",
+      "carepoint_admin_portal_school_settings_rules",
+      "carepoint_admin_portal_user_management_directory",
+      "carepoint_admin_portal_ward_directory_dossier",
+      "carepoint_principal_portal_executive_decision_studio",
+      "carepoint_principal_portal_executive_inbox"
+    ],
+    "principal-inbox": [
+      "carepoint_admin_portal_admissions_review",
+      "carepoint_admin_portal_approvals_queue",
+      "carepoint_admin_portal_command_dashboard",
+      "carepoint_admin_portal_reports_analytics",
+      "carepoint_admin_portal_school_settings_rules",
+      "carepoint_admin_portal_user_management_directory",
+      "carepoint_admin_portal_ward_directory_dossier",
+      "carepoint_principal_portal_executive_decision_studio",
+      "carepoint_principal_portal_executive_inbox"
+    ],
+    "admissions-review": [
+      "carepoint_admin_portal_admissions_review",
+      "carepoint_admin_portal_approvals_queue",
+      "carepoint_admin_portal_command_dashboard",
+      "carepoint_admin_portal_reports_analytics",
+      "carepoint_admin_portal_school_settings_rules",
+      "carepoint_admin_portal_user_management_directory",
+      "carepoint_admin_portal_ward_directory_dossier",
+      "carepoint_principal_portal_executive_decision_studio",
+      "carepoint_principal_portal_executive_inbox"
+    ],
+    "ward-records": [
+      "carepoint_admin_portal_admissions_review",
+      "carepoint_admin_portal_approvals_queue",
+      "carepoint_admin_portal_command_dashboard",
+      "carepoint_admin_portal_reports_analytics",
+      "carepoint_admin_portal_school_settings_rules",
+      "carepoint_admin_portal_user_management_directory",
+      "carepoint_admin_portal_ward_directory_dossier",
+      "carepoint_principal_portal_executive_decision_studio",
+      "carepoint_principal_portal_executive_inbox"
+    ],
+    "user-management": [
+      "carepoint_admin_portal_admissions_review",
+      "carepoint_admin_portal_approvals_queue",
+      "carepoint_admin_portal_command_dashboard",
+      "carepoint_admin_portal_reports_analytics",
+      "carepoint_admin_portal_school_settings_rules",
+      "carepoint_admin_portal_user_management_directory",
+      "carepoint_admin_portal_ward_directory_dossier",
+      "carepoint_principal_portal_executive_decision_studio",
+      "carepoint_principal_portal_executive_inbox"
+    ],
+    "reports-and-analytics": [
+      "carepoint_admin_portal_admissions_review",
+      "carepoint_admin_portal_approvals_queue",
+      "carepoint_admin_portal_command_dashboard",
+      "carepoint_admin_portal_reports_analytics",
+      "carepoint_admin_portal_school_settings_rules",
+      "carepoint_admin_portal_user_management_directory",
+      "carepoint_admin_portal_ward_directory_dossier",
+      "carepoint_principal_portal_executive_decision_studio",
+      "carepoint_principal_portal_executive_inbox"
+    ],
+    "school-settings": [
+      "carepoint_admin_portal_admissions_review",
+      "carepoint_admin_portal_approvals_queue",
+      "carepoint_admin_portal_command_dashboard",
+      "carepoint_admin_portal_reports_analytics",
+      "carepoint_admin_portal_school_settings_rules",
+      "carepoint_admin_portal_user_management_directory",
+      "carepoint_admin_portal_ward_directory_dossier",
+      "carepoint_principal_portal_executive_decision_studio",
+      "carepoint_principal_portal_executive_inbox"
+    ],
+    "home": [
+      "carepoint_community_school_admission_application_form",
+      "carepoint_community_school_home_1",
+      "carepoint_community_school_home_2"
+    ],
+    "about-us": [
+      "carepoint_community_school_admission_application_form",
+      "carepoint_community_school_home_1",
+      "carepoint_community_school_home_2"
+    ],
+    "academics": [
+      "carepoint_community_school_admission_application_form",
+      "carepoint_community_school_home_1",
+      "carepoint_community_school_home_2",
+      "carepoint_mobile_parent_academics",
+      "carepoint_mobile_parent_pickup_security",
+      "carepoint_mobile_parent_ward_dashboard",
+      "carepoint_mobile_parent_welfare_messages"
+    ],
+    "admissions-overview": [
+      "carepoint_community_school_admission_application_form",
+      "carepoint_community_school_home_1",
+      "carepoint_community_school_home_2",
+      "carepoint_mobile_admin_approvals_queue",
+      "carepoint_mobile_admin_command_dashboard",
+      "carepoint_mobile_admissions_review",
+      "carepoint_mobile_executive_decision_studio",
+      "carepoint_mobile_principal_executive_inbox",
+      "carepoint_mobile_reports_analytics",
+      "carepoint_mobile_school_settings_rules",
+      "carepoint_mobile_user_management_directory",
+      "carepoint_mobile_ward_directory_dossier"
+    ],
+    "news-and-events": [
+      "carepoint_community_school_admission_application_form",
+      "carepoint_community_school_home_1",
+      "carepoint_community_school_home_2"
+    ],
+    "campus-gallery": [
+      "carepoint_community_school_admission_application_form",
+      "carepoint_community_school_home_1",
+      "carepoint_community_school_home_2"
+    ],
+    "contact-school": [
+      "carepoint_community_school_admission_application_form",
+      "carepoint_community_school_home_1",
+      "carepoint_community_school_home_2"
+    ],
+    "application-status-tracker": [
+      "carepoint_community_school_admission_application_form",
+      "carepoint_community_school_home_1",
+      "carepoint_community_school_home_2"
+    ],
+    "admissions-application-form": [
+      "carepoint_community_school_admission_application_form",
+      "carepoint_community_school_home_1",
+      "carepoint_community_school_home_2"
+    ],
+    "tuition-and-fees": [
+      "carepoint_community_school_admission_application_form",
+      "carepoint_community_school_home_1",
+      "carepoint_community_school_home_2"
+    ],
+    "scanner": [
+      "carepoint_gate_kiosk_live_qr_scanner_viewport",
+      "carepoint_gate_kiosk_mismatch_escalation_alert",
+      "carepoint_gate_kiosk_today_s_chronological_pickup_log",
+      "carepoint_gate_kiosk_two_factor_guardian_verification",
+      "carepoint_mobile_gate_qr_scanner_viewport",
+      "carepoint_mobile_safeguarding_mismatch_alert",
+      "carepoint_mobile_today_s_gate_pickup_log",
+      "carepoint_mobile_two_factor_guardian_verification"
+    ],
+    "verification": [
+      "carepoint_gate_kiosk_live_qr_scanner_viewport",
+      "carepoint_gate_kiosk_mismatch_escalation_alert",
+      "carepoint_gate_kiosk_today_s_chronological_pickup_log",
+      "carepoint_gate_kiosk_two_factor_guardian_verification"
+    ],
+    "pickup-log": [
+      "carepoint_gate_kiosk_live_qr_scanner_viewport",
+      "carepoint_gate_kiosk_mismatch_escalation_alert",
+      "carepoint_gate_kiosk_today_s_chronological_pickup_log",
+      "carepoint_gate_kiosk_two_factor_guardian_verification",
+      "carepoint_mobile_gate_qr_scanner_viewport",
+      "carepoint_mobile_safeguarding_mismatch_alert",
+      "carepoint_mobile_today_s_gate_pickup_log",
+      "carepoint_mobile_two_factor_guardian_verification"
+    ],
+    "security-alerts": [
+      "carepoint_gate_kiosk_live_qr_scanner_viewport",
+      "carepoint_gate_kiosk_mismatch_escalation_alert",
+      "carepoint_gate_kiosk_today_s_chronological_pickup_log",
+      "carepoint_gate_kiosk_two_factor_guardian_verification"
+    ],
+    "kiosk-lock": [
+      "carepoint_gate_kiosk_live_qr_scanner_viewport",
+      "carepoint_gate_kiosk_mismatch_escalation_alert",
+      "carepoint_gate_kiosk_today_s_chronological_pickup_log",
+      "carepoint_gate_kiosk_two_factor_guardian_verification"
+    ],
+    "executive-dashboard": [
+      "carepoint_mobile_admin_approvals_queue",
+      "carepoint_mobile_admin_command_dashboard",
+      "carepoint_mobile_admissions_review",
+      "carepoint_mobile_executive_decision_studio",
+      "carepoint_mobile_principal_executive_inbox",
+      "carepoint_mobile_reports_analytics",
+      "carepoint_mobile_school_settings_rules",
+      "carepoint_mobile_user_management_directory",
+      "carepoint_mobile_ward_directory_dossier"
+    ],
+    "pending-approvals": [
+      "carepoint_mobile_admin_approvals_queue",
+      "carepoint_mobile_admin_command_dashboard",
+      "carepoint_mobile_admissions_review",
+      "carepoint_mobile_executive_decision_studio",
+      "carepoint_mobile_principal_executive_inbox",
+      "carepoint_mobile_reports_analytics",
+      "carepoint_mobile_school_settings_rules",
+      "carepoint_mobile_user_management_directory",
+      "carepoint_mobile_ward_directory_dossier"
+    ],
+    "executive-cabinet": [
+      "carepoint_mobile_admin_approvals_queue",
+      "carepoint_mobile_admin_command_dashboard",
+      "carepoint_mobile_admissions_review",
+      "carepoint_mobile_executive_decision_studio",
+      "carepoint_mobile_principal_executive_inbox",
+      "carepoint_mobile_reports_analytics",
+      "carepoint_mobile_school_settings_rules",
+      "carepoint_mobile_user_management_directory",
+      "carepoint_mobile_ward_directory_dossier"
+    ],
+    "more-menu": [
+      "carepoint_mobile_admin_approvals_queue",
+      "carepoint_mobile_admin_command_dashboard",
+      "carepoint_mobile_admissions_review",
+      "carepoint_mobile_executive_decision_studio",
+      "carepoint_mobile_principal_executive_inbox",
+      "carepoint_mobile_reports_analytics",
+      "carepoint_mobile_school_settings_rules",
+      "carepoint_mobile_user_management_directory",
+      "carepoint_mobile_ward_directory_dossier"
+    ],
+    "active-verification": [
+      "carepoint_mobile_gate_qr_scanner_viewport",
+      "carepoint_mobile_safeguarding_mismatch_alert",
+      "carepoint_mobile_today_s_gate_pickup_log",
+      "carepoint_mobile_two_factor_guardian_verification"
+    ],
+    "safeguard-alert": [
+      "carepoint_mobile_gate_qr_scanner_viewport",
+      "carepoint_mobile_safeguarding_mismatch_alert",
+      "carepoint_mobile_today_s_gate_pickup_log",
+      "carepoint_mobile_two_factor_guardian_verification"
+    ],
+    "staff-home": [
+      "carepoint_mobile_health_welfare_escalation",
+      "carepoint_mobile_staff_approvals_engine",
+      "carepoint_mobile_staff_attendance_entry",
+      "carepoint_mobile_staff_gradebook",
+      "carepoint_mobile_staff_timetable_builder",
+      "carepoint_mobile_teacher_dashboard"
+    ],
+    "staff-attendance": [
+      "carepoint_mobile_health_welfare_escalation",
+      "carepoint_mobile_staff_approvals_engine",
+      "carepoint_mobile_staff_attendance_entry",
+      "carepoint_mobile_staff_gradebook",
+      "carepoint_mobile_staff_timetable_builder",
+      "carepoint_mobile_teacher_dashboard",
+      "carepoint_staff_portal_approvals_engine",
+      "carepoint_staff_portal_attendance_entry",
+      "carepoint_staff_portal_gradebook",
+      "carepoint_staff_portal_health_welfare_escalation",
+      "carepoint_staff_portal_teacher_dashboard",
+      "carepoint_staff_portal_timetable_builder"
+    ],
+    "staff-gradebook": [
+      "carepoint_mobile_health_welfare_escalation",
+      "carepoint_mobile_staff_approvals_engine",
+      "carepoint_mobile_staff_attendance_entry",
+      "carepoint_mobile_staff_gradebook",
+      "carepoint_mobile_staff_timetable_builder",
+      "carepoint_mobile_teacher_dashboard",
+      "carepoint_staff_portal_approvals_engine",
+      "carepoint_staff_portal_attendance_entry",
+      "carepoint_staff_portal_gradebook",
+      "carepoint_staff_portal_health_welfare_escalation",
+      "carepoint_staff_portal_teacher_dashboard",
+      "carepoint_staff_portal_timetable_builder"
+    ],
+    "staff-health": [
+      "carepoint_mobile_health_welfare_escalation",
+      "carepoint_mobile_staff_approvals_engine",
+      "carepoint_mobile_staff_attendance_entry",
+      "carepoint_mobile_staff_gradebook",
+      "carepoint_mobile_staff_timetable_builder",
+      "carepoint_mobile_teacher_dashboard"
+    ],
+    "staff-more": [
+      "carepoint_mobile_health_welfare_escalation",
+      "carepoint_mobile_staff_approvals_engine",
+      "carepoint_mobile_staff_attendance_entry",
+      "carepoint_mobile_staff_gradebook",
+      "carepoint_mobile_staff_timetable_builder",
+      "carepoint_mobile_teacher_dashboard"
+    ],
+    "parent-home": [
+      "carepoint_mobile_parent_academics",
+      "carepoint_mobile_parent_pickup_security",
+      "carepoint_mobile_parent_ward_dashboard",
+      "carepoint_mobile_parent_welfare_messages"
+    ],
+    "student-welfare": [
+      "carepoint_mobile_parent_academics",
+      "carepoint_mobile_parent_pickup_security",
+      "carepoint_mobile_parent_ward_dashboard",
+      "carepoint_mobile_parent_welfare_messages"
+    ],
+    "pickup-security": [
+      "carepoint_mobile_parent_academics",
+      "carepoint_mobile_parent_pickup_security",
+      "carepoint_mobile_parent_ward_dashboard",
+      "carepoint_mobile_parent_welfare_messages",
+      "carepoint_parent_portal_academic_performance",
+      "carepoint_parent_portal_messages_welfare",
+      "carepoint_parent_portal_pickup_security",
+      "carepoint_parent_portal_ward_dashboard"
+    ],
+    "parent-profile": [
+      "carepoint_mobile_parent_academics",
+      "carepoint_mobile_parent_pickup_security",
+      "carepoint_mobile_parent_ward_dashboard",
+      "carepoint_mobile_parent_welfare_messages"
+    ],
+    "telemetry": [
+      "carepoint_mobile_super_admin_change_request_tracker",
+      "carepoint_mobile_super_admin_immutable_system_audit_log",
+      "carepoint_mobile_super_admin_integrations_api_hub"
+    ],
+    "users": [
+      "carepoint_mobile_super_admin_change_request_tracker",
+      "carepoint_mobile_super_admin_immutable_system_audit_log",
+      "carepoint_mobile_super_admin_integrations_api_hub"
+    ],
+    "flags": [
+      "carepoint_mobile_super_admin_change_request_tracker",
+      "carepoint_mobile_super_admin_immutable_system_audit_log",
+      "carepoint_mobile_super_admin_integrations_api_hub"
+    ],
+    "changes": [
+      "carepoint_mobile_super_admin_change_request_tracker",
+      "carepoint_mobile_super_admin_immutable_system_audit_log",
+      "carepoint_mobile_super_admin_integrations_api_hub"
+    ],
+    "audit": [
+      "carepoint_mobile_super_admin_change_request_tracker",
+      "carepoint_mobile_super_admin_immutable_system_audit_log",
+      "carepoint_mobile_super_admin_integrations_api_hub"
+    ],
+    "telemetry-health": [
+      "carepoint_mobile_super_admin_feature_configuration",
+      "carepoint_mobile_super_admin_system_telemetry",
+      "carepoint_mobile_super_admin_user_provisioning"
+    ],
+    "users-provisioning": [
+      "carepoint_mobile_super_admin_feature_configuration",
+      "carepoint_mobile_super_admin_system_telemetry",
+      "carepoint_mobile_super_admin_user_provisioning"
+    ],
+    "feature-config-flags": [
+      "carepoint_mobile_super_admin_feature_configuration",
+      "carepoint_mobile_super_admin_system_telemetry",
+      "carepoint_mobile_super_admin_user_provisioning"
+    ],
+    "changes-rfcs": [
+      "carepoint_mobile_super_admin_feature_configuration",
+      "carepoint_mobile_super_admin_system_telemetry",
+      "carepoint_mobile_super_admin_user_provisioning"
+    ],
+    "audit-log": [
+      "carepoint_mobile_super_admin_feature_configuration",
+      "carepoint_mobile_super_admin_system_telemetry",
+      "carepoint_mobile_super_admin_user_provisioning"
+    ],
+    "ward-profile": [
+      "carepoint_parent_portal_academic_performance",
+      "carepoint_parent_portal_messages_welfare",
+      "carepoint_parent_portal_pickup_security",
+      "carepoint_parent_portal_ward_dashboard"
+    ],
+    "performance-and-reports": [
+      "carepoint_parent_portal_academic_performance",
+      "carepoint_parent_portal_messages_welfare",
+      "carepoint_parent_portal_pickup_security",
+      "carepoint_parent_portal_ward_dashboard"
+    ],
+    "attendance-and-welfare": [
+      "carepoint_parent_portal_academic_performance",
+      "carepoint_parent_portal_messages_welfare",
+      "carepoint_parent_portal_pickup_security",
+      "carepoint_parent_portal_ward_dashboard"
+    ],
+    "messages": [
+      "carepoint_parent_portal_academic_performance",
+      "carepoint_parent_portal_messages_welfare",
+      "carepoint_parent_portal_pickup_security",
+      "carepoint_parent_portal_ward_dashboard"
+    ],
+    "principal-decision-studio": [
+      "carepoint_principal_portal_executive_inbox"
+    ],
+    "staff-dashboard": [
+      "carepoint_staff_portal_approvals_engine",
+      "carepoint_staff_portal_attendance_entry",
+      "carepoint_staff_portal_gradebook",
+      "carepoint_staff_portal_health_welfare_escalation",
+      "carepoint_staff_portal_teacher_dashboard",
+      "carepoint_staff_portal_timetable_builder"
+    ],
+    "staff-health-and-welfare": [
+      "carepoint_staff_portal_approvals_engine",
+      "carepoint_staff_portal_attendance_entry",
+      "carepoint_staff_portal_gradebook",
+      "carepoint_staff_portal_health_welfare_escalation",
+      "carepoint_staff_portal_teacher_dashboard",
+      "carepoint_staff_portal_timetable_builder"
+    ],
+    "staff-approvals-engine": [
+      "carepoint_staff_portal_approvals_engine",
+      "carepoint_staff_portal_attendance_entry",
+      "carepoint_staff_portal_gradebook",
+      "carepoint_staff_portal_health_welfare_escalation",
+      "carepoint_staff_portal_teacher_dashboard",
+      "carepoint_staff_portal_timetable_builder"
+    ],
+    "staff-messages": [
+      "carepoint_staff_portal_approvals_engine",
+      "carepoint_staff_portal_attendance_entry",
+      "carepoint_staff_portal_gradebook",
+      "carepoint_staff_portal_health_welfare_escalation",
+      "carepoint_staff_portal_teacher_dashboard",
+      "carepoint_staff_portal_timetable_builder"
+    ],
+    "user-provisioning": [
+      "carepoint_super_admin_change_request_composer",
+      "carepoint_super_admin_change_request_tracker",
+      "carepoint_super_admin_feature_configuration",
+      "carepoint_super_admin_immutable_system_audit_log",
+      "carepoint_super_admin_integrations_api_hub",
+      "carepoint_super_admin_system_telemetry_dashboard",
+      "carepoint_super_admin_user_provisioning_engine"
+    ],
+    "feature-flags": [
+      "carepoint_super_admin_change_request_composer",
+      "carepoint_super_admin_change_request_tracker",
+      "carepoint_super_admin_feature_configuration",
+      "carepoint_super_admin_immutable_system_audit_log",
+      "carepoint_super_admin_integrations_api_hub",
+      "carepoint_super_admin_system_telemetry_dashboard",
+      "carepoint_super_admin_user_provisioning_engine"
+    ],
+    "change-requests": [
+      "carepoint_super_admin_change_request_composer",
+      "carepoint_super_admin_change_request_tracker",
+      "carepoint_super_admin_feature_configuration",
+      "carepoint_super_admin_immutable_system_audit_log",
+      "carepoint_super_admin_integrations_api_hub",
+      "carepoint_super_admin_system_telemetry_dashboard",
+      "carepoint_super_admin_user_provisioning_engine"
+    ],
+    "change-request-composer": [
+      "carepoint_super_admin_change_request_composer",
+      "carepoint_super_admin_change_request_tracker",
+      "carepoint_super_admin_immutable_system_audit_log",
+      "carepoint_super_admin_integrations_api_hub"
+    ],
+    "integrations": [
+      "carepoint_super_admin_change_request_composer",
+      "carepoint_super_admin_change_request_tracker",
+      "carepoint_super_admin_feature_configuration",
+      "carepoint_super_admin_immutable_system_audit_log",
+      "carepoint_super_admin_integrations_api_hub",
+      "carepoint_super_admin_system_telemetry_dashboard",
+      "carepoint_super_admin_user_provisioning_engine"
+    ],
+    "audit-logs": [
+      "carepoint_super_admin_change_request_composer",
+      "carepoint_super_admin_change_request_tracker",
+      "carepoint_super_admin_feature_configuration",
+      "carepoint_super_admin_immutable_system_audit_log",
+      "carepoint_super_admin_integrations_api_hub",
+      "carepoint_super_admin_system_telemetry_dashboard",
+      "carepoint_super_admin_user_provisioning_engine"
+    ]
+  },
+  "portals": {
+    "admin": [
+      "carepoint_admin_portal_admissions_review",
+      "carepoint_admin_portal_approvals_queue",
+      "carepoint_admin_portal_command_dashboard",
+      "carepoint_admin_portal_login_security_authentication",
+      "carepoint_admin_portal_reports_analytics",
+      "carepoint_admin_portal_school_settings_rules",
+      "carepoint_admin_portal_user_management_directory",
+      "carepoint_admin_portal_ward_directory_dossier",
+      "carepoint_mobile_admin_approvals_queue",
+      "carepoint_mobile_admin_command_dashboard",
+      "carepoint_mobile_admin_principal_login"
+    ],
+    "public": [
+      "carepoint_community_school_admission_application_form",
+      "carepoint_community_school_home_1",
+      "carepoint_community_school_home_2",
+      "carepoint_mobile_admissions_form",
+      "carepoint_mobile_public_home"
+    ],
+    "gate": [
+      "carepoint_gate_kiosk_device_login_security_sign_in",
+      "carepoint_gate_kiosk_live_qr_scanner_viewport",
+      "carepoint_gate_kiosk_mismatch_escalation_alert",
+      "carepoint_gate_kiosk_today_s_chronological_pickup_log",
+      "carepoint_gate_kiosk_two_factor_guardian_verification",
+      "carepoint_mobile_gate_qr_scanner_viewport",
+      "carepoint_mobile_gate_security_sign_in",
+      "carepoint_mobile_today_s_gate_pickup_log"
+    ],
+    "other": [
+      "carepoint_mobile_admissions_review",
+      "carepoint_mobile_health_welfare_escalation",
+      "carepoint_mobile_reports_analytics",
+      "carepoint_mobile_safeguarding_mismatch_alert",
+      "carepoint_mobile_school_settings_rules",
+      "carepoint_mobile_two_factor_guardian_verification",
+      "carepoint_mobile_user_management_directory",
+      "carepoint_mobile_ward_directory_dossier"
+    ],
+    "principal": [
+      "carepoint_mobile_executive_decision_studio",
+      "carepoint_mobile_principal_executive_inbox",
+      "carepoint_principal_portal_executive_decision_studio",
+      "carepoint_principal_portal_executive_inbox"
+    ],
+    "parent": [
+      "carepoint_mobile_parent_academics",
+      "carepoint_mobile_parent_login",
+      "carepoint_mobile_parent_pickup_security",
+      "carepoint_mobile_parent_ward_dashboard",
+      "carepoint_mobile_parent_welfare_messages",
+      "carepoint_parent_portal_academic_performance",
+      "carepoint_parent_portal_login_security",
+      "carepoint_parent_portal_messages_welfare",
+      "carepoint_parent_portal_pickup_security",
+      "carepoint_parent_portal_ward_dashboard"
+    ],
+    "staff": [
+      "carepoint_mobile_staff_approvals_engine",
+      "carepoint_mobile_staff_attendance_entry",
+      "carepoint_mobile_staff_gradebook",
+      "carepoint_mobile_staff_login_clock_in",
+      "carepoint_mobile_staff_timetable_builder",
+      "carepoint_mobile_teacher_dashboard",
+      "carepoint_staff_portal_approvals_engine",
+      "carepoint_staff_portal_attendance_entry",
+      "carepoint_staff_portal_gradebook",
+      "carepoint_staff_portal_health_welfare_escalation",
+      "carepoint_staff_portal_login_clock_in",
+      "carepoint_staff_portal_teacher_dashboard",
+      "carepoint_staff_portal_timetable_builder"
+    ],
+    "super_admin": [
+      "carepoint_mobile_super_admin_change_request_composer",
+      "carepoint_mobile_super_admin_change_request_tracker",
+      "carepoint_mobile_super_admin_feature_configuration",
+      "carepoint_mobile_super_admin_immutable_system_audit_log",
+      "carepoint_mobile_super_admin_integrations_api_hub",
+      "carepoint_mobile_super_admin_root_login",
+      "carepoint_mobile_super_admin_system_telemetry",
+      "carepoint_mobile_super_admin_user_provisioning",
+      "carepoint_super_admin_change_request_composer",
+      "carepoint_super_admin_change_request_tracker",
+      "carepoint_super_admin_feature_configuration",
+      "carepoint_super_admin_immutable_system_audit_log",
+      "carepoint_super_admin_integrations_api_hub",
+      "carepoint_super_admin_root_technical_login",
+      "carepoint_super_admin_system_telemetry_dashboard",
+      "carepoint_super_admin_user_provisioning_engine"
+    ]
+  }
+}

@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style> html { scroll-behavior: smooth; } html, body { margin: 0; padding: 0; width: 100%; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } </style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#161c23", "on-primary": "#ffffff", "secondary": "#ba0a0c", "on-primary-fixed-variant": "#344478", "tertiary-fixed-dim": "#78dc86", "primary": "#011549", "on-tertiary": "#ffffff", "inverse-surface": "#2b3138", "surface-bright": "#f7f9ff", "on-primary-container": "#8494cd", "secondary-fixed-dim": "#ffb4a9", "surface-container": "#e9eef8", "on-primary-fixed": "#03174b", "surface-container-low": "#eef4fe", "primary-fixed-dim": "#b5c4ff", "surface-tint": "#4c5c92", "surface-dim": "#d5dae4", "surface": "#f7f9ff", "surface-container-highest": "#dde3ec", "on-secondary": "#ffffff", "outline-variant": "#c5c6d1", "on-error": "#ffffff", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "on-secondary-container": "#fffbff", "error-container": "#ffdad6", "primary-container": "#1a2b5e", "primary-fixed": "#dce1ff", "on-tertiary-fixed": "#002108", "secondary-container": "#df2d23", "outline": "#757680", "on-tertiary-container": "#46a95a", "background": "#f7f9ff", "tertiary-fixed": "#94f9a0", "on-surface-variant": "#45464f", "tertiary": "#001f07", "inverse-primary": "#b5c4ff", "on-background": "#161c23", "surface-variant": "#dde3ec", "inverse-on-surface": "#ecf1fb", "on-secondary-fixed": "#410001", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#00531f", "tertiary-container": "#003712", "secondary-fixed": "#ffdad5", "surface-container-high": "#e3e8f2", "on-secondary-fixed-variant": "#930004" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-sm": "1rem", "space-xl": "2.5rem", "margin": "2rem", "space-xs": "0.25rem", "gutter-sm": "1rem", "space-md": "1rem", "gutter": "1.5rem", "space-sm": "0.5rem", "space-lg": "1.5rem" }, "fontFamily": { "body-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, "fontSize": { "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } };</script><title>Carepoint - Admission Application Form</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "public",
+            label: "Admission Application Form",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-apply.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 bg-surface/90 backdrop-blur-xl"><div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between gap-4"><a class="flex items-center gap-3 group" data-path="home" href="home.html"><div class="w-11 h-11 rounded-xl bg-white flex items-center justify-center shadow-sm border border-outline-variant/30 p-0.5 transition-transform group-hover:scale-105 shrink-0 overflow-hidden">
+<img src="../assets/carepoint-crest.png" alt="Carepoint Community School Crest" class="w-full h-full object-contain rounded-lg"/>
+</div><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">Carepoint</span><span class="font-label-sm text-label-sm bg-tertiary text-tertiary-fixed px-2 py-0.5 rounded-full uppercase tracking-wider font-bold text-[10px]">Community School</span></div><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest text-[10px] font-bold">MIND • HEART • HANDS</span></div></a><nav id="desktop-nav" class="hidden lg:flex items-center gap-6 h-full relative" data-active-classes="text-primary font-bold">
+<a class="nav-link h-full flex items-center transition-colors text-on-surface-variant hover:text-primary font-label-lg text-label-lg" data-section="home" href="home.html#home">Home</a>
+<a class="nav-link h-full flex items-center transition-colors text-on-surface-variant hover:text-primary font-label-lg text-label-lg" data-section="academics" href="home.html#academics">Academics</a>
+<a class="nav-link h-full flex items-center transition-colors text-primary font-bold font-label-lg text-label-lg" data-section="admissions" href="apply.html" aria-current="page">Admissions</a>
+<div class="relative h-full flex items-center group" id="about-dropdown-container">
+<a class="nav-link h-full flex items-center gap-1 transition-colors text-on-surface-variant hover:text-primary font-label-lg text-label-lg cursor-pointer" data-section="about" href="home.html#about">
+<span>About Us</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180 text-on-surface-variant group-hover:text-primary">expand_more</span>
+</a>
+<div class="dropdown-menu absolute top-[72px] right-0 sm:left-1/2 sm:-translate-x-1/2 w-80 bg-surface-container-lowest/98 backdrop-blur-xl border border-outline-variant/30 rounded-2xl shadow-2xl p-2.5 flex flex-col gap-1 transition-all duration-200 z-50 opacity-0 invisible -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
+<div class="px-3 py-1.5 text-[10px] font-bold text-on-surface-variant uppercase tracking-wider border-b border-surface-container-high mb-1">Carepoint Community &amp; Life</div>
+<a href="home.html#about" class="dropdown-item flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group/item" data-section="about">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-primary group-hover/item:bg-primary group-hover/item:text-on-primary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[20px]">info</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-primary group-hover/item:text-secondary transition-colors">About Us</span>
+<span class="text-[11px] text-on-surface-variant font-normal leading-tight">Vision, Mission &amp; Leadership</span>
+</div>
+</a>
+<a href="home.html#news" class="dropdown-item flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group/item" data-section="news">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-primary group-hover/item:bg-primary group-hover/item:text-on-primary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-primary group-hover/item:text-secondary transition-colors">News &amp; Events</span>
+<span class="text-[11px] text-on-surface-variant font-normal leading-tight">Announcements &amp; Term Calendar</span>
+</div>
+</a>
+<a href="home.html#gallery" class="dropdown-item flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group/item" data-section="gallery">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-primary group-hover/item:bg-primary group-hover/item:text-on-primary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[20px]">photo_library</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-primary group-hover/item:text-secondary transition-colors">Campus Gallery</span>
+<span class="text-[11px] text-on-surface-variant font-normal leading-tight">Photos &amp; Student Life</span>
+</div>
+</a>
+<a href="home.html#contact" class="dropdown-item flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group/item" data-section="contact">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary group-hover/item:bg-secondary group-hover/item:text-on-secondary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[20px]">contact_phone</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-primary group-hover/item:text-secondary transition-colors">Contact Us</span>
+<span class="text-[11px] text-on-surface-variant font-normal leading-tight">Location, Phone &amp; Inquiries</span>
+</div>
+</a>
+</div>
+</div>
+<div id="nav-active-bar" class="absolute bottom-0 h-[3px] bg-primary rounded-t-sm transition-all duration-300 ease-out pointer-events-none"></div>
+</nav><div class="flex items-center gap-3"><a class="hidden sm:inline-flex items-center px-4 py-2 rounded-lg font-label-lg text-label-lg text-primary bg-surface-container-low hover:bg-surface-container hover:text-primary transition-colors cursor-pointer" data-path="application-status-tracker" href="#status" onclick="openStatusModal(event)"><span class="material-symbols-outlined text-[18px] mr-1.5 text-secondary">fact_check</span>Check Status</a><a class="inline-flex items-center px-5 py-2.5 rounded-lg font-label-lg text-label-lg bg-secondary text-on-secondary hover:bg-secondary-container transition-colors shadow-sm font-bold" data-path="admissions-application-form" href="apply.html">Apply Now</a><button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-low text-primary hover:bg-surface-container transition-colors" onclick="closeMobileMenu()" aria-label="Toggle navigation menu"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="relative" id="portal-menu-container"><button id="portal-menu-button" onclick="togglePortalMenu(event)" aria-expanded="false" class="relative flex items-center focus:outline-none ring-2 ring-transparent hover:ring-secondary focus:ring-secondary rounded-full transition-all ml-1" title="Carepoint Portals &amp; Profile"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-container-highest cursor-pointer hover:scale-105 transition-transform" src="../assets/carepoint-crest.png"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 border-2 border-surface rounded-full"></span></button><div id="portal-dropdown" class="hidden absolute right-0 mt-2 w-72 bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container-high py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150"><div class="px-4 py-2 border-b border-surface-container-high flex items-center gap-3"><img alt="User" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk7nHm7egIuiTau40KQEFHBKNDX3EptaSdTu9TBK2iwADoApEdjY9Kkt9Tjm_DoF2KYNTvFIWgNO5GlABZPWPHY658qTxcggA0vvpzxYpMpol0tKKMsBvv14t1fD96WIU0vH77Tjlup7Pbm-TJ2cyzQEIlGRhdG85eoLM-GTjxqblK4wxMDpCIWDtDAyb_zVdq8MuHW3anaXkB6adGWp9xlHqAM3FbRNIoqmH3e2xOnAIl_mjOPskfLg"/><div class="flex flex-col min-w-0"><span class="text-body-sm font-bold text-primary truncate">Mrs. Mercy Mensah</span><span class="text-[11px] text-on-surface-variant">Parent / Guardian • ID: CP-4402</span></div></div><div class="px-4 pt-2.5 pb-1 text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Access Carepoint Portals</div><a href="../parent/dashboard.html" class="flex items-center gap-3 px-4 py-2 text-body-sm text-on-surface hover:bg-surface-container-low hover:text-primary transition-colors"><span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">family_restroom</span></span><div class="flex flex-col"><span class="font-semibold text-xs text-primary">Parent Portal</span><span class="text-[10px] text-on-surface-variant">Attendance, Fees, Terminal Reports</span></div></a><a href="../staff/dashboard.html" class="flex items-center gap-3 px-4 py-2 text-body-sm text-on-surface hover:bg-surface-container-low hover:text-primary transition-colors"><span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">school</span></span><div class="flex flex-col"><span class="font-semibold text-xs text-primary">Staff &amp; Teacher Portal</span><span class="text-[10px] text-on-surface-variant">Class registers &amp; Lesson plans</span></div></a><a href="../admin/dashboard.html" class="flex items-center gap-3 px-4 py-2 text-body-sm text-on-surface hover:bg-surface-container-low hover:text-primary transition-colors"><span class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary"><span class="material-symbols-outlined text-[18px]">admin_panel_settings</span></span><div class="flex flex-col"><span class="font-semibold text-xs text-primary">Admin &amp; Principal Console</span><span class="text-[10px] text-on-surface-variant">School operations &amp; Approvals</span></div></a><a href="../gate/scan.html" class="flex items-center gap-3 px-4 py-2 text-body-sm text-on-surface hover:bg-surface-container-low hover:text-primary transition-colors"><span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">qr_code_scanner</span></span><div class="flex flex-col"><span class="font-semibold text-xs text-primary">Gate &amp; Security Kiosk</span><span class="text-[10px] text-on-surface-variant">Pick-up verification &amp; Scan</span></div></a><div class="border-t border-surface-container-high my-1.5"></div><a href="../index.html" class="flex items-center gap-2 px-4 py-2 text-body-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[18px]">hub</span><span class="font-medium text-xs">All System Screens &amp; Mockups</span></a></div></div></div></div></div><div id="mobile-nav-drawer" class="hidden lg:hidden bg-surface/98 backdrop-blur-2xl border-b border-surface-container-high px-6 py-4 shadow-xl max-h-[calc(100vh-120px)] overflow-y-auto">
+<div class="flex flex-col gap-2">
+<a class="py-2.5 px-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low font-semibold flex items-center justify-between" data-section="home" href="home.html#home" onclick="closeMobileMenu()">
+<span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[20px] text-primary">home</span>Home</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+<a class="py-2.5 px-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low font-semibold transition-colors flex items-center justify-between" data-section="academics" href="home.html#academics" onclick="closeMobileMenu()">
+<span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[20px] text-secondary">school</span>Academics</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+<a class="py-2.5 px-3 rounded-lg text-primary font-bold bg-surface-container-low transition-colors flex items-center justify-between" data-section="admissions" href="apply.html" onclick="closeMobileMenu()">
+<span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[20px] text-primary">assignment_turned_in</span>Admissions (Apply)</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+
+<div class="border border-surface-container-high rounded-xl p-2 bg-surface-container-lowest/50">
+<button type="button" onclick="document.getElementById('mobile-about-submenu')?.classList.toggle('hidden'); document.getElementById('mobile-about-chevron')?.classList.toggle('rotate-180');" class="w-full py-1.5 px-2 rounded-lg text-primary font-bold flex items-center justify-between">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px] text-primary">info</span>About &amp; Community</span>
+<span id="mobile-about-chevron" class="material-symbols-outlined text-[18px] transition-transform duration-200">expand_more</span>
+</button>
+<div id="mobile-about-submenu" class="flex flex-col gap-1 mt-2 pt-2 border-t border-surface-container-high pl-2">
+<a class="py-2 px-2.5 rounded-lg text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low flex items-center gap-2.5 transition-colors" data-section="about" href="home.html#about" onclick="closeMobileMenu()">
+<span class="material-symbols-outlined text-[18px] text-secondary">info</span><span>About Us</span>
+</a>
+<a class="py-2 px-2.5 rounded-lg text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low flex items-center gap-2.5 transition-colors" data-section="news" href="home.html#news" onclick="closeMobileMenu()">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_month</span><span>News &amp; Events</span>
+</a>
+<a class="py-2 px-2.5 rounded-lg text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low flex items-center gap-2.5 transition-colors" data-section="gallery" href="home.html#gallery" onclick="closeMobileMenu()">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-variant">photo_library</span><span>Campus Gallery</span>
+</a>
+<a class="py-2 px-2.5 rounded-lg text-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low flex items-center gap-2.5 transition-colors" data-section="contact" href="home.html#contact" onclick="closeMobileMenu()">
+<span class="material-symbols-outlined text-[18px] text-secondary">contact_phone</span><span>Contact Us</span>
+</a>
+</div>
+</div>
+
+<div class="border-t border-surface-container-high my-1 pt-2 flex flex-col gap-2">
+<button onclick="openStatusModal(event); toggleMobileMenu();" class="w-full py-2.5 px-3 rounded-lg bg-surface-container-low text-primary font-bold text-left flex items-center justify-between">
+<span class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[20px] text-secondary">fact_check</span>Check Application Status</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<a href="apply.html" class="w-full py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-bold text-center flex items-center justify-center gap-2 shadow-sm">
+<span>Apply for 2026/2027</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a href="../parent/dashboard.html" class="py-2 px-3 rounded-lg text-xs text-on-surface-variant hover:text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">login</span><span>Enter Carepoint Portal Hub</span>
+</a>
+</div>
+</div>
+</div><script>
+function openMobileMenu() {
+  const d = document.getElementById('mobile-nav-drawer');
+  const btn = document.getElementById('mobile-menu-btn');
+  if (d) d.classList.remove('hidden');
+  if (btn) {
+    btn.setAttribute('aria-expanded', 'true');
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (icon) icon.textContent = 'close';
+  }
+}
+function closeMobileMenu() {
+  const d = document.getElementById('mobile-nav-drawer');
+  const btn = document.getElementById('mobile-menu-btn');
+  if (d) d.classList.add('hidden');
+  if (btn) {
+    btn.setAttribute('aria-expanded', 'false');
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (icon) icon.textContent = 'menu';
+  }
+}
+function toggleMobileMenu() {
+  const d = document.getElementById('mobile-nav-drawer');
+  if (d && !d.classList.contains('hidden')) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+}
+window.openMobileMenu = openMobileMenu;
+window.closeMobileMenu = closeMobileMenu;
+window.toggleMobileMenu = toggleMobileMenu;
+</script></header><main class="w-full pt-[80px] bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Tricolor Accent Ribbon (Cyan - Red - Leaf Green) -->
+<div class="w-full flex h-1.5 shadow-sm">
+<div class="flex-1 bg-surface-tint"></div>
+<div class="flex-1 bg-secondary"></div>
+<div class="flex-1 bg-tertiary-fixed-dim"></div>
+</div>
+<!-- Header Context Banner -->
+<section class="w-full bg-surface-container-low py-space-lg px-6 lg:px-12">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full uppercase tracking-wider">Official Portal</span>
+<span class="bg-surface-container-high text-primary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-bold">2026/2027 Academic Session</span>
+<span class="bg-tertiary text-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full">Fee-Free Application</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Student Admission Intake Form</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl">
+          Carepoint Community School welcomes applications across all tiers. Complete this online registration to receive your permanent Reference Code and scheduled diagnostic interview.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-3 bg-surface-container-lowest p-3 rounded-xl shadow-sm self-start lg:self-auto">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</div>
+<div class="flex flex-col text-left pr-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Admissions Helpline</span>
+<a class="font-label-lg text-label-lg text-primary hover:text-secondary transition-colors" href="tel:+233301234567">+233 (0) 30 123 4567</a>
+</div>
+<div class="hidden sm:block w-px h-8 bg-surface-container-highest"></div>
+<div class="flex items-center gap-2 pl-1">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Desk Online</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Form & Sidebar Layout -->
+<main class="w-full px-6 lg:px-12 py-space-xl">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left 8 Columns: Main Multi-Step Form -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Stepper Navigation Header -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 relative">
+<!-- Step 1: Current Active -->
+<button class="step-tab flex flex-col gap-1.5 p-3 rounded-lg bg-primary text-on-primary text-left transition-all shadow-sm cursor-pointer border border-transparent" id="step-tab-1" onclick="showStep(1)" type="button">
+<div class="flex items-center justify-between">
+<span class="step-badge-icon w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm font-bold">1</span>
+<span class="step-status font-label-sm text-label-sm text-secondary-fixed uppercase font-bold">Active</span>
+</div>
+<span class="step-title font-label-md text-label-md text-on-primary font-bold">1. Child Details</span>
+<span class="step-subtitle font-body-sm text-body-sm text-on-primary/80 line-clamp-1" id="tab1-subtitle">Applicant Name</span>
+</button>
+<!-- Step 2: Pending -->
+<button class="step-tab flex flex-col gap-1.5 p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low text-left transition-all opacity-80 border border-surface-container-high/60 cursor-pointer" id="step-tab-2" onclick="showStep(2)" type="button">
+<div class="flex items-center justify-between">
+<span class="step-badge-icon w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-bold">2</span>
+<span class="step-status font-label-sm text-label-sm text-on-surface-variant uppercase">Pending</span>
+</div>
+<span class="step-title font-label-md text-label-md text-on-surface-variant">2. Guardian Info</span>
+<span class="step-subtitle font-body-sm text-body-sm text-on-surface-variant line-clamp-1" id="tab2-subtitle">Primary Guardian</span>
+</button>
+<!-- Step 3: Pending -->
+<button class="step-tab flex flex-col gap-1.5 p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low text-left transition-all opacity-80 border border-surface-container-high/60 cursor-pointer" id="step-tab-3" onclick="showStep(3)" type="button">
+<div class="flex items-center justify-between">
+<span class="step-badge-icon w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-bold">3</span>
+<span class="step-status font-label-sm text-label-sm text-on-surface-variant uppercase">Pending</span>
+</div>
+<span class="step-title font-label-md text-label-md text-on-surface-variant">3. Documents</span>
+<span class="step-subtitle font-body-sm text-body-sm text-on-surface-variant line-clamp-1" id="tab3-subtitle">0 of 4 Attached</span>
+</button>
+<!-- Step 4: Pending -->
+<button class="step-tab flex flex-col gap-1.5 p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low text-left transition-all opacity-80 border border-surface-container-high/60 cursor-pointer" id="step-tab-4" onclick="showStep(4)" type="button">
+<div class="flex items-center justify-between">
+<span class="step-badge-icon w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-bold">4</span>
+<span class="step-status font-label-sm text-label-sm text-on-surface-variant uppercase">Pending</span>
+</div>
+<span class="step-title font-label-md text-label-md text-on-surface-variant">4. Declaration</span>
+<span class="step-subtitle font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Sign &amp; Submit</span>
+</button>
+</div>
+</div>
+<!-- Form Panels Container -->
+<form class="flex flex-col gap-space-lg" id="admissions-form" onsubmit="event.preventDefault(); handleFinalSubmit();">
+<!-- STEP 1 PANEL: Child Information (Pre-filled state) -->
+<div class="step-panel flex flex-col gap-space-md bg-surface-container-lowest p-6 lg:p-8 rounded-xl shadow-sm" id="step-panel-1">
+<div class="flex items-center justify-between pb-3 border-b-0">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">Step 01 / 04</span>
+<h2 class="font-headline-md text-headline-md text-primary">Child &amp; Academic Background</h2>
+</div>
+<span class="bg-surface-container-low text-primary font-label-sm text-label-sm px-3 py-1 rounded-full">Draft Ref: #CP-2026-9921</span>
+</div>
+<!-- Grade Tier Visual Card Preview -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 py-2">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="academic_tier" type="radio" value="nursery"/>
+<div class="p-3 rounded-lg bg-surface-container-low peer-checked:bg-primary peer-checked:text-on-primary text-center transition-all border-2 border-transparent peer-checked:border-primary">
+<span class="material-symbols-outlined text-[24px]">child_care</span>
+<div class="font-label-sm text-label-sm mt-1 uppercase font-bold">Nursery</div>
+<div class="text-[11px] opacity-75">Ages 2 - 3</div>
+</div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="academic_tier" type="radio" value="kindergarten"/>
+<div class="p-3 rounded-lg bg-surface-container-low peer-checked:bg-primary peer-checked:text-on-primary text-center transition-all border-2 border-transparent peer-checked:border-primary">
+<span class="material-symbols-outlined text-[24px]">school</span>
+<div class="font-label-sm text-label-sm mt-1 uppercase font-bold">Kindergarten</div>
+<div class="text-[11px] opacity-75">KG 1 &amp; KG 2</div>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="academic_tier" type="radio" value="basic"/>
+<div class="p-3 rounded-lg bg-surface-container-low peer-checked:bg-primary peer-checked:text-on-primary text-center transition-all border-2 border-transparent peer-checked:border-primary">
+<span class="material-symbols-outlined text-[24px]">auto_stories</span>
+<div class="font-label-sm text-label-sm mt-1 uppercase font-bold">Basic / Primary</div>
+<div class="text-[11px] opacity-75">Grade 1 - 6</div>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="academic_tier" type="radio" value="jhs"/>
+<div class="p-3 rounded-lg bg-surface-container-low peer-checked:bg-primary peer-checked:text-on-primary text-center transition-all border-2 border-transparent peer-checked:border-primary">
+<span class="material-symbols-outlined text-[24px]">history_edu</span>
+<div class="font-label-sm text-label-sm mt-1 uppercase font-bold">Junior High</div>
+<div class="text-[11px] opacity-75">JHS 1 - 3</div>
+</div>
+</label>
+</div>
+<!-- Fields: Name -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">First Name <span class="text-secondary">*</span></label>
+<input class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="child-first-name" required="" type="text" placeholder="e.g. Kofi" value="" oninput="syncCandidatePreview()"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Middle Name(s)</label>
+<input class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="child-middle-name" type="text" placeholder="e.g. Kwame" value=""/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Surname / Family Name <span class="text-secondary">*</span></label>
+<input class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="child-surname" required="" type="text" placeholder="e.g. Mensah" value="" oninput="syncCandidatePreview()"/>
+</div>
+</div>
+<!-- Fields: DOB, Gender, Specific Class -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Date of Birth <span class="text-secondary">*</span></label>
+<input class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="child-dob" required="" type="date" value=""/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Gender <span class="text-secondary">*</span></label>
+<select class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md">
+<option selected="">Male</option>
+<option>Female</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Applying For Class <span class="text-secondary">*</span></label>
+<select id="child-class-select" class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md font-semibold" onchange="syncCandidatePreview()">
+<option>Creche (6m - 1.5y)</option>
+<option>Nursery 1 (Age 2)</option>
+<option>Nursery 2 (Age 3)</option>
+<option>Kindergarten 1 (KG1)</option>
+<option selected="">Kindergarten 2 (KG2)</option>
+<option>Basic 1</option>
+<option>Basic 2</option>
+<option>Basic 3</option>
+<option>Basic 4</option>
+<option>Basic 5</option>
+<option>Basic 6</option>
+<option>Junior High School 1 (JHS 1)</option>
+<option>Junior High School 2 (JHS 2)</option>
+</select>
+</div>
+</div>
+<!-- Fields: Previous School & Notes -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Previous School Attended (If any)</label>
+<input class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" type="text" placeholder="e.g. Grace Valley Early Learning Centre" value=""/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Last Grade Completed</label>
+<input class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" type="text" placeholder="e.g. KG 1 Term 3" value=""/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Special Health, Dietary, or Learning Considerations</label>
+<textarea class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" rows="2" placeholder="Mention any allergies (e.g. peanut, lactose), physical assistance needs, or dietary preferences..."></textarea>
+</div>
+<div class="flex justify-end pt-2">
+<button class="px-6 py-2.5 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors flex items-center gap-2" onclick="showStep(2)" type="button">
+                Continue to Guardian Details <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- STEP 2 PANEL: Guardian & Emergency Contacts -->
+<div class="step-panel hidden flex-col gap-space-md bg-surface-container-lowest p-6 lg:p-8 rounded-xl shadow-sm" id="step-panel-2">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">Step 02 / 04</span>
+<h2 class="font-headline-md text-headline-md text-primary">Guardian &amp; Emergency Contacts</h2>
+</div>
+<span class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm px-3 py-1 rounded-full">Primary Caregiver</span>
+</div>
+<!-- Primary Guardian Info -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">person</span>
+<span class="font-label-lg text-label-lg text-primary">Primary Guardian (Accountable for Billing &amp; Notices)</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Full Name <span class="text-secondary">*</span></label>
+<input class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="guardian-name-input" required="" type="text" placeholder="e.g. Dr. Nana Mensah" value="" oninput="syncGuardianPreview()"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Relationship <span class="text-secondary">*</span></label>
+<select class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md">
+<option selected="">Father</option>
+<option>Mother</option>
+<option>Legal Guardian</option>
+<option>Grandparent</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Occupation / Employer</label>
+<input class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" type="text" placeholder="e.g. Civil Servant, Engineer, Banker..." value=""/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Primary Phone (WhatsApp enabled) <span class="text-secondary">*</span></label>
+<input class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" id="guardian-phone-input" required="" type="tel" placeholder="e.g. +233 24 123 4567" value="" oninput="syncGuardianPreview()"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Email Address <span class="text-secondary">*</span></label>
+<input class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" type="email" placeholder="e.g. parent@example.com" value=""/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Residential Street Address</label>
+<input class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" type="text" placeholder="e.g. Plot 14 Mango Tree Avenue" value=""/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">GhanaPost GPS Digital Address <span class="text-secondary">*</span></label>
+<input class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" required="" type="text" value="GE-234-9021"/>
+</div>
+</div>
+</div>
+<!-- Secondary Emergency Contact -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">emergency</span>
+<span class="font-label-lg text-label-lg text-primary">Secondary Emergency Contact</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Full Name</label>
+<input class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" type="text" value="Mrs. Abena Serwaa Mensah"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Relationship</label>
+<input class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" type="text" value="Mother"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Emergency Phone</label>
+<input class="px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-md text-body-md" type="tel" value="+233 20 890 1234"/>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-2">
+<button class="px-5 py-2.5 rounded-lg bg-surface-container text-primary font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" onclick="showStep(1)" type="button">
+                ← Back to Child Details
+              </button>
+<button class="px-6 py-2.5 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors flex items-center gap-2" onclick="showStep(3)" type="button">
+                Proceed to Documents <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- STEP 3 PANEL: Document Uploads & Health History -->
+<div class="step-panel hidden flex-col gap-space-md bg-surface-container-lowest p-6 lg:p-8 rounded-xl shadow-sm" id="step-panel-3">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-2">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">Step 03 / 04</span>
+<h2 class="font-headline-md text-headline-md text-primary">Required Verification Documents</h2>
+</div>
+<div class="flex items-center gap-2 bg-surface-container text-on-surface-variant px-3 py-1.5 rounded-full font-label-sm text-label-sm font-bold" id="step3-attached-badge">
+<span class="material-symbols-outlined text-[16px]" id="step3-attached-badge-icon">upload_file</span>
+<span id="step3-attached-count-text">0 of 4 Documents Attached</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Please upload legible images (JPG, PNG) or PDF scans. Maximum size per file is 5MB. If you don't have all documents now, you can complete the online form and present originals on screening day.
+            </p>
+<!-- Document Grid (4 cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Item 1: Passport Photo of Child (Unattached interactive dropzone) -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-3 relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">account_box</span>
+</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Passport Photo of Child</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Mandatory</span>
+</div>
+</div>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium" id="file-badge-1">
+Awaiting Upload
+</span>
+</div>
+<div class="flex flex-col items-center justify-center p-5 bg-surface-container-lowest rounded-lg border-2 border-dashed border-outline-variant hover:border-primary hover:bg-surface-container-high/40 transition-all cursor-pointer group text-center" onclick="this.querySelector('input').click()">
+<span class="material-symbols-outlined text-[28px] text-primary group-hover:scale-110 transition-transform">add_a_photo</span>
+<span class="font-label-sm text-label-sm text-primary font-bold mt-1" id="file-label-1">Click to browse or drop passport photograph</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">JPG or PNG up to 5MB (Clear front-facing photo)</span>
+<input class="hidden" type="file" accept="image/*" onchange="handleFileSelected(this, 'file-label-1', 'file-badge-1')"/>
+</div>
+</div>
+<!-- Item 2: Birth Certificate (Unattached interactive dropzone) -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-3 relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Birth Certificate</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Mandatory</span>
+</div>
+</div>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium" id="file-badge-2">
+Awaiting Upload
+</span>
+</div>
+<div class="flex flex-col items-center justify-center p-5 bg-surface-container-lowest rounded-lg border-2 border-dashed border-outline-variant hover:border-primary hover:bg-surface-container-high/40 transition-all cursor-pointer group text-center" onclick="this.querySelector('input').click()">
+<span class="material-symbols-outlined text-[28px] text-primary group-hover:scale-110 transition-transform">upload_file</span>
+<span class="font-label-sm text-label-sm text-primary font-bold mt-1" id="file-label-2">Click to browse or drop certified birth certificate</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">PDF, JPG or PNG up to 5MB</span>
+<input class="hidden" type="file" accept=".pdf,image/*" onchange="handleFileSelected(this, 'file-label-2', 'file-badge-2')"/>
+</div>
+</div>
+<!-- Item 3: Previous School Report Card (Dropzone state) -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">grade</span>
+</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Latest Report Card / Testimonial</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Required for KG2 &amp; above</span>
+</div>
+</div>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full" id="file-badge-3">
+                    Awaiting
+                  </span>
+</div>
+<!-- Interactive drop zone -->
+<div class="flex flex-col items-center justify-center p-5 bg-surface-container-lowest rounded-lg border-2 border-dashed border-outline-variant hover:bg-surface-container-high transition-colors cursor-pointer group text-center" onclick="this.querySelector('input').click()">
+<span class="material-symbols-outlined text-[28px] text-primary group-hover:scale-110 transition-transform">cloud_upload</span>
+<span class="font-label-sm text-label-sm text-primary font-bold mt-1" id="file-label-3">Click to browse or drop terminal report</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">PDF or Scanned images up to 5MB</span>
+<input class="hidden" type="file" onchange="handleFileSelected(this, 'file-label-3', 'file-badge-3')"/>
+</div>
+</div>
+<!-- Item 4: Immunization / Health Card (Dropzone state) -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">medical_services</span>
+</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Child Health / Vaccination Record</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Recommended</span>
+</div>
+</div>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full" id="file-badge-4">
+                    Awaiting
+                  </span>
+</div>
+<!-- Interactive drop zone -->
+<div class="flex flex-col items-center justify-center p-5 bg-surface-container-lowest rounded-lg border-2 border-dashed border-outline-variant hover:bg-surface-container-high transition-colors cursor-pointer group text-center" onclick="this.querySelector('input').click()">
+<span class="material-symbols-outlined text-[28px] text-primary group-hover:scale-110 transition-transform">cloud_upload</span>
+<span class="font-label-sm text-label-sm text-primary font-bold mt-1" id="file-label-4">Upload Child Health Record (Yellow Card)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Page showing measles, polio &amp; BCG shots</span>
+<input class="hidden" type="file" onchange="handleFileSelected(this, 'file-label-4', 'file-badge-4')"/>
+</div>
+</div>
+</div>
+<!-- Health History Notice -->
+<div class="flex items-center gap-3 p-3.5 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">
+                Carepoint Health Bay keeps dedicated medical files on each enrolled student with a registered nurse on site during school hours.
+              </p>
+</div>
+<div class="flex justify-between items-center pt-2">
+<button class="px-5 py-2.5 rounded-lg bg-surface-container text-primary font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" onclick="showStep(2)" type="button">
+                ← Back to Guardian Details
+              </button>
+<button class="px-6 py-2.5 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors flex items-center gap-2" onclick="showStep(4)" type="button">
+                Review &amp; Declaration <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- STEP 4 PANEL: Review, Declaration & Submit -->
+<div class="step-panel hidden flex-col gap-space-md bg-surface-container-lowest p-6 lg:p-8 rounded-xl shadow-sm" id="step-panel-4">
+<div class="flex items-center justify-between pb-2">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">Step 04 / 04</span>
+<h2 class="font-headline-md text-headline-md text-primary">Parental Declaration &amp; Submission</h2>
+</div>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-3 py-1 rounded-full font-bold">Final Step</span>
+</div>
+<!-- Summary Review Strip -->
+<div class="p-4 bg-surface-container-low rounded-xl flex flex-col gap-2">
+<div class="font-label-lg text-label-lg text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">fact_check</span> Quick Profile Verification
+              </div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-body-sm pt-2">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Candidate</span>
+<strong class="text-primary font-body-md" id="review-candidate-name">New Applicant</strong>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Class Target</span>
+<strong class="text-primary font-body-md" id="review-target-class">Kindergarten 2 (KG2)</strong>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Guardian</span>
+<strong class="text-primary font-body-md" id="review-guardian-name">Pending Entry</strong>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Phone</span>
+<strong class="text-primary font-body-md" id="review-guardian-phone">Pending Entry</strong>
+</div>
+</div>
+</div>
+<!-- Code of Conduct & Declaration Box -->
+<div class="flex flex-col gap-3 p-4 bg-surface-container-low rounded-xl">
+<label class="flex items-start gap-3 cursor-pointer">
+<input class="mt-1 w-5 h-5 rounded text-primary focus:ring-primary" id="declaration-agree" required="" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface leading-snug">
+                  I solemnly declare that the facts and supporting attachments furnished herein are true and accurate. I understand that misrepresentation of identity or prior academic transcripts will lead to immediate cancellation of admission without recourse.
+                </span>
+</label>
+<label class="flex items-start gap-3 cursor-pointer">
+<input class="mt-1 w-5 h-5 rounded text-primary focus:ring-primary" id="rules-agree" required="" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface leading-snug">
+                  I acknowledge and consent to Carepoint Community School’s rules regarding character formation, dress codes, punctuality, and emergency first-aid protocols.
+                </span>
+</label>
+</div>
+<!-- Digital Signature Form Element -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Digital Signature (Type Guardian Full Legal Name) <span class="text-secondary">*</span></label>
+<input class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:ring-2 focus:ring-primary focus:outline-none italic" id="signer-name" placeholder="e.g. Nana Kwame Mensah" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-lg text-label-lg text-on-surface">Today's Date</label>
+<input class="px-4 py-2.5 rounded-lg bg-surface-container text-on-surface-variant font-body-md text-body-md cursor-not-allowed" readonly="" type="text" value="October 24, 2026"/>
+</div>
+</div>
+<!-- Form Action Footer Controls -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t-0">
+<div class="flex items-center gap-2">
+<button class="px-5 py-2.5 rounded-lg bg-surface-container text-primary font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" onclick="showStep(3)" type="button">
+                  ← Previous Step
+                </button>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-colors flex items-center gap-1.5" onclick="alert('Draft progress saved with code CP-2026-9921! A link has been sent to nana.mensah@gmail.com.');" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span> Save Draft
+                </button>
+</div>
+<!-- Primary Submission Button -->
+<button class="w-full sm:w-auto px-8 py-3.5 bg-secondary hover:bg-secondary-container text-on-secondary rounded-lg font-headline-sm text-headline-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group" type="submit">
+<span>Submit Application</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center">
+              Submission immediately generates your official 8-character Application Reference ID and places your child in the admissions screening queue.
+            </p>
+</div>
+<!-- SUCCESS POPUP / CONFIRMATION MODAL STATE (Hidden initially) -->
+<div class="hidden flex-col gap-space-md bg-surface-container-lowest p-8 rounded-2xl shadow-xl text-center items-center" id="submission-success-modal">
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[36px]">check_circle</span>
+</div>
+<span class="bg-secondary text-on-secondary font-label-sm text-label-sm uppercase px-3 py-1 rounded-full font-bold">Application Received</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Welcome to Carepoint Family!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+              Application for <strong id="success-candidate-name">Applicant</strong> has been logged into the school registrar queue under:
+            </p>
+<div class="p-4 bg-surface-container-low rounded-xl flex items-center justify-center gap-4 my-2">
+<span class="font-display-lg-mobile text-display-lg-mobile font-mono font-extrabold text-primary tracking-wider">CP-2026-9921</span>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors" onclick="navigator.clipboard.writeText('CP-2026-9921'); alert('Reference ID Copied!');" title="Copy ID">
+<span class="material-symbols-outlined text-[20px] text-primary">content_copy</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+              A formal receipt along with the screening invitation date has been emailed to <strong id="success-guardian-email">parent@example.com</strong>.
+            </p>
+<div class="flex flex-wrap items-center justify-center gap-3 pt-4">
+<a class="px-6 py-2.5 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors" data-path="application-status-tracker" href="apply.html#status">
+                Track Status Now
+              </a>
+<button class="px-5 py-2.5 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-colors flex items-center gap-1.5" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]">print</span> Print Summary
+              </button>
+</div>
+</div>
+</form>
+<!-- Division Banner from Inspiration Image: 4 Tier Preview Graphic -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Academic Spectrum at Carepoint</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Mind • Heart • Hands</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<!-- Nursery Pill Tier -->
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col items-center text-center gap-2 group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">child_friendly</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider bg-primary text-on-primary px-3 py-1 rounded-full w-full">Nursery</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Creche &amp; Early Play</span>
+</div>
+<!-- Kindergarten Pill Tier -->
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col items-center text-center gap-2 group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">toys</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider bg-primary text-on-primary px-3 py-1 rounded-full w-full">Kindergarten</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">KG 1 &amp; KG 2 Foundations</span>
+</div>
+<!-- Basic Pill Tier -->
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col items-center text-center gap-2 group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider bg-primary text-on-primary px-3 py-1 rounded-full w-full">Basic</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Primary Grades 1 to 6</span>
+</div>
+<!-- Junior High Pill Tier -->
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col items-center text-center gap-2 group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider bg-primary text-on-primary px-3 py-1 rounded-full w-full">Junior High</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">BECE Preparation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 4 Columns: Helper Panel & Live Status Summary -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Application Live Snapshot Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between border-b-0 pb-1">
+<span class="font-label-lg text-label-lg text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">badge</span> Application Summary
+            </span>
+<span class="font-label-sm text-label-sm bg-surface-container-low text-primary px-2.5 py-0.5 rounded-full font-bold">In Progress</span>
+</div>
+<!-- Child quick chip -->
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<div class="w-12 h-12 rounded-full bg-primary text-secondary-fixed flex items-center justify-center font-headline-sm font-bold shrink-0" id="sidebar-avatar-initials">--</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary truncate leading-tight" id="sidebar-candidate-name">New Applicant</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="sidebar-target-class">Target: Kindergarten 2</span>
+</div>
+</div>
+<!-- Metrics Mini-Table -->
+<div class="flex flex-col divide-y divide-transparent text-body-sm">
+<div class="py-2 flex justify-between">
+<span class="text-on-surface-variant">Academic Term</span>
+<span class="text-primary font-semibold">Term 1 (Sept 2026)</span>
+</div>
+<div class="py-2 flex justify-between">
+<span class="text-on-surface-variant">Application Fee</span>
+<span class="text-tertiary font-bold uppercase">GHS 0.00 (Waived)</span>
+</div>
+<div class="py-2 flex justify-between">
+<span class="text-on-surface-variant">Draft Code</span>
+<span class="font-mono text-primary font-bold">CP-2026-9921</span>
+</div>
+<div class="py-2 flex justify-between">
+<span class="text-on-surface-variant">Document Count</span>
+<span class="text-primary font-semibold" id="sidebar-doc-count">0 of 4 attached</span>
+</div>
+</div>
+<!-- Progress Meter -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Completion Meter</span>
+<span class="text-primary font-bold" id="sidebar-progress-text">25%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all duration-300" id="sidebar-progress-bar" style="width: 25%;"></div>
+</div>
+</div>
+</div>
+<!-- "What Happens Next?" Explainer -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">timeline</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Admission Process</h3>
+</div>
+<div class="flex flex-col gap-4 relative pl-2">
+<!-- Step item 1 -->
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold shrink-0 mt-0.5">1</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary">Instant Reference Code</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Generates as soon as you tap Submit. Retain it for all communications.</p>
+</div>
+</div>
+<!-- Step item 2 -->
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-label-sm text-label-sm font-bold shrink-0 mt-0.5">2</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary">Academic Board Review</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Applications undergo vetting within 48 to 72 working hours.</p>
+</div>
+</div>
+<!-- Step item 3 -->
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-label-sm text-label-sm font-bold shrink-0 mt-0.5">3</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary">Screening &amp; Assessment</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Friendly child interaction / placement test to assign optimal developmental stream.</p>
+</div>
+</div>
+<!-- Step item 4 -->
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-label-sm text-label-sm font-bold shrink-0 mt-0.5">4</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary">Offer Letter &amp; Enrolment</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">Formal admission package issued with syllabus, uniforms, and fee billings.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Campus Contact & Fast Help Card -->
+<div class="bg-primary text-on-primary rounded-xl p-6 shadow-sm flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[24px]">forum</span>
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Need Quick Clarification?</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary/80">
+            Our admissions counselors can assist with class placement guidance, documentation questions, or bus transit routes.
+          </p>
+<div class="flex flex-col gap-2.5">
+<a class="w-full py-2.5 px-4 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 hover:bg-tertiary-fixed-dim transition-colors shadow-sm" href="https://wa.me/233241234567" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span> Chat on WhatsApp
+            </a>
+<a class="w-full py-2.5 px-4 bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 text-on-primary rounded-lg font-label-lg text-label-lg text-center transition-colors" data-path="application-status-tracker" href="apply.html#status">
+              Check Existing Reference Status
+            </a>
+</div>
+</div>
+<!-- Inspiring Campus Community Quote -->
+<div class="bg-surface-container-low rounded-xl p-5 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[28px] shrink-0">military_tech</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+            "Empowering each learner to excel with a disciplined Mind, compassionate Heart, and industrious Hands."
+          </p>
+</div>
+</aside>
+</div>
+</main>
+<!-- Interactive Wizard Switcher Script -->
+<script>
+    let uploadedFilesState = {
+      file1: false,
+      file2: false,
+      file3: false,
+      file4: false
+    };
+
+    function showStep(stepNumber) {
+      // 1. Update step panels visibility
+      for (let i = 1; i <= 4; i++) {
+        const panel = document.getElementById('step-panel-' + i);
+        if (panel) {
+          if (i === stepNumber) {
+            panel.classList.remove('hidden');
+            panel.classList.add('flex');
+          } else {
+            panel.classList.add('hidden');
+            panel.classList.remove('flex');
+          }
+        }
+
+        // 2. Update stepper tabs
+        const tab = document.getElementById('step-tab-' + i);
+        if (tab) {
+          const badgeIcon = tab.querySelector('.step-badge-icon');
+          const statusText = tab.querySelector('.step-status');
+          const title = tab.querySelector('.step-title');
+          const sub = tab.querySelector('.step-subtitle');
+
+          tab.className = 'step-tab flex flex-col gap-1.5 p-3 rounded-lg text-left transition-all cursor-pointer';
+
+          if (i < stepNumber) {
+            // DONE State (Completed previous step)
+            tab.classList.add('bg-surface-container-low', 'group', 'border', 'border-transparent');
+            if (badgeIcon) {
+              badgeIcon.className = 'step-badge-icon w-6 h-6 rounded-full bg-tertiary text-tertiary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold';
+              badgeIcon.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span>';
+            }
+            if (statusText) {
+              statusText.className = 'step-status font-label-sm text-label-sm text-tertiary uppercase font-bold';
+              statusText.textContent = 'Done';
+            }
+            if (title) {
+              title.className = 'step-title font-label-md text-label-md text-primary group-hover:text-secondary transition-colors font-bold';
+            }
+            if (sub) {
+              sub.className = 'step-subtitle font-body-sm text-body-sm text-on-surface-variant line-clamp-1';
+            }
+          } else if (i === stepNumber) {
+            // ACTIVE State (Current step)
+            tab.classList.add('bg-primary', 'text-on-primary', 'shadow-sm', 'border', 'border-transparent');
+            if (badgeIcon) {
+              badgeIcon.className = 'step-badge-icon w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm font-bold';
+              badgeIcon.innerHTML = i;
+            }
+            if (statusText) {
+              statusText.className = 'step-status font-label-sm text-label-sm text-secondary-fixed uppercase font-bold';
+              statusText.textContent = 'Active';
+            }
+            if (title) {
+              title.className = 'step-title font-label-md text-label-md text-on-primary font-bold';
+            }
+            if (sub) {
+              sub.className = 'step-subtitle font-body-sm text-body-sm text-on-primary/80 line-clamp-1';
+            }
+          } else {
+            // PENDING State (Upcoming step)
+            tab.classList.add('bg-surface-container-lowest', 'hover:bg-surface-container-low', 'opacity-80', 'border', 'border-surface-container-high/60');
+            if (badgeIcon) {
+              badgeIcon.className = 'step-badge-icon w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-bold';
+              badgeIcon.innerHTML = i;
+            }
+            if (statusText) {
+              statusText.className = 'step-status font-label-sm text-label-sm text-on-surface-variant uppercase';
+              statusText.textContent = 'Pending';
+            }
+            if (title) {
+              title.className = 'step-title font-label-md text-label-md text-on-surface-variant';
+            }
+            if (sub) {
+              sub.className = 'step-subtitle font-body-sm text-body-sm text-on-surface-variant line-clamp-1';
+            }
+          }
+        }
+      }
+
+      // 3. Update completion meter in sidebar
+      const meterPercentages = { 1: 25, 2: 50, 3: 75, 4: 100 };
+      const percent = meterPercentages[stepNumber] || 25;
+      const progressText = document.getElementById('sidebar-progress-text');
+      const progressBar = document.getElementById('sidebar-progress-bar');
+      if (progressText) progressText.textContent = percent + '%';
+      if (progressBar) progressBar.style.width = percent + '%';
+
+      // 4. Smooth scroll back to top of form
+      const formContainer = document.getElementById('admissions-form');
+      if (formContainer) {
+        const topY = formContainer.getBoundingClientRect().top + window.scrollY - 140;
+        window.scrollTo({ top: Math.max(0, topY), behavior: 'smooth' });
+      }
+    }
+
+
+
+    function syncCandidatePreview() {
+      const fn = (document.getElementById('child-first-name')?.value || '').trim();
+      const sn = (document.getElementById('child-surname')?.value || '').trim();
+      const fullName = (fn + ' ' + sn).trim() || 'New Applicant';
+      const initials = ((fn[0] || '') + (sn[0] || '')).toUpperCase() || '--';
+
+      const sideName = document.getElementById('sidebar-candidate-name');
+      const sideInit = document.getElementById('sidebar-avatar-initials');
+      const reviewName = document.getElementById('review-candidate-name');
+      const tab1Sub = document.getElementById('tab1-subtitle');
+
+      if (sideName) sideName.textContent = fullName;
+      if (sideInit) sideInit.textContent = initials;
+      if (reviewName) reviewName.textContent = fullName;
+      if (tab1Sub) tab1Sub.textContent = (fullName === 'New Applicant') ? 'Applicant Name' : fullName;
+
+      const classSelect = document.getElementById('child-class-select');
+      if (classSelect) {
+        const selClass = classSelect.value;
+        const sideClass = document.getElementById('sidebar-target-class');
+        const reviewClass = document.getElementById('review-target-class');
+        if (sideClass) sideClass.textContent = 'Target: ' + selClass;
+        if (reviewClass) reviewClass.textContent = selClass;
+      }
+    }
+
+    function syncGuardianPreview() {
+      const gName = (document.getElementById('guardian-name-input')?.value || '').trim() || 'Pending Entry';
+      const gPhone = (document.getElementById('guardian-phone-input')?.value || '').trim() || 'Pending Entry';
+      const reviewGName = document.getElementById('review-guardian-name');
+      const reviewGPhone = document.getElementById('review-guardian-phone');
+      const tab2Sub = document.getElementById('tab2-subtitle');
+
+      if (reviewGName) reviewGName.textContent = gName;
+      if (reviewGPhone) reviewGPhone.textContent = gPhone;
+      if (tab2Sub) tab2Sub.textContent = (gName === 'Pending Entry') ? 'Primary Guardian' : gName;
+    }
+
+    function handleFileSelected(input, labelId, badgeId) {
+      if (input.files && input.files[0]) {
+        const file = input.files[0];
+        const label = document.getElementById(labelId);
+        const badge = document.getElementById(badgeId);
+        if (label) {
+          label.innerHTML = '<span class="text-primary font-bold">✓ ' + file.name + '</span> <span class="text-on-surface-variant font-normal">(' + (file.size / 1024).toFixed(0) + ' KB)</span>';
+        }
+        if (badge) {
+          badge.innerHTML = '<span class="material-symbols-outlined text-[13px]">check_circle</span> Attached';
+          badge.className = 'bg-tertiary text-tertiary-fixed font-label-sm text-label-sm px-2.5 py-0.5 rounded-full flex items-center gap-1 font-bold shadow-xs';
+        }
+
+        if (labelId === 'file-label-1') uploadedFilesState.file1 = true;
+        if (labelId === 'file-label-2') uploadedFilesState.file2 = true;
+        if (labelId === 'file-label-3') uploadedFilesState.file3 = true;
+        if (labelId === 'file-label-4') uploadedFilesState.file4 = true;
+
+        let totalDocs = 0;
+        if (uploadedFilesState.file1) totalDocs++;
+        if (uploadedFilesState.file2) totalDocs++;
+        if (uploadedFilesState.file3) totalDocs++;
+        if (uploadedFilesState.file4) totalDocs++;
+
+        const step3Count = document.getElementById('step3-attached-count-text');
+        const sidebarDocCount = document.getElementById('sidebar-doc-count');
+        const tab3Sub = document.getElementById('tab3-subtitle') || document.querySelector('#step-tab-3 .step-subtitle');
+        const step3Badge = document.getElementById('step3-attached-badge');
+        const step3BadgeIcon = document.getElementById('step3-attached-badge-icon');
+
+        if (step3Count) step3Count.textContent = totalDocs + ' of 4 Documents Attached';
+        if (sidebarDocCount) sidebarDocCount.textContent = totalDocs + ' of 4 attached';
+        if (tab3Sub) tab3Sub.textContent = totalDocs + ' of 4 Attached';
+
+        if (step3Badge && totalDocs > 0) {
+          step3Badge.className = 'flex items-center gap-2 bg-tertiary text-tertiary-fixed px-3 py-1.5 rounded-full font-label-sm text-label-sm font-bold';
+          if (step3BadgeIcon) step3BadgeIcon.textContent = 'verified';
+        }
+      }
+    }
+
+    function handleFinalSubmit() {
+      const dec1 = document.getElementById('declaration-agree');
+      const dec2 = document.getElementById('rules-agree');
+      const signer = document.getElementById('signer-name');
+
+      if (!dec1 || !dec2 || !dec1.checked || !dec2.checked) {
+        alert('Please review and check the declaration agreements to submit.');
+        return;
+      }
+      if (!signer || !signer.value.trim()) {
+        alert('Please enter your full legal name as digital signature.');
+        signer.focus();
+        return;
+      }
+
+      // Update success modal with actual user input
+      const fn = (document.getElementById('child-first-name')?.value || '').trim();
+      const sn = (document.getElementById('child-surname')?.value || '').trim();
+      const candidateFullName = (fn + ' ' + sn).trim() || 'Applicant';
+      const guardianEmail = (document.querySelector('input[type="email"]')?.value || '').trim() || 'parent@example.com';
+
+      const succCand = document.getElementById('success-candidate-name');
+      const succEmail = document.getElementById('success-guardian-email');
+      if (succCand) succCand.textContent = candidateFullName;
+      if (succEmail) succEmail.textContent = guardianEmail;
+
+      // Hide all panels and show success modal
+      for (let i = 1; i <= 4; i++) {
+        const panel = document.getElementById('step-panel-' + i);
+        if (panel) {
+          panel.classList.add('hidden');
+          panel.classList.remove('flex');
+        }
+      }
+
+      const success = document.getElementById('submission-success-modal');
+      if (success) {
+        success.classList.remove('hidden');
+        success.classList.add('flex');
+        const topY = success.getBoundingClientRect().top + window.scrollY - 140;
+        window.scrollTo({ top: Math.max(0, topY), behavior: 'smooth' });
+      }
+    }
+
+    // Default initialization: Always start at Step 1 and sync candidate previews
+    document.addEventListener('DOMContentLoaded', () => {
+      showStep(1);
+      syncCandidatePreview();
+      syncGuardianPreview();
+    });
+    // Immediate execution for fast rendering
+    showStep(1);
+    syncCandidatePreview();
+    syncGuardianPreview();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-lg pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center font-headline-sm font-bold"><span class="material-symbols-outlined text-secondary-fixed">school</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary font-bold">Carepoint Community School</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest font-bold text-[10px]">MIND • HEART • HANDS</span></div></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Nurturing confident, principled learners from early childhood through junior secondary education with well-rounded academic rigor and character formation.</p><div class="flex flex-col gap-1 text-on-surface-variant font-body-sm text-body-sm"><span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">location_on</span> Carepoint Boulevard, Community Edu District</span><span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">phone_in_talk</span> +233 (0) 24 123 4567 / +233 (0) 20 765 4321</span><span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">mail</span> admissions@carepoint.edu.gh</span></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-primary uppercase tracking-wider">Academic Tiers</span><ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="academics" href="home.html#academics">Creche &amp; Daycare (6m - 2y)</a></li><li><a class="hover:text-primary transition-colors" data-path="academics" href="home.html#academics">Nursery Division (N1 - N2)</a></li><li><a class="hover:text-primary transition-colors" data-path="academics" href="home.html#academics">Kindergarten (KG1 - KG2)</a></li><li><a class="hover:text-primary transition-colors" data-path="academics" href="home.html#academics">Primary / Basic (B1 - B6)</a></li><li><a class="hover:text-primary transition-colors" data-path="academics" href="home.html#academics">Junior High School (JHS1 - JHS3)</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-primary uppercase tracking-wider">Admissions</span><ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="admissions-overview" href="apply.html">Admission Guidelines</a></li><li><a class="hover:text-primary transition-colors" data-path="admissions-application-form" href="apply.html">Online Application Portal</a></li><li><a class="hover:text-primary transition-colors" data-path="application-status-tracker" href="apply.html#status">Track Application Status</a></li><li><a class="hover:text-primary transition-colors cursor-pointer" data-path="tuition-and-fees" href="#tuition-modal" onclick="openTuitionModal(event)">Tuition &amp; Financial Policy</a></li><li><a class="hover:text-primary transition-colors" data-path="contact-school" href="home.html#contact">Book Campus Visit</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-primary uppercase tracking-wider">Stay Connected</span><p class="font-body-sm text-body-sm text-on-surface-variant">Receive term schedules, open day alerts, and student enrichment newsletters.</p><form class="flex flex-col gap-2" onsubmit="event.preventDefault(); showSubscribeSuccess(this);"><div class="relative"><input id="newsletter-email" name="email" required autocomplete="email" aria-label="Parent email address for updates" class="w-full px-3 py-2 text-body-sm bg-surface-container-lowest text-on-surface rounded-lg outline outline-1 outline-outline-variant focus:outline-2 focus:outline-primary placeholder:text-outline" placeholder="Enter parent email" type="email"/><button class="mt-2 w-full py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors" type="submit">Subscribe</button></div><p class="hidden text-xs text-emerald-600 font-semibold mt-1">✓ Subscribed! You will receive Carepoint term updates.</p></form></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span><span>Certified by National Schools Inspectorate Authority (NaSIA) &amp; Ministry of Education</span></div><span>© 2026 Carepoint Community School. All rights reserved.</span></div></div></footer>
+<!-- ADMISSION APPLICATION STATUS TRACKER MODAL -->
+<div id="status" class="hidden"></div>
+<div id="status-checker-modal" data-anchor="status" role="dialog" aria-modal="true" aria-labelledby="status-modal-title" onclick="if(event.target===this)closeStatusModal()" class="hidden fixed inset-0 z-50 overflow-y-auto bg-primary/60 backdrop-blur-sm items-center justify-center p-4">
+  <div class="relative w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container-high overflow-hidden animate-in fade-in zoom-in-95 duration-200 my-8">
+    <div class="bg-primary text-on-primary px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-secondary-fixed text-[24px]">fact_check</span>
+        <div>
+          <h3 id="status-modal-title" class="font-headline-sm text-headline-sm font-bold leading-tight">Track Admission Status</h3>
+          <p class="text-[11px] text-on-primary/70">Carepoint Community School • Academic Year 2026/2027</p>
+        </div>
+      </div>
+      <button onclick="closeStatusModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center transition-colors" aria-label="Close modal">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div class="p-6 flex flex-col gap-4">
+      <div>
+        <label for="status-ref-input" class="block text-body-sm font-bold text-primary mb-1.5">Application Reference Code</label>
+        <div class="flex gap-2">
+          <div class="relative flex-1">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+              <span class="material-symbols-outlined text-[20px]">tag</span>
+            </span>
+            <input id="status-ref-input" type="text" placeholder="e.g. CP-2026-9921" value="CP-2026-9921" onkeydown="if(event.key==='Enter'){event.preventDefault();lookupStatus();}" class="w-full pl-10 pr-3 py-2.5 bg-surface-container-low border border-outline-variant/60 rounded-xl text-primary font-mono text-sm focus:outline-primary focus:bg-surface-container-lowest transition-all" />
+          </div>
+          <button onclick="lookupStatus()" class="px-5 py-2.5 rounded-xl bg-secondary text-on-secondary font-bold text-sm hover:bg-secondary-container transition-colors shadow-sm flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px]">search</span>
+            <span>Track</span>
+          </button>
+        </div>
+        <p class="text-[12px] text-on-surface-variant mt-1.5">Enter the reference code sent to your email or SMS upon registration.</p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-[11px] text-on-surface-variant font-medium">Quick demo codes:</span>
+        <button type="button" onclick="setSampleRef('CP-2026-9921')" class="text-[11px] font-mono px-2 py-0.5 rounded bg-surface-container-high text-primary hover:bg-surface-container hover:underline cursor-pointer">CP-2026-9921 (Assessment)</button>
+        <button type="button" onclick="setSampleRef('CP-2026-8104')" class="text-[11px] font-mono px-2 py-0.5 rounded bg-surface-container-high text-primary hover:bg-surface-container hover:underline cursor-pointer">CP-2026-8104 (Offer Ready)</button>
+      </div>
+
+      <div id="status-result-box" class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-3">
+        <div class="flex items-center justify-between border-b border-surface-container-high pb-2.5">
+          <div>
+            <div class="font-bold text-primary text-body-md" id="status-student-name">Kofi Mensah (Student)</div>
+            <div class="text-[12px] text-on-surface-variant" id="status-tier-label">Applying for: Basic 4 Intake • Academic Year 2026/2027</div>
+          </div>
+          <span id="status-badge" class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300">
+            Assessment Stage
+          </span>
+        </div>
+
+        <div class="space-y-3 pt-1">
+          <div class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-[16px]">check</span>
+            </span>
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-primary">1. Online Application Submitted</div>
+              <div class="text-[11px] text-on-surface-variant">Completed on Sept 12, 2026 • Reference CP-2026-9921 confirmed</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span id="step2-icon" class="w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-[16px]">event_available</span>
+            </span>
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-primary" id="step2-title">2. Diagnostic Assessment &amp; Parent Interview</div>
+              <div class="text-[11px] text-on-surface-variant" id="step2-desc">Scheduled for <strong class="text-secondary">Saturday, Oct 04, 2026 at 9:00 AM</strong> (Campus Block B)</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 opacity-60">
+            <span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-[16px]">hourglass_empty</span>
+            </span>
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-on-surface-variant">3. Academic Review &amp; Placement</div>
+              <div class="text-[11px] text-on-surface-variant">Diagnostic grading reviewed within 3 working days</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 opacity-60">
+            <span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-[16px]">verified</span>
+            </span>
+            <div class="flex-1">
+              <div class="text-sm font-semibold text-on-surface-variant">4. Official Admission Letter &amp; Welcome Kit</div>
+              <div class="text-[11px] text-on-surface-variant">Downloadable via parent portal upon acceptance</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-surface-container-high flex items-center justify-between">
+          <a href="tel:+233241234567" class="text-xs text-primary font-semibold hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px] text-secondary">support_agent</span>
+            <span>Admissions Desk: +233 24 123 4567</span>
+          </a>
+          <button onclick="closeStatusModal()" class="px-4 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container text-primary font-semibold text-xs transition-colors">
+            Dismiss
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TUITION & FINANCIAL POLICY MODAL -->
+<div id="tuition-modal" role="dialog" aria-modal="true" aria-labelledby="tuition-modal-title" onclick="if(event.target===this)closeTuitionModal()" class="hidden fixed inset-0 z-50 overflow-y-auto bg-primary/60 backdrop-blur-sm items-center justify-center p-4">
+  <div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container-high overflow-hidden animate-in fade-in zoom-in-95 duration-200 my-8">
+    <div class="bg-primary text-on-primary px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-secondary-fixed text-[26px]">payments</span>
+        <div>
+          <h3 id="tuition-modal-title" class="font-headline-sm text-headline-sm font-bold leading-tight">Tuition &amp; Financial Policy</h3>
+          <p class="text-[11px] text-on-primary/70">Carepoint Community School • Academic Year 2026/2027 Schedule</p>
+        </div>
+      </div>
+      <button onclick="closeTuitionModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center transition-colors" aria-label="Close modal">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div class="p-6 flex flex-col gap-5 max-h-[75vh] overflow-y-auto">
+      <div class="bg-surface-container-low p-4 rounded-xl border border-surface-container-high flex items-start gap-3">
+        <span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">verified_user</span>
+        <div class="text-xs text-on-surface-variant leading-relaxed">
+          <p class="font-bold text-primary mb-0.5">NaSIA &amp; GES Approved Transparent Fee Structure</p>
+          Carepoint Community School maintains an all-inclusive tuition standard covering core academics, digital learning portals, French &amp; STEM labs, and co-curriculars. No hidden mandatory development levies.
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-label-lg text-label-lg font-bold text-primary uppercase tracking-wider mb-2">Termly Tuition &amp; Academic Services (2026/2027)</h4>
+        <div class="border border-outline-variant/60 rounded-xl overflow-hidden">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead class="bg-surface-container text-primary font-bold">
+              <tr>
+                <th class="p-3">Academic Tier</th>
+                <th class="p-3">Tuition / Term</th>
+                <th class="p-3">Lab &amp; Enrichment</th>
+                <th class="p-3 text-right">Total / Term</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant/40 text-on-surface">
+              <tr class="hover:bg-surface-container-low">
+                <td class="p-3 font-semibold text-primary">Creche &amp; Daycare (6m - 2y)</td>
+                <td class="p-3">GH₵ 1,450</td>
+                <td class="p-3">GH₵ 600 (Care &amp; Diet)</td>
+                <td class="p-3 font-bold text-right text-primary">GH₵ 2,050</td>
+              </tr>
+              <tr class="hover:bg-surface-container-low">
+                <td class="p-3 font-semibold text-primary">Nursery (N1 - N2)</td>
+                <td class="p-3">GH₵ 1,650</td>
+                <td class="p-3">GH₵ 400 (Phonics &amp; Play)</td>
+                <td class="p-3 font-bold text-right text-primary">GH₵ 2,050</td>
+              </tr>
+              <tr class="hover:bg-surface-container-low">
+                <td class="p-3 font-semibold text-primary">Kindergarten (KG1 - KG2)</td>
+                <td class="p-3">GH₵ 1,750</td>
+                <td class="p-3">GH₵ 450 (Activity Pack)</td>
+                <td class="p-3 font-bold text-right text-primary">GH₵ 2,200</td>
+              </tr>
+              <tr class="hover:bg-surface-container-low">
+                <td class="p-3 font-semibold text-primary">Primary (Basic 1 - 6)</td>
+                <td class="p-3">GH₵ 2,200</td>
+                <td class="p-3">GH₵ 350 (ICT &amp; STEM)</td>
+                <td class="p-3 font-bold text-right text-primary">GH₵ 2,550</td>
+              </tr>
+              <tr class="hover:bg-surface-container-low">
+                <td class="p-3 font-semibold text-primary">Junior High (JHS 1 - 3)</td>
+                <td class="p-3">GH₵ 2,700</td>
+                <td class="p-3">GH₵ 500 (BECE &amp; Computing)</td>
+                <td class="p-3 font-bold text-right text-primary">GH₵ 3,200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/60">
+          <span class="flex items-center gap-1.5 font-label-md text-label-md font-bold text-primary mb-1">
+            <span class="material-symbols-outlined text-[18px] text-secondary">family_restroom</span>
+            Sibling Concessions
+          </span>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Parents enrolling 2 or more biological children receive a <strong>10% tuition rebate</strong> on the 2nd child and <strong>15% rebate</strong> on 3rd and subsequent children.
+          </p>
+        </div>
+        <div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/60">
+          <span class="flex items-center gap-1.5 font-label-md text-label-md font-bold text-primary mb-1">
+            <span class="material-symbols-outlined text-[18px] text-secondary">credit_card</span>
+            Flexible Payment Terms
+          </span>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Fees can be settled fully before term starts or split in 3 tranches (60% at registration, 20% mid-term, 20% by week 9). Instant MoMo &amp; Bank verification supported.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="p-4 bg-surface-container-low border-t border-surface-container-high flex flex-wrap items-center justify-between gap-3">
+      <button onclick="alert('Carepoint 2026/2027 Fee Schedule & Policy PDF downloaded successfully.')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-highest text-primary font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[18px]">download</span>
+        Download PDF Schedule
+      </button>
+      <div class="flex items-center gap-2">
+        <button onclick="closeTuitionModal()" class="px-4 py-2 rounded-xl bg-transparent text-on-surface-variant hover:bg-surface-container text-xs font-semibold transition-colors">
+          Close
+        </button>
+        <button onclick="closeTuitionModal(); window.scrollTo({top: 0, behavior: 'smooth'});" class="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-secondary text-on-secondary font-label-md text-label-md shadow hover:bg-secondary-container transition-all">
+          <span>Complete Form</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openTuitionModal(e) {
+  if (e) e.preventDefault();
+  const m = document.getElementById('tuition-modal');
+  if (m) {
+    m.classList.remove('hidden');
+    m.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeTuitionModal() {
+  const m = document.getElementById('tuition-modal');
+  if (m) {
+    m.classList.add('hidden');
+    m.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+}
+
+function showSubscribeSuccess(form) {
+  const p = form.querySelector('p');
+  if (p) {
+    p.classList.remove('hidden');
+    const input = form.querySelector('input');
+    if (input) input.value = '';
+    setTimeout(() => {
+      p.classList.add('hidden');
+    }, 5000);
+  }
+}
+
+function openStatusModal(e) {
+  if (e) e.preventDefault();
+  const m = document.getElementById('status-checker-modal');
+  if (m) {
+    m.classList.remove('hidden');
+    m.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    const input = document.getElementById('status-ref-input');
+    if (input) setTimeout(() => input.focus(), 100);
+  }
+}
+
+function closeStatusModal() {
+  const m = document.getElementById('status-checker-modal');
+  if (m) {
+    m.classList.add('hidden');
+    m.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+}
+
+function setSampleRef(code) {
+  const input = document.getElementById('status-ref-input');
+  if (input) {
+    input.value = code;
+    lookupStatus();
+  }
+}
+
+function lookupStatus() {
+  const input = document.getElementById('status-ref-input');
+  const code = (input ? input.value : '').trim().toUpperCase();
+  const student = document.getElementById('status-student-name');
+  const tier = document.getElementById('status-tier-label');
+  const badge = document.getElementById('status-badge');
+  const step2Desc = document.getElementById('step2-desc');
+  
+  if (!code) {
+    if (student) student.textContent = "Please Enter Reference Code";
+    if (tier) tier.textContent = "Enter your reference code (e.g. CP-2026-9921) to track your status";
+    if (badge) {
+      badge.textContent = "Code Required";
+      badge.className = "px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-rose-100 text-rose-900 border border-rose-300";
+    }
+    if (step2Desc) step2Desc.innerHTML = "Awaiting valid reference code.";
+    return;
+  }
+
+  if (code.includes('8104')) {
+    if (student) student.textContent = "Ama Konadu (Student)";
+    if (tier) tier.textContent = "Applying for: Nursery 2 Intake • Academic Year 2026/2027";
+    if (badge) {
+      badge.textContent = "Offer Granted";
+      badge.className = "px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 border border-emerald-300";
+    }
+    if (step2Desc) step2Desc.innerHTML = "Assessment Completed & Passed (Score: 94%). <strong class='text-emerald-700'>Placement confirmed!</strong>";
+  } else if (code.includes('9921')) {
+    if (student) student.textContent = "Kofi Mensah (Student)";
+    if (tier) tier.textContent = "Applying for: Basic 4 Intake • Academic Year 2026/2027";
+    if (badge) {
+      badge.textContent = "Assessment Stage";
+      badge.className = "px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300";
+    }
+    if (step2Desc) step2Desc.innerHTML = 'Scheduled for <strong class="text-secondary">Saturday, Oct 04, 2026 at 9:00 AM</strong> (Campus Block B)';
+  } else {
+    if (student) student.textContent = "Reference Code Not Found";
+    if (tier) tier.textContent = `No application matching "${code}". Check SMS or email confirmation.`;
+    if (badge) {
+      badge.textContent = "Not Found";
+      badge.className = "px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant border border-outline-variant";
+    }
+    if (step2Desc) step2Desc.innerHTML = 'Please re-verify your reference code or call Admissions at <strong class="text-secondary">+233 24 123 4567</strong>.';
+  }
+}
+
+function togglePortalMenu(e) {
+  if (e) e.stopPropagation();
+  const d = document.getElementById('portal-dropdown');
+  const b = document.getElementById('portal-menu-button');
+  if (d) {
+    const isHidden = d.classList.toggle('hidden');
+    if (b) b.setAttribute('aria-expanded', !isHidden ? 'true' : 'false');
+  }
+}
+
+// Global dismissals: Escape key and click outside
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeStatusModal();
+    closeTuitionModal();
+    closeMobileMenu();
+    const d = document.getElementById('portal-dropdown');
+    const b = document.getElementById('portal-menu-button');
+    if (d) d.classList.add('hidden');
+    if (b) b.setAttribute('aria-expanded', 'false');
+  }
+});
+
+document.addEventListener('click', function(e) {
+  const d = document.getElementById('portal-dropdown');
+  const b = document.getElementById('portal-menu-button');
+  if (d && !d.classList.contains('hidden') && b && !b.contains(e.target) && !d.contains(e.target)) {
+    d.classList.add('hidden');
+    if (b) b.setAttribute('aria-expanded', 'false');
+  }
+
+  // Dismiss mobile drawer if clicked outside
+  const drawer = document.getElementById('mobile-nav-drawer');
+  const mBtn = document.getElementById('mobile-menu-btn');
+  if (drawer && !drawer.classList.contains('hidden') && mBtn && !mBtn.contains(e.target) && !drawer.contains(e.target)) {
+    closeMobileMenu();
+  }
+});
+
+// Auto open status modal if URL hash is #status
+if (window.location.hash === '#status') {
+  openStatusModal();
+}
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#status') {
+    openStatusModal();
+  }
+});
+</script>
+</body></html>

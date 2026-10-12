@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Carepoint - Academic Performance &amp; Gradebook</title><style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary": "#ffffff", "surface-container": "#e9eef8", "error": "#ba1a1a", "error-container": "#ffdad6", "surface": "#f7f9ff", "on-tertiary-fixed-variant": "#00531f", "on-tertiary-container": "#46a95a", "outline-variant": "#c5c6d1", "primary": "#011549", "secondary-fixed": "#ffdad5", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#930004", "secondary-fixed-dim": "#ffb4a9", "on-secondary-container": "#fffbff", "inverse-on-surface": "#ecf1fb", "primary-fixed-dim": "#b5c4ff", "secondary-container": "#df2d23", "inverse-primary": "#b5c4ff", "tertiary-fixed": "#94f9a0", "on-secondary-fixed": "#410001", "on-background": "#161c23", "surface-container-low": "#eef4fe", "tertiary": "#001f07", "on-tertiary-fixed": "#002108", "outline": "#757680", "background": "#f7f9ff", "on-error-container": "#93000a", "on-primary": "#ffffff", "on-error": "#ffffff", "on-primary-container": "#8494cd", "on-surface": "#161c23", "inverse-surface": "#2b3138", "surface-bright": "#f7f9ff", "tertiary-container": "#003712", "primary-fixed": "#dce1ff", "tertiary-fixed-dim": "#78dc86", "surface-container-high": "#e3e8f2", "on-surface-variant": "#45464f", "surface-tint": "#4c5c92", "primary-container": "#1a2b5e", "on-primary-fixed": "#03174b", "secondary": "#ba0a0c", "surface-variant": "#dde3ec", "surface-container-highest": "#dde3ec", "surface-dim": "#d5dae4", "on-primary-fixed-variant": "#344478" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-sm": "1rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin": "2rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem" }, "fontFamily": { "body-lg": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "display-lg-mobile": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "headline-xl": [ "Plus Jakarta Sans" ], "headline-xl-mobile": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "display-lg-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" } ], "headline-md": [ "24px", { "lineHeight": "32px", "fontWeight": "700" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "headline-xl": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "headline-xl-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" } ] } } } };</script><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "parent",
+            label: "Academic Performance & Gradebook",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-academics.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="carepoint-drawer fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col justify-between overflow-y-auto border-r border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="flex flex-col min-h-0 flex-1">
+    <!-- Top Header with Crest, Title, Motto, Badge, and Close Button -->
+    <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+      <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+            <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+          </div>
+          <div class="min-w-0">
+            <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+            <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+          </div>
+        </div>
+        <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Navigation Drawer">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <div class="flex items-center justify-between pt-0.5">
+        <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+      </div>
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider uppercase">PARENT &amp; GUARDIAN PORTAL</span>
+      </div>
+    </div>
+
+    <!-- Academic Session Status Strip -->
+    <div class="px-space-md py-space-sm">
+      <div class="px-space-md py-space-xs bg-surface-container-low rounded-lg flex items-center justify-between">
+        <div class="flex items-center gap-space-xs">
+          <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+          <span class="font-label-sm text-label-sm text-on-surface font-medium">Session 2026/27 Term 1</span>
+        </div>
+        <span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">Wk 8</span>
+      </div>
+    </div>
+
+    <!-- Category Label -->
+    <div class="px-space-md pt-2 pb-1">
+      <span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Parent Navigation</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col gap-1 px-space-md overflow-y-auto flex-1 min-h-0">
+      <a href="dashboard.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">dashboard</span>
+          <span class="text-sm">Dashboard</span>
+        </div>
+      </a>
+      <a href="dashboard.html#ward" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">badge</span>
+          <span class="text-sm">Child Profile</span>
+        </div>
+      </a>
+      <a href="academics.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all bg-primary-container text-on-primary font-bold shadow-sm">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">insights</span>
+          <span class="text-sm">Performance &amp; Reports</span>
+        </div>
+      </a>
+      <a href="messages.html#welfare" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">health_and_safety</span>
+          <span class="text-sm">Attendance &amp; Welfare</span>
+        </div>
+      </a>
+      <a href="pickup.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+          <span class="text-sm">Pickup Security Pass</span>
+        </div>
+      </a>
+      <a href="messages.html#messages" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">forum</span>
+          <span class="text-sm">Teacher Messages</span>
+        </div>
+        <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-secondary-container text-on-secondary">2</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Pinned Bottom Active Ward Card -->
+  <div class="shrink-0 p-3 mx-3 mb-3 rounded-xl bg-surface-container-low flex flex-col gap-1.5 border border-surface-container-high/80 shadow-2xs">
+    <div class="flex items-center justify-between">
+      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Active Ward</span>
+      <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Enrolled
+      </span>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs shrink-0" id="parent-drawer-ward-avatar">
+        KM
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="font-headline-sm text-sm text-primary font-bold leading-tight truncate" id="parent-drawer-ward-name">Kofi Mensah</div>
+        <div class="font-body-sm text-[11px] text-on-surface-variant truncate" id="parent-drawer-ward-class">Basic 2 • Sunflower Class</div>
+      </div>
+    </div>
+    <div class="pt-1 border-t border-outline-variant/20 flex items-center justify-between text-[11px] text-on-surface-variant">
+      <span>Term 1 Week 8</span>
+      <span class="text-secondary font-bold">Good Standing</span>
+    </div>
+  </div>
+</aside>
+<div class="pl-72 flex flex-col min-h-screen">
+<header class="fixed top-0 left-72 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-primary-container text-on-primary border-b border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-12 h-10 flex items-center justify-between text-xs font-label-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-medium"><span class="material-symbols-outlined text-sm text-tertiary-fixed">school</span><span>Term 1, 2026/2027 Academic Session • Active Week 8</span></div><div class="hidden md:flex items-center gap-space-xs text-primary-fixed"><span class="material-symbols-outlined text-sm text-secondary-fixed">phone_in_talk</span><span>Emergency: +233 (0) 30 123 4567</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs bg-primary px-space-sm py-1 rounded text-on-primary"><span class="material-symbols-outlined text-sm text-primary-fixed">face</span><span class="font-label-sm uppercase tracking-wider text-surface-variant">Ward:</span><span class="font-label-sm font-bold text-surface-container-lowest">Kofi Mensah (Basic 2 - Sunflower)</span><span class="material-symbols-outlined text-sm text-outline-variant">arrow_drop_down</span></div></div></div></div><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary transition-colors cursor-pointer mr-1 shrink-0 shadow-2xs" title="Toggle Navigation Tabs Drawer" aria-label="Toggle Navigation Tabs Drawer"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-container text-on-primary"><span class="material-symbols-outlined text-2xl">shield_person</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary leading-none">CAREPOINT</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Mind • Heart • Hands</span></div></div><nav class="hidden xl:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-bold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="dashboard" href="dashboard.html">Dashboard</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="ward-profile" href="dashboard.html#ward">Child Profile</a><a aria-current="page" class="transition-colors py-2 text-primary font-bold border-b-2 border-primary" data-path="performance-and-reports" href="academics.html">Performance &amp; Reports</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="attendance-and-welfare" href="messages.html">Attendance &amp; Welfare</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="pickup-security" href="pickup.html">Pickup Security</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors py-2" data-path="messages" href="messages.html">Messages</a></nav><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="relative p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-full transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 bg-secondary text-on-secondary rounded-full font-label-sm text-[10px] leading-tight flex items-center justify-center font-bold">3</span></button><div class="h-8 w-px bg-outline-variant/40 hidden sm:block"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden sm:flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-bold">Dr. Nana Mensah</span><span class="font-label-sm text-[11px] text-on-surface-variant">Guardian • Father</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk7nHm7egIuiTau40KQEFHBKNDX3EptaSdTu9TBK2iwADoApEdjY9Kkt9Tjm_DoF2KYNTvFIWgNO5GlABZPWPHY658qTxcggA0vvpzxYpMpol0tKKMsBvv14t1fD96WIU0vH77Tjlup7Pbm-TJ2cyzQEIlGRhdG85eoLM-GTjxqblK4wxMDpCIWDtDAyb_zVdq8MuHW3anaXkB6adGWp9xlHqAM3FbRNIoqmH3e2xOnAIl_mjOPskfLg"/><div class="flex items-center text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-base">expand_more</span></div></div></div></div></header><main class="w-full pt-[120px] bg-surface min-h-[calc(100vh-280px)]"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-space-lg space-y-space-lg">
+<!-- Top Breadcrumb & Metadata Strip -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<span>Academic Records</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span>Basic School Division</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary font-bold">Gradebook &amp; Terminal Assessment</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded-full text-on-surface font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span>Authenticated Parent Portal Session • Ref: GES-ACR-2026-0982</span>
+</div>
+</div>
+<!-- Header & Action Ribbon -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg relative overflow-hidden">
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs z-10">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Academic Performance &amp; Gradebook</h1>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-bold uppercase tracking-wider">Basic 2 • Sunflower</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Comprehensive cognitive, moral, and psychomotor continuous assessment evaluation for <strong class="text-on-surface font-bold">Kofi Mensah</strong> (ID: CP-2021-0414).
+        </p>
+</div>
+<!-- Controls & Primary Action Button -->
+<div class="flex flex-wrap items-center gap-space-sm z-10">
+<div class="relative">
+<label class="sr-only" for="term-select">Select Academic Term</label>
+<select class="appearance-none bg-surface-container-low text-primary font-label-sm text-label-sm font-bold px-space-md py-2.5 pr-8 rounded-lg outline-none cursor-pointer hover:bg-surface-container transition-colors" id="term-select">
+<option selected="">Term 1 • 2026/2027 Academic Session</option>
+<option>Term 3 • 2025/2026 Academic Session</option>
+<option>Term 2 • 2025/2026 Academic Session</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-primary text-base">unfold_more</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-2 bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface font-semibold">
+<span class="material-symbols-outlined text-secondary-container text-base">leaderboard</span>
+<span>Rank: <span class="font-bold text-primary">3rd</span> of 28 Students</span>
+</div>
+<button id="download-report-btn" onclick="generateOfficialReportCard()" class="flex items-center gap-space-xs bg-secondary-container text-on-secondary px-space-md py-2.5 rounded-lg font-label-sm text-label-sm font-bold hover:bg-secondary transition-all shadow-sm active:scale-95 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-base">picture_as_pdf</span>
+<span>Download &amp; Print Official Report Card (PDF)</span>
+</button>
+</div>
+</div>
+<!-- Student Quick Profile & Key Metrics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Overall Term Average -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">Overall Average</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">analytics</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-primary tracking-tight">89.4%</span>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-low text-on-tertiary-container font-bold">Grade 1 (A)</span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Class Target: ≥75%</span>
+<span class="text-on-tertiary-container font-bold flex items-center text-xs">
+<span class="material-symbols-outlined text-sm">trending_up</span>+1.4% vs T3
+          </span>
+</div>
+</div>
+<!-- Class Rank -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">Class Standing</span>
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">military_tech</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-primary tracking-tight">3<span class="text-2xl font-headline-md text-on-surface-variant">rd</span></span>
+<span class="font-body-md text-body-md text-on-surface-variant">/ 28 students</span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Top 10th Percentile</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-primary font-label-sm text-xs font-bold">Distinction Tier</span>
+</div>
+</div>
+<!-- Evaluated Subjects -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">Curriculum Load</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-base">menu_book</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-primary tracking-tight">7</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Standard GES Subjects</span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Completion: 100%</span>
+<span class="text-on-tertiary-container font-semibold text-xs flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">check_circle</span>All verified
+          </span>
+</div>
+</div>
+<!-- Moral & Ethos Award -->
+<div class="bg-primary-container text-on-primary p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-fixed font-bold">Moral Assessment</span>
+<span class="material-symbols-outlined text-secondary-fixed text-xl">workspace_premium</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm block font-bold leading-snug">Exemplary Conduct</span>
+<p class="font-label-sm text-label-sm text-surface-variant mt-1">Mind • Heart • Hands Awardee</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-primary-fixed">
+<span>Honor Roll Citation</span>
+<span class="font-bold underline decoration-secondary cursor-pointer">View Citation</span>
+</div>
+</div>
+</div>
+<!-- Main Section: Detailed Gradebook Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-md bg-surface-container-low">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">fact_check</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Terminal Subject Gradebook</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Continuous Assessment (50%) + Terminal Examination (50%) = 100% GES Scoring Scale</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Grading Scale:</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-xs font-bold">Grade 1: 80-100%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-xs font-bold">Grade 2: 70-79%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-xs font-bold">Grade 3: 60-69%</span>
+</div>
+</div>
+<!-- Responsive Table Container -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3.5 px-space-md font-bold" scope="col">Subject Area</th>
+<th class="py-3.5 px-space-sm text-center" scope="col">Class Assess (30%)</th>
+<th class="py-3.5 px-space-sm text-center" scope="col">Mid-Term (30%)</th>
+<th class="py-3.5 px-space-sm text-center" scope="col">Exam Score (40%)</th>
+<th class="py-3.5 px-space-sm text-center" scope="col">Final (100%)</th>
+<th class="py-3.5 px-space-sm text-center" scope="col">Grade</th>
+<th class="py-3.5 px-space-sm text-center" scope="col">Class Avg</th>
+<th class="py-3.5 px-space-md min-w-[280px]" scope="col">Subject Teacher Commentary</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10 font-body-sm text-body-sm">
+<!-- Mathematics -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-primary font-bold text-xs">
+<span class="material-symbols-outlined text-sm">calculate</span>
+</div>
+<span class="font-bold text-on-surface font-label-lg text-label-lg">Mathematics</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">28<span class="text-xs text-on-surface-variant font-normal">/30</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">19<span class="text-xs text-on-surface-variant font-normal">/20</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">47<span class="text-xs text-on-surface-variant font-normal">/50</span></td>
+<td class="py-space-md px-space-sm text-center font-headline-sm text-headline-sm font-bold text-primary">94%</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-bold">Grade 1</span>
+</td>
+<td class="py-space-md px-space-sm text-center text-on-surface-variant font-medium">78%</td>
+<td class="py-space-md px-space-md">
+<p class="text-on-surface text-xs leading-relaxed italic">"Demonstrates superb arithmetic and reasoning capabilities."</p>
+<span class="font-label-sm text-[11px] text-on-surface-variant not-italic font-bold block mt-0.5">— Mr. Kwesi Osei</span>
+</td>
+</tr>
+<!-- English Language -->
+<tr class="hover:bg-surface transition-colors bg-surface-container-low/20">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-primary font-bold text-xs">
+<span class="material-symbols-outlined text-sm">menu_book</span>
+</div>
+<span class="font-bold text-on-surface font-label-lg text-label-lg">English Language</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">26<span class="text-xs text-on-surface-variant font-normal">/30</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">17<span class="text-xs text-on-surface-variant font-normal">/20</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">45<span class="text-xs text-on-surface-variant font-normal">/50</span></td>
+<td class="py-space-md px-space-sm text-center font-headline-sm text-headline-sm font-bold text-primary">88%</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-bold">Grade 1</span>
+</td>
+<td class="py-space-md px-space-sm text-center text-on-surface-variant font-medium">75%</td>
+<td class="py-space-md px-space-md">
+<p class="text-on-surface text-xs leading-relaxed italic">"Eloquent oral reader; working well on creative writing composition."</p>
+<span class="font-label-sm text-[11px] text-on-surface-variant not-italic font-bold block mt-0.5">— Mrs. Beatrice Abbey</span>
+</td>
+</tr>
+<!-- Integrated Science -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-primary font-bold text-xs">
+<span class="material-symbols-outlined text-sm">biotech</span>
+</div>
+<span class="font-bold text-on-surface font-label-lg text-label-lg">Integrated Science</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">27<span class="text-xs text-on-surface-variant font-normal">/30</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">18<span class="text-xs text-on-surface-variant font-normal">/20</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">47<span class="text-xs text-on-surface-variant font-normal">/50</span></td>
+<td class="py-space-md px-space-sm text-center font-headline-sm text-headline-sm font-bold text-primary">92%</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-bold">Grade 1</span>
+</td>
+<td class="py-space-md px-space-sm text-center text-on-surface-variant font-medium">76%</td>
+<td class="py-space-md px-space-md">
+<p class="text-on-surface text-xs leading-relaxed italic">"Inquisitive mind during nature walks and lab experiments."</p>
+<span class="font-label-sm text-[11px] text-on-surface-variant not-italic font-bold block mt-0.5">— Mr. Daniel Addo</span>
+</td>
+</tr>
+<!-- Computing / ICT -->
+<tr class="hover:bg-surface transition-colors bg-surface-container-low/20">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-primary font-bold text-xs">
+<span class="material-symbols-outlined text-sm">devices</span>
+</div>
+<span class="font-bold text-on-surface font-label-lg text-label-lg">Computing / ICT</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">29<span class="text-xs text-on-surface-variant font-normal">/30</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">19<span class="text-xs text-on-surface-variant font-normal">/20</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">46<span class="text-xs text-on-surface-variant font-normal">/50</span></td>
+<td class="py-space-md px-space-sm text-center font-headline-sm text-headline-sm font-bold text-primary">94%</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-bold">Grade 1</span>
+</td>
+<td class="py-space-md px-space-sm text-center text-on-surface-variant font-medium">81%</td>
+<td class="py-space-md px-space-md">
+<p class="text-on-surface text-xs leading-relaxed italic">"Rapid keyboard mastery and basic block coding understanding."</p>
+<span class="font-label-sm text-[11px] text-on-surface-variant not-italic font-bold block mt-0.5">— Miss Sarah Mensah</span>
+</td>
+</tr>
+<!-- Creative Arts & Design -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-primary font-bold text-xs">
+<span class="material-symbols-outlined text-sm">palette</span>
+</div>
+<span class="font-bold text-on-surface font-label-lg text-label-lg">Creative Arts &amp; Design</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">25<span class="text-xs text-on-surface-variant font-normal">/30</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">16<span class="text-xs text-on-surface-variant font-normal">/20</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">44<span class="text-xs text-on-surface-variant font-normal">/50</span></td>
+<td class="py-space-md px-space-sm text-center font-headline-sm text-headline-sm font-bold text-primary">85%</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-bold">Grade 2</span>
+</td>
+<td class="py-space-md px-space-sm text-center text-on-surface-variant font-medium">80%</td>
+<td class="py-space-md px-space-md">
+<p class="text-on-surface text-xs leading-relaxed italic">"Expressive craft work and neat sketching."</p>
+<span class="font-label-sm text-[11px] text-on-surface-variant not-italic font-bold block mt-0.5">— Mrs. Lydia Boateng</span>
+</td>
+</tr>
+<!-- Ghanaian Language (Twi) -->
+<tr class="hover:bg-surface transition-colors bg-surface-container-low/20">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-primary font-bold text-xs">
+<span class="material-symbols-outlined text-sm">translate</span>
+</div>
+<span class="font-bold text-on-surface font-label-lg text-label-lg">Ghanaian Language (Twi)</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">24<span class="text-xs text-on-surface-variant font-normal">/30</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">17<span class="text-xs text-on-surface-variant font-normal">/20</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">42<span class="text-xs text-on-surface-variant font-normal">/50</span></td>
+<td class="py-space-md px-space-sm text-center font-headline-sm text-headline-sm font-bold text-primary">83%</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-bold">Grade 2</span>
+</td>
+<td class="py-space-md px-space-sm text-center text-on-surface-variant font-medium">77%</td>
+<td class="py-space-md px-space-md">
+<p class="text-on-surface text-xs leading-relaxed italic">"Good pronunciation and cultural storytelling interest."</p>
+<span class="font-label-sm text-[11px] text-on-surface-variant not-italic font-bold block mt-0.5">— Nana Yaw Kyeremeh</span>
+</td>
+</tr>
+<!-- Religious & Moral Education -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-primary font-bold text-xs">
+<span class="material-symbols-outlined text-sm">volunteer_activism</span>
+</div>
+<span class="font-bold text-on-surface font-label-lg text-label-lg">Religious &amp; Moral Education</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">29<span class="text-xs text-on-surface-variant font-normal">/30</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">19<span class="text-xs text-on-surface-variant font-normal">/20</span></td>
+<td class="py-space-md px-space-sm text-center font-bold text-on-surface">48<span class="text-xs text-on-surface-variant font-normal">/50</span></td>
+<td class="py-space-md px-space-sm text-center font-headline-sm text-headline-sm font-bold text-primary">96%</td>
+<td class="py-space-md px-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-bold">Grade 1</span>
+</td>
+<td class="py-space-md px-space-sm text-center text-on-surface-variant font-medium">82%</td>
+<td class="py-space-md px-space-md">
+<p class="text-on-surface text-xs leading-relaxed italic">"Displays kindness, respect, and deep moral conviction."</p>
+<span class="font-label-sm text-[11px] text-on-surface-variant not-italic font-bold block mt-0.5">— Pastor Samuel Mensah</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Visualizations: Academic Growth Trend & Tri-Pillar Assessment -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Historical Academic Trend (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary">Terminal Progress Trend</h3>
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-tertiary-container px-space-xs py-0.5 bg-surface-container-low rounded">
+              Consistent Upward Trajectory
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">
+            Sequential term cumulative grade averages tracking Kofi's development from Basic 1 through Basic 2.
+          </p>
+<!-- SVG Visual Trend Line & Bars -->
+<div class="w-full bg-surface p-space-md rounded-lg">
+<div class="h-44 w-full relative flex items-end justify-between px-space-md pb-4 pt-6">
+<!-- Term 1 2024 -->
+<div class="flex flex-col items-center gap-space-xs z-10 w-1/5 group">
+<span class="font-label-sm text-xs font-bold text-primary transition-transform group-hover:-translate-y-1">84.1%</span>
+<div class="w-full max-w-[40px] bg-primary/20 rounded-t-lg transition-all group-hover:bg-primary/30" style="height: 105px;"></div>
+<div class="text-center">
+<span class="font-label-sm text-[11px] font-bold text-on-surface block">Term 1</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant block">2026/27</span>
+</div>
+</div>
+<!-- Term 2 2024 -->
+<div class="flex flex-col items-center gap-space-xs z-10 w-1/5 group">
+<span class="font-label-sm text-xs font-bold text-primary transition-transform group-hover:-translate-y-1">86.2%</span>
+<div class="w-full max-w-[40px] bg-primary/40 rounded-t-lg transition-all group-hover:bg-primary/50" style="height: 118px;"></div>
+<div class="text-center">
+<span class="font-label-sm text-[11px] font-bold text-on-surface block">Term 2</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant block">2026/27</span>
+</div>
+</div>
+<!-- Term 3 2024 -->
+<div class="flex flex-col items-center gap-space-xs z-10 w-1/5 group">
+<span class="font-label-sm text-xs font-bold text-primary transition-transform group-hover:-translate-y-1">88.0%</span>
+<div class="w-full max-w-[40px] bg-primary/70 rounded-t-lg transition-all group-hover:bg-primary/80" style="height: 130px;"></div>
+<div class="text-center">
+<span class="font-label-sm text-[11px] font-bold text-on-surface block">Term 3</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant block">2026/27</span>
+</div>
+</div>
+<!-- Current Term 1 2026 -->
+<div class="flex flex-col items-center gap-space-xs z-10 w-1/5 group">
+<span class="font-label-sm text-xs font-bold text-secondary-container transition-transform group-hover:-translate-y-1">89.4%</span>
+<div class="w-full max-w-[40px] bg-secondary-container rounded-t-lg shadow-sm" style="height: 142px;"></div>
+<div class="text-center">
+<span class="font-label-sm text-[11px] font-bold text-secondary-container block">Term 1</span>
+<span class="font-label-sm text-[10px] text-on-surface font-bold block">Current</span>
+</div>
+</div>
+<!-- Background Trend Arc Overlay -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" preserveaspectratio="none" viewbox="0 0 400 160">
+<path d="M 50 110 Q 150 90, 250 70 T 350 45" fill="none" opacity="0.6" stroke="#ba0a0c" stroke-dasharray="4 4" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-xs text-on-surface-variant font-label-sm">
+<span>Benchmarked against Ghanaian National Standards (NaSIA / GES)</span>
+<span class="text-primary font-bold">Standard Deviation: ±1.1</span>
+</div>
+</div>
+<!-- Core Tri-Pillar Assessment: Mind • Heart • Hands (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-secondary text-xl">psychology</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary">Tri-Pillar Evaluation</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Well-rounded child assessment rooted in Carepoint's tri-fold founding pedagogical model.
+          </p>
+<div class="space-y-space-md">
+<!-- Mind -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base">lightbulb</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">Mind (Intellectual)</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-primary">92 / 100</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full" style="width: 92%;"></div>
+</div>
+<p class="text-[12px] font-body-sm text-on-surface-variant">Cognitive reasoning, algorithmic comprehension, inquiry &amp; memory retention.</p>
+</div>
+<!-- Heart -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-container text-base">favorite</span>
+<span class="font-label-lg text-label-lg font-bold text-secondary-container">Heart (Empathy &amp; Moral)</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-secondary-container">95 / 100</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-secondary-container h-2 rounded-full" style="width: 95%;"></div>
+</div>
+<p class="text-[12px] font-body-sm text-on-surface-variant">Spiritual discipline, respect for peers, emotional balance &amp; team solidarity.</p>
+</div>
+<!-- Hands -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-container text-base">front_hand</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">Hands (Practical &amp; Physical)</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-primary">88 / 100</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-on-tertiary-container h-2 rounded-full" style="width: 88%;"></div>
+</div>
+<p class="text-[12px] font-body-sm text-on-surface-variant">Craft execution, gross &amp; fine motor dexterity, physical education readiness.</p>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-xs bg-surface-container rounded font-label-sm text-[11px] text-center text-on-surface-variant font-bold">
+          Tri-Pillar Status: Exemplary Tier (Eligible for Annual Governors' Cup)
+        </div>
+</div>
+</div>
+<!-- Administrative Endorsement & Leadership Seal -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Remark Text -->
+<div class="lg:col-span-8 space-y-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">approval_delegation</span>
+<span class="font-label-lg text-label-lg uppercase tracking-wider text-primary font-bold">Head of Basic School Remark</span>
+</div>
+<blockquote class="font-body-lg text-body-lg text-on-surface italic pl-space-sm border-l-4 border-secondary-container">
+            “A dedicated, well-mannered student who consistently lives up to the Carepoint ethos. Kofi exhibits exceptional inquisitive intellect and warmth among his classmates. Promoted with merit.”
+          </blockquote>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-2">
+            Class Attendance: <strong class="text-on-surface font-semibold">58 of 60 School Days (96.7%)</strong> • Next Term Resumption Date: <strong class="text-on-surface font-semibold">January 13, 2026</strong>.
+          </p>
+</div>
+<!-- Verified Authority Seal & Signature Area -->
+<div class="lg:col-span-4 flex flex-col items-center sm:items-end justify-center">
+<div class="bg-surface-container-low p-space-md rounded-xl w-full max-w-sm flex flex-col items-center text-center">
+<!-- School Crest / Official Stamp Glyph -->
+<div class="relative w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-md mb-space-xs p-1 border-2 border-primary/20">
+<img src="../assets/carepoint-crest.png" alt="Carepoint Community School Official Crest" class="w-full h-full object-contain rounded-full"/>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[13px] font-bold">verified</span>
+</div>
+</div>
+<!-- Stylized Digital Signature Placeholder -->
+<div class="py-1">
+<span class="font-serif italic text-2xl text-primary font-bold tracking-widest select-none opacity-85">E. Appiah</span>
+</div>
+<div class="mt-1">
+<h4 class="font-label-lg text-label-lg font-bold text-primary">Dr. Mrs. Elizabeth Appiah, PhD</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Headmistress • Carepoint Basic School</span>
+<span class="font-label-sm text-[10px] text-on-tertiary-container font-semibold mt-1 inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">security</span> Validated GES Digital Institutional Signature
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Parent Action Footer Bar -->
+<div class="p-space-md bg-surface-container rounded-xl flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">contact_support</span>
+<span>Have questions regarding these marks? Schedule an academic consultation with the Class Teacher.</span>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button onclick="alert('Academic Conference: Request sent to Mrs. Beatrice Abbey. You will be scheduled for a 15-minute slot during PTA Conference week.');" class="w-full sm:w-auto px-space-md py-2 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold hover:bg-surface-container-high transition-colors shadow-sm text-center" type="button">
+          Book Academic Conference
+        </button>
+<button onclick="alert('Report card signed and acknowledged digitally for Term 1 2026/2027.'); this.textContent='✓ Acknowledged & Signed'; this.classList.add('bg-emerald-600', 'text-white');" class="w-full sm:w-auto px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold hover:bg-primary-container transition-colors shadow-sm text-center" type="button">
+          Acknowledge &amp; Sign
+        </button>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl border-t border-outline-variant/30"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-space-xl"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg mb-space-lg"><div class="md:col-span-1"><div class="flex items-center gap-space-xs mb-space-xs"><span class="material-symbols-outlined text-primary text-xl">verified_user</span><span class="font-headline-sm text-headline-sm text-primary font-bold">Carepoint</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Excellence in early, primary, and secondary education. Mind, Heart, and Hands nurtured for leadership.</p><div class="flex items-center gap-space-xs text-on-tertiary-container font-label-sm text-label-sm font-bold"><span class="material-symbols-outlined text-sm">lock</span><span>256-Bit SSL Encrypted Session</span></div></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Portal Assistance</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" href="messages.html">IT &amp; Parent Helpdesk</a></li><li><a class="hover:text-primary transition-colors" href="academics.html">Fee Payment Verification</a></li><li><a class="hover:text-primary transition-colors" href="pickup.html">Busing &amp; Route Logistics</a></li><li><a class="hover:text-primary transition-colors" href="#health">School Clinic &amp; Medical</a></li></ul></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Security &amp; Gate Desk</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li>Main Gate Post: Ext 104</li><li>Security Coordinator: 020 000 1122</li><li>Dispatch &amp; Pickup Desk: Ext 108</li><li>Emergency Response: 030 123 4567</li></ul></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Institutional Compliance</h4><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">Accredited by National Schools Inspectorate Authority (NaSIA) • Ghana Education Service (GES).</p><div class="p-space-sm rounded-lg bg-surface-container border border-outline-variant/40"><span class="font-label-sm text-label-sm font-bold text-primary block">Strict Parent Verification</span><span class="font-body-sm text-[12px] text-on-surface-variant block">Always present digital authorization code at afternoon gate checkout.</span></div></div></div><div class="pt-space-md border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><div>© 2026 Carepoint Community School. All Rights Reserved. National Schools Inspectorate Authority Compliant.</div><div class="flex items-center gap-space-md font-label-sm text-label-sm"><a class="hover:text-primary transition-colors cursor-pointer" onclick="alert('Child Safeguarding Policy: Carepoint Community School enforces strict zero-tolerance child protection protocols supervised by the Ghana Education Service (GES) and NaSIA.');" href="javascript:void(0)">Child Safeguarding</a><a class="hover:text-primary transition-colors cursor-pointer" onclick="alert('Carepoint Data Privacy: Compliant with Ghana Data Protection Act (Act 843). Student biometric & academic records are end-to-end encrypted.');" href="javascript:void(0)">Privacy Policy</a><a class="hover:text-primary transition-colors cursor-pointer" onclick="alert('Terms of Portal Use: Authorized for registered Carepoint parents and legal guardians only.');" href="javascript:void(0)">Terms of Portal Use</a></div></div></div></footer>
+</div>
+<style>
+@media print {
+  header, footer, nav, aside, .sidebar, button, select, #term-select, .no-print, [onclick] {
+    display: none !important;
+  }
+  body, main {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .shadow-sm, .shadow-md, .shadow-xl {
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+}
+</style>
+<script>
+  function generateOfficialReportCard() {
+    const btn = document.getElementById('download-report-btn');
+    if (btn) {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-base">sync</span> <span>Generating Certified Report...</span>';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.disabled = false;
+        window.print();
+      }, 700);
+    } else {
+      window.print();
+    }
+  }
+</script>
+
+</body></html>

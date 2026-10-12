@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-container":"#fffbff","secondary-fixed-dim":"#ffb4a9","surface-dim":"#d5dae4","on-tertiary-container":"#46a95a","surface-container-high":"#e3e8f2","on-tertiary-fixed":"#002108","primary-fixed":"#dce1ff","tertiary-container":"#003712","surface-tint":"#4c5c92","inverse-primary":"#b5c4ff","on-error-container":"#93000a","on-primary-fixed-variant":"#344478","inverse-on-surface":"#ecf1fb","surface-bright":"#f7f9ff","surface-container-low":"#eef4fe","outline-variant":"#c5c6d1","background":"#eef2f6","error-container":"#ffdad6","on-background":"#161c23","on-secondary-fixed-variant":"#930004","secondary-fixed":"#ffdad5","surface-container-lowest":"#ffffff","on-primary-container":"#8494cd","on-tertiary-fixed-variant":"#00531f","on-secondary-fixed":"#410001","on-error":"#ffffff","surface-container-highest":"#dde3ec","tertiary":"#001f07","primary":"#011549","error":"#ba1a1a","on-secondary":"#ffffff","on-surface":"#161c23","tertiary-fixed-dim":"#78dc86","surface-container":"#e9eef8","inverse-surface":"#2b3138","tertiary-fixed":"#94f9a0","on-surface-variant":"#45464f","outline":"#757680","surface":"#eef2f6","primary-container":"#1a2b5e","secondary":"#ba0a0c","secondary-container":"#df2d23","surface-variant":"#dde3ec","on-tertiary":"#ffffff","primary-fixed-dim":"#b5c4ff","on-primary":"#ffffff","on-primary-fixed":"#03174b"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","margin":"2rem","space-md":"1rem","space-xs":"0.25rem","space-xl":"2.5rem","space-sm":"0.5rem","margin-sm":"1rem","gutter-sm":"1rem","space-lg":"1.5rem"},"fontFamily":{"display-lg-mobile":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"]},"fontSize":{"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"800"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-lg":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script><title>Carepoint - Live QR Scanner Viewport</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "gate",
+            label: "Live QR Scanner Viewport",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-scan.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"><aside class="carepoint-drawer fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col justify-between overflow-y-auto border-r border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="flex flex-col min-h-0 flex-1">
+    <!-- Top Header with Crest, Title, Motto, Badge, and Close Button -->
+    <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+      <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+            <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+          </div>
+          <div class="min-w-0">
+            <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+            <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+          </div>
+        </div>
+        <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Navigation Drawer">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+      <div class="flex items-center justify-between pt-0.5">
+        <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+      </div>
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider uppercase">CAMPUS SECURITY &amp; GATEWAY</span>
+      </div>
+    </div>
+
+    <!-- Academic Session Status Strip -->
+    <div class="px-space-md py-space-sm">
+      <div class="px-space-md py-space-xs bg-surface-container-low rounded-lg flex items-center justify-between">
+        <div class="flex items-center gap-space-xs">
+          <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+          <span class="font-label-sm text-label-sm text-on-surface font-medium">Session 2026/27 Term 1</span>
+        </div>
+        <span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">Live</span>
+      </div>
+    </div>
+
+    <!-- Category Label -->
+    <div class="px-space-md pt-2 pb-1">
+      <span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Security Station</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col gap-1 px-space-md overflow-y-auto flex-1 min-h-0">
+      <a href="scan.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all bg-primary-container text-on-primary font-bold shadow-sm">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+          <span class="text-sm">Scanner Viewport</span>
+        </div>
+      </a>
+      <a href="verify.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">verified_user</span>
+          <span class="text-sm">Verification Station</span>
+        </div>
+      </a>
+      <a href="log.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">receipt_long</span>
+          <span class="text-sm">Pickup Log</span>
+        </div>
+      </a>
+      <a href="alert.html" class="flex items-center justify-between px-space-md py-2.5 rounded-xl transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-medium">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">emergency</span>
+          <span class="text-sm">Security Alerts</span>
+        </div>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Pinned Bottom Terminal Status Card -->
+  <div class="shrink-0 p-3 mx-3 mb-3 rounded-xl bg-surface-container-low flex flex-col gap-1 border border-surface-container-high/80 shadow-2xs">
+    <div class="flex items-center justify-between">
+      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">Turnstile A</span>
+      <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>Online
+      </span>
+    </div>
+    <div class="font-headline-sm text-sm text-primary font-bold leading-tight">Accra Main Gate</div>
+    <div class="font-body-sm text-[11px] text-on-surface-variant">Level 3 Safety Shield</div>
+  </div>
+</aside>
+<div class="pl-72 flex flex-col min-h-screen">
+<header class="fixed top-0 left-72 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-primary text-on-primary px-margin h-8 flex items-center justify-between text-xs font-label-sm tracking-wider uppercase"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-sm text-tertiary-fixed">verified</span><span>Ghana NaSIA Accredited Security Protocol - Level 3 Campus Safety</span></div><div class="flex items-center gap-space-md"><span class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-ping"></span>Accra Time: 14:28:09 GMT</span><span class="text-outline-variant">|</span><span class="text-tertiary-fixed font-bold">SECURE - ACTIVE PATROL</span></div></div><div class="h-20 w-full px-margin flex items-center justify-between gap-space-md bg-surface-container-lowest"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="w-11 h-11 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm hover:scale-105 active:scale-95 transition-all cursor-pointer" title="Toggle Navigation Tabs Drawer" aria-label="Toggle Navigation Tabs Drawer"><span class="material-symbols-outlined text-2xl">menu</span></button><div><div class="flex items-center gap-space-xs"><h1 class="font-headline-sm text-headline-sm text-primary leading-none">Carepoint Community School</h1><span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Gate Turnstile A</span></div><p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-0.5">Mind • Heart • Hands • Security &amp; Visitor Reception Hub</p></div></div><nav class="flex items-center bg-surface-container-low p-1.5 rounded-xl gap-1 shadow-sm" data-active-classes="bg-primary-container text-on-secondary-container font-label-lg"><a aria-current="page" class="px-space-md py-space-sm rounded-lg transition-all flex items-center justify-center bg-primary-container text-on-secondary-container font-label-lg" data-path="scanner" href="scan.html">Scanner</a><a class="px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface hover:bg-surface-container transition-all flex items-center justify-center" data-path="verification" href="verify.html">Verification</a><a class="px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface hover:bg-surface-container transition-all flex items-center justify-center" data-path="pickup-log" href="log.html">Pickup Log</a><a class="px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface hover:bg-surface-container transition-all flex items-center justify-center" data-path="security-alerts" href="alert.html">Security Alerts</a></nav><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="w-10 h-10 rounded-xl flex items-center justify-center bg-surface-container-low text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors relative shadow-sm" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary"></span></button><button class="flex items-center gap-space-xs px-3 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-container transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-base">call</span><span>Intercom</span></button><div class="h-8 w-px bg-surface-container-high"></div><div class="flex items-center gap-space-sm"><div class="text-right leading-tight"><p class="font-label-md text-label-md text-on-surface font-bold">Off. Emmanuel Tetteh</p><span class="font-label-sm text-label-sm text-on-surface-variant">ID #SEC-08</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWyCxim_7skt8k31G0IotbuvMRM2YBPGoHvoZYsa25Oh7YjCKOaPB9NbEJlz7absl89QYzqeKxYnR448A6GuD58V-wOmg0TgMyyhDKQx0RuvqJw6XlU06RFl_YO6p1OAhJ8yWUqb6Xir1rbx9sdVdTXXX34sj3lncm3yNoCumK2AKJSnHf-teZ8hmWgZoInrNO2R9DoQfxqZAsqD5baLXIUfUmMaFmvVU0wSaAabCoCC1PDgEeMPJThA"/></div><a class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" data-path="kiosk-lock" href="login.html"><span class="material-symbols-outlined text-xl">lock</span></a></div></div></header><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<!-- Tricolor Accent Ribbon (Cyan, Crimson, Green inspired by school insignia banner) -->
+<div class="w-full flex h-1.5 shadow-sm">
+<div class="w-1/3 bg-on-primary-container"></div>
+<div class="w-1/3 bg-secondary"></div>
+<div class="w-1/3 bg-tertiary-fixed-dim"></div>
+</div>
+<div class="w-full px-margin py-space-lg flex flex-col gap-space-lg max-w-[1440px] mx-auto">
+<!-- Top Terminal Meta Bar: Quick Division Indicators & Emergency Mode Controls -->
+<div class="flex flex-col gap-3">
+  <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-surface-container-high/60">
+    <div class="flex flex-wrap items-center gap-space-sm">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-tertiary-container text-tertiary-fixed font-label-md text-label-md">
+        <span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-ping"></span>
+        SCANNER STREAM ONLINE
+      </span>
+      <button id="toggle-telemetry-btn" onclick="toggleTelemetryDrawer()" class="px-2.5 py-1 rounded-md bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1 cursor-pointer transition-colors" type="button" title="View Hardware Diagnostics">
+        <span class="material-symbols-outlined text-[15px]">sensors</span>
+        <span>Hardware Specs</span>
+        <span class="material-symbols-outlined text-[14px]" id="telemetry-chevron">expand_more</span>
+      </button>
+      <span class="px-2.5 py-1 rounded-md bg-primary text-on-primary font-label-sm text-label-sm font-bold uppercase">
+        NaSIA Level 3 SafeZone
+      </span>
+    </div>
+    <!-- Quick Action Buttons -->
+    <div class="flex items-center gap-space-sm">
+      <button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-all active:scale-95 shadow-sm cursor-pointer" id="toggle-torch-btn" type="button">
+        <span class="material-symbols-outlined text-base">flashlight_on</span>
+        <span>Torch Assist</span>
+      </button>
+      <button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-all active:scale-95 shadow-sm cursor-pointer" id="switch-cam-btn" type="button">
+        <span class="material-symbols-outlined text-base">switch_camera</span>
+        <span>Switch Cam (NFC)</span>
+      </button>
+      <button data-safe-action="amber" class="carepoint-soft-btn-danger" id="amber-alert-btn" type="button" title="Halt Turnstiles (Protected with 2-step verification)">
+        <span class="material-symbols-outlined text-base">warning</span>
+        <span>HALT / CODE AMBER</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Collapsible Hardware Diagnostics Drawer (Disclosed on demand, no feature dumping) -->
+  <div id="telemetry-drawer" class="hidden w-full p-3.5 rounded-xl bg-surface-container-low border border-surface-container-high flex flex-wrap items-center justify-between gap-3 text-xs transition-all">
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-surface-variant">
+      <span><strong>Sensor:</strong> Sony Exmor CMOS #GATE-01</span>
+      <span><strong>Stream:</strong> 4K Ultra-Wide (60 FPS)</span>
+      <span><strong>Network Latency:</strong> 14ms (Accra LAN Edge)</span>
+      <span><strong>NFC Induction:</strong> 13.56 MHz Active</span>
+    </div>
+    <span class="text-[11px] text-tertiary-fixed font-bold bg-tertiary-container px-2.5 py-0.5 rounded-full">Telemetry Nominal</span>
+  </div>
+
+  
+</div>
+<!-- Active Scanning Broadcast Banner -->
+      <div class="w-full bg-tertiary text-on-tertiary rounded-2xl border border-tertiary-fixed/30 p-4 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3 transition-all duration-300" id="verified-alert-banner">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-tertiary-container flex items-center justify-center text-tertiary-fixed shadow-inner shrink-0">
+            <span class="material-symbols-outlined text-2xl">verified_user</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase font-bold tracking-wide">
+                Last Scan [14:28 GMT]
+              </span>
+              <span class="text-tertiary-fixed-dim font-label-sm text-label-sm">Match Verified</span>
+            </div>
+            <p class="font-headline-sm text-headline-sm text-surface-container-lowest mt-0.5 font-bold">
+              Token <span class="text-tertiary-fixed">#CP-7714</span>: Kofi Mensah (Basic 2 Sunflower)
+            </p>
+            <p class="font-body-sm text-body-sm text-surface-dim">
+              Authorized: <span class="font-semibold text-surface-container-lowest">Dr. Nana Mensah</span> (Parent) &bull; Car: <span class="font-semibold text-surface-container-lowest">GE-8842-23</span>
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <button class="px-3 py-1.5 rounded-xl bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm flex items-center gap-1 hover:brightness-110 transition-colors cursor-pointer" id="re-sound-btn" type="button">
+            <span class="material-symbols-outlined text-[16px]">volume_up</span>
+            <span>Chime</span>
+          </button>
+          <span class="px-2.5 py-1.5 rounded-xl bg-surface-container-lowest/10 text-on-tertiary font-label-sm text-label-sm">
+            Turnstile Cleared
+          </span>
+        </div>
+      </div>
+<!-- Main Operational Grid: Viewport Area (Left 7 cols) & Live Dispatch Deck (Right 5 cols) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT SECTION: Camera Viewfinder & Manual Code Fallback (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Live Camera Viewport Box -->
+<div class="relative w-full rounded-2xl bg-on-background overflow-hidden shadow-xl aspect-[4/3] flex items-center justify-center select-none group">
+<!-- Background Camera Feed Simulation -->
+<div class="absolute inset-0 w-full h-full bg-primary/95 flex items-center justify-center">
+<!-- Simulated CCTV video background image with prompt -->
+<img class="w-full h-full object-cover opacity-45 mix-blend-luminosity filter blur-[0.5px]" data-alt="First-person security kiosk camera feed showing a sunlit school courtyard gate in Accra Ghana with children in uniforms walking safely and a parents hand holding up a high-resolution QR pass to a scanner terminal lens, photorealistic security monitor view." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlfgNW5g4EJaHOa4yAFLSG8goTf95HIacxUw3gLTu3G10hG0dcZdg4f1d0saVco6mo2LfNIsUeZOkOaj8v_jyAjM0Mk_H6_GmezjKLer5l2Oi2Lp-5WGpyQ99v61LyLGW6w6u3wdyMK6QwWa2bIn0Sk0uZV3djAy8co2D82OWRjswbpA1eO3919UrfQjM1tXl95oBoZjDEbXNktxYmkd1TnDM1KW2W9q91BpuB8GW2kqXPRCYMI3Z2fg"/>
+<!-- Dark Gradient vignette overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-primary/80"></div>
+</div>
+<!-- Camera Status Overlays (Top Edge) -->
+<div class="absolute top-4 left-4 right-4 flex items-center justify-between text-surface-container-lowest z-20 pointer-events-none">
+<div class="flex items-center gap-2 bg-primary/80 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-sm text-label-sm font-bold tracking-wider text-surface-container-lowest uppercase">LIVE REC • 4K ULTRA-WIDE</span>
+</div>
+<div class="flex items-center gap-2 bg-primary/80 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-tertiary-fixed text-base">sensors</span>
+<span class="font-label-sm text-label-sm text-surface-container-lowest">NFC ANTENNA READY</span>
+</div>
+</div>
+<!-- Target Reticle & Laser Scanning Sweep -->
+<div class="relative w-72 h-72 sm:w-80 sm:h-80 rounded-2xl flex items-center justify-center pointer-events-none z-10">
+<!-- Target Corners -->
+<div class="absolute top-0 left-0 w-10 h-10 border-t-4 border-l-4 border-primary-fixed rounded-tl-xl shadow-[0_0_12px_rgba(220,225,255,0.7)]"></div>
+<div class="absolute top-0 right-0 w-10 h-10 border-t-4 border-r-4 border-primary-fixed rounded-tr-xl shadow-[0_0_12px_rgba(220,225,255,0.7)]"></div>
+<div class="absolute bottom-0 left-0 w-10 h-10 border-b-4 border-l-4 border-primary-fixed rounded-bl-xl shadow-[0_0_12px_rgba(220,225,255,0.7)]"></div>
+<div class="absolute bottom-0 right-0 w-10 h-10 border-b-4 border-r-4 border-primary-fixed rounded-br-xl shadow-[0_0_12px_rgba(220,225,255,0.7)]"></div>
+<!-- Optical Center crosshairs -->
+<div class="w-12 h-12 relative flex items-center justify-center opacity-70">
+<div class="w-full h-0.5 bg-primary-fixed"></div>
+<div class="h-full w-0.5 bg-primary-fixed absolute"></div>
+</div>
+<!-- Dynamic Laser Line -->
+<div class="absolute left-2 right-2 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent shadow-[0_0_15px_#df2d23] animate-[bounce_2.5s_infinite]"></div>
+<!-- Frame Label Overlay -->
+<div class="absolute -bottom-8 px-3 py-1 rounded-full bg-primary-container/90 text-on-secondary-container backdrop-blur-sm font-label-sm text-label-sm shadow-md whitespace-nowrap">
+              Align Guardian QR Code or Tap Smart Band
+            </div>
+</div>
+<!-- Bottom Camera Controls / Status Bar inside Viewfinder -->
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-surface-container-lowest z-20">
+<span class="font-label-sm text-label-sm bg-primary/70 backdrop-blur-md px-3 py-1.5 rounded-lg">
+              Auto-Focus: Multi-Zone Phase (Track 3 faces)
+            </span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed font-bold">DISMISSAL AUTH ACTIVE</span>
+</div>
+</div>
+</div>
+<!-- Manual Token Fallback / Rapid SMS Code Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-xl">dialpad</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Manual Security Token Lookup</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">SMS or Pickup Card 6-Character ID</span>
+</div>
+<form class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm mt-1" id="token-form">
+<div class="relative flex-1">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-xl">key</span>
+</span>
+<input class="carepoint-soft-input uppercase tracking-wider font-bold" id="token-input" maxlength="8" placeholder="e.g. CP-8924 or CP-3120" required="" type="text"/>
+</div>
+<button class="carepoint-soft-btn text-sm px-8 py-3" type="submit">
+<span class="material-symbols-outlined text-lg">search_check</span>
+<span>VERIFY CODE</span>
+</button>
+<button class="px-space-md py-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md transition-all flex items-center justify-center gap-1.5" id="quick-rfid-demo" type="button">
+<span class="material-symbols-outlined text-base">tap_and_play</span>
+<span class="hidden sm:inline">Simulate NFC Tap</span>
+</button>
+</form>
+<!-- Instruction hint -->
+<div class="flex items-center gap-2 pt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-tertiary-container">info</span>
+<span>Verify original photo ID against records if digital pass is unavailable.</span>
+</div>
+</div>
+<!-- Four Academic Levels Quick Guide -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+<!-- Nursery Card -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high/60 p-3.5 shadow-xs flex flex-col items-center justify-between text-center hover:border-primary/30 transition-all">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary mb-1.5">
+<span class="material-symbols-outlined text-[18px]">child_care</span>
+</div>
+<div class="w-full">
+<span class="font-label-sm text-label-sm text-on-surface-variant block font-medium">Nursery</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">42/48</span>
+<div class="w-full bg-surface-container rounded-full h-1 mt-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[87%]"></div>
+</div>
+</div>
+<span class="mt-2 text-[10px] font-bold text-primary uppercase tracking-wider">Creche &amp; NUR</span>
+</div>
+<!-- Kindergarten Card -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high/60 p-3.5 shadow-xs flex flex-col items-center justify-between text-center hover:border-secondary/30 transition-all">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-secondary mb-1.5">
+<span class="material-symbols-outlined text-[18px]">toys</span>
+</div>
+<div class="w-full">
+<span class="font-label-sm text-label-sm text-on-surface-variant block font-medium">Kindergarten</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">64/92</span>
+<div class="w-full bg-surface-container rounded-full h-1 mt-1.5 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full w-[69%]"></div>
+</div>
+</div>
+<span class="mt-2 text-[10px] font-bold text-secondary uppercase tracking-wider">KG 1 &amp; 2</span>
+</div>
+<!-- Basic Primary Card -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high/60 p-3.5 shadow-xs flex flex-col items-center justify-between text-center hover:border-tertiary-container/30 transition-all">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-tertiary-container mb-1.5">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</div>
+<div class="w-full">
+<span class="font-label-sm text-label-sm text-on-surface-variant block font-medium">Basic Primary</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">58/120</span>
+<div class="w-full bg-surface-container rounded-full h-1 mt-1.5 overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full w-[48%]"></div>
+</div>
+</div>
+<span class="mt-2 text-[10px] font-bold text-tertiary-container uppercase tracking-wider">Basic 1 - 6</span>
+</div>
+<!-- Junior High Card -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high/60 p-3.5 shadow-xs flex flex-col items-center justify-between text-center hover:border-primary/30 transition-all">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary mb-1.5">
+<span class="material-symbols-outlined text-[18px]">school</span>
+</div>
+<div class="w-full">
+<span class="font-label-sm text-label-sm text-on-surface-variant block font-medium">Junior High</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">20/80</span>
+<div class="w-full bg-surface-container rounded-full h-1 mt-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[25%]"></div>
+</div>
+</div>
+<span class="mt-2 text-[10px] font-bold text-primary uppercase tracking-wider">JHS 1 - 3</span>
+</div>
+</div>
+</div>
+<!-- RIGHT SECTION: Dismissal Flow Metrics & Live Scan Queue (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Dismissal Progress Radial & Status Gauge Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-wider">AFTERNOON DISMISSAL FLOW</span>
+<h3 class="font-headline-md text-headline-md text-primary leading-tight">Campus Gate Discharge</h3>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm font-bold">
+              PEAK WAVE 2
+            </div>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-low p-space-md rounded-xl">
+<!-- Inline SVG Gauge (54% Progress) -->
+<div class="relative w-24 h-24 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- Track -->
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<!-- Filled Segment -->
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="54, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center leading-none">
+<span class="font-headline-sm text-headline-sm text-primary font-extrabold">54%</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant mt-0.5">CLEARED</span>
+</div>
+</div>
+<!-- Counter Details -->
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-xl text-headline-xl text-primary font-extrabold leading-none" id="cleared-counter">184</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant font-bold leading-none">/ 340</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Students Safely Handed Over to Guardians</p>
+<div class="flex items-center gap-4 mt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                  156 In Classrooms
+                </span>
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                  4 Bus Manifest
+                </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Queue of Recent Scans & Verification Deck -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm flex-1">
+<div class="flex items-center justify-between border-b pb-2 border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">history_toggle_off</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Live Turnstile Queue</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+              Real-time Feed
+            </span>
+</div>
+<!-- Queue Item 1: High Verification with Student & Parent Match -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait of an African school boy wearing clean Carepoint Community School navy and red uniform collar smiling into the camera with white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKklW4svgnjA5yMw4ArzXVl1WVKvamRrT69kTqiCP_1gvRzlwQj7wZsdD2e6pvLyJHhKXLGPKPHXhgJED9xIYuvSL04Aed_RRBg6R6LRrLV3gkhOr3UlTBskgnT1dqS7xPOXUwPq4SV63nS9fBx7KBBMu-N-SzrlJnjgsDCoKPxWsu7wBquQUFaxgP7QQeskjtRSnvPOrXFVw9ZfyqhDnGIzw8-rgowByL3pI_3cw_1ZKZuyx9WoPyJw"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-fixed-dim ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-primary font-bold">Kofi Mensah</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-container text-on-secondary-container font-label-sm text-[10px]">BASIC 2</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Guardian: <strong class="text-on-surface">Dr. Nana Mensah</strong> (Father)
+                </p>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span>Token #CP-7714</span>
+<span>•</span>
+<span class="text-on-tertiary-container font-semibold">Exit Cleared (Gate A)</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-1 rounded-md bg-tertiary-fixed/30 text-on-tertiary-container font-label-sm text-label-sm font-bold block mb-1">
+                COMPLETED
+              </span>
+<span class="font-label-sm text-label-sm text-outline">14:28:12</span>
+</div>
+</div>
+<!-- Queue Item 2: Nursery Student with Verified Nanny Pickup Authorization -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of a young Ghanaian girl with hair beads in nursery school smock smiling happily." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB8bNdR6Ts4_g76g4TBTb0JInU-3n8qz2XMNgubbBGcdhrGoMbc5hzQy7WD2WdBs2YEG_0ZaDyKwTBoOx2wl07q6CBN5Q4em1f3EVIux3LvsVyOLhafpPikRYkuxOfkA0oOpUP51LJ10ysBZknatBYzERRUHyHEaSSessFoz-DNrxTrLcOhLH9YHsb-Tf084PRonqnXohPO8LexXcVh8WG72lFhqiKQ_uFQKJLt_iJiQbX5cb36IR96A"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-fixed-dim ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-primary font-bold">Akosua Baah</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary text-on-secondary font-label-sm text-[10px]">NURSERY B</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Pickup: <strong class="text-on-surface">Grace Adjei</strong> (Designated Nanny)
+                </p>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span>Token #CP-4902</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">SMS Auth Confirmed</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-1 rounded-md bg-tertiary-fixed/30 text-on-tertiary-container font-label-sm text-label-sm font-bold block mb-1">
+                COMPLETED
+              </span>
+<span class="font-label-sm text-label-sm text-outline">14:26:45</span>
+</div>
+</div>
+<!-- Queue Item 3: Secondary JHS Student self-walker with sibling -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of an adolescent Ghanaian junior high school student in neat pressed school polo with books under arm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxKWQjMBOBiUVxgmC-8Y3aRAMQ6iPWmtHQpjqJ8-2QMHksYVCMTKu8mp7NQjaFYg33qXqg4k7-SoUU_fPPZZwmUfyFnrJYdwWLPLFmSr1AfJWIMUf8Bmt1bXmxXjEroEfFOPviPtj8zvOCwkBRa449bJkbDky8q6KkaId6Ghn9UUELh5qGJMG4AyMrVx01vkYaIoHnI1N8IfeVmmaOURkznEkM20v0AtvHNVSbV6eBZ6gobUrOxowngw"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-primary-fixed ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-primary font-bold">Kwame Osei-Bonsu</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-tint text-on-secondary font-label-sm text-[10px]">JHS 2</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Authorized: <strong class="text-on-surface">Self-Departure (Walk Permit)</strong>
+</p>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span>Smart Badge NFC #8819</span>
+<span>•</span>
+<span class="text-outline">Escorting Sibling Basic 1</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold block mb-1">
+                LOGGED
+              </span>
+<span class="font-label-sm text-label-sm text-outline">14:24:02</span>
+</div>
+</div>
+<!-- Terminal Diagnostics & Direct Intercom Calling Strip -->
+<div class="mt-space-sm p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-lg">router</span>
+<div class="leading-tight">
+<span class="font-label-sm text-label-sm text-on-surface font-bold block">Turnstile Solenoid Gate 1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Turn Relay: Auto-locking in 12s</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-tint hover:text-surface-container-lowest text-primary font-label-sm text-label-sm font-bold transition-all shadow-sm" id="manual-unlock-btn" type="button">
+              MANUAL PASS
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Security Officer Active Shift Note & Protocol Footer Banner -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-2xl">policy</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Ghana NaSIA Campus Safety Notice 2024-B</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Under Carepoint Community School Child Protection Policy, no early learner (Creche to Basic 3) may exit perimeter gates without confirmed biometric or guardian token match.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-label-sm text-label-sm text-outline-variant">Station Terminal: GT-ACC-01A</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md" type="button">
+          Print Shift Report
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleTelemetryDrawer() {
+    const drawer = document.getElementById('telemetry-drawer');
+    const chevron = document.getElementById('telemetry-chevron');
+    if (drawer) {
+      const isHidden = drawer.classList.contains('hidden');
+      drawer.classList.toggle('hidden', !isHidden);
+      if (chevron) chevron.innerText = isHidden ? 'expand_less' : 'expand_more';
+    }
+  }
+
+  // Interactive Simulation for Front-Desk/Gate Security Officer
+  document.addEventListener('DOMContentLoaded', () => {
+    const tokenForm = document.getElementById('token-form');
+    const tokenInput = document.getElementById('token-input');
+    const alertBanner = document.getElementById('verified-alert-banner');
+    const clearedCounter = document.getElementById('cleared-counter');
+    const amberAlertBtn = document.getElementById('amber-alert-btn');
+    const manualUnlockBtn = document.getElementById('manual-unlock-btn');
+    const nfcDemoBtn = document.getElementById('quick-rfid-demo');
+    const torchBtn = document.getElementById('toggle-torch-btn');
+    let isTorchOn = false;
+    let isAmber = false;
+
+    // Handle Manual Code Verification
+    if (tokenForm && tokenInput) {
+      tokenForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const code = tokenInput.value.trim().toUpperCase();
+        if (!code) return;
+
+        // Visual flash confirmation
+        triggerMatchSimulation(code, "Manual Token Override Cleared - Master List Matched");
+        tokenInput.value = '';
+      });
+    }
+
+    // NFC Simulation Button
+    if (nfcDemoBtn) {
+      nfcDemoBtn.addEventListener('click', () => {
+        const sampleCodes = ['CP-9104', 'CP-3829', 'CP-1152', 'CP-5401'];
+        const randomCode = sampleCodes[Math.floor(Math.random() * sampleCodes.length)];
+        triggerMatchSimulation(randomCode, "NFC Keyfob Sensor Read Confirmed");
+      });
+    }
+
+    function triggerMatchSimulation(code, subtitle) {
+      if (!alertBanner) return;
+      
+      // Update counter
+      if (clearedCounter) {
+        let count = parseInt(clearedCounter.innerText, 10);
+        if (!isNaN(count)) clearedCounter.innerText = (count + 1).toString();
+      }
+
+      // Flash green banner
+      alertBanner.classList.add('scale-[1.01]', 'ring-4', 'ring-tertiary-fixed');
+      const tokenEl = alertBanner.querySelector('.text-tertiary-fixed') || alertBanner.querySelector('strong');
+      if (tokenEl) tokenEl.innerText = '#' + code;
+      const subtitleEl = alertBanner.querySelector('.text-surface-dim');
+      if (subtitleEl) {
+        subtitleEl.innerHTML = `Guardian Authorized: <span class="font-bold text-surface-container-lowest">${subtitle}</span> • Verified via Security Gate Terminal A`;
+      }
+
+      setTimeout(() => {
+        alertBanner.classList.remove('scale-[1.01]', 'ring-4', 'ring-tertiary-fixed');
+      }, 1500);
+    }
+
+    // Manual Pass Trigger
+    if (manualUnlockBtn) {
+      manualUnlockBtn.addEventListener('click', () => {
+        manualUnlockBtn.innerText = 'UNLOCKING...';
+        manualUnlockBtn.classList.add('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+        setTimeout(() => {
+          manualUnlockBtn.innerText = 'SOLENOID OPEN (5s)';
+          setTimeout(() => {
+            manualUnlockBtn.innerText = 'MANUAL PASS';
+            manualUnlockBtn.classList.remove('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+          }, 4000);
+        }, 800);
+      });
+    }
+
+    // Torch assist toggle
+    if (torchBtn) {
+      torchBtn.addEventListener('click', () => {
+        isTorchOn = !isTorchOn;
+        torchBtn.classList.toggle('bg-primary-fixed', isTorchOn);
+        torchBtn.classList.toggle('text-primary', isTorchOn);
+        const icon = torchBtn.querySelector('.material-symbols-outlined');
+        if (icon) icon.innerText = isTorchOn ? 'flashlight_off' : 'flashlight_on';
+      });
+    }
+
+    // Code Amber Panic Toggle
+    if (amberAlertBtn) {
+      amberAlertBtn.addEventListener('click', () => {
+        isAmber = !isAmber;
+        if (isAmber) {
+          amberAlertBtn.classList.remove('bg-secondary');
+          amberAlertBtn.classList.add('bg-on-error-container', 'animate-pulse');
+          amberAlertBtn.innerHTML = '<span class="material-symbols-outlined text-base">emergency</span><span>GATE HALTED - AMBER</span>';
+          alertBanner.classList.add('bg-secondary', 'text-on-secondary');
+        } else {
+          amberAlertBtn.classList.add('bg-secondary');
+          amberAlertBtn.classList.remove('bg-on-error-container', 'animate-pulse');
+          amberAlertBtn.innerHTML = '<span class="material-symbols-outlined text-base">warning</span><span>HALT / CODE AMBER</span>';
+          alertBanner.classList.remove('bg-secondary', 'text-on-secondary');
+        }
+      });
+    }
+  });
+</script></main><footer class="w-full bg-surface-container-low py-space-md mt-space-xl"><div class="w-full px-margin flex flex-col md:flex-row items-center justify-between text-on-surface-variant font-body-sm text-body-sm gap-space-sm"><div class="flex items-center gap-space-md"><span>© 2024 Carepoint Community School - Campus Security Terminal System</span><span class="text-outline-variant">•</span><span>Station Mode: Active Gate Kiosk</span></div><div class="flex items-center gap-space-sm font-label-sm text-label-sm uppercase tracking-wider"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span><span>Terminal Encrypted • AES-256 Protocol</span></div></div></footer>
+</div></body></html>

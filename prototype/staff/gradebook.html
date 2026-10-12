@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"outline-variant":"#c5c6d1","primary":"#011549","secondary-fixed":"#ffdad5","on-primary-container":"#8494cd","surface-container-highest":"#dde3ec","surface":"#eef2f6","surface-dim":"#d5dae4","on-secondary-fixed-variant":"#930004","error-container":"#ffdad6","primary-container":"#1a2b5e","on-background":"#161c23","on-surface-variant":"#45464f","tertiary-fixed-dim":"#78dc86","secondary":"#ba0a0c","surface-tint":"#4c5c92","tertiary-container":"#003712","inverse-primary":"#b5c4ff","surface-container-low":"#eef4fe","surface-container-lowest":"#ffffff","tertiary-fixed":"#94f9a0","on-secondary-container":"#fffbff","on-error-container":"#93000a","on-tertiary-fixed":"#002108","surface-container-high":"#e3e8f2","on-primary-fixed":"#03174b","on-surface":"#161c23","on-secondary-fixed":"#410001","primary-fixed-dim":"#b5c4ff","inverse-surface":"#2b3138","tertiary":"#001f07","inverse-on-surface":"#ecf1fb","background":"#eef2f6","on-primary":"#ffffff","surface-bright":"#f7f9ff","on-error":"#ffffff","outline":"#757680","secondary-container":"#df2d23","on-primary-fixed-variant":"#344478","on-tertiary-fixed-variant":"#00531f","surface-variant":"#dde3ec","on-secondary":"#ffffff","error":"#ba1a1a","on-tertiary-container":"#46a95a","surface-container":"#e9eef8","primary-fixed":"#dce1ff","on-tertiary":"#ffffff","secondary-fixed-dim":"#ffb4a9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","space-md":"1rem","margin-sm":"1rem","space-xs":"0.25rem","space-xl":"2.5rem","space-lg":"1.5rem","margin":"2rem","gutter-sm":"1rem","gutter":"1.5rem"},"fontFamily":{"headline-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},"fontSize":{"headline-md":["20px",{"lineHeight":"26px","fontWeight":"700"}],"display-lg-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"800"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["12.5px",{"lineHeight":"17px","letterSpacing":"0.03em","fontWeight":"700"}],"headline-xl-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg":["26px",{"lineHeight":"34px","fontWeight":"700"}],"body-lg":["15.5px",{"lineHeight":"23px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-md":["11px",{"lineHeight":"15px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-sm":["17px",{"lineHeight":"22px","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-sm":["10px",{"lineHeight":"13px","letterSpacing":"0.04em","fontWeight":"600"}],"body-sm":["12.5px",{"lineHeight":"17px","fontWeight":"400"}]}}}};</script><title>Carepoint - Spreadsheet Continuous Assessment</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "staff",
+            label: "Spreadsheet Continuous Assessment",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-gradebook.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface text-on-surface font-body-md"><aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-outline-variant/30">
+  <!-- Top Header with Crest, Title, Motto, Badge, and Repositioned Close Button -->
+  <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider">STAFF OPERATIONAL PORTAL</span>
+    </div>
+  </div>
+
+  <!-- Middle Nav Area (Scrolls smoothly if screen is short, never crushes the class card!) -->
+  <div class="flex-1 min-h-0 overflow-y-auto px-3 py-3">
+    <div class="font-label-sm text-[11px] uppercase tracking-wider text-outline px-2 mb-1.5 font-bold">
+      Academic Operations
+    </div>
+    <nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm">
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-dashboard" href="dashboard.html">
+        <span class="material-symbols-outlined text-[20px]">grid_view</span>
+        <span>Dashboard</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-attendance" href="attendance.html">
+        <span class="material-symbols-outlined text-[20px]">fact_check</span>
+        <span>Attendance</span>
+      </a>
+      <a aria-current="page" class="flex items-center gap-2.5 px-3 py-2 transition-colors bg-primary-container text-on-primary font-bold rounded-lg shadow-sm font-label-lg text-label-lg" data-path="staff-gradebook" href="gradebook.html">
+        <span class="material-symbols-outlined text-[20px]">menu_book</span>
+        <span>Gradebook</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-health-and-welfare" href="health.html">
+        <span class="material-symbols-outlined text-[20px]">medical_services</span>
+        <span>Health &amp; Welfare</span>
+      </a>
+      <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-approvals-engine" href="approvals.html">
+        <div class="flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-[20px]">verified</span>
+          <span>Approvals Engine</span>
+        </div>
+        <span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-label-sm font-bold">3</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-messages" href="messages.html">
+        <span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+        <span>Messages</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Bottom My Class Layer Card (Docked, shrink-0, comfortably padded with breathing room) -->
+  <div class="shrink-0 p-3 mx-3 mb-3 rounded-xl bg-surface-container-low flex flex-col gap-1 border border-surface-container-high/80 shadow-2xs">
+    <div class="flex items-center justify-between">
+      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">My Class</span>
+      <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Active
+      </span>
+    </div>
+    <div class="font-headline-sm text-base text-primary font-bold leading-tight" id="staff-assigned-class-name">Sunflower Class</div>
+    <div class="font-body-sm text-xs text-on-surface-variant" id="staff-assigned-class-sub">Basic 2 • Academic Lead</div>
+    <button id="switchClassBtn" onclick="openSwitchClassModal()" class="mt-1.5 w-full py-1.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-primary text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs active:scale-[0.98] border border-outline-variant/20" type="button">
+      <span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+      <span>Change Class</span>
+    </button>
+  </div>
+</aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-1 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low hover:bg-surface-container rounded-full transition-colors cursor-pointer" id="staff-duty-badge" onclick="openStaffDutyModal()" title="View Shift Details &amp; Clock-Out"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface font-semibold" id="staff-duty-status-text">Campus: On-Duty (Main Block)</span></div><div class="hidden md:inline-flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-low rounded-full text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">calendar_today</span><span class="font-label-sm text-label-sm font-medium">Term 1, 2026/2027</span></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-secondary text-on-secondary text-[10px] font-bold flex items-center justify-center">3</span></button><div class="h-8 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:block"><div class="font-label-lg text-label-lg text-on-surface leading-snug">Mrs. Beatrice Abbey</div><div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 Sunflower Lead</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA"/><button id="staff-clockout-btn" class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors cursor-pointer" title="Clock-Out of Campus Duty" onclick="openStaffDutyModal()" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></header><main class="w-full px-space-lg pt-16 flex-1 bg-surface"><div class="flex flex-col w-full pb-space-xl">
+<!-- Tricolor Accent Brand Bar (Ghana/Carepoint Sign Motif) -->
+<div class="w-full flex h-1.5 rounded-full overflow-hidden mb-space-md shadow-sm">
+<div class="h-full w-1/3 bg-sky-400"></div>
+<div class="h-full w-1/3 bg-secondary"></div>
+<div class="h-full w-1/3 bg-tertiary-fixed-dim"></div>
+</div>
+<!-- Operational Header & Controls Strip -->
+<div class="flex flex-col gap-space-md mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="px-2.5 py-1 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider">Official School Grading</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container text-on-tertiary-container">verified</span> Term Marks &amp; Grades
+          </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface text-label-sm font-label-sm">Basic 2 • Sunflower Class (28 Students)</span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-1">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Class Gradebook &amp; Marks</h1>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Term 1 • 2026/2027 School Year</span>
+</div>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[18px] text-green-700" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span id="save-status-text">Saved 2m ago • Marks updated</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface-container-high text-primary hover:bg-surface-container-highest transition-colors font-label-lg text-label-lg shadow-sm" onclick="triggerExportNotice()" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span> Download Marks (Excel)
+        </button>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-secondary text-on-secondary hover:bg-red-700 transition-transform active:scale-95 font-label-lg text-label-lg shadow-sm" onclick="openSubmitModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span> Send Marks to Headmistress
+        </button>
+</div>
+</div>
+<!-- Subject Switcher Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 bg-surface-container-lowest p-1.5 rounded-xl shadow-sm">
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 whitespace-nowrap shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">calculate</span>
+        Mathematics
+        <span class="px-1.5 py-0.2 rounded-full bg-white/20 text-[10px]">Active</span>
+</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">spellcheck</span> English Language
+      </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">science</span> Integrated Science
+      </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">computer</span> Computing / ICT
+      </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">palette</span> Creative Arts
+      </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">translate</span> Ghanaian Language (Twi)
+      </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">menu_book</span> R.M.E.
+      </button>
+</div>
+</div>
+<!-- Bento Stats & Weight Breakdown -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Scheme Card -->
+<div class="carepoint-hover-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group cursor-pointer transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">How Marks Are Counted</span>
+<div class="flex items-center gap-1">
+<span class="carepoint-hover-hint">Rules &bull;</span>
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">30% + 30% + 40%</span>
+</div>
+<div class="carepoint-hover-detail font-body-sm text-body-sm text-on-surface-variant">Classwork (30%) + Mid-Term (30%) + Final Exam (40%) = 100% Total</div>
+</div>
+<div class="mt-space-sm w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-sky-500 h-full" style="width: 30%;"></div>
+<div class="bg-amber-500 h-full" style="width: 30%;"></div>
+<div class="bg-primary h-full" style="width: 40%;"></div>
+</div>
+</div>
+<!-- Class Average Metric -->
+<div class="carepoint-hover-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between group cursor-pointer transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Class Average &amp; Top Marks</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold">+4.2% vs Last Term</span>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<div class="font-headline-xl text-headline-xl text-primary font-bold">84.6%</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Class Average (Goal: 80%)</div>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-green-700 font-bold">68%</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Top Grade (Grade 1)</div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Highest: <strong class="text-on-surface">96% (Kofi M.)</strong></span>
+<span>Lowest: <strong class="text-on-surface">72% (Nii A.)</strong></span>
+</div>
+</div>
+<!-- Progress & Verification Tracker -->
+<div class="carepoint-hover-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between group cursor-pointer transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Marks Completed</span>
+<div class="flex items-center gap-1">
+<span class="carepoint-hover-hint">Status &bull;</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">assignment_turned_in</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline justify-between mb-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">26 / 28</span>
+<span class="font-label-md text-label-md text-green-700 font-bold">92.8% Done</span>
+</div>
+<div class="carepoint-hover-detail font-body-sm text-body-sm text-on-surface-variant">2 students still need marks before end of term.</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mt-space-sm">
+<div class="bg-green-600 h-full rounded-full transition-all duration-500" style="width: 92.8%;"></div>
+</div>
+</div>
+<!-- Academic Level Quick Badge Context (Inspired by School Signboard) -->
+<div class="carepoint-hover-card bg-primary text-on-primary p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group cursor-pointer transition-all">
+<div class="flex items-center justify-between z-10">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container font-semibold">Class Level</span>
+<span class="px-2 py-0.5 rounded-full bg-white/20 font-label-sm text-label-sm font-bold">BASIC 2</span>
+</div>
+<div class="z-10 mt-1">
+<div class="flex items-center justify-between">
+<div class="font-headline-sm text-headline-sm font-bold">PRIMARY SCHOOL</div>
+<span class="carepoint-hover-hint text-white/70">Info &bull;</span>
+</div>
+<div class="carepoint-hover-detail font-body-sm text-body-sm text-inverse-primary leading-tight">Basic 1 to 6 • Official School Standards</div>
+</div>
+<div class="z-10 mt-space-sm pt-space-xs flex items-center justify-between text-xs text-on-primary-container">
+<span>Teacher: Mrs. B. Abbey</span>
+<span class="flex items-center gap-1 font-semibold text-white"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span> Locked Mode</span>
+</div>
+<!-- Decorative background glyph -->
+<span class="material-symbols-outlined absolute -right-4 -bottom-6 text-[100px] text-white/5 select-none pointer-events-none">school</span>
+</div>
+</div>
+<!-- Sensitivity and Override Lockout Alert -->
+<div class="carepoint-hover-card bg-amber-50 hover:bg-amber-100/60 rounded-xl p-space-md mb-space-lg flex items-start gap-space-md shadow-sm group cursor-pointer transition-all">
+<div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center text-amber-900 shrink-0">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-[16px] text-amber-950 font-bold">Rules for Changing Marks</span>
+<span class="px-2 py-0.5 rounded bg-amber-200 text-amber-950 text-label-sm font-label-sm font-semibold">Locked After Saving</span>
+</div>
+<span class="carepoint-hover-hint">Rules &bull;</span>
+</div>
+<p class="carepoint-hover-detail large font-body-sm text-body-sm text-amber-900">
+        Once marks are saved, any changes must be approved by <strong>Headmistress Dr. Elizabeth Appiah</strong> before parents can see them on their portal or report cards.
+      </p>
+</div>
+<button class="hidden sm:inline-flex px-3 py-1.5 rounded-lg bg-white text-amber-900 font-label-sm text-label-sm hover:bg-amber-100 transition-colors shadow-sm self-center whitespace-nowrap" type="button">
+      View Past Changes
+    </button>
+</div>
+<!-- Spreadsheet Scoring Grid Main Frame -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col mb-space-lg">
+<!-- Spreadsheet Utility Toolbar -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<div class="relative w-full sm:w-72">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none shadow-sm" id="student-search" onkeyup="filterPupils()" placeholder="Search student by name or ID..." type="text"/>
+</div>
+<select class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm focus:outline-none shadow-sm">
+<option>All Statuses</option>
+<option>Approved</option>
+<option>Waiting for Headmistress</option>
+<option>Draft</option>
+</select>
+</div>
+<div class="flex items-center gap-space-sm self-end sm:self-auto text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Approved
+        </span>
+<span class="inline-flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> Waiting for Headmistress
+        </span>
+<span class="inline-flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span> Draft
+        </span>
+</div>
+</div>
+<!-- Interactive Continuous Assessment Grid Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm" id="grade-table">
+<thead class="bg-surface-container font-label-sm text-label-sm text-on-surface-variant select-none">
+<tr>
+<th class="py-3 px-4 uppercase tracking-wider sticky left-0 bg-surface-container z-20 min-w-[200px]">Student Name &amp; ID</th>
+<th class="py-3 px-3 uppercase tracking-wider text-center bg-blue-50/50 min-w-[100px]">
+              Classwork
+              <div class="text-[10px] text-outline normal-case font-normal">Up to 15</div>
+</th>
+<th class="py-3 px-3 uppercase tracking-wider text-center bg-blue-50/50 min-w-[100px]">
+              Homework
+              <div class="text-[10px] text-outline normal-case font-normal">Up to 15</div>
+</th>
+<th class="py-3 px-3 uppercase tracking-wider text-center bg-blue-100/60 text-primary font-bold min-w-[110px]">
+              Total
+              <div class="text-[10px] text-primary/70 normal-case font-semibold">[30%]</div>
+</th>
+<th class="py-3 px-3 uppercase tracking-wider text-center bg-amber-50/60 min-w-[110px]">
+              Mid-Term
+              <div class="text-[10px] text-outline normal-case font-normal">Up to 20</div>
+</th>
+<th class="py-3 px-3 uppercase tracking-wider text-center bg-purple-50/60 min-w-[110px]">
+              Final Exam
+              <div class="text-[10px] text-outline normal-case font-normal">Up to 50</div>
+</th>
+<th class="py-3 px-3 uppercase tracking-wider text-center bg-surface-container-high text-primary font-bold min-w-[100px]">
+              Total Mark
+              <div class="text-[10px] text-primary/70 normal-case font-semibold">[100%]</div>
+</th>
+<th class="py-3 px-3 uppercase tracking-wider text-center min-w-[90px]">Grade</th>
+<th class="py-3 px-4 uppercase tracking-wider min-w-[260px]">Teacher's Note</th>
+<th class="py-3 px-3 uppercase tracking-wider text-center min-w-[110px]">Approval Status</th>
+<th class="py-3 px-3 text-center min-w-[60px]">History</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest/60 bg-surface-container-lowest" id="grade-rows">
+<!-- Row 1: Kofi Mensah -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-student="Kofi Mensah #24-089">
+<td class="py-3 px-4 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low z-10">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-sm">KM</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary leading-tight">Kofi Mensah</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant font-mono">ID: #24-089</div>
+</div>
+</div>
+</td>
+<td class="py-2 px-2 text-center bg-blue-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="15" min="0" type="number" value="14"/>
+</td>
+<td class="py-2 px-2 text-center bg-blue-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="15" min="0" type="number" value="14"/>
+</td>
+<td class="py-2 px-2 text-center bg-blue-100/40 font-headline-sm text-sm text-primary font-bold subtotal-cell">
+              28 / 30
+            </td>
+<td class="py-2 px-2 text-center bg-amber-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="20" min="0" type="number" value="19"/>
+</td>
+<td class="py-2 px-2 text-center bg-purple-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="50" min="0" type="number" value="47"/>
+</td>
+<td class="py-2 px-2 text-center bg-surface-container-high font-headline-md text-base text-primary font-bold cumulative-cell">
+              94%
+            </td>
+<td class="py-2 px-2 text-center">
+<span class="inline-flex px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold">Grade 1</span>
+</td>
+<td class="py-2 px-4">
+<input class="w-full py-1 px-2 rounded bg-transparent text-on-surface font-body-sm text-body-sm hover:bg-surface-container focus:bg-surface-container-lowest focus:shadow-sm focus:outline-none transition-all" type="text" value="Demonstrates superb arithmetic and problem-solving skills."/>
+</td>
+<td class="py-2 px-2 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span> Approved
+              </span>
+</td>
+<td class="py-2 px-2 text-center">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View past changes" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Ama Boateng -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-student="Ama Boateng #24-012">
+<td class="py-3 px-4 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low z-10">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shadow-sm">AB</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary leading-tight">Ama Boateng</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant font-mono">ID: #24-012</div>
+</div>
+</div>
+</td>
+<td class="py-2 px-2 text-center bg-blue-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="15" min="0" type="number" value="13"/>
+</td>
+<td class="py-2 px-2 text-center bg-blue-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="15" min="0" type="number" value="15"/>
+</td>
+<td class="py-2 px-2 text-center bg-blue-100/40 font-headline-sm text-sm text-primary font-bold subtotal-cell">
+              28 / 30
+            </td>
+<td class="py-2 px-2 text-center bg-amber-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="20" min="0" type="number" value="18"/>
+</td>
+<td class="py-2 px-2 text-center bg-purple-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="50" min="0" type="number" value="45"/>
+</td>
+<td class="py-2 px-2 text-center bg-surface-container-high font-headline-md text-base text-primary font-bold cumulative-cell">
+              91%
+            </td>
+<td class="py-2 px-2 text-center">
+<span class="inline-flex px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold">Grade 1</span>
+</td>
+<td class="py-2 px-4">
+<input class="w-full py-1 px-2 rounded bg-transparent text-on-surface font-body-sm text-body-sm hover:bg-surface-container focus:bg-surface-container-lowest focus:shadow-sm focus:outline-none transition-all" type="text" value="Consistent and attentive; excels in mental math."/>
+</td>
+<td class="py-2 px-2 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span> Approved
+              </span>
+</td>
+<td class="py-2 px-2 text-center">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View past changes" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Kwabena Osei -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-student="Kwabena Osei #24-055">
+<td class="py-3 px-4 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low z-10">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-bold text-xs shadow-sm">KO</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary leading-tight">Kwabena Osei</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant font-mono">ID: #24-055</div>
+</div>
+</div>
+</td>
+<td class="py-2 px-2 text-center bg-blue-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="15" min="0" type="number" value="11"/>
+</td>
+<td class="py-2 px-2 text-center bg-blue-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="15" min="0" type="number" value="12"/>
+</td>
+<td class="py-2 px-2 text-center bg-blue-100/40 font-headline-sm text-sm text-primary font-bold subtotal-cell">
+              23 / 30
+            </td>
+<td class="py-2 px-2 text-center bg-amber-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="20" min="0" type="number" value="15"/>
+</td>
+<td class="py-2 px-2 text-center bg-purple-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="50" min="0" type="number" value="38"/>
+</td>
+<td class="py-2 px-2 text-center bg-surface-container-high font-headline-md text-base text-primary font-bold cumulative-cell">
+              76%
+            </td>
+<td class="py-2 px-2 text-center">
+<span class="inline-flex px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-label-sm text-label-sm font-bold">Grade 2</span>
+</td>
+<td class="py-2 px-4">
+<input class="w-full py-1 px-2 rounded bg-transparent text-on-surface font-body-sm text-body-sm hover:bg-surface-container focus:bg-surface-container-lowest focus:shadow-sm focus:outline-none transition-all" type="text" value="Needs extra drill on fraction division."/>
+</td>
+<td class="py-2 px-2 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">edit_note</span> Draft
+              </span>
+</td>
+<td class="py-2 px-2 text-center">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View past changes" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Akosua Mensah-Bonsu -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-student="Akosua Mensah-Bonsu #24-031">
+<td class="py-3 px-4 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low z-10">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-xs shadow-sm">AM</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary leading-tight">Akosua Mensah-Bonsu</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant font-mono">ID: #24-031</div>
+</div>
+</div>
+</td>
+<td class="py-2 px-2 text-center bg-blue-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="15" min="0" type="number" value="14"/>
+</td>
+<td class="py-2 px-2 text-center bg-blue-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="15" min="0" type="number" value="13"/>
+</td>
+<td class="py-2 px-2 text-center bg-blue-100/40 font-headline-sm text-sm text-primary font-bold subtotal-cell">
+              27 / 30
+            </td>
+<td class="py-2 px-2 text-center bg-amber-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="20" min="0" type="number" value="17"/>
+</td>
+<td class="py-2 px-2 text-center bg-purple-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="50" min="0" type="number" value="44"/>
+</td>
+<td class="py-2 px-2 text-center bg-surface-container-high font-headline-md text-base text-primary font-bold cumulative-cell">
+              88%
+            </td>
+<td class="py-2 px-2 text-center">
+<span class="inline-flex px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold">Grade 1</span>
+</td>
+<td class="py-2 px-4">
+<input class="w-full py-1 px-2 rounded bg-transparent text-on-surface font-body-sm text-body-sm hover:bg-surface-container focus:bg-surface-container-lowest focus:shadow-sm focus:outline-none transition-all" type="text" value="Strong logical reasoning."/>
+</td>
+<td class="py-2 px-2 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span> Approved
+              </span>
+</td>
+<td class="py-2 px-2 text-center">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View past changes" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Emmanuel Addo -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-student="Emmanuel Addo #24-077">
+<td class="py-3 px-4 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low z-10">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs shadow-sm">EA</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary leading-tight">Emmanuel Addo</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant font-mono">ID: #24-077</div>
+</div>
+</div>
+</td>
+<td class="py-2 px-2 text-center bg-blue-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="15" min="0" type="number" value="12"/>
+</td>
+<td class="py-2 px-2 text-center bg-blue-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="15" min="0" type="number" value="11"/>
+</td>
+<td class="py-2 px-2 text-center bg-blue-100/40 font-headline-sm text-sm text-primary font-bold subtotal-cell">
+              23 / 30
+            </td>
+<td class="py-2 px-2 text-center bg-amber-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="20" min="0" type="number" value="16"/>
+</td>
+<td class="py-2 px-2 text-center bg-purple-50/30">
+<input class="score-input w-16 py-1 px-2 text-center rounded bg-surface-container-lowest text-on-surface font-semibold focus:bg-white focus:shadow-md transition-all" max="50" min="0" type="number" value="40"/>
+</td>
+<td class="py-2 px-2 text-center bg-surface-container-high font-headline-md text-base text-primary font-bold cumulative-cell">
+              79%
+            </td>
+<td class="py-2 px-2 text-center">
+<span class="inline-flex px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-label-sm text-label-sm font-bold">Grade 2</span>
+</td>
+<td class="py-2 px-4">
+<input class="w-full py-1 px-2 rounded bg-transparent text-on-surface font-body-sm text-body-sm hover:bg-surface-container focus:bg-surface-container-lowest focus:shadow-sm focus:outline-none transition-all" type="text" value="Shows good improvement."/>
+</td>
+<td class="py-2 px-2 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">pending</span> Waiting for Headmistress
+              </span>
+</td>
+<td class="py-2 px-2 text-center">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="View past changes" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Spreadsheet Footer Summary -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-md">
+<span>Rows displayed: <strong>5 of 28 students</strong></span>
+<span>Tip: Press <strong>Tab or Enter</strong> to move to next box</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-600"></span> Auto-saving active</span>
+</div>
+</div>
+</div>
+<!-- Bottom Visual Insight & Teacher Desk Notes -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Grade Distribution Inline Visualizer -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-primary">Grade Summary</h2>
+<span class="font-label-sm text-label-sm text-outline">Sunflower Class</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">How students performed this term.</p>
+</div>
+<div class="space-y-space-sm">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="font-semibold text-on-surface">Grade 1 (80% - 100% Top Marks)</span>
+<span class="text-primary font-bold">19 Students (68%)</span>
+</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="font-semibold text-on-surface">Grade 2 (70% - 79% Good)</span>
+<span class="text-primary font-bold">7 Students (25%)</span>
+</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-blue-600 h-full rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="font-semibold text-on-surface">Grade 3 (60% - 69% Pass)</span>
+<span class="text-primary font-bold">2 Students (7%)</span>
+</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full" style="width: 7%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Curriculum Goal: Achieved</span>
+<span class="text-green-700 font-bold">0 Students Below 60%</span>
+</div>
+</div>
+<!-- Continuous Assessment Classroom Visual Context -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-primary">Classroom Photo</h2>
+<span class="material-symbols-outlined text-outline">photo_camera</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Sunflower Class working with counting tools during math class.</p>
+</div>
+<div class="relative rounded-lg overflow-hidden h-40 shadow-inner group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="West African primary school classroom in Ghana with young energetic boys and girls in school uniforms actively counting colorful math counters and abacuses on wooden desks, warm ambient daylight streaming through windows, modern clean educational setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPR0r3yqoZPxr7eC5JlaxwHLKf-x0Xbl_pYWf9Ws4ke9rIRCrqXvnp2Jja_zePSfm1LV8QMLLUBIJyH39xKCsk5a3PI-NoX-0WuKx9WSlXi4O0_rehoK7im9OQT0RAOGQB6djW6qpkq-X93cmNhHcoDRFt_6jCbRGZeUAwmWODlPL9p8JFuX_wm0Mt_HVS2D1MykHS4zKQOl4T4sh79E4bP42xVPSgZK0_7v8QquY2UdfBkXo2OL6FOQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex items-end p-space-sm">
+<span class="font-label-sm text-label-sm text-on-primary">Math Lesson: Counting Tools</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Teacher: Mrs. B. Abbey</span>
+<span class="text-primary font-semibold">Saved to Class File</span>
+</div>
+</div>
+<!-- Official Submission & Verification Panel -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-primary">Send Marks to Headmistress</h2>
+<span class="px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-label-sm text-label-sm font-bold">STEP 1 OF 2</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sending these marks will notify Headmistress Dr. Elizabeth Appiah to review and approve them.</p>
+</div>
+<div class="p-space-sm bg-surface-container rounded-lg flex flex-col gap-1 my-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-700 text-[18px]">verified_user</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Teacher Check: Done</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant text-xs">Mrs. Beatrice Abbey • Ready to send</div>
+</div>
+<div class="flex flex-col gap-2">
+<button class="w-full py-2.5 px-4 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2 shadow-sm" onclick="openSubmitModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+          Send Marks to Headmistress
+        </button>
+<span class="font-label-sm text-label-sm text-outline text-center">Once sent, marks will be locked until approved</span>
+</div>
+</div>
+</div>
+<!-- Micro-Modal for Approval Confirmation (Hidden by default) -->
+<div class="fixed inset-0 bg-primary/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" id="submit-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-md w-full p-space-lg shadow-xl flex flex-col gap-space-md animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-sky-100 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<button class="text-outline hover:text-on-surface p-1" onclick="closeSubmitModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Send Marks to Headmistress?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          You are sending marks for <strong>Basic 2 Sunflower Class (28 Students)</strong> to Headmistress Dr. Elizabeth Appiah to review and approve.
+        </p>
+</div>
+<div class="p-space-sm rounded-lg bg-amber-50 text-amber-900 font-label-sm text-label-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-amber-700 shrink-0">info</span>
+<span>You cannot change marks once sent unless the Headmistress asks for changes.</span>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container-highest transition-colors" onclick="closeSubmitModal()" type="button">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:bg-red-700 transition-colors shadow-sm" onclick="confirmSubmission()" type="button">
+          Yes, Send Marks
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function openSubmitModal() {
+    document.getElementById('submit-modal').classList.remove('hidden');
+  }
+
+  function closeSubmitModal() {
+    document.getElementById('submit-modal').classList.add('hidden');
+  }
+
+  function confirmSubmission() {
+    closeSubmitModal();
+    const saveStatus = document.getElementById('save-status-text');
+    saveStatus.innerText = 'Sent to Headmistress • Waiting for Approval';
+    saveStatus.parentElement.classList.remove('bg-surface-container-low');
+    saveStatus.parentElement.classList.add('bg-emerald-100', 'text-emerald-900');
+    alert('Marks sent successfully to Headmistress Dr. Elizabeth Appiah.');
+  }
+
+  function triggerExportNotice() {
+    alert('Downloading marks spreadsheet (Excel format)...');
+  }
+
+  function filterPupils() {
+    const input = document.getElementById('student-search').value.toLowerCase();
+    const rows = document.querySelectorAll('#grade-rows tr');
+    rows.forEach(row => {
+      const pupilData = row.getAttribute('data-student').toLowerCase();
+      if (pupilData.includes(input)) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  // Interactive automatic recalculation on input edit
+  document.querySelectorAll('#grade-rows tr').forEach(row => {
+    const inputs = row.querySelectorAll('.score-input');
+    inputs.forEach(input => {
+      input.addEventListener('input', () => {
+        const classWork = parseFloat(inputs[0].value) || 0;
+        const homework = parseFloat(inputs[1].value) || 0;
+        const midTerm = parseFloat(inputs[2].value) || 0;
+        const exam = parseFloat(inputs[3].value) || 0;
+
+        const subtotal = Math.min(30, classWork + homework);
+        const total = Math.min(100, Math.round(subtotal + midTerm + exam));
+
+        const subtotalCell = row.querySelector('.subtotal-cell');
+        const cumulativeCell = row.querySelector('.cumulative-cell');
+
+        if (subtotalCell) subtotalCell.innerText = subtotal + ' / 30';
+        if (cumulativeCell) cumulativeCell.innerText = total + '%';
+
+        // Dynamically update Grade Badge based on cumulative score
+        const gradeSpan = row.cells && row.cells[7] ? row.cells[7].querySelector('span') : null;
+        if (gradeSpan) {
+          if (total >= 80) {
+            gradeSpan.innerText = 'Grade 1';
+            gradeSpan.className = 'inline-flex px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold';
+          } else if (total >= 70) {
+            gradeSpan.innerText = 'Grade 2';
+            gradeSpan.className = 'inline-flex px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-label-sm text-label-sm font-bold';
+          } else if (total >= 60) {
+            gradeSpan.innerText = 'Grade 3';
+            gradeSpan.className = 'inline-flex px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-label-sm text-label-sm font-bold';
+          } else if (total >= 50) {
+            gradeSpan.innerText = 'Grade 4';
+            gradeSpan.className = 'inline-flex px-2 py-0.5 rounded-full bg-orange-100 text-orange-800 font-label-sm text-label-sm font-bold';
+          } else {
+            gradeSpan.innerText = 'Grade 9';
+            gradeSpan.className = 'inline-flex px-2 py-0.5 rounded-full bg-red-100 text-red-800 font-label-sm text-label-sm font-bold';
+          }
+        }
+
+        const saveStatus = document.getElementById('save-status-text');
+        saveStatus.innerText = 'Calculating live... Auto-saving changes';
+        setTimeout(() => {
+          saveStatus.innerText = 'Auto-saved just now • All formulas validated';
+        }, 1200);
+      });
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-low py-space-lg px-space-lg mt-space-xl"><div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary">Carepoint Community School</span><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface text-label-sm font-label-sm font-semibold">NaSIA &amp; GES Accredited</span></div><div class="font-body-sm text-body-sm text-on-surface-variant">Academic Excellence &amp; Character Formative Academy • Mind, Heart, Hands Standards Policy compliant.</div></div><div class="flex flex-wrap items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm"><span>Campus Ext: <strong>4102 (Staff Desk)</strong></span><span>IT Helpdesk: <strong>helpdesk@carepoint.edu</strong></span><span>Term 1: <strong>Week 6 of 14</strong></span></div></div></footer></div></body></html>

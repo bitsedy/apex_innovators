@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#4c5c92", "on-primary-container": "#8494cd", "surface-container": "#e9eef8", "tertiary-container": "#003712", "on-error": "#ffffff", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "secondary-fixed": "#ffdad5", "tertiary-fixed": "#94f9a0", "on-primary-fixed-variant": "#344478", "on-primary-fixed": "#03174b", "surface-container-highest": "#dde3ec", "on-secondary": "#ffffff", "surface": "#f7f9ff", "outline-variant": "#c5c6d1", "on-secondary-fixed": "#410001", "background": "#f7f9ff", "secondary": "#ba0a0c", "on-tertiary": "#ffffff", "tertiary-fixed-dim": "#78dc86", "error": "#ba1a1a", "tertiary": "#001f07", "surface-variant": "#dde3ec", "secondary-container": "#df2d23", "on-tertiary-container": "#46a95a", "error-container": "#ffdad6", "on-tertiary-fixed": "#002108", "inverse-on-surface": "#ecf1fb", "on-error-container": "#93000a", "primary-container": "#1a2b5e", "surface-bright": "#f7f9ff", "on-background": "#161c23", "on-secondary-container": "#fffbff", "surface-container-low": "#eef4fe", "surface-dim": "#d5dae4", "primary-fixed": "#dce1ff", "on-surface-variant": "#45464f", "secondary-fixed-dim": "#ffb4a9", "surface-container-high": "#e3e8f2", "on-secondary-fixed-variant": "#930004", "outline": "#757680", "primary-fixed-dim": "#b5c4ff", "primary": "#011549", "inverse-surface": "#2b3138", "inverse-primary": "#b5c4ff", "on-surface": "#161c23", "on-tertiary-fixed-variant": "#00531f" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1.5rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "margin-sm": "1rem", "gutter-sm": "1rem", "margin": "2rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-md": "1rem" }, fontFamily: { "display-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"] }, fontSize: { "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } };</script><style>html,body{width:100vw;margin:0;padding:0;body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<title>Carepoint - Mobile Welfare &amp; Messages</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "parent",
+            label: "Mobile Welfare & Messages",
+            isMobile: true,
+            relRoot: "../",
+            counterpart: "messages.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><button type="button" data-drawer-toggle="" class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors cursor-pointer mr-0.5 shrink-0" title="Toggle Navigation Tabs Drawer" aria-label="Toggle Navigation Tabs Drawer"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">school</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">Carepoint</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Mind · Heart · Hands</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container active:bg-surface-container transition-colors relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-secondary"></span></button><button aria-label="Profile Account" class="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk7nHm7egIuiTau40KQEFHBKNDX3EptaSdTu9TBK2iwADoApEdjY9Kkt9Tjm_DoF2KYNTvFIWgNO5GlABZPWPHY658qTxcggA0vvpzxYpMpol0tKKMsBvv14t1fD96WIU0vH77Tjlup7Pbm-TJ2cyzQEIlGRhdG85eoLM-GTjxqblK4wxMDpCIWDtDAyb_zVdq8MuHW3anaXkB6adGWp9xlHqAM3FbRNIoqmH3e2xOnAIl_mjOPskfLg"/></button></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen px-gutter-sm"><div class="flex flex-col w-full pb-6 space-y-space-md">
+<!-- Tricolor Accent Ribbon reminiscent of school emblem sign -->
+<div class="flex h-1.5 w-full rounded-full overflow-hidden shadow-xs">
+<div class="w-1/3 bg-[#38bdf8]"></div>
+<div class="w-1/3 bg-secondary-container"></div>
+<div class="w-1/3 bg-on-tertiary-container"></div>
+</div>
+<!-- Student Welfare Header Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center overflow-hidden shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Warm smiling portrait of a young Ghanaian primary school boy wearing a neat navy blue school uniform against a soft bright classroom backdrop, lively, dignified, and natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_H_pU3i2lFGda4_yGle02wl2nY_JyvfsAefF9V1_T1SIsAEOTE3Wf13c-CAkCM3Q58llX44kG_lxRCYWgB9wF2JIWm48TxTP7F2RtW3mwsel-srfOmIPIe3hAVUARwiqTR78gtG_wDhCOIakQHBaSBltL6dmWMUZ-slZjFDhLUQ5eIYPJC5cfhkUfiYXA8WUjExpV-mgN4q0SWpTw7jV_DlhPo8Merb0r72a4L7xLjRqKzOVOuhOWdw"/>
+</div>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary-fixed-dim rounded-full flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[10px] text-tertiary">check</span>
+</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Kofi Nana Mensah</h2>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified</span>
+            Basic 4 - Room Gold · ID: CP-2021-084
+          </p>
+</div>
+</div>
+<a class="flex-shrink-0 bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-container hover:text-on-secondary-container transition-colors py-1.5 px-space-sm rounded-lg flex items-center gap-1 shadow-xs" href="tel:+233200112233" title="Emergency Nurse Contact">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide">School Clinic</span>
+</a>
+</div>
+<!-- Motto Tagline from Insignia -->
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<span class="bg-surface-container text-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+        MIND · HEART · HANDS
+      </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim">shield</span> Welfare Active
+      </span>
+</div>
+</section>
+<!-- Interactive Screen Segments: Chat vs Health Log -->
+<section class="bg-surface-container-high p-1 rounded-xl flex items-center shadow-xs">
+<button class="flex-1 py-2 px-space-sm rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 bg-surface-container-lowest text-primary shadow-xs" id="tab-btn-chat" onclick="switchTab('chat')">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+<span>Teacher Chat</span>
+<span class="bg-secondary text-on-secondary text-[10px] font-bold px-1.5 py-0.2 rounded-full">1</span>
+</button>
+<button class="flex-1 py-2 px-space-sm rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-primary" id="tab-btn-health" onclick="switchTab('health')">
+<span class="material-symbols-outlined text-[18px]">medical_services</span>
+<span>Health &amp; Incident Log</span>
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+</button>
+</section>
+<!-- TAB 1: TEACHER CHAT VIEW -->
+<div class="flex flex-col space-y-space-md" id="section-chat">
+<!-- Active Teacher Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-10 h-10 rounded-full overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Professional African school teacher female in her early forties with warm kind expression wearing professional modest attire inside a modern Ghanaian primary school classroom." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9mT_aF7aq3pWndi3L51yBH54CmqAQUAtE4F3K3UePIoEBl7CrBC1Q-vowlarwi7Sewksn-NEPqNV1rOtevtLVEudpvJ4tApi44jsPe-dbQbRubTdiASsfv6fr7gcs5lJ_sd1S6KeXghHPUI-mjjXHgJh9CONpmuyBzsfKqPDf4lbreWgt7QtQVlQV7n-sb7StbxVYGlNDzsU5o9InU1HdgLJRbRlFz9_rgl-EZViJ4S7_qusMUX-dyg"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h3 class="font-label-lg text-label-lg text-primary truncate">Mrs. Beatrice Abbey</h3>
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim" title="Form Tutor Verified">check_circle</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Form Tutor • Class 4 Lead • Online</p>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Schedule call" class="w-9 h-9 rounded-lg bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</button>
+<button aria-label="Tutor profile" class="w-9 h-9 rounded-lg bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Chat Stream Canvas -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md flex flex-col min-h-[320px]">
+<div class="text-center my-1">
+<span class="font-label-sm text-label-sm bg-surface-container px-3 py-1 rounded-full text-on-surface-variant">
+          Today • Term 1 Academic Welfare
+        </span>
+</div>
+<!-- Inbound Tutor Message 1 -->
+<div class="flex items-start gap-space-xs max-w-[85%] self-start">
+<div class="w-7 h-7 rounded-full overflow-hidden flex-shrink-0 mt-1">
+<img class="w-full h-full object-cover" data-alt="African female educator close-up avatar smiling gently, professional educational setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCvHHZSZNzpN7p_Ihs_O0vwh_coW0kj39w0pT-cfGgz0FJBkVbjd5NHLll8PdjHca5W5SRn_nFGvFQFVNfA5-fl3qFzgi4YNOMg3QM8xfDh0gs8iGufsdNzXOGTMZ6OrFDlYNpKiLAHLy4trw9mfZzXTLMNoW_D6W5w3ojWBWHo1w5O6SFxxORPCGrT9RU8nBoN5CBKAfyENcwRWUfPQ49cgebrBE7_TveJkFSvOU-S_vbzZ2YnoeNSQ"/>
+</div>
+<div class="bg-surface-container-low rounded-2xl rounded-tl-xs p-3 text-on-surface shadow-xs space-y-1">
+<div class="flex items-center justify-between gap-3">
+<span class="font-label-sm text-label-sm font-bold text-primary">Mrs. Beatrice Abbey</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">08:15 AM</span>
+</div>
+<p class="font-body-sm text-body-sm leading-snug">Good morning Mr. Mensah! Just to celebrate that Kofi did wonderfully in mental arithmetic yesterday! 🌟</p>
+</div>
+</div>
+<!-- Inbound Tutor Message 2 with Notice -->
+<div class="flex items-start gap-space-xs max-w-[88%] self-start">
+<div class="w-7 h-7 rounded-full overflow-hidden flex-shrink-0 opacity-0"></div>
+<div class="bg-surface-container-low rounded-2xl rounded-tl-xs p-3 text-on-surface shadow-xs space-y-2">
+<p class="font-body-sm text-body-sm leading-snug">Please ensure his yellow PE kit and water flask are packed for tomorrow's field drills. Also, a quick reminder to complete page 34 of the Integrated Science reader tonight.</p>
+<div class="bg-surface-container-lowest rounded-lg p-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">fitness_center</span>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-primary block leading-none">Thursday PE &amp; Athletics</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant block mt-0.5">Hydration flask • Mild exercise protocol</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant">08:17 AM</span>
+</div>
+</div>
+</div>
+<!-- Outbound Parent Message -->
+<div class="flex items-start gap-space-xs max-w-[85%] self-end flex-row-reverse">
+<div class="bg-primary text-on-primary rounded-2xl rounded-tr-xs p-3 shadow-xs space-y-1">
+<p class="font-body-sm text-body-sm leading-snug text-white">Thank you so much Mrs. Abbey! We reviewed the Science exercise together right after dinner. He was very proud.</p>
+<div class="flex items-center justify-end gap-1">
+<span class="font-label-sm text-[10px] text-primary-fixed">08:42 AM</span>
+<span class="material-symbols-outlined text-[13px] text-tertiary-fixed">done_all</span>
+</div>
+</div>
+</div>
+<!-- Dynamic Message Anchor -->
+<div class="space-y-space-md" id="dynamic-messages"></div>
+<!-- Quick Reply Action Pills -->
+<div class="pt-2">
+<p class="font-label-sm text-[11px] text-on-surface-variant mb-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">bolt</span> Quick Responses
+        </p>
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+<button class="flex-shrink-0 bg-surface-container hover:bg-primary hover:text-on-primary text-primary font-label-sm text-label-sm px-3 py-1.5 rounded-full transition-all active:scale-95 shadow-xs" onclick="sendQuickReply('Understood, thank you Mrs. Abbey! 🙏')">
+            Understood, thank you
+          </button>
+<button class="flex-shrink-0 bg-surface-container hover:bg-primary hover:text-on-primary text-primary font-label-sm text-label-sm px-3 py-1.5 rounded-full transition-all active:scale-95 shadow-xs" onclick="sendQuickReply('Will send tomorrow with his bag.')">
+            Will send tomorrow
+          </button>
+<button class="flex-shrink-0 bg-surface-container hover:bg-primary hover:text-on-primary text-primary font-label-sm text-label-sm px-3 py-1.5 rounded-full transition-all active:scale-95 shadow-xs" onclick="sendQuickReply('Can I call at 3:00 PM for 5 minutes?')">
+            Can I call at 3pm?
+          </button>
+</div>
+</div>
+<!-- Interactive Input Bar -->
+<form class="mt-auto pt-2 flex items-center gap-2" id="chat-form" onsubmit="handleSend(event)">
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant hover:text-primary flex items-center justify-center flex-shrink-0 transition-colors" title="Attach image or note" type="button">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant hover:text-primary flex items-center justify-center flex-shrink-0 transition-colors" title="Add file" type="button">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<div class="flex-1 bg-surface-container-lowest rounded-full bg-surface-container flex items-center px-3 py-1.5">
+<input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface focus:outline-none placeholder:text-on-surface-variant/60" id="chat-input" placeholder="Write message to Mrs. Abbey..." required="" type="text"/>
+</div>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm hover:bg-primary-container active:scale-95 transition-all" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</form>
+</div>
+</div>
+<!-- TAB 2: HEALTH & INCIDENT LOG VIEW (Toggled) -->
+<div class="hidden flex-col space-y-space-md" id="section-health">
+<!-- Primary Alert Pill Banner -->
+<div class="bg-secondary-fixed text-on-secondary-fixed rounded-xl p-space-md shadow-xs flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary text-on-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">ecg_heart</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm leading-tight text-on-secondary-fixed">School Clinic Medical Profile</h3>
+<span class="bg-secondary text-on-secondary font-label-sm text-[10px] px-2 py-0.5 rounded-full font-bold">MONITORED</span>
+</div>
+<p class="font-body-sm text-body-sm mt-1 leading-snug">
+          Mild Asthma registered with Nurse Quaye. Carepoint School School Clinic adheres to certified Ghana Health Service school children's safety protocols.
+        </p>
+</div>
+</div>
+<!-- Active Health Card: Inhaler & Allergen Profile -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">medical_information</span>
+<h4 class="font-headline-sm text-headline-sm text-primary">Recorded Conditions</h4>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-bold">CURRENT</span>
+</div>
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Condition 1: Mild Asthma -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center flex-shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[22px]">air</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary">Mild Bronchial Asthma</span>
+<span class="font-label-sm text-[11px] bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full font-bold">Box #12</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Prescribed Ventolin (Salbutamol 100mcg) kept in school clinic emergency cabinet locker #12. Expiry verified: August 2026.
+            </p>
+</div>
+</div>
+<!-- Dietary Alert: Peanut Allergy -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-secondary-container flex items-center justify-center flex-shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[22px]">no_meals</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary">Dietary: Peanut Allergy</span>
+<span class="font-label-sm text-[11px] bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded-full font-bold">Catering Flagged</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Strictly peanut-free lunches confirmed in the school canteen roster. Kitchen Head Mrs. Addo briefed.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Clinical Timeline & Recent Log Entries -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">history_edu</span>
+<h4 class="font-headline-sm text-headline-sm text-primary">School Clinic Log History</h4>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Term 1, 2026/2027</span>
+</div>
+<!-- Timeline entry 1 -->
+<div class="relative pl-5 border-l-2 border-primary/20 space-y-1">
+<div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-secondary"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[12px] font-bold text-primary">12 Oct 2026 • 10:45 AM</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-2 py-0.5 rounded-full">RESOLVED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          "Reported mild shortness of breath after PE sprint drills. Administered 2 puffs prescribed Ventolin via spacer. Rested quietly for 15 mins in clinic check room with vitals stable (O2 99%, HR 84). Fully resolved, accompanied back to Class 4."
+        </p>
+<div class="pt-1 flex items-center justify-between font-label-sm text-[11px] text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-tertiary-fixed-dim">verified_user</span>
+            Signed: Nurse Quaye, SRN (Badge: CP-CLINIC-02)
+          </span>
+<span class="text-primary font-bold">Vitals Normal</span>
+</div>
+</div>
+<!-- Timeline entry 2 -->
+<div class="relative pl-5 border-l-2 border-primary/20 space-y-1 pt-3">
+<div class="absolute -left-[7px] top-4 w-3 h-3 rounded-full bg-surface-tint"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[12px] font-bold text-primary">18 Sep 2026 • 01:15 PM</span>
+<span class="bg-surface-container text-on-surface-variant text-[10px] font-bold px-2 py-0.5 rounded-full">ROUTINE CHECK</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          Annual term screening: Height 134cm, Weight 29.4kg, Visual acuity 20/20 bilateral. Dental check clear.
+        </p>
+<div class="pt-1 flex items-center gap-1 font-label-sm text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">person</span>
+          School Health Officer Mensah
+        </div>
+</div>
+</div>
+<!-- Direct Emergency Actions -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<h4 class="font-label-lg text-label-lg text-primary">School School Clinic Contacts</h4>
+<div class="grid grid-cols-2 gap-2">
+<a class="bg-primary text-on-primary py-2.5 px-space-sm rounded-xl flex items-center justify-center gap-1.5 shadow-sm hover:bg-primary-container active:scale-95 transition-all text-center" href="tel:+233244000111">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span class="font-label-sm text-label-sm">Nurse Desk</span>
+</a>
+<button class="bg-surface-container text-primary py-2.5 px-space-sm rounded-xl flex items-center justify-center gap-1.5 shadow-xs hover:bg-surface-container-high active:scale-95 transition-all text-center" onclick="promptNurseNote()">
+<span class="material-symbols-outlined text-[18px]">note_add</span>
+<span class="font-label-sm text-label-sm">Update Allergy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Academic Level Preview Bar (Faithful reproduction of Carepoint division tiers) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Carepoint Divisions</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Basic 4 Student</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<!-- Nursery -->
+<div class="bg-surface-container-low rounded-lg p-2 flex flex-col items-center justify-between text-center min-h-[74px] shadow-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">child_care</span>
+<span class="bg-primary text-white font-label-sm text-[9px] font-bold py-0.5 px-1.5 rounded-full w-full block truncate uppercase mt-1">Nursery</span>
+</div>
+<!-- Kindergarten -->
+<div class="bg-surface-container-low rounded-lg p-2 flex flex-col items-center justify-between text-center min-h-[74px] shadow-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">flag</span>
+<span class="bg-primary text-white font-label-sm text-[9px] font-bold py-0.5 px-1.5 rounded-full w-full block truncate uppercase mt-1">KG</span>
+</div>
+<!-- Basic (Active for Kofi) -->
+<div class="bg-secondary-fixed text-on-secondary-fixed rounded-lg p-2 flex flex-col items-center justify-between text-center min-h-[74px] shadow-sm transform -translate-y-0.5">
+<span class="material-symbols-outlined text-[20px] text-secondary">diversity_3</span>
+<span class="bg-secondary text-white font-label-sm text-[9px] font-bold py-0.5 px-1.5 rounded-full w-full block truncate uppercase mt-1">Basic</span>
+</div>
+<!-- Junior High -->
+<div class="bg-surface-container-low rounded-lg p-2 flex flex-col items-center justify-between text-center min-h-[74px] shadow-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">menu_book</span>
+<span class="bg-primary text-white font-label-sm text-[9px] font-bold py-0.5 px-1.5 rounded-full w-full block truncate uppercase mt-1">JHS</span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  function switchTab(tab) {
+    const chatBtn = document.getElementById('tab-btn-chat');
+    const healthBtn = document.getElementById('tab-btn-health');
+    const chatSec = document.getElementById('section-chat');
+    const healthSec = document.getElementById('section-health');
+
+    if (tab === 'chat') {
+      chatBtn.className = "flex-1 py-2 px-space-sm rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 bg-surface-container-lowest text-primary shadow-xs";
+      healthBtn.className = "flex-1 py-2 px-space-sm rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-primary";
+      chatSec.classList.remove('hidden');
+      chatSec.classList.add('flex');
+      healthSec.classList.remove('flex');
+      healthSec.classList.add('hidden');
+    } else {
+      healthBtn.className = "flex-1 py-2 px-space-sm rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 bg-surface-container-lowest text-primary shadow-xs";
+      chatBtn.className = "flex-1 py-2 px-space-sm rounded-lg font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-primary";
+      healthSec.classList.remove('hidden');
+      healthSec.classList.add('flex');
+      chatSec.classList.remove('flex');
+      chatSec.classList.add('hidden');
+    }
+  }
+
+  function appendParentMessage(text) {
+    const stream = document.getElementById('dynamic-messages');
+    const msg = document.createElement('div');
+    msg.className = "flex items-start gap-space-xs max-w-[85%] self-end flex-row-reverse animate-fadeIn";
+    msg.innerHTML = `
+      <div class="bg-primary text-on-primary rounded-2xl rounded-tr-xs p-3 shadow-xs space-y-1">
+        <p class="font-body-sm text-body-sm leading-snug text-white">${escapeHtml(text)}</p>
+        <div class="flex items-center justify-end gap-1">
+          <span class="font-label-sm text-[10px] text-primary-fixed">Just now</span>
+          <span class="material-symbols-outlined text-[13px] text-tertiary-fixed">done</span>
+        </div>
+      </div>
+    `;
+    stream.appendChild(msg);
+
+    // Auto tutor acknowledgement simulation
+    setTimeout(() => {
+      const tutorReply = document.createElement('div');
+      tutorReply.className = "flex items-start gap-space-xs max-w-[85%] self-start animate-fadeIn";
+      tutorReply.innerHTML = `
+        <div class="w-7 h-7 rounded-full overflow-hidden flex-shrink-0 mt-1">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA" alt="Mrs. Beatrice Abbey" class="w-full h-full object-cover">
+        </div>
+        <div class="bg-surface-container-low rounded-2xl rounded-tl-xs p-3 text-on-surface shadow-xs space-y-1">
+          <div class="flex items-center justify-between gap-3">
+            <span class="font-label-sm text-label-sm font-bold text-primary">Mrs. Beatrice Abbey</span>
+            <span class="font-label-sm text-[10px] text-on-surface-variant">Just now</span>
+          </div>
+          <p class="font-body-sm text-body-sm leading-snug">Noted with thanks! See Kofi in the morning assembly at 7:30 AM.</p>
+        </div>
+      `;
+      stream.appendChild(tutorReply);
+    }, 1200);
+  }
+
+  function handleSend(e) {
+    e.preventDefault();
+    const input = document.getElementById('chat-input');
+    const text = input.value.trim();
+    if (!text) return;
+    appendParentMessage(text);
+    input.value = '';
+  }
+
+  function sendQuickReply(replyText) {
+    appendParentMessage(replyText);
+  }
+
+  function promptNurseNote() {
+    const note = prompt("Please detail any new medication or allergy update for Nurse Quaye (School School Clinic):");
+    if (note && note.trim().length > 0) {
+      alert("Health notice submitted to Carepoint School Clinic. Nurse Quaye has been notified to update Kofi Nana Mensah's clinical profile.");
+    }
+  }
+
+  function escapeHtml(string) {
+    const div = document.createElement('div');
+    div.innerText = string;
+    return div.innerHTML;
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(1,21,73,0.05)]" data-active-classes="text-primary font-label-md"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] flex-1 py-space-xs text-on-surface-variant transition-colors" data-path="parent-home" href="mobile-dashboard.html"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm mt-0.5">Ward</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] flex-1 py-space-xs text-on-surface-variant transition-colors" data-path="academics" href="mobile-academics.html"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm mt-0.5">Academics</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] flex-1 py-space-xs transition-colors text-primary font-label-md" data-path="student-welfare" href="mobile-messages.html"><span class="material-symbols-outlined text-[22px]">health_and_safety</span><span class="font-label-sm text-label-sm mt-0.5">Welfare</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] flex-1 py-space-xs text-on-surface-variant transition-colors" data-path="pickup-security" href="mobile-pickup.html"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-sm text-label-sm mt-0.5">Pickup Pass</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] flex-1 py-space-xs text-on-surface-variant transition-colors" data-path="parent-profile" href="mobile-dashboard.html"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-sm text-label-sm mt-0.5">Profile</span></a></div></nav></body></html>

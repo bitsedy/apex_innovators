@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background-color: #eef2f6;
+    color: #161c23;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+  }
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Teachers Portal - Progressive Disclosure & Hover-Reveal System
+   Hides explanatory/descriptive text by default to avoid visual/text overwhelm,
+   revealing full context smoothly when the user hovers their mouse over the card.
+   ========================================================================== */
+
+.carepoint-hover-card,
+.carepoint-hover-reveal {
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.carepoint-hover-card:hover,
+.carepoint-hover-reveal:hover {
+  z-index: 10;
+}
+
+.carepoint-hover-detail {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: max-height 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              margin 0.25s ease,
+              padding 0.25s ease;
+  line-height: 1.45;
+}
+
+.carepoint-hover-card:hover .carepoint-hover-detail,
+.carepoint-hover-card:focus-within .carepoint-hover-detail,
+.carepoint-hover-reveal:hover .carepoint-hover-detail,
+.carepoint-hover-reveal:focus-within .carepoint-hover-detail,
+.group:hover .carepoint-hover-detail,
+.group:focus-within .carepoint-hover-detail {
+  max-height: 240px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  margin-top: 4px !important;
+}
+
+.carepoint-hover-card:hover .carepoint-hover-detail.large,
+.carepoint-hover-reveal:hover .carepoint-hover-detail.large {
+  max-height: 400px;
+}
+
+.carepoint-hover-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #6d7688;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, height 0.2s ease;
+}
+
+.carepoint-hover-card:hover .carepoint-hover-hint,
+.carepoint-hover-reveal:hover .carepoint-hover-hint,
+.group:hover .carepoint-hover-hint {
+  display: none;
+}
+
+/* ==========================================================================
+   Card Separation & Canvas Distinction
+   Ensures white cards stand out crisply against the #eef2f6 canvas background,
+   preventing visual clustering and giving every widget clear boundaries.
+   ========================================================================== */
+.bg-surface-container-lowest {
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(203, 213, 225, 0.7);
+}
+
+.carepoint-hover-card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(203, 213, 225, 0.7);
+}
+
+.carepoint-hover-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(1, 21, 73, 0.08), 0 3px 6px -2px rgba(1, 21, 73, 0.04);
+  border-color: rgba(180, 195, 215, 0.9);
+}
+
+

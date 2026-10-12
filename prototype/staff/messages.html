@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-tertiary": "#ffffff",
+        "surface-container": "#e9eef8",
+        "error": "#ba1a1a",
+        "error-container": "#ffdad6",
+        "surface": "#f7f9ff",
+        "on-tertiary-fixed-variant": "#00531f",
+        "on-tertiary-container": "#46a95a",
+        "outline-variant": "#c5c6d1",
+        "primary": "#011549",
+        "secondary-fixed": "#ffdad5",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary": "#ffffff",
+        "on-secondary-fixed-variant": "#930004",
+        "secondary-fixed-dim": "#ffb4a9",
+        "on-secondary-container": "#fffbff",
+        "inverse-on-surface": "#ecf1fb",
+        "primary-fixed-dim": "#b5c4ff",
+        "secondary-container": "#df2d23",
+        "inverse-primary": "#b5c4ff",
+        "tertiary-fixed": "#94f9a0",
+        "on-secondary-fixed": "#410001",
+        "on-background": "#161c23",
+        "surface-container-low": "#eef4fe",
+        "tertiary": "#001f07",
+        "on-tertiary-fixed": "#002108",
+        "outline": "#757680",
+        "background": "#f7f9ff",
+        "on-error-container": "#93000a",
+        "on-primary": "#ffffff",
+        "on-error": "#ffffff",
+        "on-primary-container": "#8494cd",
+        "on-surface": "#161c23",
+        "inverse-surface": "#2b3138",
+        "surface-bright": "#f7f9ff",
+        "tertiary-container": "#003712",
+        "primary-fixed": "#dce1ff",
+        "tertiary-fixed-dim": "#78dc86",
+        "surface-container-high": "#e3e8f2",
+        "on-surface-variant": "#45464f",
+        "surface-tint": "#4c5c92",
+        "primary-container": "#1a2b5e",
+        "on-primary-fixed": "#03174b",
+        "secondary": "#ba0a0c",
+        "surface-variant": "#dde3ec",
+        "surface-container-highest": "#dde3ec",
+        "surface-dim": "#d5dae4",
+        "on-primary-fixed-variant": "#344478"
+      },
+      borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+      spacing: { "margin-sm": "1rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin": "2rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem" },
+      fontFamily: {
+        "body-lg": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ],
+        "display-lg-mobile": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ],
+        "headline-xl": [ "Plus Jakarta Sans" ], "headline-xl-mobile": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ],
+        "label-sm": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ]
+      },
+      fontSize: {
+        "body-lg": [ "15.5px", { "lineHeight": "23px", "fontWeight": "400" } ],
+        "label-lg": [ "12.5px", { "lineHeight": "17px", "letterSpacing": "0.03em", "fontWeight": "700" } ],
+        "body-sm": [ "12.5px", { "lineHeight": "17px", "fontWeight": "400" } ],
+        "display-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800" } ],
+        "headline-md": [ "20px", { "lineHeight": "26px", "fontWeight": "700" } ],
+        "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ],
+        "headline-xl": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" } ],
+        "headline-xl-mobile": [ "24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" } ],
+        "headline-sm": [ "17px", { "lineHeight": "22px", "fontWeight": "600" } ],
+        "label-sm": [ "10px", { "lineHeight": "13px", "letterSpacing": "0.04em", "fontWeight": "600" } ],
+        "display-lg": [ "48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" } ],
+        "headline-lg": [ "26px", { "lineHeight": "34px", "fontWeight": "700" } ],
+        "label-md": [ "11px", { "lineHeight": "15px", "letterSpacing": "0.04em", "fontWeight": "700" } ]
+      }
+    }
+  }
+};
+</script>
+<title>Carepoint - Staff Communications &amp; Parent Messaging Desk</title>
+<link href="../carepoint-hud.css" rel="stylesheet"/>
+<script>
+window.__CAREPOINT_HUD__ = {
+    role: "staff",
+    label: "Staff Communication Desk",
+    isMobile: false,
+    relRoot: "../",
+    counterpart: "mobile-messages.html"
+};
+</script>
+<script type="module" src="/carepoint-app.js"></script>
+<script type="module" src="../carepoint-hud.js"></script>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- Fixed Left Drawer Navigation -->
+<aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-outline-variant/30">
+  <!-- Top Header with Crest, Title, Motto, Badge, and Repositioned Close Button -->
+  <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider">STAFF OPERATIONAL PORTAL</span>
+    </div>
+  </div>
+
+  <!-- Middle Nav Area (Scrolls smoothly if screen is short, never crushes the class card!) -->
+  <div class="flex-1 min-h-0 overflow-y-auto px-3 py-3">
+    <div class="font-label-sm text-[11px] uppercase tracking-wider text-outline px-2 mb-1.5 font-bold">
+      Academic Operations
+    </div>
+    <nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm">
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-dashboard" href="dashboard.html">
+        <span class="material-symbols-outlined text-[20px]">grid_view</span>
+        <span>Dashboard</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-attendance" href="attendance.html">
+        <span class="material-symbols-outlined text-[20px]">fact_check</span>
+        <span>Attendance</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-gradebook" href="gradebook.html">
+        <span class="material-symbols-outlined text-[20px]">menu_book</span>
+        <span>Gradebook</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-health-and-welfare" href="health.html">
+        <span class="material-symbols-outlined text-[20px]">medical_services</span>
+        <span>Health &amp; Welfare</span>
+      </a>
+      <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-approvals-engine" href="approvals.html">
+        <div class="flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-[20px]">verified</span>
+          <span>Approvals Engine</span>
+        </div>
+        <span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-label-sm font-bold">3</span>
+      </a>
+      <a aria-current="page" class="flex items-center justify-between px-3 py-2 rounded-lg bg-primary-container text-on-primary font-bold shadow-sm transition-colors font-label-lg text-label-lg" data-path="staff-messages" href="messages.html">
+        <div class="flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+          <span>Messages</span>
+        </div>
+        <span class="px-2 py-0.5 rounded-full bg-secondary text-on-secondary text-[11px] font-bold">1 unread</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Bottom My Class Layer Card (Docked, shrink-0, comfortably padded with breathing room) -->
+  <div class="shrink-0 p-3 mx-3 mb-3 rounded-xl bg-surface-container-low flex flex-col gap-1 border border-surface-container-high/80 shadow-2xs">
+    <div class="flex items-center justify-between">
+      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">My Class</span>
+      <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Active
+      </span>
+    </div>
+    <div class="font-headline-sm text-base text-primary font-bold leading-tight" id="staff-assigned-class-name">Sunflower Class</div>
+    <div class="font-body-sm text-xs text-on-surface-variant" id="staff-assigned-class-sub">Basic 2 • Academic Lead</div>
+    <button id="switchClassBtn" onclick="openSwitchClassModal()" class="mt-1.5 w-full py-1.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-primary text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs active:scale-[0.98] border border-outline-variant/20" type="button">
+      <span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+      <span>Change Class</span>
+    </button>
+  </div>
+</aside>
+
+<!-- Main Workspace Column (offset 72 tailwind width for aside) -->
+<div class="pl-72 flex flex-col min-h-screen">
+  <!-- Fixed Top Header -->
+  <header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between border-b border-outline-variant/20">
+    <div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-1 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button>
+    <div class="flex items-center gap-space-md">
+      <div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low hover:bg-surface-container rounded-full transition-colors cursor-pointer" id="staff-duty-badge" onclick="openStaffDutyModal()" title="View Shift Details &amp; Clock-Out">
+        <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+        <span class="font-label-sm text-label-sm text-on-surface font-semibold" id="staff-duty-status-text">Campus: On-Duty (Main Block)</span>
+      </div>
+      <div class="hidden md:inline-flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-low rounded-full text-on-surface-variant">
+        <span class="material-symbols-outlined text-[16px]">calendar_today</span>
+        <span class="font-label-sm text-label-sm font-medium">Term 1, 2026/2027</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-space-md">
+      <button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-secondary text-on-secondary text-[10px] font-bold flex items-center justify-center">3</span>
+      </button>
+      <div class="h-8 w-px bg-surface-container-highest"></div>
+      <div class="flex items-center gap-space-sm">
+        <div class="text-right hidden sm:block">
+          <div class="font-label-lg text-label-lg text-on-surface leading-snug">Mrs. Beatrice Abbey</div>
+          <div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 Sunflower Lead</div>
+        </div>
+        <img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA"/>
+        <button id="staff-clockout-btn" class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors cursor-pointer" title="Clock-Out of Campus Duty" onclick="openStaffDutyModal()" type="button">
+          <span class="material-symbols-outlined text-[20px]">logout</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main class="w-full px-space-lg pt-20 pb-12 flex-1 bg-surface">
+    <!-- Tricolor Accent Brand Bar -->
+    <div class="w-full flex h-1.5 rounded-full overflow-hidden mb-space-md shadow-sm">
+      <div class="w-1/3 bg-sky-400"></div>
+      <div class="w-1/3 bg-secondary"></div>
+      <div class="w-1/3 bg-emerald-500"></div>
+    </div>
+
+    <!-- Top Action Breadcrumb & Title Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-md">
+      <div>
+        <div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm uppercase tracking-wider mb-space-xs">
+          <span>Staff Portal</span>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <span>Academic Operations</span>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <span class="text-primary font-bold">Communications Desk</span>
+        </div>
+        <div class="flex items-center gap-space-sm flex-wrap">
+          <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Messages &amp; Parent Chat</h1>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Online
+          </span>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="openComposeModal()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold shadow-sm transition-all" type="button">
+          <span class="material-symbols-outlined text-[18px]">edit_square</span>
+          <span>New Message</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Filter Segment Tabs -->
+    <div class="flex flex-wrap items-center gap-2 mb-space-md">
+      <button class="filter-tab-btn active px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-xs transition-colors" data-filter="all" onclick="filterThreads('all')">
+        All Messages (4)
+      </button>
+      <button class="filter-tab-btn px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium transition-colors" data-filter="parents" onclick="filterThreads('parents')">
+        Parents (2)
+      </button>
+      <button class="filter-tab-btn px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium transition-colors" data-filter="admin" onclick="filterThreads('admin')">
+        School Office (1)
+      </button>
+      <button class="filter-tab-btn px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium transition-colors" data-filter="clinic" onclick="filterThreads('clinic')">
+        School Clinic (1)
+      </button>
+    </div>
+
+    <!-- Two-Column Interactive Chat & Thread Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 min-h-[640px]">
+      <!-- Left Column: Conversations List (5 cols) -->
+      <aside class="lg:col-span-4 xl:col-span-4 flex flex-col gap-3">
+        <!-- Search bar -->
+        <div class="relative w-full">
+          <span class="material-symbols-outlined absolute left-3.5 top-2.5 text-outline text-[20px]">search</span>
+          <input id="threadSearchInput" onkeyup="searchThreads()" class="w-full bg-surface-container-lowest border border-surface-container-high pl-10 pr-4 py-2 rounded-xl text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-2xs transition-all" placeholder="Search parents, students, subjects..." type="text"/>
+        </div>
+
+        <!-- Thread List Cards -->
+        <div class="flex flex-col gap-2" id="threadsContainer">
+          <!-- Thread 1: Dr. Nana Mensah (Active / Unread) -->
+          <div class="carepoint-hover-card thread-item active bg-surface-container-lowest border-2 border-primary/20 p-3.5 rounded-2xl shadow-xs cursor-pointer hover:shadow-md transition-all group" data-category="parents" data-thread="mensah" onclick="selectThread('mensah')">
+            <div class="flex items-start justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+                  NM
+                </div>
+                <div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="font-label-md text-label-md text-on-surface font-bold">Dr. Nana Mensah</span>
+                    <span class="w-2 h-2 rounded-full bg-secondary" title="Unread Message"></span>
+                  </div>
+                  <span class="text-[11px] text-on-surface-variant font-medium">Child: Kofi Mensah (Basic 2)</span>
+                </div>
+              </div>
+              <span class="text-[11px] text-secondary font-bold">25m ago</span>
+            </div>
+            <p class="carepoint-hover-detail text-[13px] text-on-surface-variant mt-2 leading-relaxed">
+              "Asking what Kofi should wear for Thursday's sports trials..."
+            </p>
+            <div class="flex items-center justify-between mt-2.5 pt-2 border-t border-surface-container-high/60 text-[11px]">
+              <span class="px-2 py-0.5 rounded-full bg-red-100 text-secondary font-semibold">PE &amp; Athletics</span>
+              <span class="text-primary font-bold">Active Thread &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Thread 2: Mrs. Cynthia Yeboah -->
+          <div class="carepoint-hover-card thread-item bg-surface-container-lowest border border-surface-container-high/60 p-3.5 rounded-2xl shadow-xs cursor-pointer hover:shadow-md transition-all group" data-category="parents" data-thread="yeboah" onclick="selectThread('yeboah')">
+            <div class="flex items-start justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-sm">
+                  CY
+                </div>
+                <div>
+                  <div class="font-label-md text-label-md text-on-surface font-bold">Mrs. Cynthia Yeboah</div>
+                  <span class="text-[11px] text-on-surface-variant font-medium">Child: Ama Yeboah (Basic 2)</span>
+                </div>
+              </div>
+              <span class="text-[11px] text-on-surface-variant">2h ago</span>
+            </div>
+            <p class="carepoint-hover-detail text-[13px] text-on-surface-variant mt-2 leading-relaxed">
+              "Thank you Mrs. Abbey, Ama brought home the updated reading worksheet. We will practice the phonics list."
+            </p>
+            <div class="flex items-center justify-between mt-2.5 pt-2 border-t border-surface-container-high/60 text-[11px]">
+              <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-medium">Academics</span>
+              <span class="text-on-surface-variant">Replied</span>
+            </div>
+          </div>
+
+          <!-- Thread 3: Dr. Elizabeth Appiah (Principal) -->
+          <div class="carepoint-hover-card thread-item bg-surface-container-lowest border border-surface-container-high/60 p-3.5 rounded-2xl shadow-xs cursor-pointer hover:shadow-md transition-all group" data-category="admin" data-thread="appiah" onclick="selectThread('appiah')">
+            <div class="flex items-start justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm">
+                  EA
+                </div>
+                <div>
+                  <div class="font-label-md text-label-md text-on-surface font-bold">Dr. Elizabeth Appiah</div>
+                  <span class="text-[11px] text-on-surface-variant font-medium">Headmistress / Principal</span>
+                </div>
+              </div>
+              <span class="text-[11px] text-on-surface-variant">1d ago</span>
+            </div>
+            <p class="carepoint-hover-detail text-[13px] text-on-surface-variant mt-2 leading-relaxed">
+              "Your Term 1 Science &amp; Math lesson plan has been approved. Great job Beatrice."
+            </p>
+            <div class="flex items-center justify-between mt-2.5 pt-2 border-t border-surface-container-high/60 text-[11px]">
+              <span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-semibold">School Office</span>
+              <span class="text-on-surface-variant">Endorsed</span>
+            </div>
+          </div>
+
+          <!-- Thread 4: Nurse Faustina Asante (Clinic) -->
+          <div class="carepoint-hover-card thread-item bg-surface-container-lowest border border-surface-container-high/60 p-3.5 rounded-2xl shadow-xs cursor-pointer hover:shadow-md transition-all group" data-category="clinic" data-thread="asante" onclick="selectThread('asante')">
+            <div class="flex items-start justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-900 flex items-center justify-center font-bold text-sm">
+                  FA
+                </div>
+                <div>
+                  <div class="font-label-md text-label-md text-on-surface font-bold">Nurse Faustina Asante</div>
+                  <span class="text-[11px] text-on-surface-variant font-medium">Carepoint Campus Clinic</span>
+                </div>
+              </div>
+              <span class="text-[11px] text-on-surface-variant">Yesterday</span>
+            </div>
+            <p class="carepoint-hover-detail text-[13px] text-on-surface-variant mt-2 leading-relaxed">
+              "Kwame Osei rested and drank water after break. Parent was called."
+            </p>
+            <div class="flex items-center justify-between mt-2.5 pt-2 border-t border-surface-container-high/60 text-[11px]">
+              <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-medium">Clinic Note</span>
+              <span class="text-on-surface-variant">Logged</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Column: Active Conversation Pane (8 cols) -->
+      <section class="lg:col-span-8 xl:col-span-8 flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm border border-surface-container-high/60 overflow-hidden">
+        <!-- Thread Header Bar -->
+        <div class="p-space-md border-b border-surface-container-high flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low/50">
+          <div class="flex items-center gap-space-sm">
+            <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold font-headline-sm">
+              NM
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="font-headline-sm text-headline-sm text-primary font-bold" id="activeContactName">Dr. Nana Mensah</h2>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-xs font-bold">
+                  <span class="material-symbols-outlined text-[13px]">verified</span>
+                  Verified Parent
+                </span>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 flex flex-wrap items-center gap-2">
+                <span>Child: <strong class="text-on-surface">Kofi Mensah</strong> (Basic 2 Sunflower)</span>
+                <span>•</span>
+                <span class="font-mono text-xs">CP-2023-0482</span>
+                <span>•</span>
+                <span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[14px]">call</span>+233 24 555 0192</span>
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="health.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium transition-colors" title="View Student Health Profile">
+              <span class="material-symbols-outlined text-[16px] text-secondary">medical_services</span>
+              <span>Health Profile</span>
+            </a>
+            <a href="gradebook.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium transition-colors" title="View Gradebook">
+              <span class="material-symbols-outlined text-[16px] text-primary">menu_book</span>
+              <span>Gradebook</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Chat History Area -->
+        <div class="flex-1 p-space-lg overflow-y-auto space-y-space-md max-h-[500px]" id="chatMessagesContainer">
+          <!-- Date Separator -->
+          <div class="flex items-center justify-center my-2">
+            <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-xs font-medium">
+              Today, Tuesday 14 October 2026
+            </span>
+          </div>
+
+          <!-- Message 1: Incoming from Parent -->
+          <div class="flex items-start gap-3 max-w-[85%]">
+            <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs shrink-0 mt-1">
+              NM
+            </div>
+            <div class="flex flex-col gap-1">
+              <div class="bg-surface-container-low p-4 rounded-2xl rounded-tl-sm text-on-surface shadow-2xs">
+                <p class="font-body-sm text-body-sm leading-relaxed">
+                  Good morning Mrs. Abbey. What should Kofi wear for Thursday's sports games? Does he need his running shoes or normal PE clothes?
+                </p>
+                <p class="font-body-sm text-body-sm leading-relaxed mt-2 text-on-surface-variant">
+                  Also, his spare Ventolin inhaler was handed over to Nurse Akua on Monday. Please ensure it is taken to the field track.
+                </p>
+              </div>
+              <span class="text-[11px] text-on-surface-variant px-1">07:42 GMT • Dr. Nana Mensah</span>
+            </div>
+          </div>
+
+          <!-- Message 2: Outgoing from Teacher (Mrs. Abbey) -->
+          <div class="flex items-start gap-3 max-w-[85%] ml-auto flex-row-reverse">
+            <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shrink-0 mt-1">
+              BA
+            </div>
+            <div class="flex flex-col gap-1 items-end">
+              <div class="bg-primary text-on-primary p-4 rounded-2xl rounded-tr-sm shadow-2xs">
+                <p class="font-body-sm text-body-sm leading-relaxed">
+                  Good morning Dr. Mensah! The standard Carepoint sports kit with the Sunflower class yellow polo is required for Thursday. White rubber-soled sneakers are mandatory for safety on the track.
+                </p>
+                <p class="font-body-sm text-body-sm leading-relaxed mt-2 text-primary-fixed">
+                  Regarding the inhaler: Nurse Akua has already logged Lockbox #4, and our first aid team will have his kit pitch-side throughout the relay trials.
+                </p>
+              </div>
+              <div class="flex items-center gap-1 text-[11px] text-on-surface-variant px-1">
+                <span>08:05 GMT</span>
+                <span class="material-symbols-outlined text-[14px] text-emerald-600">done_all</span>
+                <span>Delivered &amp; Read</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message 3: Incoming Follow-up -->
+          <div class="flex items-start gap-3 max-w-[85%]">
+            <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs shrink-0 mt-1">
+              NM
+            </div>
+            <div class="flex flex-col gap-1">
+              <div class="bg-surface-container-low p-4 rounded-2xl rounded-tl-sm text-on-surface shadow-2xs">
+                <p class="font-body-sm text-body-sm leading-relaxed">
+                  Wonderful! Thank you for the quick reassurance. Please remind him to drink water during the break time breaks. Much appreciated, Mrs. Abbey.
+                </p>
+              </div>
+              <span class="text-[11px] text-on-surface-variant px-1">08:18 GMT • Dr. Nana Mensah</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Response Action Chips -->
+        <div class="px-space-md py-2 bg-surface-container-low/30 border-t border-surface-container-high/50 flex flex-wrap items-center gap-2">
+          <span class="text-[11px] font-label-sm text-on-surface-variant font-medium">Quick Suggestions:</span>
+          <button onclick="insertQuickResponse('Will do, Dr. Mensah! He has his labeled water bottle in class.')" class="px-2.5 py-1 rounded-full bg-surface-container-lowest hover:bg-surface-container text-primary font-label-sm text-xs font-medium border border-surface-container-high transition-colors shadow-2xs">
+            "Will do, Dr. Mensah! Water bottle noted."
+          </button>
+          <button onclick="insertQuickResponse('Kofi is doing very well in morning class today.')" class="px-2.5 py-1 rounded-full bg-surface-container-lowest hover:bg-surface-container text-primary font-label-sm text-xs font-medium border border-surface-container-high transition-colors shadow-2xs">
+            "Kofi is doing very well today."
+          </button>
+          <button onclick="insertQuickResponse('Understood. First aid team is briefed.')" class="px-2.5 py-1 rounded-full bg-surface-container-lowest hover:bg-surface-container text-primary font-label-sm text-xs font-medium border border-surface-container-high transition-colors shadow-2xs">
+            "First aid team briefed."
+          </button>
+        </div>
+
+        <!-- Message Composer Form -->
+        <div class="p-space-md bg-surface-container-lowest border-t border-surface-container-high">
+          <form id="staffChatForm" onsubmit="sendStaffMessage(event)" class="flex flex-col gap-2">
+            <div class="relative">
+              <textarea id="staffMessageInput" rows="3" placeholder="Type a message or clinical remark to Dr. Nana Mensah..." class="w-full p-3.5 rounded-xl border border-surface-container-high focus:outline-none focus:ring-2 focus:ring-primary/20 bg-surface text-on-surface font-body-sm text-body-sm resize-none"></textarea>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1">
+                <button type="button" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" title="Attach Document / Homework Slip">
+                  <span class="material-symbols-outlined text-[20px]">attach_file</span>
+                </button>
+                <button type="button" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" title="Audio Voice Note">
+                  <span class="material-symbols-outlined text-[20px]">mic</span>
+                </button>
+                <button type="button" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" title="Insert Emoji">
+                  <span class="material-symbols-outlined text-[20px]">mood</span>
+                </button>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="clearMessageInput()" class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-sm text-xs transition-colors">
+                  Discard
+                </button>
+                <button type="submit" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold shadow-xs transition-all">
+                  <span>Send Message</span>
+                  <span class="material-symbols-outlined text-[16px]">send</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<!-- Modal: New Message to Parent or Staff -->
+<div id="composeModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/50 backdrop-blur-xs">
+  <div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-space-lg shadow-xl border border-outline-variant/30 flex flex-col gap-4">
+    <div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[22px]">edit_square</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold">Compose Institutional Message</h3>
+      </div>
+      <button onclick="closeComposeModal()" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container text-on-surface-variant transition-colors">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <form onsubmit="submitNewCompose(event)" class="flex flex-col gap-3">
+      <div>
+        <label class="block font-label-sm text-xs text-on-surface-variant font-bold uppercase tracking-wider mb-1">Recipient Category</label>
+        <select id="modalRecipientCategory" onchange="updateRecipientList()" class="w-full p-2.5 rounded-xl border border-surface-container-high bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20">
+          <option value="parent">Parent / Guardian (Basic 2 Sunflower)</option>
+          <option value="admin">Principal / Administration Suite</option>
+          <option value="clinic">School Clinic &amp; Welfare Desk</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block font-label-sm text-xs text-on-surface-variant font-bold uppercase tracking-wider mb-1">Select Contact</label>
+        <select id="modalRecipientSelect" class="w-full p-2.5 rounded-xl border border-surface-container-high bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20">
+          <option value="Dr. Nana Mensah (Kofi Mensah - Basic 2)">Dr. Nana Mensah (Child: Kofi Mensah)</option>
+          <option value="Mrs. Cynthia Yeboah (Ama Yeboah - Basic 2)">Mrs. Cynthia Yeboah (Child: Ama Yeboah)</option>
+          <option value="Mr. Kwesi Osei (Kwame Osei - Basic 2)">Mr. Kwesi Osei (Child: Kwame Osei)</option>
+          <option value="Mrs. Abigail Tetteh (Adjoa Tetteh - Basic 2)">Mrs. Abigail Tetteh (Child: Adjoa Tetteh)</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block font-label-sm text-xs text-on-surface-variant font-bold uppercase tracking-wider mb-1">Subject</label>
+        <input id="modalSubject" type="text" placeholder="e.g. Mid-Term Learning Update or Activity Note" required class="w-full p-2.5 rounded-xl border border-surface-container-high bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20"/>
+      </div>
+
+      <div>
+        <label class="block font-label-sm text-xs text-on-surface-variant font-bold uppercase tracking-wider mb-1">Message Content</label>
+        <textarea id="modalBody" rows="4" placeholder="Enter message to parent or administration..." required class="w-full p-2.5 rounded-xl border border-surface-container-high bg-surface text-on-surface font-body-sm text-body-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/20"></textarea>
+      </div>
+
+      <div class="flex items-center justify-end gap-2 pt-2 border-t border-surface-container-high">
+        <button type="button" onclick="closeComposeModal()" class="px-4 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm transition-colors">
+          Cancel
+        </button>
+        <button type="submit" class="px-4 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold shadow-xs transition-colors flex items-center gap-1.5">
+          <span>Send Dispatch</span>
+          <span class="material-symbols-outlined text-[16px]">send</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+// Interactive Message Handlers
+function insertQuickResponse(text) {
+  const input = document.getElementById('staffMessageInput');
+  if (input) {
+    input.value = text;
+    input.focus();
+  }
+}
+
+function clearMessageInput() {
+  const input = document.getElementById('staffMessageInput');
+  if (input) input.value = '';
+}
+
+function sendStaffMessage(e) {
+  e.preventDefault();
+  const input = document.getElementById('staffMessageInput');
+  const text = input ? input.value.trim() : '';
+  if (!text) return;
+
+  const container = document.getElementById('chatMessagesContainer');
+  if (container) {
+    const bubble = document.createElement('div');
+    bubble.className = "flex items-start gap-3 max-w-[85%] ml-auto flex-row-reverse animate-fadeIn";
+    bubble.innerHTML = `
+      <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shrink-0 mt-1">
+        BA
+      </div>
+      <div class="flex flex-col gap-1 items-end">
+        <div class="bg-primary text-on-primary p-4 rounded-2xl rounded-tr-sm shadow-2xs">
+          <p class="font-body-sm text-body-sm leading-relaxed">${escapeHtml(text)}</p>
+        </div>
+        <div class="flex items-center gap-1 text-[11px] text-on-surface-variant px-1">
+          <span>Just now</span>
+          <span class="material-symbols-outlined text-[14px] text-emerald-600">done</span>
+          <span>Sent</span>
+        </div>
+      </div>
+    `;
+    container.appendChild(bubble);
+    container.scrollTop = container.scrollHeight;
+  }
+
+  input.value = '';
+
+  if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+    window.CarepointDemo.showToast('Message sent to Dr. Nana Mensah (+233 24 555 0192)');
+  }
+}
+
+function escapeHtml(string) {
+  const div = document.createElement('div');
+  div.innerText = string;
+  return div.innerHTML;
+}
+
+function filterThreads(filter) {
+  document.querySelectorAll('.filter-tab-btn').forEach(btn => {
+    if (btn.getAttribute('data-filter') === filter) {
+      btn.className = "filter-tab-btn active px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-xs transition-colors";
+    } else {
+      btn.className = "filter-tab-btn px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium transition-colors";
+    }
+  });
+
+  const threads = document.querySelectorAll('.thread-item');
+  threads.forEach(t => {
+    if (filter === 'all' || t.getAttribute('data-category') === filter) {
+      t.style.display = 'block';
+    } else {
+      t.style.display = 'none';
+    }
+  });
+}
+
+function searchThreads() {
+  const query = document.getElementById('threadSearchInput').value.toLowerCase();
+  const threads = document.querySelectorAll('.thread-item');
+  threads.forEach(t => {
+    const text = t.textContent.toLowerCase();
+    t.style.display = text.includes(query) ? 'block' : 'none';
+  });
+}
+
+function selectThread(threadId) {
+  document.querySelectorAll('.thread-item').forEach(t => {
+    t.classList.remove('border-2', 'border-primary/20', 'active');
+    t.classList.add('border-surface-container-high/60');
+  });
+  const selected = document.querySelector(`.thread-item[data-thread="${threadId}"]`);
+  if (selected) {
+    selected.classList.add('border-2', 'border-primary/20', 'active');
+    selected.classList.remove('border-surface-container-high/60');
+  }
+
+  if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+    window.CarepointDemo.showToast('Switched to thread: ' + (selected ? selected.querySelector('.font-bold').textContent : threadId));
+  }
+}
+
+function openComposeModal() {
+  const modal = document.getElementById('composeModal');
+  if (modal) modal.classList.remove('hidden');
+}
+
+function closeComposeModal() {
+  const modal = document.getElementById('composeModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function updateRecipientList() {
+  const cat = document.getElementById('modalRecipientCategory').value;
+  const select = document.getElementById('modalRecipientSelect');
+  if (!select) return;
+
+  if (cat === 'parent') {
+    select.innerHTML = `
+      <option value="Dr. Nana Mensah (Kofi Mensah - Basic 2)">Dr. Nana Mensah (Child: Kofi Mensah)</option>
+      <option value="Mrs. Cynthia Yeboah (Ama Yeboah - Basic 2)">Mrs. Cynthia Yeboah (Child: Ama Yeboah)</option>
+      <option value="Mr. Kwesi Osei (Kwame Osei - Basic 2)">Mr. Kwesi Osei (Child: Kwame Osei)</option>
+      <option value="Mrs. Abigail Tetteh (Adjoa Tetteh - Basic 2)">Mrs. Abigail Tetteh (Child: Adjoa Tetteh)</option>
+    `;
+  } else if (cat === 'admin') {
+    select.innerHTML = `
+      <option value="Dr. Elizabeth Appiah (Principal)">Dr. Elizabeth Appiah (Headmistress / Principal)</option>
+      <option value="Academic Dean Desk">Academic Dean Desk</option>
+      <option value="Admissions & Registrar">Admissions &amp; Registrar</option>
+    `;
+  } else {
+    select.innerHTML = `
+      <option value="Nurse Faustina Asante (School Clinic)">Nurse Faustina Asante (School Clinic)</option>
+      <option value="Welfare & Guidance Counselor">Welfare &amp; Guidance Counselor</option>
+    `;
+  }
+}
+
+function submitNewCompose(e) {
+  e.preventDefault();
+  const recipient = document.getElementById('modalRecipientSelect').value;
+  const subject = document.getElementById('modalSubject').value;
+  closeComposeModal();
+
+  if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+    window.CarepointDemo.showToast(`Dispatch sent to ${recipient}: "${subject}"`);
+  }
+}
+</script>
+</body>
+</html>

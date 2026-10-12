@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"outline-variant":"#c5c6d1","primary":"#011549","secondary-fixed":"#ffdad5","on-primary-container":"#8494cd","surface-container-highest":"#dde3ec","surface":"#eef2f6","surface-dim":"#d5dae4","on-secondary-fixed-variant":"#930004","error-container":"#ffdad6","primary-container":"#1a2b5e","on-background":"#161c23","on-surface-variant":"#45464f","tertiary-fixed-dim":"#78dc86","secondary":"#ba0a0c","surface-tint":"#4c5c92","tertiary-container":"#003712","inverse-primary":"#b5c4ff","surface-container-low":"#eef4fe","surface-container-lowest":"#ffffff","tertiary-fixed":"#94f9a0","on-secondary-container":"#fffbff","on-error-container":"#93000a","on-tertiary-fixed":"#002108","surface-container-high":"#e3e8f2","on-primary-fixed":"#03174b","on-surface":"#161c23","on-secondary-fixed":"#410001","primary-fixed-dim":"#b5c4ff","inverse-surface":"#2b3138","tertiary":"#001f07","inverse-on-surface":"#ecf1fb","background":"#eef2f6","on-primary":"#ffffff","surface-bright":"#f7f9ff","on-error":"#ffffff","outline":"#757680","secondary-container":"#df2d23","on-primary-fixed-variant":"#344478","on-tertiary-fixed-variant":"#00531f","surface-variant":"#dde3ec","on-secondary":"#ffffff","error":"#ba1a1a","on-tertiary-container":"#46a95a","surface-container":"#e9eef8","primary-fixed":"#dce1ff","on-tertiary":"#ffffff","secondary-fixed-dim":"#ffb4a9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","space-md":"1rem","margin-sm":"1rem","space-xs":"0.25rem","space-xl":"2.5rem","space-lg":"1.5rem","margin":"2rem","gutter-sm":"1rem","gutter":"1.5rem"},"fontFamily":{"headline-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},"fontSize":{"headline-md":["20px",{"lineHeight":"26px","fontWeight":"700"}],"display-lg-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"800"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["12.5px",{"lineHeight":"17px","letterSpacing":"0.03em","fontWeight":"700"}],"headline-xl-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg":["26px",{"lineHeight":"34px","fontWeight":"700"}],"body-lg":["15.5px",{"lineHeight":"23px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-md":["11px",{"lineHeight":"15px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-sm":["17px",{"lineHeight":"22px","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-sm":["10px",{"lineHeight":"13px","letterSpacing":"0.04em","fontWeight":"600"}],"body-sm":["12.5px",{"lineHeight":"17px","fontWeight":"400"}]}}}};</script><title>Carepoint - Monthly Timetable Builder</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "staff",
+            label: "Monthly Timetable Builder",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-timetable.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface text-on-surface font-body-md"><aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-outline-variant/30">
+  <!-- Top Header with Crest, Title, Motto, Badge, and Repositioned Close Button -->
+  <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider">STAFF OPERATIONAL PORTAL</span>
+    </div>
+  </div>
+
+  <!-- Middle Nav Area (Scrolls smoothly if screen is short, never crushes the class card!) -->
+  <div class="flex-1 min-h-0 overflow-y-auto px-3 py-3">
+    <div class="font-label-sm text-[11px] uppercase tracking-wider text-outline px-2 mb-1.5 font-bold">
+      Academic Operations
+    </div>
+    <nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm">
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-dashboard" href="dashboard.html">
+        <span class="material-symbols-outlined text-[20px]">grid_view</span>
+        <span>Dashboard</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-attendance" href="attendance.html">
+        <span class="material-symbols-outlined text-[20px]">fact_check</span>
+        <span>Attendance</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-gradebook" href="gradebook.html">
+        <span class="material-symbols-outlined text-[20px]">menu_book</span>
+        <span>Gradebook</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-health-and-welfare" href="health.html">
+        <span class="material-symbols-outlined text-[20px]">medical_services</span>
+        <span>Health &amp; Welfare</span>
+      </a>
+      <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-approvals-engine" href="approvals.html">
+        <div class="flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-[20px]">verified</span>
+          <span>Approvals Engine</span>
+        </div>
+        <span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-label-sm font-bold">3</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-messages" href="messages.html">
+        <span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+        <span>Messages</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Bottom My Class Layer Card (Docked, shrink-0, comfortably padded with breathing room) -->
+  <div class="shrink-0 p-3 mx-3 mb-3 rounded-xl bg-surface-container-low flex flex-col gap-1 border border-surface-container-high/80 shadow-2xs">
+    <div class="flex items-center justify-between">
+      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">My Class</span>
+      <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Active
+      </span>
+    </div>
+    <div class="font-headline-sm text-base text-primary font-bold leading-tight" id="staff-assigned-class-name">Sunflower Class</div>
+    <div class="font-body-sm text-xs text-on-surface-variant" id="staff-assigned-class-sub">Basic 2 • Academic Lead</div>
+    <button id="switchClassBtn" onclick="openSwitchClassModal()" class="mt-1.5 w-full py-1.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-primary text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs active:scale-[0.98] border border-outline-variant/20" type="button">
+      <span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+      <span>Change Class</span>
+    </button>
+  </div>
+</aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-1 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low hover:bg-surface-container rounded-full transition-colors cursor-pointer" id="staff-duty-badge" onclick="openStaffDutyModal()" title="View Shift Details &amp; Clock-Out"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface font-semibold" id="staff-duty-status-text">Campus: On-Duty (Main Block)</span></div><div class="hidden md:inline-flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-low rounded-full text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">calendar_today</span><span class="font-label-sm text-label-sm font-medium">Term 1, 2026/2027</span></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-secondary text-on-secondary text-[10px] font-bold flex items-center justify-center">3</span></button><div class="h-8 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:block"><div class="font-label-lg text-label-lg text-on-surface leading-snug">Mrs. Beatrice Abbey</div><div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 Sunflower Lead</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA"/><button id="staff-clockout-btn" class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors cursor-pointer" title="Clock-Out of Campus Duty" onclick="openStaffDutyModal()" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></header><main class="w-full px-space-lg pt-16 flex-1 bg-surface"><div class="flex flex-col w-full">
+<!-- Dynamic Notification / Sync Toast Banner -->
+<div class="w-full bg-primary-container text-on-primary-container px-space-lg py-2.5 rounded-xl shadow-sm mb-space-md flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="flex h-2.5 w-2.5 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary-fixed-dim"></span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-inverse-primary font-bold">AUTO-SAVING ON</span>
+<span class="hidden sm:inline text-on-primary-container/70">•</span>
+<span class="font-body-sm text-body-sm text-surface-container-lowest">Saved 4 mins ago by Mrs. Beatrice Abbey</span>
+</div>
+<div class="flex items-center gap-space-md text-label-sm font-label-sm text-inverse-primary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">cloud_done</span> Saved Online</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">lock_clock</span> Editing Allowed</span>
+</div>
+</div>
+<!-- Primary Page Header & Operational Bar -->
+<div class="w-full bg-surface-container-lowest p-space-lg rounded-xl shadow-sm mb-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div>
+<div class="flex flex-wrap items-center gap-space-sm mb-1">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pending_actions</span>
+            Status: Waiting for Headmistress
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">verified</span>
+            Official School Standards
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+            Campus: Main Block
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Class Timetable &amp; Schedule</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">2026/2027 School Year • Term 1 • Basic 2 Sunflower Class</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-low text-primary font-label-lg text-label-lg font-bold hover:bg-surface-container-high transition-colors flex items-center gap-2" id="previewPupilModalBtn">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+          See Student View
+        </button>
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-low text-primary font-label-lg text-label-lg font-bold hover:bg-surface-container-high transition-colors flex items-center gap-2" id="conflictCheckBtn">
+<span class="material-symbols-outlined text-[18px]">rule</span>
+          Check for Clashes
+        </button>
+<button class="px-space-lg py-2.5 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold hover:opacity-95 shadow-md flex items-center gap-2 transition-transform active:scale-95" id="submitHeadmistressBtn">
+<span class="material-symbols-outlined text-[18px]">send</span>
+          Send to Headmistress
+        </button>
+</div>
+</div>
+<!-- Quick Scope Switcher & Validation Summary Band -->
+<div class="p-space-sm bg-surface-container rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="inline-flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-md shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">school</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Class:</span>
+<span class="font-label-md text-label-md text-primary font-bold">Basic 2 — Sunflower Class</span>
+</div>
+<div class="inline-flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-md shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">date_range</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Week:</span>
+<span class="font-label-md text-label-md text-primary font-bold">Week 6 of 14 (Oct 16 - Oct 20, 2026)</span>
+</div>
+<!-- View Segment Control -->
+<div class="inline-flex p-0.5 bg-surface-container-high rounded-md">
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_view_week</span> Weekly Schedule
+          </button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">grid_on</span> Period List
+          </button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">door_front</span> Classrooms
+          </button>
+</div>
+</div>
+<!-- Real-time GES Metric -->
+<div class="flex items-center gap-2 px-3 py-1 rounded-md bg-surface-container-lowest">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">0 Time Clashes</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">All 35 Lessons Scheduled</span>
+</div>
+</div>
+</div>
+<!-- Main Workspace Grid: Left Palette (4 cols) & Schedule Board (8 cols) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Left Sidebar: Subject Allocation Palette & Conflict Engine -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg">
+<!-- Subject & Activity Drag Palette -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">dataset</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Subjects</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Click or drag a subject into any time slot</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">All Done (35/35)</span>
+</div>
+<!-- Subject List Stack -->
+<div class="flex flex-col gap-2 max-h-[580px] overflow-y-auto pr-1">
+<!-- Mathematics -->
+<div class="carepoint-hover-card group p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex items-center justify-between cursor-grab active:cursor-grabbing shadow-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline">drag_indicator</span>
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">Mathematics</div>
+<div class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Room B-04 • Lead: Mrs. B. Abbey</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold">6 Lessons</span>
+<div class="font-label-sm text-[10px] text-on-tertiary-container font-semibold mt-0.5">Scheduled</div>
+</div>
+</div>
+<!-- English Language & Phonics -->
+<div class="carepoint-hover-card group p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex items-center justify-between cursor-grab active:cursor-grabbing shadow-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline">drag_indicator</span>
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">English &amp; Phonics</div>
+<div class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Room B-04 • Literacy Lead</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold">8 Lessons</span>
+<div class="font-label-sm text-[10px] text-on-tertiary-container font-semibold mt-0.5">Scheduled</div>
+</div>
+</div>
+<!-- Integrated Science -->
+<div class="carepoint-hover-card group p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex items-center justify-between cursor-grab active:cursor-grabbing shadow-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline">drag_indicator</span>
+<div class="w-3 h-3 rounded-full bg-tertiary-fixed-dim"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">Integrated Science</div>
+<div class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Science Pod 1 • STEM Assistant</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold">4 Lessons</span>
+<div class="font-label-sm text-[10px] text-on-tertiary-container font-semibold mt-0.5">Scheduled</div>
+</div>
+</div>
+<!-- Computing / ICT -->
+<div class="carepoint-hover-card group p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex items-center justify-between cursor-grab active:cursor-grabbing shadow-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline">drag_indicator</span>
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">Computing / ICT</div>
+<div class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">ICT Lab B • Mr. K. Mensah</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold">2 Lessons</span>
+<div class="font-label-sm text-[10px] text-on-tertiary-container font-semibold mt-0.5">Scheduled</div>
+</div>
+</div>
+<!-- Creative Arts & Craft -->
+<div class="carepoint-hover-card group p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex items-center justify-between cursor-grab active:cursor-grabbing shadow-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline">drag_indicator</span>
+<div class="w-3 h-3 rounded-full bg-secondary-fixed-dim"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">Creative Arts &amp; Craft</div>
+<div class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Atelier Wing • Lead Art Tutor</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold">3 Lessons</span>
+<div class="font-label-sm text-[10px] text-on-tertiary-container font-semibold mt-0.5">Scheduled</div>
+</div>
+</div>
+<!-- Ghanaian Language & Culture (Twi/Fante) -->
+<div class="carepoint-hover-card group p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex items-center justify-between cursor-grab active:cursor-grabbing shadow-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline">drag_indicator</span>
+<div class="w-3 h-3 rounded-full bg-primary-fixed"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">Ghanaian Language</div>
+<div class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Twi &amp; Cultural Heritage</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold">3 Lessons</span>
+<div class="font-label-sm text-[10px] text-on-tertiary-container font-semibold mt-0.5">Scheduled</div>
+</div>
+</div>
+<!-- Physical Education & Health -->
+<div class="carepoint-hover-card group p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex items-center justify-between cursor-grab active:cursor-grabbing shadow-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline">drag_indicator</span>
+<div class="w-3 h-3 rounded-full bg-tertiary-fixed"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">Physical Education</div>
+<div class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Playground Zone A • Coach Sam</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold">2 Lessons</span>
+<div class="font-label-sm text-[10px] text-on-tertiary-container font-semibold mt-0.5">Scheduled</div>
+</div>
+</div>
+<!-- Religious & Moral Education (RME) -->
+<div class="carepoint-hover-card group p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex items-center justify-between cursor-grab active:cursor-grabbing shadow-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline">drag_indicator</span>
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">R.M.E. (Moral Ed.)</div>
+<div class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Values &amp; Ethics Focus</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold">2 Lessons</span>
+<div class="font-label-sm text-[10px] text-on-tertiary-container font-semibold mt-0.5">Scheduled</div>
+</div>
+</div>
+<!-- Library & Quiet Reading -->
+<div class="carepoint-hover-card group p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all flex items-center justify-between cursor-grab active:cursor-grabbing shadow-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-outline">drag_indicator</span>
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">Library &amp; Research</div>
+<div class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">School Library Core</div>
+</div>
+</div>
+<div class="text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold">2 Lessons</span>
+<div class="font-label-sm text-[10px] text-on-tertiary-container font-semibold mt-0.5">Scheduled</div>
+</div>
+</div>
+<!-- Fixed Institutional Daily Blocks -->
+<div class="carepoint-hover-card p-2.5 rounded-lg bg-surface-container-highest/60 flex items-center justify-between opacity-80 group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">lock</span>
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">Morning Devotion (Fixed)</div>
+<div class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Daily 08:00 - 08:30 • Assembly Yard</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold">Daily Lock</span>
+</div>
+<div class="carepoint-hover-card p-2.5 rounded-lg bg-surface-container-highest/60 flex items-center justify-between opacity-80 group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">lock</span>
+<div class="w-3 h-3 rounded-full bg-secondary-fixed-dim"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">Dining Hall &amp; Break Time (Fixed)</div>
+<div class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">10:30 &amp; 12:00 Dining Protocols</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold">Daily Lock</span>
+</div>
+</div>
+</div>
+<!-- Live Room & Resource Conflict Engine Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Clash Checker</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">All Clear</span>
+</div>
+<div class="flex flex-col gap-2 mt-1">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container mt-0.5">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-primary font-bold">Computer Lab Booked</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Reserved Tuesday 11:00 - 12:00. No overlap with other classes.</div>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container mt-0.5">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-primary font-bold">Playground Area Clear</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Scheduled Friday 11:00 - 12:00. Other classes are on Field B.</div>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container mt-0.5">check_circle</span>
+<div>
+<div class="font-label-md text-label-md text-primary font-bold">Science Room Checked</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Ready Wednesday 13:00 - 14:00. Lab assistant confirmed.</div>
+</div>
+</div>
+</div>
+<!-- Safeguarding & Workflow notice -->
+<div class="p-space-sm bg-surface-container-high/70 rounded-lg flex items-start gap-2 mt-1">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">policy</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+<strong class="text-primary">Note:</strong> Sending this timetable asks <strong>Headmistress Dr. Elizabeth Appiah</strong> to approve it. Once approved, it shows on the Parent App.
+          </p>
+</div>
+</div>
+<!-- Revision Notes from Headmistress Drawer/Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">assignment_turned_in</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">Notes from Headmistress</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">v1.3 feedback</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2 mb-1">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Headmistress Dr. Elizabeth Appiah official headshot in formal Ghanaian kente trim academic attire smiling warmly in Carepoint office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLctvPPkqG1Sk7Oo3IZvw9hTxK8nqR_3zO2vauzbC5PKkDlvN_rs1KhLBjQJxkewnGPzEvYNy9GI3Fd3N4u1qqK94uDZidQahYIYiNL--SPOuSst1TXWk3dOARGB0S0dMwy2t55HCUaLMGvylT88rqHP6DT0mCBOtXUaEV_DheBBFLuUANkVPdhN0Lm5Gim2Jl5OrSL57gOUgWQ_aFEquXLHKok0rV5QTNY9LrAKiOJfUKdniRSDUtYQ"/>
+<span class="font-label-md text-label-md font-bold text-primary">Dr. Elizabeth Appiah</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Oct 14, 15:40</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+            "Previous revision requested resolved: Shifted ICT Lab slot to Tuesday Period 3 to resolve contention with JHS 1 Computing. Ready for your final sign-off Beatrice."
+          </p>
+</div>
+</div>
+</div>
+<!-- Right Area: Interactive Weekly Schedule Grid (8 cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- Timetable Action Strip -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Weekly Class Schedule</span>
+<span class="text-outline-variant">|</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">40 Hours Total (35 Lessons + Assembly &amp; Breaks)</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container-low text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">print</span> Print
+          </button>
+<button class="px-2.5 py-1 rounded bg-surface-container-low text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">file_download</span> Download PDF
+          </button>
+</div>
+</div>
+<!-- Schedule Timetable Table / Grid -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-x-auto">
+<div class="min-w-[760px] p-space-md flex flex-col gap-2">
+<!-- Table Header: Days of the week -->
+<div class="grid grid-cols-6 gap-2 text-center pb-2 border-b border-surface-container-high">
+<div class="font-label-sm text-label-sm font-bold text-outline uppercase tracking-wider text-left pl-2">Time / Period</div>
+<div class="p-2 rounded bg-surface-container-high text-primary font-label-lg text-label-lg font-bold">Monday</div>
+<div class="p-2 rounded bg-surface-container-high text-primary font-label-lg text-label-lg font-bold">Tuesday</div>
+<div class="p-2 rounded bg-surface-container-high text-primary font-label-lg text-label-lg font-bold">Wednesday</div>
+<div class="p-2 rounded bg-surface-container-high text-primary font-label-lg text-label-lg font-bold">Thursday</div>
+<div class="p-2 rounded bg-surface-container-high text-primary font-label-lg text-label-lg font-bold">Friday</div>
+</div>
+<!-- Fixed Morning Assembly Row (08:00 - 08:30) -->
+<div class="grid grid-cols-6 gap-2 items-center">
+<div class="pl-2">
+<div class="font-label-md text-label-md font-bold text-primary">08:00 - 08:30</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Devotion Core</div>
+</div>
+<div class="col-span-5 p-2 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-between px-space-md shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">diversity_3</span>
+<span class="font-label-md text-label-md font-bold text-surface-container-lowest uppercase tracking-wider">Morning Devotion, National Anthem &amp; Assembly</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary text-surface-container-lowest font-label-sm text-label-sm">All Students • School Yard</span>
+</div>
+</div>
+<!-- Period 1 (08:30 - 09:30) -->
+<div class="grid grid-cols-6 gap-2 items-stretch pt-1">
+<div class="pl-2 flex flex-col justify-center">
+<div class="font-label-md text-label-md font-bold text-primary">08:30 - 09:30</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Period 1 (60m)</div>
+</div>
+<!-- Mon P1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-primary text-surface-container-lowest font-label-sm text-[10px] font-bold">MATH</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Mathematics</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Number Concepts</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Mrs. Abbey</span>
+</div>
+</div>
+<!-- Tue P1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-primary text-surface-container-lowest font-label-sm text-[10px] font-bold">MATH</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Mathematics</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Basic Addition</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Mrs. Abbey</span>
+</div>
+</div>
+<!-- Wed P1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary text-surface-container-lowest font-label-sm text-[10px] font-bold">ENG</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">English Grammar</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Noun &amp; Pronoun</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Mrs. Abbey</span>
+</div>
+</div>
+<!-- Thu P1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-tertiary text-surface-container-lowest font-label-sm text-[10px] font-bold">SCI</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Integrated Science</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Plants Around Us</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Science Pod 1</span>
+<span class="font-semibold text-primary">Mr. Ofori</span>
+</div>
+</div>
+<!-- Fri P1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold">ART</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Creative Arts</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Clay &amp; Fiber Craft</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Atelier Wing</span>
+<span class="font-semibold text-primary">Madam Joy</span>
+</div>
+</div>
+</div>
+<!-- Period 2 (09:30 - 10:30) -->
+<div class="grid grid-cols-6 gap-2 items-stretch pt-1">
+<div class="pl-2 flex flex-col justify-center">
+<div class="font-label-md text-label-md font-bold text-primary">09:30 - 10:30</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Period 2 (60m)</div>
+</div>
+<!-- Mon P2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary text-surface-container-lowest font-label-sm text-[10px] font-bold">ENG</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">English Language</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Sight Words &amp; Dictation</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Mrs. Abbey</span>
+</div>
+</div>
+<!-- Tue P2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-tertiary text-surface-container-lowest font-label-sm text-[10px] font-bold">SCI</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Integrated Science</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Water &amp; Weather</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Science Pod 1</span>
+<span class="font-semibold text-primary">Mr. Ofori</span>
+</div>
+</div>
+<!-- Wed P2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-primary text-surface-container-lowest font-label-sm text-[10px] font-bold">MATH</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Mathematics</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Measurement Units</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Mrs. Abbey</span>
+</div>
+</div>
+<!-- Thu P2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary text-surface-container-lowest font-label-sm text-[10px] font-bold">ENG</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">English Reading</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Story Comprehension</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Mrs. Abbey</span>
+</div>
+</div>
+<!-- Fri P2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-[10px] font-bold">GH LANG</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Ghanaian Language</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Asante Twi Phonics</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Madam Naa</span>
+</div>
+</div>
+</div>
+<!-- Snack & Break Time Bar (10:30 - 11:00) -->
+<div class="grid grid-cols-6 gap-2 items-center my-1">
+<div class="pl-2">
+<div class="font-label-md text-label-md font-bold text-secondary">10:30 - 11:00</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Break Time &amp; Fruit</div>
+</div>
+<div class="col-span-5 p-2 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-between px-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">local_florist</span>
+<span class="font-label-md text-label-md font-bold text-primary">Healthy Snack Break &amp; Free Play</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold">Playground Zone A</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Duty: Mr. Sam &amp; Mrs. Abbey</span>
+</div>
+</div>
+</div>
+<!-- Period 3 (11:00 - 12:00) -->
+<div class="grid grid-cols-6 gap-2 items-stretch pt-1">
+<div class="pl-2 flex flex-col justify-center">
+<div class="font-label-md text-label-md font-bold text-primary">11:00 - 12:00</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Period 3 (60m)</div>
+</div>
+<!-- Mon P3 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-tertiary text-surface-container-lowest font-label-sm text-[10px] font-bold">SCI</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Integrated Science</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Living &amp; Non-Living</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Science Pod 1</span>
+<span class="font-semibold text-primary">Mr. Ofori</span>
+</div>
+</div>
+<!-- Tue P3 (ICT Lab B highlighted based on resolved contention) -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between border border-secondary/30">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-surface-container-lowest font-label-sm text-[10px] font-bold">COMPUTING</span>
+<span class="material-symbols-outlined text-[16px] text-secondary" title="Approved Slot Reallocation">verified</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Computing / ICT</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Mouse Skills &amp; Typing</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span class="font-bold text-primary">ICT Lab B</span>
+<span class="font-semibold text-primary">Mr. K. Mensah</span>
+</div>
+</div>
+<!-- Wed P3 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px] font-bold">RME</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">R.M.E. (Moral Ed.)</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Golden Rule &amp; Respect</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Mrs. Abbey</span>
+</div>
+</div>
+<!-- Thu P3 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-primary text-surface-container-lowest font-label-sm text-[10px] font-bold">MATH</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Mathematics</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Simple Subtraction</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Mrs. Abbey</span>
+</div>
+</div>
+<!-- Fri P3 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-[10px] font-bold">P.E.</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Physical Education</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Gross Motor Drills</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Playground A</span>
+<span class="font-semibold text-primary">Coach Sam</span>
+</div>
+</div>
+</div>
+<!-- Lunch Break Bar (12:00 - 13:00) -->
+<div class="grid grid-cols-6 gap-2 items-center my-1">
+<div class="pl-2">
+<div class="font-label-md text-label-md font-bold text-primary">12:00 - 13:00</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Lunch Roster</div>
+</div>
+<div class="col-span-5 p-2 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-between px-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">restaurant</span>
+<span class="font-label-md text-label-md font-bold text-primary">Nutritious Hot Lunch &amp; Dining Hall Manners</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold">Dining Hall Hall 2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Supervised Quiet Rest</span>
+</div>
+</div>
+</div>
+<!-- Period 4 (13:00 - 14:00) -->
+<div class="grid grid-cols-6 gap-2 items-stretch pt-1">
+<div class="pl-2 flex flex-col justify-center">
+<div class="font-label-md text-label-md font-bold text-primary">13:00 - 14:00</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Period 4 (60m)</div>
+</div>
+<!-- Mon P4 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold">ART</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Creative Arts</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Drawing &amp; Painting</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Atelier Wing</span>
+<span class="font-semibold text-primary">Madam Joy</span>
+</div>
+</div>
+<!-- Tue P4 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary text-surface-container-lowest font-label-sm text-[10px] font-bold">ENG</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">English Phonics</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Vowel Blends &amp; Rhyme</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Mrs. Abbey</span>
+</div>
+</div>
+<!-- Wed P4 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-[10px] font-bold">LIBRARY</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Library &amp; Reading</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Story Corner Hour</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Library Wing</span>
+<span class="font-semibold text-primary">Librarian Esi</span>
+</div>
+</div>
+<!-- Thu P4 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-surface-container-lowest font-label-sm text-[10px] font-bold">COMPUTING</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Computing Lab</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Coding Basics &amp; Logic</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>ICT Lab B</span>
+<span class="font-semibold text-primary">Mr. K. Mensah</span>
+</div>
+</div>
+<!-- Fri P4 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary text-surface-container-lowest font-label-sm text-[10px] font-bold">CLUBS</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Co-Curricular Clubs</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Music, Chess &amp; Debate</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Activity Center</span>
+<span class="font-semibold text-primary">Staff Roster</span>
+</div>
+</div>
+</div>
+<!-- Period 5 (14:00 - 15:00) -->
+<div class="grid grid-cols-6 gap-2 items-stretch pt-1">
+<div class="pl-2 flex flex-col justify-center">
+<div class="font-label-md text-label-md font-bold text-primary">14:00 - 15:00</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Period 5 (60m)</div>
+</div>
+<!-- Mon P5 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-[10px] font-bold">GH LANG</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Ghanaian Language</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Oral Folk Tales (Ananse)</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Madam Naa</span>
+</div>
+</div>
+<!-- Tue P5 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-[10px] font-bold">P.E.</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Physical Education</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Team Coordination</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Playground A</span>
+<span class="font-semibold text-primary">Coach Sam</span>
+</div>
+</div>
+<!-- Wed P5 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px] font-bold">RME</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">R.M.E. (Moral Ed.)</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Care For Environment</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Mrs. Abbey</span>
+</div>
+</div>
+<!-- Thu P5 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-[10px] font-bold">LIBRARY</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Library Hour</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Individual Book Review</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Library Wing</span>
+<span class="font-semibold text-primary">Librarian Esi</span>
+</div>
+</div>
+<!-- Fri P5 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between gap-1">
+<span class="px-1.5 py-0.5 rounded bg-primary text-surface-container-lowest font-label-sm text-[10px] font-bold">REVIEW</span>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-grab">drag_indicator</span>
+</div>
+<div class="my-1.5">
+<div class="font-label-md text-label-md font-bold text-primary leading-tight">Weekly Reflection</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Clean-up &amp; Praise Board</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-container-highest">
+<span>Room B-04</span>
+<span class="font-semibold text-primary">Mrs. Abbey</span>
+</div>
+</div>
+</div>
+<!-- Dismissal Row (15:00 - 15:30) -->
+<div class="grid grid-cols-6 gap-2 items-center pt-2">
+<div class="pl-2">
+<div class="font-label-md text-label-md font-bold text-secondary">15:00 - 15:30</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Pick-Up Time</div>
+</div>
+<div class="col-span-5 p-2 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-between px-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">shield_person</span>
+<span class="font-label-md text-label-md font-bold text-primary">Afternoon Dismissal &amp; Parent Pick-Up</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">School Gate • Teacher on Duty</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Confirmation & Approval Banner Footer Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[22px]">approval</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold">Timetable Ready to Send</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Timetable meets official school lesson requirements.</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-secondary font-label-md text-label-md font-bold transition-colors" id="discardChangesBtn">
+            Cancel Changes
+          </button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-bold transition-colors flex items-center gap-1.5 shadow-sm" id="submitHeadmistressSecondaryBtn">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+            Send to Headmistress
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Student Preview Modal (Hidden by default, triggered via JS) -->
+<div class="fixed inset-0 bg-primary/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-space-md" id="pupilPreviewModal">
+<div class="bg-surface-container-lowest max-w-2xl w-full rounded-2xl shadow-2xl p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-container pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">child_care</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Parent App Preview</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">What parents see on their phone</span>
+</div>
+</div>
+<button class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" id="closePupilModalBtn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Preview Simulated Phone Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary">Today: Wednesday, Oct 18</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-[10px] font-bold">Term 1 Week 6</span>
+</div>
+<div class="space-y-2">
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-primary font-bold">08:30</span>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold">English Grammar</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Bring Sunflower Phonics Workbook 2</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-primary font-bold">09:30</span>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold">Mathematics</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Measuring rulers &amp; color pencils</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">calculate</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-primary font-bold">11:00</span>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold">RME (Moral Education)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Respect in the family discussion</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">auto_stories</span>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-2">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md font-bold" id="closePupilModalBtn2">Close Preview</button>
+</div>
+</div>
+</div>
+<!-- Interactive Scripts -->
+<script>
+    // Student View Modal handlers
+    const pupilModal = document.getElementById('pupilPreviewModal');
+    const openPupilBtn = document.getElementById('previewPupilModalBtn');
+    const closePupilBtn = document.getElementById('closePupilModalBtn');
+    const closePupilBtn2 = document.getElementById('closePupilModalBtn2');
+
+    if (openPupilBtn && pupilModal) {
+      openPupilBtn.addEventListener('click', () => {
+        pupilModal.classList.remove('hidden');
+      });
+    }
+
+    const closeModal = () => {
+      if (pupilModal) pupilModal.classList.add('hidden');
+    };
+
+    if (closePupilBtn) closePupilBtn.addEventListener('click', closeModal);
+    if (closePupilBtn2) closePupilBtn2.addEventListener('click', closeModal);
+
+    // Auto-check conflicts micro-interaction
+    const conflictBtn = document.getElementById('conflictCheckBtn');
+    if (conflictBtn) {
+      conflictBtn.addEventListener('click', () => {
+        const originalContent = conflictBtn.innerHTML;
+        conflictBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> Scanning Resources...';
+        setTimeout(() => {
+          conflictBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">check_circle</span> 0 Conflicts Found!';
+          setTimeout(() => {
+            conflictBtn.innerHTML = originalContent;
+          }, 2400);
+        }, 750);
+      });
+    }
+
+    // Submit for Headmistress approval micro-interaction
+    const submitBtn = document.getElementById('submitHeadmistressBtn');
+    const submitSecondaryBtn = document.getElementById('submitHeadmistressSecondaryBtn');
+
+    const handleSubmission = (btn) => {
+      if (!btn) return;
+      const original = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span> Submitting...';
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done_all</span> Ticket #4912 Logged!';
+        btn.classList.add('bg-tertiary', 'text-on-tertiary');
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.classList.remove('bg-tertiary', 'text-on-tertiary');
+        }, 3000);
+      }, 900);
+    };
+
+    if (submitBtn) {
+      submitBtn.addEventListener('click', () => handleSubmission(submitBtn));
+    }
+    if (submitSecondaryBtn) {
+      submitSecondaryBtn.addEventListener('click', () => handleSubmission(submitSecondaryBtn));
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-space-lg px-space-lg mt-space-xl"><div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary">Carepoint Community School</span><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface text-label-sm font-label-sm font-semibold">NaSIA &amp; GES Accredited</span></div><div class="font-body-sm text-body-sm text-on-surface-variant">Academic Excellence &amp; Character Formative Academy • Mind, Heart, Hands Standards Policy compliant.</div></div><div class="flex flex-wrap items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm"><span>Campus Ext: <strong>4102 (Staff Desk)</strong></span><span>IT Helpdesk: <strong>helpdesk@carepoint.edu</strong></span><span>Term 1: <strong>Week 6 of 14</strong></span></div></div></footer></div></body></html>

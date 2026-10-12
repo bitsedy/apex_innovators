@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>html,body{width:100vw;margin:0;padding:0;background-color:#f7f9ff;body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com">
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('referralModal');
+      if (modal && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+  });
+</script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#011549", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#930004", "on-error": "#ffffff", "secondary-fixed": "#ffdad5", "on-primary-fixed-variant": "#344478", "on-surface-variant": "#45464f", "on-surface": "#161c23", "outline-variant": "#c5c6d1", "inverse-surface": "#2b3138", "surface-dim": "#d5dae4", "on-tertiary-fixed": "#002108", "primary-fixed": "#dce1ff", "inverse-primary": "#b5c4ff", "surface-variant": "#dde3ec", "primary-container": "#1a2b5e", "on-error-container": "#93000a", "on-secondary-container": "#fffbff", "background": "#f7f9ff", "secondary": "#ba0a0c", "on-primary-fixed": "#03174b", "tertiary-container": "#003712", "on-tertiary-container": "#46a95a", "surface-container-high": "#e3e8f2", "on-secondary": "#ffffff", "surface-container": "#e9eef8", "secondary-container": "#df2d23", "surface-container-lowest": "#ffffff", "surface": "#f7f9ff", "on-tertiary-fixed-variant": "#00531f", "surface-tint": "#4c5c92", "surface-container-highest": "#dde3ec", "error": "#ba1a1a", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b5c4ff", "secondary-fixed-dim": "#ffb4a9", "on-primary-container": "#8494cd", "tertiary-fixed-dim": "#78dc86", "error-container": "#ffdad6", "inverse-on-surface": "#ecf1fb", "on-secondary-fixed": "#410001", "surface-bright": "#f7f9ff", "on-background": "#161c23", "tertiary": "#001f07", "tertiary-fixed": "#94f9a0", "outline": "#757680", "surface-container-low": "#eef4fe" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "2rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-sm": "1rem", "space-sm": "0.5rem", "margin-sm": "1rem" }, fontFamily: { "headline-xl": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"] }, fontSize: { "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["11px", { "lineHeight": "15px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-lg": ["12.5px", { "lineHeight": "17px", "letterSpacing": "0.03em", "fontWeight": "700" }], "body-sm": ["12.5px", { "lineHeight": "17px", "fontWeight": "400" }], "headline-lg": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-xl-mobile": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["17px", { "lineHeight": "22px", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "13px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "700" }], "body-lg": ["15.5px", { "lineHeight": "23px", "fontWeight": "400" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<title>Carepoint - Mobile Health Escalation Form</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "staff",
+            label: "Mobile Health Escalation Form",
+            isMobile: true,
+            relRoot: "../",
+            counterpart: "health.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-gutter-sm flex flex-col justify-center"><div class="flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-sm min-w-0 flex-1"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shrink-0"><span class="material-symbols-outlined text-[20px]">school</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Carepoint</span><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase shrink-0">Term 1</span></div><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Mind • Heart • Hands</span></div></div><div class="flex items-center gap-space-xs shrink-0"><div id="mobile-staff-duty-badge" onclick="openStaffDutyModal()" class="cursor-pointer flex items-center gap-1 px-space-xs py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0" title="Shift Status - Tap to Clock-Out"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="hidden xs:inline">Clocked In 07:15</span><span class="xs:hidden">07:15</span></div><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA"/></div></div><div class="hidden"><span class="font-headline-sm text-headline-sm">Staff Health</span></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-20 bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Top Priority Ribbon / Safeguard Bar -->
+<div class="px-gutter-sm pt-space-md pb-space-xs">
+<div class="bg-primary-container text-on-primary rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-secondary/15 pointer-events-none"></div>
+<div class="flex items-start justify-between gap-space-xs relative z-10">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider font-bold">Duty Safeguard Monitor</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-primary leading-snug">Welfare &amp; Health Hub</span>
+<span class="font-label-md text-label-md text-primary-fixed-dim">Assigned: Basic 2 Sunflower • 28 Students</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest/20 flex items-center justify-center shrink-0 text-on-primary">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Urgent Action CTA -->
+<div class="px-gutter-sm py-space-sm">
+<button class="w-full bg-secondary text-on-secondary rounded-xl py-space-md px-space-md shadow-md active:scale-[0.98] transition-all flex items-center justify-center gap-space-sm font-label-lg text-label-lg font-bold uppercase tracking-wide" id="referralBtn">
+<span class="material-symbols-outlined text-[24px]">emergency</span>
+<span>+ File New Welfare Incident / Clinic Referral</span>
+</button>
+</div>
+<!-- Live Pulse Stats Counter (Bento Row) -->
+<div class="px-gutter-sm py-space-xs">
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-surface-container rounded-xl p-3 flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">In School Clinic</span>
+<span class="font-headline-md text-headline-md text-secondary font-bold">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Basic 2</span>
+</div>
+<div class="bg-surface-container rounded-xl p-3 flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">Care Plans</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active alerts</span>
+</div>
+<div class="bg-surface-container rounded-xl p-3 flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">Daily Index</span>
+<span class="font-headline-md text-headline-md text-on-tertiary-container font-bold">96%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wellness rate</span>
+</div>
+</div>
+</div>
+<!-- Active Critical Medical Alerts Header -->
+<div class="px-gutter-sm pt-space-md pb-space-xs flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">medical_services</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Active Student Medical Alerts</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">2 Requiring Attention</span>
+</div>
+<!-- Medical Alert Cards Stack -->
+<div class="px-gutter-sm space-y-space-sm pt-space-xs">
+<!-- Kofi Nana Mensah Alert -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="flex items-start gap-3">
+<img class="w-12 h-12 rounded-full object-cover shrink-0" data-alt="Close-up portrait of 9 year old West African schoolboy Kofi Nana Mensah smiling in crisp navy blue school uniform against soft natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeio_zaa8g_4rMRvX-y4k9rOqgJ7UFkZuS35lJP5Bzls8bTTltC2aASeXFiO5rEpnmlPdDdE3dujk81Pi2kPR50p-FvvqCuNk5RQCjof-UmqXzMf6xOKlX5Lf1W_OOxY2fGy35EJ5BJJRJk8UE4vcptVeKVq1ggbl0pneL4QdacP3FXDAEsE8SZ0DKqMV-z89SiZ6FuKG1XDpL9_HNHpnAjA-d6W8n5UYCXaWo4xm_IotZYqhnQH3s4g"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Kofi Nana Mensah</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold shrink-0 uppercase">Asthma Care</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+<strong>Mild Asthma Protocol:</strong> Inhaler (Ventolin) in school bag &amp; school clinic backup. Restricted outdoor PE drills during Harmattan haze / high pollen count.
+          </p>
+<div class="mt-3 flex items-center justify-between gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">check_circle</span>
+              Inhaler verified today
+            </span>
+<button class="bg-primary text-on-primary rounded-lg px-3 py-1.5 text-label-sm font-label-sm font-bold flex items-center gap-1 active:scale-95 transition-transform shadow-sm" onclick="dispatchNursePing('Kofi Nana Mensah')">
+<span class="material-symbols-outlined text-[16px]">notifications_active</span>
+              Notify Nurse
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Ama Kyei Alert -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-container"></div>
+<div class="flex items-start gap-3">
+<img class="w-12 h-12 rounded-full object-cover shrink-0" data-alt="Charming portrait of 9 year old Ghanaian schoolgirl Ama Kyei wearing neat gold and navy classroom cardigan with braided hair smiling brightly in sunny classroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKk_pxTu1Zzo-SoX8bh2UiB2MuB-3KHpJ8WuF_Rj1itK0tRoL6GLTkkjbtksh_9BHdAnZJC4oIY01ndEJWaiK7XdaRN9n0n9_Or0VX8EGcKAsUmVF5hqB_wbHeB6HQDWKOH4pjtEOeRH3JgOZIJsks_y9fUQlEavpIr-QEMJ1VOjS_yxFqOxiarRTxBtym0lho6ofJwrXx6CMB3jZRKna27SwDApuUArlll0MpVNBIErIVXmsSxp1z4A"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Ama Kyei</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold shrink-0 uppercase">Allergy Guard</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+<strong>Severe Peanut Allergy:</strong> Strict cafeteria monitoring. No shared snack trays or baked goods during lunch breaks. EpiPen kept in School Clinic locker #4.
+          </p>
+<div class="mt-3 flex items-center justify-between gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">restaurant</span>
+              Cafeteria kitchen flagged
+            </span>
+<button class="bg-primary text-on-primary rounded-lg px-3 py-1.5 text-label-sm font-label-sm font-bold flex items-center gap-1 active:scale-95 transition-transform shadow-sm" onclick="dispatchNursePing('Ama Kyei')">
+<span class="material-symbols-outlined text-[16px]">notifications_active</span>
+              Notify Nurse
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Incident Log Feed & Clinic Check Section -->
+<div class="px-gutter-sm pt-space-lg pb-space-xs flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_late</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Class Incident Clinic Check Log</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Today &amp; Yesterday</span>
+</div>
+<!-- Incident Clinic Check List -->
+<div class="px-gutter-sm space-y-space-sm pt-space-xs">
+<!-- Case #WLF-882 -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shrink-0">#WLF-882</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Break Time • 10:45 AM</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+          Resolved
+        </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Minor Playground Scrape during break time</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+        Fell on synthetic turf while running. Superficial knee abrasion. Nurse Faustina Asante cleansed with antiseptic and applied sterile waterproof dressing. Student comfortably returned to class.
+      </p>
+<div class="mt-3 pt-2 bg-surface-container-high/40 rounded-lg p-2 flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">health_and_safety</span>
+<span class="font-label-sm text-label-sm font-bold">Attending: Nurse Faustina Asante</span>
+</div>
+<span class="font-label-sm text-label-sm">Follow-up: None required</span>
+</div>
+</div>
+<!-- Case #WLF-879 -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-container"></div>
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shrink-0">#WLF-879</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Period 2 • 09:15 AM</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Early Pickup
+        </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Persistent morning cough &amp; temperature (38.1°C)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+        Complained of shivers and lethargy. Resting in School Clinic isolation room bed B. Mother (Mrs. Mensah) contacted at 09:30 AM; on transit for pickup.
+      </p>
+<div class="mt-3 pt-2 bg-surface-container-high/40 rounded-lg p-2 flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">contact_phone</span>
+<span class="font-label-sm text-label-sm font-bold">Parent Pick-up Confirmed</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-secondary">ETA 11:30 AM</span>
+</div>
+</div>
+<!-- Case #WLF-871 -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold shrink-0">#WLF-871</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Yesterday • 02:10 PM</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold flex items-center gap-1 shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          Concluded
+        </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Behavioral agitation during math quiz</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+        Acute testing distress and tears. De-escalated through deep breathing exercises. 25-minute calm discussion with Student Counselor Mr. Addo completed.
+      </p>
+<div class="mt-3 pt-2 bg-surface-container-high/40 rounded-lg p-2 flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">psychology</span>
+<span class="font-label-sm text-label-sm font-bold">Counselor Session Filed</span>
+</div>
+<span class="font-label-sm text-label-sm">Well restored</span>
+</div>
+</div>
+</div>
+<!-- Direct Emergency Dispatch Ribbon -->
+<div class="px-gutter-sm pt-space-lg">
+<div class="bg-surface-container-highest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-2 mb-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">phone_in_talk</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Immediate Safeguarding Contacts</h3>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<!-- School Clinic -->
+<a class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest active:bg-surface-container-high transition-colors" href="tel:104">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_hospital</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">School School Clinic (Nurse Faustina Asante)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Direct Internal Ext. 104</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">call</span>
+</a>
+<!-- Headmistress Office -->
+<a class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest active:bg-surface-container-high transition-colors" href="tel:101">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">admin_panel_settings</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Headmistress Duty Escalation</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dean of Discipline &amp; Care</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">call</span>
+</a>
+<!-- Campus Ambulance Standby -->
+<a class="flex items-center justify-between p-3 rounded-lg bg-secondary-fixed text-on-secondary-fixed active:bg-secondary-fixed-dim transition-colors" href="tel:999">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 animate-pulse">
+<span class="material-symbols-outlined text-[20px]">ambulance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-secondary-fixed font-bold truncate">Campus Ambulance Standby</span>
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant">Paramedic Rapid Response Unit</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-secondary-fixed text-[20px]">call</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Interactive Quick Modal for Filing Referral (Initially Hidden) -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm hidden flex-col justify-end p-gutter-sm" id="referralModal" role="dialog" aria-modal="true" aria-labelledby="referral-modal-title" onclick="if(event.target===this){this.classList.add('hidden');this.classList.remove('flex');}">
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-xl flex flex-col gap-3 max-h-[751px] overflow-y-auto">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">add_alert</span>
+<h3 class="font-headline-sm text-headline-sm text-primary" id="referral-modal-title">Clinic Check Referral Form</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant" id="closeModalBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="space-y-3 pt-2">
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-1">Select Student (Basic 2 Sunflower) *</label>
+<select class="w-full bg-surface-container-low text-on-surface rounded-lg p-2.5 font-body-sm text-body-sm outline-none">
+<option>Kofi Nana Mensah</option>
+<option>Ama Kyei</option>
+<option>Kwame Boateng</option>
+<option>Abena Osei</option>
+<option>Yaw Frimpong</option>
+</select>
+</div>
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-1">Clinic Check Severity Category *</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="category-chip py-2 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-bold text-center active:bg-primary active:text-on-primary" type="button">Physical Injury</button>
+<button class="category-chip py-2 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-bold text-center active:bg-primary active:text-on-primary" type="button">Fever / Illness</button>
+<button class="category-chip py-2 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-bold text-center active:bg-primary active:text-on-primary" type="button">Emotional Stress</button>
+</div>
+</div>
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-1">Observations / Immediate Symptoms *</label>
+<textarea class="w-full bg-surface-container-low text-on-surface rounded-lg p-2.5 font-body-sm text-body-sm outline-none resize-none" placeholder="Describe symptoms, temperature, physical markings, or specific triggers..." rows="3"></textarea>
+</div>
+<button class="w-full bg-secondary text-on-secondary rounded-xl py-3 font-label-lg text-label-lg font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md" id="submitTriageBtn">
+<span class="material-symbols-outlined text-[20px]">send</span>
+          Dispatch to School Clinic Nurse
+        </button>
+</div>
+</div>
+</div>
+<!-- Notification Toast -->
+<div class="fixed top-24 left-4 right-4 z-50 bg-primary text-on-primary p-3 rounded-xl shadow-xl flex items-center gap-3 transition-opacity duration-300 opacity-0 pointer-events-none" id="toast">
+<span class="material-symbols-outlined text-tertiary-fixed text-[24px]">task_alt</span>
+<div class="flex-1 min-w-0">
+<div class="font-label-lg text-label-lg font-bold" id="toastTitle">Nurse Faustina Asante Alerted</div>
+<div class="font-label-sm text-label-sm text-primary-fixed-dim" id="toastMessage">Notification dispatched with priority alert.</div>
+</div>
+</div>
+</div>
+<script>
+  function showToast(title, message) {
+    const toast = document.getElementById('toast');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMessage = document.getElementById('toastMessage');
+    
+    toastTitle.innerText = title;
+    toastMessage.innerText = message;
+    
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+    
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 3200);
+  }
+
+  function dispatchNursePing(studentName) {
+    showToast('Nurse Faustina Asante Alerted', 'Direct priority ping dispatched for ' + studentName + '. School Clinic is prepared.');
+  }
+
+  const referralBtn = document.getElementById('referralBtn');
+  const referralModal = document.getElementById('referralModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const submitTriageBtn = document.getElementById('submitTriageBtn');
+
+  referralBtn.addEventListener('click', () => {
+    referralModal.classList.remove('hidden');
+    referralModal.classList.add('flex');
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    referralModal.classList.add('hidden');
+    referralModal.classList.remove('flex');
+  });
+
+  submitTriageBtn.addEventListener('click', () => {
+    referralModal.classList.add('hidden');
+    referralModal.classList.remove('flex');
+    showToast('Referral Dispatched', 'Case logged into Welfare Clinic Check. School Clinic will receive the student immediately.');
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(1,21,73,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-home" href="mobile-dashboard.html"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-sm text-label-sm">Home</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-attendance" href="mobile-attendance.html"><span class="material-symbols-outlined text-[24px]">how_to_reg</span><span class="font-label-sm text-label-sm">Attendance</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-gradebook" href="mobile-gradebook.html"><span class="material-symbols-outlined text-[24px]">assignment_turned_in</span><span class="font-label-sm text-label-sm">Gradebook</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 transition-colors text-primary font-bold" data-path="staff-health" href="mobile-health.html"><span class="material-symbols-outlined text-[24px]">health_and_safety</span><span class="font-label-sm text-label-sm">Welfare</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-more" href="mobile-timetable.html"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-sm text-label-sm">More</span></a></div></nav></body></html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#4c5c92", "on-primary-container": "#8494cd", "surface-container": "#e9eef8", "tertiary-container": "#003712", "on-error": "#ffffff", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "secondary-fixed": "#ffdad5", "tertiary-fixed": "#94f9a0", "on-primary-fixed-variant": "#344478", "on-primary-fixed": "#03174b", "surface-container-highest": "#dde3ec", "on-secondary": "#ffffff", "surface": "#f7f9ff", "outline-variant": "#c5c6d1", "on-secondary-fixed": "#410001", "background": "#f7f9ff", "secondary": "#ba0a0c", "on-tertiary": "#ffffff", "tertiary-fixed-dim": "#78dc86", "error": "#ba1a1a", "tertiary": "#001f07", "surface-variant": "#dde3ec", "secondary-container": "#df2d23", "on-tertiary-container": "#46a95a", "error-container": "#ffdad6", "on-tertiary-fixed": "#002108", "inverse-on-surface": "#ecf1fb", "on-error-container": "#93000a", "primary-container": "#1a2b5e", "surface-bright": "#f7f9ff", "on-background": "#161c23", "on-secondary-container": "#fffbff", "surface-container-low": "#eef4fe", "surface-dim": "#d5dae4", "primary-fixed": "#dce1ff", "on-surface-variant": "#45464f", "secondary-fixed-dim": "#ffb4a9", "surface-container-high": "#e3e8f2", "on-secondary-fixed-variant": "#930004", "outline": "#757680", "primary-fixed-dim": "#b5c4ff", "primary": "#011549", "inverse-surface": "#2b3138", "inverse-primary": "#b5c4ff", "on-surface": "#161c23", "on-tertiary-fixed-variant": "#00531f" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1.5rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "margin-sm": "1rem", "gutter-sm": "1rem", "margin": "2rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-md": "1rem" }, fontFamily: { "display-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"] }, fontSize: { "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } };</script><style> html { scroll-behavior: smooth; } html, body { margin: 0; padding: 0; width: 100%; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } </style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<title>Carepoint - Mobile Public Home</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "public",
+            label: "Mobile Public Home",
+            isMobile: true,
+            relRoot: "../",
+            counterpart: "home.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go Back" class="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-primary tracking-tight truncate max-w-[200px]">School Admissions &amp; Levels</h1></div><div class="flex items-center gap-space-xs"><button aria-label="More actions" onclick="toggleMobileActions()" class="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">more_vert</span></button><button onclick="toggleMobileActions()" class="w-8 h-8 rounded-full overflow-hidden focus:outline-none ring-2 ring-primary/20"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWfNsavZrE2q7ehrA64sihUwtmROAw4xXN-C6BlUTPhqxnN--2RN5DRycS1Zzkyt6oCEfdTUfjODz6QYZEv08Q-JAkUc3Av7yS8ahvu_IycCMkJCxx5Dx9PYnuyuHQLKp_OkepCnkvleE-hqHca1ZtXA-REaPgIftK5gPRsomXA64FFaJZFdKmQGy-GEt_k2m5zV-0ASaXXLnRB3Au6F5xwS03ye8IFEGRzgETPCCJ1eKP6QrBZk3BQ"/></button></div></div><div id="mobile-actions-menu" class="hidden bg-surface-container-lowest border-b border-surface-container-high px-4 py-3 shadow-xl"><div class="flex flex-col gap-2"><button onclick="openStatusModal(event); toggleMobileActions();" class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low text-primary font-bold text-sm"><span class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">fact_check</span>Check Application Status</span><span class="material-symbols-outlined text-[18px]">chevron_right</span></button><a href="mobile-apply.html" class="flex items-center justify-between p-2.5 rounded-lg bg-secondary text-on-secondary font-bold text-sm"><span class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]">edit_document</span>Apply for 2026/2027</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a><div class="border-t border-surface-container-high my-1"></div><div class="text-[10px] font-bold text-on-surface-variant uppercase px-1">Carepoint Portals</div><a href="../parent/dashboard.html" class="flex items-center gap-2.5 px-2 py-1.5 text-xs text-on-surface hover:text-primary"><span class="material-symbols-outlined text-[18px] text-primary">family_restroom</span><span>Parent Portal</span></a><a href="../staff/dashboard.html" class="flex items-center gap-2.5 px-2 py-1.5 text-xs text-on-surface hover:text-primary"><span class="material-symbols-outlined text-[18px] text-primary">school</span><span>Staff &amp; Teacher Portal</span></a><a href="../admin/dashboard.html" class="flex items-center gap-2.5 px-2 py-1.5 text-xs text-on-surface hover:text-primary"><span class="material-symbols-outlined text-[18px] text-secondary">admin_panel_settings</span><span>Admin &amp; Principal Console</span></a><div class="border-t border-surface-container-high my-1"></div><a href="tel:+233241234567" class="flex items-center gap-2.5 px-2 py-1.5 text-xs text-secondary font-semibold"><span class="material-symbols-outlined text-[18px]">call</span><span>Call Admissions: +233 (0) 24 123 4567</span></a></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen px-gutter-sm"><div class="flex flex-col w-full pb-12 space-y-6">
+<!-- School Insignia & Accredited Identity Badge -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-3">
+<!-- Carepoint Laurel Emblem -->
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center p-1.5 flex-shrink-0">
+<svg class="w-full h-full" fill="none" viewbox="0 0 100 100">
+<path d="M50 85 C30 85 18 68 18 48 C18 34 26 22 34 16 C32 24 35 34 40 40 C34 38 28 44 28 52 C28 62 36 72 48 74 C42 70 40 64 42 58 C46 64 54 66 60 64 C52 76 42 80 50 85Z" fill="#166534"></path>
+<path d="M50 85 C70 85 82 68 82 48 C82 34 74 22 66 16 C68 24 65 34 60 40 C66 38 72 44 72 52 C72 62 64 72 52 74 C58 70 60 64 58 58 C54 64 46 66 40 64 C48 76 58 80 50 85Z" fill="#166534"></path>
+<circle cx="50" cy="46" fill="#EAB308" r="10"></circle>
+<path d="M35 52 Q50 35 65 52 Q50 64 35 52Z" fill="#1A2B5E"></path>
+</svg>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm tracking-tight text-primary leading-none">Carepoint</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Community School</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shadow-sm">
+        GES / NaSIA
+      </span>
+</div>
+<!-- Tricolor Bar derived from School Board Sign -->
+<div class="flex h-1.5 w-full rounded-full overflow-hidden shadow-xs mb-3">
+<div class="w-1/3 bg-sky-400"></div>
+<div class="w-1/3 bg-secondary"></div>
+<div class="w-1/3 bg-emerald-600"></div>
+</div>
+<!-- Motto Ribbon & Quick CTA -->
+<div class="flex items-center justify-between pt-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container rounded-full text-on-surface font-label-sm text-label-sm">
+<span class="text-secondary font-bold">MIND</span>
+<span class="text-outline-variant">•</span>
+<span class="text-primary font-bold">HEART</span>
+<span class="text-outline-variant">•</span>
+<span class="text-tertiary-container font-bold">HANDS</span>
+</div>
+<a class="inline-flex items-center gap-1 text-primary font-label-md text-label-md hover:underline" href="tel:+233201234567">
+<span class="material-symbols-outlined text-[16px] text-secondary">call</span>
+        Admissions Desk
+      </a>
+</div>
+</section>
+<!-- Hero Storytelling Section -->
+<section class="relative rounded-xl overflow-hidden bg-primary-container text-on-primary p-space-md shadow-md">
+<div class="relative z-10 flex flex-col space-y-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/40 backdrop-blur-md w-fit">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider">Now Enrolling 2026/2027</span>
+</div>
+<div class="space-y-1.5">
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile font-extrabold tracking-tight leading-tight text-white">
+          Nurturing Young Minds &amp; Capable Hands
+        </h2>
+<p class="font-body-sm text-body-sm text-on-primary-container leading-relaxed">
+          Excellence in Christian well-rounded education in Accra. Guiding students from early footsteps through BECE distinction.
+        </p>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex flex-col gap-2.5 pt-2">
+<a href="mobile-apply.html" class="w-full py-3 px-space-md rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-transform text-center font-bold">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+          Apply for 2026 / 2027
+</a>
+<a href="#academics" onclick="document.getElementById('academics')?.scrollIntoView({behavior: 'smooth'})" class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform text-center cursor-pointer font-bold">
+<span class="material-symbols-outlined text-[20px] text-secondary">explore</span>
+          Explore Academics
+</a>
+<a href="tel:+233241234567" class="w-full py-2 px-space-md rounded-lg bg-primary/30 text-white font-label-sm text-label-sm flex items-center justify-center gap-1.5 active:scale-[0.98] transition-transform text-center">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">calendar_month</span>
+          Book a Campus Tour
+</a>
+</div>
+<!-- Quick Stats Strip -->
+<div class="grid grid-cols-3 gap-2 pt-3">
+<div class="bg-primary/50 backdrop-blur-sm rounded-lg p-2 text-center">
+<p class="font-headline-sm text-headline-sm font-bold text-white">100%</p>
+<p class="font-label-sm text-label-sm text-primary-fixed">BECE Pass</p>
+</div>
+<div class="bg-primary/50 backdrop-blur-sm rounded-lg p-2 text-center">
+<p class="font-headline-sm text-headline-sm font-bold text-white">1:12</p>
+<p class="font-label-sm text-label-sm text-primary-fixed">Teacher Ratio</p>
+</div>
+<div class="bg-primary/50 backdrop-blur-sm rounded-lg p-2 text-center">
+<p class="font-headline-sm text-headline-sm font-bold text-white">STEM</p>
+<p class="font-label-sm text-label-sm text-primary-fixed">Robotics Lab</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Divisions (Faithfully mirroring the Signboard Categories) -->
+<section id="academics" class="space-y-3 scroll-mt-20">
+<div class="flex items-end justify-between">
+<div>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Academic Ladders</p>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Educational Levels</h3>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Ages 1 to 15</span>
+</div>
+<!-- 4 Cards mirroring signboard blue arch framing -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Level 1: Nursery -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container-high/60 p-3 flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="w-full aspect-[4/3] rounded-lg bg-sky-50 flex items-center justify-center relative overflow-hidden p-2">
+<!-- Stylized Silhouette vector inspired by sign -->
+<svg class="w-full h-full text-primary" fill="currentColor" viewbox="0 0 100 80">
+<!-- Child playing with blocks silhouette -->
+<path d="M28 20 A 7 7 0 1 0 28 6 A 7 7 0 1 0 28 20 Z"></path>
+<path d="M22 24 C 20 28 18 36 24 44 C 26 42 30 42 32 46 L 26 60 L 36 60 L 36 50 C 40 48 42 42 40 34 C 38 26 30 22 22 24 Z"></path>
+<rect fill="#E02E24" height="14" rx="2" width="14" x="52" y="32"></rect>
+<rect fill="#166534" height="14" rx="2" width="14" x="58" y="16"></rect>
+<rect fill="#1A2B5E" height="14" rx="2" width="14" x="42" y="46"></rect>
+</svg>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-xs">
+            1-3 Yrs
+          </span>
+</div>
+<div class="mt-2.5 space-y-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Sensory, Play &amp; Care</p>
+<div class="w-full py-1.5 rounded-md bg-primary text-center">
+<span class="font-label-md text-label-md text-white font-extrabold tracking-wider uppercase">Nursery</span>
+</div>
+</div>
+</div>
+<!-- Level 2: Kindergarten -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container-high/60 p-3 flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="w-full aspect-[4/3] rounded-lg bg-emerald-50 flex items-center justify-center relative overflow-hidden p-2">
+<!-- Stylized Flag bearer silhouette -->
+<svg class="w-full h-full text-primary" fill="currentColor" viewbox="0 0 100 80">
+<!-- Boy marching with Ghana star banner -->
+<path d="M60 22 A 6 6 0 1 0 60 10 A 6 6 0 1 0 60 22 Z"></path>
+<path d="M54 26 L48 42 L 56 46 L 50 62 L 62 62 L 64 48 L 70 38 Z"></path>
+<line stroke="#161C23" stroke-width="2.5" x1="30" x2="52" y1="12" y2="44"></line>
+<path d="M12 10 L 36 12 L 32 26 L 10 24 Z" fill="#BA0A0C"></path>
+<polygon fill="#FFFFFF" points="22,15 24,21 19,17 25,17 20,21"></polygon>
+</svg>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-xs">
+            4-5 Yrs
+          </span>
+</div>
+<div class="mt-2.5 space-y-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Phonics &amp; Discovery</p>
+<div class="w-full py-1.5 rounded-md bg-primary text-center">
+<span class="font-label-md text-label-md text-white font-extrabold tracking-wider uppercase">Kindergarten</span>
+</div>
+</div>
+</div>
+<!-- Level 3: Basic Primary -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container-high/60 p-3 flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="w-full aspect-[4/3] rounded-lg bg-sky-50 flex items-center justify-center relative overflow-hidden p-2">
+<!-- Children cheering with cross & book silhouette -->
+<svg class="w-full h-full text-primary" fill="currentColor" viewbox="0 0 100 80">
+<path d="M30 32 A 5 5 0 1 0 30 22 A 5 5 0 1 0 30 32 Z"></path>
+<path d="M50 26 A 5 5 0 1 0 50 16 A 5 5 0 1 0 50 26 Z"></path>
+<path d="M70 32 A 5 5 0 1 0 70 22 A 5 5 0 1 0 70 32 Z"></path>
+<!-- Cheerful upstretched arms -->
+<path d="M22 62 L 28 42 L 32 42 L 38 62 Z"></path>
+<path d="M44 62 L 50 34 L 56 34 L 56 62 Z"></path>
+<path d="M62 62 L 68 42 L 72 42 L 78 62 Z"></path>
+<path d="M48 10 H52 V22 H48 Z M45 14 H55 V18 H45 Z" fill="#BA0A0C"></path>
+</svg>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-xs">
+            Class 1-6
+          </span>
+</div>
+<div class="mt-2.5 space-y-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Math, Coding &amp; French</p>
+<div class="w-full py-1.5 rounded-md bg-primary text-center">
+<span class="font-label-md text-label-md text-white font-extrabold tracking-wider uppercase">Basic</span>
+</div>
+</div>
+</div>
+<!-- Level 4: Junior High -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container-high/60 p-3 flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="w-full aspect-[4/3] rounded-lg bg-amber-50 flex items-center justify-center relative overflow-hidden p-2">
+<!-- Junior high scholar & teacher mentoring -->
+<svg class="w-full h-full text-primary" fill="currentColor" viewbox="0 0 100 80">
+<path d="M38 20 A 5 5 0 1 0 38 10 A 5 5 0 1 0 38 20 Z"></path>
+<path d="M30 62 L 34 28 L 44 28 L 48 62 Z"></path>
+<path d="M68 24 A 5 5 0 1 0 68 14 A 5 5 0 1 0 68 24 Z"></path>
+<path d="M60 62 L 64 32 L 74 32 L 72 62 Z"></path>
+<polygon fill="#166534" points="50,34 58,38 58,46 50,42"></polygon>
+</svg>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-xs">
+            JHS 1-3
+          </span>
+</div>
+<div class="mt-2.5 space-y-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">BECE Rigor &amp; Leadership</p>
+<div class="w-full py-1.5 rounded-md bg-primary text-center">
+<span class="font-label-md text-label-md text-white font-extrabold tracking-wider uppercase">Junior High</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Admissions Tracker Alert -->
+<section id="news" class="bg-secondary-fixed/40 rounded-xl border border-secondary/20 p-space-md shadow-sm scroll-mt-20">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">notification_important</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant uppercase font-bold tracking-wider">Admissions 2026/2027</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary text-white font-semibold">Active</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-secondary-fixed font-bold mt-0.5">Diagnostic Screening</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Entrance assessment and placement chats for Creche through JHS are ongoing at the main campus.
+        </p>
+<div class="mt-3 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">event</span>
+            Next Slot: Saturday Intake Session
+          </span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Limited seats</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Photo-rich Life at Carepoint Gallery -->
+<section class="space-y-3">
+<div class="flex items-baseline justify-between">
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Life at Carepoint</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Campus Vibe</span>
+</div>
+<!-- Visual Mosaic with Detailed Generated Prompts -->
+<div class="space-y-2.5">
+<div class="relative rounded-xl overflow-hidden shadow-sm h-48">
+<img class="w-full h-full object-cover" data-alt="Ghanaian school children in bright modern classroom wearing school uniforms engaged in STEM robotics building Lego sensors with smiling female Ghanaian teacher in royal blue attire, sunny daylight, high key photography, joyful academic environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9Nqp6kO18SZ4JW1UJRGWM_8_EUcqHicEG3xtxxTiLRJCXQ880OKXGLJZL0KC3ZRrswk76PNlgzZVscT2iTScDRrJFc1SkeBlMMRqRCAVYl28QBAYbBvgWf-Zd6htYZXO3uum0dccJvc5C3PJkAK5eVzhB2MV-6YrZuBBy9_8qq-GiEdQeS7bbjq2JXTz8-yPU-odwTlRakZSZegQfo1lyQRomvTV8z92-DAtYZ8t6hgAnsndxuSLQeQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 text-white">
+<span class="px-2 py-0.5 bg-emerald-600 rounded text-label-sm font-label-sm font-bold uppercase">STEM Innovation</span>
+<p class="font-body-md text-body-md font-semibold mt-1">Hands-on Coding &amp; Robotics Studio</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<div class="relative rounded-xl overflow-hidden shadow-sm h-36">
+<img class="w-full h-full object-cover" data-alt="Young primary students in colorful sports day uniforms cheering on an outdoor green grass field in Accra Ghana, bright sunlight, authentic smiles, community school athletic camaraderie" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIKr42vpSEZZLwf1fHD7vtPU6TdGfRlm9hfOHqDR6asMwEz9I4EE6EueXQEjRy7ItOFjFxLq43YUix1CVBU5FV9cbDpQUZlLI98-q-1S1nB4vPjMg9vvc4_uLXSsC-bfC5fgJsvzoW15pbdIHoTKdszieI4828rHBO5hMS_V82c-zSedlMNnQ6KksxKZF8aPneVc8m6n76gsyCiCxZ1lb6iI7r0GulK-mmRWFfF5Sp_slJDNA5Y7Eyiw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"></div>
+<div class="absolute bottom-2 left-2 right-2 text-white">
+<p class="font-label-md text-label-md font-bold leading-tight">Athletics &amp; Team Spirit</p>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden shadow-sm h-36">
+<img class="w-full h-full object-cover" data-alt="Elementary students singing in harmony during school chapel assembly in warm sunlight hall, diverse children with hands clasped in reverence and joy, Christian education atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuvxHz4pfwrVt_lAo_sH7XbxvsUwnzaBDeaeqoxYD2p8eWEKeZYmLC3PcuhIjCSpGV0OUqwd8rCfNK7G3pKebY1QtrSy3NS0UTM_e5oyPnsDMR_eouWRLZ1flffRWSloAvC6q7PqJPgg7cq6ldah01jvm3mfFYqA4LHHH4239yLQHq-6z_drh8nKWkDekRyi2CBV_dCX0q3W-klpWeKS3wzShFsNipVG3RGsFFi5U6366MGAQOmzViaA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"></div>
+<div class="absolute bottom-2 left-2 right-2 text-white">
+<p class="font-label-md text-label-md font-bold leading-tight">Faith &amp; Moral Character</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Pillars of Carepoint -->
+<section class="bg-surface-container-lowest rounded-xl border border-surface-container-high/60 p-space-md shadow-sm space-y-4">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Why Parents Trust Us</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">The Carepoint Advantage</h3>
+</div>
+<div class="space-y-3">
+<!-- Pillar 1 -->
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low border border-surface-container-high/50">
+<div class="w-9 h-9 rounded-lg bg-primary text-white flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-body-md font-bold text-primary">Mind: Rigorous GES &amp; Phonics</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Computational logic, science inquiry, and reading mastery.</p>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low border border-surface-container-high/50">
+<div class="w-9 h-9 rounded-lg bg-secondary text-white flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-body-md font-bold text-primary">Heart: Christian Virtues &amp; Ethics</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Loving nurture, emotional wellbeing, and disciplined habits.</p>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low border border-surface-container-high/50">
+<div class="w-9 h-9 rounded-lg bg-emerald-600 text-white flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">pan_tool</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-body-md font-bold text-primary">Hands: Practical Skills &amp; Arts</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Applied computing, athletics, gardening, and creative arts.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Headmistress Welcome Message -->
+<section class="bg-surface-container-low rounded-xl border border-surface-container-high/60 p-space-md shadow-sm space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-primary">
+<img class="w-full h-full object-cover" data-alt="Portrait of an esteemed Ghanaian female educational leader Dr Elizabeth Appiah wearing warm spectacles and stylish traditional patterned corporate blazer with an encouraging affectionate smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbELIKcfeizSSBVLI_BoztiwooKF6_OprpMbMGPUxyDCSTEEDG3lk1Izsy2yI6IDBO0I7xb-90JAwhnjY05vCjzB01qSNT6VvOCfmuf5ToJ3Ut4gzA4xMklewkv3DtMjbS8xHHroRCPvCGaOpaK4JvlrQ7NJiO0nWk1eTpj14rYvRLWLyGwV5qxOkStml05SV0kLGmggt7tfJ2Iqi8Vvs2PpIuRSdqwIQiXfc6g7CqQhqw3NRo7FLYzA"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">Dr. Elizabeth Appiah</h4>
+<p class="font-label-sm text-label-sm text-secondary font-semibold">Headmistress &amp; Academic Director</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">M.Ed Educational Leadership</p>
+</div>
+</div>
+<blockquote class="font-body-sm text-body-sm text-on-surface italic relative pl-3 border-l-2 border-primary">
+      “At Carepoint, no child is a mere number. We discover their divine talent, discipline their intellect, and instill the confidence required to stand tall anywhere across the globe.”
+    </blockquote>
+<div class="flex items-center justify-between pt-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary-container font-semibold">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">verified</span>
+        GES Certified Educator
+      </span>
+<button class="font-label-sm text-label-sm text-primary font-bold hover:underline">
+        Read Director's Letter →
+      </button>
+</div>
+</section>
+<!-- Campus Location & Map Snapshot -->
+<section class="bg-surface-container-lowest rounded-xl border border-surface-container-high/60 p-space-md shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary">Find Us</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Our Campus</h3>
+</div>
+<a class="px-2.5 py-1 bg-surface-container rounded-full text-primary font-label-sm text-label-sm font-semibold" href="https://maps.google.com" target="_blank">
+        Get Directions
+      </a>
+</div>
+<div class="w-full h-36 bg-cover bg-center rounded-lg shadow-inner relative flex items-end p-2" data-location="Carepoint Community School, Accra, Ghana" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_Ur-UBS0igT71jIh_Q8nMQ6vqIrjV9CXHBiRH6luwo5UgrNbjCzN48WThTiwl_XJ5Ff4peWzONmslBIEvuXm6-AUEbywnXwXw9nTzA5A6mLSuIzRgjZfvmwzsp-x-X5yg9ArbUHeTxUfG2GpiL2swmEedESOxFsP3xoLc_sWHXjXZM0VfJkF8FYuZKT_8aga91uXhQxpFp4mg3y8Zq95QQmn0lWEbkEsL3p_qvYDrTWuUiW-1lDZkTg')">
+<div class="bg-surface-container-lowest/90 backdrop-blur-sm px-2.5 py-1.5 rounded shadow-sm text-on-surface w-full flex items-center justify-between">
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm font-bold text-primary truncate">Main Campus, Greater Accra</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant truncate">Safe, walled premise with 24/7 security</p>
+</div>
+<span class="material-symbols-outlined text-[20px] text-secondary flex-shrink-0">pin_drop</span>
+</div>
+</div>
+</section>
+<!-- Quick Interactive FAQ Snippet -->
+<section class="space-y-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold px-1">Parent Questions</h3>
+<div class="space-y-2" id="faq-accordion">
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container-high/60 p-space-md shadow-sm">
+<button class="w-full flex items-center justify-between text-left font-headline-sm text-body-md font-bold text-primary" onclick="toggleFaq(this)">
+<span>What age does Creche accept?</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="hidden font-body-sm text-body-sm text-on-surface-variant pt-2 leading-relaxed">
+          We welcome infants from 9 months up to 3 years old in our tender Creche and Nursery department with trained caregivers.
+        </div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container-high/60 p-space-md shadow-sm">
+<button class="w-full flex items-center justify-between text-left font-headline-sm text-body-md font-bold text-primary" onclick="toggleFaq(this)">
+<span>Is school bus service available?</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="hidden font-body-sm text-body-sm text-on-surface-variant pt-2 leading-relaxed">
+          Yes, our dedicated air-conditioned school buses cover designated routes across Accra with vetted escorts on every transit.
+        </div>
+</div>
+</div>
+</section>
+<!-- Sticky-like Quick Navigation Action Bar -->
+<section class="p-space-md bg-primary rounded-xl text-on-primary flex flex-col items-center text-center space-y-3 shadow-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/10 flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-white">Begin Your Child's Journey</h3>
+<p class="font-body-sm text-body-sm text-on-primary-container max-w-xs mt-1">
+        Admissions for 2026/2027 are active. Spaces are allocated on merit and assessment.
+      </p>
+</div>
+<div class="w-full flex flex-col gap-2 pt-1">
+<button class="w-full py-3 rounded-lg bg-secondary text-white font-label-lg text-label-lg font-bold shadow-md hover:opacity-95 active:scale-[0.98] transition-transform">
+        Download Admission Pack (PDF)
+      </button>
+<a class="w-full py-2.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 shadow-sm" href="https://wa.me/233201234567" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">chat</span>
+        Chat on WhatsApp Admissions
+      </a>
+</div>
+</section>
+<!-- School Footer & Parent Portal Link -->
+<footer class="pt-4 pb-2 border-t border-surface-container-high text-center space-y-2">
+<div class="flex items-center justify-center gap-3">
+<a class="font-label-sm text-label-sm text-primary font-bold hover:underline" href="../parent/dashboard.html">Parent Portal</a>
+<span class="text-outline-variant">•</span>
+<a class="font-label-sm text-label-sm text-primary font-bold hover:underline" href="../staff/dashboard.html">Staff Portal</a>
+<span class="text-outline-variant">•</span>
+<a class="font-label-sm text-label-sm text-primary font-bold hover:underline" href="#news">Term Calendar</a>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+      © 2026 Carepoint Community School. Accra, Ghana.
+    </p>
+<p class="font-label-sm text-[10px] text-outline tracking-wider uppercase">
+      Mind • Heart • Hands • GES / NaSIA Accredited
+    </p>
+</footer>
+</div>
+
+<!-- ADMISSION APPLICATION STATUS TRACKER MODAL -->
+<div id="status-checker-modal" role="dialog" aria-modal="true" aria-labelledby="status-modal-title" onclick="if(event.target===this)closeStatusModal()" class="hidden fixed inset-0 z-50 overflow-y-auto bg-primary/60 backdrop-blur-sm items-center justify-center p-4">
+  <div class="relative w-full max-w-sm bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container-high overflow-hidden animate-in fade-in zoom-in-95 duration-200 my-8">
+    <div class="bg-primary text-on-primary px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary-fixed text-[20px]">fact_check</span>
+        <div>
+          <h3 id="status-modal-title" class="font-headline-sm text-sm font-bold leading-tight">Track Admission Status</h3>
+          <p class="text-[10px] text-on-primary/70">Academic Year 2026/2027</p>
+        </div>
+      </div>
+      <button onclick="closeStatusModal()" class="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center transition-colors" aria-label="Close modal">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="p-4 flex flex-col gap-3">
+      <div>
+        <label for="status-ref-input" class="block text-xs font-bold text-primary mb-1">Reference Code</label>
+        <div class="flex gap-1.5">
+          <input id="status-ref-input" type="text" placeholder="e.g. CP-2026-9921" value="CP-2026-9921" onkeydown="if(event.key==='Enter'){event.preventDefault();lookupStatus();}" class="w-full px-3 py-2 bg-surface-container-low border border-outline-variant/60 rounded-lg text-primary font-mono text-xs focus:outline-primary" />
+          <button onclick="lookupStatus()" class="px-3 py-2 rounded-lg bg-secondary text-on-secondary font-bold text-xs hover:bg-secondary-container transition-colors shadow-sm shrink-0">
+            Track
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="text-[10px] text-on-surface-variant">Demo:</span>
+        <button type="button" onclick="setSampleRef('CP-2026-9921')" class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-surface-container-high text-primary hover:underline">CP-2026-9921</button>
+        <button type="button" onclick="setSampleRef('CP-2026-8104')" class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-surface-container-high text-primary hover:underline">CP-2026-8104</button>
+      </div>
+
+      <div id="status-result-box" class="p-3 rounded-lg bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2">
+        <div class="flex items-center justify-between border-b border-surface-container-high pb-2">
+          <div>
+            <div class="font-bold text-primary text-xs" id="status-student-name">Kofi Mensah (Student)</div>
+            <div class="text-[10px] text-on-surface-variant" id="status-tier-label">Basic 4 Intake • 2026/2027</div>
+          </div>
+          <span id="status-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300">
+            Assessment
+          </span>
+        </div>
+
+        <div class="space-y-2 pt-1 text-xs">
+          <div class="flex items-start gap-2">
+            <span class="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 mt-0.5 text-[10px]">✓</span>
+            <div class="flex-1">
+              <div class="font-semibold text-primary text-[11px]">1. Application Submitted</div>
+              <div class="text-[10px] text-on-surface-variant">Sept 12, 2026 • Verified</div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <span class="w-4 h-4 rounded-full bg-secondary text-white flex items-center justify-center shrink-0 mt-0.5 text-[10px]">2</span>
+            <div class="flex-1">
+              <div class="font-semibold text-primary text-[11px]" id="step2-title">2. Diagnostic Assessment</div>
+              <div class="text-[10px] text-on-surface-variant" id="step2-desc">Scheduled: <strong class="text-secondary">Saturday, Oct 04, 2026 at 9:00 AM</strong></div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2 opacity-60">
+            <span class="w-4 h-4 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0 mt-0.5 text-[10px]">3</span>
+            <div class="flex-1">
+              <div class="font-semibold text-[11px]">3. Academic Placement</div>
+              <div class="text-[10px] text-on-surface-variant">In Review</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-surface-container-high flex items-center justify-between">
+          <a href="tel:+233241234567" class="text-[10px] text-secondary font-semibold hover:underline">
+            Help: +233 24 123 4567
+          </a>
+          <button onclick="closeStatusModal()" class="px-2.5 py-1 rounded bg-surface-container-high text-primary font-semibold text-[10px]">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleFaq(btn) {
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector('.material-symbols-outlined');
+    const isHidden = content.classList.contains('hidden');
+    
+    if (isHidden) {
+      content.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      content.classList.add('hidden');
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  function toggleMobileActions() {
+    const m = document.getElementById('mobile-actions-menu');
+    if (m) m.classList.toggle('hidden');
+  }
+
+  function openStatusModal(e) {
+    if (e) e.preventDefault();
+    const m = document.getElementById('status-checker-modal');
+    if (m) {
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      const input = document.getElementById('status-ref-input');
+      if (input) setTimeout(() => input.focus(), 100);
+    }
+  }
+
+  function closeStatusModal() {
+    const m = document.getElementById('status-checker-modal');
+    if (m) {
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function setSampleRef(code) {
+    const input = document.getElementById('status-ref-input');
+    if (input) {
+      input.value = code;
+      lookupStatus();
+    }
+  }
+
+  function lookupStatus() {
+    const input = document.getElementById('status-ref-input');
+    const code = (input ? input.value : '').trim().toUpperCase();
+    const student = document.getElementById('status-student-name');
+    const tier = document.getElementById('status-tier-label');
+    const badge = document.getElementById('status-badge');
+    const step2Desc = document.getElementById('step2-desc');
+    
+    if (!code) {
+      if (student) student.textContent = "Please Enter Reference Code";
+      if (tier) tier.textContent = "e.g. CP-2026-9921";
+      if (badge) {
+        badge.textContent = "Required";
+        badge.className = "px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-rose-100 text-rose-900 border border-rose-300";
+      }
+      if (step2Desc) step2Desc.innerHTML = "Awaiting valid reference code.";
+      return;
+    }
+
+    if (code.includes('8104')) {
+      if (student) student.textContent = "Ama Konadu (Student)";
+      if (tier) tier.textContent = "Nursery 2 Intake • 2026/2027";
+      if (badge) {
+        badge.textContent = "Offered";
+        badge.className = "px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 border border-emerald-300";
+      }
+      if (step2Desc) step2Desc.innerHTML = "Assessment Passed (94%). <strong class='text-emerald-700'>Placement confirmed!</strong>";
+    } else if (code.includes('9921')) {
+      if (student) student.textContent = "Kofi Mensah (Student)";
+      if (tier) tier.textContent = "Basic 4 Intake • 2026/2027";
+      if (badge) {
+        badge.textContent = "Assessment";
+        badge.className = "px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300";
+      }
+      if (step2Desc) step2Desc.innerHTML = 'Scheduled: <strong class="text-secondary">Saturday, Oct 04, 2026 at 9:00 AM</strong>';
+    } else {
+      if (student) student.textContent = "Reference Code Not Found";
+      if (tier) tier.textContent = `No application matching "${code}".`;
+      if (badge) {
+        badge.textContent = "Not Found";
+        badge.className = "px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant border border-outline-variant";
+      }
+      if (step2Desc) step2Desc.innerHTML = 'Please check your code or call <strong class="text-secondary">+233 24 123 4567</strong>.';
+    }
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeStatusModal();
+    }
+  });
+
+  if (window.location.hash === '#status') {
+    openStatusModal();
+  }
+  window.addEventListener('hashchange', () => {
+    if (window.location.hash === '#status') {
+      openStatusModal();
+    }
+  });
+</script></main></body></html>

@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"error-container":"#ffdad6","on-surface":"#161c23","on-secondary-fixed":"#410001","primary-fixed-dim":"#b5c4ff","secondary-fixed-dim":"#ffb4a9","on-error":"#ffffff","error":"#ba1a1a","surface-variant":"#dde3ec","secondary":"#ba0a0c","on-error-container":"#93000a","on-secondary-container":"#fffbff","surface-container-highest":"#dde3ec","surface-container-low":"#eef4fe","tertiary-fixed":"#94f9a0","background":"#eef2f6","outline":"#757680","surface-dim":"#d5dae4","on-primary":"#ffffff","on-surface-variant":"#45464f","primary":"#011549","inverse-surface":"#2b3138","surface-bright":"#f7f9ff","tertiary":"#001f07","surface":"#eef2f6","on-primary-fixed-variant":"#344478","surface-container-high":"#e3e8f2","on-tertiary-container":"#46a95a","on-tertiary-fixed-variant":"#00531f","surface-tint":"#4c5c92","on-tertiary-fixed":"#002108","on-primary-container":"#8494cd","on-secondary-fixed-variant":"#930004","surface-container-lowest":"#ffffff","inverse-primary":"#b5c4ff","on-tertiary":"#ffffff","inverse-on-surface":"#ecf1fb","outline-variant":"#c5c6d1","secondary-container":"#df2d23","surface-container":"#e9eef8","on-background":"#161c23","tertiary-container":"#003712","on-primary-fixed":"#03174b","tertiary-fixed-dim":"#78dc86","on-secondary":"#ffffff","primary-fixed":"#dce1ff","secondary-fixed":"#ffdad5","primary-container":"#1a2b5e"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-sm":"1rem","space-xs":"0.25rem","space-lg":"1.5rem","space-md":"1rem","space-xl":"2.5rem","margin":"2rem","gutter-sm":"1rem","gutter":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"label-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"]},"fontSize":{"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.04em","fontWeight":"700"}],"display-lg":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"800"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"800"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}]}}}}</script><title>Carepoint - Institutional Command Dashboard</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "admin",
+            label: "Institutional Command Dashboard",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-dashboard.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-outline-variant/30">
+<div class="flex flex-col">
+<!-- Top Header with Crest, Title, Motto, Badge, and Close Button -->
+  <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider uppercase">Executive Admin &amp; Principal</span>
+    </div>
+  </div>
+<div class="px-space-md py-space-sm">
+<div class="px-space-md py-space-xs bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Session 2026/27 Term 1</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">Wk 8</span>
+</div>
+</div>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Executive Suite</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 transition-all bg-primary-container text-on-primary font-label-lg rounded-xl shadow-sm" data-path="dashboard" href="dashboard.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="inbox" href="inbox.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">move_to_inbox</span>
+<span>Executive Inbox</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-primary-fixed text-on-primary-fixed">5</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="decision" href="decision.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+<span>Statutory Decisions</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-secondary-container text-on-secondary">2</span>
+</a>
+</nav>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Operations & Approvals</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all cursor-pointer" data-path="fees" href="#school-fees-section" onclick="switchAdminView('finance')">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span>School Fees &amp; Bursary</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-tertiary-fixed text-on-tertiary-fixed">84.6%</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="approvals" href="approvals.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>Approvals Queue</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-secondary-container text-on-secondary">12</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="admissions" href="admissions.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+<span>Admissions Review</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-surface-container-high text-on-surface-variant">28</span>
+</a>
+</nav>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Registries & Governance</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="wards" href="wards.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+<span>Student Records</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="users" href="users.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+<span>User Directory</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="reports" href="reports.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span>Reports & Analytics</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings" href="settings.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span>School Settings</span>
+</div>
+
+</a>
+</nav>
+</div>
+<div class="p-space-md bg-surface-container-lowest flex flex-col gap-space-xs mt-auto">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Campus Protocol</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold">Normal</span>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm hover:bg-secondary-container transition-colors shadow-sm cursor-pointer" data-safe-action="lockdown" data-safe-title="Activate Campus Emergency Lockdown" data-safe-warning="This will immediately lock all 4 campus perimeter gates, secure turnstiles, and alert local law enforcement and parents." data-safe-destructive="true" data-safe-label="Confirm Emergency Lockdown" onclick="window.location.href = '../gate/alert.html';" type="button" title="Emergency Campus Lockdown (Guarded by two-step verification)">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+<span>Emergency Lockdown</span>
+</button>
+</div>
+</div>
+</aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-2 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="flex items-center gap-2 px-space-sm py-1.5 rounded-full bg-surface-container-high"><span class="material-symbols-outlined text-primary text-[18px]">verified</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">NaSIA / GES Accredited • Level 4</span></div><div class="hidden xl:flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm"><span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span><span>Executive Oversight System</span></div></div><div class="flex items-center gap-space-md"><button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors relative shadow-sm" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary-container"></span></button><div class="flex items-center gap-3 pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-lg text-label-lg text-on-surface">Dr. Elizabeth Appiah</span><span class="font-label-sm text-label-sm text-on-surface-variant">Headmistress / Principal</span></div><img alt="Dr. Elizabeth Appiah" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWfNsavZrE2q7ehrA64sihUwtmROAw4xXN-C6BlUTPhqxnN--2RN5DRycS1Zzkyt6oCEfdTUfjODz6QYZEv08Q-JAkUc3Av7yS8ahvu_IycCMkJCxx5Dx9PYnuyuHQLKp_OkepCnkvleE-hqHca1ZtXA-REaPgIftK5gPRsomXA64FFaJZFdKmQGy-GEt_k2m5zV-0ASaXXLnRB3Au6F5xwS03ye8IFEGRzgETPCCJ1eKP6QrBZk3BQ"/></div></div></header><main class="relative pt-20 w-full px-space-lg pb-space-xl bg-surface"><div class="flex flex-col w-full gap-space-lg">
+<!-- TOP WELCOME BANNER -->
+      <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-primary to-primary-container text-on-primary shadow-sm p-6 border border-white/10">
+        <div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-white/5 blur-2xl pointer-events-none"></div>
+        <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="flex flex-col gap-1.5 max-w-2xl">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-white/15 text-white font-medium">Term 1, Wk 6 • 2026/2027</span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed/20 text-tertiary-fixed">
+                <span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
+                <span>Security: Normal</span>
+              </span>
+            </div>
+            <h1 class="font-headline-lg text-headline-lg text-on-primary tracking-tight font-bold">
+              Welcome back, Dr. Appiah
+            </h1>
+            <p class="font-body-sm text-body-sm text-primary-fixed-dim">
+              4 urgent governance escalations require your sign-off before 13:00 GMT dismissal.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <button class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-label-sm text-label-sm backdrop-blur-md transition-all cursor-pointer" onclick="window.location.href = 'users.html';" type="button">
+              <span class="material-symbols-outlined text-[18px]">verified_user</span>
+              <span>Audit Logs</span>
+            </button>
+            <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-secondary text-on-secondary font-label-sm text-label-sm shadow-sm hover:brightness-105 transition-all cursor-pointer font-medium" onclick="window.location.href = 'inbox.html';" type="button">
+              <span class="material-symbols-outlined text-[18px]">notifications_active</span>
+              <span>Broadcast Notice</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXECUTIVE MORNING TRIAGE STRIP (3 PRIORITY SIGN-OFFS FOR DR. ELIZABETH APPIAH) -->
+      <div class="rounded-2xl bg-surface-container-lowest p-5 border-2 border-secondary/20 shadow-xs flex flex-col gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-surface-container-high/60 pb-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[20px]">assignment_late</span>
+            </span>
+            <div>
+              <h2 class="font-headline-sm text-base text-primary font-bold">Executive Morning Triage</h2>
+              <p class="text-xs text-on-surface-variant font-medium">3 statutory clearances required before 13:00 GMT gate dismissal</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-[11px] font-bold uppercase tracking-wider w-fit">
+            Immediate Action Required
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <!-- Triage 1: Clinic Emergency -->
+          <div class="p-3.5 rounded-xl bg-error-container/20 border border-error/20 flex flex-col justify-between gap-3">
+            <div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-secondary">#APP-9021 • Clinic</span>
+                <span class="text-[10px] font-bold text-error uppercase">Urgent</span>
+              </div>
+              <h3 class="font-label-lg text-xs font-bold text-on-surface mt-1">Asthma Inhaler Safeguarding Endorsement</h3>
+              <p class="text-[11px] text-on-surface-variant mt-0.5">Kofi Mensah (Basic 2 Sunflower) &bull; Nurse Faustina Asante</p>
+            </div>
+            <button onclick="window.location.href = 'approvals.html';" type="button" class="w-full py-2 px-3 rounded-lg bg-secondary hover:bg-secondary-container text-on-secondary text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-1.5 cursor-pointer">
+              <span class="material-symbols-outlined text-[15px]">verified</span>
+              <span>Authorize Referral</span>
+            </button>
+          </div>
+
+          <!-- Triage 2: Gate Security Holding -->
+          <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 flex flex-col justify-between gap-3">
+            <div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-amber-900">#SEC-1102 • Turnstile</span>
+                <span class="text-[10px] font-bold text-amber-800 uppercase">Holding</span>
+              </div>
+              <h3 class="font-label-lg text-xs font-bold text-on-surface mt-1">Emergency Delegate Dismissal Permit</h3>
+              <p class="text-[11px] text-on-surface-variant mt-0.5">David Quaye (KG 2) &bull; Gate 2 Holding Area</p>
+            </div>
+            <button onclick="window.location.href = '../gate/verify.html';" type="button" class="w-full py-2 px-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-1.5 cursor-pointer">
+              <span class="material-symbols-outlined text-[15px]">shield</span>
+              <span>Verify Delegate OTP</span>
+            </button>
+          </div>
+
+          <!-- Triage 3: Q1 SBA Assessment -->
+          <div class="p-3.5 rounded-xl bg-surface-container-low border border-surface-container-high flex flex-col justify-between gap-3">
+            <div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-primary">#SBA-2026 • NaSIA</span>
+                <span class="text-[10px] font-bold text-primary-container uppercase">SBA Deck</span>
+              </div>
+              <h3 class="font-label-lg text-xs font-bold text-on-surface mt-1">GES Continuous Assessment Weighting</h3>
+              <p class="text-[11px] text-on-surface-variant mt-0.5">Basic 2 Sunflower (30/30/40) &bull; Mrs. Beatrice Abbey</p>
+            </div>
+            <button onclick="window.location.href = 'decision.html';" type="button" class="w-full py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span class="material-symbols-outlined text-[15px]">gavel</span>
+              <span>Endorse Form A</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <!-- KPI QUICK-STATS GRID (4 CARDS) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+        <!-- Card 1: Approvals -->
+        <div class="flex flex-col justify-between p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Pending Sign-Offs</span>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="font-headline-lg text-headline-lg text-secondary-container font-extrabold">9</span>
+                <span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">4 Urgent</span>
+              </div>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-error-container text-error flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">pending_actions</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between">
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Medical, gate &amp; intake</span>
+            <a class="font-label-sm text-label-sm text-primary hover:text-primary-container flex items-center gap-1 font-semibold" href="approvals.html">
+              <span>Review</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Attendance Today -->
+        <div class="flex flex-col justify-between p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Student Attendance</span>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="font-headline-lg text-headline-lg text-on-surface font-extrabold">96.5%</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">328/340</span>
+              </div>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">groups</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-surface-container-high/50 flex flex-col gap-2">
+            <div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+              <div class="bg-tertiary-container h-full rounded-full" style="width: 96.5%"></div>
+            </div>
+            <div class="flex items-center justify-between text-[11px] font-medium text-on-surface-variant">
+              <span>NUR 42/48</span>
+              <span>KG 64/92</span>
+              <span>BAS 156/160</span>
+              <span>JHS 66/80</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Faculty Clock-In -->
+        <div class="flex flex-col justify-between p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Faculty On Campus</span>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="font-headline-lg text-headline-lg text-on-surface font-extrabold">26/28</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">92.8%</span>
+              </div>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">fingerprint</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between">
+            <div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+              <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+              <span>Geofence verified</span>
+            </div>
+            <span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-medium">2 on leave</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Gate Security Status -->
+        <div class="flex flex-col justify-between p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Gate Security</span>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="font-headline-lg text-headline-lg text-on-surface font-extrabold">Armed</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">184 cleared</span>
+              </div>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-surface-container text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">sensor_door</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between">
+            <div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+              <span class="material-symbols-outlined text-[16px] text-tertiary-container">verified</span>
+              <span>Turnstiles active</span>
+            </div>
+            <span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-medium">0 Alerts</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+<div class="flex items-center gap-2 p-1.5 bg-[#f4f1ee] rounded-full w-fit mb-6">
+  <button id="adminTabBtn_approvals" onclick="switchAdminView('approvals')" class="admin-view-tab px-5 py-2 rounded-full text-xs font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5 cursor-pointer" type="button">
+    <span class="material-symbols-outlined text-[16px]">fact_check</span>
+    <span>Approvals &amp; Queue</span>
+  </button>
+  <button id="adminTabBtn_vitals" onclick="switchAdminView('vitals')" class="admin-view-tab px-5 py-2 rounded-full text-xs font-semibold transition-all text-on-surface-variant hover:text-on-surface hover:bg-black/5 flex items-center gap-1.5 cursor-pointer" type="button">
+    <span class="material-symbols-outlined text-[16px]">monitoring</span>
+    <span>Campus Vitals</span>
+  </button>
+  <button id="adminTabBtn_finance" onclick="switchAdminView('finance')" class="admin-view-tab px-5 py-2 rounded-full text-xs font-semibold transition-all text-on-surface-variant hover:text-on-surface hover:bg-black/5 flex items-center gap-1.5 cursor-pointer" type="button">
+    <span class="material-symbols-outlined text-[16px]">payments</span>
+    <span>Bursary &amp; Fees</span>
+  </button>
+</div>
+
+<!-- ===================================================================== -->
+<!-- TAB 1: APPROVALS & ACTION QUEUE (DEFAULT FOCUS VIEW)                 -->
+      <!-- ===================================================================== -->
+      <div id="adminTabSection_approvals" class="space-y-6">
+      <!-- MIDDLE SECTION: RADAR TABLE (7 cols) + SIDEBAR (5 cols) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+        <!-- LEFT COLUMN (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col gap-4">
+          <div class="flex items-center justify-between bg-surface-container-lowest px-5 py-3.5 rounded-2xl border border-surface-container-high/60 shadow-xs">
+            <div class="flex items-center gap-2.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+              <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Action Queue</h2>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-medium">4 Urgent</span>
+              <a href="approvals.html" class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="View all">
+                <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Approvals List -->
+          <div class="flex flex-col gap-3">
+            <!-- Item 1: Asthmatic Episode -->
+            <div class="bg-surface-container-lowest p-4 rounded-2xl border border-surface-container-high/60 shadow-xs hover:border-secondary/30 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-start gap-3 min-w-0">
+                <div class="w-10 h-10 rounded-xl bg-error-container text-error flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[20px]">medical_services</span>
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-sm text-label-sm text-secondary font-bold">#APP-9021</span>
+                    <span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">High Priority</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">08:42 GMT</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface font-semibold truncate mt-0.5">
+                    Asthmatic Episode Safeguarding Sign-Off
+                  </p>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                    Kofi Mensah (Basic 3) • Nurse Abbey
+                  </p>
+                </div>
+              </div>
+              <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-1.5 shrink-0">
+                <button class="px-3.5 py-1.5 rounded-xl bg-secondary text-on-secondary font-label-sm text-label-sm hover:brightness-105 transition-colors shadow-xs cursor-pointer font-medium" onclick="window.location.href = 'approvals.html';" type="button">
+                  Authorize
+                </button>
+                <span class="font-label-sm text-label-sm text-outline">Due: 15m</span>
+              </div>
+            </div>
+
+            <!-- Item 2: Emergency Guardian Delegate Request -->
+            <div class="bg-surface-container-lowest p-4 rounded-2xl border border-surface-container-high/60 shadow-xs hover:border-primary/30 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-start gap-3 min-w-0">
+                <div class="w-10 h-10 rounded-xl bg-secondary-fixed/30 text-secondary-container flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[20px]">key</span>
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-sm text-label-sm text-primary font-bold">#SEC-1102</span>
+                    <span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-semibold">Urgent</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">09:15 GMT</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface font-semibold truncate mt-0.5">
+                    Emergency Guardian Delegate Request
+                  </p>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                    David Quaye (KG 2) • Gate 2 Holding
+                  </p>
+                </div>
+              </div>
+              <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-1.5 shrink-0">
+                <button class="px-3.5 py-1.5 rounded-xl bg-primary text-on-primary font-label-sm text-label-sm hover:brightness-105 transition-colors shadow-xs cursor-pointer font-medium" onclick="window.location.href = '../gate/verify.html';" type="button">
+                  Verify Delegate
+                </button>
+                <span class="font-label-sm text-label-sm text-outline">Gate Turnstile OTP</span>
+              </div>
+            </div>
+
+            <!-- Item 3: Nursery 1 Enrollment -->
+            <div class="bg-surface-container-lowest p-4 rounded-2xl border border-surface-container-high/60 shadow-xs hover:border-surface-variant transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-start gap-3 min-w-0">
+                <div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[20px]">person_add</span>
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-sm text-label-sm text-primary font-bold">#ADM-2026-084</span>
+                    <span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-medium">Routine</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">07:50 GMT</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface font-semibold truncate mt-0.5">
+                    Nursery 1 Formal Admission Clearance
+                  </p>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                    Ama Boateng • Fees Cleared &amp; Health Form Complete
+                  </p>
+                </div>
+              </div>
+              <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-1.5 shrink-0">
+                <button class="px-3.5 py-1.5 rounded-xl bg-surface-container-high text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors cursor-pointer font-medium" onclick="window.location.href = 'admissions.html';" type="button">
+                  Approve Seal
+                </button>
+                <span class="font-label-sm text-label-sm text-outline">Stage 5 of 5</span>
+              </div>
+            </div>
+
+            <!-- Item 4: Gradebook Weighting Override -->
+            <div class="bg-surface-container-lowest p-4 rounded-2xl border border-surface-container-high/60 shadow-xs hover:border-surface-variant transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-start gap-3 min-w-0">
+                <div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[20px]">auto_stories</span>
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-sm text-label-sm text-primary font-bold">#GRD-4412</span>
+                    <span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-medium">Routine</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">Yesterday</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface font-semibold truncate mt-0.5">
+                    Gradebook Weighting Override (Basic 2 Science)
+                  </p>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                    Mr. Ofori • Midterm Lab Adjustment (15% → 20%)
+                  </p>
+                </div>
+              </div>
+              <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-1.5 shrink-0">
+                <button class="px-3.5 py-1.5 rounded-xl bg-surface-container-high text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors cursor-pointer font-medium" onclick="window.location.href = 'decision.html';" type="button">
+                  Review Delta
+                </button>
+                <span class="font-label-sm text-label-sm text-outline">Academic Board</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Velocity Summary -->
+          <div class="p-4 rounded-2xl bg-surface-container-low/70 border border-surface-container-high/50 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-[16px]">speed</span>
+              </div>
+              <span class="font-body-sm text-body-sm text-on-surface">
+                <strong class="font-semibold text-on-surface">94.2% Resolution Velocity:</strong> 38 issues resolved this week (avg 22m)
+              </span>
+            </div>
+            <a class="font-label-sm text-label-sm text-primary font-semibold hover:underline shrink-0" href="approvals.html">
+              Full Archive →
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col gap-4">
+          <!-- ADMISSIONS FUNNEL -->
+          <div class="bg-surface-container-lowest p-5 rounded-2xl border border-surface-container-high/60 shadow-xs flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+                <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Admissions Funnel</h2>
+              </div>
+              <a class="font-label-sm text-label-sm text-primary hover:underline font-semibold flex items-center gap-1" href="admissions.html">
+                <span>View All</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- Funnel Stages -->
+            <div class="flex flex-col gap-2.5">
+              <div class="flex flex-col gap-1">
+                <div class="flex justify-between font-label-sm text-label-sm">
+                  <span class="text-on-surface">1. Inquiries</span>
+                  <span class="font-bold text-primary">142</span>
+                </div>
+                <div class="w-full bg-surface-container rounded-full h-1.5">
+                  <div class="bg-primary-container h-full rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="flex justify-between font-label-sm text-label-sm">
+                  <span class="text-on-surface">2. Applications</span>
+                  <span class="font-bold text-primary">48</span>
+                </div>
+                <div class="w-full bg-surface-container rounded-full h-1.5">
+                  <div class="bg-primary h-full rounded-full" style="width: 68%"></div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="flex justify-between font-label-sm text-label-sm">
+                  <span class="text-on-surface">3. Documents Verified</span>
+                  <span class="font-bold text-primary">24</span>
+                </div>
+                <div class="w-full bg-surface-container rounded-full h-1.5">
+                  <div class="bg-secondary h-full rounded-full" style="width: 48%"></div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="flex justify-between font-label-sm text-label-sm">
+                  <span class="text-on-surface">4. Readiness Assessments</span>
+                  <span class="font-bold text-primary">12</span>
+                </div>
+                <div class="w-full bg-surface-container rounded-full h-1.5">
+                  <div class="bg-secondary-container h-full rounded-full" style="width: 25%"></div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <div class="flex justify-between font-label-sm text-label-sm font-semibold text-secondary-container">
+                  <span>5. Ready for Clearance</span>
+                  <span>6</span>
+                </div>
+                <div class="w-full bg-surface-container rounded-full h-1.5">
+                  <div class="bg-secondary-container h-full rounded-full" style="width: 12%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conversion Callout -->
+            <div class="p-3 bg-surface-container-low rounded-xl flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+                <span class="font-label-sm text-label-sm text-on-surface font-medium">Conversion to Enrolled</span>
+              </div>
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">29.4%</span>
+            </div>
+          </div>
+
+          <!-- REAL-TIME GATE FEED -->
+          <div class="bg-surface-container-lowest p-5 rounded-2xl border border-surface-container-high/60 shadow-xs flex flex-col gap-3.5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+                <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Live Gate Stream</h2>
+              </div>
+              <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed font-semibold">Live</span>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low/70">
+                <div class="flex items-center gap-2 min-w-0">
+                  <span class="w-7 h-7 rounded-lg bg-surface-container-high text-primary font-bold text-xs flex items-center justify-center shrink-0">G1</span>
+                  <div class="flex flex-col min-w-0">
+                    <span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">North Pedestrian</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant truncate">Badge #8832 • Nursery Parent Pick-up</span>
+                  </div>
+                </div>
+                <span class="font-label-sm text-label-sm text-outline whitespace-nowrap ml-2">12:04</span>
+              </div>
+
+              <div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low/70">
+                <div class="flex items-center gap-2 min-w-0">
+                  <span class="w-7 h-7 rounded-lg bg-surface-container-high text-primary font-bold text-xs flex items-center justify-center shrink-0">G2</span>
+                  <div class="flex flex-col min-w-0">
+                    <span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Vehicle Gate Area</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant truncate">Plate GT-4192-22 • Bus Route 3</span>
+                  </div>
+                </div>
+                <span class="font-label-sm text-label-sm text-outline whitespace-nowrap ml-2">12:03</span>
+              </div>
+
+              <div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low/70">
+                <div class="flex items-center gap-2 min-w-0">
+                  <span class="w-7 h-7 rounded-lg bg-surface-container-high text-primary font-bold text-xs flex items-center justify-center shrink-0">G3</span>
+                  <div class="flex flex-col min-w-0">
+                    <span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">South Field Exit</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant truncate">Faculty scan: Mr. K. Addo (P.E.)</span>
+                  </div>
+                </div>
+                <span class="font-label-sm text-label-sm text-outline whitespace-nowrap ml-2">12:01</span>
+              </div>
+            </div>
+
+            <div class="pt-1 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+              <span>184 students dispatched</span>
+              <span class="text-tertiary-container font-semibold">0 Exceptions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      </div> <!-- End adminTabSection_approvals -->
+
+      <!-- ===================================================================== -->
+      <!-- TAB 2: CAMPUS VITAL SIGNS, ATTENDANCE & GATE MONITORING               -->
+      <!-- ===================================================================== -->
+      <div id="adminTabSection_vitals" class="hidden space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+          <!-- Left Column (7 cols): Turnstile Feeds & Gate Telemetry -->
+          <div class="lg:col-span-7 flex flex-col gap-4">
+            <!-- Real-time Turnstile Dispatch Stream -->
+            <div class="bg-surface-container-lowest p-5 rounded-2xl border border-surface-container-high/60 shadow-xs flex flex-col gap-3.5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-tertiary-container animate-ping"></span>
+                  <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Live Campus Turnstile &amp; Perimeter Stream</h2>
+                </div>
+                <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-tertiary-container text-tertiary-fixed font-semibold">Active Monitoring</span>
+              </div>
+
+              <div class="flex flex-col gap-2.5">
+                <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low/70 border border-surface-container-high/50">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary font-bold text-xs flex items-center justify-center shrink-0">G1</span>
+                    <div class="flex flex-col min-w-0">
+                      <span class="font-label-sm text-label-sm text-on-surface font-bold truncate">North Pedestrian Turnstile</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant truncate">Parent RFID Badge #8832 • Nursery Creche Pickup Cleared</span>
+                    </div>
+                  </div>
+                  <span class="font-label-sm text-label-sm text-outline whitespace-nowrap ml-2">12:04 GMT</span>
+                </div>
+
+                <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low/70 border border-surface-container-high/50">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary font-bold text-xs flex items-center justify-center shrink-0">G2</span>
+                    <div class="flex flex-col min-w-0">
+                      <span class="font-label-sm text-label-sm text-on-surface font-bold truncate">Vehicle Main Gate (Barrier A)</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant truncate">Plate GT-4192-22 • Carepoint School Bus Route 3 Departed</span>
+                    </div>
+                  </div>
+                  <span class="font-label-sm text-label-sm text-outline whitespace-nowrap ml-2">12:03 GMT</span>
+                </div>
+
+                <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low/70 border border-surface-container-high/50">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary font-bold text-xs flex items-center justify-center shrink-0">G3</span>
+                    <div class="flex flex-col min-w-0">
+                      <span class="font-label-sm text-label-sm text-on-surface font-bold truncate">South Sports Field Perimeter Exit</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant truncate">Faculty Biometric: Mr. K. Addo (P.E. Department)</span>
+                    </div>
+                  </div>
+                  <span class="font-label-sm text-label-sm text-outline whitespace-nowrap ml-2">12:01 GMT</span>
+                </div>
+              </div>
+
+              <div class="pt-2 border-t border-surface-container-high/60 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+                <span><strong>184</strong> students safely discharged</span>
+                <span class="text-tertiary font-bold bg-tertiary-fixed/30 px-2 py-0.5 rounded">0 Security Exceptions</span>
+              </div>
+            </div>
+
+            <!-- NaSIA Level 4 Safety Verification Card -->
+            <div class="p-4 rounded-2xl bg-surface-container-low border border-surface-container-high/60 flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">verified_user</span>
+              <div class="text-xs text-on-surface-variant leading-relaxed">
+                <span class="font-bold text-primary block text-sm">NaSIA Level 4 SafeZone Statutory Compliance</span>
+                Carepoint perimeter operates under continuous biometric access logs, anti-passback turnstile protocols, and real-time guardian verification. All dismissal logs are cryptographically sealed.
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (5 cols): Attendance Breakdown & Faculty Status -->
+          <div class="lg:col-span-5 flex flex-col gap-4">
+            <!-- Student Attendance by Cohort -->
+            <div class="bg-surface-container-lowest p-5 rounded-2xl border border-surface-container-high/60 shadow-xs flex flex-col gap-3.5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[20px]">groups</span>
+                  <h3 class="font-headline-sm text-base text-primary font-bold">Attendance by Academic Division</h3>
+                </div>
+                <span class="font-label-sm text-xs text-emerald-700 font-bold">96.5% Campus Rate</span>
+              </div>
+
+              <div class="flex flex-col gap-3 text-xs">
+                <div>
+                  <div class="flex justify-between font-medium mb-1">
+                    <span>Creche &amp; Nursery</span>
+                    <span class="font-bold text-primary">42 / 48 (87.5%)</span>
+                  </div>
+                  <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-primary h-full rounded-full" style="width: 87.5%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between font-medium mb-1">
+                    <span>Kindergarten (KG 1 &amp; 2)</span>
+                    <span class="font-bold text-primary">64 / 92 (69.6%)</span>
+                  </div>
+                  <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-secondary-container h-full rounded-full" style="width: 69.6%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between font-medium mb-1">
+                    <span>Basic Primary (Basic 1 - 6)</span>
+                    <span class="font-bold text-primary">156 / 160 (97.5%)</span>
+                  </div>
+                  <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-emerald-600 h-full rounded-full" style="width: 97.5%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between font-medium mb-1">
+                    <span>Junior High (JHS 1 - 3)</span>
+                    <span class="font-bold text-primary">66 / 80 (82.5%)</span>
+                  </div>
+                  <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-sky-600 h-full rounded-full" style="width: 82.5%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-2 border-t border-surface-container-high/60 flex items-center justify-between text-xs">
+                <span class="text-on-surface-variant">Absence Notifications:</span>
+                <span class="font-bold text-on-surface">12 Documented Sick Leave</span>
+              </div>
+            </div>
+
+            <!-- Faculty Presence Summary -->
+            <div class="bg-surface-container-lowest p-5 rounded-2xl border border-surface-container-high/60 shadow-xs flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+                  <h3 class="font-headline-sm text-base text-primary font-bold">Faculty Geofence Status</h3>
+                </div>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">26 / 28 On Campus</span>
+              </div>
+              <p class="text-xs text-on-surface-variant">
+                100% of morning roll calls submitted before 08:30 AM deadline. 2 teachers on approved maternity/bereavement leave.
+              </p>
+              <div class="pt-1 flex items-center justify-between text-xs font-semibold text-primary">
+                <a href="users.html" class="hover:underline flex items-center gap-1">
+                  <span>View Faculty Roster</span>
+                  <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End adminTabSection_vitals -->
+
+      <!-- ===================================================================== -->
+      <!-- TAB 3: BURSARY, SCHOOL FEES & FINANCE GOVERNANCE                     -->
+      <!-- ===================================================================== -->
+      <div id="adminTabSection_finance" class="hidden space-y-6">
+      <!-- ===================================================================== -->
+      <!-- SECTION: SCHOOL FEES & BURSARY GOVERNANCE MODULE                       -->
+      <!-- Real-time collection tracking, MoMo reconciliation & arrears management-->
+      <!-- ===================================================================== -->
+      <section id="school-fees-section" class="scroll-mt-24 flex flex-col gap-4" x-data="{
+        activeTab: 'defaulters',
+        defaulterFilter: 'all',
+        searchQuery: '',
+        openPledgeModal: false,
+        openStructureModal: false,
+        pledgeData: { name: '', grade: '', balance: '', phone: '', date: '', notes: '' },
+        
+        remindGuardian(name, phone, amount) {
+          if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+            window.CarepointDemo.showToast('SMS & WhatsApp fee reminder sent to ' + name + ' (' + phone + ') for GH₵ ' + amount + '.', true);
+          } else {
+            alert('Fee reminder dispatched to ' + name + ' for GH₵ ' + amount);
+          }
+        },
+
+        broadcastAllReminders() {
+          if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+            window.CarepointDemo.showToast('Broadcast dispatched: 22 critical overdue guardian notices delivered via SMS & Parent App Push.', true);
+          }
+        },
+
+        runAudit() {
+          if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+            window.CarepointDemo.showToast('Reconciliation Complete: All 16 transactions across MTN MoMo, Telecel & GCB Bank matched.', true);
+          }
+        },
+
+        exportLedger() {
+          if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+            window.CarepointDemo.showToast('Exporting Carepoint Term 1 Comprehensive Fee Ledger (PDF/Excel)...', true);
+          }
+        },
+
+        openPledge(name, grade, balance, phone) {
+          this.pledgeData = { name, grade, balance, phone, date: '2026-10-05', notes: 'Agreed installment payment via MTN MoMo' };
+          this.openPledgeModal = true;
+        },
+
+        savePledge() {
+          this.openPledgeModal = false;
+          if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+            window.CarepointDemo.showToast('Payment pledge logged for ' + this.pledgeData.name + ' (Promised: ' + this.pledgeData.date + ').', true);
+          }
+        }
+      }">
+        <!-- Section Header Card -->
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-surface-container-high/60 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="flex items-start gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+              <span class="material-symbols-outlined text-[26px] text-tertiary-fixed">payments</span>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex flex-wrap items-center gap-2">
+                <h2 class="font-headline-sm text-headline-sm text-primary font-bold">School Fees &amp; Bursary Governance</h2>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-sm text-[11px] font-bold bg-tertiary-fixed/30 text-on-tertiary-fixed border border-tertiary-fixed-dim/40">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                  <span>Bursar Reconciled Today 08:30 GMT</span>
+                </span>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Academic Session 2026/2027 &bull; Term 1 Revenue Clearance, Mobile Money Gateways &amp; Guardian Arrears Worklist
+              </p>
+            </div>
+          </div>
+
+          <!-- Header Action Buttons -->
+          <div class="flex flex-wrap items-center gap-2.5 shrink-0">
+            <button @click="openStructureModal = true" type="button" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-xs font-bold transition-all shadow-2xs cursor-pointer border border-surface-container-high/60">
+              <span class="material-symbols-outlined text-[17px]">format_list_bulleted</span>
+              <span>Fee Structure</span>
+            </button>
+            <button @click="runAudit()" type="button" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-xs font-bold transition-all shadow-2xs cursor-pointer border border-surface-container-high/60">
+              <span class="material-symbols-outlined text-[17px]">fact_check</span>
+              <span>Audit Run</span>
+            </button>
+            <button @click="exportLedger()" type="button" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-xs font-bold transition-all shadow-2xs cursor-pointer border border-surface-container-high/60">
+              <span class="material-symbols-outlined text-[17px]">download</span>
+              <span>Export</span>
+            </button>
+            <button @click="broadcastAllReminders()" type="button" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-secondary text-on-secondary font-label-sm text-xs font-bold shadow-xs hover:brightness-105 transition-all cursor-pointer">
+              <span class="material-symbols-outlined text-[17px]">send_to_mobile</span>
+              <span>Send Reminders (22)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 BURSARY KPI CARDS -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+          <!-- KPI 1: Total Term Billed -->
+          <div class="flex flex-col justify-between p-4.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="font-label-sm text-xs text-on-surface-variant font-medium">Total Term 1 Billed</span>
+                <div class="flex items-baseline gap-1 mt-1">
+                  <span class="font-headline-lg text-2xl lg:text-[26px] text-primary font-extrabold tracking-tight">GH₵ 1,180,450</span>
+                </div>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shadow-2xs">
+                <span class="material-symbols-outlined text-[20px]">account_balance</span>
+              </div>
+            </div>
+            <div class="mt-3 pt-2.5 border-t border-surface-container-high/50 flex items-center justify-between text-xs text-on-surface-variant">
+              <span>468 Students Billed</span>
+              <span class="font-semibold text-primary">100% Statutory</span>
+            </div>
+          </div>
+
+          <!-- KPI 2: Total Collected to Date -->
+          <div class="flex flex-col justify-between p-4.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="font-label-sm text-xs text-on-surface-variant font-medium">Collected to Date</span>
+                <div class="flex items-baseline gap-2 mt-1">
+                  <span class="font-headline-lg text-2xl lg:text-[26px] text-emerald-700 font-extrabold tracking-tight">GH₵ 998,620</span>
+                  <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800">84.6%</span>
+                </div>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shadow-2xs">
+                <span class="material-symbols-outlined text-[20px]">verified</span>
+              </div>
+            </div>
+            <div class="mt-3 pt-2.5 border-t border-surface-container-high/50 flex flex-col gap-1.5">
+              <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+                <div class="bg-emerald-600 h-full rounded-full transition-all duration-500" style="width: 84.6%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[11px] text-on-surface-variant">
+                <span class="text-emerald-700 font-bold">+4.2% this week</span>
+                <span>410 Accounts Settled</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- KPI 3: Outstanding Arrears -->
+          <div class="flex flex-col justify-between p-4.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="font-label-sm text-xs text-on-surface-variant font-medium">Outstanding Arrears</span>
+                <div class="flex items-baseline gap-2 mt-1">
+                  <span class="font-headline-lg text-2xl lg:text-[26px] text-secondary font-extrabold tracking-tight">GH₵ 181,830</span>
+                  <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-error-container text-on-error-container">58 Students</span>
+                </div>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-error-container text-error flex items-center justify-center shadow-2xs">
+                <span class="material-symbols-outlined text-[20px]">pending_actions</span>
+              </div>
+            </div>
+            <div class="mt-3 pt-2.5 border-t border-surface-container-high/50 flex items-center justify-between text-xs">
+              <span class="text-secondary font-semibold">22 Critical Overdue</span>
+              <span class="text-on-surface-variant">36 Payment Plans</span>
+            </div>
+          </div>
+
+          <!-- KPI 4: Today's Inflow (Reconciled) -->
+          <div class="flex flex-col justify-between p-4.5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="font-label-sm text-xs text-on-surface-variant font-medium">Today's Inflow (Reconciled)</span>
+                <div class="flex items-baseline gap-2 mt-1">
+                  <span class="font-headline-lg text-2xl lg:text-[26px] text-primary font-extrabold tracking-tight">GH₵ 24,850</span>
+                  <span class="font-label-sm text-xs font-bold text-on-surface-variant">16 Txns</span>
+                </div>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shadow-2xs">
+                <span class="material-symbols-outlined text-[20px]">point_of_sale</span>
+              </div>
+            </div>
+            <div class="mt-3 pt-2.5 border-t border-surface-container-high/50 flex items-center justify-between text-xs text-on-surface-variant">
+              <span>MoMo 68% &bull; Telecel 18%</span>
+              <span class="font-semibold text-primary">Bank Direct 14%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIVISION-BY-DIVISION REVENUE BENCHMARK -->
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-surface-container-high/60 shadow-xs flex flex-col gap-3.5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 class="font-headline-sm text-base text-primary font-bold">Collection Efficiency Across School Divisions</h3>
+              <p class="font-body-sm text-xs text-on-surface-variant">Continuous term progress vs statutory budget allocation</p>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-medium text-on-surface-variant">
+              <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>Cleared</span>
+              <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>Payment Plan</span>
+              <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>Arrears</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 pt-1">
+            <!-- Nursery & Creche -->
+            <div class="p-3.5 rounded-xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-xs font-bold text-primary">Creche &amp; Nursery</span>
+                <span class="text-xs font-extrabold text-emerald-700">89.2%</span>
+              </div>
+              <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden flex">
+                <div class="bg-emerald-600 h-full" style="width: 89.2%"></div>
+                <div class="bg-amber-500 h-full" style="width: 6.8%"></div>
+                <div class="bg-secondary h-full" style="width: 4.0%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[11px] text-on-surface-variant">
+                <span>GH₵ 164,574 / 184.5k</span>
+                <span class="text-secondary font-bold">8 Bal</span>
+              </div>
+            </div>
+
+            <!-- Kindergarten -->
+            <div class="p-3.5 rounded-xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-xs font-bold text-primary">Kindergarten (KG 1-2)</span>
+                <span class="text-xs font-extrabold text-emerald-700">86.4%</span>
+              </div>
+              <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden flex">
+                <div class="bg-emerald-600 h-full" style="width: 86.4%"></div>
+                <div class="bg-amber-500 h-full" style="width: 8.2%"></div>
+                <div class="bg-secondary h-full" style="width: 5.4%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[11px] text-on-surface-variant">
+                <span>GH₵ 174,874 / 202.4k</span>
+                <span class="text-secondary font-bold">12 Bal</span>
+              </div>
+            </div>
+
+            <!-- Basic 1-6 -->
+            <div class="p-3.5 rounded-xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-xs font-bold text-primary">Primary (Basic 1-6)</span>
+                <span class="text-xs font-extrabold text-emerald-700">84.1%</span>
+              </div>
+              <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden flex">
+                <div class="bg-emerald-600 h-full" style="width: 84.1%"></div>
+                <div class="bg-amber-500 h-full" style="width: 9.5%"></div>
+                <div class="bg-secondary h-full" style="width: 6.4%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[11px] text-on-surface-variant">
+                <span>GH₵ 450,356 / 535.5k</span>
+                <span class="text-secondary font-bold">26 Bal</span>
+              </div>
+            </div>
+
+            <!-- JHS 1-3 -->
+            <div class="p-3.5 rounded-xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-xs font-bold text-primary">Junior High (JHS 1-3)</span>
+                <span class="text-xs font-extrabold text-emerald-700">81.8%</span>
+              </div>
+              <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden flex">
+                <div class="bg-emerald-600 h-full" style="width: 81.8%"></div>
+                <div class="bg-amber-500 h-full" style="width: 10.2%"></div>
+                <div class="bg-secondary h-full" style="width: 8.0%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[11px] text-on-surface-variant">
+                <span>GH₵ 211,085 / 258.1k</span>
+                <span class="text-secondary font-bold">12 Bal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAIN INTERACTIVE BURSARY WORKSPACE (7 cols / 5 cols) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+          <!-- LEFT COLUMN: ARREARS WORKLIST & DEFAULTER RECOVERY (7 cols) -->
+          <div class="lg:col-span-7 flex flex-col gap-3.5">
+            <div class="bg-surface-container-lowest p-4.5 rounded-2xl border border-surface-container-high/60 shadow-xs flex flex-col gap-3">
+              <!-- Tab buttons row -->
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-surface-container-high/60 pb-3">
+                <div class="flex items-center gap-1.5 p-1 bg-surface-container-low rounded-xl">
+                  <button @click="activeTab = 'defaulters'" type="button" :class="activeTab === 'defaulters' ? 'bg-surface-container-lowest text-primary shadow-xs font-bold' : 'text-on-surface-variant hover:text-on-surface font-medium'" class="px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer">
+                    Arrears List (58)
+                  </button>
+                  <button @click="activeTab = 'recent'" type="button" :class="activeTab === 'recent' ? 'bg-surface-container-lowest text-primary shadow-xs font-bold' : 'text-on-surface-variant hover:text-on-surface font-medium'" class="px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer">
+                    Recent Receipts (16)
+                  </button>
+                  <button @click="activeTab = 'gateways'" type="button" :class="activeTab === 'gateways' ? 'bg-surface-container-lowest text-primary shadow-xs font-bold' : 'text-on-surface-variant hover:text-on-surface font-medium'" class="px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer">
+                    MoMo &amp; Bank Channels
+                  </button>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <span class="text-xs text-on-surface-variant font-medium">Bursar Desk: Mrs. Abbey</span>
+                </div>
+              </div>
+
+              <!-- VIEW 1: ARREARS WORKLIST -->
+              <div x-show="activeTab === 'defaulters'" class="flex flex-col gap-3">
+                <!-- Filters and Quick Search -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div class="flex items-center gap-1.5">
+                    <button @click="defaulterFilter = 'all'" type="button" :class="defaulterFilter === 'all' ? 'bg-primary text-on-primary font-bold' : 'bg-surface-container-high text-on-surface-variant'" class="px-2.5 py-1 rounded-lg text-[11px] transition-colors cursor-pointer">All (58)</button>
+                    <button @click="defaulterFilter = 'critical'" type="button" :class="defaulterFilter === 'critical' ? 'bg-secondary text-on-secondary font-bold' : 'bg-surface-container-high text-on-surface-variant'" class="px-2.5 py-1 rounded-lg text-[11px] transition-colors cursor-pointer">&gt;14d Overdue (22)</button>
+                    <button @click="defaulterFilter = 'plans'" type="button" :class="defaulterFilter === 'plans' ? 'bg-amber-600 text-white font-bold' : 'bg-surface-container-high text-on-surface-variant'" class="px-2.5 py-1 rounded-lg text-[11px] transition-colors cursor-pointer">Payment Plans (36)</button>
+                  </div>
+                  <div class="text-xs text-on-surface-variant font-medium">
+                    Showing top urgent follow-ups
+                  </div>
+                </div>
+
+                <!-- Arrears List Cards -->
+                <div class="flex flex-col gap-2.5">
+                  <!-- Student 1: Kofi Mensah (Critical Overdue) -->
+                  <div x-show="defaulterFilter === 'all' || defaulterFilter === 'critical'" class="p-4 rounded-xl border border-secondary/25 bg-secondary/3 hover:bg-secondary/5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+                    <div class="flex items-start gap-3 min-w-0">
+                      <div class="w-10 h-10 rounded-xl bg-error-container text-error flex items-center justify-center shrink-0 font-bold text-sm">
+                        KM
+                      </div>
+                      <div class="flex flex-col min-w-0">
+                        <div class="flex items-center gap-2">
+                          <h4 class="font-headline-sm text-sm font-bold text-primary truncate">Kofi Mensah</h4>
+                          <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-surface-container-high text-primary">Basic 3B</span>
+                          <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-error-container text-on-error-container">18 Days Overdue</span>
+                        </div>
+                        <p class="font-body-sm text-xs text-on-surface-variant mt-0.5">
+                          Guardian: <strong class="text-on-surface">Dr. Nana Mensah</strong> &bull; +233 24 112 3456
+                        </p>
+                        <div class="flex items-center gap-3 text-xs mt-1">
+                          <span>Billed: GH₵ 2,550</span>
+                          <span>Paid: GH₵ 1,450</span>
+                          <span class="font-bold text-secondary">Balance: GH₵ 1,100.00</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2 shrink-0">
+                      <button @click="remindGuardian('Dr. Nana Mensah', '+233 24 112 3456', '1,100.00')" type="button" class="px-3 py-1.5 rounded-xl bg-secondary text-on-secondary font-label-sm text-xs font-bold hover:brightness-105 shadow-2xs cursor-pointer flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px]">sms</span>
+                        <span>Send SMS</span>
+                      </button>
+                      <button @click="openPledge('Kofi Mensah', 'Basic 3B', '1,100.00', '+233 24 112 3456')" type="button" class="text-[11px] text-primary hover:underline font-bold cursor-pointer">
+                        Pledge / Plan &rarr;
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Student 2: Abena Osei (Payment Plan Active) -->
+                  <div x-show="defaulterFilter === 'all' || defaulterFilter === 'plans'" class="p-4 rounded-xl border border-amber-500/25 bg-amber-500/3 hover:bg-amber-500/5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+                    <div class="flex items-start gap-3 min-w-0">
+                      <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center shrink-0 font-bold text-sm">
+                        AO
+                      </div>
+                      <div class="flex flex-col min-w-0">
+                        <div class="flex items-center gap-2">
+                          <h4 class="font-headline-sm text-sm font-bold text-primary truncate">Abena Osei</h4>
+                          <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-surface-container-high text-primary">JHS 2A</span>
+                          <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-amber-100 text-amber-900">Installment 2 Due Oct 5</span>
+                        </div>
+                        <p class="font-body-sm text-xs text-on-surface-variant mt-0.5">
+                          Guardian: <strong class="text-on-surface">Mr. Kwesi Osei</strong> &bull; +233 20 889 0123
+                        </p>
+                        <div class="flex items-center gap-3 text-xs mt-1">
+                          <span>Billed: GH₵ 3,200</span>
+                          <span>Paid: GH₵ 1,600 (50%)</span>
+                          <span class="font-bold text-amber-800">Balance: GH₵ 1,600.00</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2 shrink-0">
+                      <button @click="remindGuardian('Mr. Kwesi Osei', '+233 20 889 0123', '1,600.00')" type="button" class="px-3 py-1.5 rounded-xl bg-primary text-on-primary font-label-sm text-xs font-bold hover:brightness-105 shadow-2xs cursor-pointer flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px]">send_to_mobile</span>
+                        <span>Reminder</span>
+                      </button>
+                      <button @click="openPledge('Abena Osei', 'JHS 2A', '1,600.00', '+233 20 889 0123')" type="button" class="text-[11px] text-primary hover:underline font-bold cursor-pointer">
+                        Update Terms &rarr;
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Student 3: Yaw Addo (Grace Period / Routine Arrears) -->
+                  <div x-show="defaulterFilter === 'all' || defaulterFilter === 'critical'" class="p-4 rounded-xl border border-secondary/25 bg-secondary/3 hover:bg-secondary/5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+                    <div class="flex items-start gap-3 min-w-0">
+                      <div class="w-10 h-10 rounded-xl bg-error-container text-error flex items-center justify-center shrink-0 font-bold text-sm">
+                        YA
+                      </div>
+                      <div class="flex flex-col min-w-0">
+                        <div class="flex items-center gap-2">
+                          <h4 class="font-headline-sm text-sm font-bold text-primary truncate">Yaw Addo</h4>
+                          <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-surface-container-high text-primary">KG 1</span>
+                          <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-error-container text-on-error-container">16 Days Overdue</span>
+                        </div>
+                        <p class="font-body-sm text-xs text-on-surface-variant mt-0.5">
+                          Guardian: <strong class="text-on-surface">Mrs. Rita Addo</strong> &bull; +233 55 432 7890
+                        </p>
+                        <div class="flex items-center gap-3 text-xs mt-1">
+                          <span>Billed: GH₵ 2,200</span>
+                          <span>Paid: GH₵ 1,550</span>
+                          <span class="font-bold text-secondary">Balance: GH₵ 650.00</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2 shrink-0">
+                      <button @click="remindGuardian('Mrs. Rita Addo', '+233 55 432 7890', '650.00')" type="button" class="px-3 py-1.5 rounded-xl bg-secondary text-on-secondary font-label-sm text-xs font-bold hover:brightness-105 shadow-2xs cursor-pointer flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px]">sms</span>
+                        <span>Send SMS</span>
+                      </button>
+                      <button @click="openPledge('Yaw Addo', 'KG 1', '650.00', '+233 55 432 7890')" type="button" class="text-[11px] text-primary hover:underline font-bold cursor-pointer">
+                        Pledge / Plan &rarr;
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Student 4: Esi Tetteh (Staff Concession 10% Active) -->
+                  <div x-show="defaulterFilter === 'all' || defaulterFilter === 'plans'" class="p-4 rounded-xl border border-surface-container-high/80 bg-surface-container-lowest hover:bg-surface-container-low/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+                    <div class="flex items-start gap-3 min-w-0">
+                      <div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0 font-bold text-sm">
+                        ET
+                      </div>
+                      <div class="flex flex-col min-w-0">
+                        <div class="flex items-center gap-2">
+                          <h4 class="font-headline-sm text-sm font-bold text-primary truncate">Esi Tetteh</h4>
+                          <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-surface-container-high text-primary">Basic 5A</span>
+                          <span class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-primary-fixed text-on-primary-fixed">Staff Concession</span>
+                        </div>
+                        <p class="font-body-sm text-xs text-on-surface-variant mt-0.5">
+                          Guardian: <strong class="text-on-surface">Officer Emmanuel Tetteh</strong> &bull; Security Head
+                        </p>
+                        <div class="flex items-center gap-3 text-xs mt-1">
+                          <span>Billed: GH₵ 2,295</span>
+                          <span>Paid: GH₵ 1,500</span>
+                          <span class="font-bold text-primary">Balance: GH₵ 795.00</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2 shrink-0">
+                      <button @click="remindGuardian('Officer Emmanuel Tetteh', '+233 24 776 5432', '795.00')" type="button" class="px-3 py-1.5 rounded-xl bg-surface-container-high text-primary font-label-sm text-xs font-bold hover:bg-surface-container-highest shadow-2xs cursor-pointer flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px]">badge</span>
+                        <span>Internal Note</span>
+                      </button>
+                      <button @click="openPledge('Esi Tetteh', 'Basic 5A', '795.00', '+233 24 776 5432')" type="button" class="text-[11px] text-primary hover:underline font-bold cursor-pointer">
+                        Payroll Sweep &rarr;
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Summary Strip -->
+                <div class="p-3 bg-surface-container-low rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                  <div class="flex items-center gap-2 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[18px] text-secondary">crisis_alert</span>
+                    <span>22 students have unpaid balances exceeding mid-term assessment cutoff.</span>
+                  </div>
+                  <button @click="broadcastAllReminders()" type="button" class="text-secondary font-bold hover:underline self-end sm:self-auto cursor-pointer">
+                    Send Mass Overdue Advisory &rarr;
+                  </button>
+                </div>
+              </div>
+
+              <!-- VIEW 2: RECENT RECEIPTS & RECONCILIATION -->
+              <div x-show="activeTab === 'recent'" class="flex flex-col gap-2.5">
+                <div class="flex items-center justify-between text-xs text-on-surface-variant pb-1">
+                  <span>16 Transactions Recorded Today (Total: GH₵ 24,850.00)</span>
+                  <span class="text-emerald-700 font-bold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>All Instant Verified
+                  </span>
+                </div>
+
+                <!-- Receipt 1 -->
+                <div class="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-container-high/60 flex items-center justify-between gap-3 shadow-2xs">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <div class="w-9 h-9 rounded-xl bg-amber-400 text-slate-900 font-extrabold flex items-center justify-center text-xs shrink-0 shadow-2xs">
+                      MoMo
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                      <div class="flex items-center gap-2">
+                        <span class="font-bold text-xs text-primary">#RCP-2026-904</span>
+                        <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800">Full Clear</span>
+                      </div>
+                      <p class="text-xs text-on-surface font-semibold truncate mt-0.5">Kojo Antwi (Basic 4A) &bull; Mrs. Harriet Antwi</p>
+                      <span class="text-[11px] text-on-surface-variant">MTN Mobile Money &bull; TxID: 28941049281 &bull; 10:14 GMT</span>
+                    </div>
+                  </div>
+                  <div class="text-right shrink-0">
+                    <span class="font-headline-sm text-sm font-extrabold text-emerald-700">GH₵ 2,550.00</span>
+                    <span class="block text-[10px] text-outline">Automated Receipt</span>
+                  </div>
+                </div>
+
+                <!-- Receipt 2 -->
+                <div class="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-container-high/60 flex items-center justify-between gap-3 shadow-2xs">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <div class="w-9 h-9 rounded-xl bg-rose-600 text-white font-extrabold flex items-center justify-center text-[10px] shrink-0 shadow-2xs">
+                      Telecel
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                      <div class="flex items-center gap-2">
+                        <span class="font-bold text-xs text-primary">#RCP-2026-903</span>
+                        <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-100 text-amber-800">Part Payment</span>
+                      </div>
+                      <p class="text-xs text-on-surface font-semibold truncate mt-0.5">Sarah Boateng (KG 2) &bull; Ing. K. Boateng</p>
+                      <span class="text-[11px] text-on-surface-variant">Telecel Cash &bull; TxID: TC-990142 &bull; 09:42 GMT</span>
+                    </div>
+                  </div>
+                  <div class="text-right shrink-0">
+                    <span class="font-headline-sm text-sm font-extrabold text-emerald-700">GH₵ 1,025.00</span>
+                    <span class="block text-[10px] text-outline">Bal: GH₵ 1,175.00</span>
+                  </div>
+                </div>
+
+                <!-- Receipt 3 -->
+                <div class="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-container-high/60 flex items-center justify-between gap-3 shadow-2xs">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <div class="w-9 h-9 rounded-xl bg-primary text-on-primary font-extrabold flex items-center justify-center text-[10px] shrink-0 shadow-2xs">
+                      GCB
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                      <div class="flex items-center gap-2">
+                        <span class="font-bold text-xs text-primary">#RCP-2026-902</span>
+                        <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800">Full Clear</span>
+                      </div>
+                      <p class="text-xs text-on-surface font-semibold truncate mt-0.5">Michael Quaye (JHS 3) &bull; Mr. Ebenezer Quaye</p>
+                      <span class="text-[11px] text-on-surface-variant">GCB Direct Bank Wire &bull; Ref: GCB-ACC-8812 &bull; 09:05 GMT</span>
+                    </div>
+                  </div>
+                  <div class="text-right shrink-0">
+                    <span class="font-headline-sm text-sm font-extrabold text-emerald-700">GH₵ 3,200.00</span>
+                    <span class="block text-[10px] text-outline">Bank Slip Attached</span>
+                  </div>
+                </div>
+
+                <!-- Receipt 4 -->
+                <div class="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-container-high/60 flex items-center justify-between gap-3 shadow-2xs">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <div class="w-9 h-9 rounded-xl bg-surface-container-high text-primary font-extrabold flex items-center justify-center text-[10px] shrink-0 shadow-2xs">
+                      POS
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                      <div class="flex items-center gap-2">
+                        <span class="font-bold text-xs text-primary">#RCP-2026-901</span>
+                        <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800">Full Clear</span>
+                      </div>
+                      <p class="text-xs text-on-surface font-semibold truncate mt-0.5">Efua Mensah (Nursery 1) &bull; Mrs. Mercy Mensah</p>
+                      <span class="text-[11px] text-on-surface-variant">Bursary Counter POS (Card) &bull; Auth: #POS-019 &bull; 08:30 GMT</span>
+                    </div>
+                  </div>
+                  <div class="text-right shrink-0">
+                    <span class="font-headline-sm text-sm font-extrabold text-emerald-700">GH₵ 2,050.00</span>
+                    <span class="block text-[10px] text-outline">Printed &amp; Sealed</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- VIEW 3: GATEWAYS & SETTLEMENT HEALTH -->
+              <div x-show="activeTab === 'gateways'" class="flex flex-col gap-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <!-- Gateway 1: MTN MoMo -->
+                  <div class="p-3.5 rounded-xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-xs text-primary flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                        MTN Mobile Money API
+                      </span>
+                      <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Live (99.98%)</span>
+                    </div>
+                    <p class="text-[11px] text-on-surface-variant">Merchant ID: CAREPOINT-SCH-01 &bull; Instant USSD Push &amp; Webhooks Active</p>
+                    <div class="flex items-center justify-between text-[11px] text-primary font-semibold pt-1 border-t border-surface-container-high/50">
+                      <span>Today: GH₵ 16,890.00</span>
+                      <span>Next Settlement: 17:00 GMT</span>
+                    </div>
+                  </div>
+
+                  <!-- Gateway 2: Telecel Cash -->
+                  <div class="p-3.5 rounded-xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-xs text-primary flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                        Telecel Cash Gateway
+                      </span>
+                      <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Live (99.95%)</span>
+                    </div>
+                    <p class="text-[11px] text-on-surface-variant">Merchant ID: TC-CAREPOINT-88 &bull; Direct STK Prompt Active</p>
+                    <div class="flex items-center justify-between text-[11px] text-primary font-semibold pt-1 border-t border-surface-container-high/50">
+                      <span>Today: GH₵ 4,470.00</span>
+                      <span>Next Settlement: 17:00 GMT</span>
+                    </div>
+                  </div>
+
+                  <!-- Gateway 3: GCB Bank Host-to-Host -->
+                  <div class="p-3.5 rounded-xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-xs text-primary flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                        GCB Bank Direct Feed
+                      </span>
+                      <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Sync Ok</span>
+                    </div>
+                    <p class="text-[11px] text-on-surface-variant">Account: 1041130008821 &bull; Automated Student ID Statement Matching</p>
+                    <div class="flex items-center justify-between text-[11px] text-primary font-semibold pt-1 border-t border-surface-container-high/50">
+                      <span>Today: GH₵ 3,490.00</span>
+                      <span>Reconciled: 08:30 GMT</span>
+                    </div>
+                  </div>
+
+                  <!-- Gateway 4: Ecobank Ghana -->
+                  <div class="p-3.5 rounded-xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-xs text-primary flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                        Ecobank Term Account
+                      </span>
+                      <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Primary Escrow</span>
+                    </div>
+                    <p class="text-[11px] text-on-surface-variant">Account: 1441001928401 &bull; Capital Expenditure &amp; Statutory Reserve</p>
+                    <div class="flex items-center justify-between text-[11px] text-primary font-semibold pt-1 border-t border-surface-container-high/50">
+                      <span>Term Balance: GH₵ 912,400</span>
+                      <span>Signed Authority</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: FINANCIAL HEALTH & BURSAR ESCALATIONS (5 cols) -->
+          <div class="lg:col-span-5 flex flex-col gap-4">
+            <!-- Bursar Governance Summary -->
+            <div class="bg-surface-container-lowest p-5 rounded-2xl border border-surface-container-high/60 shadow-xs flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Bursary Compliance &amp; Actions</h3>
+                </div>
+                <span class="font-label-sm text-xs font-bold text-primary">NaSIA Standard</span>
+              </div>
+
+              <!-- Key statutory checkpoints -->
+              <div class="flex flex-col gap-2.5">
+                <div class="p-3 rounded-xl bg-surface-container-low/70 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-primary">Term 1 Revenue Target</span>
+                      <span class="text-[11px] text-on-surface-variant">GH₵ 1.18M Target &bull; GH₵ 998k Collected</span>
+                    </div>
+                  </div>
+                  <span class="text-xs font-extrabold text-emerald-700">84.6%</span>
+                </div>
+
+                <div class="p-3 rounded-xl bg-surface-container-low/70 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-amber-700 text-[20px]">handshake</span>
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-primary">Active Payment Commitments</span>
+                      <span class="text-[11px] text-on-surface-variant">36 signed guardian payment agreements</span>
+                    </div>
+                  </div>
+                  <span class="text-xs font-extrabold text-amber-800">GH₵ 48,200</span>
+                </div>
+
+                <div class="p-3 rounded-xl bg-error-container/20 border border-secondary/20 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-2.5">
+                    <span class="material-symbols-outlined text-secondary text-[20px]">emergency_share</span>
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-secondary">Defaulters Exceeding Grace Limit</span>
+                      <span class="text-[11px] text-on-surface-variant">22 guardians pending mid-term clearance</span>
+                    </div>
+                  </div>
+                  <button @click="broadcastAllReminders()" type="button" class="px-2.5 py-1 rounded-lg bg-secondary text-on-secondary font-bold text-[11px] hover:brightness-105 transition-colors cursor-pointer shrink-0">
+                    Dispatch SMS
+                  </button>
+                </div>
+              </div>
+
+              <!-- Payment Method Revenue Share -->
+              <div class="pt-2 border-t border-surface-container-high/60 flex flex-col gap-2">
+                <span class="font-label-sm text-xs font-bold text-on-surface-variant uppercase tracking-wider">Settlement Breakdown</span>
+                <div class="flex flex-col gap-1.5">
+                  <div class="flex justify-between text-xs">
+                    <span>MTN Mobile Money</span>
+                    <span class="font-bold text-primary">GH₵ 679,060 (68%)</span>
+                  </div>
+                  <div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-amber-400 h-full rounded-full" style="width: 68%"></div>
+                  </div>
+
+                  <div class="flex justify-between text-xs mt-1">
+                    <span>Telecel Cash</span>
+                    <span class="font-bold text-primary">GH₵ 179,750 (18%)</span>
+                  </div>
+                  <div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-rose-500 h-full rounded-full" style="width: 18%"></div>
+                  </div>
+
+                  <div class="flex justify-between text-xs mt-1">
+                    <span>Direct Bank Deposit &amp; POS</span>
+                    <span class="font-bold text-primary">GH₵ 139,810 (14%)</span>
+                  </div>
+                  <div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-primary h-full rounded-full" style="width: 14%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- NaSIA Audited Fee Schedule Callout Card -->
+            <div class="bg-primary text-on-primary p-5 rounded-2xl shadow-sm border border-white/10 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-[11px] font-bold uppercase tracking-wider text-tertiary-fixed">Statutory Fee Governance</span>
+                <span class="text-[11px] text-white/70">NaSIA / GES Reg.</span>
+              </div>
+              <h4 class="font-headline-sm text-base font-bold text-white leading-snug">
+                Transparent Fee Schedules &amp; Concessions Framework
+              </h4>
+              <p class="font-body-sm text-xs text-primary-fixed-dim leading-relaxed">
+                All levies include approved tuition, learning materials, STEM lab access, and hot meal nutrition. Flexible installment plans permitted up to Week 10.
+              </p>
+              <div class="pt-2 flex items-center justify-between border-t border-white/15 text-xs">
+                <button @click="openStructureModal = true" type="button" class="text-tertiary-fixed hover:text-white font-bold flex items-center gap-1 cursor-pointer">
+                  <span>View Full Schedule</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </button>
+                <button @click="exportLedger()" type="button" class="text-white/80 hover:text-white font-medium cursor-pointer">
+                  Download Gazette PDF
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================================================================== -->
+        <!-- MODAL 1: RECORD PAYMENT PLEDGE / COMMITMENT PLAN                     -->
+        <!-- =================================================================== -->
+        <div x-show="openPledgeModal" style="display: none;" class="fixed inset-0 z-[100010] flex items-center justify-center p-4 bg-primary/60 backdrop-blur-xs animate-in fade-in duration-200">
+          <div @click.away="openPledgeModal = false" class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-outline-variant/30 flex flex-col gap-4 text-on-surface animate-in zoom-in-95 duration-150">
+            <div class="flex items-start justify-between pb-3 border-b border-surface-container-high">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold shadow-xs">
+                  <span class="material-symbols-outlined text-[22px] text-tertiary-fixed">handshake</span>
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-base text-primary font-bold">Record Guardian Payment Commitment</h3>
+                  <p class="text-xs text-on-surface-variant font-medium">Bursary Installment Agreement &bull; Term 1</p>
+                </div>
+              </div>
+              <button @click="openPledgeModal = false" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container text-on-surface-variant transition-colors cursor-pointer" type="button">
+                <span class="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+
+            <div class="p-3 bg-surface-container-low rounded-xl border border-surface-container-high/60 flex items-center justify-between text-xs">
+              <div>
+                <span class="font-bold text-primary block" x-text="pledgeData.name + ' (' + pledgeData.grade + ')'"></span>
+                <span class="text-on-surface-variant" x-text="'Guardian: ' + pledgeData.phone"></span>
+              </div>
+              <div class="text-right">
+                <span class="text-[11px] text-outline block">Outstanding</span>
+                <span class="font-bold text-secondary text-sm" x-text="'GH₵ ' + pledgeData.balance"></span>
+              </div>
+            </div>
+
+            <form @submit.prevent="savePledge()" class="flex flex-col gap-3.5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-bold text-on-surface mb-1">Promised Payment Date</label>
+                  <input type="date" x-model="pledgeData.date" class="w-full px-3 py-2 rounded-xl bg-surface-container-low border border-surface-container-high text-xs font-medium text-on-surface focus:outline-primary" required/>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-on-surface mb-1">Agreed Installment Amount</label>
+                  <div class="relative">
+                    <span class="absolute left-3 top-2 text-xs font-bold text-on-surface-variant">GH₵</span>
+                    <input type="text" x-model="pledgeData.balance" class="w-full pl-10 pr-3 py-2 rounded-xl bg-surface-container-low border border-surface-container-high text-xs font-bold text-on-surface focus:outline-primary" required/>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-on-surface mb-1">Agreed Channel</label>
+                <select class="w-full px-3 py-2 rounded-xl bg-surface-container-low border border-surface-container-high text-xs font-medium text-on-surface focus:outline-primary">
+                  <option>MTN Mobile Money (Prompt on Date)</option>
+                  <option>Telecel Cash</option>
+                  <option>GCB Bank Direct Deposit</option>
+                  <option>Campus Cash Office POS</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-on-surface mb-1">Bursar &amp; Principal Terms Note</label>
+                <textarea x-model="pledgeData.notes" rows="2" class="w-full px-3 py-2 rounded-xl bg-surface-container-low border border-surface-container-high text-xs text-on-surface focus:outline-primary resize-none"></textarea>
+              </div>
+
+              <div class="flex items-center justify-end gap-2.5 pt-2 border-t border-surface-container-high">
+                <button @click="openPledgeModal = false" type="button" class="px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-bold transition-colors cursor-pointer">
+                  Cancel
+                </button>
+                <button type="submit" class="px-4 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary text-xs font-bold shadow-xs transition-colors cursor-pointer">
+                  Seal Payment Agreement
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- =================================================================== -->
+        <!-- MODAL 2: OFFICIAL STATUTORY FEE SCHEDULE (NaSIA / GES APPROVED)       -->
+        <!-- =================================================================== -->
+        <div x-show="openStructureModal" style="display: none;" class="fixed inset-0 z-[100010] flex items-center justify-center p-4 bg-primary/60 backdrop-blur-xs animate-in fade-in duration-200">
+          <div @click.away="openStructureModal = false" class="bg-surface-container-lowest rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-outline-variant/30 flex flex-col gap-4 text-on-surface max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-150">
+            <div class="flex items-start justify-between pb-3 border-b border-surface-container-high">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold shadow-xs">
+                  <span class="material-symbols-outlined text-[22px] text-tertiary-fixed">account_balance</span>
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-base text-primary font-bold">Approved Statutory Fee Schedule</h3>
+                  <p class="text-xs text-on-surface-variant font-medium">Academic Year 2026/2027 &bull; NaSIA &amp; GES Regulated Rates</p>
+                </div>
+              </div>
+              <button @click="openStructureModal = false" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container text-on-surface-variant transition-colors cursor-pointer" type="button">
+                <span class="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr class="bg-surface-container-low text-primary border-b border-surface-container-high">
+                    <th class="p-2.5 font-bold">Division / Class</th>
+                    <th class="p-2.5 font-bold">Tuition Levy</th>
+                    <th class="p-2.5 font-bold">Special Care / Tech</th>
+                    <th class="p-2.5 font-bold text-right">Total Term Fee</th>
+                    <th class="p-2.5 font-bold">Installments</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-surface-container-high/60 text-on-surface">
+                  <tr class="hover:bg-surface-container-low/40">
+                    <td class="p-2.5 font-bold text-primary">Creche &amp; Daycare</td>
+                    <td class="p-2.5">GH₵ 1,450</td>
+                    <td class="p-2.5 text-on-surface-variant">GH₵ 600 (Care &amp; Diet)</td>
+                    <td class="p-2.5 font-extrabold text-primary text-right">GH₵ 2,050</td>
+                    <td class="p-2.5"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-surface-container-high text-primary">2 Tranches (60/40)</span></td>
+                  </tr>
+                  <tr class="hover:bg-surface-container-low/40">
+                    <td class="p-2.5 font-bold text-primary">Nursery (1 &amp; 2)</td>
+                    <td class="p-2.5">GH₵ 1,650</td>
+                    <td class="p-2.5 text-on-surface-variant">GH₵ 400 (Phonics &amp; Play)</td>
+                    <td class="p-2.5 font-extrabold text-primary text-right">GH₵ 2,050</td>
+                    <td class="p-2.5"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-surface-container-high text-primary">2 Tranches (60/40)</span></td>
+                  </tr>
+                  <tr class="hover:bg-surface-container-low/40">
+                    <td class="p-2.5 font-bold text-primary">Kindergarten (KG 1 &amp; 2)</td>
+                    <td class="p-2.5">GH₵ 1,750</td>
+                    <td class="p-2.5 text-on-surface-variant">GH₵ 450 (Activity Pack)</td>
+                    <td class="p-2.5 font-extrabold text-primary text-right">GH₵ 2,200</td>
+                    <td class="p-2.5"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-surface-container-high text-primary">2 Tranches (60/40)</span></td>
+                  </tr>
+                  <tr class="hover:bg-surface-container-low/40">
+                    <td class="p-2.5 font-bold text-primary">Primary (Basic 1 - 6)</td>
+                    <td class="p-2.5">GH₵ 2,200</td>
+                    <td class="p-2.5 text-on-surface-variant">GH₵ 350 (ICT &amp; STEM Lab)</td>
+                    <td class="p-2.5 font-extrabold text-primary text-right">GH₵ 2,550</td>
+                    <td class="p-2.5"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">3 Tranches (50/25/25)</span></td>
+                  </tr>
+                  <tr class="hover:bg-surface-container-low/40">
+                    <td class="p-2.5 font-bold text-primary">Junior High (JHS 1 - 3)</td>
+                    <td class="p-2.5">GH₵ 2,700</td>
+                    <td class="p-2.5 text-on-surface-variant">GH₵ 500 (BECE &amp; Science)</td>
+                    <td class="p-2.5 font-extrabold text-primary text-right">GH₵ 3,200</td>
+                    <td class="p-2.5"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">3 Tranches (50/25/25)</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="p-3 bg-surface-container-low rounded-xl border border-surface-container-high/60 flex items-start gap-2.5 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">verified_user</span>
+              <p>
+                Fees cover all academic tutoring, textbook usage, science and computing lab materials, daily hot lunches, and campus primary healthcare. No hidden supplementary charges without NaSIA and PTA approval.
+              </p>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-surface-container-high">
+              <button @click="exportLedger()" type="button" class="text-xs font-bold text-primary hover:underline flex items-center gap-1 cursor-pointer">
+                <span class="material-symbols-outlined text-[16px]">print</span>
+                <span>Print Official PDF Gazette</span>
+              </button>
+              <button @click="openStructureModal = false" type="button" class="px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-bold transition-colors cursor-pointer">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div> <!-- End adminTabSection_finance -->
+
+
+      <!-- BOTTOM SECTION: QUICK LAUNCHPAD -->
+      <div class="bg-surface-container-lowest p-5 rounded-2xl border border-surface-container-high/60 shadow-xs flex flex-col gap-3.5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]">rocket_launch</span>
+            <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Quick Launchpad</h2>
+          </div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Administrative Shortcuts</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          <button class="group flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all cursor-pointer" onclick="window.location.href = 'inbox.html';" type="button">
+            <div class="w-9 h-9 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-xs">
+              <span class="material-symbols-outlined text-[18px]">cell_tower</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors truncate">Broadcast Advisory</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant truncate">SMS &amp; App Push</span>
+            </div>
+          </button>
+
+          <button class="group flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all cursor-pointer" onclick="window.location.href = 'reports.html';" type="button">
+            <div class="w-9 h-9 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-xs">
+              <span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors truncate">NaSIA Report</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant truncate">Download Signed PDF</span>
+            </div>
+          </button>
+
+          <button class="group flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all cursor-pointer" onclick="window.location.href = 'users.html';" type="button">
+            <div class="w-9 h-9 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-xs">
+              <span class="material-symbols-outlined text-[18px]">badge</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors truncate">Faculty Roster</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant truncate">28 Active Staff</span>
+            </div>
+          </button>
+
+          <button class="group flex items-center gap-3 p-3.5 rounded-xl bg-error-container/40 hover:bg-error-container/60 text-left transition-all cursor-pointer" onclick="alert('Lockdown Drill Simulation Initiated');" type="button">
+            <div class="w-9 h-9 rounded-xl bg-secondary text-on-secondary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-xs">
+              <span class="material-symbols-outlined text-[18px]">crisis_alert</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-md text-label-md text-on-error-container font-semibold truncate">Lockdown Drill</span>
+              <span class="font-body-sm text-body-sm text-secondary truncate">Campus Emergency Protocol</span>
+            </div>
+          </button>
+        </div>
+      </div>
+</div></main></div>
+<script>
+function switchAdminView(tab) {
+  const tabs = ['approvals', 'vitals', 'finance'];
+  tabs.forEach(t => {
+    const btn = document.getElementById('adminTabBtn_' + t);
+    const sec = document.getElementById('adminTabSection_' + t);
+    if (t === tab) {
+      if (btn) {
+        btn.className = "admin-view-tab px-5 py-2 rounded-full text-xs font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5 cursor-pointer";
+      }
+      if (sec) sec.classList.remove('hidden');
+    } else {
+      if (btn) {
+        btn.className = "admin-view-tab px-5 py-2 rounded-full text-xs font-semibold transition-all text-on-surface-variant hover:text-on-surface hover:bg-black/5 flex items-center gap-1.5 cursor-pointer";
+      }
+      if (sec) sec.classList.add('hidden');
+    }
+  });
+}
+
+// Auto-switch tab if hash present or triggered
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'school-fees-section' || hash === 'fees' || hash === 'finance' || hash === 'bursary') {
+    switchAdminView('finance');
+  } else if (hash === 'vitals' || hash === 'gate' || hash === 'attendance') {
+    switchAdminView('vitals');
+  } else if (hash === 'approvals' || hash === 'queue') {
+    switchAdminView('approvals');
+  }
+});
+</script>
+</body></html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"outline-variant":"#c5c6d1","primary":"#011549","secondary-fixed":"#ffdad5","on-primary-container":"#8494cd","surface-container-highest":"#dde3ec","surface":"#eef2f6","surface-dim":"#d5dae4","on-secondary-fixed-variant":"#930004","error-container":"#ffdad6","primary-container":"#1a2b5e","on-background":"#161c23","on-surface-variant":"#45464f","tertiary-fixed-dim":"#78dc86","secondary":"#ba0a0c","surface-tint":"#4c5c92","tertiary-container":"#003712","inverse-primary":"#b5c4ff","surface-container-low":"#eef4fe","surface-container-lowest":"#ffffff","tertiary-fixed":"#94f9a0","on-secondary-container":"#fffbff","on-error-container":"#93000a","on-tertiary-fixed":"#002108","surface-container-high":"#e3e8f2","on-primary-fixed":"#03174b","on-surface":"#161c23","on-secondary-fixed":"#410001","primary-fixed-dim":"#b5c4ff","inverse-surface":"#2b3138","tertiary":"#001f07","inverse-on-surface":"#ecf1fb","background":"#eef2f6","on-primary":"#ffffff","surface-bright":"#f7f9ff","on-error":"#ffffff","outline":"#757680","secondary-container":"#df2d23","on-primary-fixed-variant":"#344478","on-tertiary-fixed-variant":"#00531f","surface-variant":"#dde3ec","on-secondary":"#ffffff","error":"#ba1a1a","on-tertiary-container":"#46a95a","surface-container":"#e9eef8","primary-fixed":"#dce1ff","on-tertiary":"#ffffff","secondary-fixed-dim":"#ffb4a9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","space-md":"1rem","margin-sm":"1rem","space-xs":"0.25rem","space-xl":"2.5rem","space-lg":"1.5rem","margin":"2rem","gutter-sm":"1rem","gutter":"1.5rem"},"fontFamily":{"headline-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},"fontSize":{"headline-md":["20px",{"lineHeight":"26px","fontWeight":"700"}],"display-lg-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"800"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["12.5px",{"lineHeight":"17px","letterSpacing":"0.03em","fontWeight":"700"}],"headline-xl-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg":["26px",{"lineHeight":"34px","fontWeight":"700"}],"body-lg":["15.5px",{"lineHeight":"23px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-md":["11px",{"lineHeight":"15px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-sm":["17px",{"lineHeight":"22px","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-sm":["10px",{"lineHeight":"13px","letterSpacing":"0.04em","fontWeight":"600"}],"body-sm":["12.5px",{"lineHeight":"17px","fontWeight":"400"}]}}}};</script><title>Carepoint - Teacher Approvals Engine</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "staff",
+            label: "Teacher Approvals Engine",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-approvals.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface text-on-surface font-body-md"><aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-outline-variant/30">
+  <!-- Top Header with Crest, Title, Motto, Badge, and Repositioned Close Button -->
+  <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider">STAFF OPERATIONAL PORTAL</span>
+    </div>
+  </div>
+
+  <!-- Middle Nav Area (Scrolls smoothly if screen is short, never crushes the class card!) -->
+  <div class="flex-1 min-h-0 overflow-y-auto px-3 py-3">
+    <div class="font-label-sm text-[11px] uppercase tracking-wider text-outline px-2 mb-1.5 font-bold">
+      Academic Operations
+    </div>
+    <nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm">
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-dashboard" href="dashboard.html">
+        <span class="material-symbols-outlined text-[20px]">grid_view</span>
+        <span>Dashboard</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-attendance" href="attendance.html">
+        <span class="material-symbols-outlined text-[20px]">fact_check</span>
+        <span>Attendance</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-gradebook" href="gradebook.html">
+        <span class="material-symbols-outlined text-[20px]">menu_book</span>
+        <span>Gradebook</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-health-and-welfare" href="health.html">
+        <span class="material-symbols-outlined text-[20px]">medical_services</span>
+        <span>Health &amp; Welfare</span>
+      </a>
+      <a aria-current="page" class="flex items-center justify-between px-3 py-2 transition-colors bg-primary-container text-on-primary font-bold rounded-lg shadow-sm font-label-lg text-label-lg" data-path="staff-approvals-engine" href="approvals.html">
+        <div class="flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-[20px]">verified</span>
+          <span>Approvals Engine</span>
+        </div>
+        <span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-label-sm font-bold">3</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-messages" href="messages.html">
+        <span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+        <span>Messages</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Bottom My Class Layer Card (Docked, shrink-0, comfortably padded with breathing room) -->
+  <div class="shrink-0 p-3 mx-3 mb-3 rounded-xl bg-surface-container-low flex flex-col gap-1 border border-surface-container-high/80 shadow-2xs">
+    <div class="flex items-center justify-between">
+      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">My Class</span>
+      <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Active
+      </span>
+    </div>
+    <div class="font-headline-sm text-base text-primary font-bold leading-tight" id="staff-assigned-class-name">Sunflower Class</div>
+    <div class="font-body-sm text-xs text-on-surface-variant" id="staff-assigned-class-sub">Basic 2 • Academic Lead</div>
+    <button id="switchClassBtn" onclick="openSwitchClassModal()" class="mt-1.5 w-full py-1.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-primary text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs active:scale-[0.98] border border-outline-variant/20" type="button">
+      <span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+      <span>Change Class</span>
+    </button>
+  </div>
+</aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-1 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low hover:bg-surface-container rounded-full transition-colors cursor-pointer" id="staff-duty-badge" onclick="openStaffDutyModal()" title="View Shift Details &amp; Clock-Out"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface font-semibold" id="staff-duty-status-text">Campus: On-Duty (Main Block)</span></div><div class="hidden md:inline-flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-low rounded-full text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">calendar_today</span><span class="font-label-sm text-label-sm font-medium">Term 1, 2026/2027</span></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-secondary text-on-secondary text-[10px] font-bold flex items-center justify-center">3</span></button><div class="h-8 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:block"><div class="font-label-lg text-label-lg text-on-surface leading-snug">Mrs. Beatrice Abbey</div><div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 Sunflower Lead</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA"/><button id="staff-clockout-btn" class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors cursor-pointer" title="Clock-Out of Campus Duty" onclick="openStaffDutyModal()" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></header><main class="w-full px-space-lg pt-16 flex-1 bg-surface"><div class="flex flex-col w-full pb-space-xl">
+<!-- Tricolor Architectural Heritage Ribbon -->
+<div class="w-full flex h-1.5 rounded-full overflow-hidden shadow-xs mb-space-md">
+<div class="w-1/3 bg-sky-400"></div>
+<div class="w-1/3 bg-secondary"></div>
+<div class="w-1/3 bg-tertiary-fixed-dim"></div>
+</div>
+<!-- Header & Institutional Banner -->
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-space-md mb-space-lg">
+<div class="carepoint-hover-card flex flex-col gap-1 max-w-3xl cursor-pointer">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Official School Approvals</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Staff Desk • 2026/2027</span>
+</div>
+<div class="flex items-center gap-3 flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Staff Approvals &amp; Requests</h1>
+<span class="carepoint-hover-hint">Hover to read note</span>
+</div>
+<div class="carepoint-hover-detail">
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+        All grade changes, student health notes, and lesson plans must be approved by Headmistress Dr. Elizabeth Appiah before parents can see them.
+      </p>
+</div>
+</div>
+<!-- Quick Action Hub -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container-high text-primary hover:bg-surface-container-highest transition-all duration-200 font-label-lg text-label-lg shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+        Check Status
+      </button>
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all duration-200 font-label-lg text-label-lg shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+        New Request
+      </button>
+</div>
+</div>
+<!-- Metrics Bar / Tier Overview -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Total Submissions -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Total Requests</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<span class="font-display-lg text-headline-xl text-primary font-bold">18</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Term 1 (Sunflower)</span>
+</div>
+<div class="mt-2 w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<!-- Pending Head Sign-Off -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-amber-800 font-bold">Waiting for Approval</span>
+<div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-amber-700">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<span class="font-display-lg text-headline-xl text-amber-700 font-bold">3</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-label-sm text-label-sm font-bold">Waiting</span>
+</div>
+<div class="mt-2 w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full" style="width: 16.6%"></div>
+</div>
+</div>
+<!-- Approved & Released -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-emerald-800 font-bold">Approved Requests</span>
+<div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-700">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<span class="font-display-lg text-headline-xl text-emerald-800 font-bold">14</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold">Completed</span>
+</div>
+<div class="mt-2 w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 77.7%"></div>
+</div>
+</div>
+<!-- Revisions Requested -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Changes Needed</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">assignment_late</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<span class="font-display-lg text-headline-xl text-secondary font-bold">1</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">Needs Update</span>
+</div>
+<div class="mt-2 w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 5.5%"></div>
+</div>
+</div>
+</div>
+<!-- Search & Filter Controls -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<div class="flex flex-col md:flex-row gap-space-md items-center justify-between">
+<!-- Search Input -->
+<div class="relative w-full md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full bg-surface-container-low pl-10 pr-4 py-2 rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-colors shadow-xs" id="search-input" placeholder="Search by student name, ID, or subject..." type="text"/>
+</div>
+<!-- Category Filter Pills -->
+<div class="flex flex-wrap items-center gap-1.5 w-full md:w-auto">
+<button class="category-chip px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-xs transition-colors" data-filter="all" type="button">
+          All (18)
+        </button>
+<button class="category-chip px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface font-label-sm text-label-sm font-bold transition-colors" data-filter="Mark Changes" type="button">
+          Mark Changes
+        </button>
+<button class="category-chip px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface font-label-sm text-label-sm font-bold transition-colors" data-filter="Health Alerts" type="button">
+          Health Notes
+        </button>
+<button class="category-chip px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface font-label-sm text-label-sm font-bold transition-colors" data-filter="Lesson Plans" type="button">
+          Lesson Plans
+        </button>
+<button class="category-chip px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface font-label-sm text-label-sm font-bold transition-colors" data-filter="Timetable Changes" type="button">
+          Timetable Changes
+        </button>
+<button class="category-chip px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface font-label-sm text-label-sm font-bold transition-colors" data-filter="Behavior Notes" type="button">
+          Behavior Notes
+        </button>
+</div>
+<!-- Status Dropdown Filter -->
+<div class="flex items-center gap-2 self-end md:self-auto shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Status:</span>
+<select class="bg-surface-container-low text-primary font-label-sm text-label-sm font-bold rounded-lg px-3 py-2 focus:outline-none cursor-pointer" id="status-select">
+<option value="all">All Statuses</option>
+<option value="pending">Waiting</option>
+<option value="approved">Approved</option>
+<option value="revision">Needs Changes</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Approvals Audit Table Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-space-lg">
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">fact_check</span>
+<span class="font-label-lg text-label-lg text-primary">Approval Requests List</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim inline-block"></span>
+<span>Always up to date</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm" id="approvals-table">
+<thead class="bg-surface-container-high/60 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-3 px-space-md">Ref ID</th>
+<th class="py-3 px-space-md">Type &amp; Details</th>
+<th class="py-3 px-space-md">Student / Class</th>
+<th class="py-3 px-space-md">Date Sent</th>
+<th class="py-3 px-space-md">Reviewed By</th>
+<th class="py-3 px-space-md">Status</th>
+<th class="py-3 px-space-md">Headmistress Note</th>
+<th class="py-3 px-space-md text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container" id="table-rows">
+<!-- Row 1: Health Alert -->
+<tr class="hover:bg-surface-container-low/50 transition-colors approval-row" data-category="Health Alerts" data-search="APP-9021 kofi mensah basic 2 health alert nurse asante" data-status="pending">
+<td class="py-3.5 px-space-md font-mono text-label-sm text-primary font-bold">#APP-9021</td>
+<td class="py-3.5 px-space-md">
+<div class="font-label-md text-label-md font-bold text-on-surface">Health Alert</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Asthma attack note</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="font-label-md text-label-md font-bold text-primary">Kofi Mensah</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 (Sunflower)</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap text-on-surface-variant text-label-sm">
+<div>Oct 16, 2026</div>
+<div class="text-[11px] text-outline">10:50 GMT</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[10px] font-bold">EA</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Dr. E. Appiah</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 font-label-sm text-label-sm font-bold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+                Waiting
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant text-body-sm max-w-xs">
+<p class="truncate text-on-surface italic">“With Nurse Asante at the school clinic.”</p>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold transition-colors" onclick="openDetailsModal('APP-9021', 'Kofi Mensah', 'Health Alert', 'With Nurse Asante at the school clinic.', 'Waiting')" type="button">
+                View Details
+              </button>
+</td>
+</tr>
+<!-- Row 2: Mark Change -->
+<tr class="hover:bg-surface-container-low/50 transition-colors approval-row" data-category="Mark Changes" data-search="APP-8842 kwabena osei math mid-term mark change dr appiah" data-status="approved">
+<td class="py-3.5 px-space-md font-mono text-label-sm text-primary font-bold">#APP-8842</td>
+<td class="py-3.5 px-space-md">
+<div class="font-label-md text-label-md font-bold text-on-surface">Mark Change</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Math Mid-Term</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="font-label-md text-label-md font-bold text-primary">Kwabena Osei</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 (Sunflower)</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap text-on-surface-variant text-label-sm">
+<div>Oct 15, 2026</div>
+<div class="text-[11px] text-outline">14:20 GMT</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[10px] font-bold">EA</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Dr. E. Appiah</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-900 font-label-sm text-label-sm font-bold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                Approved
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant text-body-sm max-w-xs">
+<p class="truncate text-on-surface italic">“Mark changed from 12 to 15 after checking homework.”</p>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-900 font-label-sm text-label-sm font-bold transition-colors" onclick="openCertModal('APP-8842', 'Kwabena Osei', 'Mark Change', 'Mark changed from 12 to 15 after checking homework.')" type="button">
+                View Certificate
+              </button>
+</td>
+</tr>
+<!-- Row 3: Lesson Plans -->
+<tr class="hover:bg-surface-container-low/50 transition-colors approval-row" data-category="Lesson Plans" data-search="APP-8710 week 7 lesson plan basic 2 sunflower kwesi osei primary" data-status="approved">
+<td class="py-3.5 px-space-md font-mono text-label-sm text-primary font-bold">#APP-8710</td>
+<td class="py-3.5 px-space-md">
+<div class="font-label-md text-label-md font-bold text-on-surface">Lesson Plans</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Week 7 Teaching Plan</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="font-label-md text-label-md font-bold text-primary">Sunflower Class</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 (All Students)</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap text-on-surface-variant text-label-sm">
+<div>Oct 13, 2026</div>
+<div class="text-[11px] text-outline">16:00 GMT</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[10px] font-bold">KO</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Mr. Kwesi Osei</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-900 font-label-sm text-label-sm font-bold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                Approved
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant text-body-sm max-w-xs">
+<p class="truncate text-on-surface italic">“Good math lesson plan. Science room booked.”</p>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold transition-colors" onclick="openDetailsModal('APP-8710', 'Sunflower Class', 'Lesson Plans', 'Good math lesson plan. Science room booked.', 'Approved')" type="button">
+                View Note
+              </button>
+</td>
+</tr>
+<!-- Row 4: Timetable Changes -->
+<tr class="hover:bg-surface-container-low/50 transition-colors approval-row" data-category="Timetable Changes" data-search="APP-8650 timetable change basic 2 sunflower computer lab dr appiah" data-status="revision">
+<td class="py-3.5 px-space-md font-mono text-label-sm text-primary font-bold">#APP-8650</td>
+<td class="py-3.5 px-space-md">
+<div class="font-label-md text-label-md font-bold text-on-surface">Timetable Changes</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Computer Lab Time Change</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="font-label-md text-label-md font-bold text-primary">Sunflower Class</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 Lab Shift</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap text-on-surface-variant text-label-sm">
+<div>Oct 10, 2026</div>
+<div class="text-[11px] text-outline">09:15 GMT</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[10px] font-bold">EA</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Dr. E. Appiah</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Needs Changes
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant text-body-sm max-w-xs">
+<p class="truncate text-secondary font-medium italic">“Computer lab is already booked on Tuesday 1:00 PM. Please change to Thursday.”</p>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 font-label-sm text-label-sm font-bold transition-colors shadow-xs" onclick="openEditModal('APP-8650')" type="button">
+                Edit &amp; Send Again
+              </button>
+</td>
+</tr>
+<!-- Row 5: Behavior Notes -->
+<tr class="hover:bg-surface-container-low/50 transition-colors approval-row" data-category="Behavior Notes" data-search="APP-8520 behavior note samuel quaye dr appiah" data-status="approved">
+<td class="py-3.5 px-space-md font-mono text-label-sm text-primary font-bold">#APP-8520</td>
+<td class="py-3.5 px-space-md">
+<div class="font-label-md text-label-md font-bold text-on-surface">Behavior Notes</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Classroom note</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="font-label-md text-label-md font-bold text-primary">Samuel Quaye</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 (Sunflower)</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap text-on-surface-variant text-label-sm">
+<div>Oct 08, 2026</div>
+<div class="text-[11px] text-outline">11:30 GMT</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[10px] font-bold">EA</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Dr. E. Appiah</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-900 font-label-sm text-label-sm font-bold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                Approved
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant text-body-sm max-w-xs">
+<p class="truncate text-on-surface italic">“Meeting with parents finished and recorded.”</p>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold transition-colors" onclick="openDetailsModal('APP-8520', 'Samuel Quaye', 'Behavior Notes', 'Meeting with parents finished and recorded.', 'Approved')" type="button">
+                View Note
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Empty State Fallback -->
+<div class="hidden p-space-xl text-center flex flex-col items-center justify-center gap-2" id="no-results-msg">
+<span class="material-symbols-outlined text-[48px] text-outline">find_in_page</span>
+<div class="font-headline-sm text-headline-sm text-primary">No requests found</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Try clearing your search or filters to see all requests.</p>
+<button class="mt-2 px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold" id="reset-filter-btn" type="button">Clear Filters</button>
+</div>
+</div>
+<!-- Policy & Statutory Compliance Callout -->
+<div class="rounded-xl bg-primary-container text-on-primary p-space-lg shadow-sm flex flex-col md:flex-row items-center gap-space-lg justify-between mb-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest/10 flex items-center justify-center text-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[28px]">policy</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-primary">Official School Records</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-tertiary-fixed text-on-tertiary-fixed font-bold">Ghana School Standards</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container">
+          All approvals are recorded in the school system following official standards. Once notes are sent to parents, records cannot be changed.
+        </p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-space-sm">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold hover:bg-surface-container transition-colors shadow-xs" type="button">
+        Download Records
+      </button>
+</div>
+</div>
+<!-- Digital Verification Modal (Interactive Overlay) -->
+<div class="fixed inset-0 bg-primary/40 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4" id="cert-modal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-700">verified</span>
+<span class="font-headline-sm text-headline-sm text-primary">Official Approval Details</span>
+</div>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="closeModals()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2 font-mono text-[12px] text-on-surface-variant">
+<div class="flex justify-between"><span class="text-outline">RECORD ID:</span> <span class="font-bold text-primary">CPS-092281</span></div>
+<div class="flex justify-between"><span class="text-outline">REQUEST ID:</span> <span class="text-primary font-bold" id="modal-ref">#APP-8842</span></div>
+<div class="flex justify-between"><span class="text-outline">APPROVED BY:</span> <span class="text-on-surface">Dr. Elizabeth Appiah (Headmistress)</span></div>
+<div class="flex justify-between"><span class="text-outline">DATE &amp; TIME:</span> <span>15-OCT-2026 14:20 GMT</span></div>
+<div class="flex justify-between"><span class="text-outline">STATUS:</span> <span class="text-emerald-700 font-bold">SENT TO PARENT</span></div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Headmistress Note</span>
+<p class="font-body-sm text-body-sm text-on-surface italic p-3 rounded-lg bg-surface-container" id="modal-feedback"></p>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high text-primary font-label-sm text-label-sm font-bold hover:bg-surface-container-highest transition-colors" onclick="closeModals()" type="button">Close</button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-xs" onclick="alert('Downloading PDF...'); closeModals();" type="button">Download PDF</button>
+</div>
+</div>
+</div>
+<!-- Detail / Edit Modal -->
+<div class="fixed inset-0 bg-primary/40 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4" id="action-modal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">rate_review</span>
+<span class="font-headline-sm text-headline-sm text-primary" id="act-modal-title">Review Request</span>
+</div>
+<button class="p-1 rounded-md text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="closeModals()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="grid grid-cols-2 gap-2 text-label-sm">
+<div class="p-2 rounded-lg bg-surface-container-low">
+<span class="text-on-surface-variant block">Student / Class:</span>
+<span class="font-bold text-primary" id="act-target"></span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low">
+<span class="text-on-surface-variant block">Status:</span>
+<span class="font-bold text-secondary" id="act-status"></span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-bold">Notes or Reason for Change</label>
+<textarea class="w-full bg-surface-container p-3 rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none" id="act-textarea" rows="4"></textarea>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high text-primary font-label-sm text-label-sm font-bold hover:bg-surface-container-highest transition-colors" onclick="closeModals()" type="button">Close</button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-xs" onclick="saveSubmission()" type="button">Save Changes</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Filter and Search Logic
+  const searchInput = document.getElementById('search-input');
+  const statusSelect = document.getElementById('status-select');
+  const categoryChips = document.querySelectorAll('.category-chip');
+  const rows = document.querySelectorAll('.approval-row');
+  const noResultsMsg = document.getElementById('no-results-msg');
+  const resetBtn = document.getElementById('reset-filter-btn');
+
+  let activeCategory = 'all';
+
+  function applyFilters() {
+    const query = searchInput.value.toLowerCase().trim();
+    const statusVal = statusSelect.value;
+    let visibleCount = 0;
+
+    rows.forEach(row => {
+      const rowCategory = row.getAttribute('data-category');
+      const rowStatus = row.getAttribute('data-status');
+      const rowSearch = row.getAttribute('data-search').toLowerCase();
+
+      const matchCategory = (activeCategory === 'all' || rowCategory.toLowerCase() === activeCategory.toLowerCase());
+      const matchStatus = (statusVal === 'all' || rowStatus === statusVal);
+      const matchSearch = (!query || rowSearch.includes(query));
+
+      if (matchCategory && matchStatus && matchSearch) {
+        row.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        row.classList.add('hidden');
+      }
+    });
+
+    if (visibleCount === 0) {
+      noResultsMsg.classList.remove('hidden');
+    } else {
+      noResultsMsg.classList.add('hidden');
+    }
+  }
+
+  // Event Listeners for Filters
+  searchInput.addEventListener('input', applyFilters);
+  statusSelect.addEventListener('change', applyFilters);
+
+  categoryChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      categoryChips.forEach(c => {
+        c.classList.remove('bg-primary', 'text-on-primary');
+        c.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      chip.classList.add('bg-primary', 'text-on-primary');
+
+      activeCategory = chip.getAttribute('data-filter');
+      applyFilters();
+    });
+  });
+
+  resetBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    statusSelect.value = 'all';
+    activeCategory = 'all';
+    categoryChips.forEach((c, idx) => {
+      if (idx === 0) {
+        c.classList.add('bg-primary', 'text-on-primary');
+        c.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      } else {
+        c.classList.remove('bg-primary', 'text-on-primary');
+        c.classList.add('bg-surface-container', 'text-on-surface-variant');
+      }
+    });
+    applyFilters();
+  });
+
+  // Modal Handlers
+  function openCertModal(ref, ward, cat, feedback) {
+    document.getElementById('modal-ref').textContent = ref;
+    document.getElementById('modal-feedback').textContent = `"${feedback}"`;
+    document.getElementById('cert-modal').classList.remove('hidden');
+  }
+
+  function openDetailsModal(ref, target, cat, feedback, status) {
+    document.getElementById('act-modal-title').textContent = `${cat} Details (${ref})`;
+    document.getElementById('act-target').textContent = target;
+    document.getElementById('act-status').textContent = status;
+    document.getElementById('act-textarea').value = feedback;
+    document.getElementById('action-modal').classList.remove('hidden');
+  }
+
+  function openEditModal(ref) {
+    document.getElementById('act-modal-title').textContent = `Edit & Resubmit (${ref})`;
+    document.getElementById('act-target').textContent = 'Sunflower Class Computing Shift';
+    document.getElementById('act-status').textContent = 'Revisions Requested';
+    document.getElementById('act-textarea').value = 'Rescheduling computing lab session to Thursday 13:00 to remove JHS 1 room collision.';
+    document.getElementById('action-modal').classList.remove('hidden');
+  }
+
+  function closeModals() {
+    document.getElementById('cert-modal').classList.add('hidden');
+    document.getElementById('action-modal').classList.add('hidden');
+  }
+
+  function saveSubmission() {
+    alert('Submission updated and forwarded to Headmistress review queue.');
+    closeModals();
+  }
+</script></main><footer class="w-full bg-surface-container-low py-space-lg px-space-lg mt-space-xl"><div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary">Carepoint Community School</span><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface text-label-sm font-label-sm font-semibold">NaSIA &amp; GES Accredited</span></div><div class="font-body-sm text-body-sm text-on-surface-variant">Academic Excellence &amp; Character Formative Academy • Mind, Heart, Hands Standards Policy compliant.</div></div><div class="flex flex-wrap items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm"><span>Campus Ext: <strong>4102 (Staff Desk)</strong></span><span>IT Helpdesk: <strong>helpdesk@carepoint.edu</strong></span><span>Term 1: <strong>Week 6 of 14</strong></span></div></div></footer></div></body></html>

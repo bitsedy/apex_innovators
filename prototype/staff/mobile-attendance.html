@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>html,body{width:100vw;margin:0;padding:0;background-color:#f7f9ff;body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#011549", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#930004", "on-error": "#ffffff", "secondary-fixed": "#ffdad5", "on-primary-fixed-variant": "#344478", "on-surface-variant": "#45464f", "on-surface": "#161c23", "outline-variant": "#c5c6d1", "inverse-surface": "#2b3138", "surface-dim": "#d5dae4", "on-tertiary-fixed": "#002108", "primary-fixed": "#dce1ff", "inverse-primary": "#b5c4ff", "surface-variant": "#dde3ec", "primary-container": "#1a2b5e", "on-error-container": "#93000a", "on-secondary-container": "#fffbff", "background": "#f7f9ff", "secondary": "#ba0a0c", "on-primary-fixed": "#03174b", "tertiary-container": "#003712", "on-tertiary-container": "#46a95a", "surface-container-high": "#e3e8f2", "on-secondary": "#ffffff", "surface-container": "#e9eef8", "secondary-container": "#df2d23", "surface-container-lowest": "#ffffff", "surface": "#f7f9ff", "on-tertiary-fixed-variant": "#00531f", "surface-tint": "#4c5c92", "surface-container-highest": "#dde3ec", "error": "#ba1a1a", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b5c4ff", "secondary-fixed-dim": "#ffb4a9", "on-primary-container": "#8494cd", "tertiary-fixed-dim": "#78dc86", "error-container": "#ffdad6", "inverse-on-surface": "#ecf1fb", "on-secondary-fixed": "#410001", "surface-bright": "#f7f9ff", "on-background": "#161c23", "tertiary": "#001f07", "tertiary-fixed": "#94f9a0", "outline": "#757680", "surface-container-low": "#eef4fe" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "2rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-sm": "1rem", "space-sm": "0.5rem", "margin-sm": "1rem" }, fontFamily: { "headline-xl": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"] }, fontSize: { "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["11px", { "lineHeight": "15px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-lg": ["12.5px", { "lineHeight": "17px", "letterSpacing": "0.03em", "fontWeight": "700" }], "body-sm": ["12.5px", { "lineHeight": "17px", "fontWeight": "400" }], "headline-lg": ["26px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-xl-mobile": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["17px", { "lineHeight": "22px", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "13px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "700" }], "body-lg": ["15.5px", { "lineHeight": "23px", "fontWeight": "400" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<title>Carepoint - Mobile Attendance Entry</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "staff",
+            label: "Mobile Attendance Entry",
+            isMobile: true,
+            relRoot: "../",
+            counterpart: "attendance.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-gutter-sm flex flex-col justify-center"><div class="flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-sm min-w-0 flex-1"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shrink-0"><span class="material-symbols-outlined text-[20px]">school</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Carepoint</span><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase shrink-0">Term 1</span></div><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Mind • Heart • Hands</span></div></div><div class="flex items-center gap-space-xs shrink-0"><div id="mobile-staff-duty-badge" onclick="openStaffDutyModal()" class="cursor-pointer flex items-center gap-1 px-space-xs py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0" title="Shift Status - Tap to Clock-Out"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="hidden xs:inline">Clocked In 07:15</span><span class="xs:hidden">07:15</span></div><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA"/></div></div><div class="hidden"><span class="font-headline-sm text-headline-sm">Staff Attendance</span></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-20 bg-surface"><div class="flex flex-col w-full pb-24">
+<!-- Class Context & Dynamic Metrics Banner -->
+<div class="px-gutter-sm pt-space-sm pb-space-md">
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<!-- Decorative Tricolor School Accent Bar -->
+<div class="absolute top-0 left-0 right-0 h-1.5 flex">
+<div class="h-full w-1/3 bg-primary"></div>
+<div class="h-full w-1/3 bg-secondary-container"></div>
+<div class="h-full w-1/3 bg-tertiary-fixed-dim"></div>
+</div>
+<div class="flex items-start justify-between gap-space-sm pt-1">
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Basic 2 Sunflower</span>
+<span class="text-outline-variant font-label-sm text-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Week 8</span>
+</div>
+<h1 class="font-headline-sm text-headline-sm text-primary truncate mt-0.5">Morning Roll-Call</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span>
+            Thursday, 24 Oct • Term 1
+          </p>
+</div>
+<!-- Quick Switch Calendar Trigger -->
+<button aria-label="Change session date" class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-primary shadow-sm active:scale-95 transition-transform shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">edit_calendar</span>
+</button>
+</div>
+<!-- Realtime Tally Metrics Counter -->
+<div class="grid grid-cols-3 gap-space-xs mt-space-md">
+<div class="bg-surface rounded-lg p-space-xs text-center shadow-sm">
+<div class="flex items-center justify-center gap-1 text-on-tertiary-container">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Present</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-extrabold block" id="present-count">26</span>
+</div>
+<div class="bg-surface rounded-lg p-space-xs text-center shadow-sm">
+<div class="flex items-center justify-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">cancel</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Absent</span>
+</div>
+<span class="font-headline-md text-headline-md text-secondary font-extrabold block" id="absent-count">2</span>
+</div>
+<div class="bg-surface rounded-lg p-space-xs text-center shadow-sm">
+<div class="flex items-center justify-center gap-1 text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Late</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-primary-fixed-variant font-extrabold block" id="late-count">1</span>
+</div>
+</div>
+</div>
+</div>
+<!-- One-Tap Bulk Actions -->
+<div class="px-gutter-sm flex gap-space-xs">
+<button class="flex-1 bg-primary text-on-primary py-2.5 px-space-sm rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform" id="mark-all-present-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+<span class="truncate">Mark Remaining Present</span>
+</button>
+<button class="bg-surface-container-high text-primary py-2.5 px-space-sm rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-1 shadow-sm active:scale-[0.98] transition-transform shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="hidden xs:inline">GES Reg</span>
+</button>
+</div>
+<!-- Filter & Rapid Search Bar -->
+<div class="px-gutter-sm mt-space-sm">
+<div class="bg-surface-container-low rounded-xl px-space-sm py-2 flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">search</span>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline outline-none" id="student-search" placeholder="Filter student name or ID..." type="text"/>
+<button class="hidden text-outline hover:text-on-surface" id="clear-search-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Student Roster List -->
+<div class="px-gutter-sm mt-space-md flex flex-col gap-space-sm" id="students-container">
+<!-- Student 1 -->
+<div class="student-card bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs" data-student-id="CP-2021-084" data-student-name="Kofi Nana Mensah">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-11 h-11 rounded-full object-cover shadow-inner" data-alt="Close up warm portrait photo of an 8-year-old Ghanaian schoolboy in neat navy blue school uniform shirt with golden trim, smiling joyfully in natural morning classroom lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh4aVKWo9a1E-LPUW0X7d-fyBXrIF73ZXL1vP9Lb5eXkvFEzLwHzJqmgzydB3WO9oH3wxpmAeNfI9YD8BbmC0SwdcW5xzUAEpzLO5a22d0Y61l5jSJvOx5iUUUvUFjUGjWeiEgCm0kxt2fekPL795mUkiNaJ7a71HylhSHMxUz3CQmm-_sSYu7MEwgkvfKktxkUJd3Gc8AIPTnNOQ9VMkEMD4zECzoYwQzBNcRMj2l16i-HEnuFI9_tQ"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-fixed-dim border-2 border-surface-container-lowest flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate text-base leading-tight">Kofi Nana Mensah</h2>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-mono">ID: CP-2021-084 • Roll #01</p>
+</div>
+</div>
+<!-- 3-Segment Segmented Status Selector -->
+<div aria-label="Attendance for Kofi Nana Mensah" class="flex items-center bg-surface-container p-0.5 rounded-lg shrink-0 gap-0.5" role="radiogroup">
+<button aria-pressed="true" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all bg-tertiary-fixed text-on-tertiary-fixed shadow-sm" data-status="P" type="button">P</button>
+<button aria-pressed="false" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all text-on-surface-variant hover:bg-surface" data-status="A" type="button">A</button>
+<button aria-pressed="false" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all text-on-surface-variant hover:bg-surface" data-status="L" type="button">L</button>
+</div>
+</div>
+<!-- Teacher / System Note Tag -->
+<div class="bg-surface-container-low px-space-xs py-1 rounded-md flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container">history_toggle_off</span>
+<span class="font-label-sm text-label-sm">Arrived 07:42 GMT • Clocked at School Gate</span>
+</div>
+</div>
+<!-- Student 2 -->
+<div class="student-card bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs" data-student-id="CP-2021-092" data-student-name="Akua Boateng">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-11 h-11 rounded-full object-cover shadow-inner" data-alt="Charming studio portrait of a 9-year-old West African primary schoolgirl with braided hair wearing clean school uniform, smiling brightly against soft blue classroom background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUv-kx11xUabMk-qkUXh2KM59-4gLkhJGHR8MNpBJwG10vM37oOXHjKQYp6UagaSEM9zgmxUi1Tw_hrJ5MhUIsceeX2wnik1hMAJPvxXIC6EfyNPK-L8eLEt1dc7VfhyKFUXzSoVhJm-j_02ugw_Q9Akqhz2Ma84UJTWOOl1c4AeaWHJQiekBGHw1Hc3rkMOkGgiTr1svaUz8j1njhPQIO7eDRrXDsjzJQbkAjX2jcdNS5Ct0-5gESDQ"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-fixed-dim border-2 border-surface-container-lowest flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+</span>
+</div>
+<div class="min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate text-base leading-tight">Akua Boateng</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-mono">ID: CP-2021-092 • Roll #02</p>
+</div>
+</div>
+<div aria-label="Attendance for Akua Boateng" class="flex items-center bg-surface-container p-0.5 rounded-lg shrink-0 gap-0.5" role="radiogroup">
+<button aria-pressed="true" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all bg-tertiary-fixed text-on-tertiary-fixed shadow-sm" data-status="P" type="button">P</button>
+<button aria-pressed="false" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all text-on-surface-variant hover:bg-surface" data-status="A" type="button">A</button>
+<button aria-pressed="false" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all text-on-surface-variant hover:bg-surface" data-status="L" type="button">L</button>
+</div>
+</div>
+</div>
+<!-- Student 3 (Absent with Medical Excuse) -->
+<div class="student-card bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs" data-student-id="CP-2021-118" data-student-name="Kwadwo Osei">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-11 h-11 rounded-full object-cover shadow-inner" data-alt="Portrait photo of a young West African boy with gentle warm expression, wearing school sweater, high key portrait lighting in soft school hallway." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbT-BvHdLO4t_-_1vpPPl5Mx8BvcT5Q7_uriYbYECA3vyej9zpBvRUBa4q3zaUTJBjqlkffee9yoXrcL1qwjzwNMK4fbcaXvlSRkmMxq_ojIjw4CvO1069RQSb_JbkrPil2KScilB0gz3sZoOxDVUcoOjOidHAoE6syLUMu_k8d7hklpsuXxVG1SeTG5G74YOjoqTtEMWLp1MuXx9AOt5AW8qQuPxBfFvK_Rjlq4n-cbYZQvGakOtEDQ"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-secondary-fixed border-2 border-surface-container-lowest flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate text-base leading-tight">Kwadwo Osei</h2>
+<span class="material-symbols-outlined text-secondary text-[16px]">attachment</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-mono">ID: CP-2021-118 • Roll #03</p>
+</div>
+</div>
+<div aria-label="Attendance for Kwadwo Osei" class="flex items-center bg-surface-container p-0.5 rounded-lg shrink-0 gap-0.5" role="radiogroup">
+<button aria-pressed="false" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all text-on-surface-variant hover:bg-surface" data-status="P" type="button">P</button>
+<button aria-pressed="true" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all bg-secondary text-on-secondary shadow-sm" data-status="A" type="button">A</button>
+<button aria-pressed="false" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all text-on-surface-variant hover:bg-surface" data-status="L" type="button">L</button>
+</div>
+</div>
+<!-- Attached Parent Note Highlight -->
+<div class="bg-secondary-fixed/50 px-space-xs py-1 rounded-md flex items-center justify-between text-on-secondary-fixed-variant">
+<div class="flex items-center gap-1 min-w-0">
+<span class="material-symbols-outlined text-[15px] shrink-0">medical_services</span>
+<span class="font-label-sm text-label-sm truncate">Parent sick note: Malaria recovery</span>
+</div>
+<button class="font-label-sm text-label-sm font-bold underline shrink-0 ml-1" type="button">View Slip</button>
+</div>
+</div>
+<!-- Student 4 -->
+<div class="student-card bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs" data-student-id="CP-2021-135" data-student-name="Abena Serwaa">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-11 h-11 rounded-full object-cover shadow-inner" data-alt="Portrait photography of an African schoolgirl in gold and royal navy school uniform, cheerful expression, natural daylight inside modern classroom." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyrLrH6efZwmhsxEB8LlCMUIECmKdlOGHhjkM2w6aKcHms7sBNYx2t5In_fGKsm65b6v3jKfV2MVyKlUcJH9i0ivY_-giEnooAgi4W86uM2NqxQ7nCLUqxp3U-GSC46_cYdt02tuZPjcqthweE0T-5d7LMyEmeTbmjd8q68o4dNETqJuUGETS3DXt3tkTPolIgvuebDMH-ZZcG_qY3_e4iGIrowF_cM_3J5U7Y1GaW4RWzUuEAClhnSg"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-fixed-dim border-2 border-surface-container-lowest flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+</span>
+</div>
+<div class="min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate text-base leading-tight">Abena Serwaa</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-mono">ID: CP-2021-135 • Roll #04</p>
+</div>
+</div>
+<div aria-label="Attendance for Abena Serwaa" class="flex items-center bg-surface-container p-0.5 rounded-lg shrink-0 gap-0.5" role="radiogroup">
+<button aria-pressed="true" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all bg-tertiary-fixed text-on-tertiary-fixed shadow-sm" data-status="P" type="button">P</button>
+<button aria-pressed="false" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all text-on-surface-variant hover:bg-surface" data-status="A" type="button">A</button>
+<button aria-pressed="false" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all text-on-surface-variant hover:bg-surface" data-status="L" type="button">L</button>
+</div>
+</div>
+</div>
+<!-- Student 5 (Late Arrival with Reason) -->
+<div class="student-card bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs" data-student-id="CP-2021-150" data-student-name="Emmanuel Mensah">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-11 h-11 rounded-full object-cover shadow-inner" data-alt="Headshot of a friendly elementary school student boy wearing neat school collared uniform, focused classroom portrait with clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAULhpPg0xh7XeVx8WmiBMjBZtjNg4nhOt9n5J6-f5Ds4evcA92hl8Q4KgavZLgfGg3_97A0ihEOzFAzn5gWQtTZSxuvynAd1JkANC8PKLagVs1fpyETY1qopRbi2ECMFE5_rfDn3YZTuCgEYtFOkZHq0B_1Vcrri7Z5U4GP1rDuInKh0NzaAuRgSDSZHeWxp6AOQJTtV7Dg5NmUA9zw6h4duYoqsaqJ20mDJcy6MMqCiR7cZJRxeNJzQ"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-secondary-fixed border-2 border-surface-container-lowest flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+</span>
+</div>
+<div class="min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate text-base leading-tight">Emmanuel Mensah</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-mono">ID: CP-2021-150 • Roll #05</p>
+</div>
+</div>
+<div aria-label="Attendance for Emmanuel Mensah" class="flex items-center bg-surface-container p-0.5 rounded-lg shrink-0 gap-0.5" role="radiogroup">
+<button aria-pressed="false" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all text-on-surface-variant hover:bg-surface" data-status="P" type="button">P</button>
+<button aria-pressed="false" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all text-on-surface-variant hover:bg-surface" data-status="A" type="button">A</button>
+<button aria-pressed="true" class="status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all bg-primary-container text-on-primary shadow-sm" data-status="L" type="button">L</button>
+</div>
+</div>
+<!-- Late Justification Tag -->
+<div class="bg-surface-container-high px-space-xs py-1 rounded-md flex items-center gap-1 text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[14px]">more_time</span>
+<span class="font-label-sm text-label-sm font-medium">Arrived 08:12 GMT • Marked Excused (Bus transit delay)</span>
+</div>
+</div>
+</div>
+<!-- End of Register Delight Notice -->
+<div class="px-gutter-sm mt-space-md text-center">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col items-center">
+<span class="material-symbols-outlined text-tertiary-container text-[28px] mb-1">task_alt</span>
+<p class="font-headline-sm text-headline-sm text-primary text-sm">33 Registered Students Checked</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-0.5">Compliant with Ghana Education Service (GES) Daily Muster Standards.</p>
+</div>
+</div>
+<!-- Sticky Bottom Submission Bar -->
+<div class="fixed bottom-20 left-0 right-0 z-40 px-gutter-sm pointer-events-none">
+<div class="bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-space-sm shadow-xl pointer-events-auto flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm px-1">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+          Teacher Signed: <strong class="text-primary font-semibold">Mrs. Beatrice Abbey (Staff #FAC-014)</strong>
+</span>
+<span class="font-mono text-xs">08:15:30 GMT</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-xl font-headline-sm text-headline-sm text-base font-bold flex items-center justify-center gap-2 shadow-md active:scale-[0.99] transition-transform" id="submit-roll-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Submit Roll to Administration</span>
+</button>
+</div>
+</div>
+<!-- Toast Notification Overlay for Instant Feedback -->
+<div class="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-primary text-on-primary px-space-md py-2.5 rounded-full shadow-lg items-center gap-2 font-label-lg text-label-lg transition-all duration-300 opacity-0 pointer-events-none transform -translate-y-2 flex" id="toast-banner">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">verified</span>
+<span id="toast-message">Register marked present!</span>
+</div>
+</div>
+<script>
+  (function() {
+    const searchInput = document.getElementById('student-search');
+    const clearBtn = document.getElementById('clear-search-btn');
+    const students = document.querySelectorAll('.student-card');
+    const toast = document.getElementById('toast-banner');
+    const toastMsg = document.getElementById('toast-message');
+    const submitBtn = document.getElementById('submit-roll-btn');
+    const markAllBtn = document.getElementById('mark-all-present-btn');
+
+    function showToast(message) {
+      if (!toast) return;
+      toastMsg.textContent = message;
+      toast.classList.remove('opacity-0', '-translate-y-2', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-2', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2500);
+    }
+
+    // Dynamic Filter
+    if (searchInput) {
+      searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase().trim();
+        if (query.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+
+        students.forEach(card => {
+          const name = (card.getAttribute('data-student-name') || '').toLowerCase();
+          const id = (card.getAttribute('data-student-id') || '').toLowerCase();
+          if (name.includes(query) || id.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', function() {
+        searchInput.value = '';
+        clearBtn.classList.add('hidden');
+        students.forEach(c => c.style.display = 'flex');
+        searchInput.focus();
+      });
+    }
+
+    // Segmented Status Toggle Logic
+    document.querySelectorAll('.student-card').forEach(card => {
+      const buttons = card.querySelectorAll('.status-btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          buttons.forEach(b => {
+            b.setAttribute('aria-pressed', 'false');
+            b.className = 'status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all text-on-surface-variant hover:bg-surface';
+          });
+
+          btn.setAttribute('aria-pressed', 'true');
+          const status = btn.getAttribute('data-status');
+
+          if (status === 'P') {
+            btn.className = 'status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all bg-tertiary-fixed text-on-tertiary-fixed shadow-sm';
+          } else if (status === 'A') {
+            btn.className = 'status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all bg-secondary text-on-secondary shadow-sm';
+          } else if (status === 'L') {
+            btn.className = 'status-btn w-9 h-9 rounded-md flex items-center justify-center font-headline-sm text-label-lg font-bold transition-all bg-primary-container text-on-primary shadow-sm';
+          }
+        });
+      });
+    });
+
+    // Mark All Remaining Action
+    if (markAllBtn) {
+      markAllBtn.addEventListener('click', function() {
+        document.querySelectorAll('.student-card').forEach(card => {
+          const presentBtn = card.querySelector('.status-btn[data-status="P"]');
+          const isMarked = card.querySelector('.status-btn[aria-pressed="true"]');
+          if (!isMarked && presentBtn) {
+            presentBtn.click();
+          }
+        });
+        showToast('All remaining students set to Present');
+      });
+    }
+
+    // Submit Action
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function() {
+        showToast('Attendance logged & transmitted securely');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(1,21,73,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-home" href="mobile-dashboard.html"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-sm text-label-sm">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 transition-colors text-primary font-bold" data-path="staff-attendance" href="mobile-attendance.html"><span class="material-symbols-outlined text-[24px]">how_to_reg</span><span class="font-label-sm text-label-sm">Attendance</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-gradebook" href="mobile-gradebook.html"><span class="material-symbols-outlined text-[24px]">assignment_turned_in</span><span class="font-label-sm text-label-sm">Gradebook</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-health" href="mobile-health.html"><span class="material-symbols-outlined text-[24px]">health_and_safety</span><span class="font-label-sm text-label-sm">Welfare</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="staff-more" href="mobile-timetable.html"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-sm text-label-sm">More</span></a></div></nav></body></html>

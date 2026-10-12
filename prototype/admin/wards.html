@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"error-container":"#ffdad6","on-surface":"#161c23","on-secondary-fixed":"#410001","primary-fixed-dim":"#b5c4ff","secondary-fixed-dim":"#ffb4a9","on-error":"#ffffff","error":"#ba1a1a","surface-variant":"#dde3ec","secondary":"#ba0a0c","on-error-container":"#93000a","on-secondary-container":"#fffbff","surface-container-highest":"#dde3ec","surface-container-low":"#eef4fe","tertiary-fixed":"#94f9a0","background":"#eef2f6","outline":"#757680","surface-dim":"#d5dae4","on-primary":"#ffffff","on-surface-variant":"#45464f","primary":"#011549","inverse-surface":"#2b3138","surface-bright":"#f7f9ff","tertiary":"#001f07","surface":"#eef2f6","on-primary-fixed-variant":"#344478","surface-container-high":"#e3e8f2","on-tertiary-container":"#46a95a","on-tertiary-fixed-variant":"#00531f","surface-tint":"#4c5c92","on-tertiary-fixed":"#002108","on-primary-container":"#8494cd","on-secondary-fixed-variant":"#930004","surface-container-lowest":"#ffffff","inverse-primary":"#b5c4ff","on-tertiary":"#ffffff","inverse-on-surface":"#ecf1fb","outline-variant":"#c5c6d1","secondary-container":"#df2d23","surface-container":"#e9eef8","on-background":"#161c23","tertiary-container":"#003712","on-primary-fixed":"#03174b","tertiary-fixed-dim":"#78dc86","on-secondary":"#ffffff","primary-fixed":"#dce1ff","secondary-fixed":"#ffdad5","primary-container":"#1a2b5e"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-sm":"1rem","space-xs":"0.25rem","space-lg":"1.5rem","space-md":"1rem","space-xl":"2.5rem","margin":"2rem","gutter-sm":"1rem","gutter":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"label-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"]},"fontSize":{"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.04em","fontWeight":"700"}],"display-lg":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"800"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"800"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}]}}}}</script><title>Carepoint - Full Ward Directory &amp; Dossier</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "admin",
+            label: "Full Student Directory",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-wards.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-outline-variant/30">
+<div class="flex flex-col">
+<!-- Top Header with Crest, Title, Motto, Badge, and Close Button -->
+  <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider uppercase">Executive Admin &amp; Principal</span>
+    </div>
+  </div>
+<div class="px-space-md py-space-sm">
+<div class="px-space-md py-space-xs bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Session 2026/27 Term 1</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">Wk 8</span>
+</div>
+</div>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Executive Suite</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="dashboard.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="inbox" href="inbox.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">move_to_inbox</span>
+<span>Executive Inbox</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-primary-fixed text-on-primary-fixed">5</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="decision" href="decision.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+<span>Statutory Decisions</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-secondary-container text-on-secondary">2</span>
+</a>
+</nav>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Operations & Approvals</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="approvals" href="approvals.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>Approvals Queue</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-secondary-container text-on-secondary">12</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="admissions" href="admissions.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+<span>Admissions Review</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold bg-surface-container-high text-on-surface-variant">28</span>
+</a>
+</nav>
+<div class="px-space-md pt-3 pb-1">
+<span class="font-label-sm text-[10px] uppercase tracking-wider text-outline px-space-sm font-bold">Registries & Governance</span>
+</div>
+<nav class="flex flex-col gap-1 px-space-md">
+<a class="flex items-center justify-between px-space-md py-2.5 transition-all bg-primary-container text-on-primary font-label-lg rounded-xl shadow-sm" data-path="wards" href="wards.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+<span>Student Records</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="users" href="users.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+<span>User Directory</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="reports" href="reports.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span>Reports & Analytics</span>
+</div>
+
+</a>
+<a class="flex items-center justify-between px-space-md py-2.5 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings" href="settings.html">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span>School Settings</span>
+</div>
+
+</a>
+</nav>
+</div>
+<div class="p-space-md bg-surface-container-lowest flex flex-col gap-space-xs mt-auto">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Campus Protocol</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold">Normal</span>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm hover:bg-secondary-container transition-colors shadow-sm" onclick="window.location.href = '../gate/alert.html';" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+<span>Emergency Lockdown</span>
+</button>
+</div>
+</div>
+</aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-2 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="flex items-center gap-2 px-space-sm py-1.5 rounded-full bg-surface-container-high"><span class="material-symbols-outlined text-primary text-[18px]">verified</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">NaSIA / GES Accredited • Level 4</span></div><div class="hidden xl:flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm"><span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span><span>Executive Oversight System</span></div></div><div class="flex items-center gap-space-md"><button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors relative shadow-sm" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary-container"></span></button><div class="flex items-center gap-3 pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-lg text-label-lg text-on-surface">Dr. Elizabeth Appiah</span><span class="font-label-sm text-label-sm text-on-surface-variant">Headmistress / Principal</span></div><img alt="Dr. Elizabeth Appiah" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWfNsavZrE2q7ehrA64sihUwtmROAw4xXN-C6BlUTPhqxnN--2RN5DRycS1Zzkyt6oCEfdTUfjODz6QYZEv08Q-JAkUc3Av7yS8ahvu_IycCMkJCxx5Dx9PYnuyuHQLKp_OkepCnkvleE-hqHca1ZtXA-REaPgIftK5gPRsomXA64FFaJZFdKmQGy-GEt_k2m5zV-0ASaXXLnRB3Au6F5xwS03ye8IFEGRzgETPCCJ1eKP6QrBZk3BQ"/></div></div></header><main class="relative pt-20 w-full px-space-lg pb-space-xl bg-surface"><div class="flex flex-col w-full">
+<!-- Top Command & Metrics Strip -->
+<div class="flex flex-col gap-4 mb-6">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed uppercase tracking-wider font-semibold">Master Registry</span>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">2026/2027</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Student Master Directory</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">340 active enrolled students across Nursery, KG, Basic, and JHS divisions.</p>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">download</span>
+<span>Export Census</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-on-primary hover:bg-primary-container font-label-sm text-label-sm transition-all shadow-xs font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>+ Enroll Student</span>
+</button>
+</div>
+</div>
+<!-- 4 Division Metric Badges Bento Row -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Division 1</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Nursery</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Creche • Nursery 1 • Nursery 2</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md font-extrabold text-primary">48</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">100% Verified</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-container"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Division 2</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Kindergarten</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">KG 1 • KG 2 Streams</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md font-extrabold text-primary">92</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">97.8% Attendance</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-fixed-variant"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Division 3</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Basic School</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Primary Grades 1 through 6</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md font-extrabold text-primary">120</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">4 Active Alerts</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-surface-tint"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Division 4</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Junior High</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">JHS 1 • JHS 2 • JHS 3 BECE</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md font-extrabold text-primary">80</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">99.1% Registered</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Deep Search & Multi-Faceted Filters -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg flex flex-col gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[20px] text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low text-on-surface rounded-xl pl-11 pr-4 py-2.5 font-body-sm text-body-sm outline-none placeholder:text-on-surface-variant transition-all focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container" id="rosterSearchInput" placeholder="Search by Child Name, Student ID (e.g. CP-2023-0482), Guardian Name, or House..." type="text" value="Kofi Nana Mensah"/>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mr-1">Filter By:</span>
+<button class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm" type="button">All Divisions</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-all" type="button">Basic School</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-all" type="button">Kindergarten</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-all" type="button">Junior High</button>
+<button class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">crisis_alert</span>
+<span>Safeguarding / Custody Flags</span>
+</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">medication</span>
+<span>Medical Alert</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span>Attendance:</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-semibold">&gt;95% Target</span>
+<span class="text-outline-variant">•</span>
+<span>Showing <strong class="text-on-surface">5 of 340</strong> filtered students</span>
+</div>
+</div>
+</div>
+<!-- Master Layout: Split Pane (35% Left Roster / 65% Right Master Dossier) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT PANEL: Student Roster List (35% -> col-span-4 or col-span-5) -->
+<div class="lg:col-span-4 xl:col-span-4 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">Roster Manifest (5)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sort: <strong class="text-on-surface">Critical Flag First</strong></span>
+</div>
+<!-- Student Card 1: SELECTED Kofi Nana Mensah -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-md transition-all cursor-pointer relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-secondary-container"></div>
+<div class="flex items-start gap-3 pl-1">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Official school identification portrait photograph of an eight-year-old Ghanaian boy student with a polite smile, wearing a neat navy blue school uniform with the Carepoint crest patch, shot under balanced academic studio lighting against a clean neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsj9G1oHeadE3Ta9L_HbsISUbE7zdXYaX3PCgGnq35MrrMRgYMKlXufmRXlKPsF7pFO0gyK8g6sfDpCHbVi21tHtT5yB91ZqmBWiM1Vs8YWLKW8_qiZBCigzBLw4NUTf2zssZYveV25k18tiHwrtcsAMunxXKmlvU1C7Bs1MjeolIqgeLj6fcH74NyM4lEUcnofeKVYZGOq0vBMrPlTmPUXxuittQARzWiD9OyGzodDVfVzZzdHkPmWg"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-secondary-container"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Kofi Nana Mensah</h4>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-bold tracking-tight">STRICT CUSTODY</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm font-semibold text-primary">#CP-2023-0482</span>
+<span class="text-outline-variant text-[10px]">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Basic 2 Sunflower</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">emergency</span>
+<span>Mild Asthma</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">House: Aggrey</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold ml-auto">96.4% Att.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Student Card 2: Ama Osei-Bonsu -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-surface-container-high group-hover:bg-primary-container"></div>
+<div class="flex items-start gap-3 pl-1">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Passport style profile photo of a cheerful 4-year-old West African girl with braided hair and yellow hair beads, wearing a school polo shirt, brightly lit in a cheerful classroom setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Cpm4tPOYypAZgFrtACeVlKP6O8agtT1i9i1t_nWQu_iLaH66aHbKKO4G9-Gr7Oz4BeyPhv9v7c7tjX1w0fRE0BNQoiMmLWF02G7LF4tIuL4zuEWB2nYUvNjfXGJJ2Gb6VsNiChVuSkN0KHpbu5tKetV6RWvQGFlds4cfslSbJTf5WMStSnOth5G8d4ZV2fK9IgEKrExhQelOZINf_sCdTIWKeEZLkO729-E6phEIwUTQWosGClB4WA"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary-fixed-dim"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Ama Osei-Bonsu</h4>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">Standard</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">#CP-2022-1102</span>
+<span class="text-outline-variant text-[10px]">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Nursery 1 Blue</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Primary Care: Both Parents</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold ml-auto">98.0% Att.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Student Card 3: Kwadwo Asare -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-surface-container-high group-hover:bg-primary-container"></div>
+<div class="flex items-start gap-3 pl-1">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Identification portrait photograph of a 6-year-old Ghanaian schoolboy in high contrast indoor light, wearing a pristine navy collar uniform shirt with bright inquisitive eyes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfqnDt88ypVVONXHIvzr4WLllItbyXMXSir4o-s1CIuex3BWXq_JqIGnMYvlgkVMKTvdaSlLWnLBxOxHNxDU4AL_QwGAEPi4liUlDn47_OZuy3-7iYU4vr3_4rarow98EDSmzxTMRLjlSa0J3xX1wKd3DE3Dmjr781HgdPuVWk2ltbE3-_6btYU-d8c3wtyWois7I0lh0xXSUeCAI1GBRONYlkFgD05k9KUoBO81Xm_JjPG9QSL_7x3g"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-primary-fixed-dim"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Kwadwo Asare</h4>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-semibold">New Enrollee</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">#CP-2026-0488</span>
+<span class="text-outline-variant text-[10px]">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Basic 1 Gold</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Admission Pending Dossier Review</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-auto">Wk 2</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Student Card 4: Selorm Darko -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-surface-container-high group-hover:bg-primary-container"></div>
+<div class="flex items-start gap-3 pl-1">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Academic portrait of a focused 14-year-old Ghanaian teenage boy wearing a navy junior high school blazer with academic lapel badges, smiling confidently in front of a modern school library backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBulxtAJWcPLBQlfgOYIRDDXPa5PiF5RhAuV-mrKTslbFxfX8R91Xz2_fmRiH7oP7k3sIQvI6NSzDGhe2VH2rnfnONDJN_uwcLh6IELrk8aq5YU9sw-n2c-o1MatI1Rm19IaFFGajfKh9Kg588iANvQ-CqJbwxfHXQjMtOvaX6kth3Qv0C4uk9kLTcpv9NKjX8xMpZarl_HyjZPKb4DGwmqXwY02LymqSF4P6y_Jz9m_95Y8C5_6DxoGQ"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary-fixed-dim"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Selorm Darko</h4>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Honor Roll</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">#CP-2015-0219</span>
+<span class="text-outline-variant text-[10px]">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">JHS 2 Amber</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">Prefect Nominee • House Nkrumah</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold ml-auto">99.4% Att.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Student Card 5: Akosua Baah -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-surface-container-high group-hover:bg-primary-container"></div>
+<div class="flex items-start gap-3 pl-1">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Profile photo of a 5-year-old energetic Ghanaian kindergarten girl with neat cornrows and ribbon ties, wearing a yellow-and-navy school dress, photographed outdoors in soft warm daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxljb2gRt67dwacqwVg_ZwDGaW4f6dVM2BfCfigIEGiaBrS4uXqrCZi0xyFTkiwf4yC2ZxmEyKCbnL9c1ODbceH4aYmp2pZRJMCEOrROAN0SHtafFsJ0EFYmibOpa92zOSytzsLUKNNgvGmszhh7AGkCug4XiMLqrKya634rWhQ34KR1sHlG-xL-UFd57LRuaLFxeb2jR6Y2C7_EB9yxwgso76W_P1lYnGew7wEhltOlsLu283xkOGAA"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary-fixed-dim"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Akosua Baah</h4>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium">Bus Rider</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">#CP-2020-0744</span>
+<span class="text-outline-variant text-[10px]">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">KG 2 Emerald</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Route 4B • East Legon Dropoff</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold ml-auto">94.8% Att.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination / Count footer for roster -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Page 1 of 68</span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-lowest text-on-surface-variant flex items-center justify-center hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center shadow-sm" type="button">1</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center hover:bg-surface-container" type="button">2</button>
+<button class="w-7 h-7 rounded-lg bg-surface-container-lowest text-on-surface-variant flex items-center justify-center hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Master Dossier View for Selected Student (65% -> col-span-8) -->
+<div class="lg:col-span-8 xl:col-span-8 flex flex-col gap-space-md">
+<!-- Impersonation & Audit Bar (Mandatory Top Oversight) -->
+<div class="p-space-md rounded-xl bg-primary text-on-primary shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-sm relative overflow-hidden">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider text-secondary-fixed">Audit-Logged Oversight View</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary-fixed">Session ID: AUD-8491-ADM</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-variant mt-0.5">Every action, impersonation switch, and tab access is recorded in the NaSIA statutory audit registry.</p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Impersonate Parent View</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">history_edu</span>
+<span>Teacher Gradebook View</span>
+</button>
+</div>
+</div>
+<!-- Master Profile Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<div class="w-20 h-20 rounded-2xl bg-surface-container overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Crisp high-resolution portrait photograph of Kofi Nana Mensah, an 8-year-old Ghanaian school student in navy school tie and collared shirt, direct eye contact with pleasant composed expression against a solid warm gray studio backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQOlrQ99cek1ONVaosr3dtMTRHM8x3OpN3Rlph3a57pQp2JZnT_0Y3zx0aoysnW5cevHPTVu-jwgEAi318xsCmgK22xpbqEEX4CQYggUmZ1UlJJWCQ_cl7MekT3G8I8ehUOV3JaVRFwivkpmrmVIvNTTO2V2Q0A6rPi2DdDy_43fLAP4q96NXm0XjFWJTs-a2GudaGxsCJ9R-EqNR3sXSIdwdSkFYcYST9-DMgoHnTvjW9NDimap5cxg"/>
+</div>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-secondary-container text-on-secondary flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm" title="Active Safeguarding Hold">!</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Kofi Nana Mensah</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">Active Enrolled</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">Aggrey House (Red)</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>ID: <strong class="text-on-surface font-semibold">CP-2023-0482</strong></span>
+<span class="text-outline-variant">•</span>
+<span>Age: <strong class="text-on-surface">8 Yrs (DOB: 14 Oct 2017)</strong></span>
+<span class="text-outline-variant">•</span>
+<span>Class: <strong class="text-on-surface">Basic 2 Sunflower</strong></span>
+<span class="text-outline-variant">•</span>
+<span>Tutor: <strong class="text-on-surface">Mrs. Beatrice Abbey</strong></span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors shadow-sm" title="Print Master Ward File" type="button">
+<span class="material-symbols-outlined text-[20px]">print</span>
+</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors shadow-sm" title="Generate Digital QR Pass" type="button">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</button>
+<button class="px-space-md py-2 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-label-sm text-label-sm font-semibold flex items-center gap-2 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+<span>Edit Student Record</span>
+</button>
+</div>
+</div>
+<!-- Safeguarding Critical Alert Ribbon (Double High-Priority Warnings) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm pt-2">
+<!-- Legal / Custody Alert -->
+<div class="p-space-md rounded-xl bg-secondary-fixed text-on-secondary-fixed shadow-sm flex items-start gap-3 relative overflow-hidden">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-extrabold uppercase tracking-tight text-secondary">Strict Custody Protocol Enforced</span>
+<span class="font-label-sm text-label-sm font-bold text-on-secondary-fixed">Injunction #GAR/FCT/881</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed mt-1">Release authorization restricted exclusively to registered biometric guardians. Uncle (Mr. K. Boateng) explicitly blacklisted per high court order.</p>
+</div>
+</div>
+<!-- Medical Alert -->
+<div class="p-space-md rounded-xl bg-surface-container-high text-on-surface shadow-sm flex items-start gap-3 relative overflow-hidden">
+<div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">emergency_home</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-extrabold uppercase tracking-tight text-secondary">School Clinic Alert: Mild Asthma</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-bold">Box #12</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Salbutamol 100mcg inhaler stored in school clinic locker #12. Requires PE supervision during harmattan dry-wind season.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Cross-Role Unified Dossier Tabs -->
+<div class="flex flex-col gap-space-md">
+<!-- Tab Navigation Buttons -->
+<div class="bg-surface-container-lowest rounded-xl p-1.5 shadow-sm flex flex-wrap items-center gap-1.5" id="dossierTabs">
+<button class="tab-btn px-4 py-2 rounded-lg font-label-md text-label-md transition-all flex items-center gap-2 bg-primary-container text-on-primary shadow-sm font-bold" onclick="switchDossierTab('adminTab', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">admin_panel_settings</span>
+<span>1. Admin &amp; Enrolment</span>
+</button>
+<button class="tab-btn px-4 py-2 rounded-lg font-label-md text-label-md transition-all flex items-center gap-2 text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-semibold" onclick="switchDossierTab('guardiansTab', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">security_update_good</span>
+<span>2. Guardians &amp; Gate Security</span>
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+</button>
+<button class="tab-btn px-4 py-2 rounded-lg font-label-md text-label-md transition-all flex items-center gap-2 text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-semibold" onclick="switchDossierTab('academicTab', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span>3. Academic &amp; SBA Records</span>
+</button>
+<button class="tab-btn px-4 py-2 rounded-lg font-label-md text-label-md transition-all flex items-center gap-2 text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-semibold" onclick="switchDossierTab('healthTab', this)" type="button">
+<span class="material-symbols-outlined text-[18px]">vital_signs</span>
+<span>4. Clinical &amp; Dietary Ledger</span>
+</button>
+</div>
+<!-- TAB CONTENT 1: Administrative & Enrolment -->
+<div class="tab-panel flex flex-col gap-space-md" id="adminTab">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md pb-space-xs">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Statutory Enrolment &amp; Civil Documentation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Validated against National Schools Inspectorate Authority (NaSIA) standard protocols</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Full Clearance (100%)</span>
+</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ghana Card National PIN</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-1">GHA-72991044-8</span>
+<span class="font-body-sm text-body-sm text-on-tertiary-container mt-1 flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>Verified via NIA Gateway</span>
+</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Date of Initial Matriculation</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-1">08 September 2021</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Admitted at Nursery 2 Tier</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Birth Certificate Ledger</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-1">BC-ACC-2017-9104</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Registrar General Dept • Accra</span>
+</div>
+</div>
+<!-- Financial & Tuition Status Row -->
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Term 2 Academic &amp; Facility Fees</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">Fully Settled</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Receipt #RCP-2026-1883 • GH₵ 4,850.00 • PTA Levy &amp; Robotics Lab Surcharge Cleared</span>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-label-sm text-label-sm font-semibold transition-all shadow-sm" type="button">
+                View Ledger Breakdown
+              </button>
+</div>
+</div>
+</div>
+<!-- TAB CONTENT 2: Authorized Guardians & Gate Pickup Security (CRITICAL CUSTODY) -->
+<div class="tab-panel hidden flex flex-col gap-space-md" id="guardiansTab">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Gate Biometric Release &amp; Custody Authorizations</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Active turnstile clearance protocols synchronized with perimeter RFID turnstiles</p>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-secondary text-on-secondary hover:bg-secondary-container font-label-sm text-label-sm font-bold flex items-center gap-1.5 transition-all shadow-sm self-start" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_person</span>
+<span>Flag Gate Override</span>
+</button>
+</div>
+<!-- Approved Guardians Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Guardian 1: Father -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2 relative">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold">Tier 1 Primary</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">RFID #8819</span>
+</div>
+<div class="flex items-center gap-3 mt-1">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait photograph of Dr. Nana Mensah, a distinguished Ghanaian physician in his early 40s wearing semi-formal professional attire, sharp focused photo for security identification." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQonHlXvMPTup2JpJigxGUaPrIWp7Mly1FS7X161Nn2IZJm2M87LC5QJt8cqFzKPUwEJysB06dTPFJRvYGUkDUyEGHuiC6aUobM4J-PqfUWuyop7OJBMDjxyrOgF4F9KhtRLMBkm82E-YGkMRODuwxo60zLxNsd1h0OdX6rQQmrtEskWwBqKHR_W41ZS42avaTZBf6mqte2aATkjLJP6eib5Kc40jrEcpbtkBMJykPnGPJ_6QW0GvwDg"/>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg font-bold text-on-surface">Dr. Nana Mensah</h5>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Father (Primary Custodian)</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+<p class="flex items-center gap-1 text-[13px]"><span class="material-symbols-outlined text-[14px]">call</span> +233 24 491 0021</p>
+<p class="flex items-center gap-1 text-[13px]"><span class="material-symbols-outlined text-[14px]">badge</span> 37 Military Hospital</p>
+</div>
+</div>
+<!-- Guardian 2: Mother -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2 relative">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold">Tier 1 Primary</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">RFID #8820</span>
+</div>
+<div class="flex items-center gap-3 mt-1">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Security pass headshot of Dr. Abena Mensah, a 38-year-old Ghanaian woman professional with stylish spectacles, warm poised look, high key lighting for identity validation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1S4LF43VK6UTtf3GrTTdQLgwjojMW-4mZvVKgB7JcZL6ERsY6J21yIFIo9T82y9waBb0_aeMRGCbD6QhqTeZT2z_POI8234N89B8HuEKymJ3XsKdZS9BHDtBXN2QMYUG33BZIXqo6FCshYQSL5KKttv3vyTzm2YVvCDzfAskW5jeb9LnvXrmNZQFQ7ngfqhoxMvy8zNicxGwoScrXoxQZfBC1IhV6-LhDApCzbi00uffG97uWtR6GZg"/>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg font-bold text-on-surface">Dr. Abena Mensah</h5>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mother (Co-Custodian)</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+<p class="flex items-center gap-1 text-[13px]"><span class="material-symbols-outlined text-[14px]">call</span> +233 20 812 4433</p>
+<p class="flex items-center gap-1 text-[13px]"><span class="material-symbols-outlined text-[14px]">badge</span> Legon University Clinic</p>
+</div>
+</div>
+<!-- Guardian 3: Authorized Alternate -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2 relative">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">Tier 2 Alternate</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PIN &amp; SMS OTP</span>
+</div>
+<div class="flex items-center gap-3 mt-1">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Formal identification portrait of Mrs. Grace Owusu, a 52-year-old Ghanaian woman with an elegant headwrap and gentle welcoming demeanor, clearly lit for gatehouse verification." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA69W9b6c_Td3lRXLOT8jGE0CZJ_nrBjFs4iQrVQNQJWOJkj9rJsgPupuAMyOawrOEBWX3nYdg9qd2pZ4SfPQwUvVJD8S5BMUkJbErYnGPcMQ1gHZ6T2w56Mxvv3GEZIpyppUI9fvW35Mc2O5y4UHjB528TNnB9vad-PUIHKxZ-v0E4lYlUFQeArrcL0TxkDqUpT9OqgOAaxLTkNQodyaEmeyW7E9NkD0oQQQeN8MRea4mihb-SdKUcgQ"/>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg font-bold text-on-surface">Mrs. Grace Owusu</h5>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Maternal Aunt (Alternate)</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+<p class="flex items-center gap-1 text-[13px]"><span class="material-symbols-outlined text-[14px]">call</span> +233 27 775 9011</p>
+<p class="flex items-center gap-1 text-[13px]"><span class="material-symbols-outlined text-[14px]">pin</span> Single-use token required</p>
+</div>
+</div>
+</div>
+<!-- Turnstile Log -->
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Turnstile Real-Time Release History (Gate A • Cantonments Road)</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm pt-1">
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Yesterday 15:22 GMT • Gate A Turnstile</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Released to Dr. Nana Mensah (Biometric OK)</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Yesterday 07:44 GMT • Morning Dropoff</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dropped off by Dr. Abena Mensah</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB CONTENT 3: Teacher Academic & SBA Records -->
+<div class="tab-panel hidden flex flex-col gap-space-md" id="academicTab">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Continuous Assessment (SBA) &amp; Gradebook</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Basic 2 Curriculum Standards • Lead Tutor: Mrs. Beatrice Abbey</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Overall Term Score:</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-primary px-3 py-1 rounded-xl bg-primary-fixed">84.5% (Exceeding Expectations)</span>
+</div>
+</div>
+<!-- Subject Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm mb-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">English Language</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">88.0%</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Phonics, Grammar &amp; Creative Expression</p>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 mt-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Mathematics</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">82.0%</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Numeracy, Mental Arithmetic &amp; Shapes</p>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 mt-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Integrated Science</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">91.0%</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Living Things, Weather &amp; Environment</p>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 mt-3 overflow-hidden">
+<div class="bg-tertiary-fixed-variant h-full rounded-full" style="width: 91%"></div>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Computing / ICT</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">77.0%</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Typing Speed, Algorithmic Thinking</p>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 mt-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 77%"></div>
+</div>
+</div>
+</div>
+<!-- Lead Teacher Qualitative Remark -->
+<div class="p-space-md rounded-xl bg-surface-container-low border-l-4 border-primary flex items-start gap-3">
+<span class="material-symbols-outlined text-[24px] text-primary shrink-0 mt-0.5">format_quote</span>
+<div>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-primary">Class Tutor Formal Mid-Term Feedback • Mrs. Beatrice Abbey</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">
+                  "Kofi continues to show remarkable inquisitiveness during science discovery labs and excels at peer reading groups. We are paying gentle attention to his fine-motor handwriting speed, which is steadily advancing. Outstanding citizenship and Aggrey House sportsmanship."
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB CONTENT 4: Health, Clinical & Dietary Ledger -->
+<div class="tab-panel hidden flex flex-col gap-space-md" id="healthTab">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">School School Clinic &amp; Clinical Management</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Maintained by Nurse Faustina Asante, SRN • Certified School Health Unit</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Active Medical Notice</span>
+</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Clinical Record Note -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Most Recent School Clinic Incident</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">12 Jan 2026 • 11:15 GMT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Mild wheezing recorded post-PE sprint relays. Two puffs of Salbutamol inhaler administered under Nurse Asante's supervision. Peak flow normalized within 12 minutes (measured 220 L/min). Parent notified via Carepoint Automated SMS.
+                </p>
+<div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Signed by: Nurse Faustina Asante, SRN, Lic #GCNM-822</span>
+</div>
+</div>
+<!-- Dietary & Allergy Instructions -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Cafeteria &amp; Dining Hall Protocol</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-semibold">Strict Supervision</span>
+</div>
+<div class="flex flex-col gap-1.5 mt-1 font-body-sm text-body-sm">
+<div class="flex items-center justify-between">
+<span class="text-on-surface">Peanuts / Tree Nuts:</span>
+<span class="font-semibold text-secondary">None (Suspected Sensitivity)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface">Lactose Intolerance:</span>
+<span class="font-semibold text-on-surface">Mild (Soy milk substituted)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface">Water Bottle Check:</span>
+<span class="font-semibold text-tertiary">Hydration monitored hourly</span>
+</div>
+</div>
+<div class="mt-2 pt-2 border-t border-surface-container flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dining Hall Pass:</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-bold">TABLE 4B ALLERGY TAG</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchDossierTab(tabId, element) {
+    // Hide all tab panels
+    const panels = document.querySelectorAll('.tab-panel');
+    panels.forEach(panel => {
+      panel.classList.add('hidden');
+    });
+
+    // Remove active styles from all buttons
+    const buttons = document.querySelectorAll('#dossierTabs .tab-btn');
+    buttons.forEach(btn => {
+      btn.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm', 'font-bold');
+      btn.classList.add('text-on-surface-variant', 'font-semibold');
+    });
+
+    // Show target panel
+    const targetPanel = document.getElementById(tabId);
+    if (targetPanel) {
+      targetPanel.classList.remove('hidden');
+    }
+
+    // Set active style on clicked button
+    element.classList.remove('text-on-surface-variant');
+    element.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm', 'font-bold');
+  }
+</script></main></div></body></html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet"/>
+<style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "#f7f9ff", "on-background": "#161c23", "secondary-fixed-dim": "#ffb4a9", "inverse-surface": "#2b3138", "surface-tint": "#4c5c92", "on-primary-fixed-variant": "#344478", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#00531f", "inverse-primary": "#b5c4ff", "on-tertiary-fixed": "#002108", "error": "#ba1a1a", "surface-container-low": "#eef4fe", "outline": "#757680", "on-primary-fixed": "#03174b", "on-secondary-fixed-variant": "#930004", "background": "#f7f9ff", "on-tertiary-container": "#46a95a", "surface-container": "#e9eef8", "on-primary": "#ffffff", "secondary": "#ba0a0c", "tertiary-fixed": "#94f9a0", "primary": "#011549", "surface-bright": "#f7f9ff", "tertiary": "#001f07", "outline-variant": "#c5c6d1", "on-surface-variant": "#45464f", "primary-fixed": "#dce1ff", "secondary-container": "#df2d23", "on-surface": "#161c23", "on-tertiary": "#ffffff", "surface-container-highest": "#dde3ec", "on-secondary": "#ffffff", "on-error-container": "#93000a", "inverse-on-surface": "#ecf1fb", "on-error": "#ffffff", "surface-container-high": "#e3e8f2", "surface-dim": "#d5dae4", "primary-fixed-dim": "#b5c4ff", "surface-container-lowest": "#ffffff", "on-secondary-container": "#fffbff", "on-secondary-fixed": "#410001", "tertiary-container": "#003712", "tertiary-fixed-dim": "#78dc86", "surface-variant": "#dde3ec", "on-primary-container": "#8494cd", "secondary-fixed": "#ffdad5", "primary-container": "#1a2b5e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1.5rem", "margin-sm": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xl": "2.5rem", "gutter-sm": "1rem", "margin": "2rem", "space-lg": "1.5rem" }, fontFamily: { "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"] }, fontSize: { "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }] } } } };</script><title>Carepoint - Change Request Tracker</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "sysadmin",
+            label: "Change Request Tracker",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-tracker.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-primary text-on-primary z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-white/10"><div class="flex flex-col"><!-- Top Header with Crest, Title, Motto, Badge, and Close Button -->
+  <div class="shrink-0 p-4 border-b border-white/10 flex flex-col gap-2 relative bg-primary-container">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-on-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-primary-fixed-dim uppercase tracking-wider font-semibold truncate">SysOps Core</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn text-on-primary hover:bg-white/10 p-1 rounded-lg" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary-fixed font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/10 rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-primary-fixed font-bold tracking-wider uppercase">Systems &amp; IT Operations</span>
+    </div>
+  </div><div class="px-gutter pt-space-lg pb-space-sm"><span class="font-label-sm text-label-sm uppercase text-primary-fixed-dim tracking-wider">Infrastructure &amp; Operations</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="dashboard" href="dashboard.html">Dashboard</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="user-provisioning" href="provisioning.html">User Provisioning</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="feature-flags" href="features.html">Feature Flags</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="change-requests" href="changes.html">Change Requests</a><a aria-current="page" class="flex items-center px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-bold rounded-lg" data-path="change-request-composer" href="tracker.html">Change Request Composer</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="integrations" href="integrations.html">Integrations</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="audit-logs" href="audit.html">Audit Logs</a></nav></div><div class="p-space-md m-space-md rounded-xl bg-primary-container text-on-primary"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary text-body-md">shield_lock</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary uppercase tracking-wide">Access Notice</span><span class="font-body-sm text-body-sm text-primary-fixed-dim text-[11px] leading-tight mt-space-xs">Configuration Authority Only • Approval Authority Held by Principal</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-2 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-none">Carepoint Community School</span><span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Super Admin Console - SysOps Tier 0</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface">US-EAST-ACC-POD01 • Production Healthy</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-space-md py-space-xs rounded-lg"><span class="material-symbols-outlined text-body-sm text-on-surface-variant">schedule</span><span class="tabular-nums">14:28:40 GMT</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden lg:flex flex-col"><span class="font-label-lg text-label-lg text-on-surface leading-tight">Ing. Kwabena Boateng</span><span class="font-label-sm text-label-sm text-on-surface-variant">SysOps Lead</span></div><img alt="Ing. Kwabena Boateng" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDficibdtzh0xCg-RYeNu3YjQOB2wMrnGhDiTxfeEkMCvfdTGILXcQePEO7gWXcB0Go5WFlo_hEWJ02SQiIcocAII6hOv3v1Vsp7KFfSldX32a6rzPOlL4ReSyMBYgRP4crioNrulufNiTAaSTQ4t8TQjfTn2QMKIucNdX2AAUv4Tqdihfy2Ta3gZpSWIFxOD5ap0xX9esm5pfkFeCaRACUrCY2TlfFs2xIlboc8vEYjBoZW3eIjBokfQ"/></div></div></header><main class="w-full px-gutter pt-16 bg-surface"><div class="flex flex-col w-full pb-margin">
+<!-- Tri-color Brand Accent Trim Strip -->
+<div class="w-full flex h-1.5 rounded-full overflow-hidden shadow-sm mb-space-md">
+<div class="flex-1 bg-surface-tint"></div>
+<div class="flex-1 bg-secondary"></div>
+<div class="flex-1 bg-on-tertiary-container"></div>
+</div>
+<!-- Header Area -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md pb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary-container text-primary-fixed font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+          RFC Lifecycle Management • SysOps Governance
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">gavel</span>
+          Dual-Key Institutional Protocol
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Change Request Ledger &amp; Deployment Pipeline</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
+        Institutional change audit stream. Track RFC status, review Headmistress executive endorsements, and execute approved deployment checklists.
+      </p>
+</div>
+<!-- Action Bar -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-lowest text-primary shadow-sm hover:bg-surface-container font-label-lg text-label-lg transition-all">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+        Filter by State
+      </button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-secondary text-on-secondary shadow-md hover:opacity-95 font-label-lg text-label-lg transition-all">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+        + New Change Request (RFC)
+      </button>
+</div>
+</div>
+<!-- Metrics Ribbon -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Total RFCs -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total RFCs (Term 1)</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary font-bold mt-space-xs leading-none">24</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-surface-tint">fact_check</span>
+          Academic Year 2026/2027
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">receipt_long</span>
+</div>
+</div>
+<!-- Pending Review -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Pending Principal Review</span>
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+</div>
+<span class="font-display-lg-mobile text-display-lg-mobile text-secondary font-bold mt-space-xs leading-none">01</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+          Urgent Tier 1 Security RFC
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">approval</span>
+</div>
+</div>
+<!-- Approved / Staged -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant uppercase tracking-wider font-semibold">Approved (Ready to Deploy)</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary font-bold mt-space-xs leading-none">02</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+          Dual-Key Action Granted
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed/30 text-on-tertiary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">verified_user</span>
+</div>
+</div>
+<!-- Implemented -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Implemented &amp; Closed</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary font-bold mt-space-xs leading-none">21</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+          100% Rollback-Free Reliability
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">inventory_2</span>
+</div>
+</div>
+</div>
+<!-- Lifecycle Stage Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-space-sm mb-space-md scrollbar-none">
+<button class="px-space-md py-space-xs rounded-full bg-surface-container text-on-surface font-label-md text-label-md shrink-0 hover:bg-surface-container-high transition-colors">
+      All RFCs (24)
+    </button>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container-low text-secondary font-label-md text-label-md shrink-0 hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      Pending Principal Approval (1)
+    </button>
+<button class="px-space-md py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md shrink-0 shadow-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+      Approved &amp; Staged (2)
+    </button>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container text-on-surface font-label-md text-label-md shrink-0 hover:bg-surface-container-high transition-colors">
+      Implemented History (21)
+    </button>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md shrink-0 hover:bg-surface-container-high transition-colors">
+      Rejected / Revoked (0)
+    </button>
+</div>
+<!-- Split View Workspace -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: RFC Ledger List (5 cols) -->
+<div class="xl:col-span-5 flex flex-col gap-space-md">
+<!-- Search & Sorting Mini-Bar -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs flex-1 px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">search</span>
+<input class="bg-transparent text-body-sm font-body-sm placeholder:text-outline w-full focus:outline-none" placeholder="Search RFC ID, title, or system..." type="text"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0 px-2 py-1 bg-surface-container rounded-md">Sorted by Priority</span>
+</div>
+<!-- Card 1: Active Selected (#CR-2026-08) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-sm cursor-pointer transition-all hover:shadow-lg">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed">#CR-2026-08</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+              APPROVED • READY FOR STAGED EXECUTION
+            </span>
+</div>
+<span class="font-label-sm text-label-sm font-bold uppercase text-secondary">Tier 1 High</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary leading-snug">
+          Update NaSIA 30/30/40 SBA Algorithm Weighting Curve
+        </h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Staff Portal</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Academic Gradebook</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Reports Engine</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between text-on-surface-variant font-body-sm text-[12px] leading-tight mt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-surface-tint">engineering</span>
+<span>Auth: <strong>Ing. Kwabena Boateng</strong></span>
+</div>
+<div class="flex items-center gap-1 text-on-tertiary-fixed-variant font-semibold">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span>Sanctioned by Dr. E. Appiah</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-1">
+<span>Target Window: Immediate Maintenance</span>
+<span class="text-surface-tint font-semibold">Yesterday at 15:42 GMT</span>
+</div>
+</div>
+<!-- Card 2: Pending Approval (#CR-2026-09) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm cursor-pointer transition-all hover:bg-surface-container-low">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold px-2 py-0.5 rounded bg-surface-container-high text-on-surface">#CR-2026-09</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+              PENDING PRINCIPAL ACTION
+            </span>
+</div>
+<span class="font-label-sm text-label-sm font-bold uppercase text-secondary">Tier 1 Safety</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary leading-snug">
+          Turnstile Biometric Vector Cache &amp; SMS OTP Carrier Failover
+        </h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Gate Kiosk IoT</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Parent Push</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">MTN/Telecel Gateway</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between text-on-surface-variant font-body-sm text-[12px] leading-tight mt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-surface-tint">engineering</span>
+<span>Auth: <strong>Ing. Kwabena Boateng</strong></span>
+</div>
+<div class="flex items-center gap-1 text-secondary font-semibold">
+<span class="material-symbols-outlined text-[15px]">hourglass_top</span>
+<span>Awaiting Executive Queue</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-1">
+<span>Submitted 42 mins ago</span>
+<span class="text-secondary font-semibold">SLA: 2h Remaining</span>
+</div>
+</div>
+<!-- Card 3: Implemented & Verified (#CR-2026-07) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm cursor-pointer transition-all hover:bg-surface-container-low opacity-90">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold px-2 py-0.5 rounded bg-surface-container-high text-on-surface">#CR-2026-07</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+              IMPLEMENTED &amp; VERIFIED
+            </span>
+</div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Tier 2 Routine</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">
+          Emergency Lockdown GPIO Relay Test &amp; Interlock Timing Calibration
+        </h3>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-[12px] pt-1">
+<span>Executed by: SysOps Automation</span>
+<span>Deployed: 3 days ago • Execution: 4m 12s</span>
+</div>
+</div>
+<!-- Card 4: Implemented & Verified (#CR-2026-06) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm cursor-pointer transition-all hover:bg-surface-container-low opacity-90">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold px-2 py-0.5 rounded bg-surface-container-high text-on-surface">#CR-2026-06</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+              IMPLEMENTED &amp; VERIFIED
+            </span>
+</div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Tier 2 Data</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">
+          Provisioning Engine Bulk CSV Importer V2.4 Schema Migration
+        </h3>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-[12px] pt-1">
+<span>Executed by: Ing. Kwabena Boateng</span>
+<span>Deployed: 8 days ago • Rollback-free</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Execution Studio & Detailed RFC (#CR-2026-08) (7 cols) -->
+<div class="xl:col-span-7 flex flex-col gap-space-md">
+<!-- Main Detailed Card -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-lg">
+<!-- Details Header & Metadata -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg font-bold px-2.5 py-1 rounded bg-primary text-on-primary">
+                RFC #CR-2026-08
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Executive Action Secured
+              </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Print RFC Audit Trail">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="View Raw JSON Envelope">
+<span class="material-symbols-outlined text-[18px]">data_object</span>
+</button>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mt-1">
+            Update NaSIA 30/30/40 SBA Algorithm Weighting Curve
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Adjustment of continuous assessment weighting formulas to comply with Ghana National Schools Inspectorate Authority (NaSIA) academic instructions for Term 1. Reconfigures Class Test (30%), Mid-Term (30%), and Final Examination (40%) aggregates across all primary and JHS divisions.
+          </p>
+</div>
+<!-- Executive Endorsement Banner (Verified State) -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-primary font-bold">Executive Action Granted</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">LEGALLY BINDING</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                Endorsed by <strong>Dr. Elizabeth Appiah</strong>, Headmistress &amp; Custodian of Records
+              </span>
+<div class="flex flex-wrap items-center gap-space-sm text-[11px] font-label-sm text-on-surface-variant mt-1">
+<span class="font-mono bg-surface-container px-1.5 py-0.5 rounded">SIG: #CP-EX-4019</span>
+<span class="font-mono bg-surface-container px-1.5 py-0.5 rounded">SHA256: d8b27c...9f01e8</span>
+<span class="text-on-tertiary-container font-semibold">Response SLA Met (1h 14m)</span>
+</div>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Signed At</span>
+<span class="font-label-md text-label-md text-primary font-bold">Yesterday 15:42 GMT</span>
+</div>
+</div>
+<!-- Scope & Impact Metrics -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm p-space-md rounded-xl bg-surface-container">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Affected Gradebooks</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold mt-0.5">28 Classrooms</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Class 1 to JHS 3</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Authorized Faculty</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold mt-0.5">68 Educators</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Staff Portal Read/Write</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Rollback Window</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold mt-0.5">&lt; 90 Seconds</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">RDS Point-In-Time Ready</span>
+</div>
+</div>
+<!-- Academic Division Indicator Pill Bar -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Target Institutional Tiers</span>
+<div class="flex flex-wrap gap-2 pt-1">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-md text-label-md opacity-60">
+<span class="material-symbols-outlined text-[16px]">child_care</span>
+              Creche / Nursery (Exempt)
+            </div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-md text-label-md opacity-60">
+<span class="material-symbols-outlined text-[16px]">sports_handball</span>
+              Kindergarten (Exempt)
+            </div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">school</span>
+              Primary / Basic (Active Target)
+            </div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">auto_stories</span>
+              Junior High School (Active Target)
+            </div>
+</div>
+</div>
+<!-- Deployment Runbook Execution Checklist -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">checklist</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Interactive Deployment Runbook</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-bold">
+              2 of 5 Steps Executed (40%)
+            </span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-surface-tint to-on-tertiary-container h-full rounded-full transition-all duration-500" style="width: 40%;"></div>
+</div>
+<!-- Checklist Items -->
+<div class="flex flex-col gap-space-xs">
+<!-- Step 1 (Completed) -->
+<div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary line-through opacity-80">1. Pre-deployment dry-run database migration in Staging</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Validated zero-row corruption across 1,480 mock student transcripts. (SysOps Kwabena at 16:00 GMT)</span>
+</div>
+</div>
+<span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-semibold shrink-0">STG PASS</span>
+</div>
+<!-- Step 2 (Completed) -->
+<div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary line-through opacity-80">2. Snapshot primary PostgreSQL RDS cluster (ACC-DB-PRIMARY)</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Snapshot ID: <span class="font-mono">snap-rds-acc-20260218-1605</span> verified healthy (Done at 16:05 GMT)</span>
+</div>
+</div>
+<span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-semibold shrink-0">BACKUP OK</span>
+</div>
+<!-- Step 3 (READY / PENDING ACTION) -->
+<div class="p-space-sm rounded-xl bg-primary-fixed/20 shadow-sm flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 animate-pulse">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-primary font-bold">3. Apply schema migration script to Production DB</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">CURRENT STEP</span>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">
+                    Script: <code class="font-mono bg-surface-container-high px-1 py-0.5 rounded text-primary">V4_2__ges_weighting_curve.sql</code> • Alters <code class="font-mono">academic.sba_records</code> table
+                  </span>
+</div>
+</div>
+<button class="inline-flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow hover:bg-primary-container transition-colors shrink-0">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+                Execute SQL
+              </button>
+</div>
+<!-- Step 4 (Pending) -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between gap-space-md opacity-75">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">4. Flush Redis cache for 'sba:weighting:rules' across worker pods</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Invalidates stale calculation heuristics across US-EAST-ACC-POD01 through POD04.</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">Queued</span>
+</div>
+<!-- Step 5 (Pending) -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between gap-space-md opacity-75">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">5. Run automated regression test probe on Gradebook API</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Automated HTTP probe checking 15 standard test student marks against expected GES totals.</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">Queued</span>
+</div>
+</div>
+</div>
+<!-- Terminal Execution Logs Drawer / Output Preview -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Live SysOps Pipeline Output</span>
+<span class="font-mono text-[11px] text-on-tertiary-container flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+              Runner Connected: ACC-POD01-DOCKER02
+            </span>
+</div>
+<div class="p-space-md rounded-xl bg-primary text-primary-fixed font-mono text-[12px] leading-relaxed overflow-x-auto shadow-inner">
+<p class="text-primary-fixed-dim">[16:00:12 GMT] &gt; flyway migrate -target="4.2" -url="jdbc:postgresql://stg-acc-db:5432/carepoint"</p>
+<p class="text-tertiary-fixed">[16:00:44 GMT] SUCCESS: Successfully applied 1 migration to schema "public" (execution time 00:00.320s)</p>
+<p class="text-primary-fixed-dim">[16:05:01 GMT] &gt; aws rds create-db-snapshot --db-instance-identifier acc-db-primary --db-snapshot-identifier snap-rds-acc-20260218-1605</p>
+<p class="text-tertiary-fixed">[16:05:28 GMT] RDS Snapshot Status: AVAILABLE (100% complete, Storage 180GB allocated)</p>
+<p class="text-secondary-fixed">[16:06:00 GMT] STAGE GATE: Awaiting human operator command to trigger Step 3 on cluster: ACC-DB-PROD</p>
+</div>
+</div>
+<!-- Execution Action Toolbar -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-md">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-lowest text-secondary hover:bg-error-container font-label-md text-label-md font-bold transition-colors">
+<span class="material-symbols-outlined text-[18px]">undo</span>
+            Emergency Abort &amp; Rollback
+          </button>
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-label-md text-label-md font-semibold transition-colors">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+              Hold Pipeline
+            </button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold shadow-md hover:opacity-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+              Execute Next Step (Apply Schema)
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

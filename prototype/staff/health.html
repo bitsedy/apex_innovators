@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"outline-variant":"#c5c6d1","primary":"#011549","secondary-fixed":"#ffdad5","on-primary-container":"#8494cd","surface-container-highest":"#dde3ec","surface":"#eef2f6","surface-dim":"#d5dae4","on-secondary-fixed-variant":"#930004","error-container":"#ffdad6","primary-container":"#1a2b5e","on-background":"#161c23","on-surface-variant":"#45464f","tertiary-fixed-dim":"#78dc86","secondary":"#ba0a0c","surface-tint":"#4c5c92","tertiary-container":"#003712","inverse-primary":"#b5c4ff","surface-container-low":"#eef4fe","surface-container-lowest":"#ffffff","tertiary-fixed":"#94f9a0","on-secondary-container":"#fffbff","on-error-container":"#93000a","on-tertiary-fixed":"#002108","surface-container-high":"#e3e8f2","on-primary-fixed":"#03174b","on-surface":"#161c23","on-secondary-fixed":"#410001","primary-fixed-dim":"#b5c4ff","inverse-surface":"#2b3138","tertiary":"#001f07","inverse-on-surface":"#ecf1fb","background":"#eef2f6","on-primary":"#ffffff","surface-bright":"#f7f9ff","on-error":"#ffffff","outline":"#757680","secondary-container":"#df2d23","on-primary-fixed-variant":"#344478","on-tertiary-fixed-variant":"#00531f","surface-variant":"#dde3ec","on-secondary":"#ffffff","error":"#ba1a1a","on-tertiary-container":"#46a95a","surface-container":"#e9eef8","primary-fixed":"#dce1ff","on-tertiary":"#ffffff","secondary-fixed-dim":"#ffb4a9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","space-md":"1rem","margin-sm":"1rem","space-xs":"0.25rem","space-xl":"2.5rem","space-lg":"1.5rem","margin":"2rem","gutter-sm":"1rem","gutter":"1.5rem"},"fontFamily":{"headline-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},"fontSize":{"headline-md":["20px",{"lineHeight":"26px","fontWeight":"700"}],"display-lg-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"800"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["12.5px",{"lineHeight":"17px","letterSpacing":"0.03em","fontWeight":"700"}],"headline-xl-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg":["26px",{"lineHeight":"34px","fontWeight":"700"}],"body-lg":["15.5px",{"lineHeight":"23px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-md":["11px",{"lineHeight":"15px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-sm":["17px",{"lineHeight":"22px","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-sm":["10px",{"lineHeight":"13px","letterSpacing":"0.04em","fontWeight":"600"}],"body-sm":["12.5px",{"lineHeight":"17px","fontWeight":"400"}]}}}};</script><title>Carepoint - Health &amp; Welfare Escalation Form</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "staff",
+            label: "Health & Welfare Escalation Form",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-health.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface text-on-surface font-body-md"><aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-outline-variant/30">
+  <!-- Top Header with Crest, Title, Motto, Badge, and Repositioned Close Button -->
+  <div class="shrink-0 p-4 border-b border-surface-container-high/70 flex flex-col gap-2 relative bg-surface-container-lowest">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold truncate">Community School</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant font-bold tracking-wider">STAFF OPERATIONAL PORTAL</span>
+    </div>
+  </div>
+
+  <!-- Middle Nav Area (Scrolls smoothly if screen is short, never crushes the class card!) -->
+  <div class="flex-1 min-h-0 overflow-y-auto px-3 py-3">
+    <div class="font-label-sm text-[11px] uppercase tracking-wider text-outline px-2 mb-1.5 font-bold">
+      Academic Operations
+    </div>
+    <nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm">
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-dashboard" href="dashboard.html">
+        <span class="material-symbols-outlined text-[20px]">grid_view</span>
+        <span>Dashboard</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-attendance" href="attendance.html">
+        <span class="material-symbols-outlined text-[20px]">fact_check</span>
+        <span>Attendance</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-gradebook" href="gradebook.html">
+        <span class="material-symbols-outlined text-[20px]">menu_book</span>
+        <span>Gradebook</span>
+      </a>
+      <a aria-current="page" class="flex items-center gap-2.5 px-3 py-2 transition-colors bg-primary-container text-on-primary font-bold rounded-lg shadow-sm font-label-lg text-label-lg" data-path="staff-health-and-welfare" href="health.html">
+        <span class="material-symbols-outlined text-[20px]">medical_services</span>
+        <span>Health &amp; Welfare</span>
+      </a>
+      <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-approvals-engine" href="approvals.html">
+        <div class="flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-[20px]">verified</span>
+          <span>Approvals Engine</span>
+        </div>
+        <span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-label-sm font-bold">3</span>
+      </a>
+      <a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="staff-messages" href="messages.html">
+        <span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+        <span>Messages</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Bottom My Class Layer Card (Docked, shrink-0, comfortably padded with breathing room) -->
+  <div class="shrink-0 p-3 mx-3 mb-3 rounded-xl bg-surface-container-low flex flex-col gap-1 border border-surface-container-high/80 shadow-2xs">
+    <div class="flex items-center justify-between">
+      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-bold">My Class</span>
+      <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Active
+      </span>
+    </div>
+    <div class="font-headline-sm text-base text-primary font-bold leading-tight" id="staff-assigned-class-name">Sunflower Class</div>
+    <div class="font-body-sm text-xs text-on-surface-variant" id="staff-assigned-class-sub">Basic 2 • Academic Lead</div>
+    <button id="switchClassBtn" onclick="openSwitchClassModal()" class="mt-1.5 w-full py-1.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-primary text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs active:scale-[0.98] border border-outline-variant/20" type="button">
+      <span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+      <span>Change Class</span>
+    </button>
+  </div>
+</aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-1 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low hover:bg-surface-container rounded-full transition-colors cursor-pointer" id="staff-duty-badge" onclick="openStaffDutyModal()" title="View Shift Details &amp; Clock-Out"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface font-semibold" id="staff-duty-status-text">Campus: On-Duty (Main Block)</span></div><div class="hidden md:inline-flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-low rounded-full text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">calendar_today</span><span class="font-label-sm text-label-sm font-medium">Term 1, 2026/2027</span></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-secondary text-on-secondary text-[10px] font-bold flex items-center justify-center">3</span></button><div class="h-8 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:block"><div class="font-label-lg text-label-lg text-on-surface leading-snug">Mrs. Beatrice Abbey</div><div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 Sunflower Lead</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA"/><button id="staff-clockout-btn" class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors cursor-pointer" title="Clock-Out of Campus Duty" onclick="openStaffDutyModal()" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></header><main class="w-full px-space-lg pt-16 flex-1 bg-surface"><div class="flex flex-col w-full">
+<div class="relative w-full overflow-hidden rounded-2xl bg-surface-container-low shadow-sm mb-space-lg">
+<div class="h-1.5 w-full flex">
+<div class="h-full w-1/3 bg-sky-400"></div>
+<div class="h-full w-1/3 bg-secondary"></div>
+<div class="h-full w-1/3 bg-tertiary-fixed-dim"></div>
+</div>
+<div class="p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-gradient-to-r from-surface-container-lowest via-surface-container-low to-surface-container-high">
+<div class="space-y-1 max-w-3xl">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase tracking-wider font-bold">Student Health &amp; Safety</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold">School Clinic</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Send Student to School Clinic</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Send a student quickly to Nurse Faustina Asante at the school clinic. If the issue is serious, the school will text the parents right away.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-center shrink-0">
+<div class="p-3 bg-surface-container-lowest rounded-xl shadow-sm text-center min-w-[110px]">
+<div class="font-label-sm text-label-sm text-outline uppercase font-semibold">Clinic Status</div>
+<div class="inline-flex items-center gap-1.5 mt-0.5 text-tertiary-container font-headline-sm text-headline-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim animate-ping"></span>
+            Open
+          </div>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-xl shadow-sm text-center min-w-[110px]">
+<div class="font-label-sm text-label-sm text-outline uppercase font-semibold">Beds Free</div>
+<div class="text-primary font-headline-sm text-headline-sm">3 Free</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start pb-space-xl">
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<form class="flex flex-col gap-space-md" id="incidentForm">
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center">01</span>
+<label class="font-headline-sm text-headline-sm text-primary" for="studentSearch">Select Student</label>
+</div>
+<span class="text-secondary font-label-sm text-label-sm font-bold uppercase tracking-wider">Required</span>
+</div>
+<div class="relative">
+<div class="flex items-center gap-space-sm bg-surface-container-low p-2 rounded-xl">
+<span class="material-symbols-outlined text-outline ml-2">person_search</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none placeholder:text-outline" id="studentSearch" placeholder="Type student name or ID..." type="text" value="Kofi Mensah"/>
+<button class="px-space-sm py-1 bg-surface-container-highest rounded-lg text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container transition-colors" type="button">
+                Change
+              </button>
+</div>
+<div class="mt-space-sm p-space-sm bg-surface-container-lowest rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-xl object-cover shadow-sm" data-alt="Close-up portrait of a young Ghanaian boy student wearing Carepoint Community School white collared uniform with navy trim, looking politely at the camera with gentle classroom lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzHXKofyKd-GchiwXCWNHr2cMg2PUkpeB_B5b81jrDWiyWxSezPS_f0atyFkYDA2HSgvGndR5pyCjcOBDQDQOXb9kZLJ0SKRPR2qHTg-XzR5RNaAqefyESaJMdYKdYm_xcsNcyBOUqByk7QlTSwV8t3YKmAc0eUiLIZ5j-e_mehUAjeaJCWWcboWue2iRHsav3S0X-FUPK9_JYODWjAnnioqOiVKtHcItPDQq0GxCTx64a1HOybxTptg"/>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary">Kofi Mensah</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Basic 2 Sunflower • ID #24-089</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 rounded bg-amber-100 text-amber-800 font-label-sm text-label-sm font-bold">Known Allergies</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center">02</span>
+<span class="font-headline-sm text-headline-sm text-primary">When &amp; Where Did It Happen?</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface" for="incidentTime">Time <span class="text-secondary">*</span></label>
+<div class="flex items-center bg-surface-container-low px-space-md py-2.5 rounded-lg">
+<span class="material-symbols-outlined text-outline text-[20px] mr-2">schedule</span>
+<input class="bg-transparent w-full text-on-surface font-body-md text-body-md focus:outline-none" id="incidentTime" type="text" value="10:45 GMT (Break Time)"/>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface" for="incidentLocation">Location on Campus <span class="text-secondary">*</span></label>
+<div class="flex items-center bg-surface-container-low px-space-md py-2.5 rounded-lg">
+<span class="material-symbols-outlined text-outline text-[20px] mr-2">pin_drop</span>
+<select class="bg-transparent w-full text-on-surface font-body-md text-body-md focus:outline-none cursor-pointer" id="incidentLocation">
+<option selected="">Junior Playground</option>
+<option>Sunflower Basic 2 Classroom</option>
+<option>Dining Hall</option>
+<option>School Compound</option>
+<option>Sports Field</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center">03</span>
+<span class="font-headline-sm text-headline-sm text-primary">What Are the Symptoms?</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Check all that apply</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<label class="carepoint-hover-card flex items-center gap-3 p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all group">
+<input class="w-5 h-5 rounded text-primary focus:ring-0 cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">High Fever</span>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<span class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Hot forehead or red face</span>
+</div>
+</label>
+<label class="carepoint-hover-card flex items-center gap-3 p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all group">
+<input class="w-5 h-5 rounded text-primary focus:ring-0 cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Asthma / Coughing</span>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<span class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Hard to breathe or tight chest</span>
+</div>
+</label>
+<label class="carepoint-hover-card flex items-center gap-3 p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all group">
+<input class="w-5 h-5 rounded text-primary focus:ring-0 cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Playground Cut or Scrape</span>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<span class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Small fall or scrape</span>
+</div>
+</label>
+<label class="carepoint-hover-card flex items-center gap-3 p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all group">
+<input class="w-5 h-5 rounded text-primary focus:ring-0 cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Severe Allergic Reaction</span>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<span class="carepoint-hover-detail font-label-sm text-label-sm text-secondary font-bold">Swollen face or lips (Emergency)</span>
+</div>
+</label>
+<label class="carepoint-hover-card flex items-center gap-3 p-space-sm rounded-xl bg-primary-container text-on-primary cursor-pointer shadow-sm transition-all group">
+<input checked="" class="w-5 h-5 rounded accent-secondary-container cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold">Eye Irritation / Dust Allergy</span>
+<span class="carepoint-hover-hint text-on-primary/70">Details &bull;</span>
+</div>
+<span class="carepoint-hover-detail font-label-sm text-label-sm text-on-primary-container">Watery or red eyes</span>
+</div>
+</label>
+<label class="carepoint-hover-card flex items-center gap-3 p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all group">
+<input class="w-5 h-5 rounded text-primary focus:ring-0 cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Stomach Ache or Vomiting</span>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<span class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Upset stomach or throwing up</span>
+</div>
+</label>
+<label class="carepoint-hover-card flex items-center gap-3 p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all group sm:col-span-2">
+<input class="w-5 h-5 rounded text-primary focus:ring-0 cursor-pointer shrink-0" type="checkbox"/>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Sudden Dizziness or Very Weak</span>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<span class="carepoint-hover-detail font-label-sm text-label-sm text-on-surface-variant">Cannot walk straight or looks very dizzy</span>
+</div>
+</label>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center">04</span>
+<span class="font-headline-sm text-headline-sm text-primary">How Urgent Is This?</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase">Urgency Level</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<label class="carepoint-hover-card p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer flex flex-col justify-between gap-space-sm transition-all group">
+<div class="flex items-start justify-between">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold">Level 1</span>
+<input class="w-4 h-4 text-primary cursor-pointer" name="severity" type="radio" value="low"/>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<div class="font-headline-sm text-headline-sm text-on-surface leading-tight font-bold">Mild</div>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<p class="carepoint-hover-detail font-body-sm text-body-sm text-on-surface-variant">Small scrape, needs water, or short rest in the clinic.</p>
+</div>
+</label>
+<label class="carepoint-hover-card p-space-md rounded-xl bg-surface-container-lowest shadow-md flex flex-col justify-between gap-space-sm relative overflow-hidden transition-all group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-amber-400"></div>
+<div class="flex items-start justify-between">
+<span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-label-sm text-label-sm font-bold">Level 2</span>
+<input checked="" class="w-4 h-4 text-secondary-container cursor-pointer" name="severity" type="radio" value="moderate"/>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<div class="font-headline-sm text-headline-sm text-primary leading-tight font-bold">Moderate</div>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<p class="carepoint-hover-detail font-body-sm text-body-sm text-on-surface-variant">Needs nurse care, eye drops, or bandage.</p>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">verified</span> Selected
+              </span>
+</label>
+<label class="carepoint-hover-card p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer flex flex-col justify-between gap-space-sm transition-all group">
+<div class="flex items-start justify-between">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">Level 3</span>
+<input class="w-4 h-4 text-secondary cursor-pointer" name="severity" type="radio" value="high"/>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<div class="font-headline-sm text-headline-sm text-secondary leading-tight font-bold">Emergency</div>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<p class="carepoint-hover-detail font-body-sm text-body-sm text-on-surface-variant">Needs immediate doctor care or emergency phone call.</p>
+</div>
+</label>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center">05</span>
+<label class="font-headline-sm text-headline-sm text-primary" for="observations">What Happened &amp; What Did You Do?</label>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Teacher's Note</span>
+</div>
+<textarea class="w-full bg-surface-container-low p-space-md rounded-xl text-on-surface font-body-md text-body-md focus:outline-none placeholder:text-outline" id="observations" placeholder="Explain what happened, what help you gave, and how the child looks..." rows="4">During play near the courtyard sandpit, the student said both eyes were hurting and red. The teacher took the student to the shade, washed hands with clean water, and told him not to rub his eyes. Eyes are still watery. Accompanied by classroom friend to the clinic.</textarea>
+<div class="flex flex-wrap items-center justify-between gap-space-sm p-space-sm bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">check</span>
+              Seen with Assisting Teacher: <strong>Mr. E. Addo</strong>
+</div>
+<div class="text-outline font-label-sm text-label-sm">Word count: 52 words</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<button class="w-full sm:w-auto px-space-lg py-3 rounded-xl bg-surface-container-highest text-primary font-label-lg text-label-lg hover:bg-surface-container transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+            Save Draft
+          </button>
+<button class="w-full sm:w-auto px-space-xl py-3 rounded-xl bg-secondary hover:bg-red-800 text-on-secondary font-label-lg text-label-lg shadow-md transition-all flex items-center justify-center gap-2 active:scale-95" id="submitBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+            Send to Clinic &amp; Headmistress
+          </button>
+</div>
+</form>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline tracking-wider">Student Health Info</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">Health File #882</span>
+</div>
+<div class="flex items-center gap-space-md">
+<img class="w-20 h-20 rounded-2xl object-cover shadow-sm shrink-0" data-alt="Official school ID photograph of Kofi Mensah, cheerful 7-year-old schoolboy with short neat hair wearing Carepoint Community School polo with crest insignia, well-lit portrait against neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLZfuBnbOzYbJIu_AcBor2UPeL6mlWtZS6ndMxxec3jeQTiN8nKHFJKwTJrvLvblIaYxP2L09zZIHzXhT2VK13T3f57PYvUPv-_WjTW4a18k6mVI0VxFaAUFGNAaRDiXQpQd4xVLlwiKlKvayQTiSo21DgWtd_1Sg8ROpK92LQmimhZzw9_ue8nX6BXz8wl6cZytw5QpIvSKmkc2dD137oi234Df09eZBEyjVjM2FlbQ0v7vBMtwWjrw"/>
+<div class="space-y-0.5">
+<h2 class="font-headline-md text-headline-md text-primary">Kofi Mensah</h2>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Class: <strong>Basic 2 Sunflower</strong></div>
+<div class="font-label-sm text-label-sm text-outline">Date of Birth: 14 March 2017 (Age 8)</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center pt-space-xs">
+<div class="bg-surface-container-low p-2 rounded-xl">
+<div class="font-label-sm text-label-sm text-outline">Blood Group</div>
+<div class="font-headline-sm text-headline-sm text-secondary font-bold">O+</div>
+</div>
+<div class="bg-surface-container-low p-2 rounded-xl">
+<div class="font-label-sm text-label-sm text-outline">G6PD Status</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Normal</div>
+</div>
+<div class="bg-surface-container-low p-2 rounded-xl">
+<div class="font-label-sm text-label-sm text-outline">Genotype</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">AA</div>
+</div>
+</div>
+<div class="carepoint-hover-card p-space-sm rounded-xl bg-amber-50 flex items-start gap-2.5 group cursor-pointer transition-all">
+<span class="material-symbols-outlined text-amber-700 text-[20px] shrink-0 mt-0.5">warning</span>
+<div class="text-amber-900 font-body-sm text-body-sm flex-1">
+<div class="flex items-center justify-between">
+<strong>Dust &amp; Pollen Allergy</strong>
+<span class="carepoint-hover-hint">Medical Note &bull;</span>
+</div>
+<div class="carepoint-hover-detail mt-0.5">Student reacts to dry air and chalk dust. Prescribed saline eye drops kept in Clinic Cabinet #B-04.</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline tracking-wider">Emergency Contacts</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">SMS Ready</span>
+</div>
+<div class="space-y-space-sm">
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center font-bold">
+                DM
+              </div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Dr. Nana Mensah</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Father • Main Contact</div>
+</div>
+</div>
+<div class="text-right">
+<a class="font-label-md text-label-md font-bold text-primary hover:underline flex items-center gap-1 justify-end" href="tel:+233241234567">
+<span class="material-symbols-outlined text-[16px]">call</span> +233 24 123 4567
+              </a>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim font-semibold">First Call</span>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest text-primary font-label-md text-label-md flex items-center justify-center font-bold">
+                GO
+              </div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Mrs. Grace Owusu</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Aunt • Second Contact</div>
+</div>
+</div>
+<div class="text-right">
+<a class="font-label-md text-label-md font-bold text-primary hover:underline flex items-center gap-1 justify-end" href="tel:+233207654321">
+<span class="material-symbols-outlined text-[16px]">call</span> +233 20 765 4321
+              </a>
+<span class="font-label-sm text-label-sm text-outline">Second Call</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline tracking-wider">Past Visits to Clinic (Term 1)</span>
+<span class="font-label-sm text-label-sm text-outline" id="incident-counter-text">1 Visit Finished</span>
+</div>
+<div class="space-y-space-sm" id="health-history-list">
+<div class="carepoint-hover-card p-space-sm bg-surface-container-low hover:bg-surface-container rounded-xl flex items-start gap-space-sm group cursor-pointer transition-all">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[22px] shrink-0 mt-0.5">check_circle</span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Dust Allergy in Eyes</span>
+<div class="flex items-center gap-2">
+<span class="carepoint-hover-hint">Details &bull;</span>
+<span class="font-label-sm text-label-sm text-outline">14 Oct 2026</span>
+</div>
+</div>
+<div class="carepoint-hover-detail">
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Nurse Asante washed eyes with saline water. Student rested for 20 minutes in clinic, then returned to class feeling well.
+                </p>
+<div class="mt-1 font-label-sm text-label-sm text-primary font-semibold">Nurse: Faustina Asante, RN</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline tracking-wider">What Happens Next</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Steps</span>
+</div>
+<div class="relative pl-6 space-y-space-md before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-highest">
+<div class="carepoint-hover-card relative group cursor-pointer">
+<span class="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between">
+<div class="font-label-lg text-label-lg text-primary font-bold">1. Teacher Sends Note</div>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<div class="carepoint-hover-detail font-body-sm text-body-sm text-on-surface-variant">Mrs. Beatrice Abbey submits the health note through the teacher portal.</div>
+</div>
+<div class="carepoint-hover-card relative group cursor-pointer">
+<span class="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full bg-secondary ring-4 ring-surface-container-lowest animate-pulse"></span>
+<div class="flex items-center justify-between">
+<div class="font-label-lg text-label-lg text-secondary font-bold">2. School Clinic Gets Alert</div>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<div class="carepoint-hover-detail font-body-sm text-body-sm text-on-surface-variant">Nurse Faustina Asante gets the alert and prepares to treat the student.</div>
+</div>
+<div class="carepoint-hover-card relative group cursor-pointer">
+<span class="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full bg-outline ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between">
+<div class="font-label-lg text-label-lg text-on-surface font-semibold">3. Headmistress Is Notified</div>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<div class="carepoint-hover-detail font-body-sm text-body-sm text-on-surface-variant">The Headmistress sees this record on her office dashboard.</div>
+</div>
+<div class="carepoint-hover-card relative group cursor-pointer">
+<span class="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full bg-outline ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between">
+<div class="font-label-lg text-label-lg text-on-surface font-semibold">4. Parents Receive SMS</div>
+<span class="carepoint-hover-hint">Details &bull;</span>
+</div>
+<div class="carepoint-hover-detail font-body-sm text-body-sm text-on-surface-variant">An automatic text message is sent to the parents.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-primary text-on-primary px-space-lg py-space-md rounded-2xl shadow-xl flex items-center gap-space-md" id="toastNotification">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-primary">Sent to School Clinic</div>
+<div class="font-body-sm text-body-sm text-on-primary-container">Nurse Asante was alerted. Text message sent to student's father.</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const submitBtn = document.getElementById('submitBtn');
+    const toast = document.getElementById('toastNotification');
+
+    if (submitBtn && toast) {
+      submitBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Dispatching Escalation...';
+        
+        setTimeout(() => {
+          submitBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span> Escalation Dispatched';
+          submitBtn.classList.remove('bg-secondary', 'hover:bg-red-800');
+          submitBtn.classList.add('bg-tertiary-container', 'text-on-tertiary-container');
+          
+          // Append active incident to health history list
+          const historyList = document.getElementById('health-history-list');
+          const counterText = document.getElementById('incident-counter-text');
+          if (historyList) {
+            const now = new Date();
+            const timeStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+            const newCard = document.createElement('div');
+            newCard.className = 'p-space-sm bg-surface-container-low rounded-xl flex items-start gap-space-sm border-l-4 border-secondary animate-in fade-in duration-300';
+            newCard.innerHTML = `
+              <span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5 animate-pulse">emergency</span>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-lg text-label-lg text-on-surface font-bold">Mild Wheezing & Dust Sensitivity</span>
+                  <span class="font-label-sm text-label-sm text-secondary font-bold">Active Just Now</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Escalated by Mrs. Beatrice Abbey. Nurse Faustina Asante attending at Health Bay. Emergency inhaler standby.
+                </p>
+                <div class="mt-1 font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Clinic Check Status: Nurse Faustina Asante Attending
+                </div>
+              </div>
+            `;
+            historyList.insertBefore(newCard, historyList.firstChild);
+          }
+          if (counterText) {
+            counterText.innerText = '2 Incidents (1 Active Clinic Check)';
+            counterText.className = 'font-label-sm text-label-sm text-secondary font-bold';
+          }
+
+          toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+          toast.classList.add('translate-y-0', 'opacity-100');
+
+          setTimeout(() => {
+            toast.classList.remove('translate-y-0', 'opacity-100');
+            toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+          }, 5000);
+        }, 1000);
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-low py-space-lg px-space-lg mt-space-xl"><div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary">Carepoint Community School</span><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface text-label-sm font-label-sm font-semibold">NaSIA &amp; GES Accredited</span></div><div class="font-body-sm text-body-sm text-on-surface-variant">Academic Excellence &amp; Character Formative Academy • Mind, Heart, Hands Standards Policy compliant.</div></div><div class="flex flex-wrap items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm"><span>Campus Ext: <strong>4102 (Staff Desk)</strong></span><span>IT Helpdesk: <strong>helpdesk@carepoint.edu</strong></span><span>Term 1: <strong>Week 6 of 14</strong></span></div></div></footer></div></body></html>

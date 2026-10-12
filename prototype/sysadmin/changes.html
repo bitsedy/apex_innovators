@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet"/>
+<style>html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "#f7f9ff", "on-background": "#161c23", "secondary-fixed-dim": "#ffb4a9", "inverse-surface": "#2b3138", "surface-tint": "#4c5c92", "on-primary-fixed-variant": "#344478", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#00531f", "inverse-primary": "#b5c4ff", "on-tertiary-fixed": "#002108", "error": "#ba1a1a", "surface-container-low": "#eef4fe", "outline": "#757680", "on-primary-fixed": "#03174b", "on-secondary-fixed-variant": "#930004", "background": "#f7f9ff", "on-tertiary-container": "#46a95a", "surface-container": "#e9eef8", "on-primary": "#ffffff", "secondary": "#ba0a0c", "tertiary-fixed": "#94f9a0", "primary": "#011549", "surface-bright": "#f7f9ff", "tertiary": "#001f07", "outline-variant": "#c5c6d1", "on-surface-variant": "#45464f", "primary-fixed": "#dce1ff", "secondary-container": "#df2d23", "on-surface": "#161c23", "on-tertiary": "#ffffff", "surface-container-highest": "#dde3ec", "on-secondary": "#ffffff", "on-error-container": "#93000a", "inverse-on-surface": "#ecf1fb", "on-error": "#ffffff", "surface-container-high": "#e3e8f2", "surface-dim": "#d5dae4", "primary-fixed-dim": "#b5c4ff", "surface-container-lowest": "#ffffff", "on-secondary-container": "#fffbff", "on-secondary-fixed": "#410001", "tertiary-container": "#003712", "tertiary-fixed-dim": "#78dc86", "surface-variant": "#dde3ec", "on-primary-container": "#8494cd", "secondary-fixed": "#ffdad5", "primary-container": "#1a2b5e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1.5rem", "margin-sm": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xl": "2.5rem", "gutter-sm": "1rem", "margin": "2rem", "space-lg": "1.5rem" }, fontFamily: { "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"] }, fontSize: { "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }] } } } };</script><title>Carepoint - Change Request Composer</title><link href="../carepoint-hud.css" rel="stylesheet"/><script>
+        window.__CAREPOINT_HUD__ = {
+            role: "sysadmin",
+            label: "Change Request Composer",
+            isMobile: false,
+            relRoot: "../",
+            counterpart: "mobile-changes.html"
+        };
+        </script><script type="module" src="/carepoint-app.js"></script><script type="module" src="../carepoint-hud.js"></script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 bottom-0 h-screen max-h-screen w-72 bg-primary text-on-primary z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-white/10"><div class="flex flex-col"><!-- Top Header with Crest, Title, Motto, Badge, and Close Button -->
+  <div class="shrink-0 p-4 border-b border-white/10 flex flex-col gap-2 relative bg-primary-container">
+    <div class="flex items-center justify-between gap-2 carepoint-brand-row">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-xs border border-outline-variant/30 p-0.5 shrink-0 overflow-hidden">
+          <img src="../assets/carepoint-crest.png" alt="Carepoint Community School" class="w-full h-full object-contain rounded-lg"/>
+        </div>
+        <div class="min-w-0">
+          <div class="font-headline-sm text-base text-on-primary font-bold leading-tight tracking-tight truncate">Carepoint</div>
+          <div class="font-label-sm text-[10px] text-primary-fixed-dim uppercase tracking-wider font-semibold truncate">SysOps Core</div>
+        </div>
+      </div>
+      <button class="carepoint-drawer-close-btn text-on-primary hover:bg-white/10 p-1 rounded-lg" type="button" aria-label="Collapse Navigation Sidebar" title="Collapse Sidebar">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="flex items-center justify-between pt-0.5">
+      <span class="font-label-sm text-[10px] tracking-widest text-secondary-fixed font-bold">MIND • HEART • HANDS</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/10 rounded-full w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="font-label-sm text-[10px] text-primary-fixed font-bold tracking-wider uppercase">Systems &amp; IT Operations</span>
+    </div>
+  </div><div class="px-gutter pt-space-lg pb-space-sm"><span class="font-label-sm text-label-sm uppercase text-primary-fixed-dim tracking-wider">Infrastructure &amp; Operations</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="dashboard" href="dashboard.html">Dashboard</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="user-provisioning" href="provisioning.html">User Provisioning</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="feature-flags" href="features.html">Feature Flags</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="change-requests" href="changes.html">Change Requests</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="change-request-composer" href="tracker.html">Change Request Composer</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="integrations" href="integrations.html">Integrations</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="audit-logs" href="audit.html">Audit Logs</a></nav></div><div class="p-space-md m-space-md rounded-xl bg-primary-container text-on-primary"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary text-body-md">shield_lock</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary uppercase tracking-wide">Access Notice</span><span class="font-body-sm text-body-sm text-primary-fixed-dim text-[11px] leading-tight mt-space-xs">Configuration Authority Only • Approval Authority Held by Principal</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-2 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-none">Carepoint Community School</span><span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Super Admin Console - SysOps Tier 0</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface">US-EAST-ACC-POD01 • Production Healthy</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-space-md py-space-xs rounded-lg"><span class="material-symbols-outlined text-body-sm text-on-surface-variant">schedule</span><span class="tabular-nums">14:28:40 GMT</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden lg:flex flex-col"><span class="font-label-lg text-label-lg text-on-surface leading-tight">Ing. Kwabena Boateng</span><span class="font-label-sm text-label-sm text-on-surface-variant">SysOps Lead</span></div><img alt="Ing. Kwabena Boateng" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDficibdtzh0xCg-RYeNu3YjQOB2wMrnGhDiTxfeEkMCvfdTGILXcQePEO7gWXcB0Go5WFlo_hEWJ02SQiIcocAII6hOv3v1Vsp7KFfSldX32a6rzPOlL4ReSyMBYgRP4crioNrulufNiTAaSTQ4t8TQjfTn2QMKIucNdX2AAUv4Tqdihfy2Ta3gZpSWIFxOD5ap0xX9esm5pfkFeCaRACUrCY2TlfFs2xIlboc8vEYjBoZW3eIjBokfQ"/></div></div></header><main class="w-full px-gutter pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Tricolor Accent Ribbon (Carepoint Institutional Emblem Accent) -->
+<div class="h-1.5 w-full flex rounded-full overflow-hidden shadow-sm mb-space-md">
+<div class="h-full w-1/3 bg-[#38bdf8]"></div>
+<div class="h-full w-1/3 bg-secondary"></div>
+<div class="h-full w-1/3 bg-on-tertiary-container"></div>
+</div>
+<!-- Studio Header Section -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<!-- Breadcrumb & Custody Protocol Tag -->
+<div class="flex flex-wrap items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span>SysOps Home</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Change Requests</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Compose New RFC</span>
+<span class="ml-space-xs px-space-sm py-[2px] rounded-full bg-error-container text-on-error-container uppercase tracking-wider font-bold text-[10px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">security</span>
+          Governance Protocol • Dual-Custody Control Required
+        </span>
+</div>
+<!-- Main Screen Title -->
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+        Change Request Composer (RFC Studio)
+      </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
+        Draft structural mutations, configuration shifts, schema migrations, or security policy overrides for Executive Principal action.
+      </p>
+</div>
+<!-- Action Bar -->
+<div class="flex items-center gap-space-sm self-start lg:self-center shrink-0">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-body-md text-on-surface-variant">save</span>
+<span>Save Draft <span class="font-mono text-label-sm text-outline">(RFC-2026-09-DRAFT)</span></span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-secondary hover:bg-secondary-container text-on-secondary font-label-lg text-label-lg transition-all shadow-md group" id="btn-submit-rfc" type="button">
+<span class="material-symbols-outlined text-body-md group-hover:rotate-12 transition-transform">lock_clock</span>
+<span>Submit to Principal Approvals Queue</span>
+<span class="material-symbols-outlined text-body-md">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Studio Grid: 12-Column Responsive Split -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter items-start pb-space-xl">
+<!-- LEFT COLUMN: RFC Specification Form (7 Cols) -->
+<div class="xl:col-span-7 flex flex-col gap-space-lg">
+<!-- Section 1: Classification & Core Metadata -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-primary-fixed flex items-center justify-center font-bold text-label-lg">01</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary leading-tight">Change Classification &amp; Identity</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Formal SysOps Specification</span>
+</div>
+</div>
+<span class="font-mono font-bold text-label-sm text-primary-container bg-surface-container px-space-sm py-1 rounded">
+            CR-2026-09-PROD
+          </span>
+</div>
+<!-- RFC Title -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between">
+<span>RFC Title / Executive Descriptor <span class="text-secondary">*</span></span>
+<span class="font-label-sm text-label-sm text-outline">Max 140 chars</span>
+</label>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md px-space-md py-space-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-inner bg-surface-container-low" type="text" value="Migrate Parent Notification Webhook &amp; Enable High-Gate Area Turnstile Biometric Vector Cache"/>
+</div>
+<!-- Meta Sub-grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface">Target Release Window</label>
+<div class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md">calendar_month</span>
+<input class="bg-transparent w-full focus:outline-none font-medium" type="text" value="Term 1 - Wk 7 Maintenance (Fri 23:00 GMT)"/>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface">Environment Scope</label>
+<div class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-body-md">cloud_sync</span>
+<span class="font-medium text-on-surface">ACC-PRD-POD01 (Direct Production)</span>
+</div>
+</div>
+</div>
+<!-- Urgency / Tier Selector -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface">Urgency &amp; Governance Tier</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<!-- Tier 2 -->
+<label class="flex flex-col p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-space-xs">
+<input class="accent-primary w-4 h-4" name="rfc_tier" type="radio"/>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Standard Maintenance</span>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface-variant pl-5 mt-1 leading-snug">Tier 2 • Non-breaking scheduled tasks</span>
+</label>
+<!-- Tier 1 Selected -->
+<label class="flex flex-col p-space-sm rounded-lg bg-primary text-on-primary cursor-pointer shadow-md">
+<div class="flex items-center gap-space-xs">
+<input checked="" class="accent-secondary w-4 h-4" name="rfc_tier" type="radio"/>
+<span class="font-label-sm text-label-sm font-bold text-on-primary">High Impact System Change</span>
+</div>
+<span class="font-label-sm text-[11px] text-primary-fixed-dim pl-5 mt-1 leading-snug">Tier 1 • Mandatory Principal Action</span>
+</label>
+<!-- Tier 0 -->
+<label class="flex flex-col p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-space-xs">
+<input class="accent-secondary w-4 h-4" name="rfc_tier" type="radio"/>
+<span class="font-label-sm text-label-sm font-bold text-secondary">Emergency Safeguard</span>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface-variant pl-5 mt-1 leading-snug">Tier 0 • Immediate Life &amp; Safety Override</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Section 2: Affected Architectural Modules -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-primary-fixed flex items-center justify-center font-bold text-label-lg">02</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary leading-tight">Affected Architectural Modules</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Cross-Subsystem Footprint</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 Selected</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<!-- Item 1: Turnstile -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 w-4 h-4 accent-primary rounded" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Gate Kiosk &amp; Turnstile Daemon</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Hardware Node A &amp; B (Biometric Vector Sync)</span>
+</div>
+</label>
+<!-- Item 2: Parent Portal WebSockets -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 w-4 h-4 accent-primary rounded" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Parent Portal Notification WebSockets</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Real-time arrival push to Guardian App v3</span>
+</div>
+</label>
+<!-- Item 3: External Telco SMS -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 w-4 h-4 accent-primary rounded" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">External Telco SMS Gateway</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">MTN / Vodafone Ghana Tier 1 SMPP Pipeline</span>
+</div>
+</label>
+<!-- Item 4: Gradebook (Unchecked) -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container opacity-60">
+<input class="mt-1 w-4 h-4 accent-primary rounded" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Staff Gradebook &amp; Timetable Engine</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Academic Assessment DB &amp; Term Reporting</span>
+</div>
+</label>
+<!-- Item 5: Admissions Pipeline (Unchecked) -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container opacity-60 md:col-span-2">
+<input class="mt-1 w-4 h-4 accent-primary rounded" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Admissions Pipeline &amp; Core Postgres Cluster</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Enrollment records, guardian KYC, student biometric identities</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Section 3: Technical Rationale & Markdown Justification -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-primary-fixed flex items-center justify-center font-bold text-label-lg">03</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary leading-tight">Technical Justification &amp; Rationale</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Root-Cause Analysis</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="px-space-sm py-0.5 rounded font-label-sm text-label-sm bg-surface-container-lowest text-primary font-bold shadow-xs" type="button">Edit</button>
+<button class="px-space-sm py-0.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" type="button">Preview</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<textarea class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm p-space-md rounded-lg focus:outline-none focus:ring-2 focus:ring-primary leading-relaxed font-mono" rows="4">Upgrading Turnstile biometric vector cache memory allocation to prevent P95 latency spikes during 14:30 GMT dismissal surge. Synchronizes with external telco SMS OTP carrier fallback to eliminate parent gate verification queues observed during Week 5.</textarea>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm px-1">
+<span>Markdown syntax supported. Attachments will be cryptographically hashed.</span>
+<span>218 / 1000 chars</span>
+</div>
+</div>
+</div>
+<!-- Section 4: Blast Radius & Automated Rollback Plan -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-primary-fixed flex items-center justify-center font-bold text-label-lg">04</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary leading-tight">Blast Radius &amp; Automated Rollback Safeguards</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Fail-Safe Protocol</span>
+</div>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-tertiary-container font-label-sm text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Zero Downtime Target
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface">Estimated Downtime Window</label>
+<div class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-body-md text-on-tertiary-container">timelapse</span>
+<span class="font-bold">0 Minutes</span>
+<span class="text-on-surface-variant font-normal">(Rolling Blue/Green pod deployment)</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface">Rollback Trigger Metric</label>
+<div class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-body-md text-secondary">crisis_alert</span>
+<span class="font-bold">&gt; 0.05% Error Rate</span>
+<span class="text-on-surface-variant font-normal">within 120s of Canary</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface">Automated Rollback Sequence</label>
+<div class="p-space-sm rounded-lg bg-surface-container-low font-mono text-body-sm text-on-surface text-[13px] leading-relaxed">
+            Automated instant rollback to Git SHA <span class="bg-surface-container-highest px-1.5 py-0.5 rounded font-bold text-primary">cfg-v2026.10.2</span> if health probe criteria fail. Canary traffic shifts 10% → 50% → 100% across 600s with Prometheus watchdog validation.
+          </div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface">Health Probe Verification Criteria</label>
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-low font-mono text-[12px] text-on-surface-variant">
+<span class="material-symbols-outlined text-on-tertiary-container text-body-md">network_ping</span>
+<span>GET /healthz/biometrics • Response &lt; 50ms across all 4 turnstile edge daemons</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Impact Inspector & Live Diff Preview (5 Cols) -->
+<div class="xl:col-span-5 flex flex-col gap-space-lg">
+<!-- Target Approver & Custody Route Card -->
+<div class="bg-primary text-on-primary rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-headline-sm">verified_user</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed-dim">Designated Executive Custodian</span>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] font-bold uppercase tracking-wider">
+            Mandatory Sign-off
+          </span>
+</div>
+<div class="flex items-center gap-space-md bg-primary-container p-space-md rounded-xl">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-fixed shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-headline-sm">account_balance</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-primary leading-tight">Dr. Elizabeth Appiah</span>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim">Headmistress &amp; Principal Approval Authority</span>
+<span class="font-label-sm text-[11px] text-primary-fixed mt-1">Carepoint Community School Executive Board</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-primary-fixed-dim bg-primary-container/40 p-space-sm rounded-lg">
+<div class="flex items-center justify-between text-[12px]">
+<span>Governance SLA Window:</span>
+<span class="text-on-primary font-bold">24 Hours (Tier 1 Enforced)</span>
+</div>
+<div class="flex items-center justify-between text-[12px]">
+<span>Cryptographic Dispatch:</span>
+<span class="text-on-primary font-bold">Hardware FIDO2 WebAuthn Prompt</span>
+</div>
+<div class="flex items-center justify-between text-[12px]">
+<span>Notification Protocol:</span>
+<span class="text-on-primary font-bold">Encrypted SMS Push + Executive Inbox</span>
+</div>
+</div>
+</div>
+<!-- Configuration Diff Preview Block -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-body-md">difference</span>
+<span class="font-headline-sm text-headline-sm text-primary">Live Configuration Diff</span>
+</div>
+<span class="font-mono text-label-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">
+            turnstile_daemon.yaml
+          </span>
+</div>
+<!-- Code Block Diff -->
+<div class="rounded-lg bg-[#001438] text-white font-mono text-[12px] p-space-md overflow-x-auto shadow-inner leading-relaxed">
+<div class="text-[#757680] pb-1"># Revision patch: POD-ACC-TURNSTILE-V2</div>
+<div class="text-[#757680] pb-2">@@ -42,8 +42,9 @@ engine_config:</div>
+<div class="text-[#c5c6d1] flex items-center">
+<span class="w-6 inline-block text-[#45464f] select-none">42</span>
+<span>  telemetry_interval_ms: 1000</span>
+</div>
+<!-- Removed line -->
+<div class="bg-[#df2d23]/20 text-[#ffb4a9] flex items-center px-1 rounded-xs">
+<span class="w-5 inline-block text-secondary-fixed select-none">-</span>
+<span class="w-6 inline-block text-[#45464f] select-none">43</span>
+<span>  cache_ttl_seconds: 300</span>
+</div>
+<!-- Added line -->
+<div class="bg-[#46a95a]/20 text-[#94f9a0] flex items-center px-1 rounded-xs">
+<span class="w-5 inline-block text-[#78dc86] select-none">+</span>
+<span class="w-6 inline-block text-[#45464f] select-none">43</span>
+<span>  cache_ttl_seconds: 1800</span>
+</div>
+<!-- Removed line -->
+<div class="bg-[#df2d23]/20 text-[#ffb4a9] flex items-center px-1 rounded-xs">
+<span class="w-5 inline-block text-secondary-fixed select-none">-</span>
+<span class="w-6 inline-block text-[#45464f] select-none">44</span>
+<span>  turnstile_biometric_concurrency: 4</span>
+</div>
+<!-- Added line -->
+<div class="bg-[#46a95a]/20 text-[#94f9a0] flex items-center px-1 rounded-xs">
+<span class="w-5 inline-block text-[#78dc86] select-none">+</span>
+<span class="w-6 inline-block text-[#45464f] select-none">44</span>
+<span>  turnstile_biometric_concurrency: 12</span>
+</div>
+<!-- Added line -->
+<div class="bg-[#46a95a]/20 text-[#94f9a0] flex items-center px-1 rounded-xs">
+<span class="w-5 inline-block text-[#78dc86] select-none">+</span>
+<span class="w-6 inline-block text-[#45464f] select-none">45</span>
+<span>  carrier_retry_policy: "exponential_backoff_max_3"</span>
+</div>
+<div class="text-[#c5c6d1] flex items-center pt-1">
+<span class="w-6 inline-block text-[#45464f] select-none">46</span>
+<span>  gate_relay_timeout_ms: 2500</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span> +3 insertions
+          </span>
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> -2 deletions
+          </span>
+<span class="font-mono">Payload: 2.4 KB</span>
+</div>
+</div>
+<!-- Pre-flight Automated Static Analysis Checklist -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-body-md">fact_check</span>
+<span class="font-headline-sm text-headline-sm text-primary">Pre-Flight Static Validation</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+            CI/CD Ready
+          </span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Item 1 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-on-tertiary-container text-body-md mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Schema Backward Compatibility</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">PASSED: Zero breaking column alterations or foreign key drops.</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-on-tertiary-container text-body-md mt-0.5">verified</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Encryption Key &amp; Hardware Security</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">PASSED: FIPS 140-3 HSM signed secrets validated for turnstile node comms.</span>
+</div>
+</div>
+<!-- Item 3 Warning -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-[#fff8e1]">
+<span class="material-symbols-outlined text-[#b45309] text-body-md mt-0.5">warning</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-[#92400e]">Concurrency Load Recommendation</span>
+<span class="font-body-sm text-body-sm text-[#78350f] text-[13px]">Synthetic stress spike test advised prior to 14:00 GMT Friday peak gate traffic.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Initiator Declaration & Cryptographic Stamp -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-body-md">draw</span>
+<span class="font-headline-sm text-headline-sm">Initiator Attestation</span>
+</div>
+<div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-label-md">
+            KB
+          </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Ing. Kwabena Boateng</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">SysOps Lead • Auth Token: ACC-OPS-99214</span>
+</div>
+</div>
+<label class="flex items-start gap-space-sm cursor-pointer p-space-xs">
+<input checked="" class="mt-1 w-4 h-4 accent-primary rounded" id="compliance-check" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface leading-tight text-[13px]">
+            I certify that this change specification has been validated in Staging (<span class="font-mono font-bold text-primary">POD-ACC-STAGE</span>) and strictly complies with NaSIA and Carepoint School IT Cybersecurity Instructions.
+          </span>
+</label>
+<div class="pt-space-xs flex flex-col gap-space-xs">
+<button class="w-full py-space-sm px-space-md rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-colors flex items-center justify-center gap-space-xs shadow-md" type="button">
+<span class="material-symbols-outlined text-body-md">send_time_extension</span>
+<span>Dispatch RFC to Executive Inbox</span>
+</button>
+<span class="text-center font-label-sm text-[11px] text-on-surface-variant">
+            SysAdmin Tier 0 does not possess approval bypass rights.
+          </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const submitBtn = document.getElementById('btn-submit-rfc');
+    const complianceCheckbox = document.getElementById('compliance-check');
+
+    if (submitBtn && complianceCheckbox) {
+      complianceCheckbox.addEventListener('change', (e) => {
+        submitBtn.disabled = !e.target.checked;
+        if (!e.target.checked) {
+          submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        } else {
+          submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+      });
+
+      submitBtn.addEventListener('click', () => {
+        if (!complianceCheckbox.checked) {
+          alert('Please certify the compliance checklist before routing to Dr. Elizabeth Appiah.');
+          return;
+        }
+        submitBtn.innerHTML = `
+          <span class="material-symbols-outlined text-body-md animate-spin">progress_activity</span>
+          <span>Encrypting & Routing to Principal...</span>
+        `;
+        submitBtn.classList.add('pointer-events-none');
+        setTimeout(() => {
+          submitBtn.innerHTML = `
+            <span class="material-symbols-outlined text-body-md">task_alt</span>
+            <span>Queued in Dr. Appiah's Chamber</span>
+          `;
+          submitBtn.classList.remove('bg-secondary', 'hover:bg-secondary-container');
+          submitBtn.classList.add('bg-on-tertiary-container', 'text-white');
+        }, 1200);
+      });
+    }
+  })();
+</script></main></div></body></html>
