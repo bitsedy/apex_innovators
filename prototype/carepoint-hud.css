@@ -915,3 +915,270 @@ header {
   background-color: #f4f1ee !important;
   border-radius: 9999px !important;
 }
+
+/* =============================================================================
+   CAREPOINT YOUTUBE-STYLE SKELETON LOADING ENGINE
+   Optimized wave shimmer (CLS = 0, GPU-accelerated with translateZ, dark mode,
+   and prefers-reduced-motion a11y support) across all portals, pages & icons.
+   ============================================================================= */
+
+@keyframes carepoint-skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes carepoint-skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.52;
+  }
+}
+
+:root {
+  --cp-skeleton-base: #e6eaf0;
+  --cp-skeleton-highlight: #f8fafc;
+  --cp-skeleton-dark-base: #1e2638;
+  --cp-skeleton-dark-highlight: #2e3a52;
+}
+
+/* Base Shimmer Class */
+.carepoint-skeleton,
+[data-skeleton="true"] {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--cp-skeleton-base) !important;
+  background-image: linear-gradient(
+    90deg,
+    rgba(230, 234, 240, 0.8) 0%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(230, 234, 240, 0.8) 100%
+  ) !important;
+  background-size: 200% 100% !important;
+  background-repeat: no-repeat !important;
+  animation: carepoint-skeleton-shimmer 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+  border-radius: 8px;
+  pointer-events: none !important;
+  user-select: none !important;
+  vertical-align: middle;
+  will-change: background-position;
+  transform: translateZ(0);
+}
+
+/* Dark Mode Shimmer Adaptation */
+.dark .carepoint-skeleton,
+[data-theme="dark"] .carepoint-skeleton {
+  background-color: var(--cp-skeleton-dark-base) !important;
+  background-image: linear-gradient(
+    90deg,
+    rgba(30, 38, 56, 0.8) 0%,
+    rgba(46, 58, 82, 0.95) 50%,
+    rgba(30, 38, 56, 0.8) 100%
+  ) !important;
+}
+
+/* 1. Avatars & Circular Placeholders */
+.carepoint-skeleton-circle,
+.carepoint-skeleton-avatar {
+  border-radius: 9999px !important;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+}
+.carepoint-skeleton-avatar-sm {
+  width: 32px !important;
+  height: 32px !important;
+}
+.carepoint-skeleton-avatar-md {
+  width: 40px !important;
+  height: 40px !important;
+}
+.carepoint-skeleton-avatar-lg {
+  width: 48px !important;
+  height: 48px !important;
+}
+.carepoint-skeleton-avatar-xl {
+  width: 64px !important;
+  height: 64px !important;
+}
+
+/* 2. Icons (YouTube style rounded square and icon glyph frames) */
+.carepoint-skeleton-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px !important;
+  flex-shrink: 0;
+}
+.carepoint-skeleton-icon-sm {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 4px !important;
+}
+.carepoint-skeleton-icon-md {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 6px !important;
+}
+.carepoint-skeleton-icon-lg {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 8px !important;
+}
+.carepoint-skeleton-icon-xl {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 12px !important;
+}
+
+/* 3. Text Lines & Headings */
+.carepoint-skeleton-line {
+  height: 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: block;
+}
+.carepoint-skeleton-line:last-child {
+  margin-bottom: 0;
+}
+.carepoint-skeleton-line-xs {
+  height: 8px;
+  border-radius: 3px;
+}
+.carepoint-skeleton-line-sm {
+  height: 10px;
+  border-radius: 3px;
+}
+.carepoint-skeleton-line-md {
+  height: 12px;
+  border-radius: 4px;
+}
+.carepoint-skeleton-line-lg {
+  height: 16px;
+  border-radius: 5px;
+}
+.carepoint-skeleton-title {
+  height: 20px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* Width Helpers */
+.carepoint-skeleton-w-15 { width: 15% !important; }
+.carepoint-skeleton-w-25 { width: 25% !important; }
+.carepoint-skeleton-w-33 { width: 33.333% !important; }
+.carepoint-skeleton-w-50 { width: 50% !important; }
+.carepoint-skeleton-w-66 { width: 66.666% !important; }
+.carepoint-skeleton-w-75 { width: 75% !important; }
+.carepoint-skeleton-w-85 { width: 85% !important; }
+.carepoint-skeleton-w-full { width: 100% !important; }
+
+/* 4. Action Buttons & Chips */
+.carepoint-skeleton-btn {
+  height: 38px;
+  border-radius: 9999px !important;
+  display: inline-block;
+}
+.carepoint-skeleton-chip {
+  height: 24px;
+  border-radius: 9999px !important;
+  display: inline-block;
+}
+.carepoint-skeleton-badge {
+  height: 20px;
+  width: 50px;
+  border-radius: 9999px !important;
+  display: inline-block;
+}
+
+/* 5. Cards & Containers */
+.carepoint-skeleton-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+.carepoint-skeleton-kpi {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.carepoint-skeleton-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+}
+.carepoint-skeleton-table-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* 6. Dynamic View Container Micro-Shimmer Pulse */
+.carepoint-view-loading {
+  position: relative;
+  min-height: 200px;
+}
+.carepoint-view-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--cp-skeleton-base);
+  background-image: linear-gradient(
+    90deg,
+    rgba(230, 234, 240, 0.7) 0%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(230, 234, 240, 0.7) 100%
+  );
+  background-size: 200% 100%;
+  animation: carepoint-skeleton-shimmer 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  border-radius: 16px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* 7. YouTube-Style Page Skeleton Overlay */
+#carepoint-page-skeleton-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999998;
+  background: #f7f9ff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.28s ease;
+  user-select: none;
+}
+#carepoint-page-skeleton-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* 8. Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .carepoint-skeleton,
+  [data-skeleton="true"],
+  .carepoint-view-loading::after {
+    animation: carepoint-skeleton-pulse 2s ease-in-out infinite !important;
+    background-image: none !important;
+  }
+}

@@ -101,6 +101,11 @@
           <span>Open Notifications Center</span>
         </button>
 
+        <button class="carepoint-hud-action-btn secondary" id="hud-sim-skeleton" type="button">
+          <span class="material-symbols-outlined text-[16px]">view_quilt</span>
+          <span>Test Skeleton Loader (Ctrl+Shift+S)</span>
+        </button>
+
         <a class="carepoint-hud-action-btn secondary" href="${hudData.relRoot}index.html">
           <span class="material-symbols-outlined text-[16px]">hub</span>
           <span>All 75 Screens Directory</span>
@@ -128,6 +133,15 @@
 
     document.getElementById('hud-sim-clockin')?.addEventListener('click', () => {
       window.CarepointDemo.showToast("Teacher Clocked-In: GPS Geofence Verified at 07:15 GMT");
+    });
+
+    document.getElementById('hud-sim-skeleton')?.addEventListener('click', () => {
+      drawer.classList.add('hidden');
+      if (window.CarepointSkeleton && typeof window.CarepointSkeleton.simulate === 'function') {
+        window.CarepointSkeleton.simulate(1400);
+      } else if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+        window.CarepointDemo.showToast("Skeleton loader active (simulated)", true);
+      }
     });
 
     // Auto-wire all notification bell buttons across pages

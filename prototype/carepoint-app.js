@@ -331,6 +331,7 @@ if (document.readyState === 'loading') {
     initStaffPortalRefinements();
     initCarepointCapabilitiesDiscovery();
     initCarepointSafeActionEngine();
+    initCarepointSkeletonEngine();
   });
 } else {
   initPublicNavbarScrollspy();
@@ -342,6 +343,7 @@ if (document.readyState === 'loading') {
   initStaffPortalRefinements();
   initCarepointCapabilitiesDiscovery();
   initCarepointSafeActionEngine();
+  initCarepointSkeletonEngine();
 }
 
 // =============================================================================
@@ -3378,4 +3380,491 @@ export function initCarepointSafeActionEngine() {
   window.closeCarepointSafeActionModal = closeSafeActionModal;
 
   console.log('[Carepoint] Safe Action Engine initialized with 2-step verification.');
+}
+
+
+// =============================================================================
+// CAREPOINT YOUTUBE-STYLE SKELETON LOADING ENGINE
+// High-performance GPU-accelerated wave shimmer with zero cumulative layout
+// shift (CLS = 0), universal icon/avatar/card/text support, micro-transitions,
+// and developer/user preview simulation across all portals.
+// =============================================================================
+
+export function initCarepointSkeletonEngine() {
+  if (typeof document === 'undefined' || typeof window === 'undefined') return;
+
+  // 1. Ensure CSS Stylesheet / Injected Fallback
+  ensureSkeletonStyles();
+
+  // 2. Identify Current Portal Role & Form Factor
+  const currentPath = window.location.pathname.toLowerCase();
+  let role = (window.__CAREPOINT_HUD__ && window.__CAREPOINT_HUD__.role) || '';
+  if (!role) {
+    if (currentPath.includes('sysadmin')) role = 'sysadmin';
+    else if (currentPath.includes('admin')) role = 'admin';
+    else if (currentPath.includes('staff')) role = 'staff';
+    else if (currentPath.includes('parent')) role = 'parent';
+    else if (currentPath.includes('gate')) role = 'gate';
+    else if (currentPath.includes('public')) role = 'public';
+    else role = 'portal';
+  }
+  const isMobile = (window.__CAREPOINT_HUD__ && window.__CAREPOINT_HUD__.isMobile) ||
+                   currentPath.includes('mobile-') ||
+                   window.innerWidth < 768;
+
+  // 3. Create or Reference the YouTube-Style Overlay
+  let overlay = document.getElementById('carepoint-page-skeleton-overlay');
+  if (!overlay) {
+    overlay = buildSkeletonOverlay(role, isMobile);
+    document.body.appendChild(overlay);
+
+    // Initial progressive page load shimmer:
+    // Display briefly so user sees YouTube-style shimmer without jarring flash, then fade out smoothly
+    const initialDuration = 320;
+    setTimeout(() => {
+      hideSkeletonOverlay(overlay);
+    }, initialDuration);
+  }
+
+  // 4. Global API for Programmatic Control & Inspection
+  window.CarepointSkeleton = {
+    role,
+    isMobile,
+    isSimulating: false,
+    show() {
+      let el = document.getElementById('carepoint-page-skeleton-overlay');
+      if (!el) {
+        el = buildSkeletonOverlay(role, isMobile);
+        document.body.appendChild(el);
+      }
+      el.classList.remove('hidden');
+      el.style.opacity = '1';
+      el.style.visibility = 'visible';
+    },
+    hide() {
+      const el = document.getElementById('carepoint-page-skeleton-overlay');
+      if (el) hideSkeletonOverlay(el);
+    },
+    toggle() {
+      const el = document.getElementById('carepoint-page-skeleton-overlay');
+      if (el && !el.classList.contains('hidden') && el.style.opacity !== '0') {
+        this.hide();
+      } else {
+        this.show();
+      }
+    },
+    simulate(durationMs = 1200) {
+      this.isSimulating = true;
+      this.show();
+      if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+        window.CarepointDemo.showToast('YouTube-Style Skeleton Loading Active (CLS: 0, 60fps)', true);
+      }
+      setTimeout(() => {
+        this.hide();
+        this.isSimulating = false;
+      }, durationMs);
+    },
+    createShimmerElement(type = 'line', extraClasses = '', styles = {}) {
+      const el = document.createElement('div');
+      el.className = `carepoint-skeleton ${type ? 'carepoint-skeleton-' + type : ''} ${extraClasses}`.trim();
+      Object.assign(el.style, styles);
+      return el;
+    },
+    renderYouTubeCard(targetContainer) {
+      if (!targetContainer) return;
+      const card = document.createElement('div');
+      card.className = 'carepoint-skeleton-card';
+      card.innerHTML = `
+        <div class="carepoint-skeleton carepoint-skeleton-media mb-3"></div>
+        <div class="flex items-start gap-3 mt-2">
+          <div class="carepoint-skeleton carepoint-skeleton-circle carepoint-skeleton-avatar-md"></div>
+          <div class="flex-1">
+            <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-75 mb-2"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-50 mb-1"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-25"></div>
+          </div>
+        </div>
+      `;
+      targetContainer.appendChild(card);
+      return card;
+    },
+    renderKpiCard(targetContainer) {
+      if (!targetContainer) return;
+      const card = document.createElement('div');
+      card.className = 'carepoint-skeleton-kpi';
+      card.innerHTML = `
+        <div class="flex items-center justify-between">
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-lg"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
+        </div>
+        <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50 mt-1"></div>
+        <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-75"></div>
+      `;
+      targetContainer.appendChild(card);
+      return card;
+    },
+    renderTableRows(targetContainer, count = 3) {
+      if (!targetContainer) return;
+      for (let i = 0; i < count; i++) {
+        const row = document.createElement('div');
+        row.className = 'carepoint-skeleton-table-row';
+        row.innerHTML = `
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+          <div class="flex-1">
+            <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-50 mb-1"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-25"></div>
+          </div>
+          <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
+        `;
+        targetContainer.appendChild(row);
+      }
+    },
+    applyMicroShimmer(el, durationMs = 220) {
+      if (!el) return;
+      el.classList.add('carepoint-view-loading');
+      setTimeout(() => el.classList.remove('carepoint-view-loading'), durationMs);
+    }
+  };
+
+  // 5. Global Keyboard Shortcut: Ctrl + Shift + S or Cmd + Shift + S
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'S' || e.key === 's')) {
+      e.preventDefault();
+      window.CarepointSkeleton.simulate(1400);
+    }
+  });
+
+  // 6. Micro-Shimmer Pulse on Interactive Tab / View Switches
+  document.addEventListener('click', (e) => {
+    const tabTrigger = e.target.closest(
+      'button[role="tab"], .carepoint-soft-tab-group button, [data-tab], [data-view], .tab-btn'
+    );
+    if (!tabTrigger) return;
+    const mainArea = document.querySelector('main, #main-content, .portal-view-container, [role="main"]') || tabTrigger.closest('section, .carepoint-soft-card');
+    if (mainArea && !mainArea.classList.contains('carepoint-view-loading')) {
+      window.CarepointSkeleton.applyMicroShimmer(mainArea, 240);
+    }
+  }, true);
+
+  console.log('[Carepoint] YouTube-Style Skeleton Engine active. Press Ctrl+Shift+S to simulate.');
+}
+
+function hideSkeletonOverlay(el) {
+  if (!el) return;
+  el.style.opacity = '0';
+  el.style.transition = 'opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1)';
+  setTimeout(() => {
+    el.classList.add('hidden');
+    el.style.visibility = 'hidden';
+  }, 290);
+}
+
+function ensureSkeletonStyles() {
+  if (document.getElementById('carepoint-skeleton-injected-styles')) return;
+  const hasRule = Array.from(document.styleSheets).some(sheet => {
+    try {
+      return Array.from(sheet.cssRules || []).some(rule => rule.selectorText && rule.selectorText.includes('.carepoint-skeleton'));
+    } catch (e) {
+      return false;
+    }
+  });
+  if (!hasRule) {
+    const style = document.createElement('style');
+    style.id = 'carepoint-skeleton-injected-styles';
+    style.textContent = `
+      @keyframes carepoint-skeleton-shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+      .carepoint-skeleton {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        background-color: #e6eaf0 !important;
+        background-image: linear-gradient(90deg, rgba(230,234,240,0.8) 0%, rgba(255,255,255,0.95) 50%, rgba(230,234,240,0.8) 100%) !important;
+        background-size: 200% 100% !important;
+        animation: carepoint-skeleton-shimmer 1.4s cubic-bezier(0.4,0,0.2,1) infinite !important;
+        border-radius: 8px;
+        pointer-events: none !important;
+        transform: translateZ(0);
+      }
+      .carepoint-skeleton-circle { border-radius: 9999px !important; aspect-ratio: 1/1; }
+      .carepoint-skeleton-icon { display: inline-flex !important; width: 24px; height: 24px; border-radius: 6px !important; }
+      .carepoint-skeleton-line { height: 12px; border-radius: 4px; margin-bottom: 8px; display: block; }
+      .carepoint-skeleton-title { height: 20px; border-radius: 6px; margin-bottom: 12px; display: block; }
+      .carepoint-skeleton-w-25 { width: 25% !important; }
+      .carepoint-skeleton-w-50 { width: 50% !important; }
+      .carepoint-skeleton-w-75 { width: 75% !important; }
+      .carepoint-skeleton-w-full { width: 100% !important; }
+      .carepoint-skeleton-card { background: #fff; border-radius: 16px; padding: 20px; border: 1px solid rgba(0,0,0,0.05); }
+      .carepoint-skeleton-media { width: 100%; aspect-ratio: 16/9; border-radius: 12px; }
+      #carepoint-page-skeleton-overlay {
+        position: fixed; inset: 0; z-index: 999998; background: #f7f9ff; display: flex; flex-direction: column;
+        overflow: hidden; opacity: 1; pointer-events: all; transition: opacity 0.28s ease, visibility 0.28s ease;
+      }
+      #carepoint-page-skeleton-overlay.hidden { opacity: 0; pointer-events: none; visibility: hidden; }
+    `;
+    document.head.appendChild(style);
+  }
+}
+
+function buildSkeletonOverlay(role, isMobile) {
+  const overlay = document.createElement('div');
+  overlay.id = 'carepoint-page-skeleton-overlay';
+  overlay.setAttribute('aria-hidden', 'true');
+
+  if (isMobile) {
+    overlay.innerHTML = `
+      <!-- Mobile Top Bar Skeleton -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#ffffff;border-bottom:1px solid #e2e8f0;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-title" style="width:110px;margin-bottom:0;"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-circle carepoint-skeleton-avatar-md"></div>
+        </div>
+      </div>
+
+      <!-- Mobile Content Area -->
+      <div style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:16px;">
+        <!-- Greeting Header -->
+        <div style="background:#ffffff;border-radius:16px;padding:16px;border:1px solid rgba(0,0,0,0.05);">
+          <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-75"></div>
+        </div>
+
+        <!-- Quick Action Pills Row -->
+        <div style="display:flex;gap:8px;overflow-x:hidden;">
+          <div class="carepoint-skeleton carepoint-skeleton-chip" style="width:80px;"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-chip" style="width:95px;"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-chip" style="width:85px;"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-chip" style="width:75px;"></div>
+        </div>
+
+        <!-- KPI 2-Column Grid -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div class="carepoint-skeleton-kpi" style="padding:16px;">
+            <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50 mt-1"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-75"></div>
+          </div>
+          <div class="carepoint-skeleton-kpi" style="padding:16px;">
+            <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50 mt-1"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-75"></div>
+          </div>
+        </div>
+
+        <!-- YouTube-Style Feed Card -->
+        <div class="carepoint-skeleton-card">
+          <div class="carepoint-skeleton carepoint-skeleton-media" style="margin-bottom:12px;"></div>
+          <div style="display:flex;gap:12px;">
+            <div class="carepoint-skeleton carepoint-skeleton-circle carepoint-skeleton-avatar-md"></div>
+            <div style="flex:1;">
+              <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-75"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-50"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data List Rows -->
+        <div class="carepoint-skeleton-card" style="padding:12px 16px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
+            <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+            <div style="flex:1;">
+              <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-50"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-line-xs carepoint-skeleton-w-25"></div>
+            </div>
+            <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 0;">
+            <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+            <div style="flex:1;">
+              <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-66"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-line-xs carepoint-skeleton-w-33"></div>
+            </div>
+            <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Bottom Nav Skeleton -->
+      <div style="display:flex;align-items:center;justify-content:space-around;padding:12px;background:#ffffff;border-top:1px solid #e2e8f0;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-line-xs" style="width:28px;"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-line-xs" style="width:28px;"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-line-xs" style="width:28px;"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-line-xs" style="width:28px;"></div>
+        </div>
+      </div>
+    `;
+  } else {
+    // Desktop Layout (YouTube / Modern Portal Dashboard)
+    overlay.innerHTML = `
+      <!-- Desktop Top Nav Header Skeleton -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:#ffffff;border-bottom:1px solid #e2e8f0;height:68px;">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-lg"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-title" style="width:140px;margin-bottom:0;"></div>
+        </div>
+        <div style="width:40%;max-width:480px;">
+          <div class="carepoint-skeleton carepoint-skeleton-btn carepoint-skeleton-w-full" style="height:38px;"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+          <div class="carepoint-skeleton carepoint-skeleton-circle carepoint-skeleton-avatar-md"></div>
+        </div>
+      </div>
+
+      <!-- Desktop Main Layout with Sidebar -->
+      <div style="display:flex;flex:1;overflow:hidden;">
+        <!-- Sidebar Skeleton -->
+        <div style="width:240px;background:#ffffff;border-right:1px solid #e2e8f0;padding:24px 16px;display:flex;flex-direction:column;gap:16px;flex-shrink:0;">
+          <div style="display:flex;align-items:center;gap:12px;padding:8px;">
+            <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-66" style="margin-bottom:0;"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:8px;">
+            <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-50" style="margin-bottom:0;"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:8px;">
+            <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-75" style="margin-bottom:0;"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:8px;">
+            <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-50" style="margin-bottom:0;"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:8px;">
+            <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+            <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-66" style="margin-bottom:0;"></div>
+          </div>
+          <div style="margin-top:auto;padding:12px;border-top:1px solid rgba(0,0,0,0.05);display:flex;align-items:center;gap:10px;">
+            <div class="carepoint-skeleton carepoint-skeleton-circle carepoint-skeleton-avatar-sm"></div>
+            <div style="flex:1;">
+              <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-75"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-line-xs carepoint-skeleton-w-50"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div style="flex:1;overflow-y:auto;padding:28px 36px;display:flex;flex-direction:column;gap:24px;">
+          <!-- Header and Action Pills -->
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div>
+              <div class="carepoint-skeleton carepoint-skeleton-title" style="width:240px;"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-line" style="width:180px;"></div>
+            </div>
+            <div style="display:flex;gap:10px;">
+              <div class="carepoint-skeleton carepoint-skeleton-btn" style="width:110px;"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-btn" style="width:130px;"></div>
+            </div>
+          </div>
+
+          <!-- 4-Card KPI Grid -->
+          <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:20px;">
+            <div class="carepoint-skeleton-kpi">
+              <div class="flex items-center justify-between">
+                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-lg"></div>
+                <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
+              </div>
+              <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50 mt-1"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-75"></div>
+            </div>
+            <div class="carepoint-skeleton-kpi">
+              <div class="flex items-center justify-between">
+                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-lg"></div>
+                <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
+              </div>
+              <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50 mt-1"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-75"></div>
+            </div>
+            <div class="carepoint-skeleton-kpi">
+              <div class="flex items-center justify-between">
+                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-lg"></div>
+                <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
+              </div>
+              <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50 mt-1"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-75"></div>
+            </div>
+            <div class="carepoint-skeleton-kpi">
+              <div class="flex items-center justify-between">
+                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-lg"></div>
+                <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
+              </div>
+              <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50 mt-1"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-75"></div>
+            </div>
+          </div>
+
+          <!-- Dual Block Layout: YouTube Media Feed + Data Table -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+            <!-- YouTube-Style Media Content Card -->
+            <div class="carepoint-skeleton-card">
+              <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-33 mb-3"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-media mb-3"></div>
+              <div style="display:flex;gap:14px;align-items:flex-start;">
+                <div class="carepoint-skeleton carepoint-skeleton-circle carepoint-skeleton-avatar-lg"></div>
+                <div style="flex:1;">
+                  <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-75 mb-2"></div>
+                  <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-50 mb-1"></div>
+                  <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-25"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Table Rows Card -->
+            <div class="carepoint-skeleton-card">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+                <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-33" style="margin-bottom:0;"></div>
+                <div class="carepoint-skeleton carepoint-skeleton-chip" style="width:70px;"></div>
+              </div>
+              <div class="carepoint-skeleton-table-row">
+                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+                <div style="flex:1;">
+                  <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-66 mb-1"></div>
+                  <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-33"></div>
+                </div>
+                <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
+              </div>
+              <div class="carepoint-skeleton-table-row">
+                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+                <div style="flex:1;">
+                  <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-50 mb-1"></div>
+                  <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-25"></div>
+                </div>
+                <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
+              </div>
+              <div class="carepoint-skeleton-table-row">
+                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
+                <div style="flex:1;">
+                  <div class="carepoint-skeleton carepoint-skeleton-line carepoint-skeleton-w-75 mb-1"></div>
+                  <div class="carepoint-skeleton carepoint-skeleton-line-sm carepoint-skeleton-w-50"></div>
+                </div>
+                <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  return overlay;
 }
