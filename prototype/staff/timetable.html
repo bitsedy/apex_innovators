@@ -87,25 +87,9 @@
       <span>Change Class</span>
     </button>
   </div>
-</aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-1 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low hover:bg-surface-container rounded-full transition-colors cursor-pointer" id="staff-duty-badge" onclick="openStaffDutyModal()" title="View Shift Details &amp; Clock-Out"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface font-semibold" id="staff-duty-status-text">Campus: On-Duty (Main Block)</span></div><div class="hidden md:inline-flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-low rounded-full text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">calendar_today</span><span class="font-label-sm text-label-sm font-medium">Term 1, 2026/2027</span></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-secondary text-on-secondary text-[10px] font-bold flex items-center justify-center">3</span></button><div class="h-8 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:block"><div class="font-label-lg text-label-lg text-on-surface leading-snug">Mrs. Beatrice Abbey</div><div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 Sunflower Lead</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA"/><button id="staff-clockout-btn" class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors cursor-pointer" title="Clock-Out of Campus Duty" onclick="openStaffDutyModal()" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></header><main class="w-full px-space-lg pt-16 flex-1 bg-surface"><div class="flex flex-col w-full">
-<!-- Dynamic Notification / Sync Toast Banner -->
-<div class="w-full bg-primary-container text-on-primary-container px-space-lg py-2.5 rounded-xl shadow-sm mb-space-md flex flex-wrap items-center justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<span class="flex h-2.5 w-2.5 relative">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary-fixed-dim"></span>
-</span>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-inverse-primary font-bold">AUTO-SAVING ON</span>
-<span class="hidden sm:inline text-on-primary-container/70">•</span>
-<span class="font-body-sm text-body-sm text-surface-container-lowest">Saved 4 mins ago by Mrs. Beatrice Abbey</span>
-</div>
-<div class="flex items-center gap-space-md text-label-sm font-label-sm text-inverse-primary">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">cloud_done</span> Saved Online</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">lock_clock</span> Editing Allowed</span>
-</div>
-</div>
+</aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><button type="button" data-drawer-toggle="" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors cursor-pointer mr-1 shrink-0" title="Toggle Navigation Sidebar" aria-label="Toggle Navigation Sidebar"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="hidden md:inline-flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-low rounded-full text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">calendar_today</span><span class="font-label-sm text-label-sm font-medium">Term 1, 2026/2027</span></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-secondary text-on-secondary text-[10px] font-bold flex items-center justify-center">3</span></button><div class="h-8 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:block"><div class="font-label-lg text-label-lg text-on-surface leading-snug">Mrs. Beatrice Abbey</div><div class="font-label-sm text-label-sm text-on-surface-variant">Basic 2 Sunflower Lead</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo1EGS9Udv9jbRuc-r6_oXpPteu9hto5W-SkEkm2uTxYC_8t04Z0bkIPpHMyA7yGLHXLvsrFuQqok8JD7tVi6QkAq01hTH_2GU1O1U0WY1b_fqIXnvJvjsmyxu_6286Xsi9NMB9HAsZaxqurxk17R4oPRa4XNsolx6wRTOhJJIEBUI6m6AdHqZ8LPBO6IrFN8ItlRIZm_xSUzn8SkT-Hm1LpNpyB808pBwbwzAPFI0qzuy3owK2k3KoA"/><button id="staff-clockout-btn" class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors cursor-pointer" title="Clock-Out of Campus Duty" onclick="openStaffDutyModal()" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></header><main class="w-full px-space-lg pt-16 flex-1 bg-surface"><div class="flex flex-col w-full">
 <!-- Primary Page Header & Operational Bar -->
-<div class="w-full bg-surface-container-lowest p-space-lg rounded-xl shadow-sm mb-space-lg flex flex-col gap-space-md">
+<div class="w-full bg-surface-container-lowest p-space-lg rounded-xl shadow-sm mb-space-lg flex flex-col gap-space-md mt-space-md">
 <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
 <div>
 <div class="flex flex-wrap items-center gap-space-sm mb-1">
@@ -113,16 +97,8 @@
 <span class="material-symbols-outlined text-[14px]">pending_actions</span>
             Status: Waiting for Headmistress
           </span>
-<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">verified</span>
-            Official School Standards
-          </span>
-<span class="px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
-            Campus: Main Block
-          </span>
 </div>
 <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Class Timetable &amp; Schedule</h1>
-<p class="font-body-md text-body-md text-on-surface-variant">2026/2027 School Year • Term 1 • Basic 2 Sunflower Class</p>
 </div>
 <div class="flex flex-wrap items-center gap-space-sm">
 <button class="px-space-md py-2.5 rounded-lg bg-surface-container-low text-primary font-label-lg text-label-lg font-bold hover:bg-surface-container-high transition-colors flex items-center gap-2" id="previewPupilModalBtn">

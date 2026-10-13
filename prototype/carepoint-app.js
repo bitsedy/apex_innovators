@@ -1747,18 +1747,8 @@ export function initStaffDutySystem() {
     const clockInTime = getClockInTime();
     const clockOutTime = getClockOutTime();
 
-    // Desktop duty badge in header
-    let desktopDutyPill = document.querySelector('#staff-duty-badge');
-    if (!desktopDutyPill) {
-      const candidates = document.querySelectorAll('header .bg-surface-container-low.rounded-full, header div');
-      for (const el of candidates) {
-        if (el.querySelector('.animate-pulse') || el.querySelector('span.bg-tertiary-fixed-dim')) {
-          desktopDutyPill = el;
-          break;
-        }
-      }
-    }
-
+    // Desktop duty badge in header (if present)
+    const desktopDutyPill = document.querySelector('#staff-duty-badge');
     if (desktopDutyPill) {
       desktopDutyPill.id = 'staff-duty-badge';
       desktopDutyPill.style.cursor = 'pointer';
