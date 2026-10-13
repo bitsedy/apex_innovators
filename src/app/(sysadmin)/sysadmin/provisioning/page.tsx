@@ -185,7 +185,7 @@ export default function ProvisioningPage() {
 </td>
 <td className="py-space-sm px-space-md">
 <span className="inline-flex items-center px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase font-bold tracking-wide">
-                HEADMISTRESS_ADMIN
+                HEADMASTER_OR_HEADTEACHER_ADMIN
               </span>
 </td>
 <td className="py-space-sm px-space-md">

@@ -422,7 +422,7 @@ export default function SettingsPage() {
 </div>
 <div className="flex flex-col">
 <span className="font-label-md text-label-md text-on-surface font-bold">Dr. Elizabeth Appiah</span>
-<span className="font-body-sm text-label-sm text-on-surface-variant">Headmistress / Campus Governance</span>
+<span className="font-body-sm text-label-sm text-on-surface-variant">Headmaster or Headteacher / Campus Governance</span>
 </div>
 </div>
 <div className="mt-2 pt-2 flex flex-col gap-1">

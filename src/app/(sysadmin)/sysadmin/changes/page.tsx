@@ -269,7 +269,7 @@ export default function ChangesPage() {
 </div>
 <div className="flex flex-col">
 <span className="font-headline-sm text-headline-sm text-on-primary leading-tight">Dr. Elizabeth Appiah</span>
-<span className="font-label-sm text-label-sm text-primary-fixed-dim">Headmistress &amp; Principal Approval Authority</span>
+<span className="font-label-sm text-label-sm text-primary-fixed-dim">Headmaster or Headteacher &amp; Principal Approval Authority</span>
 <span className="font-label-sm text-[11px] text-primary-fixed mt-1">Carepoint Community School Executive Board</span>
 </div>
 </div>

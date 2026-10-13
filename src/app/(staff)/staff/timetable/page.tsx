@@ -31,7 +31,7 @@ export default function TimetablePage() {
 <div className="flex flex-wrap items-center gap-space-sm mb-1">
 <span className="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold flex items-center gap-1">
 <span className="material-symbols-outlined text-[14px]">pending_actions</span>
-            Status: Waiting for Headmistress
+            Status: Waiting for Headmaster or Headteacher
           </span>
 <span className="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold flex items-center gap-1">
 <span className="material-symbols-outlined text-[14px] text-on-tertiary-container">verified</span>
@@ -53,9 +53,9 @@ export default function TimetablePage() {
 <span className="material-symbols-outlined text-[18px]">rule</span>
           Check for Clashes
         </button>
-<button className="px-space-lg py-2.5 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold hover:opacity-95 shadow-md flex items-center gap-2 transition-transform active:scale-95" id="submitHeadmistressBtn">
+<button className="px-space-lg py-2.5 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold hover:opacity-95 shadow-md flex items-center gap-2 transition-transform active:scale-95" id="submitHeadmasterOrHeadteacherBtn">
 <span className="material-symbols-outlined text-[18px]">send</span>
-          Send to Headmistress
+          Send to Headmaster or Headteacher
         </button>
 </div>
 </div>
@@ -312,7 +312,7 @@ export default function TimetablePage() {
 <div className="p-space-sm bg-surface-container-high/70 rounded-lg flex items-start gap-2 mt-1">
 <span className="material-symbols-outlined text-secondary text-[20px] mt-0.5">policy</span>
 <p className="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
-<strong className="text-primary">Note:</strong> Sending this timetable asks <strong>Headmistress Dr. Elizabeth Appiah</strong> to approve it. Once approved, it shows on the Parent App.
+<strong className="text-primary">Note:</strong> Sending this timetable asks <strong>Headmaster or Headteacher Dr. Elizabeth Appiah</strong> to approve it. Once approved, it shows on the Parent App.
           </p>
 </div>
 </div>
@@ -321,13 +321,13 @@ export default function TimetablePage() {
 <div className="flex items-center justify-between">
 <div className="flex items-center gap-2">
 <span className="material-symbols-outlined text-secondary text-[20px]">assignment_turned_in</span>
-<span className="font-label-lg text-label-lg font-bold text-primary">Notes from Headmistress</span>
+<span className="font-label-lg text-label-lg font-bold text-primary">Notes from Headmaster or Headteacher</span>
 </div>
 <span className="font-label-sm text-label-sm text-on-surface-variant">v1.3 feedback</span>
 </div>
 <div className="p-space-sm rounded-lg bg-surface-container-low">
 <div className="flex items-center gap-2 mb-1">
-<img className="w-6 h-6 rounded-full object-cover" data-alt="Headmistress Dr. Elizabeth Appiah official headshot in formal Ghanaian kente trim academic attire smiling warmly in Carepoint office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLctvPPkqG1Sk7Oo3IZvw9hTxK8nqR_3zO2vauzbC5PKkDlvN_rs1KhLBjQJxkewnGPzEvYNy9GI3Fd3N4u1qqK94uDZidQahYIYiNL--SPOuSst1TXWk3dOARGB0S0dMwy2t55HCUaLMGvylT88rqHP6DT0mCBOtXUaEV_DheBBFLuUANkVPdhN0Lm5Gim2Jl5OrSL57gOUgWQ_aFEquXLHKok0rV5QTNY9LrAKiOJfUKdniRSDUtYQ"/>
+<img className="w-6 h-6 rounded-full object-cover" data-alt="Headmaster or Headteacher Dr. Elizabeth Appiah official headshot in formal Ghanaian kente trim academic attire smiling warmly in Carepoint office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLctvPPkqG1Sk7Oo3IZvw9hTxK8nqR_3zO2vauzbC5PKkDlvN_rs1KhLBjQJxkewnGPzEvYNy9GI3Fd3N4u1qqK94uDZidQahYIYiNL--SPOuSst1TXWk3dOARGB0S0dMwy2t55HCUaLMGvylT88rqHP6DT0mCBOtXUaEV_DheBBFLuUANkVPdhN0Lm5Gim2Jl5OrSL57gOUgWQ_aFEquXLHKok0rV5QTNY9LrAKiOJfUKdniRSDUtYQ"/>
 <span className="font-label-md text-label-md font-bold text-primary">Dr. Elizabeth Appiah</span>
 <span className="font-label-sm text-label-sm text-on-surface-variant">• Oct 14, 15:40</span>
 </div>
@@ -857,9 +857,9 @@ export default function TimetablePage() {
 <button className="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-secondary font-label-md text-label-md font-bold transition-colors" id="discardChangesBtn">
             Cancel Changes
           </button>
-<button className="px-space-md py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-bold transition-colors flex items-center gap-1.5 shadow-sm" id="submitHeadmistressSecondaryBtn">
+<button className="px-space-md py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-bold transition-colors flex items-center gap-1.5 shadow-sm" id="submitHeadmasterOrHeadteacherSecondaryBtn">
 <span className="material-symbols-outlined text-[16px]">task_alt</span>
-            Send to Headmistress
+            Send to Headmaster or Headteacher
           </button>
 </div>
 </div>

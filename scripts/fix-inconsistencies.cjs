@@ -19,7 +19,7 @@ walk('prototype', (filePath) => {
   let changed = false;
 
   if (content.includes('Dr. Emmanuel Appiah (Principal)')) {
-    content = content.replace(/Dr\. Emmanuel Appiah \(Principal\)/g, 'Dr. Elizabeth Appiah (Headmistress / Principal)');
+    content = content.replace(/Dr\. Emmanuel Appiah \(Principal\)/g, 'Dr. Elizabeth Appiah (Headmaster or Headteacher / Principal)');
     changed = true;
     console.log('Fixed Principal name in:', filePath);
   }

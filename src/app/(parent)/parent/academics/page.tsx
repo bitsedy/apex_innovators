@@ -484,7 +484,7 @@ export default function AcademicsPage() {
 </div>
 <div className="mt-1">
 <h4 className="font-label-lg text-label-lg font-bold text-primary">Dr. Mrs. Elizabeth Appiah, PhD</h4>
-<span className="font-label-sm text-label-sm text-on-surface-variant block">Headmistress • Carepoint Basic School</span>
+<span className="font-label-sm text-label-sm text-on-surface-variant block">Headmaster or Headteacher • Carepoint Basic School</span>
 <span className="font-label-sm text-[10px] text-on-tertiary-container font-semibold mt-1 inline-flex items-center gap-1">
 <span className="material-symbols-outlined text-[12px]">security</span> Validated GES Digital Institutional Signature
               </span>

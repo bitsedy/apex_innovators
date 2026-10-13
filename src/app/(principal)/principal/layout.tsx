@@ -159,7 +159,7 @@ export default function PrincipalLayout({
                   Dr. Elizabeth Appiah
                 </span>
                 <span className="font-label-sm text-label-sm text-on-surface-variant">
-                  Headmistress / Principal
+                  Headmaster or Headteacher / Principal
                 </span>
               </div>
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm">

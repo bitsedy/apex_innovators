@@ -96,7 +96,7 @@ export default function LogPage() {
 </div>
 </div>
 <div className="flex items-center gap-space-md font-label-sm text-label-sm">
-<span className="text-primary-fixed-dim hidden xl:inline">SYNCED WITH: HEADMISTRESS PORTAL • TEACHER CLASS LOGGERS • TWILIO SMS GATEWAY</span>
+<span className="text-primary-fixed-dim hidden xl:inline">SYNCED WITH: HEADMASTER OR HEADTEACHER PORTAL • TEACHER CLASS LOGGERS • TWILIO SMS GATEWAY</span>
 <button className="px-space-sm py-1 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-high transition-colors font-label-sm text-label-sm flex items-center gap-1 shadow-sm"  type="button">
 <span className="material-symbols-outlined text-sm">sync</span>
 <span>Force Refresh</span>

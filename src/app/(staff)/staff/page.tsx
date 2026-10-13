@@ -97,7 +97,7 @@ export default function StaffPage() {
       <div className="mt-space-md">
         <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sky-100 text-sky-900 font-label-sm text-label-sm font-bold w-fit">
           <span className="material-symbols-outlined text-[14px]">history_edu</span>
-          With Headmistress Dr. Appiah
+          With Headmaster or Headteacher Dr. Appiah
         </div>
         <div className="mt-3 flex items-center justify-between text-body-sm text-body-sm text-on-surface-variant">
           <span>1 Lesson Plan, 1 Health Note</span>
@@ -394,7 +394,7 @@ export default function StaffPage() {
 </span>
 <div>
 <h2 className="font-headline-sm text-headline-sm text-primary">Requests &amp; Approvals</h2>
-<p className="font-body-sm text-body-sm text-on-surface-variant">Updates from Headmistress Dr. Appiah</p>
+<p className="font-body-sm text-body-sm text-on-surface-variant">Updates from Headmaster or Headteacher Dr. Appiah</p>
 </div>
 </div>
 <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold">Connected</span>
@@ -412,7 +412,7 @@ export default function StaffPage() {
 <h4 className="font-label-lg text-label-lg text-on-surface font-bold">Mark Change: English Mid-Term</h4>
 <div className="carepoint-hover-detail">
 <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                  Approved by Headmistress Dr. Elizabeth Appiah. Class Mark Sheet updated.
+                  Approved by Headmaster or Headteacher Dr. Elizabeth Appiah. Class Mark Sheet updated.
                 </p>
 <div className="mt-2 text-[12px] font-semibold text-emerald-700 flex items-center gap-1">
 <span className="material-symbols-outlined text-[16px]">check_circle</span>

@@ -217,7 +217,7 @@ export default function ApprovalsPage() {
 <div className="pl-2 ml-12 p-space-sm rounded-xl bg-surface-container-lowest/80 flex items-start gap-2 shadow-xs">
 <span className="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">stethoscope</span>
 <p className="font-body-sm text-body-sm text-on-surface line-clamp-1">
-<span className="font-semibold text-primary">Nurse Asante clinic check completed:</span> Severe allergen reaction recorded; recommends Headmistress endorsement for 14-day specialized gym exemption &amp; dietary bypass.
+<span className="font-semibold text-primary">Nurse Asante clinic check completed:</span> Severe allergen reaction recorded; recommends Headmaster or Headteacher endorsement for 14-day specialized gym exemption &amp; dietary bypass.
               </p>
 </div>
 
@@ -271,7 +271,7 @@ export default function ApprovalsPage() {
 <div className="pl-2 ml-12 p-space-sm rounded-xl bg-surface-container-low/60 flex items-start gap-2">
 <span className="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">how_to_reg</span>
 <p className="font-body-sm text-body-sm text-on-surface line-clamp-1">
-<span className="font-semibold text-primary">Entrance interview cleared (Grade A):</span> Tuition deposit verified via Ecobank Ghana receipt #EC-8831. Ready for Headmistress matriculation roll addition.
+<span className="font-semibold text-primary">Entrance interview cleared (Grade A):</span> Tuition deposit verified via Ecobank Ghana receipt #EC-8831. Ready for Headmaster or Headteacher matriculation roll addition.
               </p>
 </div>
 <div className="pl-2 flex items-center justify-between pt-1">
@@ -482,7 +482,7 @@ export default function ApprovalsPage() {
 <span className="font-label-sm text-label-sm text-secondary-container font-semibold">Immediate</span>
 </div>
 <p className="font-body-sm text-body-sm text-on-surface">
-                  Requires Headmistress Dr. Elizabeth Appiah digital signature to seal institutional exemption register for GES Inspectorate compliance.
+                  Requires Headmaster or Headteacher Dr. Elizabeth Appiah digital signature to seal institutional exemption register for GES Inspectorate compliance.
                 </p>
 </div>
 </div>
@@ -526,7 +526,7 @@ export default function ApprovalsPage() {
 </div>
 <div className="flex items-center justify-between text-on-surface-variant text-[10px]">
 <span>Dr. Elizabeth Appiah, PhD, FGA</span>
-<span>Headmistress • Level 4 Signatory</span>
+<span>Headmaster or Headteacher • Level 4 Signatory</span>
 </div>
 </div>
 

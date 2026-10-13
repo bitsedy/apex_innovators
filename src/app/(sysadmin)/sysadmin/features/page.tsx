@@ -367,7 +367,7 @@ export default function FeaturesPage() {
 <div className="flex flex-col">
 <span className="font-label-sm text-label-sm font-bold text-primary uppercase">Locked to Change Request</span>
 <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
-                To modify this toggle in Production, a Change Request must be submitted to Headmistress Dr. Elizabeth Appiah for dual-custody authorization.
+                To modify this toggle in Production, a Change Request must be submitted to Headmaster or Headteacher Dr. Elizabeth Appiah for dual-custody authorization.
               </p>
 </div>
 </div>

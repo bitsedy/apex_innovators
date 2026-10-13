@@ -2886,7 +2886,7 @@ export function initCarepointCapabilitiesDiscovery() {
         id: 'staff-relief',
         title: 'Request Teaching Relief Cover',
         category: 'Approvals',
-        description: 'Submit an emergency substitute teacher request to Headmistress Dr. Elizabeth Appiah.',
+        description: 'Submit an emergency substitute teacher request to Headmaster or Headteacher Dr. Elizabeth Appiah.',
         icon: 'verified',
         action: `url:${relRoot}staff/${pfx}approvals.html`,
         badge: 'Faculty',
@@ -3651,7 +3651,7 @@ export function initCarepointCapabilitiesDiscovery() {
         window.openCarepointSafeActionModal({
           title: 'Trigger Security Code Amber Alert',
           subtitle: 'Perimeter Security Incident Response',
-          warning: 'This will temporarily halt gate turnstiles and notify the Headmistress of an unresolved identity match.',
+          warning: 'This will temporarily halt gate turnstiles and notify the Headmaster or Headteacher of an unresolved identity match.',
           actionLabel: 'Confirm Code Amber',
           isDestructive: false,
           onConfirm: () => {
@@ -3863,7 +3863,7 @@ export function initCarepointSafeActionEngine() {
       openSafeActionModal({
         title: 'Trigger Security Code Amber Alert',
         subtitle: 'Perimeter Security Incident Protocol',
-        warning: 'This will temporarily halt gate turnstiles and dispatch an immediate incident summon to the Security Coordinator and Headmistress.',
+        warning: 'This will temporarily halt gate turnstiles and dispatch an immediate incident summon to the Security Coordinator and Headmaster or Headteacher.',
         actionLabel: 'Confirm Code Amber Alert',
         isDestructive: false,
         onConfirm: () => {

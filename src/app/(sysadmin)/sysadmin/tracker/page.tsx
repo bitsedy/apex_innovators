@@ -29,7 +29,7 @@ export default function TrackerPage() {
 </div>
 <h1 className="font-headline-lg text-headline-lg text-primary tracking-tight">Change Request Ledger &amp; Deployment Pipeline</h1>
 <p className="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
-        Institutional change audit stream. Track RFC status, review Headmistress executive endorsements, and execute approved deployment checklists.
+        Institutional change audit stream. Track RFC status, review Headmaster or Headteacher executive endorsements, and execute approved deployment checklists.
       </p>
 </div>
 
@@ -293,7 +293,7 @@ export default function TrackerPage() {
 <span className="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">LEGALLY BINDING</span>
 </div>
 <span className="font-body-sm text-body-sm text-on-surface-variant">
-                Endorsed by <strong>Dr. Elizabeth Appiah</strong>, Headmistress &amp; Custodian of Records
+                Endorsed by <strong>Dr. Elizabeth Appiah</strong>, Headmaster or Headteacher &amp; Custodian of Records
               </span>
 <div className="flex flex-wrap items-center gap-space-sm text-[11px] font-label-sm text-on-surface-variant mt-1">
 <span className="font-mono bg-surface-container px-1.5 py-0.5 rounded">SIG: #CP-EX-4019</span>

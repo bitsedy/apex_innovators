@@ -148,7 +148,7 @@
 <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-ping"></span>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-surface-bright/90">DIRECT HOTLINE DISPATCH</span>
 </div>
-<p class="font-headline-sm text-headline-sm leading-tight text-surface-bright">CALL CAMPUS HEADMISTRESS &amp; CHIEF SECURITY</p>
+<p class="font-headline-sm text-headline-sm leading-tight text-surface-bright">CALL CAMPUS HEADMASTER OR HEADTEACHER &amp; CHIEF SECURITY</p>
 <p class="font-body-sm text-body-sm text-surface-bright/80 mt-0.5">Simultaneous Paging • Ext. 101 (Admin) &amp; Ext. 104 (Patrol Team)</p>
 </div>
 </div>
@@ -179,7 +179,7 @@
 </div>
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">STATUTORY OVERRIDE</span>
-<p class="font-label-lg text-label-lg text-primary">Headmistress PIN</p>
+<p class="font-label-lg text-label-lg text-primary">Headmaster or Headteacher PIN</p>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Authorization Required</span>
 </div>
 </div>
@@ -369,7 +369,7 @@
 <span class="font-bold text-on-surface">Mrs. Beatrice Abbey (Rm B-04)</span>
 </div>
 <div class="flex justify-between items-center py-1">
-<span class="text-on-surface-variant font-label-sm text-label-sm">Headmistress Pastoral Flag:</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Headmaster or Headteacher Pastoral Flag:</span>
 <span class="px-2 py-0.5 rounded bg-error-container text-error font-label-sm text-label-sm font-bold">
                 MANDATORY ESCORT ONLY
               </span>
@@ -442,7 +442,7 @@
 <span>SUBMIT STATUTORY INCIDENT REPORT</span>
 </button>
 <p class="font-label-sm text-label-sm text-on-surface-variant text-center">
-                Instantly synchronizes to Accra East NaSIA Regional Inspectorate Log &amp; Headmistress Phone.
+                Instantly synchronizes to Accra East NaSIA Regional Inspectorate Log &amp; Headmaster or Headteacher Phone.
               </p>
 </div>
 </form>
@@ -450,7 +450,7 @@
 </div>
 </div>
 </div>
-<!-- Manual Admin Override Modal (Headmistress PIN Required) -->
+<!-- Manual Admin Override Modal (Headmaster or Headteacher PIN Required) -->
 <div class="hidden fixed inset-0 z-50 bg-primary/80 backdrop-blur-sm flex items-center justify-center p-space-md" id="pinModal">
 <div class="bg-surface-container-lowest w-full max-w-md rounded-2xl p-space-xl shadow-2xl flex flex-col gap-space-md relative">
 <button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface p-1" onclick="closePinModal()" type="button">
@@ -460,7 +460,7 @@
 <div class="w-16 h-16 rounded-full bg-error-container text-error flex items-center justify-center mb-space-sm shadow-inner">
 <span class="material-symbols-outlined text-3xl">admin_panel_settings</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary">Headmistress Override PIN</h3>
+<h3 class="font-headline-md text-headline-md text-primary">Headmaster or Headteacher Override PIN</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
           Requires verified Master Safeguarding PIN to open Turnstile Gate A for Student #24-089.
         </p>
@@ -560,7 +560,7 @@
     function triggerEmergencyCall() {
       showToast(
         'Connecting Priority Line',
-        'Direct call dispatched to Headmistress Office (Ext. 101) and Lead Patrol (Ext. 104)...',
+        'Direct call dispatched to Headmaster or Headteacher Office (Ext. 101) and Lead Patrol (Ext. 104)...',
         'ring_volume'
       );
       const btn = document.getElementById('emergencyCallBtn');
@@ -600,7 +600,7 @@
       const notes = document.getElementById('guardNotes').value;
       showToast(
         'Report Submitted to NaSIA',
-        'Incident Logged under #INC-24089. Copies routed to Police Liaison & Headmistress.',
+        'Incident Logged under #INC-24089. Copies routed to Police Liaison & Headmaster or Headteacher.',
         'task_alt'
       );
       document.getElementById('guardNotes').value = '';

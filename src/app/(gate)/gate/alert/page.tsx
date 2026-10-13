@@ -61,7 +61,7 @@ export default function AlertPage() {
 <span className="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-ping"></span>
 <span className="font-label-sm text-label-sm uppercase tracking-wider text-surface-bright/90">DIRECT HOTLINE DISPATCH</span>
 </div>
-<p className="font-headline-sm text-headline-sm leading-tight text-surface-bright">CALL CAMPUS HEADMISTRESS &amp; CHIEF SECURITY</p>
+<p className="font-headline-sm text-headline-sm leading-tight text-surface-bright">CALL CAMPUS HEADMASTER OR HEADTEACHER &amp; CHIEF SECURITY</p>
 <p className="font-body-sm text-body-sm text-surface-bright/80 mt-0.5">Simultaneous Paging • Ext. 101 (Admin) &amp; Ext. 104 (Patrol Team)</p>
 </div>
 </div>
@@ -92,7 +92,7 @@ export default function AlertPage() {
 </div>
 <div>
 <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">STATUTORY OVERRIDE</span>
-<p className="font-label-lg text-label-lg text-primary">Headmistress PIN</p>
+<p className="font-label-lg text-label-lg text-primary">Headmaster or Headteacher PIN</p>
 <span className="font-body-sm text-body-sm text-on-surface-variant">Authorization Required</span>
 </div>
 </div>
@@ -282,7 +282,7 @@ export default function AlertPage() {
 <span className="font-bold text-on-surface">Mrs. Beatrice Abbey (Rm B-04)</span>
 </div>
 <div className="flex justify-between items-center py-1">
-<span className="text-on-surface-variant font-label-sm text-label-sm">Headmistress Pastoral Flag:</span>
+<span className="text-on-surface-variant font-label-sm text-label-sm">Headmaster or Headteacher Pastoral Flag:</span>
 <span className="px-2 py-0.5 rounded bg-error-container text-error font-label-sm text-label-sm font-bold">
                 MANDATORY ESCORT ONLY
               </span>
@@ -355,7 +355,7 @@ export default function AlertPage() {
 <span>SUBMIT STATUTORY INCIDENT REPORT</span>
 </button>
 <p className="font-label-sm text-label-sm text-on-surface-variant text-center">
-                Instantly synchronizes to Accra East NaSIA Regional Inspectorate Log &amp; Headmistress Phone.
+                Instantly synchronizes to Accra East NaSIA Regional Inspectorate Log &amp; Headmaster or Headteacher Phone.
               </p>
 </div>
 </form>
@@ -373,7 +373,7 @@ export default function AlertPage() {
 <div className="w-16 h-16 rounded-full bg-error-container text-error flex items-center justify-center mb-space-sm shadow-inner">
 <span className="material-symbols-outlined text-3xl">admin_panel_settings</span>
 </div>
-<h3 className="font-headline-md text-headline-md text-primary">Headmistress Override PIN</h3>
+<h3 className="font-headline-md text-headline-md text-primary">Headmaster or Headteacher Override PIN</h3>
 <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
           Requires verified Master Safeguarding PIN to open Turnstile Gate A for Student #24-089.
         </p>

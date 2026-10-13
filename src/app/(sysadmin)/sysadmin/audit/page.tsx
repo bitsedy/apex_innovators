@@ -171,7 +171,7 @@ export default function AuditPage() {
 </div>
 <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
 <div className="font-label-lg text-label-lg text-secondary">custody.injunction.enforced</div>
-<div className="font-body-sm text-body-sm text-on-surface-variant">Actor: <span className="text-on-surface font-semibold">Dr. Elizabeth Appiah (Headmistress)</span> • IP: 10.142.4.10</div>
+<div className="font-body-sm text-body-sm text-on-surface-variant">Actor: <span className="text-on-surface font-semibold">Dr. Elizabeth Appiah (Headmaster or Headteacher)</span> • IP: 10.142.4.10</div>
 </div>
 <div className="font-body-sm text-body-sm text-on-surface bg-surface-container-lowest p-space-sm rounded-lg">
                 Executed binding Executive Order <code className="font-bold text-secondary">#SAF-ACC-2026-08</code> for Student Kofi Mensah (#24-089). High Court Custody Decree active. Turnstile interlock commanded.

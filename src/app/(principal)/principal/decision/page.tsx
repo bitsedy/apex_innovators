@@ -255,7 +255,7 @@ export default function DecisionPage() {
 <span className="material-symbols-outlined text-[18px] text-tertiary shrink-0 mt-0.5">check_circle</span>
 <div className="flex flex-col">
 <span className="font-label-md text-label-md text-on-surface">National Schools Inspectorate Authority (NaSIA) Safeguard standard 14.B</span>
-<span className="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Mandatory executive signing by Headmistress before custodial modification.</span>
+<span className="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Mandatory executive signing by Headmaster or Headteacher before custodial modification.</span>
 </div>
 </div>
 </div>
@@ -271,7 +271,7 @@ export default function DecisionPage() {
 </div>
 <div>
 <h2 className="font-headline-md text-headline-md text-on-surface">Executive Statutory Order Determination</h2>
-<p className="font-body-sm text-body-sm text-on-surface-variant">Carepoint Headmistress Sovereign Jurisdiction • Non-Revisable Audit Entry</p>
+<p className="font-body-sm text-body-sm text-on-surface-variant">Carepoint Headmaster or Headteacher Sovereign Jurisdiction • Non-Revisable Audit Entry</p>
 </div>
 </div>
 <div className="flex items-center gap-2">
@@ -344,7 +344,7 @@ export default function DecisionPage() {
 </div>
 <div className="flex flex-col">
 <span className="font-label-lg text-label-lg text-on-surface">Dr. Elizabeth Appiah, PhD, FGA</span>
-<span className="font-body-sm text-body-sm text-on-surface-variant">Headmistress &amp; Principal Authority • Carepoint Schools</span>
+<span className="font-body-sm text-body-sm text-on-surface-variant">Headmaster or Headteacher &amp; Principal Authority • Carepoint Schools</span>
 <div className="flex items-center gap-2 mt-0.5">
 <span className="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
 <span className="font-label-sm text-label-sm text-on-tertiary-container font-semibold">Biometric Authenticator Active (Local Token Synced)</span>

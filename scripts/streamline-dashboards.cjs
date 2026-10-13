@@ -270,7 +270,7 @@ const staffKpiOld = `    <!-- Section 2: Top KPI Metrics Bar (4 Cards) -->
           </div>
         </div>
         <div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between font-label-sm text-label-sm">
-          <span class="text-on-surface-variant">Sent to Headmistress</span>
+          <span class="text-on-surface-variant">Sent to Headmaster or Headteacher</span>
           <a href="approvals.html" class="text-primary font-semibold hover:underline">See List &rarr;</a>
         </div>
       </div>
@@ -353,7 +353,7 @@ const staffKpiNew = `    <!-- Section 2: Top KPI Metrics Bar (4 Cards) -->
           </div>
         </div>
         <div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between font-label-sm text-label-sm">
-          <span class="text-on-surface-variant">Sent to Headmistress</span>
+          <span class="text-on-surface-variant">Sent to Headmaster or Headteacher</span>
           <a href="approvals.html" class="text-primary font-semibold hover:underline">Review &rarr;</a>
         </div>
       </div>

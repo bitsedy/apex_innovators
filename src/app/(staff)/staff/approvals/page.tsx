@@ -28,7 +28,7 @@ export default function ApprovalsPage() {
 </div>
 <div className="carepoint-hover-detail">
 <p className="font-body-md text-body-md text-on-surface-variant mt-0.5">
-        All grade changes, student health notes, and lesson plans must be approved by Headmistress Dr. Elizabeth Appiah before parents can see them.
+        All grade changes, student health notes, and lesson plans must be approved by Headmaster or Headteacher Dr. Elizabeth Appiah before parents can see them.
       </p>
 </div>
 </div>
@@ -174,7 +174,7 @@ export default function ApprovalsPage() {
 <th className="py-3 px-space-md">Date Sent</th>
 <th className="py-3 px-space-md">Reviewed By</th>
 <th className="py-3 px-space-md">Status</th>
-<th className="py-3 px-space-md">Headmistress Note</th>
+<th className="py-3 px-space-md">Headmaster or Headteacher Note</th>
 <th className="py-3 px-space-md text-right">Action</th>
 </tr>
 </thead>
@@ -407,12 +407,12 @@ export default function ApprovalsPage() {
 <div className="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2 font-mono text-[12px] text-on-surface-variant">
 <div className="flex justify-between"><span className="text-outline">CERTIFICATE ID:</span> <span className="font-bold text-primary">CPS-NASIA-SHA256-092281</span></div>
 <div className="flex justify-between"><span className="text-outline">REF ID:</span> <span className="text-primary font-bold" id="modal-ref">#APP-8842</span></div>
-<div className="flex justify-between"><span className="text-outline">AUTHORIZED BY:</span> <span className="text-on-surface">Dr. Elizabeth Appiah (Headmistress)</span></div>
+<div className="flex justify-between"><span className="text-outline">AUTHORIZED BY:</span> <span className="text-on-surface">Dr. Elizabeth Appiah (Headmaster or Headteacher)</span></div>
 <div className="flex justify-between"><span className="text-outline">TIMESTAMP:</span> <span>15-OCT-2026 14:20:18 GMT</span></div>
 <div className="flex justify-between"><span className="text-outline">STATUS:</span> <span className="text-emerald-700 font-bold">SENT TO PARENT</span></div>
 </div>
 <div className="flex flex-col gap-1">
-<span className="font-label-sm text-label-sm text-outline uppercase">Headmistress Approval Note</span>
+<span className="font-label-sm text-label-sm text-outline uppercase">Headmaster or Headteacher Approval Note</span>
 <p className="font-body-sm text-body-sm text-on-surface italic p-3 rounded-lg bg-surface-container" id="modal-feedback"></p>
 </div>
 <div className="flex items-center justify-end gap-2 pt-2">

@@ -1322,7 +1322,7 @@ export default function ApplyPage() {
                     Welcome to the Carepoint Family!
                   </h2>
                   <p className="font-body-md text-body-md text-on-surface-variant max-w-lg">
-                    Application for <strong>{candidateFullName}</strong> ({classApplyingFor}) has been successfully submitted to the Headmistress and admissions desk under:
+                    Application for <strong>{candidateFullName}</strong> ({classApplyingFor}) has been successfully submitted to the Headmaster or Headteacher and admissions desk under:
                   </p>
 
                   <div className="p-4 bg-surface-container-low rounded-xl flex items-center justify-center gap-4 my-2 border border-surface-container-high/60 max-w-md w-full">

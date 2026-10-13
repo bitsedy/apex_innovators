@@ -6,7 +6,7 @@ const checks = [
   { file: 'prototype/parent/messages.html', test: c => c.includes('welfareView.classList.add(\'hidden\')'), desc: 'parent/messages tab toggle hidden class present' },
   { file: 'prototype/admin/inbox.html', test: c => (c.match(/<aside/g) || []).length === 1 && c.includes('Statutory Response SLA Tracker'), desc: 'admin/inbox duplicate aside removed and dispatch panel present' },
   { file: 'prototype/public/mobile-apply.html', test: c => c.includes('id="step-panel-4"') && c.includes('wa.me/233241234567'), desc: 'mobile-apply 4-step wizard and WhatsApp link present' },
-  { file: 'prototype/admin/login.html', test: c => c.includes('Dr. Elizabeth Appiah (Headmistress / Principal)'), desc: 'admin/login Principal name updated to Dr. Elizabeth Appiah' },
+  { file: 'prototype/admin/login.html', test: c => c.includes('Dr. Elizabeth Appiah (Headmaster or Headteacher / Principal)'), desc: 'admin/login Principal name updated to Dr. Elizabeth Appiah' },
   { file: 'prototype/sysadmin/mobile-provisioning.html', test: c => !c.includes('@stnicholas.edu.gh') && c.includes('@carepoint.edu.gh'), desc: 'sysadmin/mobile-provisioning domain leaks purged' },
   { file: 'prototype/sysadmin/mobile-integrations.html', test: c => c.includes('>Integrations Hub</span>'), desc: 'sysadmin/mobile-integrations header subtitle corrected' },
   { file: 'prototype/staff/gradebook.html', test: c => c.includes('gradeSpan.innerText = \'Grade 9\''), desc: 'staff/gradebook dynamic grade badge recalculation present' },

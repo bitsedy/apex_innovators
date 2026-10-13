@@ -40,7 +40,7 @@ export default function GradebookPage() {
 <span className="material-symbols-outlined text-[18px]">download</span> Download Marks (Excel)
         </button>
 <button className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-secondary text-on-secondary hover:bg-red-700 transition-transform active:scale-95 font-label-lg text-label-lg shadow-sm"  type="button">
-<span className="material-symbols-outlined text-[18px]">send</span> Send Marks to Headmistress
+<span className="material-symbols-outlined text-[18px]">send</span> Send Marks to Headmaster or Headteacher
         </button>
 </div>
 </div>
@@ -162,7 +162,7 @@ export default function GradebookPage() {
 </div>
 <div className="carepoint-hover-detail">
 <p className="font-body-sm text-body-sm text-amber-900 mt-1">
-        Once marks are saved, any changes must be approved by <strong>Headmistress Dr. Elizabeth Appiah</strong> before parents can see them on their portal or report cards.
+        Once marks are saved, any changes must be approved by <strong>Headmaster or Headteacher Dr. Elizabeth Appiah</strong> before parents can see them on their portal or report cards.
       </p>
 </div>
 </div>
@@ -182,7 +182,7 @@ export default function GradebookPage() {
 <select className="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm focus:outline-none shadow-sm">
 <option>All Statuses</option>
 <option>Approved</option>
-<option>Waiting for Headmistress</option>
+<option>Waiting for Headmaster or Headteacher</option>
 <option>Draft</option>
 </select>
 </div>
@@ -191,7 +191,7 @@ export default function GradebookPage() {
 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Approved
         </span>
 <span className="inline-flex items-center gap-1">
-<span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span> Waiting for Headmistress
+<span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span> Waiting for Headmaster or Headteacher
         </span>
 <span className="inline-flex items-center gap-1">
 <span className="w-2.5 h-2.5 rounded-full bg-slate-400"></span> Draft
@@ -456,7 +456,7 @@ export default function GradebookPage() {
 </td>
 <td className="py-2 px-2 text-center">
 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-label-sm text-[11px] font-bold">
-<span className="material-symbols-outlined text-[13px]">pending</span> Waiting for Headmistress
+<span className="material-symbols-outlined text-[13px]">pending</span> Waiting for Headmaster or Headteacher
               </span>
 </td>
 <td className="py-2 px-2 text-center">
@@ -548,10 +548,10 @@ export default function GradebookPage() {
 <div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
 <div>
 <div className="flex items-center justify-between mb-space-xs">
-<h2 className="font-headline-sm text-headline-sm text-primary">Send Marks to Headmistress</h2>
+<h2 className="font-headline-sm text-headline-sm text-primary">Send Marks to Headmaster or Headteacher</h2>
 <span className="px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-label-sm text-label-sm font-bold">STEP 1 OF 2</span>
 </div>
-<p className="font-body-sm text-body-sm text-on-surface-variant">Sending these marks will notify Headmistress Dr. Elizabeth Appiah to review and approve them.</p>
+<p className="font-body-sm text-body-sm text-on-surface-variant">Sending these marks will notify Headmaster or Headteacher Dr. Elizabeth Appiah to review and approve them.</p>
 </div>
 <div className="p-space-sm bg-surface-container rounded-lg flex flex-col gap-1 my-space-sm">
 <div className="flex items-center gap-2">
@@ -563,7 +563,7 @@ export default function GradebookPage() {
 <div className="flex flex-col gap-2">
 <button className="w-full py-2.5 px-4 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2 shadow-sm"  type="button">
 <span className="material-symbols-outlined text-[20px]">assignment_turned_in</span>
-          Send Marks to Headmistress
+          Send Marks to Headmaster or Headteacher
         </button>
 <span className="font-label-sm text-label-sm text-outline text-center">Once sent, marks will be locked until approved</span>
 </div>
@@ -581,14 +581,14 @@ export default function GradebookPage() {
 </button>
 </div>
 <div>
-<h3 className="font-headline-sm text-headline-sm text-primary">Send Marks to Headmistress?</h3>
+<h3 className="font-headline-sm text-headline-sm text-primary">Send Marks to Headmaster or Headteacher?</h3>
 <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
-          You are sending marks for <strong>Basic 2 Sunflower Class (28 Students)</strong> to Headmistress Dr. Elizabeth Appiah to review and approve.
+          You are sending marks for <strong>Basic 2 Sunflower Class (28 Students)</strong> to Headmaster or Headteacher Dr. Elizabeth Appiah to review and approve.
         </p>
 </div>
 <div className="p-space-sm rounded-lg bg-amber-50 text-amber-900 font-label-sm text-label-sm flex items-start gap-2">
 <span className="material-symbols-outlined text-[18px] text-amber-700 shrink-0">info</span>
-<span>You cannot change marks once sent unless the Headmistress asks for changes.</span>
+<span>You cannot change marks once sent unless the Headmaster or Headteacher asks for changes.</span>
 </div>
 <div className="flex items-center justify-end gap-space-sm pt-space-xs">
 <button className="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container-highest transition-colors"  type="button">

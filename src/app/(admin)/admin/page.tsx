@@ -26,7 +26,7 @@ export default function AdminPage() {
 </div>
 </div>
 <h1 className="font-headline-lg text-headline-lg text-on-primary tracking-tight mt-1">
-          Welcome back, Headmistress Dr. Elizabeth Appiah
+          Welcome back, Headmaster or Headteacher Dr. Elizabeth Appiah
         </h1>
 <p className="font-body-sm text-body-sm text-primary-fixed-dim max-w-2xl">
           Carepoint executive operations are synced. 4 high-priority governance escalations require your direct credential authorization prior to 13:00 GMT dismissal.

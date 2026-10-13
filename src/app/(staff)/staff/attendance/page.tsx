@@ -154,7 +154,7 @@ export default function AttendancePage() {
 </div>
 <div className="carepoint-hover-detail">
 <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
-        If a student is marked <strong>Absent</strong>, a text message is sent to parents at <strong>09:00 GMT</strong>. Once attendance is saved, changes require Headmistress approval.
+        If a student is marked <strong>Absent</strong>, a text message is sent to parents at <strong>09:00 GMT</strong>. Once attendance is saved, changes require Headmaster or Headteacher approval.
       </p>
 </div>
 </div>
@@ -470,7 +470,7 @@ export default function AttendancePage() {
 <ul className="text-body-sm font-body-sm text-on-surface space-y-1 bg-surface-container-low p-space-sm rounded-lg">
 <li className="flex items-center gap-1.5"><span className="material-symbols-outlined text-emerald-700 text-[18px]">check</span> Parents can see this on their portal.</li>
 <li className="flex items-center gap-1.5"><span className="material-symbols-outlined text-secondary text-[18px]">sms</span> Parents of absent students get a text at 09:00 GMT.</li>
-<li className="flex items-center gap-1.5"><span className="material-symbols-outlined text-amber-800 text-[18px]">gavel</span> Changes after saving need Headmistress approval.</li>
+<li className="flex items-center gap-1.5"><span className="material-symbols-outlined text-amber-800 text-[18px]">gavel</span> Changes after saving need Headmaster or Headteacher approval.</li>
 </ul>
 <div className="flex items-center justify-end gap-space-sm mt-2">
 <button className="px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-colors" id="cancelLockBtn" type="button">

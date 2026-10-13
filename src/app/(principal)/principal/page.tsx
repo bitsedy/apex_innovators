@@ -21,7 +21,7 @@ export default function PrincipalPage() {
 <span className="font-label-sm text-label-sm opacity-80">Sync ID: #SAF-ACC-2026-08</span>
 </div>
 <p className="font-headline-sm text-headline-sm tracking-tight mt-0.5">
-          Attention Headmistress: 2 High-Priority Safeguarding Escalations require immediate executive action before 16:00 GMT dismissal.
+          Attention Headmaster or Headteacher: 2 High-Priority Safeguarding Escalations require immediate executive action before 16:00 GMT dismissal.
         </p>
 </div>
 </div>

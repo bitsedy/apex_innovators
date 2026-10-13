@@ -72,7 +72,7 @@ export function AppShell({ role, title, subtitle, children }: AppShellProps) {
   const { isTeacherClockedIn, clockInTime } = useCarepointStore();
 
   const roleLabels = {
-    admin: { name: "Dr. Elizabeth Appiah", title: "Headmistress / Administrator" },
+    admin: { name: "Dr. Elizabeth Appiah", title: "Headmaster or Headteacher / Administrator" },
     principal: { name: "Dr. Elizabeth Appiah", title: "Principal & Executive Authority" },
     staff: { name: "Mr. Ebenezer Abbey", title: "Class Master • Basic 4A" },
     gate: { name: "Officer Kwame Osei", title: "Front-Desk & Campus Security" },
