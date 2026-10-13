@@ -309,6 +309,29 @@ aside.bg-primary .carepoint-drawer-close-btn:hover,
 }
 
 /* ==========================================================================
+   NAVIGATION & INITIAL LOAD TRANSITION STABILITY
+   Completely prevents layout snapping, flashing, or FOUC when navigating
+   between portal pages or synchronizing default collapse states.
+   ========================================================================== */
+html.carepoint-no-transition,
+html.carepoint-no-transition *,
+html.carepoint-no-transition *::before,
+html.carepoint-no-transition *::after,
+body.carepoint-no-transition,
+body.carepoint-no-transition *,
+body.carepoint-no-transition *::before,
+body.carepoint-no-transition *::after {
+  transition: none !important;
+  -webkit-transition: none !important;
+  animation-duration: 0s !important;
+}
+
+/* Table Layout Stability: Prevent vertical row shifting during disclosure collapse/expansion */
+table th, table td {
+  vertical-align: top;
+}
+
+/* ==========================================================================
    RESPONSIVE OVERRIDES FOR MOBILE & TABLET (<= 1024px)
    Completely resolves layout squashing and horizontal disruption.
    ========================================================================== */
@@ -424,17 +447,35 @@ body.carepoint-has-overlay-drawer aside.fixed.left-0.top-0.carepoint-drawer-open
     transition: left 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 
+  header [data-drawer-toggle],
+  header .portal-drawer-toggle,
+  header #portal-drawer-toggle {
+    transition: width 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                max-width 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                margin 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                padding 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
+
   /* Docked mode - COLLAPSED: */
+  html.carepoint-drawer-collapsed .pl-72,
+  html.carepoint-drawer-collapsed div[class*="pl-72"],
   body:not(.carepoint-has-overlay-drawer).carepoint-drawer-collapsed .pl-72,
   body:not(.carepoint-has-overlay-drawer).carepoint-drawer-collapsed div[class*="pl-72"] {
     padding-left: 0 !important;
   }
 
+  html.carepoint-drawer-collapsed header.left-72,
+  html.carepoint-drawer-collapsed header[class*="left-72"],
   body:not(.carepoint-has-overlay-drawer).carepoint-drawer-collapsed header.left-72,
   body:not(.carepoint-has-overlay-drawer).carepoint-drawer-collapsed header[class*="left-72"] {
     left: 0 !important;
   }
 
+  html.carepoint-drawer-collapsed aside.carepoint-drawer,
+  html.carepoint-drawer-collapsed aside.fixed.left-0.top-0,
   body:not(.carepoint-has-overlay-drawer).carepoint-drawer-collapsed aside.carepoint-drawer,
   body:not(.carepoint-has-overlay-drawer).carepoint-drawer-collapsed aside.fixed.left-0.top-0 {
     transform: translateX(-100%) !important;

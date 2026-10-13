@@ -839,6 +839,10 @@ function createDynamicPortalDrawer(role, isMobile) {
 export function initNavigationDrawer() {
   if (typeof document === 'undefined') return;
 
+  // Suppress transition jumps during initial layout computation and navigation
+  document.documentElement.classList.add('carepoint-no-transition');
+  document.body.classList.add('carepoint-no-transition');
+
   const currentPath = window.location.pathname.toLowerCase();
 
   // Get active role from HUD metadata or URL path
@@ -1137,6 +1141,14 @@ export function initNavigationDrawer() {
   });
 
   syncResponsiveState();
+
+  // Release transition suppression lock cleanly after initial layout has painted
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.documentElement.classList.remove('carepoint-no-transition');
+      document.body.classList.remove('carepoint-no-transition');
+    });
+  });
 
   // Expose globally
   window.CarepointDrawer = {
@@ -4066,11 +4078,8 @@ export function initCarepointSkeletonEngine() {
     document.body.appendChild(overlay);
 
     // Initial progressive page load shimmer:
-    // Display briefly so user sees YouTube-style shimmer without jarring flash, then fade out smoothly
-    const initialDuration = 320;
-    setTimeout(() => {
-      hideSkeletonOverlay(overlay);
-    }, initialDuration);
+    // Keep overlay hidden during standard navigations to eliminate layout flashing & distortions
+    hideSkeletonOverlay(overlay);
   }
 
   // 4. Global API for Programmatic Control & Inspection
@@ -4187,9 +4196,9 @@ export function initCarepointSkeletonEngine() {
       'button[role="tab"], .carepoint-soft-tab-group button, [data-tab], [data-view], .tab-btn'
     );
     if (!tabTrigger) return;
-    const mainArea = document.querySelector('main, #main-content, .portal-view-container, [role="main"]') || tabTrigger.closest('section, .carepoint-soft-card');
-    if (mainArea && !mainArea.classList.contains('carepoint-view-loading')) {
-      window.CarepointSkeleton.applyMicroShimmer(mainArea, 240);
+    const localArea = tabTrigger.closest('section, .carepoint-soft-card, [role="region"], .portal-view-container') || (tabTrigger.parentElement && tabTrigger.parentElement.nextElementSibling);
+    if (localArea && !localArea.classList.contains('carepoint-view-loading')) {
+      window.CarepointSkeleton.applyMicroShimmer(localArea, 200);
     }
   }, true);
 
