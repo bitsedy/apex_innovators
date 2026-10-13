@@ -3782,17 +3782,32 @@ export function initCarepointCapabilitiesDiscovery() {
   function injectHeaderTrigger() {
     if (document.getElementById('carepoint-capabilities-btn')) return;
 
-    const headerRight = document.querySelector('header .flex.items-center:last-child, header > div > .flex.items-center:last-child');
+    const headerEl = document.querySelector('header');
+    if (!headerEl) return;
+
+    // Locate the main action row: either header itself or the row containing justify-between
+    const rowEl = headerEl.classList.contains('justify-between')
+      ? headerEl
+      : (headerEl.querySelector(':scope > div.justify-between, :scope > div > div.justify-between, :scope > .flex.justify-between') || headerEl.lastElementChild);
+
+    if (!rowEl) return;
+
+    // Find the right actions container (last child of rowEl)
+    let headerRight = rowEl.querySelector(':scope > .flex.items-center:last-child, :scope > div:last-child');
+    if (!headerRight || headerRight === rowEl) {
+      headerRight = rowEl.lastElementChild;
+    }
+
     if (headerRight) {
       const btn = document.createElement('button');
       btn.id = 'carepoint-capabilities-btn';
       btn.type = 'button';
-      btn.className = 'hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-primary text-xs font-semibold transition-all border border-outline-variant/30 cursor-pointer shadow-2xs mr-2';
+      btn.className = 'inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-primary text-xs font-semibold transition-all border border-outline-variant/30 cursor-pointer shadow-2xs mr-1 sm:mr-2 shrink-0';
       btn.title = `Explore ${roleTitle} Capabilities (Ctrl+K)`;
       btn.innerHTML = `
         <span class="material-symbols-outlined text-[16px] text-primary">search</span>
-        <span>Find in ${escapeHtml(roleTitle.split(' ')[0])}</span>
-        <kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-[10px] font-mono font-bold text-on-surface-variant border border-outline-variant/40">Ctrl K</kbd>
+        <span class="hidden xl:inline">Find in ${escapeHtml(roleTitle.split(' ')[0])}</span>
+        <kbd class="hidden xl:inline px-1.5 py-0.5 rounded bg-surface-container-lowest text-[10px] font-mono font-bold text-on-surface-variant border border-outline-variant/40">Ctrl K</kbd>
       `;
       btn.onclick = openCapabilitiesModal;
       headerRight.prepend(btn);

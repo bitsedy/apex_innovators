@@ -364,10 +364,15 @@ aside.bg-primary .carepoint-drawer-close-btn:hover,
     box-shadow: 12px 0 40px rgba(1, 21, 73, 0.42) !important;
   }
 
-  /* Mobile header padding and item alignment */
-  header.fixed {
+  /* Mobile header padding: only apply to single-row flex headers, never to multi-row wrappers */
+  header.fixed.flex,
+  header.fixed:not(:has(> div:nth-child(2))) {
     padding-left: 14px !important;
     padding-right: 14px !important;
+  }
+  header.fixed:has(> div:nth-child(2)) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   /* Prevent table containers from stretching the entire viewport */
