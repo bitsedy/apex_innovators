@@ -2850,7 +2850,7 @@ export function initCarepointCapabilitiesDiscovery() {
         category: 'Health & Welfare',
         description: 'Review routine dental, vision screenings, and nurse logs from the school infirmary.',
         icon: 'health_and_safety',
-        action: `url:${relRoot}parent/${pfx}academics.html#health`,
+        action: `url:${relRoot}parent/${pfx}messages.html#welfare`,
         badge: 'Infirmary',
         allowedRole: 'parent',
         page: 'academics.html'
