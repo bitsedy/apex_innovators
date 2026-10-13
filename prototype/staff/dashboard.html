@@ -143,28 +143,34 @@
     <!-- Section 2: Top KPI Metrics Bar (4 Cards) -->
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
       <!-- Metric 1: Attendance -->
-      <div class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+      <div class="carepoint-metric-card rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
         <div class="flex items-start justify-between">
           <div>
             <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Today's Attendance</span>
-            <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">Not Taken Yet</h2>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span class="carepoint-metric-num font-headline-lg text-headline-lg text-on-surface font-bold" data-metric-target="0">0</span>
+              <span class="font-headline-sm text-headline-sm text-on-surface-variant font-medium">/ 28</span>
+            </div>
           </div>
           <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-800">
             <span class="material-symbols-outlined text-[20px]">timer</span>
           </div>
         </div>
         <div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between font-label-sm text-label-sm">
-          <span class="text-secondary font-semibold">0 of 28 marked</span>
-          <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-medium">Due by 08:30 AM</span>
+          <span class="text-secondary font-semibold">0% Recorded</span>
+          <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-medium">Due 08:30 AM</span>
         </div>
       </div>
 
       <!-- Metric 2: Approvals Queue -->
-      <div class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+      <div class="carepoint-metric-card rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
         <div class="flex items-start justify-between">
           <div>
             <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Approvals</span>
-            <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">2 Waiting</h2>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span class="carepoint-metric-num font-headline-lg text-headline-lg text-secondary-container font-bold" data-metric-target="2">2</span>
+              <span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary font-medium">Pending Review</span>
+            </div>
           </div>
           <div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[20px]">approval</span>
@@ -172,16 +178,19 @@
         </div>
         <div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between font-label-sm text-label-sm">
           <span class="text-on-surface-variant">Sent to Headmistress</span>
-          <a href="approvals.html" class="text-primary font-semibold hover:underline">See List &rarr;</a>
+          <a href="approvals.html" class="text-primary font-semibold hover:underline">Review &rarr;</a>
         </div>
       </div>
 
       <!-- Metric 3: Assessment Grading -->
-      <div class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+      <div class="carepoint-metric-card rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
         <div class="flex items-start justify-between">
           <div>
             <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Class Marks</span>
-            <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">85% Entered</h2>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span class="carepoint-metric-num font-headline-lg text-headline-lg text-on-surface font-bold" data-metric-target="85%">85%</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">24/28</span>
+            </div>
           </div>
           <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center">
             <span class="material-symbols-outlined text-[20px]">auto_stories</span>
@@ -192,30 +201,32 @@
             <div class="bg-emerald-600 h-full rounded-full" style="width: 85%"></div>
           </div>
           <div class="flex items-center justify-between text-[11px] text-on-surface-variant font-medium">
-            <span>Mid-Term Test</span>
-            <span class="text-emerald-700 font-semibold">24 of 28 students</span>
+            <span>Mid-Term SBA</span>
+            <span class="text-emerald-700 font-semibold">4 remaining</span>
           </div>
         </div>
       </div>
 
       <!-- Metric 4: Parent Inquiries -->
-      <a href="messages.html" class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-all group cursor-pointer block">
+      <a href="messages.html" class="carepoint-metric-card rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-all group cursor-pointer block">
         <div class="flex items-start justify-between">
           <div>
             <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Messages</span>
-            <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 group-hover:text-primary transition-colors">1 New Message</h2>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span class="carepoint-metric-num font-headline-lg text-headline-lg text-secondary font-bold" data-metric-target="1">1</span>
+              <span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">Unread</span>
+            </div>
           </div>
           <div class="w-10 h-10 rounded-xl bg-red-100 text-secondary flex items-center justify-center group-hover:scale-105 transition-transform">
             <span class="material-symbols-outlined text-[20px]">mark_chat_unread</span>
           </div>
         </div>
         <div class="mt-4 pt-3 border-t border-surface-container-high/50 flex items-center justify-between text-body-sm text-body-sm">
-          <span class="text-on-surface font-medium truncate">Dr. Nana Mensah (Parent)</span>
+          <span class="text-on-surface font-medium truncate">Dr. Nana Mensah</span>
           <span class="text-primary font-semibold text-[11px] flex items-center gap-0.5">Read &rarr;</span>
         </div>
       </a>
     </div>
-</div>
     <!-- Navigation Tabs -->
     <div class="flex items-center gap-2 p-1.5 bg-[#f4f1ee] rounded-full w-fit mb-6">
       <button id="staffTabBtn_flow" onclick="switchStaffView('flow')" class="staff-view-tab px-5 py-2 rounded-full text-xs font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5 cursor-pointer" type="button">

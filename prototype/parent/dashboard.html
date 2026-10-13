@@ -184,11 +184,11 @@
 <!-- Quick Metrics Grid -->
 <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 <!-- Attendance Card -->
-<div class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+<div class="carepoint-metric-card rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
 <div class="flex items-start justify-between">
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Term Attendance</span>
-<div class="font-headline-lg text-headline-lg font-bold text-primary mt-1">98.2%</div>
+<div class="carepoint-metric-num font-headline-lg text-headline-lg font-bold text-primary mt-1" data-metric-target="98.2%">98.2%</div>
 </div>
 <div class="w-10 h-10 rounded-xl bg-tertiary-fixed/30 text-tertiary-container flex items-center justify-center">
 <span class="material-symbols-outlined text-[20px]">how_to_reg</span>
@@ -200,11 +200,11 @@
 </div>
 </div>
 <!-- Term Average Card -->
-<div class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+<div class="carepoint-metric-card rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
 <div class="flex items-start justify-between">
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Term Average</span>
-<div class="font-headline-lg text-headline-lg font-bold text-primary mt-1">89.4%</div>
+<div class="carepoint-metric-num font-headline-lg text-headline-lg font-bold text-primary mt-1" data-metric-target="89.4%">89.4%</div>
 </div>
 <div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
 <span class="material-symbols-outlined text-[20px]">workspace_premium</span>
@@ -218,11 +218,14 @@
 </div>
 </div>
 <!-- Pickup Pass Card -->
-<div class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+<div class="carepoint-metric-card rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
 <div class="flex items-start justify-between">
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Today's Pickup Pass</span>
-<div class="font-headline-sm text-headline-sm font-bold text-on-tertiary-fixed-variant mt-1">Active &bull; Secured</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="carepoint-metric-num font-headline-lg text-headline-lg font-bold text-primary" data-metric-target="1">1</span>
+<span class="font-label-sm text-label-sm font-bold text-on-tertiary-fixed-variant">Active Pass</span>
+</div>
 </div>
 <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
 <span class="material-symbols-outlined text-[20px]">qr_code_2</span>
@@ -234,11 +237,14 @@
 </div>
 </div>
 <!-- Messages & Notices Card -->
-<div class="rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+<div class="carepoint-metric-card rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
 <div class="flex items-start justify-between">
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Updates</span>
-<div class="font-headline-lg text-headline-lg font-bold text-secondary mt-1">2 Unread</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="carepoint-metric-num font-headline-lg text-headline-lg font-bold text-secondary" data-metric-target="2">2</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">Unread</span>
+</div>
 </div>
 <div class="w-10 h-10 rounded-xl bg-secondary-fixed/50 text-secondary flex items-center justify-center">
 <span class="material-symbols-outlined text-[20px]">mail</span>

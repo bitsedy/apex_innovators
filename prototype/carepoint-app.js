@@ -332,6 +332,96 @@ export function initStaffPortalRefinements() {
   }
 }
 
+// =============================================================================
+// DASHBOARD METRIC CARDS: QUANTITATIVE ANIMATION ON PAGE SCROLL
+// =============================================================================
+
+function animateQuantitativeNumber(el) {
+  if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  const rawText = el.getAttribute('data-metric-target') || el.textContent.trim();
+  if (!rawText) return;
+
+  const match = rawText.match(/^([^0-9.-]*)([0-9,.]+)(.*)$/);
+  if (!match) return;
+
+  const prefix = match[1] || '';
+  const numStr = match[2].replace(/,/g, '');
+  const suffix = match[3] || '';
+
+  const targetNum = parseFloat(numStr);
+  if (isNaN(targetNum)) return;
+
+  const decimals = (numStr.split('.')[1] || '').length;
+  const duration = 900;
+  const startTime = performance.now();
+
+  function updateFrame(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const currentVal = targetNum * ease;
+
+    const formatted = currentVal.toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    });
+
+    el.textContent = `${prefix}${formatted}${suffix}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(updateFrame);
+    } else {
+      el.textContent = rawText;
+    }
+  }
+
+  requestAnimationFrame(updateFrame);
+}
+
+export function initDashboardMetricsAnimation() {
+  if (typeof document === 'undefined') return;
+
+  const metricCards = document.querySelectorAll(
+    '.carepoint-metric-card, [data-metric-card], .grid.grid-cols-1.sm\\:grid-cols-2.xl\\:grid-cols-4 > div, .grid.grid-cols-1.md\\:grid-cols-2.xl\\:grid-cols-4 > div, .grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-4 > div'
+  );
+
+  if (!metricCards.length) return;
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -25px 0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        card.classList.add('carepoint-metric-visible');
+
+        const numEl = card.querySelector(
+          '.carepoint-metric-num, [data-metric-target], .font-headline-lg, .font-headline-xl'
+        );
+
+        if (numEl && !numEl.dataset.animated) {
+          numEl.dataset.animated = 'true';
+          animateQuantitativeNumber(numEl);
+        }
+
+        obs.unobserve(card);
+      }
+    });
+  }, observerOptions);
+
+  metricCards.forEach(card => {
+    card.classList.add('carepoint-metric-card', 'carepoint-metric-animated');
+    observer.observe(card);
+  });
+}
+
 // Auto-run if DOM ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
@@ -343,6 +433,7 @@ if (document.readyState === 'loading') {
     initNavigationDrawer();
     initHeaderProfileImages();
     initStaffPortalRefinements();
+    initDashboardMetricsAnimation();
     initCarepointCapabilitiesDiscovery();
     initCarepointSafeActionEngine();
     initCarepointSkeletonEngine();
@@ -356,6 +447,7 @@ if (document.readyState === 'loading') {
   initNavigationDrawer();
   initHeaderProfileImages();
   initStaffPortalRefinements();
+  initDashboardMetricsAnimation();
   initCarepointCapabilitiesDiscovery();
   initCarepointSafeActionEngine();
   initCarepointSkeletonEngine();
@@ -951,7 +1043,10 @@ export function initNavigationDrawer() {
       backdrop.classList.remove('active');
       document.body.style.overflow = '';
 
-      if (wasCollapsed) {
+      // On dashboard pages, side navbar is minimized and closed by default for maximum visual space
+      const isDashboardPage = currentPath.includes('dashboard') || currentPath.endsWith('/') || currentPath.endsWith('/prototype');
+
+      if (isDashboardPage || wasCollapsed) {
         closeDrawer();
       } else {
         openDrawer();
