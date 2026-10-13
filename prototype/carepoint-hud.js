@@ -1,16 +1,32 @@
 (function() {
+  function escapeHtml(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
   window.CarepointDemo = {
+    escapeHtml: escapeHtml,
     showToast: function(message, isSuccess = true) {
       const existing = document.querySelector('.carepoint-toast');
       if (existing) existing.remove();
       const toast = document.createElement('div');
       toast.className = 'carepoint-toast';
-      toast.innerHTML = `
-        <span class="material-symbols-outlined text-[20px]" style="color: ${isSuccess ? '#94f9a0' : '#ffb4a9'};">
-          ${isSuccess ? 'check_circle' : 'warning'}
-        </span>
-        <span>${message}</span>
-      `;
+
+      const icon = document.createElement('span');
+      icon.className = 'material-symbols-outlined text-[20px]';
+      icon.style.color = isSuccess ? '#94f9a0' : '#ffb4a9';
+      icon.textContent = isSuccess ? 'check_circle' : 'warning';
+
+      const textSpan = document.createElement('span');
+      textSpan.textContent = String(message || '');
+
+      toast.appendChild(icon);
+      toast.appendChild(textSpan);
       document.body.appendChild(toast);
       setTimeout(() => {
         toast.style.opacity = '0';
@@ -287,12 +303,12 @@
                 <span style="width: 8px; height: 8px; border-radius: 9999px; background: ${n.isUnread ? '#ba0a0c' : 'transparent'}; margin-top: 5px; shrink: 0;"></span>
                 <div style="flex: 1; min-width: 0;">
                   <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 3px; flex-wrap: wrap;">
-                    <span style="background: ${n.badgeBg}; color: ${n.badgeColor}; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 4px; text-transform: uppercase;">${n.category}</span>
+                    <span style="background: ${escapeHtml(n.badgeBg)}; color: ${escapeHtml(n.badgeColor)}; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 4px; text-transform: uppercase;">${escapeHtml(n.category)}</span>
                     ${n.priority === 'urgent' ? '<span style="background: #fee2e2; color: #991b1b; font-size: 10px; font-weight: 800; padding: 1px 6px; border-radius: 4px;">URGENT</span>' : ''}
-                    <span style="font-size: 11px; color: #64748b;">${n.time}</span>
+                    <span style="font-size: 11px; color: #64748b;">${escapeHtml(n.time)}</span>
                   </div>
                   <div style="font-size: 13px; font-weight: 700; color: #0f172a; line-height: 1.35;">
-                    ${n.headline}
+                    ${escapeHtml(n.headline)}
                   </div>
                   <div class="notif-hint" style="font-size: 11px; color: #0284c7; font-weight: 600; margin-top: 3px; display: flex; align-items: center; gap: 2px;">
                     <span>Tap to view details</span>
@@ -302,26 +318,26 @@
               </div>
               <span class="material-symbols-outlined carepoint-notif-chevron text-[20px]" style="color: #64748b; transition: transform 0.2s ease;">expand_more</span>
             </button>
-            <div class="carepoint-notif-details" id="details-${n.id}">
+            <div class="carepoint-notif-details" id="details-${escapeHtml(n.id)}">
               <p style="font-size: 13px; color: #1e293b; line-height: 1.5; margin: 0 0 10px 0;">
-                ${n.fullMessage}
+                ${escapeHtml(n.fullMessage)}
               </p>
               <div style="background: #f8fafc; border-radius: 8px; padding: 8px 12px; margin-bottom: 10px; font-size: 11px; color: #475569; display: flex; flex-direction: column; gap: 4px;">
                 <div style="display:flex; justify-content:space-between;">
                   <span>Student / Class:</span>
-                  <strong style="color:#0f172a;">${n.student}</strong>
+                  <strong style="color:#0f172a;">${escapeHtml(n.student)}</strong>
                 </div>
                 <div style="display:flex; justify-content:space-between;">
                   <span>Sender:</span>
-                  <span style="color:#0f172a; font-weight:600;">${n.sender}</span>
+                  <span style="color:#0f172a; font-weight:600;">${escapeHtml(n.sender)}</span>
                 </div>
               </div>
               <div style="display: flex; items-center; justify-content: space-between; gap: 8px;">
-                <a href="${n.actionUrl}" style="display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; background: #011549; color: white; border-radius: 6px; font-size: 11px; font-weight: 700; text-decoration: none;">
-                  <span>${n.actionLabel}</span>
+                <a href="${escapeHtml(n.actionUrl)}" style="display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; background: #011549; color: white; border-radius: 6px; font-size: 11px; font-weight: 700; text-decoration: none;">
+                  <span>${escapeHtml(n.actionLabel)}</span>
                   <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
                 </a>
-                <button type="button" onclick="window.toggleNotifItem('${n.id}')" style="background: none; border: none; font-size: 11px; color: #64748b; cursor: pointer;">
+                <button type="button" onclick="window.toggleNotifItem('${escapeHtml(n.id)}')" style="background: none; border: none; font-size: 11px; color: #64748b; cursor: pointer;">
                   Close Details
                 </button>
               </div>

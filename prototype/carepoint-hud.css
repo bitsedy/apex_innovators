@@ -805,14 +805,15 @@ header {
    ========================================================================== */
 .carepoint-soft-input {
   width: 100%;
-  padding: 12px 20px !important;
+  padding: 7px 14px !important;
   border-radius: 9999px !important;
   background-color: #f4f1ee !important;
   color: #161c23 !important;
   border: 1px solid transparent !important;
   outline: none !important;
   font-family: inherit !important;
-  font-size: 14px !important;
+  font-size: 12.5px !important;
+  min-height: 32px !important;
   transition: all 0.2s ease !important;
 }
 .carepoint-soft-input:focus {
@@ -822,14 +823,14 @@ header {
 }
 .carepoint-soft-textarea {
   width: 100%;
-  padding: 16px 20px !important;
-  border-radius: 24px !important;
+  padding: 8px 14px !important;
+  border-radius: 14px !important;
   background-color: #f4f1ee !important;
   color: #161c23 !important;
   border: 1px solid transparent !important;
   outline: none !important;
   font-family: inherit !important;
-  font-size: 14px !important;
+  font-size: 12.5px !important;
   resize: none !important;
   transition: all 0.2s ease !important;
 }
@@ -842,13 +843,14 @@ header {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 8px !important;
-  padding: 10px 24px !important;
+  gap: 6px !important;
+  padding: 6px 14px !important;
   border-radius: 9999px !important;
   background-color: #011549 !important;
   color: #ffffff !important;
   font-weight: 600 !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
+  min-height: 30px !important;
   border: none !important;
   cursor: pointer !important;
   transition: all 0.15s ease !important;
@@ -866,13 +868,14 @@ header {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 8px !important;
-  padding: 10px 20px !important;
+  gap: 6px !important;
+  padding: 6px 14px !important;
   border-radius: 9999px !important;
   background-color: #eee9e4 !important;
   color: #161c23 !important;
   font-weight: 600 !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
+  min-height: 30px !important;
   border: none !important;
   cursor: pointer !important;
   transition: all 0.15s ease !important;
@@ -886,13 +889,14 @@ header {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 8px !important;
-  padding: 10px 24px !important;
+  gap: 6px !important;
+  padding: 6px 14px !important;
   border-radius: 9999px !important;
   background-color: #ba0a0c !important;
   color: #ffffff !important;
   font-weight: 600 !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
+  min-height: 30px !important;
   border: none !important;
   cursor: pointer !important;
   transition: all 0.15s ease !important;
@@ -901,19 +905,230 @@ header {
 }
 .carepoint-soft-card {
   background-color: #ffffff !important;
-  border-radius: 24px !important;
-  padding: 24px !important;
-  border: 1px solid rgba(0, 0, 0, 0.04) !important;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02) !important;
-  transition: box-shadow 0.2s ease !important;
+  border-radius: 14px !important;
+  padding: 12px 14px !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+  transition: box-shadow 0.15s ease, transform 0.15s ease !important;
 }
 .carepoint-soft-tab-group {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  padding: 6px !important;
+  gap: 3px !important;
+  padding: 3px !important;
   background-color: #f4f1ee !important;
   border-radius: 9999px !important;
+  margin-bottom: 10px !important;
+}
+.carepoint-soft-tab-group button,
+.staff-view-tab {
+  padding: 4px 12px !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  border-radius: 9999px !important;
+}
+
+/* ==========================================================================
+   CAREPOINT COMPACT CARD & EXPANDED VISUAL SPACE ARCHITECTURE
+   Minimizes card dimensions and tightens card contents across all portals
+   (excluding public site) to maximize visual breathing room and usability.
+   ========================================================================== */
+
+/* 1. Universal Portal Card Footprint Optimization */
+body.carepoint-portal main .bg-surface-container-lowest:not(aside):not(header):not(#carepoint-hud-root *):not(#carepoint-notif-drawer *),
+body.carepoint-compact-ui main .bg-surface-container-lowest:not(aside):not(header):not(#carepoint-hud-root *):not(#carepoint-notif-drawer *),
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .bg-surface-container-lowest:not(aside):not(header):not(#carepoint-hud-root *):not(#carepoint-notif-drawer *),
+body.carepoint-portal .carepoint-hover-card,
+body.carepoint-compact-ui .carepoint-hover-card,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) .carepoint-hover-card {
+  padding: 12px 14px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(203, 213, 225, 0.6) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+  transition: box-shadow 0.15s ease, transform 0.15s ease !important;
+}
+
+/* 2. Hero & Welcome Shift Banners - Compact Height & Breathing Room */
+body.carepoint-portal main [class*="bg-gradient-to-r"],
+body.carepoint-compact-ui main [class*="bg-gradient-to-r"],
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main [class*="bg-gradient-to-r"],
+body.carepoint-portal main section#ward,
+body.carepoint-compact-ui main section#ward,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main section#ward {
+  padding: 12px 16px !important;
+  border-radius: 14px !important;
+  margin-bottom: 12px !important;
+  box-shadow: 0 2px 8px -2px rgba(1, 21, 73, 0.15) !important;
+}
+
+body.carepoint-portal main [class*="bg-gradient-to-r"] h1,
+body.carepoint-compact-ui main [class*="bg-gradient-to-r"] h1,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main [class*="bg-gradient-to-r"] h1,
+body.carepoint-portal main section#ward h1,
+body.carepoint-compact-ui main section#ward h1,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main section#ward h1 {
+  font-size: 17px !important;
+  line-height: 22px !important;
+  margin-top: 1px !important;
+  margin-bottom: 0 !important;
+  font-weight: 700 !important;
+}
+
+body.carepoint-portal main [class*="bg-gradient-to-r"] p,
+body.carepoint-compact-ui main [class*="bg-gradient-to-r"] p,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main [class*="bg-gradient-to-r"] p,
+body.carepoint-portal main section#ward p,
+body.carepoint-compact-ui main section#ward p,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main section#ward p {
+  font-size: 11.5px !important;
+  line-height: 15px !important;
+  margin-top: 1px !important;
+  opacity: 0.9 !important;
+}
+
+body.carepoint-portal main [class*="bg-gradient-to-r"] img,
+body.carepoint-compact-ui main [class*="bg-gradient-to-r"] img,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main [class*="bg-gradient-to-r"] img,
+body.carepoint-portal main section#ward img,
+body.carepoint-compact-ui main section#ward img,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main section#ward img {
+  width: 48px !important;
+  height: 48px !important;
+  border-width: 2px !important;
+}
+
+/* 3. KPI & Quick-Stat Cards Density */
+body.carepoint-portal main .grid > div:has([class*="font-headline"]),
+body.carepoint-compact-ui main .grid > div:has([class*="font-headline"]),
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid > div:has([class*="font-headline"]),
+body.carepoint-portal main .grid > a:has([class*="font-headline"]),
+body.carepoint-compact-ui main .grid > a:has([class*="font-headline"]),
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid > a:has([class*="font-headline"]),
+body.carepoint-portal main .grid > div.bg-surface-container-lowest,
+body.carepoint-compact-ui main .grid > div.bg-surface-container-lowest,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid > div.bg-surface-container-lowest,
+body.carepoint-portal main .grid > a.bg-surface-container-lowest,
+body.carepoint-compact-ui main .grid > a.bg-surface-container-lowest,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid > a.bg-surface-container-lowest {
+  padding: 10px 12px !important;
+  border-radius: 12px !important;
+  min-height: auto !important;
+}
+
+/* KPI numbers and values */
+body.carepoint-portal main .grid [class*="font-headline-lg"],
+body.carepoint-compact-ui main .grid [class*="font-headline-lg"],
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="font-headline-lg"],
+body.carepoint-portal main .grid [class*="text-headline-lg"],
+body.carepoint-compact-ui main .grid [class*="text-headline-lg"],
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="text-headline-lg"],
+body.carepoint-portal main .grid [class*="font-headline-sm"],
+body.carepoint-compact-ui main .grid [class*="font-headline-sm"],
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="font-headline-sm"],
+body.carepoint-portal main .grid [class*="text-headline-sm"],
+body.carepoint-compact-ui main .grid [class*="text-headline-sm"],
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="text-headline-sm"],
+body.carepoint-portal main .grid h2,
+body.carepoint-compact-ui main .grid h2,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid h2 {
+  font-size: 1.15rem !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  margin-top: 1px !important;
+  margin-bottom: 0 !important;
+}
+
+/* KPI titles and category labels */
+body.carepoint-portal main .grid [class*="font-label-sm"],
+body.carepoint-compact-ui main .grid [class*="font-label-sm"],
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="font-label-sm"],
+body.carepoint-portal main .grid [class*="text-label-sm"],
+body.carepoint-compact-ui main .grid [class*="text-label-sm"],
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="text-label-sm"] {
+  font-size: 10.5px !important;
+  line-height: 14px !important;
+  font-weight: 600 !important;
+  margin-bottom: 1px !important;
+}
+
+/* KPI icon containers */
+body.carepoint-portal main .grid [class*="w-10 h-10"],
+body.carepoint-compact-ui main .grid [class*="w-10 h-10"],
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="w-10 h-10"],
+body.carepoint-portal main .grid [class*="w-11 h-11"],
+body.carepoint-compact-ui main .grid [class*="w-11 h-11"],
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="w-11 h-11"],
+body.carepoint-portal main .grid [class*="w-12 h-12"],
+body.carepoint-compact-ui main .grid [class*="w-12 h-12"],
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="w-12 h-12"] {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 7px !important;
+}
+
+body.carepoint-portal main .grid [class*="w-10 h-10"] .material-symbols-outlined,
+body.carepoint-compact-ui main .grid [class*="w-10 h-10"] .material-symbols-outlined,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="w-10 h-10"] .material-symbols-outlined,
+body.carepoint-portal main .grid [class*="w-11 h-11"] .material-symbols-outlined,
+body.carepoint-compact-ui main .grid [class*="w-11 h-11"] .material-symbols-outlined,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="w-11 h-11"] .material-symbols-outlined,
+body.carepoint-portal main .grid [class*="w-12 h-12"] .material-symbols-outlined,
+body.carepoint-compact-ui main .grid [class*="w-12 h-12"] .material-symbols-outlined,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="w-12 h-12"] .material-symbols-outlined {
+  font-size: 16px !important;
+}
+
+/* KPI bottom divider and secondary row */
+body.carepoint-portal main .grid [class*="border-t"],
+body.carepoint-compact-ui main .grid [class*="border-t"],
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .grid [class*="border-t"] {
+  margin-top: 6px !important;
+  padding-top: 5px !important;
+  font-size: 10.5px !important;
+}
+
+/* 4. Streamlined Vertical Gaps & Container Spacing */
+body.carepoint-portal main .space-y-6 > :not([hidden]) ~ :not([hidden]),
+body.carepoint-compact-ui main .space-y-6 > :not([hidden]) ~ :not([hidden]),
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .space-y-6 > :not([hidden]) ~ :not([hidden]),
+body.carepoint-portal main .space-y-space-lg > :not([hidden]) ~ :not([hidden]),
+body.carepoint-compact-ui main .space-y-space-lg > :not([hidden]) ~ :not([hidden]),
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .space-y-space-lg > :not([hidden]) ~ :not([hidden]),
+body.carepoint-portal main .gap-space-lg,
+body.carepoint-compact-ui main .gap-space-lg,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .gap-space-lg,
+body.carepoint-portal main .gap-6,
+body.carepoint-compact-ui main .gap-6,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .gap-6,
+body.carepoint-portal main .gap-4,
+body.carepoint-compact-ui main .gap-4,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .gap-4 {
+  gap: 10px !important;
+}
+
+body.carepoint-portal main .mb-6,
+body.carepoint-compact-ui main .mb-6,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .mb-6,
+body.carepoint-portal main .mb-space-lg,
+body.carepoint-compact-ui main .mb-space-lg,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) main .mb-space-lg {
+  margin-bottom: 10px !important;
+}
+
+/* 5. Compact Table Cells & Row Matrix */
+body.carepoint-portal table th,
+body.carepoint-compact-ui table th,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) table th {
+  padding: 6px 10px !important;
+  font-size: 10.5px !important;
+  letter-spacing: 0.03em !important;
+}
+
+body.carepoint-portal table td,
+body.carepoint-compact-ui table td,
+body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:has(meta[content="mobile_stack"])) table td {
+  padding: 6px 10px !important;
+  font-size: 12px !important;
 }
 
 /* =============================================================================
@@ -1102,30 +1317,30 @@ header {
 /* 5. Cards & Containers */
 .carepoint-skeleton-card {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 14px !important;
+  padding: 12px 14px !important;
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 .carepoint-skeleton-kpi {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 12px !important;
+  padding: 10px 12px !important;
   border: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px !important;
 }
 .carepoint-skeleton-media {
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 .carepoint-skeleton-table-row {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 14px 16px;
+  gap: 10px;
+  padding: 8px 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
@@ -1181,4 +1396,38 @@ header {
     animation: carepoint-skeleton-pulse 2s ease-in-out infinite !important;
     background-image: none !important;
   }
+}
+
+/* 9. Security Sandbox & Search In-Page Highlight Engine */
+.carepoint-search-highlight {
+  outline: 3px solid #002366 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 6px rgba(0, 35, 102, 0.25), 0 8px 24px -4px rgba(0, 35, 102, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  animation: carepoint-search-pulse 2.2s ease-out forwards !important;
+}
+
+@keyframes carepoint-search-pulse {
+  0% {
+    background-color: rgba(220, 235, 255, 0.7);
+    transform: scale(1.01);
+  }
+  30% {
+    background-color: rgba(220, 235, 255, 0.4);
+    transform: scale(1);
+  }
+  100% {
+    background-color: transparent;
+    outline-color: transparent !important;
+    box-shadow: none !important;
+  }
+}
+
+.carepoint-scope-pill {
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.carepoint-scope-pill.active {
+  background: #011549 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px -1px rgba(1, 21, 73, 0.35);
 }

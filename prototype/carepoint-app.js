@@ -308,6 +308,19 @@ export function initPublicNavbarScrollspy() {
   window.addEventListener('resize', () => updateIndicator(currentActive, false));
 }
 
+export function initPortalCompactCardRefinements() {
+  if (typeof document === 'undefined') return;
+  const currentPath = window.location.pathname.toLowerCase();
+  const isPublic = (window.__CAREPOINT_HUD__ && window.__CAREPOINT_HUD__.role === 'public') ||
+                   currentPath.includes('/public/');
+  if (!isPublic) {
+    document.body.classList.add('carepoint-portal');
+    document.body.classList.add('carepoint-compact-ui');
+  } else {
+    document.body.classList.add('carepoint-public-site');
+  }
+}
+
 export function initStaffPortalRefinements() {
   if (typeof document === 'undefined') return;
   const currentPath = window.location.pathname.toLowerCase();
@@ -322,6 +335,7 @@ export function initStaffPortalRefinements() {
 // Auto-run if DOM ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
+    initPortalCompactCardRefinements();
     initPublicNavbarScrollspy();
     initCarepointNotifications();
     initStaffDutySystem();
@@ -334,6 +348,7 @@ if (document.readyState === 'loading') {
     initCarepointSkeletonEngine();
   });
 } else {
+  initPortalCompactCardRefinements();
   initPublicNavbarScrollspy();
   initCarepointNotifications();
   initStaffDutySystem();
@@ -2613,29 +2628,71 @@ export function initStaffClassSwitcher() {
 }
 
 // =============================================================================
-// CAREPOINT CAPABILITIES DISCOVERY & OMNI-SEARCH ENGINE (Ctrl+K)
-// Bridges the user's mental model: allows teachers, parents, admins, guards,
-// and sysadmins to discover and trigger system powers without cluttered screens.
+// CAREPOINT CAPABILITIES DISCOVERY & SECURE SEARCH ENGINE (Ctrl+K)
+// Strictly Sandboxed & Role-Isolated: Limits discovery to [This Page Only]
+// by default, or strictly to the authenticated portal. Blocks cross-portal
+// traversal, enforces fail-closed RBAC, and prevents XSS.
 // =============================================================================
+
+export function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
 
 export function initCarepointCapabilitiesDiscovery() {
   if (typeof document === 'undefined') return;
 
-  function getActiveRole() {
-    if (window.__CAREPOINT_HUD__ && window.__CAREPOINT_HUD__.role) {
-      return window.__CAREPOINT_HUD__.role;
+  // 1. Strict Fail-Closed Role Verification
+  function getVerifiedPortalRole() {
+    const p = (window.location.pathname || '').toLowerCase();
+
+    // Explicitly fail closed on public site, index portal directory, or root
+    if (p.includes('/public/') || p === '/' || p.endsWith('/index.html') || p.endsWith('\\index.html')) {
+      return null;
     }
-    const path = window.location.pathname.toLowerCase();
-    if (path.includes('/staff/')) return 'staff';
-    if (path.includes('/parent/')) return 'parent';
-    if (path.includes('/admin/')) return 'admin';
-    if (path.includes('/gate/')) return 'gate';
-    if (path.includes('/sysadmin/')) return 'sysadmin';
-    return null;
+
+    let derivedRole = null;
+    if (p.includes('/staff/')) derivedRole = 'staff';
+    else if (p.includes('/parent/')) derivedRole = 'parent';
+    else if (p.includes('/admin/')) derivedRole = 'admin';
+    else if (p.includes('/gate/')) derivedRole = 'gate';
+    else if (p.includes('/sysadmin/')) derivedRole = 'sysadmin';
+
+    if (!derivedRole) {
+      // Fail-closed security rule: NEVER fallback to admin or guess
+      return null;
+    }
+
+    // Cross-verify against HUD declared role if present
+    if (window.__CAREPOINT_HUD__ && window.__CAREPOINT_HUD__.role) {
+      const hudRole = String(window.__CAREPOINT_HUD__.role).toLowerCase();
+      if (hudRole !== derivedRole && ['staff', 'parent', 'admin', 'gate', 'sysadmin'].includes(hudRole)) {
+        console.warn(`[Carepoint Security] Path authority (${derivedRole}) overrides HUD declared role (${hudRole}).`);
+      }
+    }
+
+    return derivedRole;
   }
 
-  const role = getActiveRole();
-  if (!role) return; // Public site stays untouched
+  const role = getVerifiedPortalRole();
+  if (!role) {
+    // Zero footprint on unauthorized routes
+    return;
+  }
+
+  function getVerifiedActivePage() {
+    const p = (window.location.pathname || '').toLowerCase();
+    const segments = p.split('/').filter(Boolean);
+    const filename = segments.length > 0 ? segments[segments.length - 1] : 'dashboard.html';
+    return filename.replace(/^mobile-/, '');
+  }
+
+  const activePage = getVerifiedActivePage();
 
   function getRelRoot() {
     if (window.__CAREPOINT_HUD__ && window.__CAREPOINT_HUD__.relRoot) {
@@ -2649,6 +2706,18 @@ export function initCarepointCapabilitiesDiscovery() {
   const isMobile = window.__CAREPOINT_HUD__?.isMobile || window.innerWidth < 768;
   const pfx = isMobile ? 'mobile-' : '';
 
+  const ROLE_TITLES = {
+    staff: 'Teacher (Staff)',
+    parent: 'Parent & Guardian',
+    admin: 'Administrator (Principal)',
+    gate: 'Gate & Turnstile Security',
+    sysadmin: 'Super Admin (System)'
+  };
+
+  const roleTitle = ROLE_TITLES[role] || 'Portal';
+
+  // 2. Strict Role-Isolated Capabilities Catalog
+  // Every capability is strictly bound to its allowedRole and page
   const CAPABILITIES_CATALOG = {
     staff: [
       {
@@ -2658,7 +2727,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Complete 1-tap morning roll call for Basic 2 Sunflower (28 pupils).',
         icon: 'fact_check',
         action: `url:${relRoot}staff/${pfx}attendance.html`,
-        badge: 'Daily Priority'
+        badge: 'Daily Priority',
+        allowedRole: 'staff',
+        page: 'attendance.html'
       },
       {
         id: 'staff-gradebook',
@@ -2667,7 +2738,20 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Enter class test, project work, and exam scores auto-scaled to GES 30/30/40.',
         icon: 'menu_book',
         action: `url:${relRoot}staff/${pfx}gradebook.html`,
-        badge: 'Academic'
+        badge: 'Academic',
+        allowedRole: 'staff',
+        page: 'gradebook.html'
+      },
+      {
+        id: 'staff-timetable',
+        title: 'Weekly Teaching Timetable',
+        category: 'Schedule',
+        description: 'View Sunflower Class weekly subject periods and specialist room allocations.',
+        icon: 'calendar_month',
+        action: `url:${relRoot}staff/${pfx}timetable.html`,
+        badge: 'Timetable',
+        allowedRole: 'staff',
+        page: 'timetable.html'
       },
       {
         id: 'staff-switch-class',
@@ -2676,7 +2760,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Toggle between Sunflower (Basic 2), Orchid (Basic 2), and Daffodil (Basic 3).',
         icon: 'swap_horiz',
         action: 'custom:switch-class',
-        badge: 'Multi-Class'
+        badge: 'Multi-Class',
+        allowedRole: 'staff',
+        page: '*'
       },
       {
         id: 'staff-duty',
@@ -2685,7 +2771,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Log campus presence, view playground supervision times, or clock-out.',
         icon: 'how_to_reg',
         action: 'custom:duty',
-        badge: 'GES Compliance'
+        badge: 'GES Compliance',
+        allowedRole: 'staff',
+        page: '*'
       },
       {
         id: 'staff-clinic',
@@ -2694,7 +2782,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Submit an electronic referral to Nurse Faustina Asante with symptoms and triage priority.',
         icon: 'medical_services',
         action: `url:${relRoot}staff/${pfx}health.html`,
-        badge: 'Infirmary'
+        badge: 'Infirmary',
+        allowedRole: 'staff',
+        page: 'health.html'
       },
       {
         id: 'staff-messages',
@@ -2703,7 +2793,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Exchange private updates, homework notes, and acknowledgements with guardians.',
         icon: 'chat_bubble',
         action: `url:${relRoot}staff/${pfx}messages.html`,
-        badge: 'Parent Liaison'
+        badge: 'Parent Liaison',
+        allowedRole: 'staff',
+        page: 'messages.html'
       },
       {
         id: 'staff-relief',
@@ -2712,7 +2804,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Submit an emergency substitute teacher request to Headmistress Dr. Elizabeth Appiah.',
         icon: 'verified',
         action: `url:${relRoot}staff/${pfx}approvals.html`,
-        badge: 'Faculty'
+        badge: 'Faculty',
+        allowedRole: 'staff',
+        page: 'approvals.html'
       }
     ],
     parent: [
@@ -2723,7 +2817,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Verify your child arrived safely on campus, morning turnstile time, and class presence.',
         icon: 'how_to_reg',
         action: `url:${relRoot}parent/${pfx}dashboard.html`,
-        badge: 'Live Status'
+        badge: 'Live Status',
+        allowedRole: 'parent',
+        page: 'dashboard.html'
       },
       {
         id: 'parent-pickup',
@@ -2732,7 +2828,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Generate single-use QR pass or authorize trusted relative/driver for gate checkout.',
         icon: 'qr_code_2',
         action: `url:${relRoot}parent/${pfx}pickup.html`,
-        badge: 'Essential'
+        badge: 'Essential',
+        allowedRole: 'parent',
+        page: 'pickup.html'
       },
       {
         id: 'parent-report-card',
@@ -2741,7 +2839,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'View and print GES & NaSIA accredited terminal progress report with official grading scale.',
         icon: 'school',
         action: `url:${relRoot}parent/${pfx}academics.html`,
-        badge: 'Official PDF'
+        badge: 'Official PDF',
+        allowedRole: 'parent',
+        page: 'academics.html'
       },
       {
         id: 'parent-message-teacher',
@@ -2750,7 +2850,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Direct, secure communication channel with Sunflower Class homeroom lead.',
         icon: 'chat',
         action: `url:${relRoot}parent/${pfx}messages.html`,
-        badge: 'Direct Liaison'
+        badge: 'Direct Liaison',
+        allowedRole: 'parent',
+        page: 'messages.html'
       },
       {
         id: 'parent-health',
@@ -2759,7 +2861,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Review routine dental, vision screenings, and nurse logs from the school infirmary.',
         icon: 'health_and_safety',
         action: `url:${relRoot}parent/${pfx}academics.html#health`,
-        badge: 'Infirmary'
+        badge: 'Infirmary',
+        allowedRole: 'parent',
+        page: 'academics.html'
       },
       {
         id: 'parent-switch-ward',
@@ -2768,7 +2872,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Toggle between Kofi Mensah (Basic 2) and Ama Mensah (Nursery 1 Buttercup).',
         icon: 'swap_horiz',
         action: 'custom:switch-ward',
-        badge: 'Multi-Child'
+        badge: 'Multi-Child',
+        allowedRole: 'parent',
+        page: '*'
       }
     ],
     admin: [
@@ -2779,7 +2885,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Review and sign medical clearances, fee concessions, and staff relief requests.',
         icon: 'fact_check',
         action: `url:${relRoot}admin/${pfx}approvals.html`,
-        badge: '12 Pending'
+        badge: '12 Pending',
+        allowedRole: 'admin',
+        page: 'approvals.html'
       },
       {
         id: 'admin-broadcast',
@@ -2788,7 +2896,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Dispatch SMS and portal notices to all 340 registered parents or specific cohorts.',
         icon: 'campaign',
         action: `url:${relRoot}admin/${pfx}inbox.html`,
-        badge: 'All Parents'
+        badge: 'All Parents',
+        allowedRole: 'admin',
+        page: 'inbox.html'
       },
       {
         id: 'admin-bursary',
@@ -2797,7 +2907,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Monitor live term fee collections (84.6% collected) and outstanding balances in GH₵.',
         icon: 'payments',
         action: `url:${relRoot}admin/${pfx}dashboard.html#school-fees-section`,
-        badge: 'Finance'
+        badge: 'Finance',
+        allowedRole: 'admin',
+        page: 'dashboard.html'
       },
       {
         id: 'admin-admissions',
@@ -2806,7 +2918,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Review prospective student applications, schedule entry assessments, and issue offer letters.',
         icon: 'how_to_reg',
         action: `url:${relRoot}admin/${pfx}admissions.html`,
-        badge: '28 Intake'
+        badge: '28 Intake',
+        allowedRole: 'admin',
+        page: 'admissions.html'
       },
       {
         id: 'admin-wards',
@@ -2815,7 +2929,42 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Master directory of all 340 enrolled students with emergency contacts and class allocations.',
         icon: 'badge',
         action: `url:${relRoot}admin/${pfx}wards.html`,
-        badge: 'Census'
+        badge: 'Census',
+        allowedRole: 'admin',
+        page: 'wards.html'
+      },
+      {
+        id: 'admin-reports',
+        title: 'Academic & Financial Reports',
+        category: 'Governance',
+        description: 'Generate term performance summaries and audit logs.',
+        icon: 'analytics',
+        action: `url:${relRoot}admin/${pfx}reports.html`,
+        badge: 'Reports',
+        allowedRole: 'admin',
+        page: 'reports.html'
+      },
+      {
+        id: 'admin-users',
+        title: 'Staff & Faculty Directory',
+        category: 'Administration',
+        description: 'Manage teacher assignments and administrative accounts.',
+        icon: 'group',
+        action: `url:${relRoot}admin/${pfx}users.html`,
+        badge: 'Staff Directory',
+        allowedRole: 'admin',
+        page: 'users.html'
+      },
+      {
+        id: 'admin-settings',
+        title: 'Institutional Settings & Term Dates',
+        category: 'Governance',
+        description: 'Configure academic calendar, school fees schedule, and GES NaSIA parameters.',
+        icon: 'settings',
+        action: `url:${relRoot}admin/${pfx}settings.html`,
+        badge: 'Config',
+        allowedRole: 'admin',
+        page: 'settings.html'
       },
       {
         id: 'admin-lockdown',
@@ -2824,7 +2973,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'High-level emergency protocol securing all turnstiles and dispatching alert broadcast.',
         icon: 'lock_open',
         action: 'custom:lockdown',
-        badge: 'Level 4 Security'
+        badge: 'Level 4 Security',
+        allowedRole: 'admin',
+        page: '*'
       }
     ],
     gate: [
@@ -2835,7 +2986,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Scan digital parent passes or guardian QR codes at Gate Turnstile A.',
         icon: 'qr_code_scanner',
         action: `url:${relRoot}gate/${pfx}scan.html`,
-        badge: 'Primary Kiosk'
+        badge: 'Primary Kiosk',
+        allowedRole: 'gate',
+        page: 'scan.html'
       },
       {
         id: 'gate-token',
@@ -2844,7 +2997,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Verify pickup authorization when smartphone camera or screen is unavailable.',
         icon: 'dialpad',
         action: 'custom:focus-token',
-        badge: 'Fallback'
+        badge: 'Fallback',
+        allowedRole: 'gate',
+        page: 'scan.html'
       },
       {
         id: 'gate-nfc',
@@ -2853,7 +3008,20 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'One-tap biometric NFC test for student wristband turnstile clearance.',
         icon: 'tap_and_play',
         action: 'custom:nfc-tap',
-        badge: 'Rapid Entry'
+        badge: 'Rapid Entry',
+        allowedRole: 'gate',
+        page: 'scan.html'
+      },
+      {
+        id: 'gate-verify',
+        title: 'Manual Guardian Verification',
+        category: 'Security Desk',
+        description: 'Verify national Ghana Card / voter ID when pupil pass is unreadable.',
+        icon: 'verified_user',
+        action: `url:${relRoot}gate/${pfx}verify.html`,
+        badge: 'ID Check',
+        allowedRole: 'gate',
+        page: 'verify.html'
       },
       {
         id: 'gate-log',
@@ -2862,7 +3030,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Full chronological audit of all pedestrian, vehicle, and bus entries.',
         icon: 'history',
         action: `url:${relRoot}gate/${pfx}log.html`,
-        badge: 'Audit'
+        badge: 'Audit',
+        allowedRole: 'gate',
+        page: 'log.html'
       },
       {
         id: 'gate-amber',
@@ -2871,7 +3041,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Pause gate turnstiles and summon front desk security coordinator.',
         icon: 'warning',
         action: 'custom:code-amber',
-        badge: 'Security Alert'
+        badge: 'Security Alert',
+        allowedRole: 'gate',
+        page: '*'
       }
     ],
     sysadmin: [
@@ -2882,7 +3054,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Test Accra Cloud Pod-A latency, PostgreSQL replicas, and turnstile MQTT sockets.',
         icon: 'sync',
         action: 'custom:probe-sync',
-        badge: '99.98% SLA'
+        badge: '99.98% SLA',
+        allowedRole: 'sysadmin',
+        page: '*'
       },
       {
         id: 'sys-provision',
@@ -2891,7 +3065,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Grant, suspend, or audit faculty and administrator permissions under Act 843.',
         icon: 'badge',
         action: `url:${relRoot}sysadmin/${pfx}provisioning.html`,
-        badge: 'Identity'
+        badge: 'Identity',
+        allowedRole: 'sysadmin',
+        page: 'provisioning.html'
       },
       {
         id: 'sys-features',
@@ -2900,7 +3076,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Toggle parent portal features, biometric scanning, and SMS automated triggers.',
         icon: 'toggle_on',
         action: `url:${relRoot}sysadmin/${pfx}features.html`,
-        badge: 'Feature Engine'
+        badge: 'Feature Engine',
+        allowedRole: 'sysadmin',
+        page: 'features.html'
       },
       {
         id: 'sys-integrations',
@@ -2909,7 +3087,9 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Inspect MTN MoMo webhooks, Hubtel SMS gateway balance, and NaSIA reporting sync.',
         icon: 'hub',
         action: `url:${relRoot}sysadmin/${pfx}integrations.html`,
-        badge: 'Webhooks'
+        badge: 'Webhooks',
+        allowedRole: 'sysadmin',
+        page: 'integrations.html'
       },
       {
         id: 'sys-audit',
@@ -2918,12 +3098,149 @@ export function initCarepointCapabilitiesDiscovery() {
         description: 'Review cryptographically signed system logs and administrative overrides.',
         icon: 'receipt_long',
         action: `url:${relRoot}sysadmin/${pfx}audit.html`,
-        badge: 'AES-256'
+        badge: 'AES-256',
+        allowedRole: 'sysadmin',
+        page: 'audit.html'
+      },
+      {
+        id: 'sys-tracker',
+        title: 'Real-Time Error & Telemetry Tracker',
+        category: 'System Health',
+        description: 'Monitor live exceptions, gateway latencies, and turnstile telemetry.',
+        icon: 'monitoring',
+        action: `url:${relRoot}sysadmin/${pfx}tracker.html`,
+        badge: 'Sentry SLA',
+        allowedRole: 'sysadmin',
+        page: 'tracker.html'
       }
     ]
   };
 
-  const capabilities = CAPABILITIES_CATALOG[role] || CAPABILITIES_CATALOG.admin;
+  // 3. In-Page Element Scanner: Indexes on-screen elements on the current page
+  function scanCurrentPageElements() {
+    const items = [];
+    const seenTitles = new Set();
+
+    function clean(str) {
+      return (str || '').replace(/\s+/g, ' ').trim();
+    }
+
+    // A. Actionable buttons and primary links on current page
+    const buttons = document.querySelectorAll('main button, main a[role="button"], main a.carepoint-btn, form button, .carepoint-soft-card button');
+    buttons.forEach((btn, idx) => {
+      if (btn.offsetParent === null) return;
+      if (btn.id === 'closeCapabilityModalBtn' || btn.closest('#carepoint-capabilities-container') || btn.closest('#carepoint-hud-root')) return;
+
+      const text = clean(btn.innerText || btn.getAttribute('aria-label') || btn.getAttribute('title'));
+      if (!text || text.length < 3 || text.length > 55) return;
+      if (seenTitles.has(text.toLowerCase())) return;
+      seenTitles.add(text.toLowerCase());
+
+      const section = btn.closest('section, article, .carepoint-soft-card, form, table');
+      const secHeading = section ? clean(section.querySelector('h1, h2, h3, h4')?.innerText) : '';
+      const category = secHeading ? `Page Action • ${secHeading.substring(0, 22)}` : 'On-Page Action';
+
+      if (!btn.dataset.cpDomId) {
+        btn.dataset.cpDomId = `cp-page-btn-${idx}`;
+      }
+
+      items.push({
+        id: `dom-${btn.dataset.cpDomId}`,
+        title: text,
+        category: category,
+        description: `Trigger or interact with "${text}" directly on this screen.`,
+        icon: 'touch_app',
+        action: `dom:${btn.dataset.cpDomId}`,
+        badge: 'On This Page',
+        allowedRole: role,
+        page: activePage
+      });
+    });
+
+    // B. Key section headings and content cards on current page
+    const headings = document.querySelectorAll('main h1, main h2, main h3, main h4, section h2, section h3, .carepoint-soft-card h3, .carepoint-soft-card h4');
+    headings.forEach((h, idx) => {
+      if (h.offsetParent === null) return;
+      if (h.closest('#carepoint-capabilities-container') || h.closest('#carepoint-hud-root')) return;
+
+      const text = clean(h.innerText);
+      if (!text || text.length < 3 || text.length > 65) return;
+      if (seenTitles.has(text.toLowerCase())) return;
+      seenTitles.add(text.toLowerCase());
+
+      if (!h.dataset.cpDomId) {
+        h.dataset.cpDomId = `cp-page-h-${idx}`;
+      }
+
+      const card = h.closest('.carepoint-soft-card, section');
+      const p = card ? card.querySelector('p') : null;
+      const desc = p ? clean(p.innerText).substring(0, 95) : `Jump directly to the ${text} section on this page.`;
+
+      items.push({
+        id: `dom-${h.dataset.cpDomId}`,
+        title: text,
+        category: 'Page Section',
+        description: desc,
+        icon: 'arrow_downward',
+        action: `dom:${h.dataset.cpDomId}`,
+        badge: 'Section',
+        allowedRole: role,
+        page: activePage
+      });
+    });
+
+    // C. Form inputs and search controls on current page
+    const inputs = document.querySelectorAll('main input[placeholder], main select, form input[placeholder]');
+    inputs.forEach((inp, idx) => {
+      if (inp.offsetParent === null) return;
+      if (inp.id === 'carepoint-capability-search-input') return;
+
+      const labelEl = inp.id ? document.querySelector(`label[for="${inp.id}"]`) : null;
+      const text = clean(labelEl ? labelEl.innerText : inp.placeholder);
+      if (!text || text.length < 3 || text.length > 50) return;
+      if (seenTitles.has(text.toLowerCase())) return;
+      seenTitles.add(text.toLowerCase());
+
+      if (!inp.dataset.cpDomId) {
+        inp.dataset.cpDomId = `cp-page-inp-${idx}`;
+      }
+
+      items.push({
+        id: `dom-${inp.dataset.cpDomId}`,
+        title: `Field: ${text}`,
+        category: 'Page Form & Filter',
+        description: `Focus and edit the "${text}" control on this page.`,
+        icon: 'edit_note',
+        action: `dom:${inp.dataset.cpDomId}`,
+        badge: 'Form Field',
+        allowedRole: role,
+        page: activePage
+      });
+    });
+
+    return items;
+  }
+
+  // 4. Dual-Scope Search Sandbox Engine: Default is 'page' (On This Page Only)
+  let currentScope = 'page';
+
+  function getScopedCapabilities() {
+    const roleCatalog = (CAPABILITIES_CATALOG[role] || []).filter(item => item.allowedRole === role);
+
+    if (currentScope === 'page') {
+      const pageDomItems = scanCurrentPageElements();
+      const pageCatalogItems = roleCatalog.filter(item => {
+        if (item.page === activePage) return true;
+        if (item.page === '*' && (item.action.startsWith('custom:') || item.action.startsWith('dom:'))) return true;
+        return false;
+      });
+      return [...pageDomItems, ...pageCatalogItems];
+    } else {
+      // Portal Scope: STRICTLY this role's portal items only
+      // ZERO cross-portal items are ever accessible
+      return roleCatalog;
+    }
+  }
 
   // Build Modal DOM if missing
   let backdrop = document.getElementById('carepoint-capabilities-backdrop');
@@ -2939,7 +3256,7 @@ export function initCarepointCapabilitiesDiscovery() {
   if (!container) {
     container = document.createElement('div');
     container.id = 'carepoint-capabilities-container';
-    container.className = 'fixed inset-0 z-[111] flex items-start justify-center pt-16 sm:pt-24 p-4 overflow-y-auto hidden';
+    container.className = 'fixed inset-0 z-[111] flex items-start justify-center pt-14 sm:pt-20 p-4 overflow-y-auto hidden';
     document.body.appendChild(container);
   }
 
@@ -2950,6 +3267,8 @@ export function initCarepointCapabilitiesDiscovery() {
   }
 
   function openCapabilitiesModal() {
+    // Reset to 'page' scope by default for maximum security isolation
+    currentScope = 'page';
     renderCapabilitiesModal();
     backdrop.classList.remove('hidden');
     container.classList.remove('hidden');
@@ -2962,6 +3281,8 @@ export function initCarepointCapabilitiesDiscovery() {
 
   function renderCapabilitiesModal(filterQuery = '') {
     const q = filterQuery.toLowerCase().trim();
+    const capabilities = getScopedCapabilities();
+
     const filtered = capabilities.filter(item => {
       if (!q) return true;
       return item.title.toLowerCase().includes(q) ||
@@ -2976,17 +3297,19 @@ export function initCarepointCapabilitiesDiscovery() {
       categoriesMap[item.category].push(item);
     });
 
+    const isPageScope = currentScope === 'page';
+
     container.innerHTML = `
       <div class="bg-white rounded-3xl max-w-xl w-full shadow-2xl border border-black/5 flex flex-col overflow-hidden text-on-surface transform transition-all">
-        <!-- Top Search Header -->
+        <!-- Top Search Header with XSS Escaping -->
         <div class="p-4 border-b border-surface-container-high/60 flex items-center gap-3 bg-white">
-          <div class="flex-1 flex items-center gap-2.5 px-4 py-2.5 bg-[#f4f1ee] rounded-full">
+          <div class="flex-1 flex items-center gap-2.5 px-4 py-2 bg-[#f4f1ee] rounded-full">
             <span class="material-symbols-outlined text-primary text-[20px] shrink-0">search</span>
             <input
               id="carepoint-capability-search-input"
               type="text"
-              value="${filterQuery}"
-              placeholder="Search actions, records, or tools..."
+              value="${escapeHtml(filterQuery)}"
+              placeholder="${isPageScope ? 'Search items, actions, or sections on this page...' : 'Search capabilities across ' + escapeHtml(roleTitle) + '...'}"
               class="w-full bg-transparent border-0 outline-none text-sm text-on-surface placeholder:text-outline font-medium"
               autocomplete="off"
             />
@@ -2996,26 +3319,65 @@ export function initCarepointCapabilitiesDiscovery() {
           </button>
         </div>
 
+        <!-- Security Scope Sandbox Bar -->
+        <div class="px-4 py-2.5 bg-surface-container-low border-b border-surface-container-high/60 flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-1.5 p-0.5 bg-surface-container rounded-full" id="carepoint-scope-toggle-group">
+            <button
+              type="button"
+              id="carepoint-scope-page-btn"
+              class="px-3 py-1 rounded-full text-xs font-bold transition-all cursor-pointer carepoint-scope-pill ${isPageScope ? 'active' : 'text-on-surface-variant hover:text-on-surface'}"
+            >
+              📍 On This Page Only
+            </button>
+            <button
+              type="button"
+              id="carepoint-scope-portal-btn"
+              class="px-3 py-1 rounded-full text-xs font-bold transition-all cursor-pointer carepoint-scope-pill ${!isPageScope ? 'active' : 'text-on-surface-variant hover:text-on-surface'}"
+            >
+              🔒 ${escapeHtml(roleTitle)} Only
+            </button>
+          </div>
+
+          <div class="flex items-center gap-1 text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+            <span class="material-symbols-outlined text-[13px] text-emerald-700">verified_user</span>
+            <span>Sandbox Enforced</span>
+          </div>
+        </div>
+
+        <!-- Scope Guidance Banner -->
+        <div class="px-4 py-1.5 bg-[#faf8f5] border-b border-surface-container-high/40 text-[11px] text-on-surface-variant flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[14px] text-primary shrink-0">info</span>
+          <span class="truncate">
+            ${isPageScope
+              ? `Restricted to items and actions located strictly on <strong>${escapeHtml(activePage)}</strong>.`
+              : `Restricted strictly to your authenticated <strong>${escapeHtml(roleTitle)}</strong>. Cross-portal access blocked.`}
+          </span>
+        </div>
+
         <!-- Capability Results List -->
-        <div class="max-h-[60vh] overflow-y-auto p-4 flex flex-col gap-4">
+        <div class="max-h-[55vh] overflow-y-auto p-4 flex flex-col gap-4">
           ${filtered.length === 0 ? `
             <div class="py-10 text-center text-on-surface-variant">
               <span class="material-symbols-outlined text-4xl mb-2 text-outline">manage_search</span>
-              <p class="text-sm font-semibold">No results for "${filterQuery}"</p>
+              <p class="text-sm font-semibold">No results for "${escapeHtml(filterQuery)}" in ${isPageScope ? 'current page scope' : escapeHtml(roleTitle)}</p>
+              <p class="text-xs text-outline mt-1">${isPageScope ? 'Try toggling to "' + escapeHtml(roleTitle) + ' Only" to search portal-wide capabilities.' : 'Try a different search term or check page spelling.'}</p>
             </div>
           ` : Object.entries(categoriesMap).map(([category, items]) => `
             <div>
-              <span class="text-xs font-semibold text-outline px-2 block mb-2">${category}</span>
+              <span class="text-xs font-semibold text-outline px-2 block mb-2">${escapeHtml(category)}</span>
               <div class="flex flex-col gap-1.5">
                 ${items.map(item => `
-                  <div class="capability-item group p-3.5 rounded-2xl hover:bg-[#f4f1ee] transition-all cursor-pointer flex items-center justify-between gap-3" data-cap-id="${item.id}">
-                    <div class="flex items-center gap-3">
+                  <div class="capability-item group p-3.5 rounded-2xl hover:bg-[#f4f1ee] transition-all cursor-pointer flex items-center justify-between gap-3" data-cap-id="${escapeHtml(item.id)}">
+                    <div class="flex items-center gap-3 min-w-0">
                       <div class="w-10 h-10 rounded-full bg-[#f4f1ee] group-hover:bg-primary group-hover:text-white text-primary flex items-center justify-center shrink-0 transition-colors">
-                        <span class="material-symbols-outlined text-[20px]">${item.icon}</span>
+                        <span class="material-symbols-outlined text-[20px]">${escapeHtml(item.icon)}</span>
                       </div>
-                      <div>
-                        <h4 class="font-bold text-sm text-on-surface leading-tight">${item.title}</h4>
-                        <p class="text-xs text-on-surface-variant mt-0.5">${item.description}</p>
+                      <div class="min-w-0 flex-1">
+                        <div class="flex items-center gap-2 flex-wrap">
+                          <h4 class="font-bold text-sm text-on-surface leading-tight truncate">${escapeHtml(item.title)}</h4>
+                          <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant border border-outline-variant/30">${escapeHtml(item.badge || 'Action')}</span>
+                        </div>
+                        <p class="text-xs text-on-surface-variant mt-0.5 line-clamp-1">${escapeHtml(item.description)}</p>
                       </div>
                     </div>
                     <span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors shrink-0">arrow_forward</span>
@@ -3029,14 +3391,46 @@ export function initCarepointCapabilitiesDiscovery() {
     `;
 
     // Wire close
-    document.getElementById('closeCapabilityModalBtn').onclick = closeCapabilitiesModal;
+    const closeBtn = document.getElementById('closeCapabilityModalBtn');
+    if (closeBtn) closeBtn.onclick = closeCapabilitiesModal;
+
+    // Wire scope switches
+    const pageScopeBtn = document.getElementById('carepoint-scope-page-btn');
+    const portalScopeBtn = document.getElementById('carepoint-scope-portal-btn');
+    if (pageScopeBtn) {
+      pageScopeBtn.onclick = () => {
+        if (currentScope !== 'page') {
+          currentScope = 'page';
+          const curVal = document.getElementById('carepoint-capability-search-input')?.value || '';
+          renderCapabilitiesModal(curVal);
+          const inp = document.getElementById('carepoint-capability-search-input');
+          if (inp) {
+            inp.focus();
+            inp.selectionStart = inp.selectionEnd = inp.value.length;
+          }
+        }
+      };
+    }
+    if (portalScopeBtn) {
+      portalScopeBtn.onclick = () => {
+        if (currentScope !== 'portal') {
+          currentScope = 'portal';
+          const curVal = document.getElementById('carepoint-capability-search-input')?.value || '';
+          renderCapabilitiesModal(curVal);
+          const inp = document.getElementById('carepoint-capability-search-input');
+          if (inp) {
+            inp.focus();
+            inp.selectionStart = inp.selectionEnd = inp.value.length;
+          }
+        }
+      };
+    }
 
     // Wire search filter
     const input = document.getElementById('carepoint-capability-search-input');
     if (input) {
       input.oninput = (e) => {
         renderCapabilitiesModal(e.target.value);
-        // refocus and preserve caret position
         const updatedInput = document.getElementById('carepoint-capability-search-input');
         if (updatedInput) {
           updatedInput.focus();
@@ -3057,11 +3451,96 @@ export function initCarepointCapabilitiesDiscovery() {
     });
   }
 
+  // 5. Action Execution Sandbox: Strictly verifies permissions, blocks path traversal,
+  // and whitelists actions per role
   function executeCapability(cap) {
+    if (!cap) return;
+
+    // A. STRICT RBAC CHECK: Role verification
+    if (cap.allowedRole !== role) {
+      console.error(`[Security Violation] Blocked unauthorized attempt to execute "${cap.id}" (required: ${cap.allowedRole}, active: ${role})`);
+      if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+        window.CarepointDemo.showToast(`Security Violation: Access to ${cap.allowedRole} capabilities is strictly prohibited.`, false);
+      }
+      return;
+    }
+
+    // B. DOM ELEMENT ACTION (On-Page Scope)
+    if (cap.action.startsWith('dom:')) {
+      const domId = cap.action.replace('dom:', '');
+      const targetEl = document.querySelector(`[data-cp-dom-id="${domId}"]`);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetEl.classList.remove('carepoint-search-highlight');
+        void targetEl.offsetWidth; // trigger reflow
+        targetEl.classList.add('carepoint-search-highlight');
+        setTimeout(() => {
+          targetEl.classList.remove('carepoint-search-highlight');
+        }, 2500);
+        if (typeof targetEl.focus === 'function') {
+          setTimeout(() => targetEl.focus(), 300);
+        }
+        if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+          window.CarepointDemo.showToast(`Focused on: ${cap.title}`, true);
+        }
+      }
+      return;
+    }
+
+    // C. URL NAVIGATION SANDBOX: Prevent Path Traversal & Cross-Portal Hopping
     if (cap.action.startsWith('url:')) {
-      const url = cap.action.replace('url:', '');
-      window.location.href = url;
-    } else if (cap.action === 'custom:switch-class') {
+      const rawUrl = cap.action.replace('url:', '');
+      const lower = rawUrl.toLowerCase();
+
+      // Block malicious protocols (javascript:, data:, vbscript:, file:)
+      if (lower.startsWith('javascript:') || lower.startsWith('data:') || lower.startsWith('vbscript:') || lower.startsWith('file:')) {
+        console.error(`[Security Violation] Blocked dangerous protocol in navigation URL: ${rawUrl}`);
+        if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+          window.CarepointDemo.showToast('Security Alert: Malicious URL protocol blocked.', false);
+        }
+        return;
+      }
+
+      // Restrict navigation strictly to within the authorized portal
+      const unauthorizedPortals = ['admin', 'staff', 'parent', 'gate', 'sysadmin'].filter(p => p !== role);
+      const triesCrossPortalHop = unauthorizedPortals.some(p => {
+        return lower.includes(`/${p}/`) || lower.includes(`..${p}`) || lower.startsWith(`${p}/`);
+      });
+
+      if (triesCrossPortalHop) {
+        console.error(`[Security Violation] Blocked unauthorized cross-portal navigation to: ${rawUrl}`);
+        if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+          window.CarepointDemo.showToast(`Access Denied: You are not authorized to traverse to external portal resources.`, false);
+        }
+        return;
+      }
+
+      window.location.href = rawUrl;
+      return;
+    }
+
+    // D. CUSTOM ACTION AUTHORIZATION WHITELIST
+    const ALLOWED_CUSTOM_ACTIONS = {
+      staff: ['custom:switch-class', 'custom:duty'],
+      parent: ['custom:switch-ward'],
+      admin: ['custom:lockdown'],
+      gate: ['custom:focus-token', 'custom:nfc-tap', 'custom:code-amber'],
+      sysadmin: ['custom:probe-sync']
+    };
+
+    const roleAllowedActions = ALLOWED_CUSTOM_ACTIONS[role] || [];
+    if (cap.action.startsWith('custom:')) {
+      if (!roleAllowedActions.includes(cap.action)) {
+        console.error(`[Security Violation] Role "${role}" is not authorized to invoke custom action "${cap.action}"`);
+        if (window.CarepointDemo && typeof window.CarepointDemo.showToast === 'function') {
+          window.CarepointDemo.showToast(`Security Violation: Unauthorized execution of ${cap.action} blocked.`, false);
+        }
+        return;
+      }
+    }
+
+    // Execute authorized custom actions
+    if (cap.action === 'custom:switch-class') {
       if (typeof window.openSwitchClassModal === 'function') {
         window.openSwitchClassModal();
       }
@@ -3078,11 +3557,9 @@ export function initCarepointCapabilitiesDiscovery() {
           actionLabel: 'Confirm Emergency Lockdown',
           isDestructive: true,
           onConfirm: () => {
-            window.location.href = `${relRoot}gate/${pfx}alert.html`;
+            window.location.href = `${relRoot}admin/${pfx}dashboard.html#lockdown-active`;
           }
         });
-      } else {
-        window.location.href = `${relRoot}gate/${pfx}alert.html`;
       }
     } else if (cap.action === 'custom:code-amber') {
       if (typeof window.openCarepointSafeActionModal === 'function') {
@@ -3155,17 +3632,16 @@ export function initCarepointCapabilitiesDiscovery() {
   function injectHeaderTrigger() {
     if (document.getElementById('carepoint-capabilities-btn')) return;
 
-    // Look for right-hand side of header
     const headerRight = document.querySelector('header .flex.items-center:last-child, header > div > .flex.items-center:last-child');
     if (headerRight) {
       const btn = document.createElement('button');
       btn.id = 'carepoint-capabilities-btn';
       btn.type = 'button';
       btn.className = 'hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-primary text-xs font-semibold transition-all border border-outline-variant/30 cursor-pointer shadow-2xs mr-2';
-      btn.title = 'Explore System Capabilities (Ctrl+K)';
+      btn.title = `Explore ${roleTitle} Capabilities (Ctrl+K)`;
       btn.innerHTML = `
         <span class="material-symbols-outlined text-[16px] text-primary">search</span>
-        <span>Find Capability</span>
+        <span>Find in ${escapeHtml(roleTitle.split(' ')[0])}</span>
         <kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-[10px] font-mono font-bold text-on-surface-variant border border-outline-variant/40">Ctrl K</kbd>
       `;
       btn.onclick = openCapabilitiesModal;
@@ -3189,7 +3665,7 @@ export function initCarepointCapabilitiesDiscovery() {
   window.openCarepointCapabilitiesModal = openCapabilitiesModal;
   window.closeCarepointCapabilitiesModal = closeCapabilitiesModal;
 
-  console.log(`[Carepoint] Capabilities Discovery Hub initialized for role: ${role} (Ctrl+K ready)`);
+  console.log(`[Carepoint Security] Sandboxed Capabilities Discovery initialized for: ${role} on page ${activePage} (Ctrl+K ready)`);
 }
 
 // =============================================================================
@@ -3232,6 +3708,12 @@ export function initCarepointSafeActionEngine() {
     isDestructive = true,
     onConfirm = null
   }) {
+    const sTitle = escapeHtml(title);
+    const sSubtitle = escapeHtml(subtitle);
+    const sWarning = escapeHtml(warning);
+    const sActionLabel = escapeHtml(actionLabel);
+    const sCancelLabel = escapeHtml(cancelLabel);
+
     container.innerHTML = `
       <div class="bg-surface-container-lowest rounded-2xl max-w-md w-full p-6 shadow-2xl border ${isDestructive ? 'border-red-200' : 'border-amber-200'} flex flex-col gap-5 text-on-surface">
         <div class="flex items-start gap-3">
@@ -3242,22 +3724,22 @@ export function initCarepointSafeActionEngine() {
             <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${isDestructive ? 'bg-red-50 text-secondary border border-red-200' : 'bg-amber-50 text-amber-800 border border-amber-200'} uppercase tracking-wide">
               Security Verification
             </span>
-            <h3 class="font-headline-sm text-lg font-bold text-primary mt-1">${title}</h3>
-            <p class="text-xs text-on-surface-variant">${subtitle}</p>
+            <h3 class="font-headline-sm text-lg font-bold text-primary mt-1">${sTitle}</h3>
+            <p class="text-xs text-on-surface-variant">${sSubtitle}</p>
           </div>
         </div>
 
         <div class="p-3.5 rounded-xl ${isDestructive ? 'bg-red-50/70 border border-red-200/60' : 'bg-amber-50/70 border border-amber-200/60'} text-xs text-on-surface leading-relaxed">
-          <p class="font-medium">${warning}</p>
+          <p class="font-medium">${sWarning}</p>
         </div>
 
         <div class="flex flex-col gap-2 pt-2 border-t border-surface-container-high">
           <button id="carepoint-confirm-safe-action" type="button" class="w-full py-3 px-4 rounded-xl ${isDestructive ? 'bg-secondary hover:bg-secondary-container text-on-secondary' : 'bg-primary hover:bg-primary-container text-on-primary'} font-label-md text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99]">
             <span class="material-symbols-outlined text-[18px]">verified</span>
-            <span>${actionLabel}</span>
+            <span>${sActionLabel}</span>
           </button>
           <button id="carepoint-cancel-safe-action" type="button" class="w-full py-2.5 px-4 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-xs font-semibold transition-colors cursor-pointer">
-            ${cancelLabel}
+            ${sCancelLabel}
           </button>
         </div>
       </div>
@@ -3764,24 +4246,24 @@ function buildSkeletonOverlay(role, isMobile) {
         </div>
 
         <!-- Main Content Area -->
-        <div style="flex:1;overflow-y:auto;padding:28px 36px;display:flex;flex-direction:column;gap:24px;">
+        <div style="flex:1;overflow-y:auto;padding:16px 24px;display:flex;flex-direction:column;gap:12px;">
           <!-- Header and Action Pills -->
           <div style="display:flex;align-items:center;justify-content:space-between;">
             <div>
-              <div class="carepoint-skeleton carepoint-skeleton-title" style="width:240px;"></div>
-              <div class="carepoint-skeleton carepoint-skeleton-line" style="width:180px;"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-title" style="width:200px;margin-bottom:4px;"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-line" style="width:140px;margin-bottom:0;"></div>
             </div>
-            <div style="display:flex;gap:10px;">
-              <div class="carepoint-skeleton carepoint-skeleton-btn" style="width:110px;"></div>
-              <div class="carepoint-skeleton carepoint-skeleton-btn" style="width:130px;"></div>
+            <div style="display:flex;gap:8px;">
+              <div class="carepoint-skeleton carepoint-skeleton-btn" style="width:90px;height:30px;"></div>
+              <div class="carepoint-skeleton carepoint-skeleton-btn" style="width:110px;height:30px;"></div>
             </div>
           </div>
 
           <!-- 4-Card KPI Grid -->
-          <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:20px;">
+          <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:10px;">
             <div class="carepoint-skeleton-kpi">
               <div class="flex items-center justify-between">
-                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-lg"></div>
+                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
                 <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
               </div>
               <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50 mt-1"></div>
@@ -3789,7 +4271,7 @@ function buildSkeletonOverlay(role, isMobile) {
             </div>
             <div class="carepoint-skeleton-kpi">
               <div class="flex items-center justify-between">
-                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-lg"></div>
+                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
                 <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
               </div>
               <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50 mt-1"></div>
@@ -3797,7 +4279,7 @@ function buildSkeletonOverlay(role, isMobile) {
             </div>
             <div class="carepoint-skeleton-kpi">
               <div class="flex items-center justify-between">
-                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-lg"></div>
+                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
                 <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
               </div>
               <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50 mt-1"></div>
@@ -3805,7 +4287,7 @@ function buildSkeletonOverlay(role, isMobile) {
             </div>
             <div class="carepoint-skeleton-kpi">
               <div class="flex items-center justify-between">
-                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-lg"></div>
+                <div class="carepoint-skeleton carepoint-skeleton-icon carepoint-skeleton-icon-md"></div>
                 <div class="carepoint-skeleton carepoint-skeleton-badge"></div>
               </div>
               <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-50 mt-1"></div>
@@ -3814,7 +4296,7 @@ function buildSkeletonOverlay(role, isMobile) {
           </div>
 
           <!-- Dual Block Layout: YouTube Media Feed + Data Table -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
             <!-- YouTube-Style Media Content Card -->
             <div class="carepoint-skeleton-card">
               <div class="carepoint-skeleton carepoint-skeleton-title carepoint-skeleton-w-33 mb-3"></div>
