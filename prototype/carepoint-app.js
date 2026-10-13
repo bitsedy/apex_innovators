@@ -422,6 +422,69 @@ export function initDashboardMetricsAnimation() {
   });
 }
 
+// =============================================================================
+// CAREPOINT PROGRESSIVE TEXT DISCLOSURE ENGINE
+// Replaces visual clutter and dense paragraphs with clickable progressive
+// disclosures (<details class="carepoint-disclosure"> and .carepoint-expand-trigger)
+// maximizing screen real estate, breathability, and intuitive progressive access.
+// =============================================================================
+
+export function initCarepointProgressiveDisclosure() {
+  if (typeof document === 'undefined') return;
+
+  // 1. Delegated Click Listener for .carepoint-expand-trigger
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.carepoint-expand-trigger');
+    if (!trigger) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Find the associated container or previous sibling
+    const container = trigger.closest('.carepoint-expandable-container') || trigger.parentElement;
+    if (!container) return;
+
+    const targetText = container.querySelector('.carepoint-expandable-text');
+    if (!targetText) return;
+
+    const isClamped = targetText.classList.contains('carepoint-clamped');
+    const labelSpan = trigger.querySelector('span:not(.material-symbols-outlined)');
+    const iconSpan = trigger.querySelector('.material-symbols-outlined');
+
+    // Store custom full/short labels if provided in data attributes
+    const moreText = trigger.dataset.expandText || (labelSpan ? labelSpan.textContent.replace('Show less', 'Read full details') : 'Read full details');
+    const lessText = trigger.dataset.collapseText || 'Show less';
+
+    if (isClamped) {
+      targetText.classList.remove('carepoint-clamped');
+      trigger.setAttribute('aria-expanded', 'true');
+      if (labelSpan) labelSpan.textContent = lessText;
+      if (iconSpan) iconSpan.textContent = 'expand_less';
+    } else {
+      targetText.classList.add('carepoint-clamped');
+      trigger.setAttribute('aria-expanded', 'false');
+      if (labelSpan) labelSpan.textContent = moreText;
+      if (iconSpan) iconSpan.textContent = 'expand_more';
+    }
+  });
+
+  // 2. Enhance <details class="carepoint-disclosure"> with ARIA and smooth animation
+  document.querySelectorAll('details.carepoint-disclosure').forEach(details => {
+    const summary = details.querySelector('summary');
+    if (summary && !summary.hasAttribute('aria-expanded')) {
+      summary.setAttribute('aria-expanded', details.hasAttribute('open') ? 'true' : 'false');
+    }
+
+    details.addEventListener('toggle', () => {
+      if (summary) {
+        summary.setAttribute('aria-expanded', details.hasAttribute('open') ? 'true' : 'false');
+      }
+    });
+  });
+
+  console.log('[Carepoint] Progressive Text Disclosure Engine active');
+}
+
 // Auto-run if DOM ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
@@ -434,6 +497,7 @@ if (document.readyState === 'loading') {
     initHeaderProfileImages();
     initStaffPortalRefinements();
     initDashboardMetricsAnimation();
+    initCarepointProgressiveDisclosure();
     initCarepointCapabilitiesDiscovery();
     initCarepointSafeActionEngine();
     initCarepointSkeletonEngine();
@@ -448,6 +512,7 @@ if (document.readyState === 'loading') {
   initHeaderProfileImages();
   initStaffPortalRefinements();
   initDashboardMetricsAnimation();
+  initCarepointProgressiveDisclosure();
   initCarepointCapabilitiesDiscovery();
   initCarepointSafeActionEngine();
   initCarepointSkeletonEngine();

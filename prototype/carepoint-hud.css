@@ -1468,3 +1468,106 @@ body:not(.carepoint-public-site):not(:has(meta[content="web_standard"])):not(:ha
     transform: none !important;
   }
 }
+
+/* ==========================================================================
+   11. Progressive Text Disclosure Engine (Clickable Info & Detail Reveal)
+   ========================================================================== */
+.carepoint-disclosure {
+  display: block;
+  margin: 0.35rem 0;
+  width: 100%;
+}
+
+.carepoint-disclosure > summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #002b75;
+  cursor: pointer;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  background: rgba(0, 43, 117, 0.05);
+  border: 1px solid rgba(0, 43, 117, 0.12);
+  user-select: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  width: fit-content;
+}
+
+.carepoint-disclosure > summary:hover {
+  background: rgba(0, 43, 117, 0.12);
+  transform: translateY(-1px);
+}
+
+.carepoint-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.carepoint-disclosure[open] > summary {
+  background: #002b75;
+  color: #ffffff;
+  border-color: #002b75;
+  box-shadow: 0 2px 6px -1px rgba(0, 43, 117, 0.25);
+}
+
+.carepoint-disclosure[open] > summary .carepoint-disclosure-icon {
+  transform: rotate(180deg);
+}
+
+.carepoint-disclosure-content {
+  margin-top: 0.5rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.75rem;
+  background: #faf8f5;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #49454f;
+  animation: carepoint-disclosure-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes carepoint-disclosure-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carepoint-expandable-text {
+  position: relative;
+  transition: max-height 0.3s ease;
+}
+
+.carepoint-expandable-text.carepoint-clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.carepoint-expand-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #002b75;
+  background: rgba(0, 43, 117, 0.05);
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  margin-top: 0.35rem;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(0, 43, 117, 0.1);
+  user-select: none;
+}
+
+.carepoint-expand-trigger:hover {
+  background: rgba(0, 43, 117, 0.12);
+}

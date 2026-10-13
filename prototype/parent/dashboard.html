@@ -449,9 +449,15 @@
             </div>
             <div class="p-space-md rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface relative">
               <span class="material-symbols-outlined text-secondary text-2xl absolute -top-3 -left-2 opacity-30">format_quote</span>
-              <p class="relative z-10 leading-relaxed text-xs">
-                "Kofi showed exceptional problem-solving skills in today's group math exercise. He assisted his team with the fraction puzzles and remained very proactive and attentive. Keep encouraging his home reading."
-              </p>
+              <div class="carepoint-expandable-container relative z-10">
+                <p class="leading-relaxed text-xs carepoint-expandable-text carepoint-clamped">
+                  "Kofi showed exceptional problem-solving skills in today's group math exercise. He assisted his team with the fraction puzzles and remained very proactive and attentive. Keep encouraging his home reading."
+                </p>
+                <button type="button" class="carepoint-expand-trigger" aria-expanded="false">
+                  <span class="material-symbols-outlined text-[13px]">expand_more</span>
+                  <span>Read full remark</span>
+                </button>
+              </div>
             </div>
             <div class="flex items-center gap-space-md pt-space-xs font-label-md text-label-md">
               <a href="messages.html" class="text-primary hover:text-primary-container font-semibold flex items-center gap-1">
@@ -559,9 +565,15 @@
           <h3 class="font-headline-sm text-lg font-bold text-surface-container-lowest leading-tight">
             Official Terminal Report Card Ready
           </h3>
-          <p class="font-body-sm text-xs text-primary-fixed mt-2 leading-relaxed">
-            Mrs. Beatrice Abbey and Principal Dr. Elizabeth Appiah have signed off on Kofi's Continuous Assessment scores. The certified PDF includes full SBA marks, class rank, attendance verification, and behavioral remarks.
-          </p>
+          <details class="carepoint-disclosure mt-2">
+            <summary style="background: rgba(255,255,255,0.15); color: #ffffff; border-color: rgba(255,255,255,0.25);">
+              <span class="material-symbols-outlined text-[14px]">info</span>
+              <span>View Signoff Details &amp; Certification</span>
+            </summary>
+            <div class="carepoint-disclosure-content" style="background: rgba(255,255,255,0.1); color: #f1f5f9; border-color: rgba(255,255,255,0.2);">
+              Mrs. Beatrice Abbey and Principal Dr. Elizabeth Appiah have signed off on Kofi's Continuous Assessment scores. The certified PDF includes full SBA marks, class rank, attendance verification, and behavioral remarks.
+            </div>
+          </details>
         </div>
         <div class="mt-6 pt-4 border-t border-white/10 flex flex-col gap-2">
           <a href="academics.html" class="w-full py-3 px-4 rounded-xl bg-surface-container-lowest text-primary hover:bg-surface-container font-label-md text-xs font-bold text-center transition-all shadow-xs flex items-center justify-center gap-2">

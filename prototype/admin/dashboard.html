@@ -1587,12 +1587,15 @@
               </table>
             </div>
 
-            <div class="p-3 bg-surface-container-low rounded-xl border border-surface-container-high/60 flex items-start gap-2.5 text-xs text-on-surface-variant">
-              <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">verified_user</span>
-              <p>
-                Fees cover all academic tutoring, textbook usage, science and computing lab materials, daily hot lunches, and campus primary healthcare. No hidden supplementary charges without NaSIA and PTA approval.
-              </p>
-            </div>
+            <details class="carepoint-disclosure">
+  <summary>
+    <span class="material-symbols-outlined text-[14px]">verified_user</span>
+    <span>View Fee Coverage &amp; NaSIA Guidelines</span>
+  </summary>
+  <div class="carepoint-disclosure-content">
+    Fees cover all academic tutoring, textbook usage, science and computing lab materials, daily hot lunches, and campus primary healthcare. No hidden supplementary charges without NaSIA and PTA approval.
+  </div>
+</details>
 
             <div class="flex items-center justify-between pt-2 border-t border-surface-container-high">
               <button @click="exportLedger()" type="button" class="text-xs font-bold text-primary hover:underline flex items-center gap-1 cursor-pointer">
